@@ -1,0 +1,71 @@
+{
+  "generated": "from FOUNDER_META + catalogue.json + composite.json via scripts/export_site_data.py",
+  "founders": [
+    {
+      "id": "adams",
+      "name": "John Adams",
+      "born": 1735,
+      "died": 1826,
+      "portrait": "/images/historical/adams-trumbull-c1792.jpg",
+      "tagline": "The most Shakespearean Founder by citation; 53 verbatim quotations across six decades.",
+      "composite": 0.7619,
+      "direct_high": 53,
+      "named_shakespeare": 42
+    },
+    {
+      "id": "franklin",
+      "name": "Benjamin Franklin",
+      "born": 1706,
+      "died": 1790,
+      "portrait": "/images/historical/franklin-duplessis-1785.jpg",
+      "tagline": "Shakespeare absorbed as a habit. Highest archaic-form density of any Founder.",
+      "composite": 0.7857,
+      "direct_high": 0,
+      "named_shakespeare": 2
+    },
+    {
+      "id": "jefferson",
+      "name": "Thomas Jefferson",
+      "born": 1743,
+      "died": 1826,
+      "portrait": "/images/historical/jefferson-peale-1800.jpg",
+      "tagline": "Strategic Shakespearean \u2014 23 named references, deployed with care; one verbatim *Julius Caesar*.",
+      "composite": 0.5952,
+      "direct_high": 0,
+      "named_shakespeare": 23
+    },
+    {
+      "id": "washington",
+      "name": "George Washington",
+      "born": 1732,
+      "died": 1799,
+      "portrait": "/images/historical/washington-stuart-1796.jpg",
+      "tagline": "Less literary than the others, but the 1778 \"band of brothers\" passes through his pen.",
+      "composite": 0.5238,
+      "direct_high": 0,
+      "named_shakespeare": 1
+    },
+    {
+      "id": "madison",
+      "name": "James Madison",
+      "born": 1751,
+      "died": 1836,
+      "portrait": "/images/historical/madison-stuart-1804.jpg",
+      "tagline": "Administratively careful prose. No verbatim Shakespeare and no named reference in 8,584 documents.",
+      "composite": 0.4286,
+      "direct_high": 0,
+      "named_shakespeare": 0
+    },
+    {
+      "id": "hamilton",
+      "name": "Alexander Hamilton",
+      "born": 1755,
+      "died": 1804,
+      "portrait": "/images/historical/hamilton-trumbull-1806.jpg",
+      "tagline": "The Hamilton silence. Zero verbatim Shakespeare. Zero shared HIGH-bin stylistic types with Shakespeare under CFA.",
+      "composite": 0.4048,
+      "direct_high": 0,
+      "named_shakespeare": 0
+    }
+  ]
+}

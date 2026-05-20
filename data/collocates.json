@@ -1,0 +1,1302 @@
+{
+  "generated": "from tables/cs3_*.csv via scripts/export_site_data.py",
+  "targets": [
+    "honour",
+    "power",
+    "love",
+    "death",
+    "friend",
+    "mind",
+    "virtue",
+    "government",
+    "law",
+    "people",
+    "nature",
+    "truth",
+    "time",
+    "liberty"
+  ],
+  "collocates": {
+    "honour": {
+      "founders_side": [
+        {
+          "word": "sir",
+          "G": 215.0,
+          "phi": 0.0257,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "respect",
+          "G": 131.1,
+          "phi": 0.0195,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "great",
+          "G": 110.6,
+          "phi": 0.019,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "esteem",
+          "G": 90.6,
+          "phi": 0.0154,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "letter",
+          "G": 68.3,
+          "phi": 0.0134,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "excellency",
+          "G": 66.9,
+          "phi": 0.0137,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sentiments",
+          "G": 39.9,
+          "phi": 0.0102,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "inclose",
+          "G": 39.9,
+          "phi": 0.0102,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "yr",
+          "G": 37.4,
+          "phi": 0.0099,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "greatest",
+          "G": 32.8,
+          "phi": 0.0098,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "write",
+          "G": 31.1,
+          "phi": 0.009,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "writing",
+          "G": 28.5,
+          "phi": 0.0086,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "mine",
+          "G": 506.9,
+          "phi": 0.0998,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "love",
+          "G": 119.9,
+          "phi": 0.0444,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "lord",
+          "G": 115.5,
+          "phi": 0.0406,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "honour",
+          "G": 109.2,
+          "phi": 0.0438,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "pawn",
+          "G": 79.1,
+          "phi": 0.0399,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "come",
+          "G": 65.2,
+          "phi": 0.0312,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "like",
+          "G": 53.2,
+          "phi": 0.0287,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "brutus",
+          "G": 52.7,
+          "phi": 0.0326,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "tis",
+          "G": 49.4,
+          "phi": 0.0303,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "exit",
+          "G": 46.1,
+          "phi": 0.0305,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "beseech",
+          "G": 46.1,
+          "phi": 0.0305,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "heaven",
+          "G": 46.1,
+          "phi": 0.0305,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "power": {
+      "founders_side": [
+        {
+          "word": "congress",
+          "G": 21.7,
+          "phi": 0.0066,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "lord",
+          "G": 67.4,
+          "phi": 0.039,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "king",
+          "G": 55.8,
+          "phi": 0.0255,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "cassius",
+          "G": 51.5,
+          "phi": 0.0412,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "richard",
+          "G": 45.7,
+          "phi": 0.0352,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "father",
+          "G": 42.3,
+          "phi": 0.0323,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "brutus",
+          "G": 34.6,
+          "phi": 0.0316,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "tell",
+          "G": 33.7,
+          "phi": 0.0276,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "speak",
+          "G": 29.7,
+          "phi": 0.0239,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "bid",
+          "G": 29.3,
+          "phi": 0.03,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "lack",
+          "G": 29.3,
+          "phi": 0.03,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "enter",
+          "G": 28.3,
+          "phi": 0.0193,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "mighty",
+          "G": 26.1,
+          "phi": 0.0207,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "love": {
+      "founders_side": [
+        {
+          "word": "mrs",
+          "G": 159.8,
+          "phi": 0.0428,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "martha",
+          "G": 134.8,
+          "phi": 0.0393,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "country",
+          "G": 133.1,
+          "phi": 0.0428,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "jefferson",
+          "G": 110.9,
+          "phi": 0.0356,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "children",
+          "G": 105.6,
+          "phi": 0.0362,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "tenderest",
+          "G": 99.5,
+          "phi": 0.0338,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "family",
+          "G": 98.5,
+          "phi": 0.0336,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "mr",
+          "G": 96.4,
+          "phi": 0.0332,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "liberty",
+          "G": 94.3,
+          "phi": 0.0329,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "yourself",
+          "G": 82.9,
+          "phi": 0.0332,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "dear",
+          "G": 79.0,
+          "phi": 0.0348,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "affectionate",
+          "G": 67.4,
+          "phi": 0.0278,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "love",
+          "G": 142.1,
+          "phi": 0.05,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sweet",
+          "G": 66.7,
+          "phi": 0.0331,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "why",
+          "G": 63.9,
+          "phi": 0.0319,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "lord",
+          "G": 62.2,
+          "phi": 0.0315,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "true",
+          "G": 53.0,
+          "phi": 0.0304,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "fair",
+          "G": 48.3,
+          "phi": 0.0276,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "ay",
+          "G": 41.7,
+          "phi": 0.0243,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "valentine",
+          "G": 39.9,
+          "phi": 0.0238,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "proteus",
+          "G": 38.1,
+          "phi": 0.0233,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "hermia",
+          "G": 38.1,
+          "phi": 0.0233,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "eye",
+          "G": 36.2,
+          "phi": 0.0227,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "helena",
+          "G": 34.4,
+          "phi": 0.0221,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "death": {
+      "founders_side": [
+        {
+          "word": "mr",
+          "G": 87.3,
+          "phi": 0.0351,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "suffer",
+          "G": 56.2,
+          "phi": 0.0304,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "after",
+          "G": 45.6,
+          "phi": 0.0292,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "case",
+          "G": 44.3,
+          "phi": 0.025,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sentenced",
+          "G": 40.4,
+          "phi": 0.0239,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sentence",
+          "G": 30.0,
+          "phi": 0.023,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "under",
+          "G": 29.0,
+          "phi": 0.0202,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "commander",
+          "G": 23.1,
+          "phi": 0.0181,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "general",
+          "G": 21.9,
+          "phi": 0.0189,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "chief",
+          "G": 20.7,
+          "phi": 0.0171,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "resignation",
+          "G": 20.2,
+          "phi": 0.0169,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "dr",
+          "G": 17.7,
+          "phi": 0.0158,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "come",
+          "G": 51.4,
+          "phi": 0.0407,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "death",
+          "G": 44.2,
+          "phi": 0.0373,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "love",
+          "G": 39.1,
+          "phi": 0.0354,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "die",
+          "G": 36.0,
+          "phi": 0.0339,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "gloucester",
+          "G": 35.8,
+          "phi": 0.0335,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "antony",
+          "G": 30.5,
+          "phi": 0.0299,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "away",
+          "G": 29.0,
+          "phi": 0.0305,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "father",
+          "G": 28.4,
+          "phi": 0.0295,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "warwick",
+          "G": 27.4,
+          "phi": 0.0283,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "caesar",
+          "G": 27.1,
+          "phi": 0.0292,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "dead",
+          "G": 27.1,
+          "phi": 0.0292,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "banishment",
+          "G": 26.1,
+          "phi": 0.0289,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "friend": {
+      "founders_side": [
+        {
+          "word": "jefferson",
+          "G": 133.8,
+          "phi": 0.02,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "servt",
+          "G": 116.2,
+          "phi": 0.0187,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "th",
+          "G": 108.0,
+          "phi": 0.0194,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "adams",
+          "G": 92.0,
+          "phi": 0.0166,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "mr",
+          "G": 85.5,
+          "phi": 0.016,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "dear",
+          "G": 84.3,
+          "phi": 0.019,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "esteem",
+          "G": 72.2,
+          "phi": 0.0153,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sincere",
+          "G": 71.0,
+          "phi": 0.0146,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "affectionate",
+          "G": 68.4,
+          "phi": 0.0143,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "am",
+          "G": 67.8,
+          "phi": 0.0168,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "john",
+          "G": 67.5,
+          "phi": 0.0155,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "dr",
+          "G": 58.0,
+          "phi": 0.0132,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "king",
+          "G": 104.3,
+          "phi": 0.0395,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "antony",
+          "G": 101.1,
+          "phi": 0.0429,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "caesar",
+          "G": 89.2,
+          "phi": 0.0403,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sweet",
+          "G": 82.8,
+          "phi": 0.0389,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "lord",
+          "G": 79.5,
+          "phi": 0.0339,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "valentine",
+          "G": 77.3,
+          "phi": 0.0375,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "timon",
+          "G": 77.3,
+          "phi": 0.0375,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "come",
+          "G": 75.5,
+          "phi": 0.0313,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "gentle",
+          "G": 64.4,
+          "phi": 0.0344,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "noble",
+          "G": 59.8,
+          "phi": 0.0308,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "proteus",
+          "G": 58.6,
+          "phi": 0.0328,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "brutus",
+          "G": 58.6,
+          "phi": 0.0328,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "mind": {
+      "founders_side": [
+        {
+          "word": "public",
+          "G": 47.2,
+          "phi": 0.0178,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "human",
+          "G": 25.0,
+          "phi": 0.0129,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "own",
+          "G": 20.7,
+          "phi": 0.0131,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "lord",
+          "G": 76.7,
+          "phi": 0.0557,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "know",
+          "G": 51.0,
+          "phi": 0.0355,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "exit",
+          "G": 41.4,
+          "phi": 0.0408,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "lady",
+          "G": 41.2,
+          "phi": 0.0408,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "tis",
+          "G": 35.3,
+          "phi": 0.0347,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "speak",
+          "G": 32.5,
+          "phi": 0.0326,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "bears",
+          "G": 29.9,
+          "phi": 0.0346,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "ay",
+          "G": 29.6,
+          "phi": 0.0345,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "noble",
+          "G": 29.3,
+          "phi": 0.0309,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "night",
+          "G": 22.5,
+          "phi": 0.0282,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "king",
+          "G": 21.5,
+          "phi": 0.0244,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "woman",
+          "G": 21.4,
+          "phi": 0.0285,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "virtue": {
+      "founders_side": [
+        {
+          "word": "talents",
+          "G": 23.6,
+          "phi": 0.0214,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "public",
+          "G": 19.2,
+          "phi": 0.0193,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "go",
+          "G": 27.7,
+          "phi": 0.0475,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "out",
+          "G": 20.8,
+          "phi": 0.0376,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "show",
+          "G": 19.8,
+          "phi": 0.0409,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "lord",
+          "G": 17.0,
+          "phi": 0.0371,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "fair",
+          "G": 16.8,
+          "phi": 0.0347,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "government": {
+      "founders_side": [],
+      "shakespeare_side": []
+    },
+    "law": {
+      "founders_side": [],
+      "shakespeare_side": [
+        {
+          "word": "duke",
+          "G": 53.2,
+          "phi": 0.0497,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "death",
+          "G": 39.5,
+          "phi": 0.0289,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "love",
+          "G": 34.2,
+          "phi": 0.0288,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "son",
+          "G": 31.7,
+          "phi": 0.0187,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "mercy",
+          "G": 30.5,
+          "phi": 0.0362,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "tis",
+          "G": 27.8,
+          "phi": 0.0251,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "king",
+          "G": 27.4,
+          "phi": 0.0191,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "forfeit",
+          "G": 24.5,
+          "phi": 0.0284,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "unto",
+          "G": 24.5,
+          "phi": 0.0284,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sir",
+          "G": 23.9,
+          "phi": 0.0184,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "bar",
+          "G": 23.4,
+          "phi": 0.0232,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "god",
+          "G": 21.3,
+          "phi": 0.0176,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "people": {
+      "founders_side": [],
+      "shakespeare_side": [
+        {
+          "word": "sicinius",
+          "G": 113.4,
+          "phi": 0.0774,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "tribunes",
+          "G": 98.1,
+          "phi": 0.0696,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "coriolanus",
+          "G": 78.5,
+          "phi": 0.0644,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "brutus",
+          "G": 72.0,
+          "phi": 0.061,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "th",
+          "G": 58.9,
+          "phi": 0.0394,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "menenius",
+          "G": 52.3,
+          "phi": 0.0526,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "rome",
+          "G": 45.3,
+          "phi": 0.0398,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "plebeians",
+          "G": 43.4,
+          "phi": 0.0454,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "love",
+          "G": 35.1,
+          "phi": 0.0265,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "mine",
+          "G": 33.1,
+          "phi": 0.0377,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "speak",
+          "G": 28.5,
+          "phi": 0.0258,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "hearts",
+          "G": 23.8,
+          "phi": 0.0232,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "nature": {
+      "founders_side": [
+        {
+          "word": "human",
+          "G": 53.2,
+          "phi": 0.019,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "noble",
+          "G": 42.6,
+          "phi": 0.039,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "fortune",
+          "G": 42.1,
+          "phi": 0.0397,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "heaven",
+          "G": 36.8,
+          "phi": 0.0401,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sweet",
+          "G": 30.5,
+          "phi": 0.0365,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "sleep",
+          "G": 30.5,
+          "phi": 0.0365,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "whose",
+          "G": 27.2,
+          "phi": 0.0288,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "love",
+          "G": 27.2,
+          "phi": 0.0288,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "strange",
+          "G": 27.0,
+          "phi": 0.0318,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "name",
+          "G": 25.5,
+          "phi": 0.0319,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "father",
+          "G": 25.5,
+          "phi": 0.0319,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "live",
+          "G": 20.3,
+          "phi": 0.028,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "blood",
+          "G": 19.5,
+          "phi": 0.0289,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "truth": {
+      "founders_side": [
+        {
+          "word": "great",
+          "G": 18.3,
+          "phi": 0.016,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "speak",
+          "G": 74.8,
+          "phi": 0.0568,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "beauty",
+          "G": 46.0,
+          "phi": 0.0498,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "true",
+          "G": 42.5,
+          "phi": 0.0449,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "lord",
+          "G": 36.4,
+          "phi": 0.0431,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "king",
+          "G": 34.2,
+          "phi": 0.0413,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "truth",
+          "G": 29.5,
+          "phi": 0.0309,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "loyalty",
+          "G": 26.3,
+          "phi": 0.0372,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "love",
+          "G": 23.9,
+          "phi": 0.0305,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "shame",
+          "G": 21.0,
+          "phi": 0.0334,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "time": {
+      "founders_side": [
+        {
+          "word": "same",
+          "G": 205.9,
+          "phi": 0.015,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "mean",
+          "G": 102.0,
+          "phi": 0.0108,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "mr",
+          "G": 45.6,
+          "phi": 0.0068,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "congress",
+          "G": 25.1,
+          "phi": 0.005,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "letter",
+          "G": 23.5,
+          "phi": 0.0052,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "ago",
+          "G": 23.3,
+          "phi": 0.0052,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "considerable",
+          "G": 22.2,
+          "phi": 0.0047,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "however",
+          "G": 20.4,
+          "phi": 0.0045,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "tis",
+          "G": 279.7,
+          "phi": 0.0484,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "lord",
+          "G": 117.0,
+          "phi": 0.0284,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "good",
+          "G": 107.6,
+          "phi": 0.0207,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "love",
+          "G": 103.6,
+          "phi": 0.0271,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "night",
+          "G": 91.7,
+          "phi": 0.0233,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "syracuse",
+          "G": 88.5,
+          "phi": 0.0304,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "thousand",
+          "G": 87.8,
+          "phi": 0.0218,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "king",
+          "G": 80.1,
+          "phi": 0.0217,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "ten",
+          "G": 74.0,
+          "phi": 0.0176,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "supper",
+          "G": 73.6,
+          "phi": 0.027,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "come",
+          "G": 71.3,
+          "phi": 0.0154,
+          "effect_size": "very weak"
+        },
+        {
+          "word": "now",
+          "G": 71.2,
+          "phi": 0.0151,
+          "effect_size": "very weak"
+        }
+      ]
+    },
+    "liberty": {
+      "founders_side": [
+        {
+          "word": "take",
+          "G": 35.5,
+          "phi": 0.0155,
+          "effect_size": "very weak"
+        }
+      ],
+      "shakespeare_side": [
+        {
+          "word": "why",
+          "G": 20.0,
+          "phi": 0.0463,
+          "effect_size": "very weak"
+        }
+      ]
+    }
+  },
+  "notes": "Each list shows the top collocates by G log-likelihood, filtered to Bonferroni-significant items and excluding function words. 'Founders side' = words over-represented in the Founders' windows around the target. 'Shakespeare side' = the reverse. See reports/paper.md \u00a73.3 for methodology."
+}
