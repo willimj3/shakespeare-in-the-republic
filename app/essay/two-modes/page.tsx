@@ -37,28 +37,32 @@ export default function TwoModesEssay() {
           alt: "Benjamin Franklin, by Joseph Duplessis, c. 1785",
           caption: "Benjamin Franklin (Duplessis, c. 1785)",
         }}
-        caption="The two most-Shakespearean Founders, separated by ≈3% on a composite ranking that combines seven independent measures. They got there in fundamentally different ways."
+        caption="The two most-Shakespearean Founders, almost tied at the top of every comparison the project ran. They got there in fundamentally different ways."
       />
 
       {/* ── Opening (with drop-cap on first ¶) ─────────────────────── */}
       <div className="has-dropcap">
         <p>
-          The temptation, with a question like &ldquo;which Founder was most
-          Shakespearean?&rdquo;, is to ask the corpus for a single answer and
-          assign a winner. The corpus declines to give one. John Adams and
-          Benjamin Franklin sit essentially tied at the top of every
-          composite ranking we build &mdash; separated by 3% on a score that
-          averages seven independent percentile-rank components. They occupy
-          the top two slots on six of those seven measures.
+          The natural question to ask of a project like this one is{" "}
+          <em>who&rsquo;s most Shakespearean?</em> &mdash; and to expect
+          a single name. The data refuses. John Adams and Benjamin
+          Franklin tie at the top by every measure the project ran;
+          they sit within a hair of each other on six different
+          comparisons. The interesting finding isn&rsquo;t which of
+          them &ldquo;wins&rdquo;. It&rsquo;s that they got there in
+          completely different ways.
         </p>
 
         <p>
-          But they got there in fundamentally different ways. That difference
-          is the substantive finding of this project. It is also the reason
-          the analysis needed eight case studies and three influence reanalyses
-          rather than a single distance metric: collapsing influence onto one
-          number averages the two modes together and loses the actual shape of
-          what each Founder did with Shakespeare&rsquo;s English.
+          Adams quotes Shakespeare. He names him. He copies passages
+          out into his diary at twenty-three and goes on returning to
+          favourite lines for the next sixty years. Franklin almost
+          never names Shakespeare and almost never quotes him. But
+          every time Franklin reaches for a verb form, or a contraction,
+          or a way to phrase a sentence, the form he reaches for is
+          the form Shakespeare would have used &mdash; even when, by
+          1780, almost no other writer was using it. One Founder
+          inherits a writer. The other inherits a way of writing.
         </p>
       </div>
 
@@ -174,59 +178,51 @@ export default function TwoModesEssay() {
       </p>
 
       <p>
-        If we stopped here, Franklin would look like the least-Shakespearean
-        Founder. The composite ranking puts him first.
+        If we stopped counting at this point, Franklin would look like
+        the <em>least</em> Shakespearean Founder. He isn&rsquo;t. He
+        leads the project&rsquo;s top-line ranking.
       </p>
 
       <Stat
         value="9,436"
-        label="Franklin's archaic-form tokens per million words — nearly twice the next Founder's rate."
+        label="Old-fashioned English words per million in Franklin's writing — nearly twice the rate of the next-highest Founder."
       />
 
       <p>
-        The case for Franklin emerges only at the level of register. Every
-        sample-size-corrected measure of Shakespearean inheritance we ran
-        places him first or second. He uses Shakespeare&rsquo;s archaic
-        second-person pronoun (<em>thou, thee, thy, thine</em>) at four
-        hundred forty-four times per million words &mdash; roughly thirty
-        times Washington&rsquo;s rate, four times Adams&rsquo;s, and an order
-        of magnitude above Hamilton&rsquo;s and Jefferson&rsquo;s. He uses
-        the archaic-verb forms (<em>hath, doth, art, hast, dost, mayst</em>)
-        at three hundred ninety-one per million, against Adams&rsquo;s two
-        hundred sixty-four and the others&rsquo; ranges of forty-nine to one
-        hundred fifty-nine. He uses the archaic contractions{" "}
-        (<em>&lsquo;tis, &lsquo;twas, &lsquo;twere</em>) at three hundred
-        seventy-five per million, against Hamilton&rsquo;s one hundred fifty
-        and the rest below thirty-five. His metaphor profile is closest to
-        Shakespeare&rsquo;s of any Founder. His pronoun profile is closest
-        to Shakespeare&rsquo;s of any Founder. His shared CFA
-        stylistic-type cells with Shakespeare are the most numerous of any
-        Founder.
+        Franklin&rsquo;s Shakespearean side shows up not in <em>what</em>{" "}
+        he writes but in <em>how</em> he writes it. He uses{" "}
+        <em>thou, thee, thy, thine</em> &mdash; the second-person
+        pronouns that had largely died out of American English by 1750
+        &mdash; thirty times more often than Washington and ten times
+        more often than Hamilton. He uses the old verb forms{" "}
+        <em>hath, doth, art, hast</em> at a higher rate than any other
+        Founder. He uses old-style contractions like{" "}
+        <em>&lsquo;tis, &lsquo;twas, &lsquo;twere</em> twice as often
+        as the next-highest writer in the corpus.
       </p>
 
       <p>
-        The single most arresting piece of evidence is Franklin&rsquo;s{" "}
-        <em>&lsquo;tis</em>. Shakespeare uses the contraction 1,913 times
-        per million words &mdash; it saturates his text. In general
-        18th-century English the form was vanishing. Franklin uses it 375
-        times per million across his lifetime of writing, twice the next
-        Founder&rsquo;s rate. The first uses appear in 1722, in the{" "}
-        <em>Silence Dogood</em> essays he published anonymously in his
-        half-brother&rsquo;s newspaper at the age of sixteen. The
-        contraction never leaves his prose. <em>Hath</em> survives into his
-        1778 diplomatic correspondence from Paris, fifty-six years after
-        the first uses.
+        The single most striking piece of evidence is the contraction{" "}
+        <em>&lsquo;tis</em>. Shakespeare uses it constantly &mdash; the
+        form saturates his text. In ordinary 18th-century English the
+        form was vanishing. Franklin uses it at twice the rate of any
+        other Founder, beginning in 1722 in essays he was publishing
+        anonymously, at the age of sixteen, in his half-brother&rsquo;s
+        newspaper. <em>&lsquo;Tis</em> never leaves his prose; he was
+        still using <em>hath</em> in formal diplomatic correspondence
+        from Paris in 1778, fifty-six years after the first uses.
       </p>
 
       <p>
-        A teenage printer&rsquo;s apprentice in Boston in 1722 was already
-        writing 18th-century essays in 17th-century English. The Founder
-        with the least formal education writes the most Shakespeare-soaked
-        prose in the corpus. The natural reading is that Franklin learned
-        to write English by reading Shakespeare and never re-learned. The
-        absorption stuck because it happened during the years his prose
-        habits were being formed; it was beneath the level of citation by
-        the time anyone could have noticed.
+        A teenage printer&rsquo;s apprentice in Boston in 1722 was
+        already writing in a register a half-century out of date. The
+        Founder with the least formal education writes the most
+        Shakespearean prose in the corpus. The natural reading is that
+        Franklin learned to write English by reading writers like
+        Shakespeare and then never re-learned. The absorption stuck
+        because it happened in the years his writing habits were being
+        formed; it was beneath the level of conscious citation by the
+        time anyone would have noticed.
       </p>
 
       <div className="pull-quote">
@@ -238,71 +234,126 @@ export default function TwoModesEssay() {
 
       {/* ── Chart + the ranking ───────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        What both modes look like in the ranking
+        Both modes, side by side
       </h2>
       <p>
-        The composite Shakespeare-likeness ranking combines seven
-        independent percentile-rank components: vocabulary breadth (how many
-        Shakespeare-distinctive words a Founder uses at all), vocabulary
-        density (the per-million rate of those words in the Founder&rsquo;s
-        text), collocations absorbed (the number of Shakespeare-distinctive
-        collocational patterns surviving in the Founder), total collocation
-        hits, and three sample-size-corrected lexical-richness proximities
-        to Shakespeare. The breakdown by Founder is below.
+        The chart below combines seven different ways of measuring how
+        much of Shakespeare survives in each Founder&rsquo;s writing.
+        Each Founder gets a percentage on each measure; the bar shows
+        the average. Two big takeaways:
       </p>
 
       <CompositeRanking />
 
       <p>
-        Adams leads where the measure scales with content &mdash; vocabulary
-        range, collocation range, named-phrase use. Franklin leads where the
-        measure scales with rate &mdash; per-million density, profile
-        proximity, structural alignment. The two divergences are not noise.
-        They are the two-modes finding compressed onto two axes.
+        First, Franklin and Adams essentially tie at the top &mdash;
+        roughly three percent apart. Second, Madison and Hamilton are
+        far behind both of them. Hamilton and Madison are the
+        project&rsquo;s two least Shakespearean writers across every
+        single measure.
+      </p>
+
+      <p>
+        Within the top two, the comparison is more interesting than the
+        scores. Adams leads on measures of <em>what words</em> a Founder
+        used &mdash; the breadth of distinctively Shakespearean
+        vocabulary in his writing, the named-phrase count, the diversity
+        of collocations he picked up. Franklin leads on measures of{" "}
+        <em>how often</em> &mdash; the rate per million words, the
+        proximity of his pronoun-use to Shakespeare&rsquo;s, the
+        density of his old-fashioned forms. Adams collected. Franklin
+        absorbed.
       </p>
 
       <hr />
 
       {/* ── Why both matter ───────────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        Why the corpus needs both methods to see them
+        Why both modes are real
       </h2>
       <p>
-        Each of these modes is invisible to the methods that catch the
-        other. Citational Shakespeare &mdash; Adams quoting Macbeth in 1758
-        &mdash; surfaces only in a passage-level catalogue that finds long
-        verbatim n-gram matches. Absorbed Shakespeare &mdash; Franklin&rsquo;s{" "}
-        <em>&lsquo;tis</em>, his <em>hath</em>, his pronoun profile &mdash;
-        is invisible to that catalogue (a catalogue of single-word matches
-        would be useless at this scale), and surfaces only in
-        rate-normalised, sample-size-corrected aggregate statistics on the
-        whole corpus.
+        It would be easy to dismiss one of these modes as the &ldquo;real&rdquo;
+        kind of influence and the other as not really influence at all.
+        That would be a mistake. Each mode is invisible to the method
+        that catches the other.
+      </p>
+      <p>
+        If you build a catalogue of every passage where a Founder
+        quotes Shakespeare verbatim &mdash; the kind of catalogue
+        you&rsquo;d expect to find in a literary monograph &mdash;
+        you&rsquo;ll find Adams 53 times and the other five Founders
+        zero times. The catalogue will tell you Adams is the
+        Shakespearean Founder. It will not see Franklin at all.
+      </p>
+      <p>
+        If you instead measure the per-million rate of old-fashioned
+        English forms across each Founder&rsquo;s entire corpus &mdash;
+        the kind of statistical scan that doesn&rsquo;t care about
+        specific passages &mdash; you&rsquo;ll find Franklin nearly
+        twice as Shakespearean as the next-highest Founder. That scan
+        will see Franklin clearly. It will not see Adams&rsquo;s
+        deliberate quotations as anything special.
       </p>
 
       <p>
-        Any single distance metric averages the two. The prior round of
-        this analysis, which used a single Euclidean distance over twenty
-        stylometric features, picked up enough of the absorbed-mode signal
-        to confirm a broad ordering but lacked the resolution to tell Adams
-        and Franklin apart, and the framing to explain why they were
-        different. The current analysis runs three influence reanalyses
-        that hold the per-Founder rankings up against eight independent
-        case studies. The two-modes finding emerges from the structure of
-        the disagreements among the case studies, not from any single one
-        of them.
+        Any single overall score averages the two together and loses
+        the shape of what each Founder did. That&rsquo;s why the
+        finding only became visible once the project ran a wide set of
+        independent measures and started to notice that they
+        <em> disagreed</em> in a particular shape: Adams kept winning
+        when the measure was about specific content, Franklin kept
+        winning when the measure was about overall texture.
       </p>
 
       <p>
-        Adams&rsquo;s Shakespearean engagement has a peak in his early
-        diaries and decays as his prose hardens into political-administrative
-        register through the Revolution and his presidency. Franklin&rsquo;s
-        Shakespearean register has no peak: it is the baseline of his
-        prose across six decades of writing, present in 1722 and still
-        present in 1778. The two modes describe two distinct relationships
-        to a literary inheritance &mdash; one reached for and named, the
-        other learned and forgotten about. Both are real. Neither one is
-        more &ldquo;influence&rdquo; than the other.
+        There&rsquo;s one more thing worth noticing. Adams&rsquo;s
+        Shakespearean engagement <em>peaks</em> in his early diaries
+        and slowly fades as his prose hardens into the administrative
+        register of the Revolution and the presidency. Franklin&rsquo;s
+        Shakespearean register has no peak at all. It&rsquo;s the
+        baseline of his prose across six decades of writing &mdash;
+        present in 1722, still present in 1778. One Founder went
+        looking for Shakespeare and brought him home in pieces. The
+        other writes as if Shakespeare is the English he learned and
+        never re-learned. Both are real kinds of influence. Neither
+        one is more &ldquo;influence&rdquo; than the other.
       </p>
+
+      <details className="mt-10 group">
+        <summary className="cursor-pointer text-base text-ink-soft font-display italic flex items-baseline gap-2 hover:text-folio transition-colors">
+          <span className="text-folio">▸</span>
+          <span className="group-open:hidden">
+            How we measured this &mdash; for the methodologically curious
+          </span>
+          <span className="hidden group-open:inline">
+            How we measured this
+          </span>
+        </summary>
+        <div className="mt-4 pl-6 border-l border-bronze-light/40 text-base text-ink-soft leading-relaxed space-y-3">
+          <p>
+            The composite ranking averages seven different measures of
+            Shakespearean inheritance after putting them on the same
+            scale (each Founder gets a percentile rank from 0 to 1 on
+            each measure). The seven are: how many distinctly
+            Shakespearean words a Founder uses; the per-million rate
+            of those words in their writing; how many Shakespearean
+            contextual patterns survive in their writing of common
+            abstract nouns; the total count of those pattern uses; and
+            three different sample-size-corrected measures of
+            vocabulary richness, comparing each Founder&rsquo;s
+            sub-sampled writing against Shakespeare&rsquo;s full corpus.
+          </p>
+          <p>
+            All statistical tests follow Stefanowitsch (2020){" "}
+            <em>Corpus Linguistics: A Guide to the Methodology</em>{" "}
+            and use the G log-likelihood test with Bonferroni
+            correction within each comparison. The Configural Frequency
+            Analysis behind the &ldquo;shared stylistic types&rdquo;
+            claim is described in the{" "}
+            <Link href="/papers">full paper</Link>.
+          </p>
+        </div>
+      </details>
 
       <div className="ornament" />
 

@@ -18,6 +18,8 @@ export type CollocateColumnProps = {
   maxItems?: number;
 };
 
+const DEFAULT_MAX_ITEMS = 20;
+
 const BAR_COLOR: Record<"founders" | "shakespeare", string> = {
   founders: "#1F3A5F",        // iron-gall ink blue
   shakespeare: "#7B1E1E",     // folio binding red
@@ -28,7 +30,7 @@ export default function CollocateColumn({
   title,
   subtitle,
   collocates,
-  maxItems = 12,
+  maxItems = DEFAULT_MAX_ITEMS,
 }: CollocateColumnProps) {
   const items = collocates.slice(0, maxItems);
   if (items.length === 0) {

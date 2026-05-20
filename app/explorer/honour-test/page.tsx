@@ -20,18 +20,35 @@ export default function HonourTestExplorerPage() {
               The Honour Test
             </h1>
             <p className="font-display text-lg text-ink-soft italic mt-4 leading-snug">
-              Pick a word. See its collocational world in the Founders&rsquo;
-              writing on one side, and in Shakespeare&rsquo;s on the other.
+              Same English word. Different worlds.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
-              For fourteen politically loaded abstract nouns, the same English
-              word appears in both corpora at non-trivial rates &mdash; but
-              the <em>words it appears next to</em> diverge systematically.
-              Shakespeare&rsquo;s <em>honour</em> can be pawned. The
-              Founders&rsquo; <em>honour</em> is what one has when
-              corresponding with a Sir. The vocabulary travelled across the
-              Atlantic. The conceptual content was rebuilt. This explorer
-              lets you see the contrast directly, target by target.
+              Both Shakespeare and the Founders use the word{" "}
+              <em>honour</em> constantly. The Founders use it 18,950
+              times across their writings. Shakespeare uses it 726 times
+              across his. So the word survived the two centuries between
+              them.
+            </p>
+            <p className="text-base text-ink-soft mt-4 leading-relaxed">
+              But <em>what the word means</em> didn&rsquo;t. In Shakespeare,
+              honour is something a character can{" "}
+              <strong>stake like money</strong> &mdash; characters
+              repeatedly &ldquo;pawn their honour&rdquo; as security for
+              someone else&rsquo;s reliability, the same way you might
+              put up cash as collateral. In the Founders&rsquo; letters,
+              <em> honour</em> is what you have when you sign off
+              politely: &ldquo;I have the honour to be, Sir, your most
+              obedient humble servant.&rdquo; A formality. A bow at the
+              end of an interview.
+            </p>
+            <p className="text-base text-ink-soft mt-4 leading-relaxed">
+              The same word; two totally different things. And it
+              isn&rsquo;t just <em>honour</em> &mdash; the same kind of
+              divergence shows up for thirteen other common words. Pick
+              one below to see for yourself. The words that hang around
+              the target in the Founders&rsquo; writing appear on the
+              left; the words that hang around it in Shakespeare&rsquo;s
+              appear on the right.
             </p>
           </div>
         </div>
