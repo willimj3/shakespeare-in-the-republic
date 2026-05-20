@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { asset } from "@/lib/paths";
+
+export const metadata: Metadata = {
+  title: "Explorer · Shakespeare in the Republic",
+  description:
+    "The interactive layer. Browse the catalogue. Compare collocational worlds for fourteen politically loaded abstract nouns. Toggle methods on the six-method convergence.",
+};
 
 type ExplorerView = {
   slug: string;

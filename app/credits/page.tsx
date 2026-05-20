@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import credits from "@/data/image-credits.json";
+
+export const metadata: Metadata = {
+  title: "Image credits · Shakespeare in the Republic",
+  description:
+    "Attribution for the public-domain portraits, First Folio scans, and historical document images used on this site.",
+};
 
 type Credit = {
   filename: string;

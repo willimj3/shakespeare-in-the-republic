@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { asset } from "@/lib/paths";
+
+export const metadata: Metadata = {
+  title: "Case Studies · Shakespeare in the Republic",
+  description:
+    "Per-finding deep dives. Adams quoting Brutus across thirty-eight years. Washington paraphrasing Henry V at Valley Forge. Franklin's 'tis from age sixteen onward.",
+};
 
 type CaseStudy = {
   slug: string;
@@ -9,6 +16,7 @@ type CaseStudy = {
   founder: string;
   date: string;
   heroImage: string;
+  imageAlt: string;
   status: "live" | "soon";
 };
 
@@ -21,6 +29,7 @@ const studies: CaseStudy[] = [
     founder: "John Adams",
     date: "1776 – 1814",
     heroImage: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
+    imageAlt: "First Folio (1623): The Tragedy of Julius Caesar.",
     status: "live",
   },
   {
@@ -31,6 +40,7 @@ const studies: CaseStudy[] = [
     founder: "John Adams",
     date: "1756 – 1788",
     heroImage: asset("/images/historical/adams-diary-manuscript.jpg"),
+    imageAlt: "A page of John Adams's diary, in his own hand.",
     status: "soon",
   },
   {
@@ -41,6 +51,7 @@ const studies: CaseStudy[] = [
     founder: "George Washington",
     date: "1778 – 1798",
     heroImage: asset("/images/historical/washington-orderly-book-001.gif"),
+    imageAlt: "Washington's General Orders, Varick Transcripts (Library of Congress).",
     status: "live",
   },
   {
@@ -51,6 +62,7 @@ const studies: CaseStudy[] = [
     founder: "Benjamin Franklin",
     date: "1722 – 1778",
     heroImage: asset("/images/historical/franklin-duplessis-1785.jpg"),
+    imageAlt: "Benjamin Franklin, painted by Joseph Siffred Duplessis (c. 1785).",
     status: "live",
   },
   {
@@ -61,6 +73,7 @@ const studies: CaseStudy[] = [
     founder: "All six Founders",
     date: "1590 – 1820",
     heroImage: asset("/images/historical/first-folio-othello-p827.jpg"),
+    imageAlt: "First Folio (1623): Othello, page 827.",
     status: "soon",
   },
   {
@@ -71,6 +84,7 @@ const studies: CaseStudy[] = [
     founder: "Alexander Hamilton",
     date: "1770s – 1804",
     heroImage: asset("/images/historical/hamilton-trumbull-1806.jpg"),
+    imageAlt: "Alexander Hamilton, painted by John Trumbull (1806).",
     status: "soon",
   },
   {
@@ -81,6 +95,7 @@ const studies: CaseStudy[] = [
     founder: "John Adams",
     date: "1782",
     heroImage: asset("/images/historical/first-folio-macbeth-p742.jpg"),
+    imageAlt: "First Folio (1623): Macbeth, near the Tomorrow soliloquy.",
     status: "soon",
   },
   {
@@ -91,6 +106,7 @@ const studies: CaseStudy[] = [
     founder: "John Adams",
     date: "late 1822",
     heroImage: asset("/images/historical/adams-trumbull-c1792.jpg"),
+    imageAlt: "John Adams, painted by John Trumbull (c. 1792).",
     status: "soon",
   },
 ];
@@ -131,7 +147,7 @@ export default function CaseStudiesLanding() {
                 <div className="relative aspect-[4/3] overflow-hidden bg-parchment-deep">
                   <Image
                     src={s.heroImage}
-                    alt={s.title}
+                    alt={s.imageAlt}
                     fill
                     className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
@@ -160,7 +176,7 @@ export default function CaseStudiesLanding() {
                 <div className="relative aspect-[4/3] overflow-hidden bg-parchment-deep">
                   <Image
                     src={s.heroImage}
-                    alt={s.title}
+                    alt={s.imageAlt}
                     fill
                     className="object-cover object-top opacity-60 grayscale"
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"

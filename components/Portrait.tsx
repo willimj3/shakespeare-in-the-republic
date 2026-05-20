@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { asset } from "@/lib/paths";
 
 export type PortraitProps = {
   src: string;
@@ -33,7 +34,7 @@ export default function Portrait({
     <figure className={wrapperClass} style={{ width: `${width}px` }}>
       <div className="relative bg-parchment-deep border border-bronze-light/40 rounded-sm overflow-hidden">
         <Image
-          src={src}
+          src={asset(src)}
           alt={alt}
           width={width}
           height={height}
@@ -69,7 +70,7 @@ export function PortraitDuet({
           <div key={i} className="text-center">
             <div className="relative bg-parchment-deep border border-bronze-light/40 rounded-sm overflow-hidden mx-auto">
               <Image
-                src={p.src}
+                src={asset(p.src)}
                 alt={p.alt}
                 width={p.width ?? 360}
                 height={p.height ?? 480}

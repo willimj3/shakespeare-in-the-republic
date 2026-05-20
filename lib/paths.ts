@@ -27,5 +27,9 @@ export function asset(path: string): string {
   if (!path) return path;
   if (/^(?:[a-z]+:)?\/\//i.test(path)) return path;
   if (!path.startsWith("/")) return path;
+  // Idempotent — if the path is already prefixed (because the caller already
+  // wrapped with asset(), or because a JSON file already has the prefix),
+  // don't double-prefix it.
+  if (BASE_PATH && path.startsWith(`${BASE_PATH}/`)) return path;
   return `${BASE_PATH}${path}`;
 }

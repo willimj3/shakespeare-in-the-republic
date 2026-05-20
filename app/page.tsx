@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import catalogue from "@/data/catalogue.json";
 import composite from "@/data/composite.json";
 import founders from "@/data/founders.json";
 import { asset } from "@/lib/paths";
+
+export const metadata: Metadata = {
+  title: "Shakespeare in the Republic",
+  description:
+    "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders — Adams, Franklin, Hamilton, Jefferson, Madison, Washington. 68,807 documents, 24.6 million words, eight statistical case studies, and a passage-level catalogue.",
+};
 
 type CatalogueShape = typeof catalogue;
 type CompositeShape = typeof composite;
@@ -277,7 +284,7 @@ function FounderRoster() {
               <div className="relative w-32 flex-shrink-0 bg-parchment-deep">
                 <Image
                   src={asset(f.portrait)}
-                  alt={f.name}
+                  alt={`Portrait of ${f.name} (${f.born}–${f.died}).`}
                   fill
                   className="object-cover object-top"
                   sizes="128px"

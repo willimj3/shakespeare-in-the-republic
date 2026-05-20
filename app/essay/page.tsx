@@ -1,4 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Essays · Shakespeare in the Republic",
+  description:
+    "The Commentary — eight long-form chapters on Shakespeare's influence on six American Founders, adapted from the scholarly paper.",
+};
 
 type ChapterEntry = {
   num: number;
