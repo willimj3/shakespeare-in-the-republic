@@ -102,12 +102,12 @@ const studies: CaseStudy[] = [
     slug: "cry-havoc-1822",
     title: "Cry Havoc, 1822",
     hook:
-      "Eight months before his death, Adams applies Antony's 'Cry havoc, and let slip the dogs of war' to Franklin's political theology.",
+      "Adams at eighty-six writes to his grandson and reaches for Antony's line from Julius Caesar to indict the political theology of his long-dead friend Benjamin Franklin. The end of the Adams citational arc.",
     founder: "John Adams",
-    date: "late 1822",
+    date: "22 February 1822",
     heroImage: asset("/images/historical/adams-trumbull-c1792.jpg"),
     imageAlt: "John Adams, painted by John Trumbull (c. 1792).",
-    status: "soon",
+    status: "live",
   },
 ];
 
