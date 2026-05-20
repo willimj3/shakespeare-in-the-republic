@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { EB_Garamond, IM_Fell_DW_Pica, Inter } from "next/font/google";
 import Navigation from "@/components/Navigation";
 import "./globals.css";
@@ -99,7 +100,7 @@ function SiteFooter() {
           <p className="text-ink-muted leading-snug">
             All historical portraits and document scans are in the public domain
             or used under a permissive Creative Commons license. See the{" "}
-            <a href="/credits">image credits page</a> for full attribution.
+            <Link href="/credits">image credits page</Link> for full attribution.
           </p>
         </div>
       </div>

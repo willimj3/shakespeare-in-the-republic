@@ -11,7 +11,7 @@ import { ReactNode } from "react";
 export type CaseStudyLayoutProps = {
   title: string;
   subtitle?: string;
-  anchorFinding: string;             // the single-sentence headline finding
+  anchorFinding: ReactNode;          // single-sentence headline finding (may include <em>, etc.)
   heroImage: string;                 // path under /images/
   heroAlt: string;
   heroCaption?: string;

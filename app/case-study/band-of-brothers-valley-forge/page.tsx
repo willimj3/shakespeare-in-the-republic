@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import Kwic from "@/components/Kwic";
 import EventTimeline, {
@@ -46,7 +47,19 @@ export default function BandOfBrothersCaseStudy() {
     <CaseStudyLayout
       title="Band of Brothers at Valley Forge"
       subtitle="On 6 April 1778, with his army dissolving from cold and disease, Washington paraphrases the St. Crispin&rsquo;s Day speech. The phrase recurs four more times across the next twenty years."
-      anchorFinding="In our corpus, George Washington uses the phrase *band of brothers* five times across two decades — beginning at Valley Forge in 1778, where Continental Army losses to cold, hunger, and disease had run to roughly one in four. The line travels with him through the Farewell Address of 1783, a private letter from Mount Vernon in 1785, and two letters from the Quasi-War crisis of 1798. The same words, like Adams's *tide*, carry different uses each time."
+      anchorFinding={
+        <>
+          In our corpus, George Washington uses the phrase{" "}
+          <em>band of brothers</em> five times across two decades
+          &mdash; beginning at Valley Forge in 1778, where Continental
+          Army losses to cold, hunger, and disease had run to roughly
+          one in four. The line travels with him through the Farewell
+          Address of 1783, a private letter from Mount Vernon in 1785,
+          and two letters from the Quasi-War crisis of 1798. The same
+          words, like Adams&rsquo;s <em>tide</em>, carry different uses
+          each time.
+        </>
+      }
       heroImage={asset("/images/historical/washington-orderly-book-001.gif")}
       heroAlt="Washington's General Orders, Varick Transcript page 1 (Library of Congress)"
       heroCaption="Washington's Orderly Book (Varick Transcript). Library of Congress, Washington Papers Series 3G."
@@ -321,14 +334,14 @@ export default function BandOfBrothersCaseStudy() {
 
       <p className="text-sm text-ink-muted italic text-center">
         See also{" "}
-        <a href="/case-study/tide-in-the-affairs" className="underline">
+        <Link href="/case-study/tide-in-the-affairs" className="underline">
           There Is a Tide
-        </a>{" "}
+        </Link>{" "}
         &mdash; the same &ldquo;one phrase, many decades&rdquo; pattern
         in John Adams, and{" "}
-        <a href="/essay/two-modes" className="underline">
+        <Link href="/essay/two-modes" className="underline">
           Two Modes of Shakespearean Influence
-        </a>{" "}
+        </Link>{" "}
         for the broader argument.
       </p>
     </CaseStudyLayout>

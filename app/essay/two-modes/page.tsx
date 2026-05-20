@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import EssayLayout from "@/components/EssayLayout";
 import Kwic, { Stat } from "@/components/Kwic";
 import { PortraitDuet } from "@/components/Portrait";
@@ -20,10 +21,10 @@ export default function TwoModesEssay() {
       title="Two Modes of Shakespearean Influence"
       subtitle="Adams citational, Franklin absorbed &mdash; and why the corpus needs both methods to see them."
       byline="Mark J. Williams · Vanderbilt Law School · 2026"
-      prevHref="/essay/methods"
-      prevLabel="How we asked the question"
-      nextHref="/essay/honour-test"
-      nextLabel="The honour test"
+      prevHref="/essay"
+      prevLabel="All essays"
+      nextHref="/case-study/tide-in-the-affairs"
+      nextLabel="Case study: There Is a Tide"
     >
       <PortraitDuet
         left={{
@@ -306,12 +307,11 @@ export default function TwoModesEssay() {
       <div className="ornament" />
 
       <p className="text-sm text-ink-muted italic text-center">
-        Continued in{" "}
-        <a href="/essay/honour-test" className="underline">
-          The Honour Test
-        </a>{" "}
-        &mdash; what happens to the same vocabulary item when it travels
-        from Shakespeare to the Founders.
+        For the contrasting view of what happens to the same vocabulary
+        item when it travels from Shakespeare to the Founders, see{" "}
+        <Link href="/explorer/honour-test" className="underline">
+          the Honour Test explorer
+        </Link>.
       </p>
     </EssayLayout>
   );

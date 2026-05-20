@@ -177,14 +177,10 @@ export default function HonourTestExplorer() {
             <div className="ornament" />
             <p className="text-sm text-ink-muted italic text-center">
               The substantive argument for what this pattern means is in{" "}
-              <Link href="/essay/conceptual-inheritance">
-                The Honour Test
-              </Link>{" "}
-              essay, and in{" "}
-              <Link href="/case-study/honour-test">
-                the per-quote case study
-              </Link>{" "}
-              (both coming in the next build).
+              <Link href="/essay/two-modes">Two Modes of Shakespearean Influence</Link>
+              ; the per-finding deep dives live in the{" "}
+              <Link href="/case-study">case studies</Link>. A dedicated
+              Honour Test essay is coming in the next build.
             </p>
           </div>
         </div>

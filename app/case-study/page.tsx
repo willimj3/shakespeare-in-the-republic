@@ -47,11 +47,11 @@ const studies: CaseStudy[] = [
     slug: "tis-franklins-signature",
     title: "'Tis: Franklin's Signature Contraction",
     hook:
-      "Franklin uses 'tis at 375 per million words — twice the next Founder's rate — across six decades, beginning in his Silence Dogood essays in 1722.",
+      "Franklin uses 'tis at 342 per million words — twice the next Founder's rate — across six decades, beginning in his Silence Dogood essays in 1722. The absorbed-mode counterpart to Adams's tide.",
     founder: "Benjamin Franklin",
-    date: "1722 – 1790",
+    date: "1722 – 1778",
     heroImage: asset("/images/historical/franklin-duplessis-1785.jpg"),
-    status: "soon",
+    status: "live",
   },
   {
     slug: "honour-test",

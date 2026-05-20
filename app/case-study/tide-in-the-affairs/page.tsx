@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import Kwic from "@/components/Kwic";
 import EventTimeline, {
@@ -26,7 +27,18 @@ export default function TideInTheAffairs() {
     <CaseStudyLayout
       title="There Is a Tide"
       subtitle="John Adams quotes Brutus&rsquo;s &lsquo;tide in the affairs of men&rsquo; five times across thirty-eight years &mdash; in five different moods."
-      anchorFinding="Of the fifty-three verbatim Shakespeare quotations Adams produces, this one line — from Brutus to Cassius in *Julius Caesar* 4.3 — recurs more than any other. It appears in his Revolutionary correspondence of 1776, in his diplomatic letters of 1781, in his published memoir of 1809, in a private letter of 1812, and in a philosophical reflection to Richard Rush in 1814. The same words mean something different each time."
+      anchorFinding={
+        <>
+          Of the fifty-three verbatim Shakespeare quotations Adams
+          produces, this one line &mdash; from Brutus to Cassius in{" "}
+          <em>Julius Caesar</em> 4.3 &mdash; recurs more than any other.
+          It appears in his Revolutionary correspondence of 1776, in his
+          diplomatic letters of 1781, in his published memoir of 1809, in
+          a private letter of 1812, and in a philosophical reflection to
+          Richard Rush in 1814. The same words mean something different
+          each time.
+        </>
+      }
       heroImage={asset("/images/historical/first-folio-julius-caesar-cropped.jpg")}
       heroAlt="First Folio: The Tragedy of Julius Caesar (Bodleian First Folio, 1623)"
       heroCaption="The Tragedy of Julius Caesar, First Folio (1623). Bodleian Library, Oxford."
@@ -255,13 +267,13 @@ export default function TideInTheAffairs() {
 
       <p className="text-sm text-ink-muted italic text-center">
         See also{" "}
-        <a href="/essay/two-modes" className="underline">
+        <Link href="/essay/two-modes" className="underline">
           Two Modes of Shakespearean Influence
-        </a>{" "}
+        </Link>{" "}
         for the broader argument, and{" "}
-        <a href="/explorer" className="underline">
+        <Link href="/explorer" className="underline">
           the explorer
-        </a>{" "}
+        </Link>{" "}
         to browse the full catalogue of Adams&rsquo;s fifty-three verbatim
         Shakespeare quotations.
       </p>
