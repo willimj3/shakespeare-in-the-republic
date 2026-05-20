@@ -48,6 +48,34 @@
     letter-spacing: -0.01em;
   }
 
+  /* Paragraph spacing — Tailwind preflight zeros these, so the long-form
+     essays read as one giant blob without this rule. 1.5em on an 18px
+     body works out to ~27px of space between paragraphs, which is enough
+     air for serif body text in a 680px column to read as separate
+     thoughts. Last-child override prevents trailing space at the end of
+     a section (the next sibling — an h2, an hr, a div — already brings
+     its own top margin). */
+  p {
+    margin-bottom: 1.5em;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Lists get the same breathing room as paragraphs. */
+  ul, ol {
+    margin-bottom: 1.5em;
+  }
+  ul:last-child, ol:last-child {
+    margin-bottom: 0;
+  }
+  ul li, ol li {
+    margin-bottom: 0.5em;
+  }
+  ul li:last-child, ol li:last-child {
+    margin-bottom: 0;
+  }
+
   a {
     color: var(--color-folio);
     text-decoration: underline;
