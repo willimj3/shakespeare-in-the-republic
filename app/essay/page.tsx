@@ -69,8 +69,8 @@ const chapters: ChapterEntry[] = [
     slug: "hamilton-silence",
     title: "The Hamilton Silence",
     summary:
-      "Of the six Founders, only Hamilton produces zero verbatim Shakespeare, zero named references, and zero shared HIGH-bin stylistic types under CFA. What that absence means.",
-    status: "soon",
+      "Hamilton has zero verbatim Shakespeare quotations, zero by-name references, zero detectable Shakespearean stylistic features. Madison's record is the same. What the absence means for the project's wider argument.",
+    status: "live",
   },
   {
     num: 8,
