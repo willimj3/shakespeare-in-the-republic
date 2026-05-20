@@ -21,16 +21,16 @@ const chapters: ChapterEntry[] = [
     slug: "preface",
     title: "Preface",
     summary:
-      "Why a corpus-linguistic study of Shakespearean influence; how the project is structured; what to read first.",
-    status: "soon",
+      "Why this site exists, what it's for, and how to read it. The most welcoming chapter; the one most readers will enter through.",
+    status: "live",
   },
   {
     num: 2,
     slug: "introduction",
     title: "The Influence Question",
     summary:
-      "What it means to ask the question carefully. The asymmetric framing — Shakespeare to Founders, not Founders versus Shakespeare.",
-    status: "soon",
+      "What it means to ask carefully whether the Founders sounded like Shakespeare. The three findings in summary; a reading guide to the rest.",
+    status: "live",
   },
   {
     num: 3,
