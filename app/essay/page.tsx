@@ -78,7 +78,7 @@ const chapters: ChapterEntry[] = [
     title: "References and Reproducibility",
     summary:
       "The full reading list, the data sources, and the path from the database to every claim on this site.",
-    status: "soon",
+    status: "live",
   },
 ];
 
