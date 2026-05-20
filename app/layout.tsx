@@ -72,6 +72,15 @@ function SiteFooter() {
           <ul className="space-y-1.5">
             <li>
               <a
+                href="https://willimj3.github.io/shakespeare-in-the-republic/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live site
+              </a>
+            </li>
+            <li>
+              <a
                 href="https://github.com/willimj3/shakespeare-in-the-republic"
                 target="_blank"
                 rel="noreferrer"
@@ -79,9 +88,9 @@ function SiteFooter() {
                 Site repository (GitHub)
               </a>
             </li>
-            <li>
-              Scholarly paper, narrative, and results summary — included with
-              the research repository
+            <li className="text-ink-muted">
+              Scholarly paper, narrative, and results summary travel with the
+              research repository.
             </li>
           </ul>
         </div>

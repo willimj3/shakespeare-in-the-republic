@@ -2,6 +2,8 @@
 
 Companion site to *Shakespeare in the Republic*, a corpus-linguistic study of Shakespeare's linguistic influence on six Founding Fathers: John Adams, Benjamin Franklin, Alexander Hamilton, Thomas Jefferson, James Madison, and George Washington.
 
+🔗 **Live site**: <https://willimj3.github.io/shakespeare-in-the-republic/>
+
 ## What this is
 
 A static web companion to the research project, built in the spirit of [America's Public Bible](https://americaspublicbible.supdigital.org) (Lincoln Mullen, Stanford University Press). The site has three layers:
@@ -24,7 +26,7 @@ npm install
 npm run dev
 ```
 
-Open <http://localhost:3000>.
+Open <http://localhost:3000>. (The deployed site lives at <https://willimj3.github.io/shakespeare-in-the-republic/>; every push to `main` redeploys via `.github/workflows/deploy.yml`.)
 
 ## Data sources
 
