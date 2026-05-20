@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Shakespeare in the Republic
 
-## Getting Started
+Companion site to *Shakespeare in the Republic*, a corpus-linguistic study of Shakespeare's linguistic influence on six Founding Fathers: John Adams, Benjamin Franklin, Alexander Hamilton, Thomas Jefferson, James Madison, and George Washington.
 
-First, run the development server:
+## What this is
+
+A static web companion to the research project, built in the spirit of [America's Public Bible](https://americaspublicbible.supdigital.org) (Lincoln Mullen, Stanford University Press). The site has three layers:
+
+- **Essays** — long-form prose adapted from the scholarly paper
+- **Case Studies** — per-finding deep dives with hero document images
+- **Explorer** — interactive views over the catalogue and statistical-case-study data
+
+## Stack
+
+- Next.js 14 (app router) — static export
+- Tailwind CSS — design tokens for the APB-inspired serif/parchment palette
+- Recharts — line, bar, heatmap, radar
+- TypeScript
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Data sources
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The site reads pre-baked JSON in `data/` produced by the analysis pipeline in the research repository (`~/Documents/founders_vs_shakespeare/`). That pipeline produces:
 
-## Learn More
+- `tables/catalogue_*.csv` — passage-level direct quotations and named references
+- `tables/cs*_*.csv` — eight Stefanowitsch-grounded statistical case studies
+- `tables/influence*_*.csv` — composite Shakespeare-likeness ranking
+- `data/images/historical/` — public-domain portraits and First Folio scans
 
-To learn more about Next.js, take a look at the following resources:
+These are exported to this site's `data/` and `public/images/` directories via a one-time export script.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Origin
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This site started as `shakespeare-federalist-app`, a Federalist-Papers-only prototype, and was renamed and broadened to cover all six Founders. Its design language is inspired by but does not derive from America's Public Bible — the APB codebase (CC BY-NC-ND content / MIT code) was used as a reference but not forked.

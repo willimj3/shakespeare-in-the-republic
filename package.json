@@ -1,7 +1,8 @@
 {
-  "name": "shakespeare-federalist-app",
+  "name": "shakespeare-in-the-republic",
   "version": "0.1.0",
   "private": true,
+  "description": "A corpus-linguistic study of Shakespeare's influence on six Founders (Adams, Jefferson, Franklin, Hamilton, Madison, Washington). Companion site to the research project.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
