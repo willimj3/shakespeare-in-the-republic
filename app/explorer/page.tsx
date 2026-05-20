@@ -32,8 +32,8 @@ const VIEWS: ExplorerView[] = [
     slug: "catalogue",
     title: "Reference Catalogue",
     blurb:
-      "Search and filter every traceable Shakespeare reference across the six Founders. Filter by who, when, and what kind of reference — direct quotation, named mention, or distinctive phrase.",
-    status: "soon",
+      "Search and filter every traceable Shakespeare reference across the six Founders — 140 verified instances. Filter by who, when, and what kind of reference. Search by word, name, or year.",
+    status: "live",
     image: asset("/images/historical/adams-diary-manuscript.jpg"),
     imageAlt: "Adams diary manuscript",
   },
