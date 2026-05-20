@@ -116,17 +116,20 @@ export default function BandOfBrothersCaseStudy() {
         </footer>
       </blockquote>
       <p>
-        The construction <em>band of brothers</em> — three monosyllables in
-        an iambic line — is one of those Shakespearean phrases that the
-        statistical analysis behind this site classifies as <em>not</em>{" "}
-        Bonferroni-significantly distinctive against the Founders&rsquo;
-        own corpus. By 1778, after almost two centuries of circulation, the
-        phrase had drifted far enough into general English that a corpus
-        comparison cannot uniquely attribute it to Shakespeare. The
-        historical route, though, is well-documented: from <em>Henry V</em>{" "}
-        (probably 1599) through the eighteenth-century editions of
-        Shakespeare circulating in American libraries, into the speech of
-        every literate officer of the Atlantic world.
+        <em>Band of brothers</em> is interesting because by 1778 it
+        was no longer a phrase you&rsquo;d obviously identify as
+        Shakespearean. Almost two centuries of circulation meant
+        printers, schoolmasters, and clergy had all picked it up; by
+        the time the Continental Army assembled at Valley Forge it
+        was part of the common stock of English. So when a statistical
+        check asks &ldquo;is this phrase distinctively Shakespearean
+        versus general 18th-century English?&rdquo; the answer is no
+        &mdash; it had drifted out of the playwright&rsquo;s exclusive
+        possession. But the historical route is clear and undisputed.
+        The phrase travelled from <em>Henry V</em> (c. 1599) through
+        the eighteenth-century editions of Shakespeare on American
+        library shelves into the speech of every literate officer of
+        the Atlantic world.
       </p>
 
       <hr />
@@ -286,49 +289,73 @@ export default function BandOfBrothersCaseStudy() {
 
       <hr />
 
-      {/* ── Methodological note ─────────────────────────────────── */}
+      {/* ── Reading + methodological foldable ───────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        Why this case study matters methodologically
+        Two ways of being Shakespearean
       </h2>
       <p>
-        Of the project&rsquo;s eight case studies, this one is the
-        clearest illustration of a finding that the statistical pipeline
-        and the historical reading <em>disagree</em> about. Our
-        Bonferroni-corrected G log-likelihood test on twenty-four
-        popularly-attributed Shakespearean phrases rejects <em>band of
-        brothers</em> as Shakespeare-distinctive: by 1778, the phrase
-        had become common enough in general English that it does not
-        pop out as significantly more frequent in Shakespeare than in
-        the Founders. A statistical analysis alone would file it under
-        &ldquo;not significant&rdquo; and move on.
+        <em>Band of brothers</em> sits in an interesting middle
+        position. It&rsquo;s not a phrase Washington would have called
+        a quotation &mdash; by 1778 it was the kind of phrase
+        anyone in the officer corps might reach for. But its route
+        into 18th-century English ran straight through Shakespeare.
+        Every English-language speaker with literary access in the
+        eighteenth century had encountered the St. Crispin&rsquo;s Day
+        speech. Washington owned editions of Shakespeare and attended
+        performances of his plays in Philadelphia and New York. The
+        word reached him by way of the playwright, even if neither
+        Washington nor his audience would have thought to mention
+        Shakespeare in the moment.
       </p>
       <p>
-        That filing would be correct as a statistical claim. It would
-        be deeply incomplete as a literary-historical one. The route
-        from Shakespeare&rsquo;s 1599 stage to Washington&rsquo;s 1778
-        winter camp is straightforward: every English-language speaker
-        with literary access in the eighteenth century had encountered
-        the speech, often more than once. Washington had a copy of the
-        Folio editions of Shakespeare; he attended performances of
-        Shakespeare in Philadelphia and New York during the war years.
-        The phrase is not Shakespeare-coined in the strict G-statistic
-        sense, because by 1778 the line had been quoted, paraphrased,
-        and embedded in officer culture for two centuries. But the
-        line&rsquo;s presence in Washington&rsquo;s 1778 orders is
-        nonetheless a piece of literary inheritance.
+        Most of what Shakespeare gave the Founders looks like this.
+        Adams&rsquo;s deliberate quotations are the loud part. The
+        quieter part &mdash; the part that produces phrases like{" "}
+        <em>band of brothers</em> appearing in a Continental Army
+        General Order without anyone marking it &mdash; is harder to
+        document case by case, but it&rsquo;s the wider channel.
+        Shakespeare became part of the air the Founders wrote in. They
+        breathed his English without always knowing they were doing
+        it.
       </p>
-      <p>
-        The project&rsquo;s broader argument is that <em>both</em> kinds
-        of analysis are needed. The statistical work establishes what
-        is Shakespeare-distinctive in the strict sense. The historical
-        and biographical work picks up what has become so widely shared
-        that the statistical test no longer recognises it. Where the two
-        diverge &mdash; as they do on <em>band of brothers</em> &mdash;
-        the divergence is itself informative. It tells us which
-        Shakespearean phrases the corpus can still mark, and which ones
-        have travelled so far into common English that they are visible
-        only to a historian.
-      </p>
+
+      <details className="mt-10 group">
+        <summary className="cursor-pointer text-base text-ink-soft font-display italic flex items-baseline gap-2 hover:text-folio transition-colors">
+          <span className="text-folio">▸</span>
+          <span className="group-open:hidden">
+            A note on how this case study sits against the
+            statistics &mdash; for the methodologically curious
+          </span>
+          <span className="hidden group-open:inline">
+            A note on how this case study sits against the statistics
+          </span>
+        </summary>
+        <div className="mt-4 pl-6 border-l border-bronze-light/40 text-base text-ink-soft leading-relaxed space-y-3">
+          <p>
+            The wider research project also runs a strict statistical
+            test on twenty-four phrases popularly attributed to
+            Shakespeare: are they significantly more common in
+            Shakespeare than in the Founders, after correcting for
+            multiple comparisons? Only four pass:{" "}
+            <em>I had rather</em>, <em>flesh and blood</em>,{" "}
+            <em>pound of flesh</em>, and <em>et tu, Brute</em>.
+          </p>
+          <p>
+            <em>Band of brothers</em> doesn&rsquo;t. By 1778 the
+            phrase was common enough in general English that the
+            statistical test can&rsquo;t single Shakespeare out as
+            its source against the Founders&rsquo; ordinary speech.
+            And yet the historical route from <em>Henry V</em> through
+            educated 18th-century English into Washington&rsquo;s
+            general orders is undisputed. That gap &mdash; between
+            what the corpus statistics will mark and what historical
+            reading recovers &mdash; <em>is</em> the substantive point
+            of the case study. The fully-Shakespearean phrases survive
+            the corpus test; the partially-Shakespearean ones travel
+            beyond it.
+          </p>
+        </div>
+      </details>
 
       <div className="ornament" />
 

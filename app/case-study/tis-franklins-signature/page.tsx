@@ -78,18 +78,18 @@ export default function TisFranklinsSignature() {
       </h2>
 
       <Stat
-        value="342 / M"
-        label="Franklin's per-million rate of the contraction &lsquo;tis across his lifetime of writing — more than twice the next Founder's rate (Hamilton, 150 / M) and roughly ten times Adams's, Washington's, or Jefferson's."
-      />
-
-      <Stat
         value="606"
-        label="Total occurrences of &lsquo;tis or &lsquo;Tis across all 3,480 documents in his corpus. The form appears in essays, letters, scientific papers, almanacs, diplomatic correspondence — across every genre he wrote in."
+        label="Times Franklin uses &lsquo;tis in his writing — more than twice as often as any other Founder, and ten times more often than Adams, Washington, or Jefferson, who use it roughly once every 30,000 words."
       />
 
       <Stat
         value="1722"
-        label="The year of the earliest uses we have, in his anonymous &lsquo;Silence Dogood&rsquo; essays for the *New England Courant*. He was sixteen."
+        label="The year of his earliest uses, in anonymous newspaper essays he wrote for his half-brother's paper at the age of sixteen."
+      />
+
+      <Stat
+        value="1778"
+        label="The year of his last clear uses, in formal diplomatic correspondence from Paris. The form had been in his prose for fifty-six years."
       />
 
       <TisRateBar />
@@ -260,26 +260,28 @@ export default function TisFranklinsSignature() {
         could have intended.
       </p>
       <p>
-        What there is, instead, is a register. Across 1,770,415 of his
-        own composed words, the contraction <em>&lsquo;tis</em> appears
-        606 times. The verb-form <em>hath</em> appears at 391 per
-        million. The second-person pronoun <em>thou</em> (and{" "}
-        <em>thee, thy, thine</em>) at 444 per million &mdash; thirty
-        times Washington&rsquo;s rate. <em>Doth, art, hast, mayst, dost</em>{" "}
-        all elevated. The texture of Franklin&rsquo;s prose is
-        late-Stuart English at densities no other Founder approaches.
+        What there is, instead, is a <em>register</em>: a steady
+        background hum of old-fashioned English running through
+        everything he wrote. <em>&lsquo;Tis</em> appears 606 times.{" "}
+        <em>Hath</em> shows up at a rate of about one every 2,500
+        words. <em>Thou, thee, thy, thine</em> &mdash; pronouns that
+        had largely died out of American English by 1750 &mdash;
+        show up thirty times more often in Franklin than in
+        Washington. <em>Doth, art, hast, mayst, dost</em>: all
+        elevated. The <em>texture</em> of Franklin&rsquo;s prose is
+        late-Stuart English at densities no other Founder gets close
+        to.
       </p>
       <p>
-        That texture is what the catalogue cannot see. A passage-level
-        match requires five or more consecutive Shakespearean words.
-        Franklin&rsquo;s Shakespearean inheritance is distributed one
-        contraction at a time, one verb-form at a time, across every
-        sentence he writes. The catalogue&rsquo;s methods would flag it
-        only if Franklin produced a verbatim line from a play, which he
-        almost never does. The aggregate-statistical methods of this
-        project &mdash; CS5 (diachronic archaic-form survival), CS4
-        (pronoun-profile distance), CS6 (metaphor-profile distance),
-        CS7 (Configural Frequency Analysis) &mdash; are what surface it.
+        That texture is the thing a passage-by-passage search
+        can&rsquo;t find. To register as a verbatim Shakespeare quote,
+        a Founder would have to use five or more Shakespeare words in
+        a row. Franklin&rsquo;s Shakespearean side is spread across
+        every sentence one contraction or one verb-form at a time,
+        never in long runs. Catching it requires a different kind of
+        analysis &mdash; counting old forms across the whole corpus,
+        comparing pronoun distributions, looking at the texture rather
+        than the surface.
       </p>
       <p>
         The Founder with the <em>least</em> formal education writes the

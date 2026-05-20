@@ -89,14 +89,15 @@ export default function HonourTestEssay() {
       </p>
       <p>
         The construction <em>have the honour to</em> &mdash; or its
-        cognate, <em>the honour of</em> &mdash; functions in 18th-century
-        American correspondence as a closing-formula politeness marker.
+        cousin, <em>the honour of</em> &mdash; functions in
+        18th-century American correspondence as a politeness marker.
         It is the verbal equivalent of a bow at the end of an
-        interview. The differential collocate analysis (CS3) confirms
-        this systematically. The Founders&rsquo; top collocates for{" "}
-        <em>honour</em> are <em>sir, respect, great, esteem, letter,
-        excellency, sincere, servant</em>. Shakespeare&rsquo;s top
-        collocates are <em>mine, love, lord, pawn, kept, gentle</em>.
+        interview. Looking at what words sit next to{" "}
+        <em>honour</em> in each corpus confirms the pattern instantly.
+        The words that hang around <em>honour</em> in the Founders are{" "}
+        <em>sir, respect, great, esteem, letter, excellency, sincere,
+        servant</em>. The words that hang around <em>honour</em> in
+        Shakespeare are <em>mine, love, lord, pawn, kept, gentle</em>.
       </p>
       <p>
         The word travelled. The grammar travelled. The conceptual
@@ -213,63 +214,56 @@ export default function HonourTestEssay() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        The metaphor pattern that confirms the inheritance is partial
+        Two metaphors the Founders invented, and one they didn&rsquo;t
       </h2>
       <p>
-        If the Founders had simply inherited Shakespeare&rsquo;s
-        political vocabulary intact, we would expect to see his
-        metaphorical patterns surface in their writing too. They do not
-        &mdash; or rather, some do and some don&rsquo;t, in a way that
-        is itself informative.
+        The same partial-inheritance pattern shows up in the{" "}
+        <em>metaphors</em> each corpus uses for political life. The
+        Founders write constantly about &ldquo;the foundation of
+        liberty,&rdquo; &ldquo;the pillar of government,&rdquo; &ldquo;the
+        cornerstone of the Constitution.&rdquo; Liberty is a building.
+        Government is a building. The Constitution is a building. The
+        political world is, metaphorically, a structure with parts.
       </p>
       <p>
-        The CS6 metaphor analysis classified target-domain metaphors
-        for political nouns into eight types: EDIFICE, BODY, SHIP,
-        FIRE, PLANT, PATH, MOTION, CONTAINER. Shakespeare uses BODY
-        metaphors at 14.8 per million words; FIRE at 9.1; PATH at 17.1;
-        SHIP at 12.6. The Founders use most of these in roughly
-        comparable proportions &mdash; Franklin&rsquo;s metaphor
-        profile, in particular, almost overlays Shakespeare&rsquo;s.
+        Shakespeare never uses building metaphors for liberty,
+        government, or power. Not rarely &mdash; not <em>at all</em>.
+        Zero occurrences across his complete works. The
+        &ldquo;edifice of government&rdquo; that runs through
+        Hamilton&rsquo;s, Madison&rsquo;s, and Adams&rsquo;s political
+        prose is a Founders&rsquo; invention. Shakespeare gave them
+        the English; they invented the building.
       </p>
       <p>
-        But two metaphor categories stand out as Founder-invented
-        rather than Shakespeare-inherited:
+        The same is true for the family of plant metaphors that
+        organises American political thought: &ldquo;the seeds of
+        liberty,&rdquo; &ldquo;the roots of government,&rdquo; &ldquo;the
+        tree of the Constitution.&rdquo; Madison reaches for these
+        seven times more often than Shakespeare did. Shakespeare uses
+        plant metaphors elsewhere &mdash; for love, for ambition, for
+        rebellion &mdash; but not for political institutions.
       </p>
-      <ul className="my-6 text-base text-ink-soft space-y-2 pl-6 list-disc">
-        <li>
-          <strong>EDIFICE.</strong> Shakespeare uses{" "}
-          <em>foundation, pillar, edifice, cornerstone, structure,
-          bulwark, rampart</em> of <em>liberty</em>, <em>government</em>,
-          or <em>power</em> at a rate of <strong>0 per million</strong>{" "}
-          &mdash; zero, in his entire corpus. The Founders use them at
-          1.5 (Washington) to 10.6 (Hamilton) per million. The
-          &ldquo;foundation of liberty,&rdquo; the &ldquo;pillar of
-          government,&rdquo; the &ldquo;cornerstone of the
-          constitution&rdquo; &mdash; these are <em>Founder
-          inventions</em>, not Shakespearean inheritances.
-        </li>
-        <li>
-          <strong>PLANT.</strong> Shakespeare uses <em>seeds, roots,
-          branches, fruit, tree, sown</em> of political target-nouns at
-          4.6 per million. Madison uses them at <strong>33.6 per
-          million</strong> &mdash; seven times the Shakespearean rate.
-          &ldquo;Seeds of liberty,&rdquo; &ldquo;roots of government,&rdquo;
-          &ldquo;the tree of constitution&rdquo;: an Enlightenment-organic
-          political vocabulary that grew up alongside Founders&rsquo;
-          political thought, not within Shakespeare&rsquo;s.
-        </li>
-      </ul>
       <p>
-        The Founders inherited the <em>metaphorical habit</em> from a
-        literary tradition Shakespeare exemplified &mdash; the
-        propensity to think about abstract political institutions
-        through concrete source-domain words. They did not inherit the
-        specific conceptual mappings. The &ldquo;body politic /
-        edifice of government / pillar of liberty&rdquo; complex that
-        runs through Hamilton&rsquo;s, Madison&rsquo;s, and
-        Adams&rsquo;s political prose is, in this precise sense, a
-        Founders&rsquo; invention assembled inside an English they
-        partly inherited from Shakespeare.
+        On most other metaphor types, though, the Founders and
+        Shakespeare overlap closely. Both use the body as a metaphor
+        (the body of state, the heart of the people). Both use ship
+        metaphors (the ship of state, the anchor of liberty). Both
+        use fire metaphors (the flame of revolution, the spark of
+        independence). Franklin&rsquo;s metaphor profile, in
+        particular, almost overlays Shakespeare&rsquo;s.
+      </p>
+      <p>
+        So the inheritance is partial in a specific way. The Founders
+        inherited the <em>habit</em> of reaching for concrete images
+        when they wrote about abstract political life &mdash; the
+        Shakespearean habit of thinking through metaphor. They did
+        not inherit the specific Shakespearean metaphors for
+        institutions like &ldquo;liberty,&rdquo;
+        &ldquo;government,&rdquo; or &ldquo;the Constitution,&rdquo;
+        because Shakespeare had no concept of any of those things in
+        the modern American sense. They built their political
+        metaphors fresh, inside an English they partly inherited from
+        him.
       </p>
 
       <hr />
@@ -278,13 +272,11 @@ export default function HonourTestEssay() {
         What the inheritance actually was
       </h2>
       <p>
-        The findings of this essay come from one of the project&rsquo;s
-        eight case studies (CS3, differential collocate analysis, on
-        fourteen abstract-noun targets) and one of its conceptual
-        metaphor categorisations (CS6). The pattern is consistent
-        across all fourteen targets and all eight metaphor classes.
-        Shared vocabulary, divergent collocational worlds; shared
-        metaphorical habit, divergent specific metaphors.
+        The pattern in this essay holds across all fourteen abstract
+        nouns the project examined &mdash; the same word, two
+        different worlds &mdash; and across all eight categories of
+        metaphor for political life. The shape of the inheritance
+        comes through clearly:
       </p>
       <p>
         Taken together, the two findings make a precise claim about
@@ -319,7 +311,8 @@ export default function HonourTestEssay() {
         </li>
         <li>
           The specific conceptual metaphors that organise political
-          thought (EDIFICE, PLANT applied to government, liberty,
+          thought (building metaphors and plant metaphors for
+          government, liberty,
           constitution).
         </li>
         <li>

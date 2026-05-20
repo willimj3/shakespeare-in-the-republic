@@ -239,27 +239,26 @@ export default function TideInTheAffairs() {
       </div>
 
       <p>
-        There is a methodological lesson buried in this finding. A
-        catalogue of verbatim quotations &mdash; the kind built by the
-        passage-level pipeline behind this project &mdash; counts each of
-        Adams&rsquo;s five uses as one occurrence. The catalogue cannot
-        see that the line carries five different uses. It takes a human
-        reading, with biographical context attached to each date, to see
-        the second-order pattern: a single Shakespearean line, retained
-        verbatim across nearly four decades, acquiring different
-        rhetorical functions as the life around it changes. The corpus
-        will surface the trace. The historian still has to read it.
+        There&rsquo;s a useful lesson buried in this. A computer that
+        scans the corpus for verbatim Shakespeare matches will find
+        each of Adams&rsquo;s five uses individually and stop. It
+        will list five hits and move on. What it can&rsquo;t see is
+        the second-order pattern: that the same line, retained
+        verbatim across nearly four decades, is being applied to a
+        different situation each time. The data can locate the trace.
+        The historian still has to read it.
       </p>
 
       <p>
-        This is one of the cleaner illustrations of what we call, in the
-        companion essay, the <em>citational</em> mode of Shakespearean
-        influence: Adams keeps the words intact, signals them as quotation
-        when he chooses, and applies them to the situation at hand. The
-        same line in Franklin&rsquo;s corpus would have been absorbed into
-        the texture of his prose, used once or never, and left no trace
-        we could distinguish from his own writing. Adams&rsquo;s tide is
-        the legible half of Shakespearean inheritance. The illegible half
+        This is one of the cleaner illustrations of what we call, in
+        the companion essay, the <em>citational</em> mode of
+        Shakespearean influence: Adams keeps the words intact,
+        signals them as quotation when he chooses, and applies them
+        to the situation at hand. The same line in Franklin&rsquo;s
+        writing would have been absorbed into the texture of his
+        prose &mdash; used once or never, and indistinguishable from
+        his own voice. Adams&rsquo;s tide is the legible half of
+        Shakespearean inheritance. The illegible half
         is described in the next case study.
       </p>
 

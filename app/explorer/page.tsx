@@ -6,7 +6,7 @@ import { asset } from "@/lib/paths";
 export const metadata: Metadata = {
   title: "Explorer · Shakespeare in the Republic",
   description:
-    "The interactive layer. Browse the catalogue. Compare collocational worlds for fourteen politically loaded abstract nouns. Toggle methods on the six-method convergence.",
+    "Tools to explore the data yourself. See how a word lives in each corpus, browse every traceable Shakespeare reference, and compare the Founders against each other.",
 };
 
 type ExplorerView = {
@@ -23,16 +23,16 @@ const VIEWS: ExplorerView[] = [
     slug: "honour-test",
     title: "The Honour Test",
     blurb:
-      "Pick one of fourteen politically loaded abstract nouns. See its collocational world in the Founders' writing on one side and in Shakespeare's on the other. The vocabulary travelled; the conceptual content was rebuilt.",
+      "Pick a common word — honour, power, love, friend — and see what neighbours it keeps in each corpus. The same English word lives in two completely different worlds in Shakespeare and in the Founders.",
     status: "live",
     image: asset("/images/historical/first-folio-othello-p827.jpg"),
     imageAlt: "First Folio: Othello",
   },
   {
     slug: "catalogue",
-    title: "Catalogue",
+    title: "Reference Catalogue",
     blurb:
-      "Search and filter all 140 high- and medium-confidence findings across the six Founders. Filter by Founder, confidence, n-gram length, or Shakespeare play.",
+      "Search and filter every traceable Shakespeare reference across the six Founders. Filter by who, when, and what kind of reference — direct quotation, named mention, or distinctive phrase.",
     status: "soon",
     image: asset("/images/historical/adams-diary-manuscript.jpg"),
     imageAlt: "Adams diary manuscript",
@@ -41,25 +41,25 @@ const VIEWS: ExplorerView[] = [
     slug: "timeline",
     title: "Quotation Timeline",
     blurb:
-      "Every dated Shakespeare reference and direct quotation across the Founders' corpus, plotted on a single timeline from 1750 to 1820.",
+      "Every dated Shakespeare reference in the Founders' writings plotted on a single timeline, from the 1750s through the early 1800s. See when each Founder reached for Shakespeare.",
     status: "soon",
     image: asset("/images/historical/trumbull-declaration-1819.jpg"),
     imageAlt: "Trumbull, Declaration of Independence",
   },
   {
     slug: "metaphor",
-    title: "Metaphor Radar",
+    title: "Metaphor Comparison",
     blurb:
-      "Interactive radar across eight metaphor types (EDIFICE, BODY, SHIP, FIRE, PLANT, PATH, MOTION, CONTAINER). Toggle Founders on and off against Shakespeare's baseline.",
+      "Compare the metaphors each Founder uses for political life — buildings, plants, ships, fire — against Shakespeare's baseline. Some Founders sound metaphorically like Shakespeare; others don't.",
     status: "soon",
     image: asset("/images/historical/first-folio-julius-caesar-p728.jpg"),
     imageAlt: "First Folio: Julius Caesar",
   },
   {
     slug: "composite",
-    title: "Six-Method Convergence",
+    title: "The Ranking",
     blurb:
-      "The composite ranking and its underlying six-method matrix as a heatmap. Toggle methods on and off to see how each Founder's ranking shifts.",
+      "The overall ranking of how Shakespearean each Founder's writing is, broken down by what's going into the score. See which measures put Adams ahead, which put Franklin ahead, and which put everyone else far below.",
     status: "soon",
     image: asset("/images/historical/first-folio-macbeth-p742.jpg"),
     imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",
@@ -77,14 +77,15 @@ export default function ExplorerLanding() {
               The Interactive Layer
             </h1>
             <p className="font-display text-lg text-ink-soft italic mt-4 leading-snug">
-              Browse the catalogue. Compare collocational worlds. Toggle
-              methods. See the data behind the prose.
+              See the patterns yourself.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
-              Each view below presents one slice of the underlying data with
-              minimal commentary. The essays explain the findings; the case
-              studies dig into individual passages; the explorer lets you
-              see the patterns yourself.
+              These are tools for digging into the data behind the
+              essays. Each one lets you ask the same question in a
+              different way. The essays explain what the project
+              found; the case studies tell the stories behind
+              individual findings; the explorer is where you can poke
+              at the corpus yourself.
             </p>
           </div>
         </div>
