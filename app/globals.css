@@ -2,18 +2,149 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #FDF8F0;
-  --foreground: #1F3763;
-}
+/* ═══════════════════════════════════════════════════════════════════════
+   Shakespeare in the Republic — global styles
+   Parchment palette + EB Garamond body, IM Fell DW Pica for ornaments.
+   ═══════════════════════════════════════════════════════════════════════ */
 
-body {
-  color: var(--foreground);
-  background: var(--background);
+:root {
+  --color-parchment:        #FAF6EE;
+  --color-parchment-dark:   #F2EBDC;
+  --color-parchment-deep:   #E8DFC8;
+  --color-ink:              #1F1A14;
+  --color-ink-soft:         #3A2F23;
+  --color-ink-muted:        #6B5C49;
+  --color-folio:            #7B1E1E;
+  --color-folio-dark:       #5C1717;
+  --color-folio-light:      #A14545;
+  --color-irongall:         #1F3A5F;
+  --color-irongall-light:   #3A5A85;
+  --color-bronze:           #8E7B5A;
+  --color-bronze-light:     #B59E78;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    background: var(--color-parchment);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-garamond), Garamond, Georgia, serif;
+    font-size: 18px;
+    line-height: 30px;
+    background: var(--color-parchment);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headings carry display weight + slightly tighter line height */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-garamond), Garamond, Georgia, serif;
+    color: var(--color-ink);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: var(--color-folio);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 120ms ease;
+  }
+  a:hover { color: var(--color-folio-light); }
+  a:visited { color: var(--color-folio-dark); }
+
+  /* Selection in the binding-red so highlights feel like marginalia */
+  ::selection {
+    background: var(--color-folio);
+    color: var(--color-parchment);
+  }
+
+  hr {
+    border: 0;
+    height: 1px;
+    background: var(--color-bronze-light);
+    margin: 2.5rem auto;
+    max-width: 8rem;
+  }
+
+  blockquote {
+    border-left: 2px solid var(--color-folio);
+    padding-left: 1.25rem;
+    color: var(--color-ink-soft);
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+}
+
+@layer components {
+  /* Section marker — small-caps tag above a section heading */
+  .section-marker {
+    font-family: var(--font-garamond), serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 13px;
+    color: var(--color-ink-muted);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Drop cap at the first paragraph of a chapter */
+  .has-dropcap > p:first-of-type::first-letter {
+    font-family: var(--font-display), var(--font-garamond), serif;
+    font-size: 4.5rem;
+    line-height: 1;
+    float: left;
+    padding-right: 0.5rem;
+    padding-top: 0.25rem;
+    color: var(--color-folio);
+    font-weight: 600;
+  }
+
+  /* Pull-quote — set apart from body, in slightly larger display serif */
+  .pull-quote {
+    font-family: var(--font-display), var(--font-garamond), serif;
+    font-size: 28px;
+    line-height: 38px;
+    color: var(--color-ink-soft);
+    border-top: 1px solid var(--color-bronze-light);
+    border-bottom: 1px solid var(--color-bronze-light);
+    padding: 1.5rem 0;
+    margin: 2.5rem 0;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Ornamental divider — printer's fleuron substitute */
+  .ornament {
+    text-align: center;
+    color: var(--color-bronze);
+    font-family: var(--font-display), serif;
+    font-size: 24px;
+    line-height: 1;
+    margin: 2.5rem 0;
+    letter-spacing: 0.5em;
+  }
+  .ornament::before { content: "❦ ❦ ❦"; }
+
+  /* KWIC quotation cards */
+  .kwic {
+    background: var(--color-parchment-dark);
+    border-left: 2px solid var(--color-bronze);
+    padding: 0.875rem 1.125rem;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--color-ink-soft);
+    border-radius: 2px;
+  }
+  .kwic strong, .kwic em.match {
+    color: var(--color-folio);
+    font-weight: 600;
+    font-style: normal;
   }
 }
