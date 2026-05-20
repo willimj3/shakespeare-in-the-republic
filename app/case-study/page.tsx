@@ -89,14 +89,14 @@ const studies: CaseStudy[] = [
   },
   {
     slug: "lady-macbeth-and-herod",
-    title: "Lady Macbeth and Herod, 1782",
+    title: "Lady Macbeth and Herod",
     hook:
-      "Adams uses Lady Macbeth's 'I have given suck' to describe Herod's massacre of the innocents. The application is exact.",
+      "Adams reaches for the same Lady Macbeth speech four times across fifty-three years — pairing it with biblical Herod in 1782 to figure England's war and, in 1818, making it the figure of revolutionary consciousness itself.",
     founder: "John Adams",
-    date: "1782",
-    heroImage: asset("/images/historical/first-folio-macbeth-p742.jpg"),
-    imageAlt: "First Folio (1623): Macbeth, near the Tomorrow soliloquy.",
-    status: "soon",
+    date: "1765 – 1818",
+    heroImage: asset("/images/historical/first-folio-macbeth-p738.jpg"),
+    imageAlt: "First Folio (1623): Macbeth.",
+    status: "live",
   },
   {
     slug: "cry-havoc-1822",
