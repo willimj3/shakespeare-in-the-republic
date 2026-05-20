@@ -6,7 +6,7 @@ type ExplorerView = {
   slug: string;
   title: string;
   blurb: string;
-  status: "live" | "soon" | "legacy";
+  status: "live" | "soon";
   image?: string;
   imageAlt?: string;
 };
@@ -56,15 +56,6 @@ const VIEWS: ExplorerView[] = [
     status: "soon",
     image: asset("/images/historical/first-folio-macbeth-p742.jpg"),
     imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",
-  },
-  {
-    slug: "federalist-archive",
-    title: "Federalist Archive",
-    blurb:
-      "The earlier Federalist-only prototype: 47 Shakespeare matches across Hamilton's, Madison's, and Jay's contributions. Kept for reference; superseded by the full six-Founder analysis.",
-    status: "legacy",
-    image: asset("/images/historical/hamilton-trumbull-1806.jpg"),
-    imageAlt: "Alexander Hamilton (Trumbull)",
   },
 ];
 
@@ -139,14 +130,7 @@ export default function ExplorerLanding() {
                   </div>
                 )}
                 <div className="p-5 flex-1 flex flex-col">
-                  <p
-                    className={[
-                      "section-marker",
-                      v.status === "legacy" ? "text-bronze" : "",
-                    ].join(" ")}
-                  >
-                    {v.status === "legacy" ? "Legacy" : "Open"}
-                  </p>
+                  <p className="section-marker">Open</p>
                   <h2 className="font-display text-xl text-ink mt-1 group-hover:text-folio transition-colors">
                     {v.title}
                   </h2>
