@@ -34,14 +34,14 @@ const studies: CaseStudy[] = [
     status: "soon",
   },
   {
-    slug: "band-of-brothers",
+    slug: "band-of-brothers-valley-forge",
     title: "Band of Brothers at Valley Forge",
     hook:
-      "Washington's General Orders, 6 April 1778, paraphrase the St. Crispin's Day speech to an army he is keeping from dissolving.",
+      "Washington's General Orders, 6 April 1778, paraphrase the St. Crispin's Day speech. The phrase recurs four more times across twenty years.",
     founder: "George Washington",
-    date: "6 April 1778",
+    date: "1778 – 1798",
     heroImage: asset("/images/historical/washington-orderly-book-001.gif"),
-    status: "soon",
+    status: "live",
   },
   {
     slug: "tis-franklins-signature",

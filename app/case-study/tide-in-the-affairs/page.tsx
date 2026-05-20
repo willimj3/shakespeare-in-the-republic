@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import Kwic from "@/components/Kwic";
-import TideTimeline from "@/components/charts/TideTimeline";
+import EventTimeline, {
+  type TimelineEvent,
+} from "@/components/charts/EventTimeline";
 import { asset } from "@/lib/paths";
+
+const TIDE_EVENTS: TimelineEvent[] = [
+  { year: 1776, context: "the founding moment",        recipient: "William Heath" },
+  { year: 1781, context: "diplomatic post-war",        recipient: "C. W. F. Dumas" },
+  { year: 1809, context: "memoir for the Boston Patriot", recipient: "(quoting himself, 28 years later)" },
+  { year: 1812, context: "personal melancholy",        recipient: "William Stephens Smith" },
+  { year: 1814, context: "philosophical reflection",   recipient: "Richard Rush" },
+];
 
 export const metadata: Metadata = {
   title:
@@ -197,7 +207,11 @@ export default function TideInTheAffairs() {
         Thirty-eight years on one line
       </h2>
 
-      <TideTimeline />
+      <EventTimeline
+        events={TIDE_EVENTS}
+        ariaLabel="Timeline of John Adams's five 'tide in the affairs of men' quotations between 1776 and 1814."
+        caption="Adams quotes Brutus's tide speech in five distinct correspondences across thirty-eight years — from the Revolutionary spring of 1776 to a philosophical letter to Richard Rush in 1814."
+      />
 
       <p>
         The five uses sit at five distinct phases of Adams&rsquo;s public

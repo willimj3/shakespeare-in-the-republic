@@ -1,61 +1,46 @@
 /**
- * Compact, SVG-rendered horizontal timeline of Adams's five "tide in the
- * affairs" quotations, 1776–1814. Server-rendered (no Recharts dependency
- * needed for so simple a chart). Each event is a circle on the line with
- * a year label.
+ * Compact, SVG-rendered horizontal timeline of one phrase's recurring
+ * uses across a Founder's life. Server-rendered (no Recharts), tiny.
+ * Reused by case studies: tide-in-the-affairs (Adams 1776–1814),
+ * band-of-brothers-valley-forge (Washington 1778–1798), and any future
+ * "one line, multiple decades" finding.
  */
-export type TideEvent = {
+export type TimelineEvent = {
   year: number;
-  context: string;        // short, one-phrase description
-  recipient: string;      // who Adams was writing to
+  context: string;        // one short phrase describing what was happening
+  recipient: string;      // who the Founder was writing to
 };
 
-const DEFAULT_EVENTS: TideEvent[] = [
-  {
-    year: 1776,
-    context: "the founding moment",
-    recipient: "William Heath",
-  },
-  {
-    year: 1781,
-    context: "diplomatic post-war",
-    recipient: "C. W. F. Dumas",
-  },
-  {
-    year: 1809,
-    context: "memoir for the Boston Patriot",
-    recipient: "(quoting himself, 28 years later)",
-  },
-  {
-    year: 1812,
-    context: "personal melancholy",
-    recipient: "William Stephens Smith",
-  },
-  {
-    year: 1814,
-    context: "philosophical reflection",
-    recipient: "Richard Rush",
-  },
-];
-
-const YEAR_MIN = 1770;
-const YEAR_MAX = 1820;
-const TICK_YEARS = [1770, 1780, 1790, 1800, 1810, 1820];
-
-export default function TideTimeline({
-  events = DEFAULT_EVENTS,
-  height = 200,
-}: {
-  events?: TideEvent[];
+export type EventTimelineProps = {
+  events: TimelineEvent[];
+  yearMin?: number;
+  yearMax?: number;
+  caption?: string;
   height?: number;
-}) {
+  ariaLabel?: string;
+};
+
+export default function EventTimeline({
+  events,
+  yearMin = 1770,
+  yearMax = 1820,
+  caption,
+  height = 200,
+  ariaLabel,
+}: EventTimelineProps) {
   const w = 720;
   const padX = 60;
   const padY = 40;
   const axisY = padY + 80;
 
+  // Decade tick marks falling inside [yearMin, yearMax]
+  const decadeTicks: number[] = [];
+  for (let y = Math.ceil(yearMin / 10) * 10; y <= yearMax; y += 10) {
+    decadeTicks.push(y);
+  }
+
   function x(year: number): number {
-    const t = (year - YEAR_MIN) / (YEAR_MAX - YEAR_MIN);
+    const t = (year - yearMin) / (yearMax - yearMin);
     return padX + t * (w - 2 * padX);
   }
 
@@ -66,7 +51,9 @@ export default function TideTimeline({
           viewBox={`0 0 ${w} ${height}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
-          aria-label="Timeline of John Adams's five 'tide in the affairs of men' quotations between 1776 and 1814."
+          aria-label={
+            ariaLabel ?? "Timeline of recurring quotations across a Founder's life."
+          }
           className="w-full h-auto"
           style={{ fontFamily: "var(--font-garamond), serif" }}
         >
@@ -79,8 +66,8 @@ export default function TideTimeline({
             stroke="#8E7B5A"
             strokeWidth={1}
           />
-          {/* ticks + decade labels */}
-          {TICK_YEARS.map((y) => (
+          {/* decade ticks */}
+          {decadeTicks.map((y) => (
             <g key={y}>
               <line
                 x1={x(y)}
@@ -102,8 +89,8 @@ export default function TideTimeline({
             </g>
           ))}
           {/* events */}
-          {events.map((e) => (
-            <g key={e.year}>
+          {events.map((e, idx) => (
+            <g key={`${e.year}-${idx}`}>
               <line
                 x1={x(e.year)}
                 y1={axisY}
@@ -152,12 +139,11 @@ export default function TideTimeline({
           ))}
         </svg>
       </div>
-      <figcaption className="mt-3 text-sm text-ink-muted italic text-center leading-snug max-w-prose mx-auto">
-        Adams quotes Brutus&rsquo;s tide speech in five distinct
-        correspondences across thirty-eight years &mdash; from the
-        Revolutionary spring of 1776 to a philosophical letter to
-        Richard Rush in 1814.
-      </figcaption>
+      {caption ? (
+        <figcaption className="mt-3 text-sm text-ink-muted italic text-center leading-snug max-w-prose mx-auto">
+          {caption}
+        </figcaption>
+      ) : null}
     </figure>
   );
 }
