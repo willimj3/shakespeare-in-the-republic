@@ -3,6 +3,7 @@ import EssayLayout from "@/components/EssayLayout";
 import Kwic, { Stat } from "@/components/Kwic";
 import { PortraitDuet } from "@/components/Portrait";
 import CompositeRanking from "@/components/charts/CompositeRanking";
+import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "Two Modes of Shakespearean Influence · Shakespeare in the Republic",
@@ -26,12 +27,12 @@ export default function TwoModesEssay() {
     >
       <PortraitDuet
         left={{
-          src: "/images/historical/adams-trumbull-c1792.jpg",
+          src: asset("/images/historical/adams-trumbull-c1792.jpg"),
           alt: "John Adams, by John Trumbull, c. 1792",
           caption: "John Adams (Trumbull, c. 1792)",
         }}
         right={{
-          src: "/images/historical/franklin-duplessis-1785.jpg",
+          src: asset("/images/historical/franklin-duplessis-1785.jpg"),
           alt: "Benjamin Franklin, by Joseph Duplessis, c. 1785",
           caption: "Benjamin Franklin (Duplessis, c. 1785)",
         }}

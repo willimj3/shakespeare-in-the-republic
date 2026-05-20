@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { asset } from "@/lib/paths";
 
 type CaseStudy = {
   slug: string;
@@ -19,7 +20,7 @@ const studies: CaseStudy[] = [
       "Adams quotes Brutus's tide speech five times across thirty-eight years — in five different moods.",
     founder: "John Adams",
     date: "1776 – 1814",
-    heroImage: "/images/historical/first-folio-julius-caesar-cropped.jpg",
+    heroImage: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
     status: "live",
   },
   {
@@ -29,7 +30,7 @@ const studies: CaseStudy[] = [
       "Adams's signature epistolary frame, deployed across thirty-two years of letters from age twenty to age fifty-three.",
     founder: "John Adams",
     date: "1756 – 1788",
-    heroImage: "/images/historical/adams-diary-manuscript.jpg",
+    heroImage: asset("/images/historical/adams-diary-manuscript.jpg"),
     status: "soon",
   },
   {
@@ -39,7 +40,7 @@ const studies: CaseStudy[] = [
       "Washington's General Orders, 6 April 1778, paraphrase the St. Crispin's Day speech to an army he is keeping from dissolving.",
     founder: "George Washington",
     date: "6 April 1778",
-    heroImage: "/images/historical/washington-orderly-book-001.gif",
+    heroImage: asset("/images/historical/washington-orderly-book-001.gif"),
     status: "soon",
   },
   {
@@ -49,7 +50,7 @@ const studies: CaseStudy[] = [
       "Franklin uses 'tis at 375 per million words — twice the next Founder's rate — across six decades, beginning in his Silence Dogood essays in 1722.",
     founder: "Benjamin Franklin",
     date: "1722 – 1790",
-    heroImage: "/images/historical/franklin-duplessis-1785.jpg",
+    heroImage: asset("/images/historical/franklin-duplessis-1785.jpg"),
     status: "soon",
   },
   {
@@ -59,7 +60,7 @@ const studies: CaseStudy[] = [
       "Shakespeare's honour can be pawned. The Founders' honour is a letter-closing formality. The vocabulary travelled; the concept did not.",
     founder: "All six Founders",
     date: "1590 – 1820",
-    heroImage: "/images/historical/first-folio-othello-p827.jpg",
+    heroImage: asset("/images/historical/first-folio-othello-p827.jpg"),
     status: "soon",
   },
   {
@@ -69,7 +70,7 @@ const studies: CaseStudy[] = [
       "Zero verbatim Shakespeare. Zero named references. Zero shared HIGH-bin stylistic types under CFA. The absence is the finding.",
     founder: "Alexander Hamilton",
     date: "1770s – 1804",
-    heroImage: "/images/historical/hamilton-trumbull-1806.jpg",
+    heroImage: asset("/images/historical/hamilton-trumbull-1806.jpg"),
     status: "soon",
   },
   {
@@ -79,7 +80,7 @@ const studies: CaseStudy[] = [
       "Adams uses Lady Macbeth's 'I have given suck' to describe Herod's massacre of the innocents. The application is exact.",
     founder: "John Adams",
     date: "1782",
-    heroImage: "/images/historical/first-folio-macbeth-p742.jpg",
+    heroImage: asset("/images/historical/first-folio-macbeth-p742.jpg"),
     status: "soon",
   },
   {
@@ -89,7 +90,7 @@ const studies: CaseStudy[] = [
       "Eight months before his death, Adams applies Antony's 'Cry havoc, and let slip the dogs of war' to Franklin's political theology.",
     founder: "John Adams",
     date: "late 1822",
-    heroImage: "/images/historical/adams-trumbull-c1792.jpg",
+    heroImage: asset("/images/historical/adams-trumbull-c1792.jpg"),
     status: "soon",
   },
 ];

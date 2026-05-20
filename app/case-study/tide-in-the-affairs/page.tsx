@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CaseStudyLayout from "@/components/CaseStudyLayout";
 import Kwic from "@/components/Kwic";
 import TideTimeline from "@/components/charts/TideTimeline";
+import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
@@ -16,7 +17,7 @@ export default function TideInTheAffairs() {
       title="There Is a Tide"
       subtitle="John Adams quotes Brutus&rsquo;s &lsquo;tide in the affairs of men&rsquo; five times across thirty-eight years &mdash; in five different moods."
       anchorFinding="Of the fifty-three verbatim Shakespeare quotations Adams produces, this one line — from Brutus to Cassius in *Julius Caesar* 4.3 — recurs more than any other. It appears in his Revolutionary correspondence of 1776, in his diplomatic letters of 1781, in his published memoir of 1809, in a private letter of 1812, and in a philosophical reflection to Richard Rush in 1814. The same words mean something different each time."
-      heroImage="/images/historical/first-folio-julius-caesar-cropped.jpg"
+      heroImage={asset("/images/historical/first-folio-julius-caesar-cropped.jpg")}
       heroAlt="First Folio: The Tragedy of Julius Caesar (Bodleian First Folio, 1623)"
       heroCaption="The Tragedy of Julius Caesar, First Folio (1623). Bodleian Library, Oxford."
       byline="From the research project Shakespeare in the Republic"

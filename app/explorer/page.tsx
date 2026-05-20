@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { asset } from "@/lib/paths";
 
 type ExplorerView = {
   slug: string;
@@ -17,7 +18,7 @@ const VIEWS: ExplorerView[] = [
     blurb:
       "Pick one of fourteen politically loaded abstract nouns. See its collocational world in the Founders' writing on one side and in Shakespeare's on the other. The vocabulary travelled; the conceptual content was rebuilt.",
     status: "live",
-    image: "/images/historical/first-folio-othello-p827.jpg",
+    image: asset("/images/historical/first-folio-othello-p827.jpg"),
     imageAlt: "First Folio: Othello",
   },
   {
@@ -26,7 +27,7 @@ const VIEWS: ExplorerView[] = [
     blurb:
       "Search and filter all 140 high- and medium-confidence findings across the six Founders. Filter by Founder, confidence, n-gram length, or Shakespeare play.",
     status: "soon",
-    image: "/images/historical/adams-diary-manuscript.jpg",
+    image: asset("/images/historical/adams-diary-manuscript.jpg"),
     imageAlt: "Adams diary manuscript",
   },
   {
@@ -35,7 +36,7 @@ const VIEWS: ExplorerView[] = [
     blurb:
       "Every dated Shakespeare reference and direct quotation across the Founders' corpus, plotted on a single timeline from 1750 to 1820.",
     status: "soon",
-    image: "/images/historical/trumbull-declaration-1819.jpg",
+    image: asset("/images/historical/trumbull-declaration-1819.jpg"),
     imageAlt: "Trumbull, Declaration of Independence",
   },
   {
@@ -44,7 +45,7 @@ const VIEWS: ExplorerView[] = [
     blurb:
       "Interactive radar across eight metaphor types (EDIFICE, BODY, SHIP, FIRE, PLANT, PATH, MOTION, CONTAINER). Toggle Founders on and off against Shakespeare's baseline.",
     status: "soon",
-    image: "/images/historical/first-folio-julius-caesar-p728.jpg",
+    image: asset("/images/historical/first-folio-julius-caesar-p728.jpg"),
     imageAlt: "First Folio: Julius Caesar",
   },
   {
@@ -53,7 +54,7 @@ const VIEWS: ExplorerView[] = [
     blurb:
       "The composite ranking and its underlying six-method matrix as a heatmap. Toggle methods on and off to see how each Founder's ranking shifts.",
     status: "soon",
-    image: "/images/historical/first-folio-macbeth-p742.jpg",
+    image: asset("/images/historical/first-folio-macbeth-p742.jpg"),
     imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",
   },
   {
@@ -62,7 +63,7 @@ const VIEWS: ExplorerView[] = [
     blurb:
       "The earlier Federalist-only prototype: 47 Shakespeare matches across Hamilton's, Madison's, and Jay's contributions. Kept for reference; superseded by the full six-Founder analysis.",
     status: "legacy",
-    image: "/images/historical/hamilton-trumbull-1806.jpg",
+    image: asset("/images/historical/hamilton-trumbull-1806.jpg"),
     imageAlt: "Alexander Hamilton (Trumbull)",
   },
 ];

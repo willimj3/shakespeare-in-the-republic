@@ -3,6 +3,7 @@ import Image from "next/image";
 import catalogue from "@/data/catalogue.json";
 import composite from "@/data/composite.json";
 import founders from "@/data/founders.json";
+import { asset } from "@/lib/paths";
 
 type CatalogueShape = typeof catalogue;
 type CompositeShape = typeof composite;
@@ -65,7 +66,7 @@ function Hero() {
           <div className="hidden lg:block">
             <figure className="relative">
               <Image
-                src="/images/historical/shakespeare-first-folio-title-page-1623.jpg"
+                src={asset("/images/historical/shakespeare-first-folio-title-page-1623.jpg")}
                 alt="Title page of Shakespeare's First Folio (1623)"
                 width={360}
                 height={480}
@@ -95,7 +96,7 @@ function ThreeTeasers() {
       tagline: "The commentary",
       blurb:
         "Long-form prose adapted from the research paper. The influence question, the methods, the two modes of Shakespearean influence, the honour test, and the Hamilton silence.",
-      image: "/images/historical/adams-diary-manuscript.jpg",
+      image: asset("/images/historical/adams-diary-manuscript.jpg"),
       imageAlt: "John Adams diary manuscript page",
     },
     {
@@ -104,7 +105,7 @@ function ThreeTeasers() {
       tagline: "Per-finding deep dives",
       blurb:
         "One striking finding per page. Adams quoting Macbeth in 1758. Washington paraphrasing Henry V at Valley Forge. The single line from Julius Caesar that Adams returned to across forty years.",
-      image: "/images/historical/first-folio-julius-caesar-cropped.jpg",
+      image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
       imageAlt: "First Folio: Tragedy of Julius Caesar",
     },
     {
@@ -113,7 +114,7 @@ function ThreeTeasers() {
       tagline: "The interactive layer",
       blurb:
         "Search the catalogue. Compare the collocational worlds of any politically loaded abstract noun across the two corpora. Browse the six-method convergence.",
-      image: "/images/historical/first-folio-macbeth-p742.jpg",
+      image: asset("/images/historical/first-folio-macbeth-p742.jpg"),
       imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",
     },
   ];
@@ -275,7 +276,7 @@ function FounderRoster() {
             >
               <div className="relative w-32 flex-shrink-0 bg-parchment-deep">
                 <Image
-                  src={f.portrait}
+                  src={asset(f.portrait)}
                   alt={f.name}
                   fill
                   className="object-cover object-top"
