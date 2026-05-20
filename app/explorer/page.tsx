@@ -41,8 +41,8 @@ const VIEWS: ExplorerView[] = [
     slug: "timeline",
     title: "Quotation Timeline",
     blurb:
-      "Every dated Shakespeare reference in the Founders' writings plotted on a single timeline, from the 1750s through the early 1800s. See when each Founder reached for Shakespeare.",
-    status: "soon",
+      "Every dated Shakespeare reference in the Founders' writings plotted on a single timeline, from the 1750s through the early 1800s. See when each Founder reached for Shakespeare — and notice the empty rows.",
+    status: "live",
     image: asset("/images/historical/trumbull-declaration-1819.jpg"),
     imageAlt: "Trumbull, Declaration of Independence",
   },
