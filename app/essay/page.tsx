@@ -59,10 +59,10 @@ const chapters: ChapterEntry[] = [
   {
     num: 6,
     slug: "convergence",
-    title: "The Six-Method Convergence",
+    title: "Eight Ways of Looking",
     summary:
-      "Six independent methodologies, applied to six aspects of the corpus, agree on the same per-Founder ranking.",
-    status: "soon",
+      "Why we believe the findings. Eight independent ways of measuring Shakespearean inheritance mostly agree on the per-Founder ranking — and the one place they disagree is the disagreement that produces the two-modes story.",
+    status: "live",
   },
   {
     num: 7,
