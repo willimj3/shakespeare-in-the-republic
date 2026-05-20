@@ -40,44 +40,71 @@ export default function HonourTestExplorerPage() {
       {/* ── Interactive client island: target selector + columns + reading ── */}
       <HonourTestInteractive />
 
-      {/* ── Methods + closing (server-rendered) ── */}
+      {/* ── Closing + collapsible methods (server-rendered) ── */}
       <section>
         <div className="max-w-outer mx-auto px-6 py-14">
           <div className="max-w-prose mx-auto">
-            <p className="section-marker">Methods</p>
+            <p className="section-marker">What to read next</p>
             <h2 className="font-display text-2xl text-ink mt-1 mb-4">
-              How these collocates are chosen
+              The argument behind the pattern
             </h2>
             <p className="text-base text-ink-soft leading-relaxed">
-              For each target noun, every word occurring within five tokens
-              of the target in either corpus becomes a candidate collocate.
-              Each candidate is scored with a G log-likelihood test against
-              its frequency in the comparison corpus (Stefanowitsch 2020,
-              §7.1.3.3). The lists above show the top-ranked content words
-              that survive Bonferroni correction, with function words,
-              proper names, and tokenisation artefacts removed. Bars are
-              scaled to the maximum G within each side; numbers are the raw
-              G values.
-            </p>
-            <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              The full per-target tables (including the rows we exclude
-              here) are in{" "}
-              <code className="text-folio">tables/cs3_*.csv</code> in the
-              research repository.
-            </p>
-            <div className="ornament" />
-            <p className="text-sm text-ink-muted italic text-center">
-              The substantive argument for what this pattern means is in
-              the{" "}
-              <Link href="/essay/honour-test">Honour Test essay</Link>
-              ; for the companion register-level finding (Adams
-              citational, Franklin absorbed), see{" "}
+              The contrast you can see by clicking through the targets
+              above is the project&rsquo;s central substantive finding.
+              The full argument &mdash; what it means that shared
+              vocabulary carries divergent collocational worlds &mdash;
+              is in the{" "}
+              <Link href="/essay/honour-test">Honour Test essay</Link>.
+              For the companion finding (Adams cites Shakespeare
+              explicitly; Franklin sounds like Shakespeare without
+              citing him), see{" "}
               <Link href="/essay/two-modes">
                 Two Modes of Shakespearean Influence
               </Link>
-              . Per-finding deep dives live in the{" "}
+              . Per-passage deep dives live in the{" "}
               <Link href="/case-study">case studies</Link>.
             </p>
+
+            <details className="mt-10 group">
+              <summary className="cursor-pointer text-base text-ink-soft font-display italic flex items-baseline gap-2 hover:text-folio transition-colors">
+                <span className="text-folio">▸</span>
+                <span className="group-open:hidden">
+                  How we picked these words &mdash; for the methodologically curious
+                </span>
+                <span className="hidden group-open:inline">
+                  How we picked these words
+                </span>
+              </summary>
+              <div className="mt-4 pl-6 border-l border-bronze-light/40 text-base text-ink-soft leading-relaxed space-y-3">
+                <p>
+                  For each target noun, we count every word that occurs
+                  within five words of the target in either corpus. Each
+                  candidate is then scored with a standard
+                  word-distinctiveness test (G log-likelihood, the
+                  workhorse statistic for keyword and collocate
+                  comparison in corpus linguistics) against its
+                  frequency in the other corpus.
+                </p>
+                <p>
+                  The lists above show the top words on each side after
+                  filtering out function words, proper names, and
+                  tokenisation fragments, and after applying a
+                  multiple-comparisons correction (Bonferroni) so that
+                  what survives is what survives at conventional
+                  significance levels. Bars are scaled to the maximum
+                  G-score within each side; the number beside each bar
+                  is the raw G-score.
+                </p>
+                <p>
+                  The full per-target tables, including everything we
+                  filter out here, are in{" "}
+                  <code className="text-folio">tables/cs3_*.csv</code>{" "}
+                  in the research repository &mdash; or read the section
+                  on differential collocate analysis in the{" "}
+                  <Link href="/papers">full paper</Link>.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </section>

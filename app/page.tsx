@@ -47,24 +47,25 @@ function Hero() {
               Republic
             </h1>
             <p className="font-display text-xl text-ink-soft italic mt-4">
-              A study of Shakespeare&rsquo;s linguistic influence on six
-              American Founders, 1590&ndash;1820.
+              Did the Founders write the way Shakespeare did? The corpus
+              has a surprising answer.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
-              Six Founders &mdash; Adams, Franklin, Hamilton, Jefferson,
-              Madison, and Washington &mdash; left behind 68,807 documents and
-              24.6 million words. Shakespeare&rsquo;s complete works comprise
-              38 documents and 891,092. Two centuries after Shakespeare died
-              and an ocean away, did anything of his English actually persist
-              in the Founders&rsquo; writing? And if so, in whose?
+              Adams, Franklin, Hamilton, Jefferson, Madison, and
+              Washington left behind almost twenty-five million words.
+              Shakespeare&rsquo;s complete works are just under a
+              million. Two centuries after Shakespeare died and an ocean
+              away, did anything of his English actually persist in the
+              Founders&rsquo; writing? And if so, whose &mdash; and how?
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              This site is the public companion to a research project that
-              asks the influence question carefully. Eight corpus-linguistic
-              case studies, a passage-level catalogue of every verifiable
-              quotation, and an interactive explorer over the underlying
-              data &mdash; with the prose, the figures, and the methods all
-              kept in one place.
+              This site lets you see the answer in their own words.
+              Read the seven scenes the data reconstructs, browse a
+              catalogue of every traceable Shakespeare reference, or
+              compare how a given English word lives in the two corpora.
+              The full scholarly paper is available to{" "}
+              <Link href="/papers">download in plain English and in
+              technical form</Link>.
             </p>
             <p className="mt-6 text-sm text-ink-muted">
               Mark J. Williams &middot; Vanderbilt Law School &middot; 2026
@@ -194,25 +195,23 @@ function HeadlineFindings() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-wide mx-auto">
           <StatTile
             value={totals.direct_high.toString()}
-            label="Verbatim Shakespeare quotations"
-            sublabel="High-confidence direct quotes across all six Founders"
+            label="Verbatim quotations of Shakespeare"
+            sublabel={`Every one of them ${comp.founders[1].founder_name === "John Adams" ? "John Adams's" : "Adams's"} — the other five Founders quote zero Shakespeare lines verbatim`}
           />
           <StatTile
             value={totals.named_high.toString()}
-            label="Named references to Shakespeare"
-            sublabel="By name, across four Founders"
+            label="Times a Founder names Shakespeare"
+            sublabel="Adams 42, Jefferson 23, Franklin 2, Washington 1. Hamilton and Madison: 0."
           />
           <StatTile
-            value={comp.founders[0].composite.toFixed(3)}
-            label="Top composite score"
-            sublabel={`${comp.founders[0].founder_name} (${
-              comp.founders[1].founder_name
-            } 2nd at ${comp.founders[1].composite.toFixed(3)})`}
+            value="2"
+            label="Modes of inheritance"
+            sublabel={`Adams's mode (citing the text) and ${comp.founders[0].founder_name === "Benjamin Franklin" ? "Franklin's mode" : "Franklin's"} (sounding the part), each invisible to the other's methods`}
           />
           <StatTile
             value={topPlay.n.toString()}
-            label="Quotations from one play"
-            sublabel={`${topPlay.play} — the most-quoted Shakespeare play in the Founders' corpus`}
+            label={`Quotations from ${topPlay.play.replace("Tragedy Of ", "").replace("The History Of ", "")}`}
+            sublabel="The single most-quoted Shakespeare play in the Founders' writing — almost all of it Adams reading the play in the 1758 diary"
           />
         </div>
 

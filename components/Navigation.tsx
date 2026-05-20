@@ -8,6 +8,7 @@ const links = [
   { href: "/essay", label: "Essays" },
   { href: "/case-study", label: "Case Studies" },
   { href: "/explorer", label: "Explorer" },
+  { href: "/papers", label: "Papers" },
 ];
 
 export default function Navigation() {

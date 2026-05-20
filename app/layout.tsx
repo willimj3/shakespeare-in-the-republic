@@ -89,9 +89,8 @@ function SiteFooter() {
                 Site repository (GitHub)
               </a>
             </li>
-            <li className="text-ink-muted">
-              Scholarly paper, narrative, and results summary travel with the
-              research repository.
+            <li>
+              <Link href="/papers">Read the full paper &amp; downloads</Link>
             </li>
           </ul>
         </div>
