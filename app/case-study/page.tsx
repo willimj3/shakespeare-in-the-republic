@@ -36,12 +36,12 @@ const studies: CaseStudy[] = [
     slug: "methinks-i-hear-you",
     title: "Methinks I Hear You",
     hook:
-      "Adams's signature epistolary frame, deployed across thirty-two years of letters from age twenty to age fifty-three.",
+      "Adams uses the same small Shakespearean construction four times across thirty-two years — at twenty in his diary, in 1775 ventriloquising Lord North, in 1776 putting words in James Warren's mouth, and again at fifty-three.",
     founder: "John Adams",
     date: "1756 – 1788",
     heroImage: asset("/images/historical/adams-diary-manuscript.jpg"),
     imageAlt: "A page of John Adams's diary, in his own hand.",
-    status: "soon",
+    status: "live",
   },
   {
     slug: "band-of-brothers-valley-forge",
