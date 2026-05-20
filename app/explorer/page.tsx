@@ -59,8 +59,8 @@ const VIEWS: ExplorerView[] = [
     slug: "composite",
     title: "The Ranking",
     blurb:
-      "The overall ranking of how Shakespearean each Founder's writing is, broken down by what's going into the score. See which measures put Adams ahead, which put Franklin ahead, and which put everyone else far below.",
-    status: "soon",
+      "Eight ways of measuring Shakespearean influence, side by side. Click any method to re-sort the matrix; click any Founder to see their profile. The single place the methods disagree is the whole argument.",
+    status: "live",
     image: asset("/images/historical/first-folio-macbeth-p742.jpg"),
     imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",
   },
