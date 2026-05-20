@@ -53,8 +53,8 @@ const chapters: ChapterEntry[] = [
     slug: "honour-test",
     title: "The Honour Test",
     summary:
-      "When the same vocabulary item appears in both corpora, do its collocational neighbours coincide? The answer is consistently no.",
-    status: "soon",
+      "When the same vocabulary item appears in both corpora, do its collocational neighbours coincide? The answer is consistently no. The Founders inherited Shakespeare's vocabulary and rebuilt its conceptual content.",
+    status: "live",
   },
   {
     num: 6,

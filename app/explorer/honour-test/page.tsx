@@ -67,13 +67,16 @@ export default function HonourTestExplorerPage() {
             </p>
             <div className="ornament" />
             <p className="text-sm text-ink-muted italic text-center">
-              The substantive argument for what this pattern means is in{" "}
+              The substantive argument for what this pattern means is in
+              the{" "}
+              <Link href="/essay/honour-test">Honour Test essay</Link>
+              ; for the companion register-level finding (Adams
+              citational, Franklin absorbed), see{" "}
               <Link href="/essay/two-modes">
                 Two Modes of Shakespearean Influence
               </Link>
-              ; the per-finding deep dives live in the{" "}
-              <Link href="/case-study">case studies</Link>. A dedicated
-              Honour Test essay is coming in the next build.
+              . Per-finding deep dives live in the{" "}
+              <Link href="/case-study">case studies</Link>.
             </p>
           </div>
         </div>
