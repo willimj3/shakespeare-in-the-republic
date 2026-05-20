@@ -74,7 +74,7 @@ const studies: CaseStudy[] = [
     date: "1590 – 1820",
     heroImage: asset("/images/historical/first-folio-othello-p827.jpg"),
     imageAlt: "First Folio (1623): Othello, page 827.",
-    status: "soon",
+    status: "live",
   },
   {
     slug: "hamilton-silence",
