@@ -80,12 +80,12 @@ const studies: CaseStudy[] = [
     slug: "hamilton-silence",
     title: "The Hamilton Silence",
     hook:
-      "Zero verbatim Shakespeare. Zero named references. Zero shared HIGH-bin stylistic types under CFA. The absence is the finding.",
+      "2.35 million words across 35 years. Zero named Shakespeare references at HIGH/MEDIUM tier. The one exception is a paraphrased Macbeth slur against Jefferson in 1801.",
     founder: "Alexander Hamilton",
-    date: "1770s – 1804",
+    date: "1769 – 1804",
     heroImage: asset("/images/historical/hamilton-trumbull-1806.jpg"),
     imageAlt: "Alexander Hamilton, painted by John Trumbull (1806).",
-    status: "soon",
+    status: "live",
   },
   {
     slug: "lady-macbeth-and-herod",
