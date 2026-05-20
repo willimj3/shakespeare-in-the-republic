@@ -37,8 +37,8 @@ const chapters: ChapterEntry[] = [
     slug: "methods",
     title: "How We Asked the Question",
     summary:
-      "The Stefanowitsch (2020) toolkit applied to a 25-million-word corpus. Eight case studies. Why effect size matters more than significance at this scale.",
-    status: "soon",
+      "What the project actually did, in plain English. Why we picked the corpus we did, what counts as 'Shakespearean influence', and how we kept ourselves honest.",
+    status: "live",
   },
   {
     num: 4,
