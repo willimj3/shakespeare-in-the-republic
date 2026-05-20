@@ -16,6 +16,12 @@ concurrency:
   group: pages-${{ github.ref }}
   cancel-in-progress: true
 
+# Opt every actions/* step into Node 24 ahead of the June 2026 default flip
+# (silences the "Node.js 20 actions are deprecated" warning). When GitHub
+# ships Node-24-native versions of these actions, this env can be removed.
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
 jobs:
   build:
     name: Build static site
