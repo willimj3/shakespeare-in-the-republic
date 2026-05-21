@@ -175,4 +175,13 @@
     font-weight: 600;
     font-style: normal;
   }
+
+  /* ts_headline output from full-corpus search uses <b> tags */
+  .kwic-text b {
+    color: var(--color-folio);
+    font-weight: 600;
+    background: rgba(122, 50, 26, 0.06);
+    padding: 0 1px;
+    border-radius: 1px;
+  }
 }

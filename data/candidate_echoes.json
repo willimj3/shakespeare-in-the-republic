@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-21T16:52:08.815069+00:00",
+  "generated": "2026-05-21T17:44:37.621613+00:00",
   "method": "4- or 5-word verbatim matches between any Founder document and any Shakespeare document. Requires at least one distinctive Shakespeare content word (>=3 occurrences in Shakespeare AND founders_per_million / shakespeare_per_million < 0.5, OR 0 occurrences in the Founders aggregate). Drops phrases that occur more than 50 times in the Founders corpus, phrases on the inherited common-phrase blacklist, and phrases whose content words are all proper names. Ranked by length x distinctive word count x inverse Founders-phrase frequency; top 5000 retained.",
   "caveat": "These are candidate echoes. Most short matches between any two large English corpora are coincidental. Use with judgment.",
   "echoes": [

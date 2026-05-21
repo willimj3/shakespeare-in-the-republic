@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import echoesData from "@/data/candidate_echoes.json";
 import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
+import { getSupabase, isSupabaseConfigured } from "@/lib/supabase";
 
 type Echo = {
   founder_id: string;
@@ -19,11 +20,8 @@ type Echo = {
 };
 
 type Shape = { echoes: Echo[] };
-const data = echoesData as unknown as Shape;
+const localData = echoesData as unknown as Shape;
 
-// Confidence tier for each echo. Built from match length + number of
-// UNIQUE distinctive content words (deduping duplicates like Adams's
-// "farewell farewell" double).
 type ConfidenceTier = "HIGH" | "MEDIUM" | "LOW";
 function confidenceTier(echo: Echo): ConfidenceTier {
   const uniqDistinctive = new Set(
@@ -63,7 +61,6 @@ const FOUNDER_NAMES: Record<string, string> = {
   hamilton: "Hamilton",
 };
 
-// Normalize the Project Gutenberg play title to a short display name
 function shortPlay(raw: string): string {
   return raw
     .replace(/^THE TRAGEDY OF /i, "")
@@ -77,52 +74,219 @@ function shortPlay(raw: string): string {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-// Build founder + play + confidence tallies for the chip labels
-const FOUNDER_COUNTS: Record<string, number> = {};
-const PLAY_COUNTS: Record<string, number> = {};
-const TIER_COUNTS: Record<ConfidenceTier, number> = {
-  HIGH: 0,
-  MEDIUM: 0,
-  LOW: 0,
+type Facets = {
+  total: number;
+  byFounder: Record<string, number>;
+  byTier: Record<ConfidenceTier, number>;
+  topPlays: { source: string; n: number; short: string }[];
 };
-// Annotate each echo with its tier once, at module load
-const ECHOES: (Echo & { tier: ConfidenceTier })[] = data.echoes.map((e) => {
-  const tier = confidenceTier(e);
-  return { ...e, tier };
-});
-for (const e of ECHOES) {
-  FOUNDER_COUNTS[e.founder_id] = (FOUNDER_COUNTS[e.founder_id] ?? 0) + 1;
-  const p = shortPlay(e.shakespeare_source);
-  PLAY_COUNTS[p] = (PLAY_COUNTS[p] ?? 0) + 1;
-  TIER_COUNTS[e.tier] += 1;
+
+function localFacets(): Facets {
+  const byFounder: Record<string, number> = {};
+  const byTier: Record<ConfidenceTier, number> = { HIGH: 0, MEDIUM: 0, LOW: 0 };
+  const playCount: Record<string, { source: string; n: number }> = {};
+  for (const e of localData.echoes) {
+    byFounder[e.founder_id] = (byFounder[e.founder_id] ?? 0) + 1;
+    byTier[confidenceTier(e)] += 1;
+    const key = e.shakespeare_source;
+    if (!playCount[key]) playCount[key] = { source: key, n: 0 };
+    playCount[key].n += 1;
+  }
+  const topPlays = Object.values(playCount)
+    .sort((a, b) => b.n - a.n)
+    .slice(0, 12)
+    .map((p) => ({ ...p, short: shortPlay(p.source) }));
+  return {
+    total: localData.echoes.length,
+    byFounder,
+    byTier,
+    topPlays,
+  };
 }
-const TOP_PLAYS = Object.entries(PLAY_COUNTS)
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 12)
-  .map(([p]) => p);
+
+const PAGE_SIZE = 50;
 
 export default function CandidateEchoesBrowser() {
+  const supabase = useMemo(() => getSupabase(), []);
+  const liveSearch = isSupabaseConfigured();
+
   const [founderFilter, setFounderFilter] = useState<string>("all");
-  const [playFilter, setPlayFilter] = useState<string>("all");
+  const [playFilter, setPlayFilter] = useState<string>("all"); // shortPlay value
   const [tierFilter, setTierFilter] = useState<string>("all");
   const [search, setSearch] = useState<string>("");
-  const [visibleCount, setVisibleCount] = useState<number>(50);
+  const [debouncedSearch, setDebouncedSearch] = useState<string>("");
 
-  const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    return ECHOES.filter((e) => {
-      if (founderFilter !== "all" && e.founder_id !== founderFilter) return false;
-      if (playFilter !== "all" && shortPlay(e.shakespeare_source) !== playFilter) return false;
-      if (tierFilter !== "all" && e.tier !== tierFilter) return false;
-      if (q) {
-        const blob = `${e.matched_text} ${e.doc_title ?? ""} ${e.kwic}`.toLowerCase();
-        if (!blob.includes(q)) return false;
+  const [page, setPage] = useState(0);
+  const [rows, setRows] = useState<(Echo & { tier: ConfidenceTier })[]>([]);
+  const [totalMatching, setTotalMatching] = useState<number>(0);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [facets, setFacets] = useState<Facets>(localFacets);
+
+  // Debounce the text search so we don't fire on every keystroke.
+  useEffect(() => {
+    const t = setTimeout(() => setDebouncedSearch(search), 250);
+    return () => clearTimeout(t);
+  }, [search]);
+
+  // Load facets from Supabase once (or fall back to local on error).
+  useEffect(() => {
+    if (!supabase) return;
+    let cancelled = false;
+    (async () => {
+      const { data, error: e } = await supabase.rpc("candidate_echoes_facets");
+      if (cancelled) return;
+      if (e || !data) {
+        // Keep the local-derived facets as fallback.
+        return;
       }
-      return true;
-    });
-  }, [founderFilter, playFilter, tierFilter, search]);
+      type RawFacets = {
+        total: number;
+        by_founder: Record<string, number>;
+        by_tier: Record<string, number>;
+        top_plays: { source: string; n: number }[];
+      };
+      const r = data as unknown as RawFacets;
+      setFacets({
+        total: r.total ?? 0,
+        byFounder: r.by_founder ?? {},
+        byTier: {
+          HIGH: r.by_tier?.HIGH ?? 0,
+          MEDIUM: r.by_tier?.MEDIUM ?? 0,
+          LOW: r.by_tier?.LOW ?? 0,
+        },
+        topPlays: (r.top_plays ?? []).slice(0, 12).map((p) => ({
+          ...p,
+          short: shortPlay(p.source),
+        })),
+      });
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [supabase]);
 
-  const visible = filtered.slice(0, visibleCount);
+  // Resolve a play-short-name filter back to the raw source(s) it covers
+  // (the catalogue keeps "THE TRAGEDY OF MACBETH" etc; the facets map them
+  // to the same short label).
+  const playSources = useMemo(() => {
+    if (playFilter === "all") return null;
+    return facets.topPlays.filter((p) => p.short === playFilter).map((p) => p.source);
+  }, [playFilter, facets.topPlays]);
+
+  // The actual data fetch. Switches between Supabase (live, all 35,794)
+  // and the local 5,000-row JSON.
+  const fetchPage = useCallback(async () => {
+    setError(null);
+    setLoading(true);
+    if (liveSearch && supabase) {
+      let q = supabase
+        .from("candidate_echoes")
+        .select(
+          "founder_id, founder_name, doc_id, doc_title, date_year, matched_text, match_length, distinctive_content_words, shakespeare_doc_id, shakespeare_source, kwic, tier",
+          { count: "exact" },
+        )
+        .order("match_length", { ascending: false })
+        .order("id", { ascending: true });
+      if (founderFilter !== "all") q = q.eq("founder_id", founderFilter);
+      if (tierFilter !== "all") q = q.eq("tier", tierFilter);
+      if (playSources && playSources.length > 0) q = q.in("shakespeare_source", playSources);
+      if (debouncedSearch.trim()) {
+        // Postgres full-text on matched_text_tsv for word matches, fall back
+        // to ILIKE for short partial-word queries.
+        const term = debouncedSearch.trim();
+        if (term.length >= 3 && /^[\w\s'-]+$/.test(term)) {
+          q = q.textSearch("matched_text_tsv", term, {
+            type: "websearch",
+            config: "english",
+          });
+        } else {
+          q = q.ilike("matched_text", `%${term}%`);
+        }
+      }
+      q = q.range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE - 1);
+      const { data, error: e, count } = await q;
+      setLoading(false);
+      if (e) {
+        setError(e.message || "Live query failed.");
+        setRows([]);
+        setTotalMatching(0);
+        return;
+      }
+      type Row = {
+        founder_id: string;
+        founder_name: string;
+        doc_id: string;
+        doc_title: string | null;
+        date_year: number | null;
+        matched_text: string;
+        match_length: number;
+        distinctive_content_words: string[] | null;
+        shakespeare_doc_id: string;
+        shakespeare_source: string;
+        kwic: string;
+        tier: ConfidenceTier;
+      };
+      const mapped: (Echo & { tier: ConfidenceTier })[] = (data ?? []).map(
+        (r: Row) => ({
+          founder_id: r.founder_id,
+          founder_name: r.founder_name,
+          doc_id: r.doc_id,
+          doc_title: r.doc_title,
+          date: r.date_year,
+          matched_text: r.matched_text,
+          match_length: r.match_length,
+          distinctive_content_words: r.distinctive_content_words ?? [],
+          shakespeare_doc_id: r.shakespeare_doc_id,
+          shakespeare_source: r.shakespeare_source,
+          kwic: r.kwic,
+          tier: r.tier,
+        }),
+      );
+      setRows(mapped);
+      setTotalMatching(count ?? mapped.length);
+      return;
+    }
+
+    // ── Fallback: client-side filter of the local 5,000 ────────────────
+    const q = debouncedSearch.trim().toLowerCase();
+    const filtered = localData.echoes
+      .map((e) => ({ ...e, tier: confidenceTier(e) }))
+      .filter((e) => {
+        if (founderFilter !== "all" && e.founder_id !== founderFilter) return false;
+        if (tierFilter !== "all" && e.tier !== tierFilter) return false;
+        if (playFilter !== "all" && shortPlay(e.shakespeare_source) !== playFilter)
+          return false;
+        if (q) {
+          const blob = `${e.matched_text} ${e.doc_title ?? ""} ${e.kwic}`.toLowerCase();
+          if (!blob.includes(q)) return false;
+        }
+        return true;
+      });
+    setTotalMatching(filtered.length);
+    setRows(filtered.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE));
+    setLoading(false);
+  }, [
+    liveSearch,
+    supabase,
+    founderFilter,
+    tierFilter,
+    playSources,
+    debouncedSearch,
+    page,
+    playFilter,
+  ]);
+
+  // Reset to page 0 whenever filters/search change.
+  useEffect(() => {
+    setPage(0);
+  }, [founderFilter, playFilter, tierFilter, debouncedSearch]);
+
+  useEffect(() => {
+    void fetchPage();
+  }, [fetchPage]);
+
+  const totalPages = Math.max(1, Math.ceil(totalMatching / PAGE_SIZE));
 
   return (
     <>
@@ -130,99 +294,81 @@ export default function CandidateEchoesBrowser() {
       <section className="border-b border-parchment-deep bg-parchment-dark">
         <div className="max-w-outer mx-auto px-6 py-8">
           <div className="max-w-wide mx-auto">
-            {/* Search */}
+            {liveSearch && (
+              <p className="text-xs text-ink-muted mb-4 font-sans">
+                Searching <span className="text-folio">all {facets.total.toLocaleString()}</span> candidate echoes
+                via the live Supabase backend.
+              </p>
+            )}
+
             <div className="mb-5">
               <p className="section-marker mb-2">Search</p>
               <input
                 type="search"
-                placeholder="Search matched text, document title, or context..."
+                placeholder="Search matched text..."
                 value={search}
-                onChange={(e) => {
-                  setSearch(e.target.value);
-                  setVisibleCount(50);
-                }}
+                onChange={(e) => setSearch(e.target.value)}
                 className="w-full max-w-prose px-3 py-2 bg-parchment border border-parchment-deep rounded-sm text-base font-sans focus:outline-none focus:border-folio"
               />
             </div>
 
-            {/* Founder chips */}
             <div className="mb-4">
               <p className="section-marker mb-2">Founder</p>
               <div className="flex flex-wrap gap-2">
                 <Chip
                   active={founderFilter === "all"}
-                  onClick={() => {
-                    setFounderFilter("all");
-                    setVisibleCount(50);
-                  }}
+                  onClick={() => setFounderFilter("all")}
                   label="All"
-                  count={data.echoes.length}
+                  count={facets.total}
                 />
                 {FOUNDER_ORDER.map((id) => (
                   <Chip
                     key={id}
                     active={founderFilter === id}
-                    onClick={() => {
-                      setFounderFilter(id);
-                      setVisibleCount(50);
-                    }}
+                    onClick={() => setFounderFilter(id)}
                     label={FOUNDER_NAMES[id]}
-                    count={FOUNDER_COUNTS[id] ?? 0}
+                    count={facets.byFounder[id] ?? 0}
                   />
                 ))}
               </div>
             </div>
 
-            {/* Confidence chips */}
             <div className="mb-4">
               <p className="section-marker mb-2">Confidence</p>
               <div className="flex flex-wrap gap-2">
                 <Chip
                   active={tierFilter === "all"}
-                  onClick={() => {
-                    setTierFilter("all");
-                    setVisibleCount(50);
-                  }}
+                  onClick={() => setTierFilter("all")}
                   label="All confidence levels"
                 />
                 {(["HIGH", "MEDIUM", "LOW"] as ConfidenceTier[]).map((t) => (
                   <Chip
                     key={t}
                     active={tierFilter === t}
-                    onClick={() => {
-                      setTierFilter(t);
-                      setVisibleCount(50);
-                    }}
+                    onClick={() => setTierFilter(t)}
                     label={TIER_LABEL[t]}
-                    count={TIER_COUNTS[t]}
+                    count={facets.byTier[t]}
                     accent={TIER_COLOR[t]}
                   />
                 ))}
               </div>
             </div>
 
-            {/* Play chips */}
             <div>
               <p className="section-marker mb-2">Play (top 12)</p>
               <div className="flex flex-wrap gap-2">
                 <Chip
                   active={playFilter === "all"}
-                  onClick={() => {
-                    setPlayFilter("all");
-                    setVisibleCount(50);
-                  }}
+                  onClick={() => setPlayFilter("all")}
                   label="All plays"
                 />
-                {TOP_PLAYS.map((p) => (
+                {facets.topPlays.slice(0, 12).map((p) => (
                   <Chip
-                    key={p}
-                    active={playFilter === p}
-                    onClick={() => {
-                      setPlayFilter(p);
-                      setVisibleCount(50);
-                    }}
-                    label={p}
-                    count={PLAY_COUNTS[p]}
+                    key={p.short}
+                    active={playFilter === p.short}
+                    onClick={() => setPlayFilter(p.short)}
+                    label={p.short}
+                    count={p.n}
                   />
                 ))}
               </div>
@@ -230,13 +376,11 @@ export default function CandidateEchoesBrowser() {
 
             <p className="text-xs text-ink-muted mt-5 font-sans">
               Showing{" "}
-              <span className="text-folio font-semibold">{visible.length}</span>{" "}
+              <span className="text-folio font-semibold">{rows.length}</span>{" "}
               of{" "}
-              <span className="text-ink">{filtered.length}</span> matching
-              candidate echo
-              {filtered.length === 1 ? "" : "es"} (out of{" "}
-              {data.echoes.length} total). Sorted by quality (longer match
-              + more distinctive words + rarer in Founders baseline).
+              <span className="text-ink">{totalMatching.toLocaleString()}</span>{" "}
+              matching candidate echo{totalMatching === 1 ? "" : "es"}
+              {liveSearch ? "" : ` (out of ${facets.total} in this static build)`}.
             </p>
           </div>
         </div>
@@ -246,30 +390,52 @@ export default function CandidateEchoesBrowser() {
       <section className="border-b border-parchment-deep">
         <div className="max-w-outer mx-auto px-6 py-10">
           <div className="max-w-wide mx-auto">
-            {visible.length === 0 ? (
+            {error && (
+              <p className="text-sm text-cordovan border-l-4 border-cordovan bg-parchment-dark p-3 mb-4">
+                {error}
+              </p>
+            )}
+            {loading && (
+              <p className="text-center text-ink-muted italic py-4">
+                Loading…
+              </p>
+            )}
+            {!loading && rows.length === 0 && !error ? (
               <p className="text-center text-ink-muted italic py-10">
                 No candidate echoes match these filters.
               </p>
             ) : (
               <ul className="space-y-4">
-                {visible.map((e, i) => (
-                  <li key={i}>
-                    <EchoCard echo={e} query={search} tier={e.tier} />
+                {rows.map((e, i) => (
+                  <li key={`${e.doc_id}-${e.matched_text}-${i}`}>
+                    <EchoCard echo={e} query={debouncedSearch} tier={e.tier} />
                   </li>
                 ))}
               </ul>
             )}
 
-            {filtered.length > visible.length && (
-              <div className="text-center mt-8">
+            {totalPages > 1 && (
+              <nav className="flex items-center justify-between mt-8 pt-4 border-t border-parchment-deep">
                 <button
                   type="button"
-                  onClick={() => setVisibleCount((n) => n + 50)}
-                  className="px-5 py-2 bg-folio text-parchment rounded-sm font-sans text-sm hover:bg-folio-dark transition-colors"
+                  onClick={() => setPage((p) => Math.max(0, p - 1))}
+                  disabled={page === 0 || loading}
+                  className="text-sm font-sans px-3 py-1.5 disabled:opacity-40 disabled:cursor-not-allowed"
                 >
-                  Show next 50 ({filtered.length - visible.length} remaining)
+                  ← Previous
                 </button>
-              </div>
+                <span className="text-xs text-ink-muted font-sans">
+                  page {page + 1} of {totalPages.toLocaleString()}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+                  disabled={page >= totalPages - 1 || loading}
+                  className="text-sm font-sans px-3 py-1.5 disabled:opacity-40 disabled:cursor-not-allowed"
+                >
+                  Next →
+                </button>
+              </nav>
             )}
           </div>
         </div>
@@ -320,7 +486,7 @@ function Chip({
             active ? "text-parchment/80" : "text-ink-muted",
           ].join(" ")}
         >
-          {count}
+          {count.toLocaleString()}
         </span>
       )}
     </button>

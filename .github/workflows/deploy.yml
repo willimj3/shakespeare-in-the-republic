@@ -42,6 +42,15 @@ jobs:
       - name: Build (next export → out/)
         env:
           NEXT_PUBLIC_BASE_PATH: /shakespeare-in-the-republic
+          # Supabase backend for /search and /explorer/candidate-echoes.
+          # Both values are public-by-design (publishable key + RLS-
+          # protected database with read-only policies). Configure them
+          # as repository secrets at Settings → Secrets and variables →
+          # Actions:
+          #   NEXT_PUBLIC_SUPABASE_URL
+          #   NEXT_PUBLIC_SUPABASE_ANON_KEY
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
         run: npm run build
 
       - name: Disable Jekyll (so /_next/ files are served)

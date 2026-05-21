@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 
 type ExplorerView = {
   slug: string;
+  href?: string;
   title: string;
   blurb: string;
   status: "live" | "soon";
@@ -25,6 +26,16 @@ type ExplorerView = {
 };
 
 const VIEWS: ExplorerView[] = [
+  {
+    slug: "search",
+    href: "/search",
+    title: "Full-corpus search",
+    blurb:
+      "Search the full text of 82,107 documents: every word in the six Founders' writings and Shakespeare's complete works. Filter by author, year, and document type. The deepest layer of the project.",
+    status: "live",
+    image: asset("/images/historical/shakespeare-chandos-portrait.jpg"),
+    imageAlt: "Shakespeare (Chandos portrait, c. 1610).",
+  },
   {
     slug: "honour-test",
     title: "The Honour Test",
@@ -201,7 +212,7 @@ export default function ExplorerLanding() {
             ) : (
               <Link
                 key={v.slug}
-                href={`/explorer/${v.slug}`}
+                href={v.href ?? `/explorer/${v.slug}`}
                 className="group block no-underline bg-parchment-dark border border-parchment-deep rounded-sm overflow-hidden flex flex-col h-full transition-shadow hover:shadow-md"
               >
                 {v.image && (

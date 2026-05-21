@@ -6,7 +6,7 @@ import DataScope from "@/components/DataScope";
 export const metadata: Metadata = {
   title: "Candidate echoes",
   description:
-    "Five thousand short verbatim matches between the Founders' writing and Shakespeare's complete works that didn't pass the main catalogue's strict confidence threshold. Most are coincidence. Some are real. Read with judgment.",
+    "All 35,794 short verbatim matches between the Founders' writing and Shakespeare's complete works that didn't pass the main catalogue's strict confidence threshold. Most are coincidence. Some are real. Read with judgment.",
   openGraph: {
     title: "Candidate echoes · Shakespeare in the Republic",
   },
@@ -26,9 +26,8 @@ export default function CandidateEchoesPage() {
               Candidate echoes
             </h1>
             <p className="font-display text-lg text-ink-soft italic mt-4 leading-snug">
-              Five thousand short verbatim matches the strict
-              catalogue filtered out. Most are coincidence. Some
-              are real.
+              All 35,794 short verbatim matches the strict catalogue
+              filtered out. Most are coincidence. Some are real.
             </p>
 
             <div className="bg-parchment-dark border-l-4 border-bronze p-4 my-6">
@@ -52,11 +51,10 @@ export default function CandidateEchoesPage() {
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               The list is ranked by a simple quality score: longer
               matches first, ties broken by how many distinctive
-              content words the match contains, with phrases that
-              are very common in the Founders&rsquo; baseline
-              demoted. The agent that produced this list found
-              roughly 35,000 raw matches under the relaxed
-              threshold and kept the top 5,000.
+              content words the match contains. The full 35,794 are
+              loaded into a Postgres backend with full-text search;
+              filters and queries hit it live, so you can browse the
+              whole set rather than a curated slice.
             </p>
 
             <p className="text-base text-ink-soft mt-4 leading-relaxed">

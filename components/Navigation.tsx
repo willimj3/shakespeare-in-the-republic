@@ -9,6 +9,7 @@ const links = [
   { href: "/essay", label: "Essays" },
   { href: "/case-study", label: "Case Studies" },
   { href: "/explorer", label: "Explorer" },
+  { href: "/search", label: "Search" },
   { href: "/founder", label: "Founders" },
   { href: "/stylistic-notes", label: "Notes" },
   { href: "/papers", label: "Papers" },
