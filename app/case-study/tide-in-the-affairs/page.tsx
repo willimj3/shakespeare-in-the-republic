@@ -26,12 +26,12 @@ export default function TideInTheAffairs() {
   return (
     <CaseStudyLayout
       title="There Is a Tide"
-      subtitle="John Adams quotes Brutus&rsquo;s &lsquo;tide in the affairs of men&rsquo; five times across thirty-eight years &mdash; in five different moods."
+      subtitle="John Adams quotes Brutus&rsquo;s &lsquo;tide in the affairs of men&rsquo; five times across thirty-eight years, in five different moods."
       anchorFinding={
         <>
           Of the fifty-three verbatim Shakespeare quotations Adams
-          produces, this one line &mdash; from Brutus to Cassius in{" "}
-          <em>Julius Caesar</em> 4.3 &mdash; recurs more than any other.
+          produces, this one line (from Brutus to Cassius in{" "}
+          <em>Julius Caesar</em> 4.3) recurs more than any other.
           It appears in his Revolutionary correspondence of 1776, in his
           diplomatic letters of 1781, in his published memoir of 1809, in
           a private letter of 1812, and in a philosophical reflection to
@@ -69,7 +69,7 @@ export default function TideInTheAffairs() {
           Or lose our ventures.
         </p>
         <footer className="text-sm not-italic text-ink-muted mt-3">
-          &mdash; Brutus, <em>Julius Caesar</em> 4.3
+          Brutus, <em>Julius Caesar</em> 4.3
         </footer>
       </blockquote>
 
@@ -85,7 +85,7 @@ export default function TideInTheAffairs() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1776 — the Revolutionary spring
+        1776: the Revolutionary spring
       </h2>
       <p>
         The first use we have appears in a letter to William Heath, a
@@ -102,13 +102,13 @@ export default function TideInTheAffairs() {
         docId="Adams/06-04-02-0042"
       />
       <p>
-        Adams uses the line as Brutus uses it &mdash; an exhortation to act
+        Adams uses the line as Brutus uses it: an exhortation to act
         immediately. The independence declaration was signed eleven weeks
         later. Adams was forty years old.
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1781 — the peace negotiations
+        1781: the peace negotiations
       </h2>
       <p>
         Five years later he is in Amsterdam, trying to negotiate Dutch
@@ -128,7 +128,7 @@ export default function TideInTheAffairs() {
       />
       <p>
         Two things to notice. First, Adams now puts the line in quotation
-        marks &mdash; he is consciously citing. Second, he writes{" "}
+        marks; he is consciously citing. Second, he writes{" "}
         <em>at the Ebb</em>, where Shakespeare wrote <em>at the flood</em>.
         The error makes the metaphor incoherent (one takes a tide at the{" "}
         <em>flood</em>, not the ebb, to ride it to fortune), but it
@@ -139,7 +139,7 @@ export default function TideInTheAffairs() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1809 — Adams quoting Adams
+        1809: Adams quoting Adams
       </h2>
       <p>
         Twenty-eight years later, in retirement, Adams is publishing a
@@ -154,7 +154,7 @@ export default function TideInTheAffairs() {
         ]}
         source="From John Adams to Boston Patriot"
         date="22 September 1809"
-        shakespeareSource="Julius Caesar 4.3 (misquoted — preserved from 1781)"
+        shakespeareSource="Julius Caesar 4.3 (misquoted, preserved from 1781)"
         docId="Adams/99-02-02-5435"
       />
       <p>
@@ -165,7 +165,7 @@ export default function TideInTheAffairs() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1812 — personal melancholy
+        1812: personal melancholy
       </h2>
       <p>
         In a private letter to his son-in-law William Stephens Smith on
@@ -184,7 +184,7 @@ export default function TideInTheAffairs() {
         docId="Adams/99-03-02-2202"
       />
       <p>
-        The 1781/1809 misquote is gone &mdash; he writes <em>flood</em>,
+        The 1781/1809 misquote is gone; he writes <em>flood</em>,
         as Shakespeare did. He also extends the quotation, picking up the
         next lines (<em>Omitted, all the Voyage of Life</em>) which neither
         the 1776 nor 1781 use included. The line is no longer political
@@ -194,11 +194,11 @@ export default function TideInTheAffairs() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1814 — the line as historical commonplace
+        1814: the line as historical commonplace
       </h2>
       <p>
-        Two years later, writing to Richard Rush &mdash; the son of
-        Adams&rsquo;s old friend Benjamin Rush &mdash; he uses the line
+        Two years later, writing to Richard Rush (the son of
+        Adams&rsquo;s old friend Benjamin Rush) he uses the line
         once more, this time at a remove:
       </p>
       <Kwic
@@ -211,7 +211,7 @@ export default function TideInTheAffairs() {
       />
       <p>
         Adams now calls it &ldquo;a trite observation of Historians.&rdquo;
-        The line has slipped from quotation to proverb &mdash; from a
+        The line has slipped from quotation to proverb: from a
         Shakespearean speech to a piece of received political wisdom that
         Adams, almost eighty, attributes vaguely to &ldquo;Historians.&rdquo;
         It is the same words. It is no longer the same citation.
@@ -226,7 +226,7 @@ export default function TideInTheAffairs() {
       <EventTimeline
         events={TIDE_EVENTS}
         ariaLabel="Timeline of John Adams's five 'tide in the affairs of men' quotations between 1776 and 1814."
-        caption="Adams quotes Brutus's tide speech in five distinct correspondences across thirty-eight years — from the Revolutionary spring of 1776 to a philosophical letter to Richard Rush in 1814."
+        caption="Adams quotes Brutus's tide speech in five distinct correspondences across thirty-eight years, from the Revolutionary spring of 1776 to a philosophical letter to Richard Rush in 1814."
       />
 
       <p>
@@ -260,7 +260,7 @@ export default function TideInTheAffairs() {
         signals them as quotation when he chooses, and applies them
         to the situation at hand. The same line in Franklin&rsquo;s
         writing would have been absorbed into the texture of his
-        prose &mdash; used once or never, and indistinguishable from
+        prose: used once or never, and indistinguishable from
         his own voice. Adams&rsquo;s tide is the legible half of
         Shakespearean inheritance. The illegible half
         is described in the next case study.

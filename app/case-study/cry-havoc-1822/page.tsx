@@ -22,9 +22,9 @@ export default function CryHavoc1822CaseStudy() {
           Adams writes to his grandson George Washington Adams about
           Franklin&rsquo;s constitutional doctrine. Franklin had been
           dead for almost thirty-two years. Adams reaches for
-          Antony&rsquo;s line from <em>Julius Caesar</em> &mdash;{" "}
-          <em>&ldquo;Cry havock, and let slip the dogs of war&rdquo;</em>{" "}
-          &mdash; to characterise what Franklin&rsquo;s political
+          Antony&rsquo;s line from <em>Julius Caesar</em> (
+          <em>&ldquo;Cry havock, and let slip the dogs of war&rdquo;</em>
+          ) to characterise what Franklin&rsquo;s political
           arguments would produce if anyone followed them. It is one
           of the last verbatim Shakespeare quotations in his life,
           and the most cutting. The eighty-six-year-old Adams is
@@ -56,7 +56,7 @@ export default function CryHavoc1822CaseStudy() {
         </p>
         <p>
           On 22 February 1822 he wrote to his grandson, George
-          Washington Adams &mdash; the eighteen-year-old eldest son
+          Washington Adams, the eighteen-year-old eldest son
           of John Quincy. The letter is, on its face, an
           uncomplicated grandfatherly note. Adams gives the boy some
           family news, sends greetings from various aunts and
@@ -76,8 +76,8 @@ export default function CryHavoc1822CaseStudy() {
       </h2>
       <p>
         The line is from Act 3 Scene 1 of <em>Julius Caesar</em>.
-        Caesar has just been assassinated by the conspirators &mdash;
-        Brutus among them. Mark Antony arrives, surveys the corpse,
+        Caesar has just been assassinated by the conspirators (Brutus
+        among them). Mark Antony arrives, surveys the corpse,
         and pretends to extend a hand of friendship to the
         assassins. Then they leave him alone with the body. Antony
         bends down, speaks to the dead man, and makes a prophecy:
@@ -90,7 +90,7 @@ export default function CryHavoc1822CaseStudy() {
           Cry &lsquo;Havoc!&rsquo; and let slip the dogs of war&hellip;
         </p>
         <footer className="text-sm not-italic text-ink-muted mt-3">
-          &mdash; Antony, <em>Julius Caesar</em> 3.1
+          Antony, <em>Julius Caesar</em> 3.1
         </footer>
       </blockquote>
       <p>
@@ -131,13 +131,13 @@ export default function CryHavoc1822CaseStudy() {
         <em>havock</em>, the way Shakespeare spells it in the First
         Folio. He is not reaching for a famous phrase from memory; he
         is quoting accurately, and his accuracy is itself a sign that
-        he has read the text. Second, he extends the metaphor &mdash;
+        he has read the text. Second, he extends the metaphor:
         Antony&rsquo;s &ldquo;dogs of war&rdquo; civil <em>and
         Foreign</em>, and then a despot who will &ldquo;lay the dogs
         prostrate with his language&rdquo;. The political prediction
         is grim and specific. Third, the conclusion: that
-        constitutions will dissolve into &ldquo;thin Air&rdquo;
-        &mdash; an unmistakable echo of <em>The Tempest</em> 4.1
+        constitutions will dissolve into &ldquo;thin Air&rdquo;,
+        an unmistakable echo of <em>The Tempest</em> 4.1
         (&ldquo;melted into air, into thin air&rdquo;), Prospero&rsquo;s
         speech about the impermanence of human works. Adams is
         layering two Shakespearean passages onto the same
@@ -148,7 +148,7 @@ export default function CryHavoc1822CaseStudy() {
 
       {/* ── The Franklin quarrel ────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        What the quarrel was actually about
+        What the quarrel was about
       </h2>
       <p>
         Why was the eighty-six-year-old Adams still arguing with
@@ -158,7 +158,7 @@ export default function CryHavoc1822CaseStudy() {
       </p>
       <p>
         Adams spent much of his post-war life arguing for{" "}
-        <em>bicameral</em> legislatures &mdash; an upper house and a
+        <em>bicameral</em> legislatures: an upper house and a
         lower house, each checking the other. His three-volume{" "}
         <em>Defense of the Constitutions of Government of the United
         States of America</em> (1787) is essentially a long defence
@@ -185,8 +185,8 @@ export default function CryHavoc1822CaseStudy() {
       </p>
       <p>
         So in February 1822, writing to his grandson about
-        Alexander &mdash; almost certainly Alexander Hill Everett, a
-        diplomat the family knew &mdash; who had been too
+        Alexander (almost certainly Alexander Hill Everett, a
+        diplomat the family knew) who had been too
         enthusiastic about Franklin&rsquo;s legislative ideas, Adams
         reaches for Antony. Franklin&rsquo;s doctrine, applied,
         unleashes the dogs of war. Civil and foreign. Until a despot
@@ -249,7 +249,7 @@ export default function CryHavoc1822CaseStudy() {
         of writing. The first cluster is the 1758 diary entry, in
         which the twenty-two-year-old transcribes long passages of{" "}
         <em>Macbeth</em>, <em>Othello</em>, and Macbeth again. The
-        last clusters are in the 1810s and early 1820s &mdash; the
+        last clusters are in the 1810s and early 1820s: the
         Tide speech (in 1812 and 1814), the Romeo and Juliet
         reference to John Randolph (in 1810), the Henry VI lines
         about the Wars of the Roses (in 1805 and 1812), and finally
@@ -282,7 +282,7 @@ export default function CryHavoc1822CaseStudy() {
         >
           Band of Brothers at Valley Forge
         </Link>
-        {" "}&mdash; together with this one, they form the Adams
+        . Together with this one, they form the Adams
         citational arc that spans 1758 to 1822. The companion
         absorbed-mode finding is in{" "}
         <Link href="/case-study/tis-franklins-signature" className="underline">

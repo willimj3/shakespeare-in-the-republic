@@ -20,11 +20,11 @@ export default function HonourTestCaseStudy() {
         <>
           <em>Honour</em> is one of the most frequent abstract nouns
           in both corpora. In Shakespeare its closest verbal
-          neighbours are <em>pawn, mine, lord, love, Brutus</em>{" "}
-          &mdash; the vocabulary of staking, addressing, and
+          neighbours are <em>pawn, mine, lord, love, Brutus</em>: the
+          vocabulary of staking, addressing, and
           defending. In the Founders its closest neighbours are{" "}
-          <em>sir, respect, esteem, letter, excellency, sentiments</em>{" "}
-          &mdash; the vocabulary of letter-closing protocol. The word
+          <em>sir, respect, esteem, letter, excellency, sentiments</em>:
+          the vocabulary of letter-closing protocol. The word
           travelled across two centuries; the concept did not.
         </>
       }
@@ -36,15 +36,15 @@ export default function HonourTestCaseStudy() {
       <div className="has-dropcap">
         <p>
           On the Honour Test explorer page of this site, the reader
-          can pick from fourteen common abstract nouns &mdash;{" "}
+          can pick from fourteen common abstract nouns ({" "}
           <em>honour</em>, <em>love</em>, <em>power</em>,{" "}
           <em>liberty</em>, <em>friend</em>, <em>virtue</em>,{" "}
-          <em>death</em> &mdash; and see the top twenty words that
+          <em>death</em>) and see the top twenty words that
           most distinctively keep each one company, side by side in
           the two corpora. The interactive view shows what the
           frequency table records. This case study takes one of those
           fourteen nouns, the most striking of them, and walks
-          through what the contrast actually means.
+          through what the contrast means.
         </p>
       </div>
 
@@ -56,8 +56,8 @@ export default function HonourTestCaseStudy() {
         shifted between Shakespeare and the Founders, because the
         word itself is everywhere. The differential collocate
         analysis is what surfaces the shift. It asks not <em>how
-        often</em> the word appears in each corpus &mdash; that
-        question is uninteresting &mdash; but <em>what kinds of words
+        often</em> the word appears in each corpus (that question is
+        uninteresting) but <em>what kinds of words
         sit next to it</em> in each.
       </p>
 
@@ -92,7 +92,7 @@ export default function HonourTestCaseStudy() {
         a debt, redeemed, lost, defaulted on. The Cymbeline gambler
         wagers honour as he wagers gold. Othello&rsquo;s tragedy is
         about losing honour the way one loses property. <em>Mine
-        honour</em> &mdash; the possessive is doing real grammatical
+        honour</em>: the possessive is doing real grammatical
         work. The noun is something that belongs to the speaker, that
         the speaker has standing to stake.
       </p>
@@ -118,14 +118,14 @@ export default function HonourTestCaseStudy() {
       </p>
 
       <p>
-        The other top collocate is the proper name <em>Brutus</em> &mdash;
+        The other top collocate is the proper name <em>Brutus</em>,
         because Mark Antony&rsquo;s funeral oration in{" "}
         <em>Julius Caesar</em> turns the word <em>honourable</em>{" "}
         into a thirty-line ironic refrain. &ldquo;For Brutus is an
         honourable man,&rdquo; over and over, until the word has been
         emptied of moral content and refilled with sarcasm. This is
         the play in which Shakespeare most pointedly questions what
-        honour <em>actually means</em>. The interrogation is itself
+        honour <em>means</em>. The interrogation is itself
         proof that the concept has substantive content available to
         interrogate.
       </p>
@@ -186,9 +186,9 @@ export default function HonourTestCaseStudy() {
       <p>
         The Founders&rsquo; <em>honour</em>, in other words, is the
         verbal residue of formal correspondence. Eighteenth-century
-        gentlemen wrote to each other constantly &mdash; thousands of
+        gentlemen wrote to each other constantly (thousands of
         letters per career, hundreds of thousands across the six
-        Founders in the corpus &mdash; and the word that closed each
+        Founders in the corpus) and the word that closed each
         of those letters is the word the differential collocate
         analysis surfaces as their most-distinctive use of the noun.
       </p>
@@ -234,16 +234,16 @@ export default function HonourTestCaseStudy() {
       </p>
 
       <p>
-        The case study&rsquo;s working hypothesis &mdash; argued in
+        The case study&rsquo;s working hypothesis (argued in
         more detail in the{" "}
-        <Link href="/essay/honour-test">Honour Test essay</Link>{" "}
-        &mdash; is that the Founders inherited the lexical surface of
+        <Link href="/essay/honour-test">Honour Test essay</Link>) is
+        that the Founders inherited the lexical surface of
         Shakespeare&rsquo;s English (the word <em>honour</em> itself,
         the spelling, the broad semantic field) and rebuilt its
         conceptual content from scratch. They didn&rsquo;t know they
         were rebuilding. They didn&rsquo;t mean to. They just used
         the same noun for the new thing the eighteenth century needed
-        it to mean &mdash; the protocol of civility &mdash; and the
+        it to mean (the protocol of civility) and the
         new meaning has now become the default English meaning of
         the word for everyone descended from them.
       </p>
@@ -252,8 +252,8 @@ export default function HonourTestCaseStudy() {
         Pawn it, swear by it, die for it: these are the Shakespearean
         uses, and they are now archaic uses. To <em>have the honour
         to be your humble servant</em>: that is the Founders&rsquo;
-        use, and it is &mdash; vestigially, in formal letters that
-        still get written today &mdash; the use that survives. The
+        use, and it is (vestigially, in formal letters that
+        still get written today) the use that survives. The
         American eighteenth century is when the inheritance happened.
       </p>
 

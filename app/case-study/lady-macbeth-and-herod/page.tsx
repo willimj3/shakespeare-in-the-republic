@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "Lady Macbeth and Herod · Case Study · Shakespeare in the Republic",
   description:
-    "John Adams quotes Lady Macbeth's 'I have given suck' speech four times across fifty-three years — pairing it with biblical Herod in 1782, softening it into parental advice in 1799, and turning it into the figure of revolutionary consciousness in 1818.",
+    "John Adams quotes Lady Macbeth's 'I have given suck' speech four times across fifty-three years, pairing it with biblical Herod in 1782, softening it into parental advice in 1799, and turning it into the figure of revolutionary consciousness in 1818.",
 };
 
 const events = [
@@ -71,7 +71,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
         The line he kept returning to is the one Lady Macbeth uses to
         steady her husband&rsquo;s nerve in Act 1, Scene 7, the moment
         before the murder of Duncan. She is reproaching him for
-        wavering &mdash; for being less resolute than she is. If he
+        wavering, for being less resolute than she is. If he
         broke his vow, she says, she could break a worse one of her
         own:
       </p>
@@ -104,12 +104,12 @@ export default function LadyMacbethAndHerodCaseStudy() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1765 &mdash; the first sighting
+        1765: the first sighting
       </h2>
 
       <p>
-        Adams encounters the passage first &mdash; or first leaves a
-        trace of it &mdash; in his pamphlet <em>A Dissertation on the
+        Adams encounters the passage first (or first leaves a
+        trace of it) in his pamphlet <em>A Dissertation on the
         Canon and the Feudal Law</em>, written in 1765 in the aftermath
         of the Stamp Act. He is thirty years old, a country lawyer with
         a young family, arguing against an English political culture
@@ -153,7 +153,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1782 &mdash; Herod, then Lady Macbeth
+        1782: Herod, then Lady Macbeth
       </h2>
 
       <p>
@@ -182,9 +182,9 @@ export default function LadyMacbethAndHerodCaseStudy() {
       <p>
         This is the rhetorical heart of the case study. Adams reaches
         for the two darkest infanticide images in the Western canon
-        &mdash; the biblical Herod ordering the slaughter of the
+        (the biblical Herod ordering the slaughter of the
         innocents at Bethlehem, and Lady Macbeth describing what she
-        would do to her nursing child &mdash; and he <em>ranks
+        would do to her nursing child) and he <em>ranks
         them</em>. Herod, he says, was a <em>trifle</em> in comparison
         to what England has tried to do. Lady Macbeth gets closer; her
         sentiment was &ldquo;a little like it.&rdquo; The implication
@@ -216,7 +216,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1799 &mdash; the same speech, rewritten as parental advice
+        1799: the same speech, rewritten as parental advice
       </h2>
 
       <p>
@@ -263,7 +263,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1818 &mdash; and now the Revolution itself
+        1818: and now the Revolution itself
       </h2>
 
       <p>
@@ -272,7 +272,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
         weeks, and he is writing to the newspaper editor Hezekiah
         Niles in a letter that is now one of the most-quoted
         documents on the early Republic. Niles had asked Adams what
-        the American Revolution actually <em>was</em>. The letter
+        the American Revolution <em>was</em>. The letter
         Adams sends back contains the famous sentence about the
         Revolution being &ldquo;in the minds and hearts of the
         people&rdquo; long before any shot was fired. And then,
@@ -327,8 +327,8 @@ export default function LadyMacbethAndHerodCaseStudy() {
         the citational mode of Shakespearean inheritance. Adams keeps
         the play actively in mind for fifty-three years. He returns to
         the same passage. He names the source. He bends the passage
-        to whatever the moment requires &mdash; refusal, moral
-        ranking, parental advice, historical thesis &mdash; and the
+        to whatever the moment requires (refusal, moral
+        ranking, parental advice, historical thesis) and the
         passage bends because it is alive in his head, not because he
         has gone to the shelf to look it up.
       </p>
@@ -342,7 +342,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
         is in the <em>application</em>. The same six lines from{" "}
         <em>Macbeth</em> 1.7 are doing four entirely different jobs
         of rhetorical work in 1765, 1782, 1799, and 1818, and you
-        cannot see that pattern by counting alone &mdash; you have to
+        cannot see that pattern by counting alone. You have to
         read four letters across five decades and watch the same
         Shakespearean speech come up again and again, refitted each
         time to a new moment in the speaker&rsquo;s life.
@@ -363,7 +363,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
       <div className="ornament" />
 
       <p className="text-sm text-ink-muted italic text-center">
-        See the same Adams citational mode in &mdash;{" "}
+        See the same Adams citational mode in{" "}
         <Link href="/case-study/tide-in-the-affairs">
           There Is a Tide
         </Link>

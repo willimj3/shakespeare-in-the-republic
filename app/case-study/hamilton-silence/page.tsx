@@ -46,7 +46,7 @@ export default function HamiltonSilenceCaseStudy() {
           financial system of the new Republic, the author of
           fifty-one of <em>The Federalist Papers</em>, the man whose
           oratory was so vivid that political opponents complained he
-          would talk for five hours when one would do &mdash; Hamilton
+          would talk for five hours when one would do, Hamilton
           appears to have read very little Shakespeare. Or, at
           minimum: he never tells you so. In two and a third million
           words of writing across thirty-five years, the corpus
@@ -84,7 +84,7 @@ export default function HamiltonSilenceCaseStudy() {
         Jefferson has been President for nine months. Hamilton, now
         a retired private citizen and the most influential Federalist
         polemicist in New York, is writing newspaper attacks under
-        the pseudonym <em>Lucius Crassus</em> &mdash; the Roman orator
+        the pseudonym <em>Lucius Crassus</em>, the Roman orator
         whose voice Hamilton borrows because the actual Hamilton is
         too obvious a Federalist to sign his own name to the piece.
         He has written three of these so far. He sits down to write
@@ -183,7 +183,7 @@ export default function HamiltonSilenceCaseStudy() {
         across his life and named Shakespeare twice (both in
         passing, neither in active engagement with a passage). His
         composite ranking in the project is rank 5 out of 6 by
-        most measures &mdash; sometimes rank 6, rarely above 4. He
+        most measures, sometimes rank 6, rarely above 4. He
         is, statistically, almost as un-Shakespearean as Hamilton.
       </p>
 
@@ -204,7 +204,7 @@ export default function HamiltonSilenceCaseStudy() {
       <p>
         Madison&rsquo;s silence has a different intellectual texture.
         Where Hamilton&rsquo;s prose lives in Hume and Montesquieu,
-        Madison&rsquo;s lives in the classical republicans &mdash;
+        Madison&rsquo;s lives in the classical republicans:
         Polybius on mixed constitutions, Cicero, the English Whig
         canon (Trenchard and Gordon&rsquo;s <em>Cato&rsquo;s
         Letters</em>, James Otis), and a deep current of the
@@ -227,7 +227,7 @@ export default function HamiltonSilenceCaseStudy() {
         sounded equally Shakespearean, the project would be
         confirming a background trait of the period: educated men
         of the late eighteenth century all carried Shakespeare in
-        their heads, end of finding. What the project actually
+        their heads, end of finding. What the project
         finds is a sharp divide.{" "}
         <em>Some of them did, and others didn&rsquo;t.</em>
       </p>
@@ -236,9 +236,9 @@ export default function HamiltonSilenceCaseStudy() {
         The two-modes finding (
         <Link href="/essay/two-modes">Two Modes essay</Link>) lives
         on one side of that divide. On the other side, two of the
-        six Founders &mdash; both born well into the English literary
-        tradition, both educated, both prolific writers &mdash;
-        produce prose in which the same tradition leaves almost no
+        six Founders (both born well into the English literary
+        tradition, both educated, both prolific writers) produce
+        prose in which the same tradition leaves almost no
         trace. Their intellectual lineages were already elsewhere
         before they reached for a pen. The political Republic they
         built is, in a real sense, the work of men who didn&rsquo;t

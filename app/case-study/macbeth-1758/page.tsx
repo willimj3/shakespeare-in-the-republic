@@ -8,20 +8,20 @@ export const metadata: Metadata = {
   title:
     "The 1758 Macbeth Study · Case Study · Shakespeare in the Republic",
   description:
-    "In one diary entry late in 1758, the 23-year-old John Adams works his way through Macbeth — transcribing sixteen separate passages and writing his own commentary in the margins. The single densest Shakespeare-reading event in the entire corpus, captured live on the page.",
+    "In one diary entry late in 1758, the 23-year-old John Adams works his way through Macbeth, transcribing sixteen separate passages and writing his own commentary in the margins. The single densest Shakespeare-reading event in the entire corpus, captured live on the page.",
 };
 
 /**
  * The sixteen Macbeth quotations from Adams's diary entry
  * "Shakespeare's Characters and Figurative Language" (October-December
- * 1758), ordered as they appear in the document — which is also the
+ * 1758), ordered as they appear in the document. That is also the
  * order they appear in Macbeth (Act V Sc. 5 first, then Act II/III,
  * then Act I material at the end). The order tracks Adams's eye
  * across the play, not the play's own sequence.
  */
 const cascade = [
   {
-    note: "Adams opens with Macbeth's reaction to news of his wife's death — the 'Tomorrow' soliloquy, Act 5 Scene 5.",
+    note: "Adams opens with Macbeth's reaction to news of his wife's death, the 'Tomorrow' soliloquy, Act 5 Scene 5.",
     matched: "Lifes but a walking Shadow, a Poor Player That struts and frets his Hour upon the Stage And then is heard no more! It is a Tale Told by an Ideot, full of Sound and Fury Signifying Nothing.",
     match: ["walking Shadow", "struts and frets his Hour", "heard no more", "Sound and Fury Signifying Nothing"],
     scene: "Macbeth 5.5",
@@ -33,7 +33,7 @@ const cascade = [
     scene: "Macbeth 3.4 (the banquet scene)",
   },
   {
-    note: "Then the omens around Duncan's murder — Adams works through Macbeth Act II Scene IV systematically.",
+    note: "Then the omens around Duncan's murder. Adams works through Macbeth Act II Scene IV systematically.",
     matched: "a faulcon towering in her Pride of Place, was by a mousing Owl haukt at and killed. The faulcon is Duncan, the mousing Owl is Mackbeth. The old man observed the Omen.",
     match: ["faulcon towering in her Pride of Place", "mousing Owl"],
     scene: "Macbeth 2.4",
@@ -45,13 +45,13 @@ const cascade = [
     scene: "Macbeth 2.4",
   },
   {
-    note: "Adams's quotation glides into Act II Scene III — the witches' weather, the unnatural night of the murder.",
+    note: "Adams's quotation glides into Act II Scene III, the witches' weather, the unnatural night of the murder.",
     matched: "Lamentings heard i'the air, strange screams of Death. Of dire Combustion and confusd Events New hatchd to the woeful time. The obscure bird clamourd the livelong night Some say the Earth was feverous and did shake.",
     match: ["Lamentings heard", "strange screams of Death", "the livelong night", "the Earth was feverous and did shake"],
     scene: "Macbeth 2.3",
   },
   {
-    note: "The 'Sleep no more' passage, Macbeth 2.2 — Adams's commentary now in the margin: 'Mackbeths Imagination was [struck?] and afraid, was as lively and teemed with Notions…'",
+    note: "The 'Sleep no more' passage, Macbeth 2.2. Adams's commentary now in the margin: 'Mackbeths Imagination was [struck?] and afraid, was as lively and teemed with Notions…'",
     matched: "His imagination created 100 things, a Voice crying, Sleep no more, Mackbeth doth Murder Sleep; the innocent Sleep. Sleep that knits up the ravelled sleeve of Care, the Death of each days life sore Labours Bath, Balm of Hurt minds, great natures second Course, chief Nourisher in Lifes feast.",
     match: ["Sleep no more", "Mackbeth doth Murder Sleep", "innocent Sleep", "Balm of Hurt minds", "second Course, chief Nourisher"],
     scene: "Macbeth 2.2",
@@ -68,8 +68,8 @@ export default function Macbeth1758CaseStudy() {
           In a single diary entry titled{" "}
           <em>Shakespeare&rsquo;s Characters and Figurative Language</em>{" "}
           (late 1758), the project&rsquo;s catalogue finds{" "}
-          <strong>sixteen</strong> direct quotations from <em>Macbeth</em>{" "}
-          &mdash; the densest Shakespeare reading event in the entire
+          <strong>sixteen</strong> direct quotations from <em>Macbeth</em>:
+          the densest Shakespeare reading event in the entire
           corpus across all six Founders, and the foundation of the
           Macbeth thread that runs through Adams&rsquo;s writing for
           the next sixty years.
@@ -86,10 +86,10 @@ export default function Macbeth1758CaseStudy() {
           <em>Shakespeare&rsquo;s Characters and Figurative
           Language</em> is, by the project&rsquo;s measure, the
           densest single moment of Shakespearean reading in the
-          entire six-Founder corpus. In one document &mdash; running
+          entire six-Founder corpus. In one document (running
           to roughly a thousand words of Adams&rsquo;s own writing
           interleaved with sixteen verbatim passages from{" "}
-          <em>Macbeth</em> &mdash; the 23-year-old Adams works his way
+          <em>Macbeth</em>) the 23-year-old Adams works his way
           through the play, transcribing the passages that struck
           him and writing his own commentary in the margin. It is a
           piece of historical reading captured live on the page.
@@ -116,7 +116,7 @@ export default function Macbeth1758CaseStudy() {
         <em>working</em> Shakespeare. Adams isn&rsquo;t reading the
         play; he&rsquo;s taking it apart. The cascade below is the
         first six of those sixteen passages, in the order they
-        appear in his diary &mdash; not the order they appear in
+        appear in his diary, not the order they appear in
         the play. Which order Adams chose to copy them in is
         itself a story about how a young lawyer reads dramatic
         verse for the first time.
@@ -149,7 +149,7 @@ export default function Macbeth1758CaseStudy() {
 
       <p className="text-sm text-ink-muted italic mt-6 leading-relaxed">
         The diary continues for ten more verbatim Macbeth passages
-        after these &mdash; the full catalogue lists sixteen in
+        after these. The full catalogue lists sixteen in
         total. Adams writes his own analytical glosses between
         them: he is, in real time, building his theory of how
         Shakespeare layers his images, how Lady Macbeth and her
@@ -168,8 +168,8 @@ export default function Macbeth1758CaseStudy() {
       <p>
         Every other Adams Shakespeare reference in the project
         catalogue is, in some sense, an echo of this 1758 entry.
-        The Lady Macbeth thread &mdash; <em>I have given suck</em>{" "}
-        &mdash; that Adams returns to in 1765, 1782, 1799, and 1818
+        The Lady Macbeth thread (<em>I have given suck</em>)
+        that Adams returns to in 1765, 1782, 1799, and 1818
         is the same Lady Macbeth Adams is reading here, twenty-two
         years younger. The <em>Tomorrow</em> soliloquy that Adams
         invokes in 1813 to attack a political opponent (&ldquo;a
@@ -178,8 +178,8 @@ export default function Macbeth1758CaseStudy() {
         1758 cascade. The Macbeth-banquet-scene image about brains
         being out and men rising again with murders on their
         crowns is one Adams will quote across his life. The
-        Macbeth-soliloquy on sleep &mdash; <em>Sleep no more</em>{" "}
-        &mdash; is one he will paraphrase to his children.
+        Macbeth-soliloquy on sleep (<em>Sleep no more</em>) is
+        one he will paraphrase to his children.
       </p>
 
       <p>
@@ -207,7 +207,7 @@ export default function Macbeth1758CaseStudy() {
 
       <ul className="my-6 text-base text-ink-soft space-y-3 pl-6 list-disc">
         <li>
-          <strong>1758 Othello to Cranch</strong> &mdash; A letter
+          <strong>1758 Othello to Cranch.</strong> A letter
           to Richard Cranch the same year as the Macbeth diary
           entry, with six Othello quotations. Adams as a young
           lawyer trying his hand at literary discussion in a
@@ -215,7 +215,7 @@ export default function Macbeth1758CaseStudy() {
           he worked from <em>Macbeth</em> in the diary.
         </li>
         <li>
-          <strong>1794 Tempest to Abigail</strong> &mdash; A letter
+          <strong>1794 Tempest to Abigail.</strong> A letter
           to Abigail, 17 May 1794, with eleven <em>Tempest</em>{" "}
           quotations. Adams is fifty-eight, Vice President, in
           Philadelphia. The letter is a meditation on a play he
@@ -223,13 +223,13 @@ export default function Macbeth1758CaseStudy() {
           1758 cascade.
         </li>
         <li>
-          <strong>1805 Henry V/VI to John Quincy</strong> &mdash; A
+          <strong>1805 Henry V/VI to John Quincy.</strong> A
           letter to his son, 20 January 1805, with five
           quotations from the Henry plays. Adams in retirement,
           guiding his son&rsquo;s political reading.
         </li>
         <li>
-          <strong>1812 Julius Caesar to Smith</strong> &mdash; A
+          <strong>1812 Julius Caesar to Smith.</strong> A
           letter to William Stephens Smith, 15 October 1812, with
           three direct Julius Caesar quotations. The play that
           will furnish Adams&rsquo;s late masterpiece quotation

@@ -32,7 +32,7 @@ const BAND_EVENTS: TimelineEvent[] = [
   },
   {
     year: 1798,
-    context: "back to command — Quasi-War",
+    context: "back to command, Quasi-War",
     recipient: "to Henry Knox",
   },
   {
@@ -50,8 +50,8 @@ export default function BandOfBrothersCaseStudy() {
       anchorFinding={
         <>
           In our corpus, George Washington uses the phrase{" "}
-          <em>band of brothers</em> five times across two decades
-          &mdash; beginning at Valley Forge in 1778, where Continental
+          <em>band of brothers</em> five times across two decades,
+          beginning at Valley Forge in 1778, where Continental
           Army losses to cold, hunger, and disease had run to roughly
           one in four. The line travels with him through the Farewell
           Address of 1783, a private letter from Mount Vernon in 1785,
@@ -111,7 +111,7 @@ export default function BandOfBrothersCaseStudy() {
           This day shall gentle his condition&hellip;
         </p>
         <footer className="text-sm not-italic text-ink-muted mt-3">
-          &mdash; Henry V, <em>Henry V</em> 4.3
+          Henry V, <em>Henry V</em> 4.3
         </footer>
       </blockquote>
       <p>
@@ -122,8 +122,8 @@ export default function BandOfBrothersCaseStudy() {
         the time the Continental Army assembled at Valley Forge it
         was part of the common stock of English. So when a statistical
         check asks &ldquo;is this phrase distinctively Shakespearean
-        versus general 18th-century English?&rdquo; the answer is no
-        &mdash; it had drifted out of the playwright&rsquo;s exclusive
+        versus general 18th-century English?&rdquo; the answer is no.
+        It had drifted out of the playwright&rsquo;s exclusive
         possession. But the historical route is clear and undisputed.
         The phrase travelled from <em>Henry V</em> (c. 1599) through
         the eighteenth-century editions of Shakespeare on American
@@ -135,13 +135,13 @@ export default function BandOfBrothersCaseStudy() {
 
       {/* ── 1778 ─────────────────────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        1778 &mdash; the worst winter
+        1778: the worst winter
       </h2>
       <p>
         The General Orders of 6 April 1778 spend their first half on
-        small disciplinary matters &mdash; the punishment of two soldiers
+        small disciplinary matters (the punishment of two soldiers
         for theft, an inspection schedule, the assignment of fatigue
-        details. They close with a passage addressed to the officer
+        details). They close with a passage addressed to the officer
         corps:
       </p>
       <Kwic
@@ -153,8 +153,8 @@ export default function BandOfBrothersCaseStudy() {
         docId="Washington/03-14-02-0389"
       />
       <p>
-        The address is to the <em>officers</em>, not the rank-and-file
-        &mdash; Washington was at this moment chronically worried about
+        The address is to the <em>officers</em>, not the rank-and-file.
+        Washington was at this moment chronically worried about
         the bickering, the duels, and the cabal led by Thomas Conway that
         had nearly displaced him in his command three months earlier. The
         Shakespearean phrase carries the precise weight the situation
@@ -166,7 +166,7 @@ export default function BandOfBrothersCaseStudy() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1783 &mdash; the Farewell Address to the Army
+        1783: the Farewell Address to the Army
       </h2>
       <p>
         Five and a half years later, on 2 November 1783, Washington
@@ -193,7 +193,7 @@ export default function BandOfBrothersCaseStudy() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1785 &mdash; peacetime cosmopolitanism
+        1785: peacetime cosmopolitanism
       </h2>
       <p>
         Two years into retirement at Mount Vernon, Washington writes to
@@ -211,7 +211,7 @@ export default function BandOfBrothersCaseStudy() {
         docId="Washington/04-03-02-0263"
       />
       <p>
-        The phrase has moved further still &mdash; from the Continental
+        The phrase has moved further still: from the Continental
         officer corps in 1778, to the army in 1783, to <em>the whole
         world</em> in 1785. Shakespeare&rsquo;s small fraternity of
         English soldiers on a field outside Agincourt has, in
@@ -220,7 +220,7 @@ export default function BandOfBrothersCaseStudy() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1798 &mdash; Knox, and the partisans
+        1798: Knox, and the partisans
       </h2>
       <p>
         Thirteen years pass. By the autumn of 1798 the United States and
@@ -240,7 +240,7 @@ export default function BandOfBrothersCaseStudy() {
       <p>
         Three days later, writing to William Richardson Davie about
         appointing officers free from French partisan sympathies, he uses
-        the phrase again &mdash; this time defensively, as the thing
+        the phrase again, this time defensively, as the thing
         partisanship would <em>break</em>:
       </p>
       <Kwic
@@ -255,8 +255,8 @@ export default function BandOfBrothersCaseStudy() {
         The 1798 uses re-tune the Shakespearean phrase one last time. In
         1778 it was an aspiration for officers under stress. In 1783 it
         was a description of what the army had become. In 1785 it was an
-        image of humanity at peace. In 1798 it is a thing under threat
-        &mdash; the kind of brotherhood Washington wants to preserve, and
+        image of humanity at peace. In 1798 it is a thing under threat:
+        the kind of brotherhood Washington wants to preserve, and
         the kind of partisan poison he wants to keep out. Two months
         later he was dead.
       </p>
@@ -273,7 +273,7 @@ export default function BandOfBrothersCaseStudy() {
         yearMin={1775}
         yearMax={1805}
         ariaLabel="Timeline of George Washington's five uses of the phrase 'band of brothers' between 1778 and 1798."
-        caption="Washington uses the phrase five times across twenty years — beginning in the worst winter of the Continental Army's war, ending in his last campaign before his death."
+        caption="Washington uses the phrase five times across twenty years, beginning in the worst winter of the Continental Army's war, ending in his last campaign before his death."
       />
 
       <p>
@@ -300,7 +300,7 @@ export default function BandOfBrothersCaseStudy() {
       <p>
         <em>Band of brothers</em> sits in an interesting middle
         position. It&rsquo;s not a phrase Washington would have called
-        a quotation &mdash; by 1778 it was the kind of phrase
+        a quotation. By 1778 it was the kind of phrase
         anyone in the officer corps might reach for. But its route
         into 18th-century English ran straight through Shakespeare.
         Every English-language speaker with literary access in the
@@ -314,9 +314,9 @@ export default function BandOfBrothersCaseStudy() {
       <p>
         Most of what Shakespeare gave the Founders looks like this.
         Adams&rsquo;s deliberate quotations are the loud part. The
-        quieter part &mdash; the part that produces phrases like{" "}
+        quieter part (the part that produces phrases like{" "}
         <em>band of brothers</em> appearing in a Continental Army
-        General Order without anyone marking it &mdash; is harder to
+        General Order without anyone marking it) is harder to
         document case by case, but it&rsquo;s the wider channel.
         Shakespeare became part of the air the Founders wrote in. They
         breathed his English without always knowing they were doing
@@ -328,7 +328,7 @@ export default function BandOfBrothersCaseStudy() {
           <span className="text-folio">▸</span>
           <span className="group-open:hidden">
             A note on how this case study sits against the
-            statistics &mdash; for the methodologically curious
+            statistics, for the methodologically curious
           </span>
           <span className="hidden group-open:inline">
             A note on how this case study sits against the statistics
@@ -351,9 +351,9 @@ export default function BandOfBrothersCaseStudy() {
             its source against the Founders&rsquo; ordinary speech.
             And yet the historical route from <em>Henry V</em> through
             educated 18th-century English into Washington&rsquo;s
-            general orders is undisputed. That gap &mdash; between
+            general orders is undisputed. That gap (between
             what the corpus statistics will mark and what historical
-            reading recovers &mdash; <em>is</em> the substantive point
+            reading recovers) <em>is</em> the substantive point
             of the case study. The fully-Shakespearean phrases survive
             the corpus test; the partially-Shakespearean ones travel
             beyond it.
@@ -368,7 +368,7 @@ export default function BandOfBrothersCaseStudy() {
         <Link href="/case-study/tide-in-the-affairs" className="underline">
           There Is a Tide
         </Link>{" "}
-        &mdash; the same &ldquo;one phrase, many decades&rdquo; pattern
+        for the same &ldquo;one phrase, many decades&rdquo; pattern
         in John Adams, and{" "}
         <Link href="/essay/two-modes" className="underline">
           Two Modes of Shakespearean Influence

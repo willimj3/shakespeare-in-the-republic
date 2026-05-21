@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "'Tis: Franklin's Signature Contraction · Shakespeare in the Republic",
   description:
-    "Franklin uses the archaic contraction 'tis at 342 per million words across his life — twice the next Founder's rate and ten times most. He starts at age sixteen in Silence Dogood and never stops.",
+    "Franklin uses the archaic contraction 'tis at 342 per million words across his life, twice the next Founder's rate and ten times most. He starts at age sixteen in Silence Dogood and never stops.",
 };
 
 export default function TisFranklinsSignature() {
@@ -21,7 +21,7 @@ export default function TisFranklinsSignature() {
         <>
           Franklin uses the contraction <em>&lsquo;tis</em> (and its
           archaic siblings <em>&lsquo;twas</em>, <em>&lsquo;twere</em>)
-          at more than twice the rate of any other Founder &mdash; and
+          at more than twice the rate of any other Founder, and
           at roughly ten times the rate of Adams, Washington, and
           Jefferson. The first uses appear in <em>Silence Dogood</em>{" "}
           in May 1722, when Franklin was sixteen. They never leave his
@@ -58,7 +58,7 @@ export default function TisFranklinsSignature() {
           a passage, or a phrase, or a named reference. He almost never
           mentions Shakespeare. He almost never quotes Shakespeare. Of
           twenty-four phrases popularly attributed to Shakespeare, he
-          uses only five &mdash; the fewest of any Founder. He produces
+          uses only five, the fewest of any Founder. He produces
           zero verbatim seven-word Shakespeare matches in our entire
           passage-level catalogue.
         </p>
@@ -78,7 +78,7 @@ export default function TisFranklinsSignature() {
 
       <Stat
         value="606"
-        label="Times Franklin uses &lsquo;tis in his writing — more than twice as often as any other Founder, and ten times more often than Adams, Washington, or Jefferson, who use it roughly once every 30,000 words."
+        label="Times Franklin uses &lsquo;tis in his writing, more than twice as often as any other Founder, and ten times more often than Adams, Washington, or Jefferson, who use it roughly once every 30,000 words."
       />
 
       <Stat
@@ -94,8 +94,8 @@ export default function TisFranklinsSignature() {
       <TisRateBar />
 
       <p>
-        Shakespeare&rsquo;s rate of <em>&lsquo;tis</em> &mdash; 1,913 per
-        million words &mdash; sits four times beyond the rightmost
+        Shakespeare&rsquo;s rate of <em>&lsquo;tis</em> (1,913 per
+        million words) sits four times beyond the rightmost
         Founder bar. The contraction saturates his text. In general
         eighteenth-century English the form was vanishing; by 1750 the
         elision <em>it is &rarr; &lsquo;tis</em> was an archaism, a
@@ -108,7 +108,7 @@ export default function TisFranklinsSignature() {
 
       {/* ── 1722 ── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        1722 &mdash; a printer&rsquo;s apprentice
+        1722: a printer&rsquo;s apprentice
       </h2>
       <p>
         Franklin&rsquo;s half-brother James founded the{" "}
@@ -117,7 +117,7 @@ export default function TisFranklinsSignature() {
         was an apprentice in the print shop, sleeping on a typesetting
         bench. Forbidden from publishing under his own name, he slipped
         an anonymous letter under the print-shop door on the night of
-        2 April 1722, signed &ldquo;Silence Dogood&rdquo; &mdash; an
+        2 April 1722, signed &ldquo;Silence Dogood&rdquo;: an
         imagined widow whose voice he had taught himself by copying out
         the <em>Spectator</em> essays of Addison and Steele.
       </p>
@@ -153,7 +153,7 @@ export default function TisFranklinsSignature() {
 
       {/* ── 1725 ── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        1725 &mdash; the free-will tract
+        1725: the free-will tract
       </h2>
       <p>
         Three years later, in London, the nineteen-year-old Franklin
@@ -161,9 +161,9 @@ export default function TisFranklinsSignature() {
         <em>A Dissertation on Liberty and Necessity, Pleasure and Pain</em>.
         He would later try to suppress every copy. The pamphlet is
         sixteen pages of late-Stuart prose-style reasoning. Two of the
-        most striking uses of <em>hath</em> &mdash; the archaic
+        most striking uses of <em>hath</em> (the archaic
         third-person singular Shakespeare uses fifty times in Macbeth
-        alone &mdash; appear in the same paragraph:
+        alone) appear in the same paragraph:
       </p>
       <Kwic
         text="this Objection destroys itself; for whatever an infinitely good God hath wise Ends in suffering to be, must be good, is thereby made good, and cannot be otherwise."
@@ -181,7 +181,7 @@ export default function TisFranklinsSignature() {
       />
       <p>
         Adams uses <em>hath</em> at 264 per million words across his
-        career &mdash; one of the highest rates among the Founders.
+        career, one of the highest rates among the Founders.
         Franklin uses it at 391 per million, the highest. The first
         documented uses arrive at nineteen, in a London philosophical
         pamphlet whose argumentative structure is recognisably
@@ -192,12 +192,12 @@ export default function TisFranklinsSignature() {
 
       {/* ── 1729 ── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        1729 &mdash; the form holds
+        1729: the form holds
       </h2>
       <p>
         Four years later, back in Philadelphia, Franklin and Hugh
         Meredith have taken over the <em>Pennsylvania Gazette</em>. To
-        promote it Franklin invents another satirical persona &mdash;
+        promote it Franklin invents another satirical persona:
         &ldquo;Martha Careful&rdquo; and &ldquo;Caelia Shortface,&rdquo;
         composite voices of a women&rsquo;s gossip circle. He uses
         <em>hath</em> at the natural moments:
@@ -223,7 +223,7 @@ export default function TisFranklinsSignature() {
 
       {/* ── 1777 Paris ── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        1777 &mdash; the diplomat at Passy
+        1777: the diplomat at Passy
       </h2>
       <p>
         Fifty-five years after the first Silence Dogood essays, Franklin
@@ -268,9 +268,9 @@ export default function TisFranklinsSignature() {
         background hum of old-fashioned English running through
         everything he wrote. <em>&lsquo;Tis</em> appears 606 times.{" "}
         <em>Hath</em> shows up at a rate of about one every 2,500
-        words. <em>Thou, thee, thy, thine</em> &mdash; pronouns that
-        had largely died out of American English by 1750 &mdash;
-        show up thirty times more often in Franklin than in
+        words. <em>Thou, thee, thy, thine</em> (pronouns that
+        had largely died out of American English by 1750) show
+        up thirty times more often in Franklin than in
         Washington. <em>Doth, art, hast, mayst, dost</em>: all
         elevated. The <em>texture</em> of Franklin&rsquo;s prose is
         late-Stuart English at densities no other Founder gets close
@@ -283,7 +283,7 @@ export default function TisFranklinsSignature() {
         a row. Franklin&rsquo;s Shakespearean side is spread across
         every sentence one contraction or one verb-form at a time,
         never in long runs. Catching it requires a different kind of
-        analysis &mdash; counting old forms across the whole corpus,
+        analysis: counting old forms across the whole corpus,
         comparing pronoun distributions, looking at the texture rather
         than the surface.
       </p>
@@ -293,7 +293,7 @@ export default function TisFranklinsSignature() {
         never attended a university. He was apprenticed at twelve. The
         other five Founders had Harvard, Princeton, or William and
         Mary educations. Whatever Shakespearean material entered
-        Franklin&rsquo;s prose entered it through reading &mdash;
+        Franklin&rsquo;s prose entered it through reading:
         unmediated by classroom instruction, unmarked by literary
         self-consciousness, and absorbed during the years when his
         prose habits were being formed in his half-brother&rsquo;s
@@ -311,9 +311,9 @@ export default function TisFranklinsSignature() {
         illustrates the absorbed mode: continuous, unsignalled,
         invisible to any reader who isn&rsquo;t counting. Both modes
         are real. Neither is more &ldquo;influence&rdquo; than the
-        other. The argument of the project &mdash; that both modes are
+        other. The argument of the project (that both modes are
         needed to see the full shape of Shakespeare&rsquo;s
-        inheritance in the Founders &mdash; is, in the most literal
+        inheritance in the Founders) is, in the most literal
         sense, the argument these case studies make jointly.
       </p>
 
@@ -330,8 +330,8 @@ export default function TisFranklinsSignature() {
           className="underline"
         >
           Band of Brothers at Valley Forge
-        </Link>{" "}
-        &mdash; the citational counterparts. The broader argument is in{" "}
+        </Link>
+        : the citational counterparts. The broader argument is in{" "}
         <Link href="/essay/two-modes" className="underline">
           Two Modes of Shakespearean Influence
         </Link>.

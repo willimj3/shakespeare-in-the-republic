@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title:
     "Methinks I Hear You · Adams's Shakespearean ventriloquism · Shakespeare in the Republic",
   description:
-    "John Adams uses 'methinks' only five times in his entire writing — but four of those uses follow the same Shakespearean construction, 'methinks I hear', deployed across 32 years to put imagined words in his reader's mouth.",
+    "John Adams uses 'methinks' only five times in his entire writing, but four of those uses follow the same Shakespearean construction, 'methinks I hear', deployed across 32 years to put imagined words in his reader's mouth.",
 };
 
 const METHINKS_EVENTS: TimelineEvent[] = [
@@ -45,12 +45,12 @@ export default function MethinksIHearYouCaseStudy() {
       anchorFinding={
         <>
           John Adams uses the word <em>methinks</em> only five times in
-          his entire surviving writing &mdash; an unremarkable rate
+          his entire surviving writing, an unremarkable rate
           compared to Benjamin Franklin, who uses it more than thirty
           times more often. The finding isn&rsquo;t volume.{" "}
-          <strong>It&rsquo;s that four of Adams&rsquo;s five uses
-          follow the same Shakespearean construction</strong> &mdash;{" "}
-          <em>methinks I hear</em> &mdash; deployed across 32 years to
+          <strong>Four of Adams&rsquo;s five uses
+          follow the same Shakespearean construction</strong> (
+          <em>methinks I hear</em>) deployed across 32 years to
           put imagined words in his reader&rsquo;s mouth. He uses it
           at twenty in his private diary, at thirty-nine to political
           opponents, at forty in correspondence to a comrade, and
@@ -89,14 +89,14 @@ export default function MethinksIHearYouCaseStudy() {
           In my mind&rsquo;s eye, Horatio.
         </p>
         <footer className="text-sm not-italic text-ink-muted mt-3">
-          &mdash; Hamlet, <em>Hamlet</em> 1.2
+          Hamlet, <em>Hamlet</em> 1.2
         </footer>
       </blockquote>
 
       <p>
         It&rsquo;s a small machine for a specific job. The speaker
-        invokes a perception that hasn&rsquo;t happened &mdash;{" "}
-        <em>I think I see / hear</em> &mdash; in order to summon
+        invokes a perception that hasn&rsquo;t happened ({" "}
+        <em>I think I see / hear</em>) in order to summon
         someone who isn&rsquo;t there. Hamlet uses it to bring his
         dead father into the room. Cleopatra uses it (in{" "}
         <em>Antony and Cleopatra</em> 5.2) to summon dead Antony:
@@ -117,16 +117,16 @@ export default function MethinksIHearYouCaseStudy() {
 
       <hr />
 
-      {/* ── 1756 — diary, age 20 ──────────────────────────────────── */}
+      {/* ── 1756: diary, age 20 ──────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        1756 &mdash; the private diary
+        1756: the private diary
       </h2>
       <p>
         The first use we have appears in a diary entry of 15 March
         1756. The twenty-year-old Adams is in his father&rsquo;s house
         in Braintree, reading by candlelight. The diary entry begins
-        with a strange financial fantasy &mdash; a thousand pounds a
-        year, what he&rsquo;d do with it &mdash; then catches itself.
+        with a strange financial fantasy (a thousand pounds a
+        year, what he&rsquo;d do with it) then catches itself.
         Adams anticipates the reader (perhaps an imagined future
         reader of his own diary, perhaps just himself) objecting that
         this is unbecoming. He puts words in that imagined
@@ -148,11 +148,11 @@ export default function MethinksIHearYouCaseStudy() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1775 &mdash; from soliloquy to political polemic
+        1775: from soliloquy to political polemic
       </h2>
       <p>
         Nineteen years later Adams is writing one of the most-read
-        political essays of the pre-Revolutionary period &mdash; his
+        political essays of the pre-Revolutionary period: his
         &ldquo;Novanglus&rdquo; letters, addressed publicly to the
         Inhabitants of the Colony of Massachusetts-Bay, defending the
         colonial cause against the loyalist arguments of Daniel
@@ -171,8 +171,8 @@ export default function MethinksIHearYouCaseStudy() {
       <p>
         The word <em>soliloquy</em> tells you Adams knows exactly what
         he&rsquo;s doing. He is staging an imagined Shakespearean
-        scene for his readers &mdash; complete with stage directions
-        &mdash; in which a British minister speaks his real political
+        scene for his readers (complete with stage directions) in
+        which a British minister speaks his real political
         motives out loud. Lord North isn&rsquo;t there. The reader
         isn&rsquo;t there either. The whole construction is two
         invocations: <em>methinks I hear</em>, and then the imagined
@@ -180,7 +180,7 @@ export default function MethinksIHearYouCaseStudy() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1776 &mdash; mid-Revolution, ventriloquising a friend
+        1776: mid-Revolution, ventriloquising a friend
       </h2>
       <p>
         The next April, with the Revolution underway and Adams in
@@ -189,7 +189,7 @@ export default function MethinksIHearYouCaseStudy() {
         are arguing about whether to declare independence, what kinds
         of state governments to form, and whether Congress should
         first invite the colonies to assume governments of their own.
-        Adams anticipates Warren&rsquo;s likely objection &mdash; and
+        Adams anticipates Warren&rsquo;s likely objection, and
         the machine surfaces again:
       </p>
       <Kwic
@@ -211,7 +211,7 @@ export default function MethinksIHearYouCaseStudy() {
       </p>
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        1788 &mdash; a quiet letter to his son-in-law
+        1788: a quiet letter to his son-in-law
       </h2>
       <p>
         Twelve more years pass. The Revolution is over. The
@@ -258,8 +258,8 @@ export default function MethinksIHearYouCaseStudy() {
       <p>
         What makes the pattern interesting is its specificity. Adams
         doesn&rsquo;t use <em>methinks</em> often. Plenty of his
-        contemporaries use it more &mdash; Franklin reaches for the
-        word constantly. But Adams&rsquo;s uses cluster around one
+        contemporaries use it more (Franklin reaches for the
+        word constantly). But Adams&rsquo;s uses cluster around one
         specific rhetorical construction (<em>methinks I hear</em> + a
         verb of speech) doing one specific job (putting imagined words
         in someone else&rsquo;s mouth). The construction comes from
@@ -273,7 +273,7 @@ export default function MethinksIHearYouCaseStudy() {
 
       <p>
         The Adams Shakespeare-as-text mode shows up everywhere in his
-        writing &mdash; he quotes lines, names characters, references
+        writing. He quotes lines, names characters, references
         plays. But what this case study really documents is something
         narrower and stranger. Adams not only quotes Shakespeare; he{" "}
         <em>uses Shakespeare&rsquo;s rhetorical machinery</em>. The
@@ -294,8 +294,8 @@ export default function MethinksIHearYouCaseStudy() {
         For completeness: the word <em>methinks</em> itself was
         already archaic by 1750 and effectively extinct in
         18th-century American English. The Founders use it at low
-        rates in their writing &mdash; one occurrence per million
-        words or fewer, on average. The one exception is Franklin.
+        rates in their writing (one occurrence per million
+        words or fewer, on average). The one exception is Franklin.
         Franklin uses <em>methinks</em> at <strong>37.8 per million
         words</strong>, more than thirty times the rate of any other
         Founder.
@@ -328,7 +328,7 @@ export default function MethinksIHearYouCaseStudy() {
         >
           Band of Brothers at Valley Forge
         </Link>
-        {" "}&mdash; the same pattern of one phrase across many decades,
+        : the same pattern of one phrase across many decades,
         in Adams and Washington respectively. The companion essay is{" "}
         <Link href="/essay/two-modes" className="underline">
           Two Modes of Shakespearean Influence
