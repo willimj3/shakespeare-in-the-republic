@@ -28,11 +28,14 @@ export default function MetaphorRadar({
   max,
   size = 280,
 }: MetaphorRadarProps) {
+  // Horizontal viewBox padding so axis labels at the far-left
+  // (MOTION) and upper-left (CONTAINER) axes don't get clipped.
+  const LABEL_PAD = 40;
   const W = size;
   const H = size + 60; // extra vertical for the title + labels
   const cx = W / 2;
   const cy = size / 2 + 30;
-  const radius = (size / 2) * 0.66; // leave room for axis labels
+  const radius = (size / 2) * 0.6; // leave room for axis labels
   const n = axes.length;
 
   const allValues = [...values, ...(baseline ?? [])];
@@ -90,7 +93,7 @@ export default function MetaphorRadar({
       </figcaption>
 
       <svg
-        viewBox={`0 0 ${W} ${H}`}
+        viewBox={`${-LABEL_PAD} 0 ${W + 2 * LABEL_PAD} ${H}`}
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         aria-label={`Radar chart of metaphor-family rates for ${title}, with ${baselineLabel} silhouette for comparison.`}

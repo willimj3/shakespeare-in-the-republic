@@ -192,8 +192,7 @@ export default function ExplorerLanding() {
                   </div>
                 )}
                 <div className="p-5 flex-1 flex flex-col">
-                  <p className="section-marker">Open</p>
-                  <h2 className="font-display text-xl text-ink mt-1 group-hover:text-folio transition-colors">
+                  <h2 className="font-display text-xl text-ink group-hover:text-folio transition-colors">
                     {v.title}
                   </h2>
                   <p className="text-sm text-ink-soft mt-2 leading-snug flex-1">
