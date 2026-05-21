@@ -46,6 +46,61 @@ export default function RankingExplorerPage() {
               the two modes of Shakespearean inheritance show
               themselves.
             </p>
+
+            {/* ── Composite-score explainer ─────────────────────── */}
+            <details className="mt-8 bg-parchment-dark border border-parchment-deep rounded-sm p-5 group">
+              <summary className="cursor-pointer font-display text-base text-folio">
+                How is the composite score calculated?
+              </summary>
+              <div className="mt-4 space-y-3 text-sm text-ink-soft leading-relaxed">
+                <p>
+                  Each Founder&rsquo;s composite is the average of{" "}
+                  <strong>seven percentile ranks</strong> &mdash;
+                  not a probability and not a fixed similarity to
+                  Shakespeare. Seven measures of Shakespearean
+                  inheritance are computed against the full corpus
+                  (vocabulary breadth, weighted vocabulary,
+                  collocations, collocation hits, MSTTR closeness,
+                  HTR closeness, Yule&rsquo;s K closeness), and the
+                  six Founders are ranked on each measure. Each
+                  rank becomes a percentile (rank 6 = 1.00, rank 1
+                  = 0.17). The composite is the mean of those seven
+                  percentile values.
+                </p>
+                <p>
+                  Three properties to keep in mind. The composite
+                  is <strong>relative</strong> &mdash; it ranks
+                  Founders against each other, not against an
+                  absolute Shakespeare benchmark. The seven
+                  measures are{" "}
+                  <strong>equally weighted</strong> &mdash; no
+                  a-priori reason favours one over another. And the
+                  composite is <strong>silent about citation</strong>{" "}
+                  &mdash; it measures statistical absorption of
+                  vocabulary and style, not whether the Founder ever
+                  named Shakespeare or quoted him. Citation lives
+                  in the catalogue.
+                </p>
+                <p>
+                  The full derivation lives in{" "}
+                  <Link href="/essay/methods#composite" className="underline">
+                    the Methods essay
+                  </Link>
+                  ; the exact formula is in{" "}
+                  <code className="text-folio">
+                    scripts/influence3_founder_distance.py
+                  </code>{" "}
+                  in the research repository. The five other
+                  measures shown in the matrix below
+                  (pronoun-distribution similarity, archaic-form
+                  density, metaphor profile, statistical-style
+                  overlap, use of Shakespeare-coined phrases) are
+                  computed independently and are <em>not</em>{" "}
+                  included in the composite &mdash; they&rsquo;re
+                  reported alongside it as a check.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </header>

@@ -176,7 +176,18 @@ export default function FounderProfilePage({ params }: { params: { id: string } 
               <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
                 <Stat
                   value={meta.composite.toFixed(2)}
-                  label="Composite score"
+                  label={
+                    <>
+                      Composite score{" "}
+                      <Link
+                        href="/essay/methods#composite"
+                        className="text-folio underline"
+                        title="What does this score mean?"
+                      >
+                        ?
+                      </Link>
+                    </>
+                  }
                   rank={composite_rank ? `rank ${composite_rank} of 6` : undefined}
                 />
                 <Stat
@@ -421,7 +432,7 @@ function Stat({
   rank,
 }: {
   value: string;
-  label: string;
+  label: React.ReactNode;
   rank?: string;
 }) {
   return (

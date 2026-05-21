@@ -251,6 +251,127 @@ export default function MethodsEssay() {
 
       <hr />
 
+      {/* ── Composite score ────────────────────────────────────────── */}
+      <h2 id="composite" className="font-display text-3xl text-ink mt-10 scroll-mt-24">
+        The composite score &mdash; what 0.79 actually means
+      </h2>
+      <p>
+        The single number that appears on every Founder&rsquo;s
+        profile and powers the ranking &mdash; Franklin 0.7857,
+        Adams 0.7619, Jefferson 0.5952, Washington 0.5238, Madison
+        0.4286, Hamilton 0.4048 &mdash; is not a probability, not
+        a similarity coefficient, and not a raw count. It is the
+        average of seven percentile ranks, each computed against
+        the other Founders.
+      </p>
+      <p>
+        Here is how it&rsquo;s built. Seven separate measures of
+        Shakespearean inheritance are computed independently for
+        each Founder against the full corpus:
+      </p>
+      <ol className="my-6 text-base text-ink-soft space-y-2 pl-6 list-decimal">
+        <li>
+          <strong>Vocabulary breadth.</strong> The count of
+          distinct Shakespearean words this Founder uses in his
+          collected writing.
+        </li>
+        <li>
+          <strong>Weighted vocabulary.</strong> The same count, but
+          weighted by how often Shakespeare himself uses each word
+          &mdash; so picking up the words Shakespeare reaches for
+          most matters more than picking up his rare ones.
+        </li>
+        <li>
+          <strong>Shakespearean collocations.</strong> The count of
+          distinctive Shakespearean bigrams and trigrams (two- and
+          three-word patterns) reproduced anywhere in the
+          Founder&rsquo;s writing.
+        </li>
+        <li>
+          <strong>Collocation hits.</strong> The total number of
+          times those patterns appear, not just how many distinct
+          ones.
+        </li>
+        <li>
+          <strong>MSTTR closeness.</strong> How close this
+          Founder&rsquo;s mean segmental type-token ratio &mdash; a
+          sample-size-corrected measure of vocabulary diversity
+          &mdash; is to Shakespeare&rsquo;s.
+        </li>
+        <li>
+          <strong>HTR closeness.</strong> How close his
+          hapax-token ratio (the fraction of words used exactly
+          once) is to Shakespeare&rsquo;s.
+        </li>
+        <li>
+          <strong>Yule&rsquo;s K closeness.</strong> How close his
+          Yule&rsquo;s K statistic &mdash; another classic
+          vocabulary-richness measure &mdash; is to
+          Shakespeare&rsquo;s.
+        </li>
+      </ol>
+      <p>
+        For each of those seven measures, we rank the six Founders
+        from 1 to 6, then convert the rank into a percentile
+        (rank 6 = 1.00, rank 5 = 0.83, rank 4 = 0.67, rank 3 =
+        0.50, rank 2 = 0.33, rank 1 = 0.17). The composite is
+        simply the average of the seven percentile values.
+      </p>
+      <p>
+        That construction has three properties worth flagging. First,
+        <strong> the composite is relative</strong>. A Founder&rsquo;s
+        score depends on the other five he&rsquo;s being compared
+        to; it is not a fixed similarity to Shakespeare. If we
+        added a seventh Founder &mdash; or dropped one &mdash; the
+        numbers would shift. Second,{" "}
+        <strong>the seven measures are equally weighted</strong>.
+        Vocabulary breadth counts as much as Yule&rsquo;s K. There
+        is no a-priori reason to weight any of them more heavily;
+        we picked equal weighting as the most defensible default.
+        Third, <strong>the composite is silent about the way of
+        knowing</strong>. It does not measure conscious citation,
+        named reference, or specific play knowledge &mdash; those
+        live in the catalogue. It measures statistical absorption
+        of Shakespearean vocabulary and style.
+      </p>
+      <p>
+        The composite does not include the other measures the
+        project tracks &mdash; pronoun-distribution similarity,
+        archaic-form survival, metaphor profile, the CFA
+        statistical-style overlap, or use of the well-known
+        Shakespeare-coined phrases. Those are reported as
+        independent per-method rankings, alongside the composite,
+        on the{" "}
+        <Link href="/explorer/composite">Ranking explorer</Link>.
+        Where the eight rankings agree, the composite is
+        confirmed; where they disagree, the disagreement itself is
+        the substantive story (see the{" "}
+        <Link href="/essay/convergence">
+          Eight Ways of Looking
+        </Link>{" "}
+        essay).
+      </p>
+      <p>
+        The exact formula lives in the research repository:{" "}
+        <code className="text-folio">
+          scripts/influence3_founder_distance.py
+        </code>
+        . The function is{" "}
+        <code className="text-folio">rank_pct</code> over each
+        measure, then a row-wise mean across the seven percentile
+        columns. The output table is{" "}
+        <code className="text-folio">
+          tables/influence3_founder_distance.csv
+        </code>
+        , which feeds{" "}
+        <code className="text-folio">data/composite.json</code>{" "}
+        on the site (
+        <Link href="/papers">downloadable on the papers page</Link>
+        ).
+      </p>
+
+      <hr />
+
       {/* ── Reproducibility ────────────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
         Keeping the project honest
