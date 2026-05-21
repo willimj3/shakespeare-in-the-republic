@@ -53,8 +53,8 @@ export default function PlayAtlasToggle() {
 
       <p className="text-xs text-ink-muted italic leading-relaxed mb-4">
         {tier === "strict"
-          ? "The catalogue tier: 140 hand-verified references (62 direct quotations + 78 by-name). Twenty-three of the seventeen plays the Founders touched, plotted in order of strict-catalogue references."
-          : "The MEDIUM+ candidate-echoes tier: ~645 four- and five-word verbatim matches that include enough distinctive Shakespeare content words to clear the noise floor. Histories, romances, and problem plays surface here that the strict catalogue's 7+-word threshold filtered out."}
+          ? `The strict tier: ${strictTotal} play-linked references across ${STRICT.plays.length} plays. The reference catalogue holds 137 HIGH+MEDIUM items in total; this view restricts to the subset that pinpoint a specific play (every direct quotation, plus by-name play-title and distinctive-character mentions). Bare "Shakespeare" mentions don't appear here because they don't identify a play.`
+          : `The MEDIUM+ candidate-echoes tier: ${candidateTotal.toLocaleString()} four- and five-word verbatim matches across ${CANDIDATES.plays.length} plays, with enough distinctive Shakespeare content words to clear the noise floor. Histories, romances, and problem plays surface here that the strict catalogue's 7+-word threshold filtered out.`}
       </p>
 
       <PlayAtlas data={active} />

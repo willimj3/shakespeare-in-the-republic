@@ -36,16 +36,12 @@ const FOUNDER_MAP = Object.fromEntries(
   (founders as unknown as { founders: FounderMeta[] }).founders.map((f) => [f.id, f]),
 );
 
-const METHODS = [
-  "Overall ranking",
-  "Pronoun-distribution similarity",
-  "Old-fashioned word survival",
-  "Metaphor pattern similarity",
-  "Statistical-style overlap",
-  "Use of Shakespeare-coined phrases",
-  "Shakespearean vocabulary",
-  "Shakespearean context patterns",
-];
+// Derived from composite.json so this component can never drift
+// from the data — matches the pattern used in RankingExplorer.tsx
+// and on /founder/[id].
+const METHODS: string[] = (composite as unknown as {
+  six_method_convergence: { methods: string[] };
+}).six_method_convergence.methods;
 
 const RANK_COLORS = ["#7B1E1E", "#9C3535", "#B95B5B", "#B59E78", "#D6C2A6", "#EAE0D0"];
 
@@ -246,10 +242,10 @@ export default function CompareExplorer() {
                       className="text-parchment font-display font-semibold rounded-sm px-2 py-0.5 inline-block w-9 text-center"
                       style={{
                         background:
-                          RANK_COLORS[Math.max(0, Math.min(5, m.left - 1))],
+                          RANK_COLORS[Math.max(0, Math.min(5, Math.floor(m.left - 1)))],
                       }}
                     >
-                      {m.left}
+                      {Number.isInteger(m.left) ? m.left : m.left.toFixed(1)}
                     </span>
                   </div>
                   <span className="text-xs text-ink-muted italic px-2 text-center min-w-[180px]">
@@ -260,10 +256,10 @@ export default function CompareExplorer() {
                       className="text-parchment font-display font-semibold rounded-sm px-2 py-0.5 inline-block w-9 text-center"
                       style={{
                         background:
-                          RANK_COLORS[Math.max(0, Math.min(5, m.right - 1))],
+                          RANK_COLORS[Math.max(0, Math.min(5, Math.floor(m.right - 1)))],
                       }}
                     >
-                      {m.right}
+                      {Number.isInteger(m.right) ? m.right : m.right.toFixed(1)}
                     </span>
                     <span className="text-ink-soft truncate">{right.name}</span>
                   </div>

@@ -120,8 +120,16 @@ export default function RankingExplorerPage() {
               <p className="text-sm text-ink-soft leading-relaxed">
                 The raw counts behind the composite. Catalogue is
                 HIGH/MEDIUM verified Shakespeare references (direct
-                quotations + by-name); thematic is character-as-type
-                invocations from the thematic-allusions tier; MED+
+                quotations + by-name) after the source-level audit;
+                thematic is character-as-type invocations restricted
+                to the strict <em>Shakespeare-only</em> set (Falstaff,
+                Shylock, Hotspur, Lady Macbeth, etc.) — Roman names
+                like Brutus and Caesar appear in the data but are
+                shown as ambiguous (non-scored) on the{" "}
+                <Link href="/explorer/thematic-allusions" className="underline">
+                  Thematic Allusions
+                </Link>{" "}
+                explorer because Plutarch reaches them too. MED+
                 echoes are the medium-or-high-confidence candidate
                 echoes (the meaningful signal in the 35,794-row
                 relaxed tier). The combined-per-million column adds
@@ -152,7 +160,7 @@ export default function RankingExplorerPage() {
                     </th>
                     <th className="text-right font-display font-normal pb-2 px-2">
                       <span className="block text-xs uppercase tracking-smallcap">
-                        Thematic
+                        Thematic <span className="normal-case font-sans">(Shakespeare-only)</span>
                       </span>
                     </th>
                     <th className="text-right font-display font-normal pb-2 px-2">

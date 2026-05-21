@@ -40,7 +40,7 @@ const VIEWS: ExplorerView[] = [
     slug: "candidate-echoes",
     title: "Candidate Echoes",
     blurb:
-      "All 35,794 short verbatim matches between the Founders and Shakespeare, served live with confidence tiers (HIGH / MEDIUM / LOW). 'Full of sound and fury' from Adams 1758, 'a pound of flesh' from Jefferson 1790, many more. Most LOW-tier are coincidence; the MEDIUM+ tier is where the real signal lives.",
+      "All 35,794 short verbatim matches between the Founders and Shakespeare, served live with three candidate tiers (Strong / Medium / Low). 'Full of sound and fury' from Adams 1758, 'a pound of flesh' from Jefferson 1790, many more. Low-tier matches are mostly coincidence; the Medium-and-above tier is where the real signal lives.",
     status: "live",
     image: asset("/images/historical/first-folio-macbeth-p738.jpg"),
     imageAlt: "First Folio: Macbeth.",
@@ -49,7 +49,7 @@ const VIEWS: ExplorerView[] = [
     slug: "thematic-allusions",
     title: "Thematic Allusions",
     blurb:
-      "Cases where a Founder invokes a Shakespearean character as a type rather than quoting Shakespeare or naming him. 'Harrison was another Sir John Falstaff' (Adams 1776). Twenty-three high-confidence allusions; seventeen are from Julius Caesar.",
+      "Cases where a Founder invokes a Shakespearean character as a type rather than quoting Shakespeare or naming him. 'Harrison was another Sir John Falstaff' (Adams 1776). Nineteen distinct passages after within-document dedup; six are Shakespeare-only scored (all Adams), the remainder are Roman-ambiguous (Brutus, Caesar) and shown as non-scored.",
     status: "live",
     image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
     imageAlt: "First Folio: Tragedy of Julius Caesar.",
@@ -58,7 +58,7 @@ const VIEWS: ExplorerView[] = [
     slug: "catalogue",
     title: "Reference Catalogue",
     blurb:
-      "Search and filter every traceable Shakespeare reference across the six Founders: 140 verified instances. Filter by who, when, and what kind of reference. Search by word, name, or year.",
+      "Search and filter every traceable Shakespeare reference across the six Founders: 108 verified HIGH/MEDIUM instances after the source-level audit (61 verbatim quotations + 47 by-name references, all Adams except Franklin 2, Jefferson 26, Washington 1, Madison 0, Hamilton 0). Filter by who, when, and what kind of reference.",
     status: "live",
     image: asset("/images/historical/adams-diary-manuscript.jpg"),
     imageAlt: "Adams diary manuscript",
@@ -85,7 +85,7 @@ const VIEWS: ExplorerView[] = [
     slug: "composite",
     title: "The Ranking",
     blurb:
-      "Eight ways of measuring Shakespearean influence, side by side. Click any method to re-sort the matrix; click any Founder to see their profile. The single place the methods disagree is the whole argument.",
+      "Eleven ways of measuring Shakespearean influence, side by side. Click any method to re-sort the matrix; click any Founder to see their profile. The single place the methods disagree is the whole argument.",
     status: "live",
     image: asset("/images/historical/first-folio-macbeth-p742.jpg"),
     imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",

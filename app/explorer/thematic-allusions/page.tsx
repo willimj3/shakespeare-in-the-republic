@@ -37,20 +37,19 @@ export const metadata: Metadata = {
 // rule out. The Roman trio (Brutus, Caesar, Cassius, Antony) lived
 // in Plutarch before they lived in Shakespeare; that ambiguity is
 // recorded explicitly rather than buried.
+//
+// Mirrors the canonical SHAKESPEARE_ONLY_CHARACTERS set in
+// scripts/export_site_data.py and the founder profile pages.
+const SHAKESPEARE_ONLY_CHARACTERS: ReadonlySet<string> = new Set([
+  "falstaff", "sir john falstaff", "pistol", "nym", "peto",
+  "fluellin", "shylock", "hotspur", "lady macbeth", "iago",
+  "desdemona", "malvolio", "polonius", "mercutio", "bardolph",
+  "banquo", "macduff", "cardinal wolsey", "caliban", "prospero",
+  "enobarbus",
+]);
+
 function isShakespeareOnlyCharacter(name: string): boolean {
-  const n = name.toLowerCase();
-  return (
-    n.includes("falstaff") ||
-    n.includes("pistol") ||
-    n.includes("nym") ||
-    n.includes("peto") ||
-    n.includes("fluellin") ||
-    n.includes("shylock") ||
-    n.includes("hotspur") ||
-    n.includes("lady macbeth") ||
-    n.includes("iago") ||
-    n.includes("desdemona")
-  );
+  return SHAKESPEARE_ONLY_CHARACTERS.has((name ?? "").toLowerCase().trim());
 }
 
 // Group by Founder for display
@@ -171,12 +170,15 @@ export default function ThematicAllusionsPage() {
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               When the criterion is tightened to characters that{" "}
               <em>can only have come from Shakespeare</em> (Falstaff,
-              Pistol, Nym, Peto, Fluellin, Shylock, Hotspur, Lady
-              Macbeth), six distinct passages survive, all of them
-              Adams between 1776 and 1818. The other twelve passages
-              invoke Roman figures whose source is ambiguous between
-              Shakespeare and Plutarch. Both tallies are real; the
-              project just doesn&rsquo;t conflate them.
+              Shylock, Hotspur, Lady Macbeth, Iago, Polonius, etc.),{" "}
+              {shakespeareOnlyPassages} distinct passages survive,
+              all of them Adams between 1776 and 1818. The other{" "}
+              {ambiguousPassages} passages invoke Roman figures
+              (Brutus, Caesar, Cassius) whose source is ambiguous
+              between Shakespeare and Plutarch. Both tallies are
+              real; the project just doesn&rsquo;t conflate them.
+              Each row below carries a tier badge so the
+              distinction stays visible at the passage level.
             </p>
           </div>
         </div>
@@ -318,7 +320,7 @@ export default function ThematicAllusionsPage() {
 
       <DataScope
         scope="full-corpus"
-        description="Thematic allusions are mentions of distinctively Shakespearean characters (Brutus, Falstaff, Hotspur, etc.) where surrounding context cues (like, modern, would-be) indicate the Founder is using the character as a type rather than the historical figure. Strict literary and Roman-republic contexts are filtered out."
+        description="Thematic allusions are mentions of distinctively Shakespearean characters where surrounding context cues (like, modern, would-be, another) indicate the Founder is using the character as a type rather than as a strictly historical figure. Each row is shown with a tier badge: 'Scored Shakespeare-only' (characters with no plausible non-Shakespeare source — Falstaff, Shylock, Hotspur, Lady Macbeth, etc.) or 'Roman/classical ambiguous' (Brutus, Caesar, Cassius — present in the data but not counted as Shakespeare evidence because Plutarch reaches them too)."
         sourceTable="data/thematic_allusions.json (computed by scripts/thematic_allusions.py)"
       />
     </div>
@@ -328,6 +330,7 @@ export default function ThematicAllusionsPage() {
 function AllusionCard({ allusion }: { allusion: Allusion }) {
   const fo = foundersOnlineUrl(allusion.doc_id);
   const fg = folgerUrl(allusion.implied_play);
+  const isShakespeareOnly = isShakespeareOnlyCharacter(allusion.matched_character);
   return (
     <article className="bg-parchment-dark border border-parchment-deep rounded-sm p-5">
       <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3 text-sm">
@@ -340,6 +343,22 @@ function AllusionCard({ allusion }: { allusion: Allusion }) {
         </span>
         <span className="text-ink-muted">·</span>
         <span className="text-ink-soft">{allusion.date ?? "n.d."}</span>
+        <span className="text-ink-muted">·</span>
+        {isShakespeareOnly ? (
+          <span
+            className="inline-block px-2 py-0.5 rounded-sm text-[10px] uppercase tracking-smallcap font-semibold bg-folio text-parchment"
+            title="Character has no plausible non-Shakespeare source. Counted as scored Shakespeare evidence."
+          >
+            Scored Shakespeare-only
+          </span>
+        ) : (
+          <span
+            className="inline-block px-2 py-0.5 rounded-sm text-[10px] uppercase tracking-smallcap font-semibold bg-parchment-deep text-ink-soft border border-bronze/40"
+            title="Character is reachable through Plutarch and 18th-c classical training as well as through Shakespeare. Recorded in the data but not counted as Shakespeare-only evidence."
+          >
+            Roman/classical ambiguous
+          </span>
+        )}
       </header>
 
       <blockquote className="text-base text-ink-soft border-l-2 border-bronze pl-4 py-1 leading-relaxed not-italic">

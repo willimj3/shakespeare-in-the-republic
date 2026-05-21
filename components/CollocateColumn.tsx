@@ -62,7 +62,7 @@ export default function CollocateColumn({
           return (
             <li
               key={c.word}
-              className="grid grid-cols-[1.25rem_minmax(0,7rem)_1fr_3rem] items-center gap-3 text-sm"
+              className="grid grid-cols-[1.25rem_minmax(0,7rem)_1fr_4.5rem_5.5rem] items-center gap-3 text-sm"
             >
               <span className="text-ink-muted font-sans text-xs text-right">
                 {i + 1}.
@@ -80,18 +80,37 @@ export default function CollocateColumn({
                   background: BAR_COLOR[side],
                   opacity: 0.85 - i * 0.04,
                 }}
-                aria-label={`G score ${c.G.toFixed(0)}`}
+                aria-label={`G score ${c.G.toFixed(0)}, phi ${c.phi.toFixed(3)} (${c.effect_size})`}
               />
-              <span className="text-xs text-ink-muted text-right font-sans tabular-nums">
-                {c.G.toFixed(0)}
+              <span
+                className="text-xs text-ink-muted text-right font-sans tabular-nums"
+                title="G log-likelihood — the strength of the association test"
+              >
+                G {c.G.toFixed(0)}
+              </span>
+              <span
+                className="text-[11px] text-ink-muted text-right font-sans tabular-nums leading-tight"
+                title={`phi ${c.phi.toFixed(3)} — Cramer's V effect size, scaled 0–1. Verbal scale follows Stefanowitsch §6.5: <0.10 very weak, <0.25 weak, <0.50 moderate, <0.75 strong.`}
+              >
+                <span className="block">φ {c.phi.toFixed(3)}</span>
+                <span className="block italic text-[10px]">
+                  {c.effect_size}
+                </span>
               </span>
             </li>
           );
         })}
       </ol>
       <p className="text-xs text-ink-muted mt-5 italic leading-snug">
-        Bars are scaled to the maximum G log-likelihood on this side.
-        Numbers are G values. All items pass Bonferroni correction.
+        Bars are scaled to G log-likelihood; numbers to the right
+        report G alongside phi (Cramer&rsquo;s V effect size, 0&ndash;1
+        scale). All items pass Bonferroni correction, but the phi
+        column shows how small the underlying effect actually is:
+        for fourteen target nouns out of the project&rsquo;s fourteen,
+        the top collocates fall under <em>very weak</em> on
+        Stefanowitsch&rsquo;s verbal scale (&lt;0.10). The G test
+        confirms <em>that</em> there is a collocational difference;
+        phi tells you it is a thin one.
       </p>
     </section>
   );

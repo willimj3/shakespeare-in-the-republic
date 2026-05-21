@@ -40,9 +40,18 @@ export default function HonourTestExplorerPage() {
               19,000 times; Shakespeare uses it 726 times. The
               finding is about the <em>collocates</em>{" "}
               &mdash; the words that habitually appear next to{" "}
-              <em>honour</em> in each corpus. Those diverge sharply,
-              and the divergence holds across fourteen common
-              abstract nouns.
+              <em>honour</em> in each corpus. Those collocational
+              profiles diverge statistically across fourteen common
+              abstract nouns; the G log-likelihood test detects the
+              divergence cleanly even after Bonferroni correction.
+              The Cramer&rsquo;s V (phi) effect sizes that quantify
+              the difference, though, register as &ldquo;very weak&rdquo;
+              under Stefanowitsch&rsquo;s verbal scale (&lt;0.10) on
+              every target. The shift is real and statistically
+              robust; the absolute magnitude is thin. Each collocate
+              in the columns below is shown with its G value, its
+              phi, and the verbal effect-size label so you can read
+              both numbers at once.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               In Shakespeare, <em>honour</em>&rsquo;s closest

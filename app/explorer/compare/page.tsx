@@ -39,10 +39,13 @@ export default function CompareExplorerPage() {
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The default pair is Adams and Franklin, the
               project&rsquo;s clearest case of the two-modes story:
-              opposite routes to almost-identical composite scores.
-              Try the other obvious pairings: Madison vs
-              Hamilton, Jefferson vs Adams, Franklin vs Washington.
-              The pair-by-pair comparisons are the texture
+              opposite routes to close-but-not-identical composite
+              scores (Adams 0.88, Franklin 0.76, the two of them
+              together a step clear of every other Founder). Try the
+              other obvious pairings: Hamilton vs Madison at the
+              bottom, Jefferson vs Adams across the citational
+              spectrum, Franklin vs Washington across the absorbed
+              one. The pair-by-pair comparisons are the texture
               underneath the headline ranking.
             </p>
           </div>

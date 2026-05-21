@@ -64,46 +64,58 @@ export default function ModalVerbsPage() {
               The diachronic story is in the slope.
             </h2>
             <p className="text-base text-ink-soft leading-relaxed">
-              Some modals are quietly changing across the writing
-              lives of the people who used them. <em>Shall</em>{" "}
-              shows the steepest decline: every Founder writes it
-              less in his late life than in his youth. Adams&rsquo;s{" "}
-              <em>shall</em> rate drops from over 4,000 per million
-              in his pre-1780 writing to under 1,700 by the 1810s.
-              Jefferson follows the same trajectory. The decline is
-              real, it is steady, and it tracks a known shift in
-              the English modal system.
+              Shakespeare uses <em>shall</em> at 4,014 per million
+              words. Every Founder bucket in the data sits well
+              below that &mdash; the Founders are already on the
+              far side of the shift. Adams&rsquo;s <em>shall</em>{" "}
+              rate runs 2,276/M in his pre-1780 writing, climbs
+              modestly to 2,778/M in the 1780s, then declines to
+              1,798/M by the 1810s. Jefferson&rsquo;s rate stays
+              roughly flat around 2,500&ndash;3,200/M across his
+              career. Washington and Hamilton stay near 2,000&ndash;
+              2,600/M; Madison drops further (1,183&ndash;1,477/M
+              from the 1800s onward). The pattern across the six
+              isn&rsquo;t a sharp diachronic plunge but a steady
+              gap from Shakespeare, with a softer downward drift
+              within most Founders&rsquo; later careers. The
+              eighteenth-century English modal system was no longer
+              Shakespeare&rsquo;s.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              <em>Will</em> and <em>would</em> rise correspondingly,
-              not always sharply, but reliably. By the
-              1810s the Founders use <em>will</em> at roughly
-              Shakespeare&rsquo;s rate or above. The future tense
-              has moved from <em>shall</em> to <em>will</em>{" "}
-              within the Founders&rsquo; writing lifetimes.
+              <em>Will</em> tells the complementary story. Founders
+              use it at 4,500&ndash;8,700/M &mdash; at or above
+              Shakespeare&rsquo;s 5,562/M from the 1780s onward.
+              The future tense has already moved from <em>shall</em>{" "}
+              to <em>will</em> by the time these writers reach
+              maturity.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              The most striking gap is <em>ought</em>.
-              Shakespeare uses it at 22 per million words:
-              effectively zero. Every Founder uses it at roughly
-              twenty to fifty times Shakespeare&rsquo;s rate.{" "}
-              <em>Ought</em> is the eighteenth-century&rsquo;s
-              moral modal: it expresses the obligation that
-              follows from natural law or social duty. The
-              Founders&rsquo; political writing reaches for it
-              constantly. Shakespeare&rsquo;s dramatic writing
-              barely needs it. By the twenty-first century
-              English has shed <em>ought</em> almost as completely
-              as Shakespeare did.
+              The most striking gap is <em>ought</em>. Shakespeare
+              uses it at 22 per million words: effectively zero.
+              Every Founder uses it at five to fifty times
+              Shakespeare&rsquo;s rate &mdash; Madison highest
+              at 1,035/M in the 1790s, Jefferson lowest at
+              109/M in the 1780s but climbing. <em>Ought</em> is
+              the eighteenth-century&rsquo;s moral modal: it
+              expresses the obligation that follows from natural
+              law or social duty. The Founders&rsquo; political
+              writing reaches for it constantly. Shakespeare&rsquo;s
+              dramatic writing barely needs it. By the
+              twenty-first century English has shed{" "}
+              <em>ought</em> almost as completely as Shakespeare
+              did.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              The single Founder who tracks closest to
-              Shakespeare on most of the modals is Franklin,
-              whose pre-1780 <em>shall</em> rate is the highest of
-              any Founder in any bucket. He is the absorbed-mode
-              writer here as elsewhere: more of Shakespeare&rsquo;s
-              eighteenth-century inheritance is still alive in his
-              prose.
+              Franklin is the only Founder whose corpus runs out
+              before the 1790s, so his trajectory is short.
+              Within that window his <em>shall</em> rate is
+              normal-Founder (2,355/M pre-1780, 1,904/M in the
+              1780s), and his <em>ought</em> rate is the lowest of
+              the six (313/M, 208/M). On the modal system, at
+              least, Franklin doesn&rsquo;t track Shakespeare
+              closely &mdash; his absorbed-mode signature lives in
+              archaic-form survival and vocabulary, not in modal
+              choice.
             </p>
 
             <div className="ornament" />

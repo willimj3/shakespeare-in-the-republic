@@ -31,17 +31,20 @@ export default function PlayAtlasPage() {
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               Of the thirty-eight plays in Shakespeare&rsquo;s
-              canon, the project&rsquo;s reference catalogue traces
-              high-or-medium-confidence Founder citations to{" "}
-              <strong>seventeen</strong> of them. Use the toggle
-              below to switch between that strict view and the
-              MEDIUM+ candidate-echoes view, which lowers the bar to
-              four- and five-word verbatim matches with distinctive
-              Shakespeare content words. The candidate-echoes view
-              recovers thirty-seven plays where the strict view
-              shows seventeen, and the order changes dramatically:
-              the history plays the strict catalogue buried surface
-              to the top.
+              canon, the project&rsquo;s strict reference catalogue
+              traces play-linked HIGH-or-MEDIUM-confidence citations
+              to <strong>seventeen</strong> of them &mdash; 72
+              play-linked references in all, a subset of the
+              137-item catalogue (bare &ldquo;Shakespeare&rdquo;
+              mentions that don&rsquo;t identify a play sit outside
+              this view). Use the toggle below to switch between that
+              strict view and the MEDIUM+ candidate-echoes view, which
+              lowers the bar to four- and five-word verbatim matches
+              with distinctive Shakespeare content words. The
+              candidate-echoes view recovers thirty-seven plays where
+              the strict view shows seventeen, and the order changes
+              dramatically: the history plays the strict catalogue
+              buried surface to the top.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The shape of the bars is, at first, surprising. Adams
@@ -192,7 +195,7 @@ export default function PlayAtlasPage() {
 
       <DataScope
         scope="derived-from-catalogue"
-        description="The strict-catalogue view counts the 140 hand-verified Shakespeare references (62 direct quotations + 78 by-name) per play. The MEDIUM+ candidate-echoes view counts the ~645 four- and five-word verbatim matches with enough distinctive Shakespeare content words to clear the noise floor (HIGH and MEDIUM tiers from the 35,794-row backend table). Switch between the two with the toggle above the chart."
+        description="The strict view shows 72 play-linked references across 17 plays — the subset of the 137-item HIGH+MEDIUM catalogue that pinpoints a specific play (every direct quotation, plus by-name play-title and distinctive-character mentions). Bare 'Shakespeare' mentions that don't identify a play aren't included. The MEDIUM+ candidate-echoes view counts 645 four- and five-word verbatim matches across 37 plays, with enough distinctive Shakespeare content words to clear the noise floor (HIGH and MEDIUM tiers from the 35,794-row backend table). Switch between the two with the toggle above the chart."
         sourceTable="data/play_atlas.json + data/play_atlas_candidates.json (the latter derived from Supabase candidate_echoes WHERE tier IN HIGH, MEDIUM)"
       />
     </div>

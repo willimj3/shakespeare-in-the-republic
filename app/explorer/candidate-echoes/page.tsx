@@ -58,16 +58,19 @@ export default function CandidateEchoesPage() {
             </p>
 
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              Each candidate also carries a confidence tier:{" "}
-              <strong>HIGH</strong> for 5-word matches with three or
-              more unique distinctive Shakespeare words (very
-              likely a real echo),{" "}
-              <strong>MEDIUM</strong> for 5-word matches with two
-              unique distinctive words or 4-word matches with three
-              or more, and <strong>LOW</strong> for the rest. The
-              tiers are computed from match length plus the
-              number of distinctive content words, deduplicated.
-              Filter by tier below.
+              Each candidate carries a tier label that ranks the
+              quality of the match, not a verdict on whether it is a
+              real echo:{" "}
+              <strong>Strong candidate</strong> (5-word matches with
+              three or more unique distinctive Shakespeare words),{" "}
+              <strong>Medium candidate</strong> (5-word matches with
+              two unique distinctive words, or 4-word matches with
+              three or more), and <strong>Low candidate</strong> for
+              the rest. Backend rows still carry the underlying tier
+              keys (HIGH / MEDIUM / LOW) for filter URLs and stable
+              joins. A four- or five-word match is short enough that
+              even a top-tier hit is at best <em>likely</em>, not
+              confirmed; read the KWIC and judge.
             </p>
 
             <p className="text-base text-ink-soft mt-4 leading-relaxed">

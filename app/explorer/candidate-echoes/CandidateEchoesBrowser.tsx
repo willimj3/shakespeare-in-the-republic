@@ -37,10 +37,16 @@ const TIER_COLOR: Record<ConfidenceTier, string> = {
   MEDIUM: "#9C7340",
   LOW: "#6B5C49",
 };
+// Tier labels frame each match as a *candidate* of varying quality
+// rather than a confidence verdict. A 4–5-word verbatim match is too
+// short to confirm a real echo without reading the KWIC; the "Strong
+// candidate" / "Medium candidate" / "Low candidate" framing makes
+// that uncertainty explicit instead of importing the catalogue's
+// confidence-tier semantics where they don't apply.
 const TIER_LABEL: Record<ConfidenceTier, string> = {
-  HIGH: "Higher confidence",
-  MEDIUM: "Medium confidence",
-  LOW: "Lower confidence",
+  HIGH: "Strong candidate",
+  MEDIUM: "Medium candidate",
+  LOW: "Low candidate",
 };
 
 const FOUNDER_ORDER = [
