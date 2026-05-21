@@ -48,10 +48,10 @@ const VIEWS: ExplorerView[] = [
   },
   {
     slug: "metaphor",
-    title: "Metaphor Comparison",
+    title: "Metaphor Fingerprints",
     blurb:
-      "Compare the metaphors each Founder uses for political life — buildings, plants, ships, fire — against Shakespeare's baseline. Some Founders sound metaphorically like Shakespeare; others don't.",
-    status: "soon",
+      "Six radar charts, one per Founder. Eight metaphor families per radar — edifice, body, ship, fire, plant, path, motion, container — with Shakespeare's silhouette overlaid for comparison. Each Founder has a distinctive shape, and Shakespeare's EDIFICE is zero.",
+    status: "live",
     image: asset("/images/historical/first-folio-julius-caesar-p728.jpg"),
     imageAlt: "First Folio: Julius Caesar",
   },
