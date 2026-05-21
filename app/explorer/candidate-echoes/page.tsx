@@ -118,8 +118,8 @@ export default function CandidateEchoesPage() {
 
       <DataScope
         scope="full-corpus"
-        description="Candidate echoes are 4- or 5-word verbatim matches between the Founders' corpus and Shakespeare's complete works, requiring at least one distinctive Shakespeare content word. Most short matches between any two large English corpora are coincidental; this view treats the results as candidates rather than confirmed findings."
-        sourceTable="data/candidate_echoes.json (computed by scripts/candidate_echoes.py)"
+        description="Candidate echoes are 4- or 5-word verbatim matches between the Founders' corpus and Shakespeare's complete works, requiring at least one distinctive Shakespeare content word. All 35,794 are served live from a Postgres backend (Supabase) with full-text search, so filters, pagination, and chip counts narrow to the active query rather than reading from a static slice. Most short matches between any two large English corpora are coincidental; this view treats the results as candidates rather than confirmed findings."
+        sourceTable="Supabase candidate_echoes (35,794 rows) + the precomputed scripts/candidate_echoes.py output"
       />
     </div>
   );

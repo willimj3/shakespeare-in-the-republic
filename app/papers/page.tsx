@@ -46,7 +46,7 @@ const PAPERS: Paper[] = [
     title: "Passage-level results summary",
     subtitle: "Catalogue of every verifiable Shakespeare reference",
     audience:
-      "Literary and historical readers who want the raw evidence. Lists all 53 verbatim quotations from Adams, the 70 by-name references across four Founders, and 8 medium-confidence findings, each with the date, the document, and a verifiable passage.",
+      "Literary and historical readers who want the raw evidence. Lists all 62 HIGH/MEDIUM-confidence verbatim quotations (61 from Adams, 1 from Madison) and the 78 by-name references across five Founders, each with the date, the document, and a verifiable passage.",
     pages: "≈30 pages",
     href: "/papers/shakespeare-in-the-republic-results-summary.docx",
     format: "Word (.docx)",

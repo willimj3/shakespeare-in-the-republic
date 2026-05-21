@@ -4,6 +4,7 @@ import Image from "next/image";
 import catalogue from "@/data/catalogue.json";
 import playAtlas from "@/data/play_atlas.json";
 import candidateEchoes from "@/data/candidate_echoes.json";
+import candidateEchoesSummary from "@/data/candidate_echoes_summary.json";
 import thematicAllusions from "@/data/thematic_allusions.json";
 import { asset } from "@/lib/paths";
 import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
@@ -74,18 +75,46 @@ const FOUNDER_DISPLAY: Record<string, string> = {
 function perFounderCounts() {
   const counts: Record<
     string,
-    { direct: number; named: number; echoes: number; thematic: number }
+    {
+      direct: number;
+      named: number;
+      echoes: number;
+      echoesLow: number;
+      echoesAll: number;
+      thematic: number;
+    }
   > = {};
   for (const id of FOUNDER_ORDER)
-    counts[id] = { direct: 0, named: 0, echoes: 0, thematic: 0 };
+    counts[id] = {
+      direct: 0,
+      named: 0,
+      echoes: 0,
+      echoesLow: 0,
+      echoesAll: 0,
+      thematic: 0,
+    };
   for (const q of cat.direct_quotes) {
     if (counts[q.founder_id]) counts[q.founder_id].direct += 1;
   }
   for (const r of cat.named_references) {
     if (counts[r.founder_id]) counts[r.founder_id].named += 1;
   }
-  for (const e of echoes.echoes) {
-    if (counts[e.founder_id]) counts[e.founder_id].echoes += 1;
+  // Candidate-echo counts come from the FULL 35,794-row backend summary.
+  // For the stacked bar we use the MEDIUM+ tier only — the LOW tier
+  // (4-word matches with low distinctiveness) is overwhelmingly statistical
+  // noise and would visually crush the catalogue and thematic stacks. The
+  // LOW-tier total is surfaced in the per-Founder annotation text.
+  const echoesSummary = candidateEchoesSummary as unknown as {
+    by_founder: Record<
+      string,
+      { total: number; high: number; medium: number; low: number }
+    >;
+  };
+  for (const id of FOUNDER_ORDER) {
+    const s = echoesSummary.by_founder[id];
+    counts[id].echoes = (s?.high ?? 0) + (s?.medium ?? 0);
+    counts[id].echoesLow = s?.low ?? 0;
+    counts[id].echoesAll = s?.total ?? 0;
   }
   for (const a of allusions.allusions) {
     if (counts[a.founder_id]) counts[a.founder_id].thematic += 1;
@@ -174,7 +203,9 @@ function FounderCountsStrip() {
       catalogueTotal: c.direct + c.named,
       direct: c.direct,
       named: c.named,
-      echoes: c.echoes,
+      echoes: c.echoes, // MEDIUM+ tier only (stacked)
+      echoesLow: c.echoesLow,
+      echoesAll: c.echoesAll,
       thematic: c.thematic,
       grandTotal: c.direct + c.named + c.echoes + c.thematic,
     };
@@ -191,9 +222,11 @@ function FounderCountsStrip() {
             evidence tiers
           </h2>
           <p className="text-sm text-ink-soft mt-2 italic">
-            Verified catalogue references, plus shorter candidate
-            echoes, plus thematic character invocations. The
-            stacked bar shows all three.
+            Verified catalogue references, plus MEDIUM-or-HIGH-confidence
+            candidate echoes, plus thematic character invocations. The
+            stacked bar shows the three meaningful signals; the LOW-tier
+            candidate echoes (mostly statistical noise) are reported in
+            the row text but kept out of the stack.
           </p>
         </div>
 
@@ -205,6 +238,8 @@ function FounderCountsStrip() {
               direct,
               named,
               echoes: ne,
+              echoesLow,
+              echoesAll,
               thematic,
               grandTotal,
             }) => {
@@ -253,7 +288,7 @@ function FounderCountsStrip() {
                               width: `${(ne / grandTotal) * 100}%`,
                               background: "#9C7340",
                             }}
-                            title={`${ne} candidate echo${ne === 1 ? "" : "es"}`}
+                            title={`${ne} MEDIUM-or-HIGH-confidence candidate echo${ne === 1 ? "" : "es"} (${echoesLow.toLocaleString()} more in the LOW tier)`}
                           />
                         )}
                         {thematic > 0 && (
@@ -277,10 +312,15 @@ function FounderCountsStrip() {
                       <span className="hidden sm:inline">
                         {" "}({direct}+{named})
                       </span>
-                      {" "}&middot; {ne.toLocaleString()} echoes
+                      {" "}&middot; {ne.toLocaleString()} echo
+                      {ne === 1 ? "" : "es"} (MED+)
                       {thematic > 0 && (
                         <> &middot; {thematic} thematic</>
                       )}
+                    </span>
+                    <span className="block text-[10px] text-ink-muted/70 mt-0.5 italic leading-tight">
+                      +{echoesLow.toLocaleString()} LOW-tier ·{" "}
+                      {echoesAll.toLocaleString()} all-tier
                     </span>
                   </span>
                 </Link>
@@ -309,7 +349,7 @@ function FounderCountsStrip() {
               className="inline-block w-3 h-3 rounded-sm"
               style={{ background: "#9C7340" }}
             />
-            Candidate echo
+            Candidate echo (MEDIUM+)
           </span>
           <span className="flex items-center gap-1.5">
             <span
@@ -337,7 +377,9 @@ function TopPlays() {
   const topCatalogue = atlas.plays.slice(0, 8);
   const maxCatalogue = topCatalogue[0]?.total ?? 1;
 
-  // Candidate-echo top plays (histories dominate)
+  // Candidate-echo top plays computed from the FULL 35,794 backend set
+  // (precomputed in data/candidate_echoes_summary.json), not from the
+  // bundled 5K sample. History plays surface in the full distribution.
   function shortPlayName(raw: string): string {
     return raw
       .replace(/^THE TRAGEDY OF /i, "")
@@ -350,15 +392,12 @@ function TopPlays() {
       .toLowerCase()
       .replace(/\b\w/g, (c) => c.toUpperCase());
   }
-  const echoPerPlay: Record<string, number> = {};
-  for (const e of echoes.echoes) {
-    const p = shortPlayName(e.shakespeare_source);
-    echoPerPlay[p] = (echoPerPlay[p] ?? 0) + 1;
-  }
-  const topEchoes = Object.entries(echoPerPlay)
-    .map(([play, count]) => ({ play, count }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 8);
+  const summary = candidateEchoesSummary as unknown as {
+    top_plays_15: { source: string; n: number }[];
+  };
+  const topEchoes = summary.top_plays_15
+    .slice(0, 8)
+    .map(({ source, n }) => ({ play: shortPlayName(source), count: n }));
   const maxEchoes = topEchoes[0]?.count ?? 1;
 
   return (
@@ -545,7 +584,7 @@ function ThreeLayersOfEvidence() {
                 .replace(/\b\w/g, (c) => c.toUpperCase())}
               docId={candidateEcho.doc_id}
               browseHref="/explorer/candidate-echoes"
-              browseLabel="Browse 5,000 candidate echoes"
+              browseLabel="Browse all 35,794 candidate echoes"
             />
           )}
 

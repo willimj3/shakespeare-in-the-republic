@@ -1,0 +1,29 @@
+{
+  "_comment": "Precomputed aggregates from the FULL 35,794 candidate echoes in Supabase. Regenerate via the SQL in lib/supabase.ts header comment or query the backend directly. by_founder.total = HIGH + MEDIUM + LOW; the LOW tier is mostly statistically expected 4-word matches between any two large English corpora.",
+  "total": 35794,
+  "by_founder": {
+    "adams":      { "total": 11326, "high": 26, "medium": 271, "low": 11029 },
+    "jefferson":  { "total":  9167, "high":  0, "medium": 130, "low":  9037 },
+    "washington": { "total":  7015, "high":  3, "medium":  79, "low":  6933 },
+    "franklin":   { "total":  3664, "high":  3, "medium":  78, "low":  3583 },
+    "madison":    { "total":  2510, "high":  0, "medium":  28, "low":  2482 },
+    "hamilton":   { "total":  2112, "high":  1, "medium":  26, "low":  2085 }
+  },
+  "top_plays_15": [
+    { "source": "AS YOU LIKE IT",                            "n": 1924 },
+    { "source": "ALLS WELL THAT ENDS WELL",                  "n": 1844 },
+    { "source": "THE FIRST PART OF KING HENRY THE FOURTH",   "n": 1763 },
+    { "source": "THE LIFE OF KING HENRY THE FIFTH",          "n": 1558 },
+    { "source": "SECOND PART OF KING HENRY IV",              "n": 1533 },
+    { "source": "THE TRAGEDY OF CORIOLANUS",                 "n": 1274 },
+    { "source": "MUCH ADO ABOUT NOTHING",                    "n": 1247 },
+    { "source": "THE MERCHANT OF VENICE",                    "n": 1194 },
+    { "source": "KING HENRY THE EIGHTH",                     "n": 1153 },
+    { "source": "CYMBELINE",                                 "n": 1152 },
+    { "source": "THE SECOND PART OF KING HENRY THE SIXTH",   "n": 1140 },
+    { "source": "THE TRAGEDY OF ANTONY AND CLEOPATRA",       "n": 1136 },
+    { "source": "THE WINTER'S TALE",                         "n": 1132 },
+    { "source": "THE MERRY WIVES OF WINDSOR",                "n": 1126 },
+    { "source": "THE TRAGEDY OF JULIUS CAESAR",              "n": 1030 }
+  ]
+}

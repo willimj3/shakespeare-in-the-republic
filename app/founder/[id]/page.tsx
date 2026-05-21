@@ -12,7 +12,7 @@ import metaphor from "@/data/metaphor.json";
 import archaic from "@/data/archaic.json";
 import playAtlas from "@/data/play_atlas.json";
 import catalogue from "@/data/catalogue.json";
-import candidateEchoes from "@/data/candidate_echoes.json";
+import candidateEchoesSummary from "@/data/candidate_echoes_summary.json";
 import thematicAllusions from "@/data/thematic_allusions.json";
 
 const FOUNDER_IDS = ["adams", "franklin", "jefferson", "washington", "madison", "hamilton"] as const;
@@ -70,17 +70,17 @@ const CASE_STUDIES: Record<FounderId, { slug: string; title: string }[]> = {
 // Per-Founder narrative — the synthesis paragraph below the stats
 const NARRATIVE: Record<FounderId, string> = {
   adams:
-    "Adams is the most Shakespearean of the six by every measure of conscious citation. The catalogue traces 109 high or medium-confidence references to him; the candidate-echoes tier adds another 1,659 short matches; the thematic-allusions tier adds 18 character-as-type invocations (the most of any Founder by far). His 1758 diary contains the densest single reading event in the corpus: sixteen verbatim Macbeth passages worked through in one document at age twenty-three, with threads that flow forward for sixty years (the Tomorrow soliloquy, the Lady Macbeth speech, the sleep-no-more passage). He is rank 2 overall in the composite ranking, behind Franklin only because Franklin's prose is more deeply absorbed-Shakespearean even though Franklin almost never names the source.",
+    "Adams is the most Shakespearean of the six by every measure of conscious citation. The catalogue traces 109 high or medium-confidence references to him; the candidate-echoes tier, now opened to all 35,794 short verbatim matches in the backend, adds another 11,326 under his name — with 297 of those in the MEDIUM-or-HIGH confidence band, more than twice the next Founder's count. The thematic-allusions tier adds 18 character-as-type invocations (the most of any Founder by far). His 1758 diary contains the densest single reading event in the corpus: sixteen verbatim Macbeth passages worked through in one document at age twenty-three, with threads that flow forward for sixty years (the Tomorrow soliloquy, the Lady Macbeth speech, the sleep-no-more passage). He is rank 2 overall in the composite ranking, behind Franklin only because Franklin's prose is more deeply absorbed-Shakespearean even though Franklin almost never names the source.",
   franklin:
-    "Franklin is the most Shakespearean of the six by every statistical measure that doesn't require him to say so. His prose sits closer to Shakespeare's than any other Founder's on vocabulary, archaic-form survival, and statistical style. And yet his strict catalogue is nearly empty: zero direct quotations and two by-name references in 3.5 million words. In the candidate-echoes tier his count jumps to 833, second only to Adams; the strict filter was missing him. The 'Tis case study, now living in the Stylistic Notes section, traces this absorbed-mode signature back to his Silence Dogood essays at sixteen, where the older-English contraction is already a stylistic tell.",
+    "Franklin is the most Shakespearean of the six by every statistical measure that doesn't require him to say so. His prose sits closer to Shakespeare's than any other Founder's on vocabulary, archaic-form survival, and statistical style. And yet his strict catalogue is nearly empty: zero direct quotations and two by-name references in 3.5 million words. In the candidate-echoes tier his total across the full backend is 3,664; per million words that puts him second only to Adams, ahead of the much larger Jefferson and Washington corpora. The strict filter was missing him. The 'Tis case study, now living in the Stylistic Notes section, traces this absorbed-mode signature back to his Silence Dogood essays at sixteen, where the older-English contraction is already a stylistic tell.",
   jefferson:
-    "Jefferson occupies the consistent third position across nearly every measure. His Shakespeare is the Shakespeare of the educated eighteenth-century reading list: 26 by-name catalogue references, zero direct verbatim quotations in the strict tier, and an above-average archaic-form survival rate. In the relaxed candidate-echoes tier he has 991 matches; the thematic-allusions tier adds four character-as-type invocations (Brutus, Caesar, Shylock). His Shakespearean engagement is general rather than play-specific. The Honour Test material, now in the Stylistic Notes section, uses his pattern of usage to illustrate how the period-standard Shakespeare lived in the gentleman's letter-closing protocol.",
+    "Jefferson occupies the consistent third position across nearly every measure. His Shakespeare is the Shakespeare of the educated eighteenth-century reading list: 26 by-name catalogue references, zero direct verbatim quotations in the strict tier, and an above-average archaic-form survival rate. In the candidate-echoes tier he records 9,167 short matches across the full backend, second only to Adams in raw count, with 130 in the MEDIUM-or-HIGH band; the thematic-allusions tier adds four character-as-type invocations (Brutus, Caesar, Shylock). His Shakespearean engagement is general rather than play-specific. The Honour Test material, now in the Stylistic Notes section, uses his pattern of usage to illustrate how the period-standard Shakespeare lived in the gentleman's letter-closing protocol.",
   washington:
-    "Washington's profile is the steady plain-prose Founder. His composite ranks fourth: never the most Shakespearean and never the least. The strict catalogue holds just one reference for him; the relaxed candidate-echoes tier surfaces 978, mostly from the day-to-day phrasing of his General Orders and military correspondence. His one well-documented borrowing in the strict tier is the Henry V 'band of brothers' phrase, threaded through his General Orders at Valley Forge (1778), his Farewell Address to the Army (1783), and three further letters. The Band of Brothers case study traces all five uses. Otherwise Washington's metaphors are the metaphors of a surveyor and a soldier: PATH and MOTION, sparingly used.",
+    "Washington's profile is the steady plain-prose Founder. His composite ranks fourth: never the most Shakespearean and never the least. The strict catalogue holds just one reference for him; the candidate-echoes tier surfaces 7,015 short matches across his very large corpus, with 82 in the MEDIUM-or-HIGH band — most from the day-to-day phrasing of his General Orders and military correspondence. His one well-documented borrowing in the strict tier is the Henry V 'band of brothers' phrase, threaded through his General Orders at Valley Forge (1778), his Farewell Address to the Army (1783), and three further letters. The Band of Brothers case study traces all five uses. Otherwise Washington's metaphors are the metaphors of a surveyor and a soldier: PATH and MOTION, sparingly used.",
   madison:
-    "Madison sits at the bottom of the composite ranking on most measures, but with a distinctive metaphor signature: he is the PLANT specialist of the six, at 33.6 occurrences per million, roughly three times any other Founder's rate. His strict catalogue is essentially empty (one medium-tier direct quotation, one by-name reference); his candidate-echoes count of 215 is the lowest of the six by a wide margin, suggesting genuinely low overlap with Shakespeare's word stock. His intellectual lineage runs through the classical republicans, the European confederation debates, and the Cato / Polybius pseudonym tradition, not the English literary tradition.",
+    "Madison sits at the bottom of the composite ranking on most measures, but with a distinctive metaphor signature: he is the PLANT specialist of the six, at 33.6 occurrences per million, roughly three times any other Founder's rate. His strict catalogue is essentially empty (one medium-tier direct quotation, one by-name reference); his candidate-echoes total of 2,510 — and only 28 of those in the MEDIUM-or-HIGH band — is the lowest of the six per million words, suggesting genuinely low overlap with Shakespeare's word stock. His intellectual lineage runs through the classical republicans, the European confederation debates, and the Cato / Polybius pseudonym tradition, not the English literary tradition.",
   hamilton:
-    "Hamilton is the bottom of the ranking on every measure that counts conscious citation, archaic-form survival, and statistical style. His 2.35 million words contain zero strict-tier catalogue references. The relaxed candidate-echoes tier surfaces 324 short matches; the thematic-allusions tier finds one case (an 1779 Laurens letter comparing General Lee to 'the spice of Julius Caesar or Cromwell'). The other notable single reference is a paraphrased Macbeth line used as a partisan slur against Jefferson in 1801, which sits below the catalogue's confidence threshold. The Hamilton Silence essay walks through what the absence means for the wider argument. His Federalist Papers, his Treasury reports, and his political journalism are written in the Continental Enlightenment and British constitutional registers, not the English-literary register that produced Adams and Franklin.",
+    "Hamilton is the bottom of the ranking on every measure that counts conscious citation, archaic-form survival, and statistical style. His 2.35 million words contain zero strict-tier catalogue references. The candidate-echoes tier surfaces 2,112 short matches, with only 27 in the MEDIUM-or-HIGH confidence band; the thematic-allusions tier finds one case (an 1779 Laurens letter comparing General Lee to 'the spice of Julius Caesar or Cromwell'). The other notable single reference is a paraphrased Macbeth line used as a partisan slur against Jefferson in 1801, which sits below the catalogue's confidence threshold. The Hamilton Silence essay walks through what the absence means for the wider argument. His Federalist Papers, his Treasury reports, and his political journalism are written in the Continental Enlightenment and British constitutional registers, not the English-literary register that produced Adams and Franklin.",
 };
 
 const RANK_COLORS = ["#7B1E1E", "#9C3535", "#B95B5B", "#B59E78", "#D6C2A6", "#EAE0D0"];
@@ -102,9 +102,14 @@ const catData = catalogue as unknown as {
   direct_quotes: { founder_id: string; confidence: string }[];
   named_references: { founder_id: string; confidence: string }[];
 };
-const echoesData = candidateEchoes as unknown as {
-  echoes: { founder_id: string }[];
+type EchoesSummary = {
+  total: number;
+  by_founder: Record<
+    string,
+    { total: number; high: number; medium: number; low: number }
+  >;
 };
+const echoesSummary = candidateEchoesSummary as unknown as EchoesSummary;
 const allusionsData = thematicAllusions as unknown as {
   allusions: { founder_id: string }[];
 };
@@ -125,9 +130,9 @@ function liveCountsFor(founderId: string) {
   const namedHigh = catData.named_references.filter(
     (r) => r.founder_id === founderId && r.confidence === "HIGH",
   ).length;
-  const echoes = echoesData.echoes.filter(
-    (e) => e.founder_id === founderId,
-  ).length;
+  const echoSlice = echoesSummary.by_founder[founderId];
+  const echoes = echoSlice?.total ?? 0;
+  const echoesHighMed = (echoSlice?.high ?? 0) + (echoSlice?.medium ?? 0);
   const thematic = allusionsData.allusions.filter(
     (a) => a.founder_id === founderId,
   ).length;
@@ -139,6 +144,7 @@ function liveCountsFor(founderId: string) {
     namedHigh,
     catalogueHigh: directHigh + namedHigh,
     echoes,
+    echoesHighMed,
     thematic,
   };
 }

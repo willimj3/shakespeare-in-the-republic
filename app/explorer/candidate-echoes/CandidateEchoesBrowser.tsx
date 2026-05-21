@@ -76,6 +76,10 @@ function shortPlay(raw: string): string {
 
 type Facets = {
   total: number;
+  totalFiltered: number;
+  totalNoFounder: number;
+  totalNoTier: number;
+  totalNoPlay: number;
   byFounder: Record<string, number>;
   byTier: Record<ConfidenceTier, number>;
   topPlays: { source: string; n: number; short: string }[];
@@ -96,8 +100,13 @@ function localFacets(): Facets {
     .sort((a, b) => b.n - a.n)
     .slice(0, 12)
     .map((p) => ({ ...p, short: shortPlay(p.source) }));
+  const total = localData.echoes.length;
   return {
-    total: localData.echoes.length,
+    total,
+    totalFiltered: total,
+    totalNoFounder: total,
+    totalNoTier: total,
+    totalNoPlay: total,
     byFounder,
     byTier,
     topPlays,
@@ -129,26 +138,60 @@ export default function CandidateEchoesBrowser() {
     return () => clearTimeout(t);
   }, [search]);
 
-  // Load facets from Supabase once (or fall back to local on error).
+  // The unfiltered project total. Stays stable so the header sentence
+  // ("Searching all N candidate echoes") doesn't change as you filter.
+  const [globalTotal, setGlobalTotal] = useState<number>(facets.total);
+
+  // Resolve a play-short-name filter back to the raw source(s) it covers
+  // (the catalogue keeps "THE TRAGEDY OF MACBETH" etc; the facets map them
+  // to the same short label). Hoisted above the facets effect because
+  // both that effect and the data fetcher consume it.
+  const playSources = useMemo(() => {
+    if (playFilter === "all") return null;
+    return facets.topPlays
+      .filter((p) => p.short === playFilter)
+      .map((p) => p.source);
+  }, [playFilter, facets.topPlays]);
+
+  // Reload facets every time filters/search change. The RPC respects ALL
+  // OTHER active filters when computing each chip's count, so picking
+  // Adams narrows the play and tier chips but leaves the Founder chips
+  // showing global totals.
   useEffect(() => {
     if (!supabase) return;
     let cancelled = false;
     (async () => {
-      const { data, error: e } = await supabase.rpc("candidate_echoes_facets");
+      const founderArg = founderFilter === "all" ? null : founderFilter;
+      const tierArg = tierFilter === "all" ? null : tierFilter;
+      const playArg = playSources && playSources.length > 0 ? playSources : null;
+      const qArg = debouncedSearch.trim() ? debouncedSearch.trim() : null;
+      const { data, error: e } = await supabase.rpc(
+        "candidate_echoes_facets_filtered",
+        {
+          founder_filter: founderArg,
+          tier_filter: tierArg,
+          play_sources: playArg,
+          q: qArg,
+        },
+      );
       if (cancelled) return;
-      if (e || !data) {
-        // Keep the local-derived facets as fallback.
-        return;
-      }
+      if (e || !data) return;
       type RawFacets = {
-        total: number;
+        total_filtered: number;
+        total_no_founder: number;
+        total_no_tier: number;
+        total_no_play: number;
         by_founder: Record<string, number>;
         by_tier: Record<string, number>;
         top_plays: { source: string; n: number }[];
       };
       const r = data as unknown as RawFacets;
-      setFacets({
-        total: r.total ?? 0,
+      setFacets(() => ({
+        total: globalTotal,
+        totalFiltered: r.total_filtered ?? 0,
+        totalNoFounder: r.total_no_founder ?? 0,
+        totalNoTier: r.total_no_tier ?? 0,
+        totalNoPlay: r.total_no_play ?? 0,
         byFounder: r.by_founder ?? {},
         byTier: {
           HIGH: r.by_tier?.HIGH ?? 0,
@@ -159,20 +202,29 @@ export default function CandidateEchoesBrowser() {
           ...p,
           short: shortPlay(p.source),
         })),
-      });
+      }));
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [supabase, founderFilter, tierFilter, playSources, debouncedSearch, globalTotal]);
+
+  // One-time fetch of the unfiltered project total. PostgREST's HEAD-with-
+  // count gives an O(1) row tally; we only need this for the header label.
+  useEffect(() => {
+    if (!supabase) return;
+    let cancelled = false;
+    (async () => {
+      const { count, error: e } = await supabase
+        .from("candidate_echoes")
+        .select("*", { count: "exact", head: true });
+      if (cancelled || e || typeof count !== "number") return;
+      setGlobalTotal(count);
     })();
     return () => {
       cancelled = true;
     };
   }, [supabase]);
-
-  // Resolve a play-short-name filter back to the raw source(s) it covers
-  // (the catalogue keeps "THE TRAGEDY OF MACBETH" etc; the facets map them
-  // to the same short label).
-  const playSources = useMemo(() => {
-    if (playFilter === "all") return null;
-    return facets.topPlays.filter((p) => p.short === playFilter).map((p) => p.source);
-  }, [playFilter, facets.topPlays]);
 
   // The actual data fetch. Switches between Supabase (live, all 35,794)
   // and the local 5,000-row JSON.
@@ -296,7 +348,7 @@ export default function CandidateEchoesBrowser() {
           <div className="max-w-wide mx-auto">
             {liveSearch && (
               <p className="text-xs text-ink-muted mb-4 font-sans">
-                Searching <span className="text-folio">all {facets.total.toLocaleString()}</span> candidate echoes
+                Searching <span className="text-folio">all {globalTotal.toLocaleString()}</span> candidate echoes
                 via the live Supabase backend.
               </p>
             )}
@@ -319,7 +371,7 @@ export default function CandidateEchoesBrowser() {
                   active={founderFilter === "all"}
                   onClick={() => setFounderFilter("all")}
                   label="All"
-                  count={facets.total}
+                  count={facets.totalNoFounder}
                 />
                 {FOUNDER_ORDER.map((id) => (
                   <Chip
@@ -340,6 +392,7 @@ export default function CandidateEchoesBrowser() {
                   active={tierFilter === "all"}
                   onClick={() => setTierFilter("all")}
                   label="All confidence levels"
+                  count={facets.totalNoTier}
                 />
                 {(["HIGH", "MEDIUM", "LOW"] as ConfidenceTier[]).map((t) => (
                   <Chip
@@ -361,6 +414,7 @@ export default function CandidateEchoesBrowser() {
                   active={playFilter === "all"}
                   onClick={() => setPlayFilter("all")}
                   label="All plays"
+                  count={facets.totalNoPlay}
                 />
                 {facets.topPlays.slice(0, 12).map((p) => (
                   <Chip

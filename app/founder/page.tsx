@@ -4,7 +4,7 @@ import Image from "next/image";
 import { asset } from "@/lib/paths";
 import founders from "@/data/founders.json";
 import catalogue from "@/data/catalogue.json";
-import candidateEchoes from "@/data/candidate_echoes.json";
+import candidateEchoesSummary from "@/data/candidate_echoes_summary.json";
 import thematicAllusions from "@/data/thematic_allusions.json";
 
 export const metadata: Metadata = {
@@ -40,7 +40,12 @@ const catData = catalogue as unknown as {
   direct_quotes: { founder_id: string }[];
   named_references: { founder_id: string }[];
 };
-const echoesData = candidateEchoes as unknown as { echoes: { founder_id: string }[] };
+const echoesSummary = candidateEchoesSummary as unknown as {
+  by_founder: Record<
+    string,
+    { total: number; high: number; medium: number; low: number }
+  >;
+};
 const allusionsData = thematicAllusions as unknown as {
   allusions: { founder_id: string }[];
 };
@@ -48,11 +53,20 @@ const allusionsData = thematicAllusions as unknown as {
 function liveCountsFor(founderId: string) {
   const direct = catData.direct_quotes.filter((q) => q.founder_id === founderId).length;
   const named = catData.named_references.filter((r) => r.founder_id === founderId).length;
-  const echoes = echoesData.echoes.filter((e) => e.founder_id === founderId).length;
+  const echoSlice = echoesSummary.by_founder[founderId];
+  const echoes = echoSlice?.total ?? 0;
+  const echoesHighMed = (echoSlice?.high ?? 0) + (echoSlice?.medium ?? 0);
   const thematic = allusionsData.allusions.filter(
     (a) => a.founder_id === founderId,
   ).length;
-  return { direct, named, catalogueTotal: direct + named, echoes, thematic };
+  return {
+    direct,
+    named,
+    catalogueTotal: direct + named,
+    echoes,
+    echoesHighMed,
+    thematic,
+  };
 }
 
 export default function FounderIndex() {
@@ -123,7 +137,8 @@ export default function FounderIndex() {
                         {c.catalogueTotal > 0 && (
                           <> ({c.direct}+{c.named})</>
                         )}
-                        {" "}&middot; {c.echoes.toLocaleString()} echoes
+                        {" "}&middot; {c.echoesHighMed.toLocaleString()} echo
+                        {c.echoesHighMed === 1 ? "" : "es"} (MED+)
                         {c.thematic > 0 && <> &middot; {c.thematic} thematic</>}
                       </p>
                     );

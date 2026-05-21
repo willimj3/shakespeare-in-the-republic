@@ -49,6 +49,95 @@ function authorPillStyle(id: string) {
   };
 }
 
+// Curated phrases the project has actually surfaced. Clicking one runs
+// the search immediately; the rationale gets a tooltip so first-time
+// visitors know why these are worth looking at.
+type Suggestion = { q: string; why: string };
+const SUGGESTIONS: Suggestion[] = [
+  { q: '"body politic"',     why: "Founder-favoured metaphor for the state" },
+  { q: "honour",             why: "The Honour Test phrase — different worlds in each corpus" },
+  { q: "virtue",             why: "Civic and martial senses both" },
+  { q: '"tide in the affairs"', why: "Adams's lifelong Brutus quotation" },
+  { q: "methinks",           why: "Archaic form that mostly didn't cross to 1800" },
+  { q: "prithee",            why: "Survived only in Adams's most playful letters" },
+  { q: '"pound of flesh"',   why: "Jefferson 1790, paraphrasing Merchant" },
+  { q: '"band of brothers"', why: "Henry V → Washington at Valley Forge" },
+  { q: '"sound and fury"',   why: "Macbeth → Adams 1758 and 1813" },
+  { q: '"rough magic"',      why: "The Tempest, surfaced in candidate echoes" },
+];
+
+// Thematic searches. Each maps to a multi-term OR query; clicking sets
+// the input and submits immediately. Phrasing follows the project's
+// existing analytic vocabulary.
+type Theme = { label: string; q: string; blurb: string };
+const THEMES: Theme[] = [
+  {
+    label: "Honor & reputation",
+    q: "honour OR reputation OR fame OR esteem",
+    blurb: "How honour lives in each corpus",
+  },
+  {
+    label: "Liberty & power",
+    q: "liberty OR freedom OR tyranny OR authority",
+    blurb: "Political-philosophy vocabulary",
+  },
+  {
+    label: "Body politic & state",
+    q: '"body politic" OR commonwealth OR constitution',
+    blurb: "How the state gets metaphorized",
+  },
+  {
+    label: "Roman / republican imagery",
+    q: "Brutus OR Caesar OR Cato OR Rome",
+    blurb: "Classical allusions the Founders favoured",
+  },
+  {
+    label: "Archaic forms",
+    q: "hath OR doth OR thou OR thee OR methinks OR prithee OR whilst",
+    blurb: "Shakespeare-era forms that did or didn't survive",
+  },
+  {
+    label: "Stagecraft & performance",
+    q: "stage OR scene OR actor OR mask OR player",
+    blurb: "Shakespeare's metaphor; rarer in the Founders",
+  },
+  {
+    label: "Friendship & loyalty",
+    q: "friend OR loyalty OR faithful OR ally",
+    blurb: "The relational vocabulary of both corpora",
+  },
+  {
+    label: "Fortune & providence",
+    q: "fortune OR fate OR chance OR providence OR destiny",
+    blurb: "How each Founder talks about contingency",
+  },
+];
+
+type CorpusPreset = {
+  id: "both" | "founders" | "shakespeare";
+  label: string;
+  authors: string[];
+};
+const FOUNDER_IDS = ["adams", "franklin", "hamilton", "jefferson", "madison", "washington"];
+const CORPUS_PRESETS: CorpusPreset[] = [
+  { id: "both", label: "Both corpora", authors: [] },
+  { id: "founders", label: "Founders only", authors: FOUNDER_IDS },
+  { id: "shakespeare", label: "Shakespeare only", authors: ["shakespeare"] },
+];
+
+function corpusFromAuthors(authors: string[]): CorpusPreset["id"] {
+  if (authors.length === 0) return "both";
+  const set = new Set(authors);
+  if (set.size === 1 && set.has("shakespeare")) return "shakespeare";
+  if (
+    set.size === FOUNDER_IDS.length &&
+    FOUNDER_IDS.every((a) => set.has(a))
+  ) {
+    return "founders";
+  }
+  return "both"; // a custom selection — show "Both" as un-selected default
+}
+
 export default function SearchInterface() {
   const supabase = useMemo(() => getSupabase(), []);
   const configured = useMemo(() => isSupabaseConfigured(), []);
@@ -133,6 +222,27 @@ export default function SearchInterface() {
     void runSearch(q, 0);
   };
 
+  // Run a one-click query from a suggestion or theme chip.
+  const runQueryNow = useCallback(
+    (q: string) => {
+      setQuery(q);
+      setSubmittedQuery(q);
+      setPage(0);
+      setHasSearched(true);
+      void runSearch(q, 0);
+      if (typeof window !== "undefined") {
+        window.scrollTo({ top: 200, behavior: "smooth" });
+      }
+    },
+    [runSearch],
+  );
+
+  const corpus = corpusFromAuthors(authors);
+  const setCorpus = (id: CorpusPreset["id"]) => {
+    const preset = CORPUS_PRESETS.find((p) => p.id === id);
+    if (preset) setAuthors(preset.authors);
+  };
+
   const toggleAuthor = (id: string) => {
     setAuthors((cur) =>
       cur.includes(id) ? cur.filter((a) => a !== id) : [...cur, id],
@@ -186,6 +296,70 @@ export default function SearchInterface() {
             >
               Search
             </button>
+          </div>
+
+          {/* One-click curated phrases */}
+          <div>
+            <p className="text-xs uppercase tracking-smallcap text-ink-muted mb-1.5">
+              Try
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {SUGGESTIONS.map((s) => (
+                <button
+                  type="button"
+                  key={s.q}
+                  onClick={() => runQueryNow(s.q)}
+                  title={s.why}
+                  className="px-2 py-1 text-xs font-sans rounded-sm border border-parchment-deep bg-parchment hover:border-folio hover:text-folio transition-colors"
+                >
+                  {s.q}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Thematic shortcuts → multi-term OR queries */}
+          <div>
+            <p className="text-xs uppercase tracking-smallcap text-ink-muted mb-1.5">
+              Or explore a theme
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {THEMES.map((t) => (
+                <button
+                  type="button"
+                  key={t.label}
+                  onClick={() => runQueryNow(t.q)}
+                  title={`${t.blurb} — runs: ${t.q}`}
+                  className="px-2.5 py-1 text-xs font-sans rounded-sm border border-bronze/40 bg-parchment hover:border-bronze hover:text-folio transition-colors"
+                >
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Corpus side preset — maps to author-chip multi-select */}
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-xs uppercase tracking-smallcap text-ink-muted mr-1">
+              Search in:
+            </span>
+            {CORPUS_PRESETS.map((p) => {
+              const active = corpus === p.id;
+              return (
+                <button
+                  type="button"
+                  key={p.id}
+                  onClick={() => setCorpus(p.id)}
+                  className={`px-3 py-1 text-xs font-sans rounded-sm border transition-colors ${
+                    active
+                      ? "bg-folio text-parchment border-folio"
+                      : "bg-parchment border-parchment-deep hover:border-folio hover:text-folio"
+                  }`}
+                >
+                  {p.label}
+                </button>
+              );
+            })}
           </div>
 
           <div className="flex flex-wrap items-center gap-2">
