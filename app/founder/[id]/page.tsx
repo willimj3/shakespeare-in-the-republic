@@ -51,13 +51,8 @@ const CASE_STUDIES: Record<FounderId, { slug: string; title: string }[]> = {
     { slug: "lady-macbeth-and-herod", title: "Lady Macbeth and Herod" },
     { slug: "cry-havoc-1822", title: "Cry Havoc, 1822" },
   ],
-  franklin: [
-    { slug: "tis-franklins-signature", title: "'Tis: Franklin's Signature Contraction" },
-    { slug: "honour-test", title: "Honour, from Pawn to Postscript" },
-  ],
-  jefferson: [
-    { slug: "honour-test", title: "Honour, from Pawn to Postscript" },
-  ],
+  franklin: [],
+  jefferson: [],
   washington: [
     { slug: "band-of-brothers-valley-forge", title: "Band of Brothers at Valley Forge" },
   ],
@@ -388,6 +383,35 @@ export default function FounderProfilePage({ params }: { params: { id: string } 
                   </li>
                 ))}
               </ul>
+            ) : founderId === "franklin" ? (
+              <p className="text-base text-ink-soft leading-relaxed">
+                The catalogue doesn&rsquo;t carry HIGH or MEDIUM
+                confidence direct quotations from Franklin. His
+                relationship to Shakespeare lives in prose register
+                rather than citation, and that finding sits in the{" "}
+                <Link
+                  href="/stylistic-notes"
+                  className="underline text-folio"
+                >
+                  Stylistic notes
+                </Link>{" "}
+                section.
+              </p>
+            ) : founderId === "jefferson" ? (
+              <p className="text-base text-ink-soft leading-relaxed">
+                Jefferson appears in the catalogue 26 times in
+                by-name references but no HIGH/MEDIUM direct
+                quotations. The collocational analysis of shared
+                abstract nouns (which includes his prose alongside
+                the others) is in the{" "}
+                <Link
+                  href="/stylistic-notes"
+                  className="underline text-folio"
+                >
+                  Stylistic notes
+                </Link>{" "}
+                section.
+              </p>
             ) : (
               <p className="text-base text-ink-soft leading-relaxed">
                 The catalogue doesn&rsquo;t carry enough HIGH/MEDIUM

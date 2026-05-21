@@ -30,23 +30,46 @@ export default function HonourTestExplorerPage() {
               Same English word. Different worlds.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
-              Both Shakespeare and the Founders use the word{" "}
-              <em>honour</em> constantly. The Founders use it 18,950
-              times across their writings. Shakespeare uses it 726 times
-              across his. So the word survived the two centuries between
-              them.
+              <strong className="text-ink">
+                What this view is and isn&rsquo;t.
+              </strong>{" "}
+              The project is{" "}
+              <strong className="text-ink">not</strong> claiming
+              Shakespeare owned the word <em>honour</em>: both
+              corpora use it constantly. Founders use it about
+              19,000 times; Shakespeare uses it 726 times. The
+              finding is about the <em>collocates</em>{" "}
+              &mdash; the words that habitually appear next to{" "}
+              <em>honour</em> in each corpus. Those diverge sharply,
+              and the divergence holds across fourteen common
+              abstract nouns.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              But <em>what the word means</em> didn&rsquo;t. In Shakespeare,
-              honour is something a character can{" "}
-              <strong>stake like money</strong>: characters
-              repeatedly &ldquo;pawn their honour&rdquo; as security for
-              someone else&rsquo;s reliability, the same way you might
-              put up cash as collateral. In the Founders&rsquo; letters,
-              <em> honour</em> is what you have when you sign off
-              politely: &ldquo;I have the honour to be, Sir, your most
-              obedient humble servant.&rdquo; A formality. A bow at the
-              end of an interview.
+              In Shakespeare, <em>honour</em>&rsquo;s closest
+              collocates are <strong>pawn, mine, lord, Brutus</strong>:
+              characters &ldquo;pawn their honour&rdquo; as security,
+              swear &ldquo;by mine honour,&rdquo; address one another
+              as &ldquo;your honour, my lord.&rdquo; In the
+              Founders&rsquo; letters, the collocates are{" "}
+              <strong>sir, esteem, letter, excellency</strong>: the
+              language of letter-closing protocol &mdash; &ldquo;I
+              have the honour to be, Sir, your most obedient humble
+              servant.&rdquo; Same noun, two different conceptual
+              worlds.
+            </p>
+            <p className="text-base text-ink-soft mt-4 leading-relaxed">
+              A legitimate caveat: the contrast is between two
+              genres (Shakespearean drama and eighteenth-century
+              correspondence) at least as much as between two
+              thinkers&rsquo; concepts. A merchant&rsquo;s letters
+              of the same period would probably show the same
+              letter-closing pattern. So the divergence is a genre
+              signal at least as much as a conceptual-inheritance
+              signal. The full caveat is in the{" "}
+              <Link href="/stylistic-notes" className="underline">
+                Stylistic notes
+              </Link>{" "}
+              section.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The same word; two totally different things. And it

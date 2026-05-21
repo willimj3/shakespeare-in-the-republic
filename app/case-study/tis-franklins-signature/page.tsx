@@ -47,6 +47,27 @@ export default function TisFranklinsSignature() {
         title: "Two Modes of Shakespearean Influence",
       }}
     >
+      {/* ── Banner: relocated to /stylistic-notes ──────────────────── */}
+      <div className="mb-8 p-4 border-l-4 border-bronze bg-parchment-dark">
+        <p className="text-sm text-ink-soft leading-relaxed">
+          <strong className="text-ink">A note before you read.</strong>{" "}
+          This case study is now part of the project&rsquo;s{" "}
+          <Link href="/stylistic-notes" className="underline">
+            Stylistic notes
+          </Link>{" "}
+          section, which collects findings about prose register
+          rather than direct citation. The finding here is real, but
+          easily over-claimed: Franklin&rsquo;s archaic-form rate
+          probably reflects late-Stuart English in general (and his
+          early-eighteenth-century reading) more than Shakespeare in
+          particular. The full caveat is in the{" "}
+          <Link href="/stylistic-notes" className="underline">
+            Notes overview
+          </Link>
+          .
+        </p>
+      </div>
+
       {/* ── Opening with drop cap ─────────────────────────────────── */}
       <div className="has-dropcap">
         <p>

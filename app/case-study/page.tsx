@@ -61,28 +61,6 @@ const studies: CaseStudy[] = [
     status: "live",
   },
   {
-    slug: "tis-franklins-signature",
-    title: "'Tis: Franklin's Signature Contraction",
-    hook:
-      "Franklin uses 'tis at 342 per million words (twice the next Founder's rate) across six decades, beginning in his Silence Dogood essays in 1722. The absorbed-mode counterpart to Adams's tide.",
-    founder: "Benjamin Franklin",
-    date: "1722 – 1778",
-    heroImage: asset("/images/historical/franklin-duplessis-1785.jpg"),
-    imageAlt: "Benjamin Franklin, painted by Joseph Siffred Duplessis (c. 1785).",
-    status: "live",
-  },
-  {
-    slug: "honour-test",
-    title: "Honour, from Pawn to Postscript",
-    hook:
-      "Shakespeare's honour can be pawned. The Founders' honour is a letter-closing formality. The vocabulary travelled; the concept did not.",
-    founder: "All six Founders",
-    date: "1590 – 1820",
-    heroImage: asset("/images/historical/first-folio-othello-p827.jpg"),
-    imageAlt: "First Folio (1623): Othello, page 827.",
-    status: "live",
-  },
-  {
     slug: "hamilton-silence",
     title: "The Hamilton Silence",
     hook:

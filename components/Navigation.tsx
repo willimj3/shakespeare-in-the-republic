@@ -10,6 +10,7 @@ const links = [
   { href: "/case-study", label: "Case Studies" },
   { href: "/explorer", label: "Explorer" },
   { href: "/founder", label: "Founders" },
+  { href: "/stylistic-notes", label: "Notes" },
   { href: "/papers", label: "Papers" },
 ];
 
