@@ -310,8 +310,8 @@ export default function LadyMacbethAndHerodCaseStudy() {
       <p>
         Adams, in other words, is using Shakespeare to explain the
         American Revolution to America. Lady Macbeth has become a
-        figure load-bearing enough to carry the central thesis of
-        his late political memory.
+        figure strong enough to carry the central thesis of his
+        late political memory.
       </p>
 
       <hr />

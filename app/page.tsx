@@ -9,7 +9,7 @@ import { asset } from "@/lib/paths";
 export const metadata: Metadata = {
   title: "Shakespeare in the Republic",
   description:
-    "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders — Adams, Franklin, Hamilton, Jefferson, Madison, Washington. 68,807 documents, 24.6 million words, eight statistical case studies, and a passage-level catalogue.",
+    "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders: Adams, Franklin, Hamilton, Jefferson, Madison, Washington. 68,807 documents, 24.6 million words, eight statistical case studies, and a passage-level catalogue.",
 };
 
 type CatalogueShape = typeof catalogue;
@@ -54,9 +54,9 @@ function Hero() {
               Adams, Franklin, Hamilton, Jefferson, Madison, and
               Washington left behind almost twenty-five million words.
               Shakespeare&rsquo;s complete works are just under a
-              million. Two centuries after Shakespeare died and an ocean
-              away, did anything of his English actually persist in the
-              Founders&rsquo; writing? And if so, whose &mdash; and how?
+              million. Two centuries after Shakespeare died and an
+              ocean away, did anything of his English survive into the
+              Founders&rsquo; writing? And if so, whose? And how?
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               This site lets you see the answer in their own words.
@@ -72,7 +72,7 @@ function Hero() {
                 href="/about-this-project"
                 className="text-folio"
               >
-                About this project &mdash; how the site was made &rarr;
+                About this project: how the site was made &rarr;
               </Link>
             </p>
           </div>
@@ -226,11 +226,11 @@ function HeadlineFindings() {
             absorbed it as a text. Franklin absorbed it as a habit.
           </div>
           <p className="text-center text-ink-muted text-sm italic mt-4">
-            &mdash; the project&rsquo;s central finding, from the{" "}
+            From the{" "}
             <Link href="/essay/two-modes" className="underline">
               Two Modes of Influence
             </Link>{" "}
-            essay
+            essay.
           </p>
         </div>
       </div>
@@ -272,12 +272,12 @@ function FounderRoster() {
           One signature, six writers
         </h2>
         <p className="text-center text-ink-soft max-w-prose mx-auto mb-12">
-          Each Founder absorbed Shakespeare differently &mdash; or, in two
-          cases, not at all. The composite ranking, the verbatim-quotation
-          count, and the by-name references all point to the same shape:
-          Adams and Franklin at the top in two distinct modes, Hamilton and
-          Madison at the bottom with effectively no surface contact with
-          Shakespeare.
+          Each Founder absorbed Shakespeare differently. In two cases
+          they didn&rsquo;t absorb him at all. The composite ranking
+          lines up with the verbatim-quotation count and with the
+          by-name references: Adams and Franklin at the top in two
+          distinct modes, Hamilton and Madison at the bottom with
+          effectively no surface contact with Shakespeare.
         </p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-wide mx-auto">
           {founderList.founders.map((f) => (
@@ -343,12 +343,13 @@ function ProjectAbout() {
               America&rsquo;s Public Bible
             </a>{" "}
             (Lincoln Mullen, Stanford University Press). The{" "}
-            <Link href="/essay">Essays</Link> are the long-form commentary
-            &mdash; the question, the methods, and the substantive findings.
-            The <Link href="/case-study">Case Studies</Link> are deeper dives
-            on individual findings, each anchored in a specific passage and
-            its source. The <Link href="/explorer">Explorer</Link> is the
-            interactive layer, where the underlying data is browsable and
+            <Link href="/essay">Essays</Link> are the long-form
+            commentary: the question, the methods, the findings. The{" "}
+            <Link href="/case-study">Case Studies</Link> are deeper
+            dives on individual findings, each anchored in a specific
+            passage and its source. The{" "}
+            <Link href="/explorer">Explorer</Link> is the interactive
+            layer, where the underlying data is browsable and
             searchable.
           </p>
           <p className="text-base text-ink-soft leading-relaxed mt-4">

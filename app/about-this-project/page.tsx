@@ -33,9 +33,8 @@ export default function AboutThisProjectPage() {
               a corpus-linguistic study of Shakespeare&rsquo;s
               influence on six American Founders. The less visible
               one is an experiment in what happens when you direct
-              an AI coding agent &mdash; Anthropic&rsquo;s Claude
-              Code &mdash; to build a serious digital-humanities
-              project end to end. I want to be candid about the
+              an AI coding agent (Anthropic&rsquo;s Claude Code) to
+              build a serious digital-humanities project end to end. I want to be candid about the
               second project, because the temptation in work like
               this is to present the polished output and quietly
               omit how it was actually assembled.
@@ -53,19 +52,19 @@ export default function AboutThisProjectPage() {
             not a digital humanist, a corpus linguist, or a
             computational researcher by training. I claim no
             expertise in those disciplines. What I brought to this
-            project is the editorial habit of a lawyer-turned-librarian
-            &mdash; care about sources, attention to attribution,
-            and a long working familiarity with how research
-            literatures are constructed. The librarian background
+            project is the editorial habit of a lawyer-turned-librarian:
+            care about sources, attention to attribution, and a long
+            working familiarity with how research literatures are
+            constructed. The librarian background
             in particular helped: a good portion of the work was
             knowing what to ask for, how to verify it, and where to
             look when something didn&rsquo;t hold up.
           </p>
           <p>
             That said, this is a living project. It may contain
-            mistakes &mdash; mine, in framing or interpretation, or
-            the AI&rsquo;s, in the underlying analysis or in the
-            prose. The data, the analysis scripts, and the site
+            mistakes. Some will be mine, in framing or
+            interpretation; some will be the AI&rsquo;s, in the
+            underlying analysis or in the prose. The data, the analysis scripts, and the site
             code are all open under permissive terms. I would much
             rather have someone notice an error and tell me than
             present the work as settled. The right way to read
@@ -82,9 +81,9 @@ export default function AboutThisProjectPage() {
             I posed the original question: did the Founders sound
             like Shakespeare, and could you tell from the actual
             corpus rather than from received opinion? I chose the
-            corpora &mdash; the Founders Online archive on one side,
-            the Project Gutenberg Shakespeare on the other &mdash;
-            and I chose the methodological framework, Anatol
+            corpora (the Founders Online archive on one side, the
+            Project Gutenberg Shakespeare on the other), and I chose
+            the methodological framework, Anatol
             Stefanowitsch&rsquo;s open-access{" "}
             <em>Corpus Linguistics: A Guide to the Methodology</em>{" "}
             (Language Science Press, 2020), as the spine the project
@@ -95,9 +94,9 @@ export default function AboutThisProjectPage() {
             case study, which ones stayed in the supplementary
             paper, which framings worked for a generalist audience
             and which were academic-only. I corrected mistakes when
-            I saw them &mdash; the project went through several
-            revisions, often substantial ones, because something
-            Claude generated turned out to be wrong on a date, on a
+            I saw them. The project went through several revisions,
+            often substantial ones, because something Claude
+            generated turned out to be wrong on a date, on a
             recipient, on the underlying statistical claim, or on
             the rhetorical register. I rejected pages of prose
             because they felt wrong. At one point I asked Claude to
@@ -108,9 +107,8 @@ export default function AboutThisProjectPage() {
           </p>
           <p>
             I read every page carefully. The site has many specific
-            historical claims in it &mdash; that Adams wrote a
-            particular letter to a particular recipient on a
-            particular date, that a particular Shakespearean passage
+            historical claims in it: that Adams wrote a particular
+            letter to a particular recipient on a particular date, that a particular Shakespearean passage
             comes from a particular act and scene, that a particular
             Founder used a particular word at a particular per-million
             rate. Each of those claims either traced to a row in a
@@ -149,10 +147,10 @@ export default function AboutThisProjectPage() {
             And the site itself. Every page template. The Next.js
             scaffolding. The Tailwind design tokens for the
             parchment palette and the EB Garamond / IM Fell
-            typography. Every interactive explorer &mdash; the
-            Honour Test, the Catalogue, the Quotation Timeline, the
-            Ranking matrix, the Metaphor Fingerprints, the Archaic
-            Threshold, the Play Atlas, and the others. The SVG
+            typography. Every interactive explorer: the Honour Test,
+            the Catalogue, the Quotation Timeline, the Ranking
+            matrix, the Metaphor Fingerprints, the Archaic Threshold,
+            the Play Atlas, and the others. The SVG
             charts. The GitHub Pages deployment. The Founders
             Online and Folger Shakespeare backlinks. The
             image-credits attribution table.
@@ -214,9 +212,9 @@ export default function AboutThisProjectPage() {
           </h2>
           <p>
             The project moved through several rough phases. I
-            don&rsquo;t want to overclaim a tidy linear process
-            &mdash; in practice every phase overlapped with the
-            others and several got revisited multiple times.
+            don&rsquo;t want to overclaim a tidy linear process. In
+            practice every phase overlapped with the others and
+            several got revisited multiple times.
           </p>
           <ol className="my-6 text-base text-ink-soft space-y-3 pl-6 list-decimal">
             <li>
@@ -254,10 +252,9 @@ export default function AboutThisProjectPage() {
             </li>
             <li>
               <strong>Site architecture.</strong> I sketched the
-              site shape I wanted &mdash; commentary essays, case
-              studies, interactive explorers &mdash; modelled on
-              Lincoln Mullen&rsquo;s <em>America&rsquo;s Public
-              Bible</em>. Claude built the Next.js scaffolding,
+              site shape I wanted (commentary essays, case studies,
+              interactive explorers), modelled on Lincoln
+              Mullen&rsquo;s <em>America&rsquo;s Public Bible</em>. Claude built the Next.js scaffolding,
               the design system, the page templates, and every
               interactive component. We iterated on colour,
               typography, and spacing.
@@ -298,9 +295,8 @@ export default function AboutThisProjectPage() {
             going in. With a clear research question, a careful
             methodological frame, and editorial attention, the
             agent produced a complete digital-humanities project
-            &mdash; corpus, pipeline, paper, site, and interactive
-            layer &mdash; that meets at least my standard of
-            disciplinary care. I am sure a corpus linguist with
+            (corpus, pipeline, paper, site, interactive layer) that
+            meets at least my standard of disciplinary care. I am sure a corpus linguist with
             formal training would find things to push back on,
             and I welcome that pushback. But the work is not slop
             in a wrapper.
@@ -355,7 +351,7 @@ export default function AboutThisProjectPage() {
             If you find an error, a misattribution, a passage
             that&rsquo;s been quoted wrong, a date that&rsquo;s off,
             a statistical claim that doesn&rsquo;t hold up, or a
-            framing that overreaches the evidence &mdash; please{" "}
+            framing that overreaches the evidence: please{" "}
             <a
               href="https://github.com/willimj3/shakespeare-in-the-republic/issues"
               target="_blank"

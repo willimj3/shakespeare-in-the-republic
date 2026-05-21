@@ -218,8 +218,8 @@ export default function BibliographyEssay() {
       </p>
 
       <p>
-        Six of the case-study CSVs are the load-bearing files for
-        this site. The catalogue explorer is built from{" "}
+        Six of the case-study CSVs power most of what the site
+        renders. The catalogue explorer is built from{" "}
         <code className="text-folio">catalogue_direct_quotes.csv</code>{" "}
         and{" "}
         <code className="text-folio">
