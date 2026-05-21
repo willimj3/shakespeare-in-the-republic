@@ -37,6 +37,24 @@ const VIEWS: ExplorerView[] = [
     imageAlt: "Shakespeare (Chandos portrait, c. 1610).",
   },
   {
+    slug: "kwic",
+    title: "KWIC concordancer",
+    blurb:
+      "The corpus-linguistics standard view: pick a word or phrase and read every occurrence in context, with surrounding text aligned around the keyword. Computed live across the full 82,107-document backend.",
+    status: "live",
+    image: asset("/images/historical/adams-diary-manuscript.jpg"),
+    imageAlt: "Adams diary manuscript.",
+  },
+  {
+    slug: "collocate",
+    title: "Collocational worlds",
+    blurb:
+      "The live, on-demand version of the Honour Test. Pick any word and see what neighbours it keeps in the Founders' corpus versus Shakespeare's, ranked by log-likelihood. The same word lives in two very different worlds.",
+    status: "live",
+    image: asset("/images/historical/first-folio-othello-p827.jpg"),
+    imageAlt: "First Folio: Othello.",
+  },
+  {
     slug: "honour-test",
     title: "The Honour Test",
     blurb:

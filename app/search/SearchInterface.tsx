@@ -511,22 +511,22 @@ export default function SearchInterface() {
                     className="text-sm text-ink-soft mt-2 leading-relaxed kwic-text"
                     dangerouslySetInnerHTML={{ __html: r.headline }}
                   />
-                  <p className="text-xs mt-3">
-                    {externalUrl ? (
+                  <p className="text-xs mt-3 flex flex-wrap gap-x-4 gap-y-1 font-sans">
+                    <a
+                      href={`/document/?id=${encodeURIComponent(r.doc_id)}`}
+                      className="text-folio underline"
+                    >
+                      Open full document &rarr;
+                    </a>
+                    {externalUrl && (
                       <a
                         href={externalUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-folio underline font-sans"
+                        className="text-folio underline"
                       >
-                        {isShakespeare
-                          ? "Open on the Folger →"
-                          : "Open on Founders Online →"}
+                        {isShakespeare ? "Folger →" : "Founders Online →"}
                       </a>
-                    ) : (
-                      <span className="text-ink-muted font-sans">
-                        {r.doc_id}
-                      </span>
                     )}
                   </p>
                 </li>
