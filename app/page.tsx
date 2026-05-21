@@ -12,7 +12,7 @@ import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
 export const metadata: Metadata = {
   title: "Shakespeare in the Republic",
   description:
-    "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders: Adams, Franklin, Hamilton, Jefferson, Madison, Washington. 68,807 documents, 24.6 million words, eight statistical case studies, and a passage-level catalogue.",
+    "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders: Adams, Franklin, Hamilton, Jefferson, Madison, Washington. 24.6 million words of Founder writing against Shakespeare's 891,000, with a verified passage-level catalogue and ten methodological measures.",
   openGraph: {
     title: "Shakespeare in the Republic",
   },

@@ -86,6 +86,18 @@ export default function CandidateEchoesPage() {
               Founders Online and to the relevant Shakespeare play
               at the Folger.
             </p>
+
+            <p className="text-xs text-ink-muted mt-4 italic leading-relaxed">
+              <strong>A note on the data source.</strong> When the
+              live Supabase backend is available, this page queries
+              all 35,794 candidate echoes directly. When the backend
+              is unreachable (or when the site is being viewed from
+              a static export with the env vars unset), the page
+              falls back to a bundled JSON of the top 5,000 echoes
+              by quality score. The header line above the
+              filter chips reflects whichever source is currently
+              live.
+            </p>
           </div>
         </div>
       </header>

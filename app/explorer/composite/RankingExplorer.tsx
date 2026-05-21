@@ -3,81 +3,119 @@
 import { useMemo, useState } from "react";
 import composite from "@/data/composite.json";
 
+// Founder column order follows the current overall ranking (best first).
 const FOUNDER_ORDER = [
-  "franklin",
   "adams",
+  "franklin",
   "jefferson",
   "washington",
-  "madison",
   "hamilton",
+  "madison",
 ] as const;
 type FounderId = (typeof FOUNDER_ORDER)[number];
 
 const FOUNDER_NAMES: Record<FounderId, string> = {
-  franklin: "Franklin",
   adams: "Adams",
+  franklin: "Franklin",
   jefferson: "Jefferson",
   washington: "Washington",
-  madison: "Madison",
   hamilton: "Hamilton",
+  madison: "Madison",
 };
 
-const METHODS = [
-  {
+// Per-method metadata (short label + blurb) keyed by the canonical
+// label from composite.json. composite.json is the source of truth for
+// which methods exist and in what order; this map only adds display
+// strings. If composite.json adds a method without a matching entry
+// here, the component falls back to the canonical label.
+const METHOD_META: Record<string, { short: string; blurb: string }> = {
+  "Overall ranking": {
     short: "Overall",
-    label: "Overall ranking",
     blurb:
-      "The Influence-3 composite — the project's headline number, combining vocabulary breadth, weighted vocabulary, and collocational absorption.",
+      "The project's headline number: inverse of average rank position across the ten base methods.",
   },
-  {
+  "Pronoun-distribution similarity": {
     short: "Pronouns",
-    label: "Pronoun-distribution similarity",
     blurb:
       "How closely each Founder's I / we / he / they distribution matches Shakespeare's, by chi-square distance.",
   },
-  {
+  "Old-fashioned word survival": {
     short: "Old words",
-    label: "Old-fashioned word survival",
     blurb:
       "How many archaic forms (hath, doth, thou, methinks, prithee, whilst, amongst…) each Founder still uses, normalized.",
   },
-  {
+  "Metaphor pattern similarity": {
     short: "Metaphor",
-    label: "Metaphor pattern similarity",
     blurb:
       "Distance between each Founder's metaphor-family distribution (BODY, EDIFICE, SHIP, PATH, FIRE…) and Shakespeare's.",
   },
-  {
+  "Statistical-style overlap": {
     short: "Style overlap",
-    label: "Statistical-style overlap",
     blurb:
-      "Shared stylistic 'types' under Configural Frequency Analysis — which feature-bin combinations the Founder's writing shares with Shakespeare's.",
+      "Shared stylistic types under Configural Frequency Analysis — which feature-bin combinations the Founder's writing shares with Shakespeare's.",
   },
-  {
+  "Use of Shakespeare-coined phrases": {
     short: "Coined phrases",
-    label: "Use of Shakespeare-coined phrases",
     blurb:
       "How often each Founder reaches for the ~22 well-known Shakespeare-attributed idioms ('band of brothers', 'pound of flesh', 'flesh and blood', …).",
   },
-  {
+  "Shakespearean vocabulary": {
     short: "Vocabulary",
-    label: "Shakespearean vocabulary",
     blurb:
-      "Influence-1 weighted vocabulary absorption — how many of Shakespeare's vocabulary items, weighted by Shakespeare's own usage frequency, the Founder uses.",
+      "Weighted vocabulary absorption — how many of Shakespeare's vocabulary items, weighted by Shakespeare's own usage frequency, the Founder uses.",
   },
-  {
+  "Shakespearean context patterns": {
     short: "Context",
-    label: "Shakespearean context patterns",
     blurb:
-      "Influence-2 collocational absorption — how many of Shakespeare's bigram and trigram patterns the Founder reproduces.",
+      "Collocational absorption — how many of Shakespeare's bigram and trigram patterns the Founder reproduces.",
   },
-];
+  "Verified Shakespeare references per million words": {
+    short: "Verified refs / M",
+    blurb:
+      "The strict catalogue (62 direct quotations + 78 by-name references) divided by each Founder's corpus size in millions of words.",
+  },
+  "Thematic character invocations per million words": {
+    short: "Thematic / M",
+    blurb:
+      "Character-as-type invocations per million words. The Shakespeare-only characters (Falstaff, Shylock, Hotspur, Lady Macbeth) are all Adams.",
+  },
+  "Candidate-echo density per million words": {
+    short: "Echo density / M",
+    blurb:
+      "MEDIUM-or-HIGH-confidence short verbatim matches (4–5 word strings with distinctive Shakespeare content words) per million words of corpus.",
+  },
+};
 
 type ConvergenceShape = {
   six_method_convergence: { methods: string[]; ranks: Record<string, number[]> };
 };
-const ranks = (composite as unknown as ConvergenceShape).six_method_convergence
-  .ranks;
+const convergence = (composite as unknown as ConvergenceShape).six_method_convergence;
+const ranks = convergence.ranks;
+
+// METHODS is derived from composite.json so we never drift from the data.
+const METHODS = convergence.methods.map((label) => {
+  const meta = METHOD_META[label];
+  return {
+    short: meta?.short ?? label,
+    label,
+    blurb: meta?.blurb ?? "",
+  };
+});
+
+// Defensive: surface a runtime warning if any founder's ranks array
+// length doesn't match the methods array length. This catches schema
+// drift between code and data.
+if (typeof window !== "undefined") {
+  for (const f of FOUNDER_ORDER) {
+    const r = ranks[f] ?? [];
+    if (r.length !== convergence.methods.length) {
+      // eslint-disable-next-line no-console
+      console.warn(
+        `composite.json schema mismatch: ${f} has ${r.length} ranks but ${convergence.methods.length} methods are declared.`,
+      );
+    }
+  }
+}
 
 const RANK_COLORS = [
   "#7B1E1E",

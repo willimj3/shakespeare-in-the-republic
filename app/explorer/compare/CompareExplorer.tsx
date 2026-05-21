@@ -79,8 +79,6 @@ export default function CompareExplorer() {
 
   const left = FOUNDER_MAP[leftId];
   const right = FOUNDER_MAP[rightId];
-  const leftRanks = data.six_method_convergence.ranks[leftId] ?? [];
-  const rightRanks = data.six_method_convergence.ranks[rightId] ?? [];
   const leftArc = archaicFor(leftId);
   const rightArc = archaicFor(rightId);
   const leftMet = metaphorData.rates_per_million[leftId];
@@ -99,15 +97,20 @@ export default function CompareExplorer() {
       .sort((a, b) => b.leftCount + b.rightCount - (a.leftCount + a.rightCount));
   }, [leftId, rightId]);
 
-  // Per-method disagreement: where ranks differ by the most
+  // Per-method disagreement: where ranks differ by the most.
+  // leftRanks and rightRanks are derived inside the memo so that the
+  // hook dependencies are the founder IDs themselves (stable strings)
+  // rather than fresh arrays produced on every render.
   const methodDisagreements = useMemo(() => {
+    const leftRanks = data.six_method_convergence.ranks[leftId] ?? [];
+    const rightRanks = data.six_method_convergence.ranks[rightId] ?? [];
     return METHODS.map((m, i) => ({
       method: m,
       left: leftRanks[i] ?? 0,
       right: rightRanks[i] ?? 0,
       gap: Math.abs((leftRanks[i] ?? 0) - (rightRanks[i] ?? 0)),
     })).sort((a, b) => b.gap - a.gap);
-  }, [leftRanks, rightRanks]);
+  }, [leftId, rightId]);
 
   return (
     <>

@@ -28,7 +28,7 @@ const SITE_URL =
 const OG_IMAGE = `${SITE_URL}/og-image.png`;
 const SITE_TITLE = "Shakespeare in the Republic";
 const SITE_DESCRIPTION =
-  "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders: Adams, Jefferson, Franklin, Hamilton, Madison, Washington. 68,807 documents and 24.6 million words.";
+  "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders: Adams, Jefferson, Franklin, Hamilton, Madison, Washington. 24.6 million words of Founder writing against Shakespeare's 891,000.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

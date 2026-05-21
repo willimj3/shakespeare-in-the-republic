@@ -222,22 +222,12 @@ export default function MethodsEssay() {
         most Shakespearean to least.
       </p>
       <p>
-        Briefly, the eight are:
+        Briefly, the eleven are:
       </p>
       <ol className="text-base text-ink-soft my-6 space-y-1 pl-6 list-decimal">
         <li>
-          <em>Vocabulary:</em> how many words distinctive of
-          Shakespeare survive in the Founder&rsquo;s writing.
-        </li>
-        <li>
-          <em>Context patterns:</em> the specific neighbours
-          Shakespeare&rsquo;s favourite abstract nouns travel with,
-          and whether the Founder uses any of those neighbours too.
-        </li>
-        <li>
-          <em>Vocabulary richness:</em> how much lexical
-          variety the writer shows in a sample of equal size to
-          Shakespeare&rsquo;s.
+          <em>Overall ranking:</em> the composite of the ten base
+          methods below.
         </li>
         <li>
           <em>Pronoun distribution:</em> the relative rates of{" "}
@@ -265,11 +255,36 @@ export default function MethodsEssay() {
           <em>Think on My Words</em> attribute to Shakespeare, and
           whether the Founder uses them.
         </li>
+        <li>
+          <em>Shakespearean vocabulary:</em> how many words
+          distinctive of Shakespeare survive in the Founder&rsquo;s
+          writing.
+        </li>
+        <li>
+          <em>Shakespearean context patterns:</em> the specific
+          neighbours Shakespeare&rsquo;s favourite abstract nouns
+          travel with, and whether the Founder uses any of those
+          neighbours too.
+        </li>
+        <li>
+          <em>Verified Shakespeare references per million words:</em>{" "}
+          the strict catalogue of hand-verified references divided by
+          each Founder&rsquo;s corpus size.
+        </li>
+        <li>
+          <em>Thematic character invocations per million words:</em>{" "}
+          recognised character-as-type passages per million words.
+        </li>
+        <li>
+          <em>Candidate-echo density per million words:</em>{" "}
+          MEDIUM-or-HIGH-confidence short verbatim matches per
+          million words.
+        </li>
       </ol>
       <p>
-        The first seven are pattern-level. The eighth is passage-level.
-        How they agree, and where they disagree, is the
-        substance of the{" "}
+        The first seven measure stylistic and statistical patterns;
+        the last three count passage-level evidence directly. How
+        they agree, and where they disagree, is the substance of the{" "}
         <Link href="/essay/convergence">
           Eleven Ways of Looking
         </Link>{" "}
@@ -281,103 +296,120 @@ export default function MethodsEssay() {
 
       {/* ── Composite score ────────────────────────────────────────── */}
       <h2 id="composite" className="font-display text-3xl text-ink mt-10 scroll-mt-24">
-        The composite score: what 0.79 means
+        The composite score: how the ranking is built
       </h2>
       <p>
         The single number that appears on every Founder&rsquo;s
-        profile and powers the ranking (Franklin 0.7857,
-        Adams 0.7619, Jefferson 0.5952, Washington 0.5238, Madison
-        0.4286, Hamilton 0.4048) is not a probability, not
-        a similarity coefficient, and not a raw count. It is the
-        average of seven percentile ranks, each computed against
-        the other Founders.
+        profile and powers the ranking (Adams 0.88, Franklin 0.76,
+        Jefferson 0.68, Washington 0.28, Hamilton 0.22, Madison 0.18)
+        is not a probability, not a similarity coefficient, and not a
+        raw count. It is the inverse of average rank position across
+        ten base methods, rescaled to a 0&ndash;1 range.
       </p>
       <p>
-        Here is how it&rsquo;s built. Seven separate measures of
+        Here is how it&rsquo;s built. Ten separate measures of
         Shakespearean inheritance are computed independently for
-        each Founder against the full corpus:
+        each Founder against the full corpus. Seven of them are
+        statistical or stylistic:
       </p>
       <ol className="my-6 text-base text-ink-soft space-y-2 pl-6 list-decimal">
         <li>
-          <strong>Vocabulary breadth.</strong> The count of
-          distinct Shakespearean words this Founder uses in his
-          collected writing.
+          <strong>Pronoun-distribution similarity.</strong> How
+          closely each Founder&rsquo;s pronoun and address-term
+          usage matches Shakespeare&rsquo;s.
         </li>
         <li>
-          <strong>Weighted vocabulary.</strong> The same count, but
-          weighted by how often Shakespeare himself uses each word,
-          so picking up the words Shakespeare reaches for
-          most matters more than picking up his rare ones.
+          <strong>Old-fashioned word survival.</strong> How many
+          archaic Shakespearean forms (hath, doth, thou, methinks,
+          prithee, whilst, amongst) each Founder still uses.
         </li>
         <li>
-          <strong>Shakespearean collocations.</strong> The count of
-          distinctive Shakespearean bigrams and trigrams (two- and
-          three-word patterns) reproduced anywhere in the
-          Founder&rsquo;s writing.
+          <strong>Metaphor pattern similarity.</strong> Distance
+          between each Founder&rsquo;s metaphor-family distribution
+          (body, edifice, ship, path, fire) and Shakespeare&rsquo;s.
         </li>
         <li>
-          <strong>Collocation hits.</strong> The total number of
-          times those patterns appear, not just how many distinct
-          ones.
+          <strong>Statistical-style overlap.</strong> Which
+          feature-bin combinations the Founder&rsquo;s writing
+          shares with Shakespeare&rsquo;s under Configural Frequency
+          Analysis.
         </li>
         <li>
-          <strong>MSTTR closeness.</strong> How close this
-          Founder&rsquo;s mean segmental type-token ratio (a
-          sample-size-corrected measure of vocabulary diversity) is
-          to Shakespeare&rsquo;s.
+          <strong>Use of Shakespeare-coined phrases.</strong> How
+          often each Founder reaches for the well-known
+          Shakespeare-attributed idioms (band of brothers, pound of
+          flesh, flesh and blood).
         </li>
         <li>
-          <strong>HTR closeness.</strong> How close his
-          hapax-token ratio (the fraction of words used exactly
-          once) is to Shakespeare&rsquo;s.
+          <strong>Shakespearean vocabulary.</strong> Weighted
+          absorption of Shakespeare&rsquo;s vocabulary items.
         </li>
         <li>
-          <strong>Yule&rsquo;s K closeness.</strong> How close his
-          Yule&rsquo;s K statistic (another classic
-          vocabulary-richness measure) is to
-          Shakespeare&rsquo;s.
+          <strong>Shakespearean context patterns.</strong>{" "}
+          Collocational absorption: how many of Shakespeare&rsquo;s
+          bigram and trigram patterns the Founder reproduces.
         </li>
       </ol>
       <p>
-        For each of those seven measures, we rank the six Founders
-        from 1 to 6, then convert the rank into a percentile
-        (rank 6 = 1.00, rank 5 = 0.83, rank 4 = 0.67, rank 3 =
-        0.50, rank 2 = 0.33, rank 1 = 0.17). The composite is
-        simply the average of the seven percentile values.
+        The remaining three methods are evidence-based and were
+        added after the project expanded its data layers:
+      </p>
+      <ol start={8} className="my-6 text-base text-ink-soft space-y-2 pl-6 list-decimal">
+        <li>
+          <strong>Verified Shakespeare references per million words.</strong>{" "}
+          The 140 hand-verified catalogue references (62 direct
+          quotations + 78 by-name) divided by each Founder&rsquo;s
+          corpus size.
+        </li>
+        <li>
+          <strong>Thematic character invocations per million words.</strong>{" "}
+          Character-as-type passages per million words. The
+          Shakespeare-only characters (Falstaff, Shylock, Hotspur,
+          Lady Macbeth) are recorded separately from the
+          Roman-ambiguous ones.
+        </li>
+        <li>
+          <strong>Candidate-echo density per million words.</strong>{" "}
+          MEDIUM-or-HIGH-confidence short verbatim matches per
+          million words of corpus.
+        </li>
+      </ol>
+      <p>
+        For each of those ten measures, the six Founders are ranked
+        from 1 to 6. The overall composite is the inverse of the
+        average rank, rescaled so higher means more Shakespearean.
+        Adams averages rank 1.6 across the ten methods and scores
+        0.88; Madison averages 5.1 and scores 0.18.
       </p>
       <p>
         That construction has three properties worth flagging. First,
         <strong> the composite is relative</strong>. A Founder&rsquo;s
         score depends on the other five he&rsquo;s being compared
         to; it is not a fixed similarity to Shakespeare. If we
-        added a seventh Founder, or dropped one, the
-        numbers would shift. Second,{" "}
-        <strong>the seven measures are equally weighted</strong>.
-        Vocabulary breadth counts as much as Yule&rsquo;s K. There
-        is no a-priori reason to weight any of them more heavily;
-        we picked equal weighting as the most defensible default.
-        Third, <strong>the composite is silent about the way of
-        knowing</strong>. It does not measure conscious citation,
-        named reference, or specific play knowledge; those
-        live in the catalogue. It measures statistical absorption
-        of Shakespearean vocabulary and style.
+        added a seventh Founder, or dropped one, the numbers would
+        shift. Second,{" "}
+        <strong>the ten measures are equally weighted</strong>.
+        Vocabulary breadth counts as much as the verified-references
+        column. We picked equal weighting as the most defensible
+        default. Third, <strong>the composite captures both
+        citation and absorbed style</strong>. The original seven
+        statistical measures favoured Franklin&rsquo;s absorbed
+        register; the three evidence-based measures favour
+        Adams&rsquo;s citational reach. Adams leads because he
+        ranks first or near-first on most measures of both kinds.
       </p>
       <p>
-        The composite does not include the other measures the
-        project tracks: pronoun-distribution similarity,
-        archaic-form survival, metaphor profile, the CFA
-        statistical-style overlap, or use of the well-known
-        Shakespeare-coined phrases. Those are reported as
-        independent per-method rankings, alongside the composite,
-        on the{" "}
+        The composite is reported alongside each of the ten
+        underlying methods on the{" "}
         <Link href="/explorer/composite">Ranking explorer</Link>.
-        Where the eight rankings agree, the composite is
-        confirmed; where they disagree, the disagreement itself is
-        the substantive story (see the{" "}
+        Where the ten rankings agree, the composite is confirmed.
+        Where they disagree, the disagreement itself is the
+        substantive story (Adams dominates on the citational
+        measures; Franklin dominates on the statistical ones). The{" "}
         <Link href="/essay/convergence">
           Eleven Ways of Looking
         </Link>{" "}
-        essay).
+        essay walks through that pattern.
       </p>
       <p>
         The exact formula lives in the research repository:{" "}
