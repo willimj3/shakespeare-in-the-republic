@@ -126,9 +126,8 @@ export default function Home() {
   return (
     <div className="bg-parchment text-ink">
       <Hero />
-      <ExecutiveSummary />
-      <FounderCountsStrip />
       <ThreeLayersOfEvidence />
+      <FounderCountsStrip />
       <TopPlays />
       <ThreeTeasers />
       <ProjectAbout />
@@ -155,12 +154,21 @@ function Hero() {
               into the writing of the American Founders?
             </p>
             <p className="text-base text-ink-soft mt-5 leading-relaxed">
-              Adams, Franklin, Hamilton, Jefferson, Madison, and
-              Washington left behind 24.6 million words.
-              Shakespeare&rsquo;s complete works are just under a
-              million. With those two corpora in hand, the question
-              stops being a matter of feel and becomes a matter of
-              arithmetic. The data is below; jump in.
+              Unevenly. Adams quoted Shakespeare more than the other
+              five combined. Franklin sounds more like him sentence
+              for sentence without ever quoting. Hamilton and Madison
+              wrote as if Locke and Hume had displaced the playwright
+              entirely. When the Founders did reach for Shakespeare
+              to do political work, they reached for{" "}
+              <em>Julius Caesar</em>: Brutus for republican principle,
+              Caesar for the ambition that could topple a republic.
+            </p>
+            <p className="text-sm text-ink-muted mt-4 leading-relaxed italic">
+              An open experiment pairing corpus-linguistic methods
+              with AI assistance across 24.6 million Founder words
+              and Shakespeare&rsquo;s 891,000. Every claim traces to
+              downloadable data; the project is a starting point, not
+              a finished argument.
             </p>
             <p className="mt-5 text-sm">
               <Link
@@ -185,85 +193,6 @@ function Hero() {
                 First Folio (1623). Engraving by Martin Droeshout.
               </figcaption>
             </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/*                         EXECUTIVE SUMMARY                            */
-/* ──────────────────────────────────────────────────────────────────── */
-function ExecutiveSummary() {
-  return (
-    <section className="border-b border-parchment-deep">
-      <div className="max-w-outer mx-auto px-6 py-14">
-        <div className="max-w-prose mx-auto">
-          <p className="section-marker">What the project found</p>
-          <h2 className="font-display text-3xl text-ink mt-2 leading-tight">
-            Shakespeare carried forward into the Founders unevenly, in
-            ways the data makes legible.
-          </h2>
-
-          <p className="text-base text-ink-soft mt-6 leading-relaxed">
-            John Adams quoted Shakespeare more than the other five
-            Founders combined. He was reading the plays at twenty-three
-            and was still returning to favourite lines at eighty-six.
-            Benjamin Franklin almost never named Shakespeare or quoted
-            him, but his prose sounds more like Shakespeare&rsquo;s
-            sentence for sentence than any other Founder&rsquo;s. Thomas
-            Jefferson kept Shakespeare on his shelf and named him often
-            without copying a passage. George Washington picked up a
-            few phrases through the army officers around him. Alexander
-            Hamilton and James Madison, who came of age during the
-            Revolutionary crisis, write as if the playwright had been
-            displaced by Locke and Hume.
-          </p>
-
-          <p className="text-base text-ink-soft mt-5 leading-relaxed">
-            One play does most of the political work. Across
-            forty-seven years and five of the six Founders, the
-            Shakespeare that showed up in their political
-            correspondence was <em>Julius Caesar</em>. Brutus stood for
-            republican principle. Caesar stood for the kind of ambition
-            that could topple a republic. Hamilton, the Founder who
-            never named Shakespeare in his life, reportedly told
-            Jefferson at a dinner party that Caesar was the greatest
-            man who ever lived. The English history plays barely
-            register in the data.
-          </p>
-
-          <p className="text-base text-ink-soft mt-5 leading-relaxed">
-            The other findings cluster around timing. The Founders who
-            finished their formal education before the 1765 Stamp Act
-            crisis (Adams, Franklin, Washington) carry the great bulk
-            of the project&rsquo;s Shakespeare engagement. The ones
-            still in school or younger when it happened (Jefferson,
-            Madison, Hamilton) inherited a different reading list,
-            heavier on Hume, Locke, and the Roman historians. Their
-            Shakespeare is correspondingly thinner.
-          </p>
-
-          <div className="mt-8 p-5 bg-parchment-dark border-l-4 border-bronze rounded-sm">
-            <p className="text-sm text-ink-soft leading-relaxed">
-              <strong className="text-ink">This is an open experiment.</strong>{" "}
-              The site pairs corpus-linguistic methods with AI
-              assistance to surface patterns in 24.6 million words of
-              Founder writing against Shakespeare&rsquo;s 891,000.
-              Every claim on the site traces to a row in a downloadable
-              data file. The project does not claim expertise in
-              Shakespeare or in early American history. It is meant as
-              a starting point for further exploration and contribution,
-              not as a finished argument.{" "}
-              <Link
-                href="/about-this-project"
-                className="text-folio font-sans underline"
-              >
-                Read the full note on how the site was made
-              </Link>
-              .
-            </p>
           </div>
         </div>
       </div>
@@ -615,19 +544,25 @@ function ThreeLayersOfEvidence() {
   return (
     <section className="border-b border-parchment-deep bg-parchment-dark">
       <div className="max-w-outer mx-auto px-6 py-14">
-        <div className="max-w-prose mx-auto text-center mb-8">
-          <p className="section-marker">Three layers of evidence</p>
-          <h2 className="font-display text-3xl text-ink mt-1">
+        <div className="max-w-prose mx-auto text-center mb-10">
+          <p className="section-marker">Start here · three layers of evidence</p>
+          <h2 className="font-display text-3xl sm:text-4xl text-ink mt-2 leading-tight">
             From verbatim quotation to thematic invocation
           </h2>
-          <p className="text-sm text-ink-soft mt-3 leading-relaxed">
+          <p className="text-sm text-ink-soft mt-4 leading-relaxed">
             The project tracks Shakespearean inheritance at three
-            tiers of evidence. The strict catalogue at the top.
-            Shorter candidate echoes in the middle. Thematic
-            character invocations at the bottom. Each tier
-            illuminates a different kind of borrowing &mdash; and
-            the histories surface more clearly in the lower tiers
-            than the strict catalogue alone would suggest.
+            tiers of evidence, from strictest to loosest.
+            The <strong className="text-ink">strict catalogue</strong>{" "}
+            is the top: 140 verbatim quotations and by-name references
+            that survived hand verification. The middle tier is
+            shorter <strong className="text-ink">candidate echoes</strong>{" "}
+            (the word &ldquo;candidate&rdquo; is deliberate: these are
+            short matches that pattern like Shakespeare references but
+            haven&rsquo;t been confirmed as ones). The bottom tier is{" "}
+            <strong className="text-ink">thematic allusions</strong>:
+            cases where a Founder invokes a Shakespearean character
+            as a type without quoting the play. Click any card to
+            browse that tier.
           </p>
         </div>
 
@@ -637,7 +572,7 @@ function ThreeLayersOfEvidence() {
             <LayerCard
               tier="Catalogue"
               tierColor="#7B1E1E"
-              tierBlurb="Verbatim 5+ word quotation, content-word rich."
+              tierBlurb="Verbatim 5+ word quotation, hand verified."
               founder={verbatim.founder_name}
               date={verbatim.date ?? ""}
               passage={verbatim.kwic}
@@ -645,6 +580,8 @@ function ThreeLayersOfEvidence() {
               docId={verbatim.doc_id}
               browseHref="/explorer/catalogue"
               browseLabel="Browse 140 verified references"
+              image="/images/historical/first-folio-macbeth-p742.jpg"
+              imageAlt="First Folio: Macbeth, Tomorrow soliloquy page."
             />
           )}
 
@@ -653,7 +590,7 @@ function ThreeLayersOfEvidence() {
             <LayerCard
               tier="Candidate echo"
               tierColor="#9C7340"
-              tierBlurb="4–5 word match with at least one distinctive Shakespeare word."
+              tierBlurb="4–5 word match with a distinctive Shakespeare word. A candidate for real inheritance; not yet confirmed as one."
               founder={candidateEcho.founder_name}
               date={candidateEcho.date ?? ""}
               passage={candidateEcho.kwic}
@@ -665,6 +602,8 @@ function ThreeLayersOfEvidence() {
               docId={candidateEcho.doc_id}
               browseHref="/explorer/candidate-echoes"
               browseLabel="Browse all 35,794 candidate echoes"
+              image="/images/historical/jefferson-peale-1800.jpg"
+              imageAlt="Thomas Jefferson, by Rembrandt Peale (1800)."
             />
           )}
 
@@ -681,16 +620,17 @@ function ThreeLayersOfEvidence() {
               docId={thematic.doc_id}
               browseHref="/explorer/thematic-allusions"
               browseLabel="Browse 23 thematic allusions"
+              image="/images/historical/first-folio-julius-caesar-p728.jpg"
+              imageAlt="First Folio: The Tragedy of Julius Caesar."
             />
           )}
         </div>
 
         <div className="text-center mt-8 text-sm">
           <p className="text-ink-muted italic max-w-prose mx-auto">
-            The lower-tier evidence carries weaker claims and
-            comes with explicit caveats. Most short matches between
-            any two large English corpora are coincidence. Read
-            both lower tiers with judgment.
+            The lower tiers carry weaker claims and come with
+            caveats. Most short matches between any two large English
+            corpora are coincidence. Read with judgment.
           </p>
         </div>
       </div>
@@ -709,6 +649,8 @@ function LayerCard({
   docId,
   browseHref,
   browseLabel,
+  image,
+  imageAlt,
 }: {
   tier: string;
   tierColor: string;
@@ -720,53 +662,77 @@ function LayerCard({
   docId: string;
   browseHref: string;
   browseLabel: string;
+  image: string;
+  imageAlt: string;
 }) {
   const fo = foundersOnlineUrl(docId);
   return (
-    <article className="bg-parchment border border-parchment-deep rounded-sm p-5 flex flex-col">
-      <div className="flex items-center gap-2 mb-3">
-        <span
-          className="inline-block w-2.5 h-2.5 rounded-sm"
-          style={{ background: tierColor }}
-          aria-hidden
+    <article className="relative bg-parchment border border-parchment-deep rounded-sm overflow-hidden flex flex-col group transition-shadow hover:shadow-lg">
+      {/* Overlay link making the whole card clickable. */}
+      <Link
+        href={browseHref}
+        className="absolute inset-0 z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-folio rounded-sm"
+        aria-label={browseLabel}
+      >
+        <span className="sr-only">{browseLabel}</span>
+      </Link>
+
+      {/* Image header */}
+      <div className="relative aspect-[16/10] overflow-hidden bg-parchment-deep">
+        <Image
+          src={asset(image)}
+          alt={imageAlt}
+          fill
+          className="object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         />
-        <span
-          className="text-xs uppercase tracking-smallcap font-sans font-semibold"
-          style={{ color: tierColor }}
-        >
-          {tier}
-        </span>
       </div>
-      <p className="text-xs text-ink-muted italic font-sans mb-3">
-        {tierBlurb}
-      </p>
-      <p className="text-xs text-ink-soft font-sans">
-        {founder} &middot; {date}
-      </p>
-      <p className="font-display text-base text-ink mt-2 leading-snug italic flex-1">
-        &ldquo;
-        {passage.length > 200
-          ? passage.slice(0, 200).replace(/\s\S*$/, "") + "…"
-          : passage}
-        &rdquo;
-      </p>
-      <p className="text-xs text-ink-soft mt-3 font-sans italic">
-        Echoing <span className="text-folio">{source}</span>
-      </p>
-      <div className="mt-3 flex flex-wrap gap-3 text-xs font-sans">
-        <Link href={browseHref} className="text-folio">
-          {browseLabel} &rarr;
-        </Link>
-        {fo && (
-          <a
-            href={fo}
-            target="_blank"
-            rel="noreferrer"
-            className="text-folio"
+
+      <div className="p-5 flex-1 flex flex-col">
+        <div className="flex items-center gap-2 mb-2">
+          <span
+            className="inline-block w-2.5 h-2.5 rounded-sm"
+            style={{ background: tierColor }}
+            aria-hidden
+          />
+          <span
+            className="text-xs uppercase tracking-smallcap font-sans font-semibold"
+            style={{ color: tierColor }}
           >
-            Founders Online &rarr;
-          </a>
-        )}
+            {tier}
+          </span>
+        </div>
+        <p className="text-xs text-ink-muted italic font-sans mb-3">
+          {tierBlurb}
+        </p>
+        <p className="text-xs text-ink-soft font-sans">
+          {founder} &middot; {date}
+        </p>
+        <p className="font-display text-base text-ink mt-2 leading-snug italic flex-1">
+          &ldquo;
+          {passage.length > 200
+            ? passage.slice(0, 200).replace(/\s\S*$/, "") + "…"
+            : passage}
+          &rdquo;
+        </p>
+        <p className="text-xs text-ink-soft mt-3 font-sans italic">
+          Echoing <span className="text-folio">{source}</span>
+        </p>
+        <div className="mt-4 pt-3 border-t border-parchment-deep flex flex-wrap items-baseline gap-x-4 gap-y-1 text-xs font-sans">
+          <span className="text-folio font-semibold group-hover:underline">
+            {browseLabel} &rarr;
+          </span>
+          {fo && (
+            <a
+              href={fo}
+              target="_blank"
+              rel="noreferrer"
+              className="text-folio/70 hover:text-folio hover:underline relative z-20"
+            >
+              Founders Online &rarr;
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
