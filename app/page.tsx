@@ -407,7 +407,7 @@ function ThreeLayersOfEvidence() {
                 .replace(/\b\w/g, (c) => c.toUpperCase())}
               docId={candidateEcho.doc_id}
               browseHref="/explorer/candidate-echoes"
-              browseLabel="Browse 2,000 candidate echoes"
+              browseLabel="Browse 5,000 candidate echoes"
             />
           )}
 

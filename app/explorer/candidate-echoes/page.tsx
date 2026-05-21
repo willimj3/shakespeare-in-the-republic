@@ -6,7 +6,7 @@ import DataScope from "@/components/DataScope";
 export const metadata: Metadata = {
   title: "Candidate echoes",
   description:
-    "Two thousand short verbatim matches between the Founders' writing and Shakespeare's complete works that didn't pass the main catalogue's strict confidence threshold. Most are coincidence. Some are real. Read with judgment.",
+    "Five thousand short verbatim matches between the Founders' writing and Shakespeare's complete works that didn't pass the main catalogue's strict confidence threshold. Most are coincidence. Some are real. Read with judgment.",
   openGraph: {
     title: "Candidate echoes · Shakespeare in the Republic",
   },
@@ -26,7 +26,7 @@ export default function CandidateEchoesPage() {
               Candidate echoes
             </h1>
             <p className="font-display text-lg text-ink-soft italic mt-4 leading-snug">
-              Two thousand short verbatim matches the strict
+              Five thousand short verbatim matches the strict
               catalogue filtered out. Most are coincidence. Some
               are real.
             </p>
@@ -56,7 +56,7 @@ export default function CandidateEchoesPage() {
               are very common in the Founders&rsquo; baseline
               demoted. The agent that produced this list found
               roughly 35,000 raw matches under the relaxed
-              threshold and kept the top 2,000.
+              threshold and kept the top 5,000.
             </p>
 
             <p className="text-base text-ink-soft mt-4 leading-relaxed">

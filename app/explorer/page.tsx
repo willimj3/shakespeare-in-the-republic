@@ -128,7 +128,7 @@ const VIEWS: ExplorerView[] = [
     slug: "candidate-echoes",
     title: "Candidate Echoes",
     blurb:
-      "Two thousand short verbatim matches the strict catalogue filtered out. 'Full of sound and fury' from Adams 1758, 'a pound of flesh' from Jefferson 1790, and many more. Most short matches between large English corpora are coincidence; some are real Shakespearean echo. Read with judgment.",
+      "Five thousand short verbatim matches the strict catalogue filtered out. 'Full of sound and fury' from Adams 1758, 'a pound of flesh' from Jefferson 1790, and many more. Most short matches between large English corpora are coincidence; some are real Shakespearean echo. Read with judgment.",
     status: "live",
     image: asset("/images/historical/first-folio-macbeth-p738.jpg"),
     imageAlt: "First Folio: Macbeth.",
@@ -137,7 +137,7 @@ const VIEWS: ExplorerView[] = [
     slug: "thematic-allusions",
     title: "Thematic Allusions",
     blurb:
-      "Cases where a Founder invokes a Shakespearean character as a type rather than quoting Shakespeare or naming him. 'Harrison was another Sir John Falstaff' (Adams 1776). Twenty-three high-confidence allusions; fourteen are from Julius Caesar.",
+      "Cases where a Founder invokes a Shakespearean character as a type rather than quoting Shakespeare or naming him. 'Harrison was another Sir John Falstaff' (Adams 1776). Twenty-three high-confidence allusions; seventeen are from Julius Caesar.",
     status: "live",
     image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
     imageAlt: "First Folio: Tragedy of Julius Caesar.",

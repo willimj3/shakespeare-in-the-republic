@@ -22,7 +22,7 @@ const data = allusionsData as unknown as Shape;
 export const metadata: Metadata = {
   title: "Thematic allusions",
   description:
-    "Cases where a Founder invokes a Shakespearean character as a moral or political type rather than quoting Shakespeare or naming him. Twenty-three high-confidence allusions; fourteen are from Julius Caesar.",
+    "Cases where a Founder invokes a Shakespearean character as a moral or political type rather than quoting Shakespeare or naming him. Twenty-three high-confidence allusions; seventeen are from Julius Caesar.",
   openGraph: {
     title: "Thematic allusions · Shakespeare in the Republic",
   },
@@ -115,10 +115,10 @@ export default function ThematicAllusionsPage() {
 
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The most striking finding: the histories dominate.
-              Of the twenty-three thematic allusions, fourteen are
-              Julius Caesar (Brutus, Caesar, Cassius, Antony as
-              archetypes), three are from the Henriad (Hotspur,
-              Falstaff), and only one is from Macbeth and two from
+              Of the twenty-three thematic allusions, seventeen
+              are Julius Caesar (Brutus, Caesar, Cassius, Antony
+              as archetypes), three are from the Henriad (Hotspur,
+              Falstaff), one is from Macbeth, and two from
               Merchant of Venice. The history-play prominence the
               earlier Federalist Papers analysis surfaced is
               recoverable here, in the thematic-allusion register
