@@ -67,9 +67,10 @@ function Hero() {
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               This site lets you see the answer in their own words.
-              Read the seven scenes the data reconstructs, browse a
-              catalogue of every traceable Shakespeare reference, or
-              compare how a given English word lives in the two corpora.
+              Read the nine case studies the data reconstructs,
+              browse a catalogue of every traceable Shakespeare
+              reference, or compare how a given English word lives
+              in the two corpora.
               The full scholarly paper is available to{" "}
               <Link href="/papers">download in plain English and in
               technical form</Link>.
