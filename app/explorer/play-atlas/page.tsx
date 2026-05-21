@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PlayAtlas from "@/components/charts/PlayAtlas";
+import PlayAtlasToggle from "./PlayAtlasToggle";
 import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
@@ -33,10 +33,15 @@ export default function PlayAtlasPage() {
               Of the thirty-eight plays in Shakespeare&rsquo;s
               canon, the project&rsquo;s reference catalogue traces
               high-or-medium-confidence Founder citations to{" "}
-              <strong>seventeen</strong> of them. The chart below
-              ranks those seventeen plays by how often the Founders
-              referenced them, with each bar broken down by which
-              Founder did the citing.
+              <strong>seventeen</strong> of them. Use the toggle
+              below to switch between that strict view and the
+              MEDIUM+ candidate-echoes view, which lowers the bar to
+              four- and five-word verbatim matches with distinctive
+              Shakespeare content words. The candidate-echoes view
+              recovers thirty-seven plays where the strict view
+              shows seventeen, and the order changes dramatically:
+              the history plays the strict catalogue buried surface
+              to the top.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The shape of the bars is, at first, surprising. Adams
@@ -55,9 +60,9 @@ export default function PlayAtlasPage() {
       <section className="border-b border-parchment-deep">
         <div className="max-w-outer mx-auto px-6 py-12">
           <div className="max-w-wide mx-auto">
-            <PlayAtlas />
+            <PlayAtlasToggle />
             <p className="text-xs text-ink-muted italic text-center mt-3 max-w-prose mx-auto leading-snug">
-              Bar width is proportional to total citations of that
+              Bar width is proportional to total references of that
               play across all six Founders. Click any play name to
               open it at the Folger Shakespeare.
             </p>
@@ -135,15 +140,37 @@ export default function PlayAtlasPage() {
               </Link>{" "}
               data, which keeps four- and five-word matches with at
               least one distinctively Shakespearean content word,
-              recovers material from a much wider set of plays. The
-              history plays in particular surface prominently in the
-              lower tier: <em>All&rsquo;s Well That Ends Well</em>{" "}
-              (85 candidate echoes), <em>Henry V</em> (85),{" "}
-              <em>1 Henry IV</em> (81), <em>2 Henry IV</em> (74) and{" "}
-              <em>2 Henry VI</em> (73) all sit at or near the top.
-              The Macbeth/Tempest/Othello/Julius Caesar concentration
-              the strict catalogue shows is a feature of the threshold,
-              not the only Shakespeare the corpus contains.
+              recovers material from a much wider set of plays. At
+              the MEDIUM-or-HIGH confidence band (the meaningful
+              signal in the candidate-echoes tier), the order
+              changes dramatically: <em>1 Henry IV</em> sits at the
+              top with 75 matches, ahead of every play in the strict
+              catalogue. <em>Cymbeline</em> is second with 53,{" "}
+              <em>The Winter&rsquo;s Tale</em> third with 46,{" "}
+              <em>2 Henry VI</em> fourth with 33. The
+              Macbeth-Tempest-Othello-Julius Caesar concentration the
+              strict catalogue shows is a feature of the
+              seven-word-quotation threshold, not the only
+              Shakespeare the corpus contains. Toggle the view above
+              to compare the two distributions directly.
+            </p>
+            <p className="text-base text-ink-soft mt-4 leading-relaxed">
+              Two further findings the candidate-echoes view
+              surfaces. First, the strict view&rsquo;s Adams
+              dominance softens at the lower threshold: <em>1 Henry
+              IV</em>&rsquo;s 75 matches are led by{" "}
+              <strong>Jefferson</strong> (25), not Adams (22),
+              followed by Washington (13) and Franklin (8). Second,
+              the candidate-echoes view shows non-Adams Founders on
+              plays the strict catalogue records as
+              Adams-only:{" "}
+              <em>The Winter&rsquo;s Tale</em> (Madison 9 matches,
+              Washington 9), <em>Coriolanus</em> (Jefferson 7), and{" "}
+              <em>The Merchant of Venice</em> (Jefferson 12). The
+              two views together are the answer: Adams is the only
+              Founder whose Shakespeare is dense enough to register
+              at the strictest threshold, but the others&rsquo;
+              engagement is real and lives in the looser tier.
             </p>
 
             <div className="ornament" />
@@ -165,8 +192,8 @@ export default function PlayAtlasPage() {
 
       <DataScope
         scope="derived-from-catalogue"
-        description="Per-play citation counts aggregated from the catalogue. Each direct quotation contributes to one play's count (the play it quotes); each by-name reference contributes when the named character or play title is unambiguous. References below the catalogue's HIGH/MEDIUM confidence threshold (and named references that mention only 'Shakespeare') are not counted here."
-        sourceTable="data/play_atlas.json (aggregated from catalogue_direct_quotes.csv + catalogue_named_references.csv)"
+        description="The strict-catalogue view counts the 140 hand-verified Shakespeare references (62 direct quotations + 78 by-name) per play. The MEDIUM+ candidate-echoes view counts the ~645 four- and five-word verbatim matches with enough distinctive Shakespeare content words to clear the noise floor (HIGH and MEDIUM tiers from the 35,794-row backend table). Switch between the two with the toggle above the chart."
+        sourceTable="data/play_atlas.json + data/play_atlas_candidates.json (the latter derived from Supabase candidate_echoes WHERE tier IN HIGH, MEDIUM)"
       />
     </div>
   );

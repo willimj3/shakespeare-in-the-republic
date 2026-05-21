@@ -37,31 +37,22 @@ const VIEWS: ExplorerView[] = [
     imageAlt: "Shakespeare (Chandos portrait, c. 1610).",
   },
   {
-    slug: "kwic",
-    title: "KWIC concordancer",
+    slug: "candidate-echoes",
+    title: "Candidate Echoes",
     blurb:
-      "The corpus-linguistics standard view: pick a word or phrase and read every occurrence in context, with surrounding text aligned around the keyword. Computed live across the full 82,107-document backend.",
+      "All 35,794 short verbatim matches between the Founders and Shakespeare, served live with confidence tiers (HIGH / MEDIUM / LOW). 'Full of sound and fury' from Adams 1758, 'a pound of flesh' from Jefferson 1790, many more. Most LOW-tier are coincidence; the MEDIUM+ tier is where the real signal lives.",
     status: "live",
-    image: asset("/images/historical/adams-diary-manuscript.jpg"),
-    imageAlt: "Adams diary manuscript.",
+    image: asset("/images/historical/first-folio-macbeth-p738.jpg"),
+    imageAlt: "First Folio: Macbeth.",
   },
   {
-    slug: "collocate",
-    title: "Collocational worlds",
+    slug: "thematic-allusions",
+    title: "Thematic Allusions",
     blurb:
-      "The live, on-demand version of the Honour Test. Pick any word and see what neighbours it keeps in the Founders' corpus versus Shakespeare's, ranked by log-likelihood. The same word lives in two very different worlds.",
+      "Cases where a Founder invokes a Shakespearean character as a type rather than quoting Shakespeare or naming him. 'Harrison was another Sir John Falstaff' (Adams 1776). Twenty-three high-confidence allusions; seventeen are from Julius Caesar.",
     status: "live",
-    image: asset("/images/historical/first-folio-othello-p827.jpg"),
-    imageAlt: "First Folio: Othello.",
-  },
-  {
-    slug: "honour-test",
-    title: "The Honour Test",
-    blurb:
-      "Pick a common word (honour, power, love, friend) and see what neighbours it keeps in each corpus. The same English word lives in two completely different worlds in Shakespeare and in the Founders.",
-    status: "live",
-    image: asset("/images/historical/first-folio-othello-p827.jpg"),
-    imageAlt: "First Folio: Othello",
+    image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
+    imageAlt: "First Folio: Tragedy of Julius Caesar.",
   },
   {
     slug: "catalogue",
@@ -82,13 +73,13 @@ const VIEWS: ExplorerView[] = [
     imageAlt: "Trumbull, Declaration of Independence",
   },
   {
-    slug: "metaphor",
-    title: "Metaphor Fingerprints",
+    slug: "play-atlas",
+    title: "The Play Atlas",
     blurb:
-      "Six radar charts, one per Founder. Eight metaphor families per radar (edifice, body, ship, fire, plant, path, motion, container), with Shakespeare's silhouette overlaid for comparison. Each Founder has a distinctive shape, and Shakespeare's EDIFICE is zero.",
+      "Which Shakespeare plays the Founders reach for, under two evidence thresholds. The strict catalogue is dominated by Macbeth, The Tempest, Othello and the four other plays Adams happened to copy out. The candidate-echoes view recovers the histories: 1 Henry IV jumps to the top.",
     status: "live",
-    image: asset("/images/historical/first-folio-julius-caesar-p728.jpg"),
-    imageAlt: "First Folio: Julius Caesar",
+    image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
+    imageAlt: "First Folio: Julius Caesar.",
   },
   {
     slug: "composite",
@@ -100,24 +91,6 @@ const VIEWS: ExplorerView[] = [
     imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",
   },
   {
-    slug: "archaic",
-    title: "The Archaic Threshold",
-    blurb:
-      "Thirty-eight archaic Shakespearean forms (thou, hath, methinks, prithee, betwixt) tested against each Founder's corpus. Pick a Founder. See which words crossed from 1600 to 1800 and which didn't.",
-    status: "live",
-    image: asset("/images/historical/shakespeare-first-folio-title-page-1623.jpg"),
-    imageAlt: "First Folio title page (1623).",
-  },
-  {
-    slug: "play-atlas",
-    title: "The Play Atlas",
-    blurb:
-      "Which Shakespeare plays the Founders' catalogue actually reaches for. Macbeth, The Tempest, Othello, Julius Caesar, Henry V: all of them traceable to John Adams. The empty columns are part of the finding.",
-    status: "live",
-    image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
-    imageAlt: "First Folio: Julius Caesar.",
-  },
-  {
     slug: "compare",
     title: "Founder vs Founder",
     blurb:
@@ -125,6 +98,24 @@ const VIEWS: ExplorerView[] = [
     status: "live",
     image: asset("/images/historical/shakespeare-chandos-portrait.jpg"),
     imageAlt: "Shakespeare (Chandos portrait, c. 1610).",
+  },
+  {
+    slug: "metaphor",
+    title: "Metaphor Fingerprints",
+    blurb:
+      "Six radar charts, one per Founder. Eight metaphor families per radar (edifice, body, ship, fire, plant, path, motion, container), with Shakespeare's silhouette overlaid for comparison. Each Founder has a distinctive shape, and Shakespeare's EDIFICE is zero.",
+    status: "live",
+    image: asset("/images/historical/first-folio-julius-caesar-p728.jpg"),
+    imageAlt: "First Folio: Julius Caesar",
+  },
+  {
+    slug: "archaic",
+    title: "The Archaic Threshold",
+    blurb:
+      "Thirty-eight archaic Shakespearean forms (thou, hath, methinks, prithee, betwixt) tested against each Founder's corpus. Pick a Founder. See which words crossed from 1600 to 1800 and which didn't.",
+    status: "live",
+    image: asset("/images/historical/shakespeare-first-folio-title-page-1623.jpg"),
+    imageAlt: "First Folio title page (1623).",
   },
   {
     slug: "sentence-length",
@@ -154,22 +145,13 @@ const VIEWS: ExplorerView[] = [
     imageAlt: "John Adams (Trumbull, c. 1792).",
   },
   {
-    slug: "candidate-echoes",
-    title: "Candidate Echoes",
+    slug: "honour-test",
+    title: "The Honour Test",
     blurb:
-      "Five thousand short verbatim matches the strict catalogue filtered out. 'Full of sound and fury' from Adams 1758, 'a pound of flesh' from Jefferson 1790, and many more. Most short matches between large English corpora are coincidence; some are real Shakespearean echo. Read with judgment.",
+      "Pick a common word (honour, power, love, friend) and see what neighbours it keeps in each corpus. The same English word lives in two completely different worlds in Shakespeare and in the Founders.",
     status: "live",
-    image: asset("/images/historical/first-folio-macbeth-p738.jpg"),
-    imageAlt: "First Folio: Macbeth.",
-  },
-  {
-    slug: "thematic-allusions",
-    title: "Thematic Allusions",
-    blurb:
-      "Cases where a Founder invokes a Shakespearean character as a type rather than quoting Shakespeare or naming him. 'Harrison was another Sir John Falstaff' (Adams 1776). Twenty-three high-confidence allusions; seventeen are from Julius Caesar.",
-    status: "live",
-    image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
-    imageAlt: "First Folio: Tragedy of Julius Caesar.",
+    image: asset("/images/historical/first-folio-othello-p827.jpg"),
+    imageAlt: "First Folio: Othello",
   },
 ];
 

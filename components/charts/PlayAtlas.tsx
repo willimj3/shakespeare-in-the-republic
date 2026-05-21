@@ -1,10 +1,11 @@
-import atlas from "@/data/play_atlas.json";
+import strictAtlas from "@/data/play_atlas.json";
 import { folgerUrl } from "@/lib/sources";
 
 /**
- * Bar chart of plays cited in the catalogue, with each bar stacked by
- * which Founder cited it. Server-rendered SVG. Reveals that the
- * catalogue's per-play coverage is overwhelmingly Adams.
+ * Bar chart of plays cited (under either threshold), with each bar
+ * stacked by which Founder cited it. Server-rendered. Accepts an
+ * optional `data` prop so the same chart can render either the strict
+ * catalogue or the MEDIUM+ candidate-echoes set.
  */
 
 const FOUNDER_ORDER = [
@@ -34,16 +35,19 @@ const FOUNDER_COLORS: Record<string, string> = {
   hamilton: "#1F3A5F",
 };
 
-type PlayRow = {
+export type PlayRow = {
   play: string;
   total: number;
   counts: Record<string, number>;
 };
+type AtlasShape = { plays: PlayRow[] };
 
-const data = atlas as unknown as { plays: PlayRow[] };
+const strictData = strictAtlas as unknown as AtlasShape;
 
-export default function PlayAtlas() {
-  const maxTotal = data.plays[0]?.total ?? 1;
+export default function PlayAtlas({ data }: { data?: AtlasShape } = {}) {
+  const atlasData = data ?? strictData;
+  const sorted = [...atlasData.plays].sort((a, b) => b.total - a.total);
+  const maxTotal = sorted[0]?.total ?? 1;
   return (
     <figure className="my-6">
       <div className="bg-parchment-dark border border-parchment-deep rounded-sm p-4 sm:p-6">
@@ -53,7 +57,7 @@ export default function PlayAtlas() {
           <span className="text-right">Total</span>
         </div>
         <ul className="divide-y divide-parchment-deep/40">
-          {data.plays.map((row) => {
+          {sorted.map((row) => {
             const fg = folgerUrl(row.play);
             const widthPct = (row.total / maxTotal) * 100;
             return (
