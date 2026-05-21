@@ -131,6 +131,20 @@ const DATA_FILES: DataFile[] = [
       "Per-million rates of ten English modal verbs binned by decade across each Founder's career, plus Shakespeare's fixed reference rates. Powers the Modal-Verb Shift explorer.",
     size: "8 KB",
   },
+  {
+    file: "candidate_echoes.json",
+    title: "Candidate echoes (LOW-tier matches)",
+    description:
+      "Two thousand short verbatim matches (4-5 words) between the Founders' corpus and Shakespeare's complete works that don't pass the main catalogue's strict threshold. Each row includes the distinctive Shakespeare content words, KWIC context, and a quality ranking. Most are coincidental at this corpus size; some are real echoes.",
+    size: "1.6 MB",
+  },
+  {
+    file: "thematic_allusions.json",
+    title: "Thematic allusions",
+    description:
+      "Twenty-three cases where a Founder invokes a Shakespearean character (Brutus, Falstaff, Hotspur, etc.) as a type rather than quoting Shakespeare directly. Classified using surrounding-context cues.",
+    size: "22 KB",
+  },
 ];
 
 export default function PapersPage() {

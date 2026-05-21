@@ -51,6 +51,8 @@ const STATIC_ROUTES: Array<{
   { path: "/explorer/sentence-length", changeFrequency: "monthly", priority: 0.7 },
   { path: "/explorer/function-words", changeFrequency: "monthly", priority: 0.7 },
   { path: "/explorer/modal-verbs", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/explorer/candidate-echoes", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/explorer/thematic-allusions", changeFrequency: "monthly", priority: 0.8 },
 
   // Founder index + 6 profiles
   { path: "/founder", changeFrequency: "monthly", priority: 0.7 },
