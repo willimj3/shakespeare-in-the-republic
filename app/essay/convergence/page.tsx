@@ -30,7 +30,7 @@ export default function ConvergenceEssay() {
           Founder was most Shakespearean&rdquo; is to pick a measure,
           run it on the data, and rank the Founders 1 through 6. The
           natural way is also the wrong way. A single measure can be
-          fooled by all sorts of things &mdash; a difference in how
+          fooled by all sorts of things: a difference in how
           much each Founder wrote, a difference in <em>what</em> they
           wrote (private letters versus public essays versus debates),
           a difference in genre, a difference in how one decides to
@@ -61,45 +61,45 @@ export default function ConvergenceEssay() {
 
       <ul className="text-base text-ink-soft my-6 space-y-2 pl-6 list-disc">
         <li>
-          <strong>Overall ranking</strong> &mdash; a combined score
+          <strong>Overall ranking:</strong> a combined score
           built from seven of the measures below.
         </li>
         <li>
-          <strong>Pronoun-distribution similarity</strong> &mdash; how
+          <strong>Pronoun-distribution similarity:</strong> how
           closely does the Founder&rsquo;s use of pronouns and
           address terms (<em>I, you, he, she, lord, sir, friend</em>)
           match Shakespeare&rsquo;s?
         </li>
         <li>
-          <strong>Old-fashioned word survival</strong> &mdash; how
+          <strong>Old-fashioned word survival:</strong> how
           many forms that had largely died out by 1750 (<em>hath,
           doth, thou, thee, &lsquo;tis</em>) does the Founder still
           use?
         </li>
         <li>
-          <strong>Metaphor pattern similarity</strong> &mdash; do the
+          <strong>Metaphor pattern similarity:</strong> do the
           Founder&rsquo;s metaphors for political life match
           Shakespeare&rsquo;s preferred patterns (body, ship, fire,
           plant)?
         </li>
         <li>
-          <strong>Statistical-style overlap</strong> &mdash; on
+          <strong>Statistical-style overlap:</strong> on
           twenty different sentence-level features (sentence length,
           punctuation density, emotional charge, word length), how
           many does the Founder share with Shakespeare?
         </li>
         <li>
-          <strong>Use of Shakespeare-coined phrases</strong> &mdash; of
+          <strong>Use of Shakespeare-coined phrases:</strong> of
           twenty-four phrases popularly attributed to Shakespeare,
           how many does the Founder use, and how often?
         </li>
         <li>
-          <strong>Shakespearean vocabulary</strong> &mdash; how much
+          <strong>Shakespearean vocabulary:</strong> how much
           of Shakespeare&rsquo;s distinctive word choice survives in
           the Founder&rsquo;s writing?
         </li>
         <li>
-          <strong>Shakespearean context patterns</strong> &mdash; of
+          <strong>Shakespearean context patterns:</strong> of
           Shakespeare&rsquo;s distinctive way of using common
           abstract nouns (the words and phrases he places near{" "}
           <em>honour, power, love, death</em>), how much survives in
@@ -109,7 +109,7 @@ export default function ConvergenceEssay() {
 
       <p>
         Eight different questions. Eight different data sources. Each
-        one is a separate analysis run on the corpus &mdash; not a
+        one is a separate analysis run on the corpus, not a
         rescoring of the same data. They could in principle disagree.
         Mostly, they don&rsquo;t.
       </p>
@@ -159,12 +159,12 @@ export default function ConvergenceEssay() {
       </p>
       <ul className="text-base text-ink-soft my-6 space-y-1 pl-6 list-disc">
         <li>
-          Adams ranks <strong>1</strong> &mdash; the highest. He uses
+          Adams ranks <strong>1</strong>, the highest. He uses
           fifteen of the twenty-four popularly-attributed
           Shakespearean phrases, with 139 hits across his life.
         </li>
         <li>
-          Franklin ranks <strong>6</strong> &mdash; the lowest. He
+          Franklin ranks <strong>6</strong>, the lowest. He
           uses only five of them, with fifteen hits total.
         </li>
       </ul>
@@ -179,15 +179,15 @@ export default function ConvergenceEssay() {
         This isn&rsquo;t noise. It&rsquo;s the most important finding
         in the project, compressed into one row. The eighth measure
         is the one that asks{" "}
-        <em>does the Founder reach for Shakespeare consciously</em>{" "}
-        &mdash; does he reach for the phrases people would actually
+        <em>does the Founder reach for Shakespeare consciously</em>:
+        does he reach for the phrases people would
         recognise as Shakespearean? Adams does, constantly. Franklin
         almost never does.
       </p>
       <p>
         The other seven measures ask different questions. They
         measure how Shakespearean the Founder&rsquo;s writing{" "}
-        <em>texture</em> is &mdash; the verbs he reaches for, the
+        <em>texture</em> is: the verbs he reaches for, the
         pronouns he uses, the rhythm of his sentences, the kinds of
         metaphors he constructs. On that, Franklin is the most
         Shakespearean Founder. He sounds the part without ever
@@ -198,7 +198,7 @@ export default function ConvergenceEssay() {
       <p>
         Adams collected. Franklin absorbed. Both are real kinds of
         influence. Neither is more &ldquo;influence&rdquo; than the
-        other &mdash; but it took eight different ways of looking,
+        other, but it took eight different ways of looking,
         and the careful comparison of where they agreed and
         disagreed, to see both modes at once.
       </p>
@@ -216,10 +216,10 @@ export default function ConvergenceEssay() {
       <p>
         A reader could reasonably ask: why all these measures? Why
         not just pick the best one and report it? The answer is that
-        for a question like this one &mdash; about how a literary
-        inheritance moves into eighteenth-century political prose
-        &mdash; no single measure is the right measure. The kind of
-        evidence the question produces is genuinely multi-dimensional.
+        for a question like this one (about how a literary
+        inheritance moves into eighteenth-century political prose)
+        no single measure is the right measure. The kind of
+        evidence the question produces is multi-dimensional.
         A counter of named quotations sees Adams clearly and misses
         Franklin entirely. A counter of register and rhythm sees
         Franklin clearly and misses what makes Adams&rsquo;s
@@ -243,8 +243,8 @@ export default function ConvergenceEssay() {
         thing. It splits cleanly into deliberate quotation and
         absorbed register, and you can see both modes operating
         independently in the data. The Adams Shakespeare and the
-        Franklin Shakespeare are not the same Shakespeare &mdash;
-        and the way the eight measures agree and disagree is the
+        Franklin Shakespeare are not the same Shakespeare, and the
+        way the eight measures agree and disagree is the
         evidence that they aren&rsquo;t.
       </p>
 
@@ -255,9 +255,9 @@ export default function ConvergenceEssay() {
         <Link href="/essay/two-modes" className="underline">
           Two Modes of Shakespearean Influence
         </Link>
-        . The third major finding &mdash; that two of the six
-        Founders effectively opted out of Shakespearean inheritance
-        altogether &mdash; is in{" "}
+        . The third major finding, that two of the six
+        Founders opted out of Shakespearean inheritance
+        altogether, is in{" "}
         <Link href="/essay/hamilton-silence" className="underline">
           The Hamilton Silence
         </Link>

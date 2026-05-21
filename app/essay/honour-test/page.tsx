@@ -55,7 +55,7 @@ export default function HonourTestEssay() {
         <p>
           The grammar deserves attention. <em>I pawn&rsquo;d mine honour
           for his truth.</em> Honour is something that can be pawned. It
-          is a thing &mdash; stakeable, transferable, redeemable by
+          is a thing: stakeable, transferable, redeemable by
           action. The same construction appears throughout
           Shakespeare&rsquo;s plays. <em>Cymbeline</em>: &ldquo;And pawn
           mine honour for their safety.&rdquo; <em>2 Henry IV</em>:
@@ -65,8 +65,8 @@ export default function HonourTestEssay() {
         </p>
 
         <p>
-          In the Founders&rsquo; corpus &mdash; 24.6 million words of
-          letters, drafts, debates, and essays &mdash; the word{" "}
+          In the Founders&rsquo; corpus (24.6 million words of
+          letters, drafts, debates, and essays) the word{" "}
           <em>honour</em> appears 18,950 times. The construction
           &ldquo;pawn one&rsquo;s honour&rdquo; appears, in any tense,
           on any of those pages, exactly zero times.
@@ -87,8 +87,8 @@ export default function HonourTestEssay() {
         me might at any Time dispense&hellip;&rdquo;
       </p>
       <p>
-        The construction <em>have the honour to</em> &mdash; or its
-        cousin, <em>the honour of</em> &mdash; functions in
+        The construction <em>have the honour to</em>, or its
+        cousin <em>the honour of</em>, functions in
         18th-century American correspondence as a politeness marker.
         It is the verbal equivalent of a bow at the end of an
         interview. Looking at what words sit next to{" "}
@@ -192,13 +192,13 @@ export default function HonourTestEssay() {
         On a small set of terms, the asymmetry is even sharper. The
         word <em>government</em> appears 24 times in the entirety of
         Shakespeare&rsquo;s collected works. It carries almost no
-        distinctive collocates &mdash; it is not a Shakespearean key
+        distinctive collocates; it is not a Shakespearean key
         term. In the Founders the word lives with <em>state, new,
         British, French, general, form, seat</em>: an entire
         comparative-political vocabulary built around it. The
         conceptual category of <em>government</em> as a designed
-        institution &mdash; something one can frame, found, alter
-        &mdash; is essentially a Founders&rsquo; word. It did not
+        institution (something one can frame, found, alter)
+        is essentially a Founders&rsquo; word. It did not
         arrive in their writing through Shakespeare.
       </p>
       <p>
@@ -226,7 +226,7 @@ export default function HonourTestEssay() {
       </p>
       <p>
         Shakespeare never uses building metaphors for liberty,
-        government, or power. Not rarely &mdash; not <em>at all</em>.
+        government, or power. Not rarely. Not <em>at all</em>.
         Zero occurrences across his complete works. The
         &ldquo;edifice of government&rdquo; that runs through
         Hamilton&rsquo;s, Madison&rsquo;s, and Adams&rsquo;s political
@@ -239,8 +239,8 @@ export default function HonourTestEssay() {
         liberty,&rdquo; &ldquo;the roots of government,&rdquo; &ldquo;the
         tree of the Constitution.&rdquo; Madison reaches for these
         seven times more often than Shakespeare did. Shakespeare uses
-        plant metaphors elsewhere &mdash; for love, for ambition, for
-        rebellion &mdash; but not for political institutions.
+        plant metaphors elsewhere (for love, for ambition, for
+        rebellion) but not for political institutions.
       </p>
       <p>
         On most other metaphor types, though, the Founders and
@@ -254,7 +254,7 @@ export default function HonourTestEssay() {
       <p>
         So the inheritance is partial in a specific way. The Founders
         inherited the <em>habit</em> of reaching for concrete images
-        when they wrote about abstract political life &mdash; the
+        when they wrote about abstract political life, the
         Shakespearean habit of thinking through metaphor. They did
         not inherit the specific Shakespearean metaphors for
         institutions like &ldquo;liberty,&rdquo;
@@ -268,12 +268,12 @@ export default function HonourTestEssay() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        What the inheritance actually was
+        What the inheritance was
       </h2>
       <p>
         The pattern in this essay holds across all fourteen abstract
-        nouns the project examined &mdash; the same word, two
-        different worlds &mdash; and across all eight categories of
+        nouns the project examined (the same word, two different
+        worlds) and across all eight categories of
         metaphor for political life. The shape of the inheritance
         comes through clearly:
       </p>
@@ -284,7 +284,7 @@ export default function HonourTestEssay() {
       </p>
       <ul className="my-4 text-base text-ink-soft space-y-1 pl-6 list-disc">
         <li>
-          The English language at the level of vocabulary &mdash; words
+          The English language at the level of vocabulary: words
           like <em>honour, power, love, death, friend, mind, virtue</em>{" "}
           travelled into the Founders&rsquo; prose at high rates.
         </li>
@@ -295,7 +295,7 @@ export default function HonourTestEssay() {
         <li>
           A literary register and a set of stylistic features (covered
           by the companion essay <Link href="/essay/two-modes">Two Modes
-          of Shakespearean Influence</Link>) &mdash; archaic forms,
+          of Shakespearean Influence</Link>): archaic forms,
           contractions, pronominal frequencies.
         </li>
       </ul>
@@ -339,8 +339,7 @@ export default function HonourTestEssay() {
         To see the per-target collocate comparison directly, browse the{" "}
         <Link href="/explorer/honour-test" className="underline">
           Honour Test explorer
-        </Link>{" "}
-        &mdash; fourteen abstract nouns, side by side. For the
+        </Link>: fourteen abstract nouns, side by side. For the
         companion register-level argument, see{" "}
         <Link href="/essay/two-modes" className="underline">
           Two Modes of Shakespearean Influence

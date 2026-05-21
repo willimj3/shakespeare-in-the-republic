@@ -18,7 +18,7 @@ export default function HamiltonSilenceEssay() {
       totalChapters={8}
       sectionMarker="Essay · The substantive findings"
       title="The Hamilton Silence"
-      subtitle="Two of the six Founders write as if Shakespeare did not exist. The absence is the third major finding of the project &mdash; and it&rsquo;s what makes the other two findings mean what they mean."
+      subtitle="Two of the six Founders write as if Shakespeare did not exist. The absence is the third major finding of the project, and it&rsquo;s what makes the other two findings mean what they mean."
       prevHref="/essay/honour-test"
       prevLabel="The Honour Test"
       nextHref="/essay"
@@ -69,10 +69,10 @@ export default function HamiltonSilenceEssay() {
         The three zeros
       </h2>
       <p>
-        Across Hamilton&rsquo;s entire corpus &mdash; 7,059 documents
+        Across Hamilton&rsquo;s entire corpus (7,059 documents
         and 2.35 million words spanning the Revolution, the
-        Constitution, the Treasury years, and his death in 1804
-        &mdash; the project&rsquo;s analyses find:
+        Constitution, the Treasury years, and his death in 1804)
+        the project&rsquo;s analyses find:
       </p>
 
       <Stat
@@ -95,8 +95,8 @@ export default function HamiltonSilenceEssay() {
         million words and 8,584 documents, he never names Shakespeare,
         never quotes him verbatim, and shares essentially nothing of
         his stylistic register. The one Madison-attributed mid-confidence
-        catalogue match in the entire project &mdash; <em>I love thee
-        thou art</em> &mdash; is best read as a coincidental sequence
+        catalogue match in the entire project (<em>I love thee
+        thou art</em>) is best read as a coincidental sequence
         of common words, not a Shakespearean reuse.
       </p>
 
@@ -104,7 +104,7 @@ export default function HamiltonSilenceEssay() {
         On the project&rsquo;s overall ranking of how Shakespearean
         each Founder&rsquo;s writing is, Hamilton finishes last.
         Madison finishes second-to-last. The gap between them and
-        the four other Founders is large &mdash; the worst-case
+        the four other Founders is large. The worst-case
         difference between Adams or Franklin at the top and Hamilton
         at the bottom is bigger than the difference between Franklin
         at the top and the corpus midpoint.
@@ -120,7 +120,7 @@ export default function HamiltonSilenceEssay() {
         The Hamilton silence isn&rsquo;t a story about ignorance.
         Hamilton was one of the best-read political writers of his
         generation. His <em>Federalist Papers</em> draw heavily on
-        Roman political history &mdash; on the rise and fall of the
+        Roman political history: on the rise and fall of the
         Republic, the dangers of demagogues, the fragility of free
         constitutions. The Roman material he draws on was, in
         eighteenth-century America, transmitted largely through
@@ -158,7 +158,7 @@ export default function HamiltonSilenceEssay() {
         not flag it as Shakespeare-distinctive against the
         Founders&rsquo; ordinary vocabulary. Hamilton&rsquo;s one
         small Shakespearean borrowing belongs to the same category as
-        Washington&rsquo;s <em>band of brothers</em> &mdash; phrases
+        Washington&rsquo;s <em>band of brothers</em>: phrases
         that travelled from Shakespeare into general 18th-century
         English and arrived at the Founders without a visible Shakespeare
         marker on them.
@@ -172,14 +172,14 @@ export default function HamiltonSilenceEssay() {
       </h2>
       <p>
         Hamilton&rsquo;s intellectual models were the modern political
-        philosophers &mdash; David Hume on factions, Montesquieu on
+        philosophers: David Hume on factions, Montesquieu on
         the separation of powers, Blackstone on the common law, Adam
         Smith on commerce, the classical historians on Republican
         decline. His prose is the prose of those traditions:
         administrative, philosophical, lawyerly, abstract. Sentences
         in <em>Federalist No. 78</em>, <em>No. 70</em>,{" "}
-        <em>No. 15</em> sound like Locke or Hume in cadence &mdash;
-        long, qualified, structured around argument. They do not
+        <em>No. 15</em> sound like Locke or Hume in cadence: long,
+        qualified, structured around argument. They do not
         sound like a play.
       </p>
       <p>
@@ -188,7 +188,7 @@ export default function HamiltonSilenceEssay() {
         in Shakespeare&rsquo;s political world. The federal executive,
         the Treasury Department, the relationship between the central
         government and the states, judicial review, public-credit
-        management &mdash; none of these had Shakespearean
+        management. None of these had Shakespearean
         vocabularies attached to them. The political world Hamilton
         was constructing required new English. So he built it from
         his own sources rather than reaching for an older one.
@@ -196,7 +196,7 @@ export default function HamiltonSilenceEssay() {
       <p>
         Madison&rsquo;s case is similar in structure but different in
         flavour. His prose is the most administratively careful in the
-        corpus &mdash; full of his characteristic abbreviations
+        corpus, full of his characteristic abbreviations
         (<em>agst</em>, <em>govt</em>, <em>congs</em>) and dense with
         the procedural detail of legislative work. He keeps his
         writing efficient and undecorated. Whether he reached for
@@ -214,12 +214,12 @@ export default function HamiltonSilenceEssay() {
       <p>
         The temptation in a project of this kind is to find
         Shakespeare everywhere and call it influence. The Adams case
-        studies show genuine, careful, repeated Shakespearean
+        studies show careful, repeated Shakespearean
         engagement; the Franklin case study shows an entire register
         absorbed at a young age. If Shakespearean inheritance were
-        simply an eighteenth-century inevitability &mdash; the
-        background music of every educated American&rsquo;s prose
-        &mdash; we would expect to find Adams and Franklin levels of
+        simply an eighteenth-century inevitability (the
+        background music of every educated American&rsquo;s prose)
+        we would expect to find Adams and Franklin levels of
         Shakespearean material in every Founder.
       </p>
 
@@ -234,7 +234,7 @@ export default function HamiltonSilenceEssay() {
         (Jefferson and Washington), and two who effectively
         opted out. The differences track biographical and
         intellectual choice cleanly. Adams treated Shakespeare as
-        applied moral psychology &mdash; useful for understanding
+        applied moral psychology: useful for understanding
         people. Franklin learned to write English from older sources
         and never updated. Washington picked up a few set pieces, the
         kind that floated freely through officer culture. Jefferson
@@ -243,9 +243,9 @@ export default function HamiltonSilenceEssay() {
         different sources entirely.
       </p>
       <p>
-        That distribution &mdash; two heavy users, two moderate, two
-        essentially absent &mdash; is what the project&rsquo;s data
-        actually shows. The two-modes finding{" "}
+        That distribution (two heavy users, two moderate, two
+        essentially absent) is what the project&rsquo;s data
+        shows. The two-modes finding{" "}
         <Link href="/essay/two-modes">in the Adams/Franklin essay</Link>{" "}
         and the conceptual-inheritance finding{" "}
         <Link href="/essay/honour-test">in the Honour Test essay</Link>{" "}
@@ -268,12 +268,12 @@ export default function HamiltonSilenceEssay() {
         A footnote on the corpus
       </h2>
       <p>
-        It&rsquo;s worth saying what the silence is not. It is not
+        One thing the silence is not. It is not
         evidence that Hamilton or Madison didn&rsquo;t read
         Shakespeare. Hamilton owned editions of the plays and could
         quote them in conversation; Madison&rsquo;s library catalogues
         include Shakespeare too. What the silence describes is the{" "}
-        <em>writing</em> &mdash; what each man chose, sentence by
+        <em>writing</em>: what each man chose, sentence by
         sentence, to put on the page. Their writing chose other
         models. Adams&rsquo;s and Franklin&rsquo;s writing chose
         Shakespeare. The choices are real and recoverable from the

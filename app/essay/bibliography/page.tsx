@@ -37,7 +37,7 @@ export default function BibliographyEssay() {
         I&rsquo;ve written this as a brief reading and reference
         essay rather than a numbered bibliography. The literal
         bibliography is in the{" "}
-        <Link href="/papers">scholarly paper</Link> &mdash;{" "}
+        <Link href="/papers">scholarly paper</Link>:{" "}
         &sect;7 of <code className="text-folio">paper.md</code>{" "}
         carries the full citation list in academic form. What
         follows here is the layperson&rsquo;s version: what we
@@ -47,7 +47,7 @@ export default function BibliographyEssay() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        Primary sources &mdash; the two corpora
+        Primary sources: the two corpora
       </h2>
 
       <p>
@@ -62,7 +62,7 @@ export default function BibliographyEssay() {
           founders.archives.gov
         </a>
         . It collects in one place the established scholarly editions
-        of six Founders &mdash; <em>The Papers of John Adams</em>,{" "}
+        of six Founders: <em>The Papers of John Adams</em>,{" "}
         <em>The Papers of Benjamin Franklin</em>,{" "}
         <em>The Papers of Alexander Hamilton</em>,{" "}
         <em>The Papers of Thomas Jefferson</em>,{" "}
@@ -96,7 +96,7 @@ export default function BibliographyEssay() {
         confirms zero remaining boilerplate sentinel strings). The
         full Shakespeare corpus, after cleaning, is 891,034 words
         across 38 documents. The 1623 First Folio orthography is
-        partially preserved &mdash; we did not modernize spelling
+        partially preserved. We did not modernize spelling
         because doing so would lose the very variants (<em>hath</em>,{" "}
         <em>doth</em>, <em>thou</em>) that several of the case
         studies depend on.
@@ -105,7 +105,7 @@ export default function BibliographyEssay() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        Methodological framework &mdash; the books behind the methods
+        Methodological framework: the books behind the methods
       </h2>
 
       <p>
@@ -132,10 +132,10 @@ export default function BibliographyEssay() {
       </p>
 
       <p>
-        The structure of the scholarly paper &mdash; one chapter
+        The structure of the scholarly paper (one chapter
         per case study, each with research question, construct,
-        operationalization, hypothesis, test, and effect size
-        &mdash; follows the template laid out in <strong>Stefan Th.
+        operationalization, hypothesis, test, and effect size)
+        follows the template laid out in <strong>Stefan Th.
         Gries</strong> and <strong>Magali Paquot</strong>&rsquo;s{" "}
         <em>Practical Handbook of Corpus Linguistics</em>{" "}
         (Springer, 2020). Where Stefanowitsch gives the
@@ -151,7 +151,7 @@ export default function BibliographyEssay() {
         <em>Shakespeare and Language: Reason, Eloquence and
         Artifice in the Renaissance</em> (Bloomsbury, 2010),
         which gave us our working sense of what Shakespeare&rsquo;s
-        early-modern English actually does &mdash; what it can do
+        early-modern English does: what it can do
         that the Founders&rsquo; late-eighteenth-century English
         cannot, and vice versa. The second is{" "}
         <strong>Kevin J. Hayes</strong>&rsquo;s{" "}
@@ -166,7 +166,7 @@ export default function BibliographyEssay() {
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">
-        Methodological inheritance &mdash; the project&rsquo;s
+        Methodological inheritance: the project&rsquo;s
         nearest model
       </h2>
 
@@ -186,9 +186,9 @@ export default function BibliographyEssay() {
         >
           americaspublicbible.supdigital.org
         </a>
-        . The shape of this site &mdash; long-form essays, per-finding
+        . The shape of this site (long-form essays, per-finding
         case studies, an interactive explorer layer over the same
-        underlying corpus, parchment design language &mdash; is
+        underlying corpus, parchment design language) is
         directly modelled on what Mullen built. None of the
         substantive findings here come from <em>America&rsquo;s
         Public Bible</em>; the inheritance is of structure and form.
@@ -201,8 +201,8 @@ export default function BibliographyEssay() {
       </h2>
 
       <p>
-        Everything on this site &mdash; every claim, every passage,
-        every chart, every catalogue row &mdash; rests on a Python
+        Everything on this site (every claim, every passage,
+        every chart, every catalogue row) rests on a Python
         analysis pipeline that lives in a separate research
         repository. The pipeline does five things in order: it
         ingests Founders Online and Project Gutenberg into a SQLite
@@ -276,8 +276,8 @@ export default function BibliographyEssay() {
         </a>
         . The site is statically built and deployed to GitHub Pages
         on every push to <code className="text-folio">main</code>.
-        Any reader who wants to extend it &mdash; new case studies,
-        new explorers, new findings against the same corpus &mdash;
+        Any reader who wants to extend it (new case studies,
+        new explorers, new findings against the same corpus)
         can fork the repo and rebuild.
       </p>
 
@@ -290,8 +290,8 @@ export default function BibliographyEssay() {
       <p>
         Every historical image on this site is in the public domain
         or used under permissive Creative Commons terms. Full
-        attribution &mdash; image holder, year of original creation,
-        and licence terms &mdash; is on the{" "}
+        attribution (image holder, year of original creation,
+        and licence terms) is on the{" "}
         <Link href="/credits">credits page</Link>. The principal
         sources are the Bodleian Library&rsquo;s digital edition of
         the 1623 First Folio (Macbeth, Othello, Julius Caesar
@@ -334,7 +334,7 @@ export default function BibliographyEssay() {
 
       <p>
         The work is dedicated, in the way these things usually are,
-        to my students &mdash; the ones who took the question
+        to my students: the ones who took the question
         &ldquo;did the Founders sound like Shakespeare&rdquo;
         seriously enough at office hours to make me think it might
         be worth answering, and patient enough to listen to me

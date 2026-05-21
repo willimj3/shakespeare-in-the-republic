@@ -19,7 +19,7 @@ export default function TwoModesEssay() {
       totalChapters={8}
       sectionMarker="Essay · The substantive findings"
       title="Two Modes of Shakespearean Influence"
-      subtitle="Adams citational, Franklin absorbed &mdash; and why the corpus needs both methods to see them."
+      subtitle="Adams citational, Franklin absorbed, and why the corpus needs both methods to see them."
       prevHref="/essay"
       prevLabel="All essays"
       nextHref="/case-study/tide-in-the-affairs"
@@ -43,7 +43,7 @@ export default function TwoModesEssay() {
       <div className="has-dropcap">
         <p>
           The natural question to ask of a project like this one is{" "}
-          <em>who&rsquo;s most Shakespearean?</em> &mdash; and to expect
+          <em>who&rsquo;s most Shakespearean?</em>, and to expect
           a single name. The data refuses. John Adams and Benjamin
           Franklin tie at the top by every measure the project ran;
           they sit within a hair of each other on six different
@@ -59,7 +59,7 @@ export default function TwoModesEssay() {
           never names Shakespeare and almost never quotes him. But
           every time Franklin reaches for a verb form, or a contraction,
           or a way to phrase a sentence, the form he reaches for is
-          the form Shakespeare would have used &mdash; even when, by
+          the form Shakespeare would have used, even when, by
           1780, almost no other writer was using it. One Founder
           inherits a writer. The other inherits a way of writing.
         </p>
@@ -69,7 +69,7 @@ export default function TwoModesEssay() {
 
       {/* ── ADAMS section ─────────────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        Adams &mdash; the conscious Shakespearean
+        Adams, the conscious Shakespearean
       </h2>
       <p>
         John Adams is the only Founder who refers to Shakespeare by name in
@@ -79,7 +79,7 @@ export default function TwoModesEssay() {
         retirement reading of 1803, and in his late-life letters of 1809 and
         beyond. He uses fifteen of the twenty-four phrases popularly
         attributed to Shakespeare in compilations like Crystal&rsquo;s{" "}
-        <em>Think on My Words</em>, with 139 hits total &mdash; more than any
+        <em>Think on My Words</em>, with 139 hits total, more than any
         other Founder by a wide margin.
       </p>
 
@@ -115,8 +115,8 @@ export default function TwoModesEssay() {
 
       <p>
         The pattern continues across his life. He returns to one line from{" "}
-        <em>Julius Caesar</em> &mdash; Brutus&rsquo;s &ldquo;tide in the
-        affairs of men&rdquo; &mdash; in correspondence in 1776, 1781, 1809,
+        <em>Julius Caesar</em>, Brutus&rsquo;s &ldquo;tide in the
+        affairs of men&rdquo;, in correspondence in 1776, 1781, 1809,
         1812, and 1814, applied variously to the founding moment, the
         diplomatic post-war, the early Republic, and his own declining
         years. He uses Othello&rsquo;s &ldquo;Pride, pomp, and circumstance of
@@ -161,17 +161,17 @@ export default function TwoModesEssay() {
 
       {/* ── FRANKLIN section ──────────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        Franklin &mdash; the absorbed Shakespearean
+        Franklin, the absorbed Shakespearean
       </h2>
       <p>
         Benjamin Franklin produces almost none of the surface evidence Adams
-        produces. He names Shakespeare twice in the entire corpus &mdash; once
+        produces. He names Shakespeare twice in the entire corpus: once
         in 1775, in a playful epistolary postscript addressed to{" "}
         &ldquo;Mr. Shakespeare&rdquo;, and once in 1783, in a Paris letter
         where he quotes <em>Othello</em>&rsquo;s &ldquo;Trifles light as
         air&rdquo; without attribution as part of his own voice. Of the
         twenty-four phrases popularly attributed to Shakespeare, he uses
-        only five, with fifteen hits &mdash; the{" "}
+        only five, with fifteen hits, the{" "}
         <em>fewest</em> of any Founder. He produces zero verbatim seven-word
         Shakespeare quotations under our automated detection pipeline.
       </p>
@@ -184,15 +184,15 @@ export default function TwoModesEssay() {
 
       <Stat
         value="9,436"
-        label="Old-fashioned English words per million in Franklin's writing — nearly twice the rate of the next-highest Founder."
+        label="Old-fashioned English words per million in Franklin's writing, nearly twice the rate of the next-highest Founder."
       />
 
       <p>
         Franklin&rsquo;s Shakespearean side shows up not in <em>what</em>{" "}
         he writes but in <em>how</em> he writes it. He uses{" "}
-        <em>thou, thee, thy, thine</em> &mdash; the second-person
-        pronouns that had largely died out of American English by 1750
-        &mdash; thirty times more often than Washington and ten times
+        <em>thou, thee, thy, thine</em> (the second-person
+        pronouns that had largely died out of American English by 1750)
+        thirty times more often than Washington and ten times
         more often than Hamilton. He uses the old verb forms{" "}
         <em>hath, doth, art, hast</em> at a higher rate than any other
         Founder. He uses old-style contractions like{" "}
@@ -202,7 +202,7 @@ export default function TwoModesEssay() {
 
       <p>
         The single most striking piece of evidence is the contraction{" "}
-        <em>&lsquo;tis</em>. Shakespeare uses it constantly &mdash; the
+        <em>&lsquo;tis</em>. Shakespeare uses it constantly. The
         form saturates his text. In ordinary 18th-century English the
         form was vanishing. Franklin uses it at twice the rate of any
         other Founder, beginning in 1722 in essays he was publishing
@@ -245,8 +245,8 @@ export default function TwoModesEssay() {
       <CompositeRanking />
 
       <p>
-        First, Franklin and Adams essentially tie at the top &mdash;
-        roughly three percent apart. Second, Madison and Hamilton are
+        First, Franklin and Adams essentially tie at the top, roughly
+        three percent apart. Second, Madison and Hamilton are
         far behind both of them. Hamilton and Madison are the
         project&rsquo;s two least Shakespearean writers across every
         single measure.
@@ -255,10 +255,10 @@ export default function TwoModesEssay() {
       <p>
         Within the top two, the comparison is more interesting than the
         scores. Adams leads on measures of <em>what words</em> a Founder
-        used &mdash; the breadth of distinctively Shakespearean
+        used: the breadth of distinctively Shakespearean
         vocabulary in his writing, the named-phrase count, the diversity
         of collocations he picked up. Franklin leads on measures of{" "}
-        <em>how often</em> &mdash; the rate per million words, the
+        <em>how often</em>: the rate per million words, the
         proximity of his pronoun-use to Shakespeare&rsquo;s, the
         density of his old-fashioned forms. Adams collected. Franklin
         absorbed.
@@ -278,17 +278,17 @@ export default function TwoModesEssay() {
       </p>
       <p>
         If you build a catalogue of every passage where a Founder
-        quotes Shakespeare verbatim &mdash; the kind of catalogue
-        you&rsquo;d expect to find in a literary monograph &mdash;
-        you&rsquo;ll find Adams 53 times and the other five Founders
+        quotes Shakespeare verbatim (the kind of catalogue
+        you&rsquo;d expect to find in a literary monograph) you&rsquo;ll
+        find Adams 53 times and the other five Founders
         zero times. The catalogue will tell you Adams is the
         Shakespearean Founder. It will not see Franklin at all.
       </p>
       <p>
         If you instead measure the per-million rate of old-fashioned
-        English forms across each Founder&rsquo;s entire corpus &mdash;
-        the kind of statistical scan that doesn&rsquo;t care about
-        specific passages &mdash; you&rsquo;ll find Franklin nearly
+        English forms across each Founder&rsquo;s entire corpus (the
+        kind of statistical scan that doesn&rsquo;t care about
+        specific passages) you&rsquo;ll find Franklin nearly
         twice as Shakespearean as the next-highest Founder. That scan
         will see Franklin clearly. It will not see Adams&rsquo;s
         deliberate quotations as anything special.
@@ -310,8 +310,8 @@ export default function TwoModesEssay() {
         and slowly fades as his prose hardens into the administrative
         register of the Revolution and the presidency. Franklin&rsquo;s
         Shakespearean register has no peak at all. It&rsquo;s the
-        baseline of his prose across six decades of writing &mdash;
-        present in 1722, still present in 1778. One Founder went
+        baseline of his prose across six decades of writing: present
+        in 1722, still present in 1778. One Founder went
         looking for Shakespeare and brought him home in pieces. The
         other writes as if Shakespeare is the English he learned and
         never re-learned. Both are real kinds of influence. Neither
@@ -322,7 +322,7 @@ export default function TwoModesEssay() {
         <summary className="cursor-pointer text-base text-ink-soft font-display italic flex items-baseline gap-2 hover:text-folio transition-colors">
           <span className="text-folio">▸</span>
           <span className="group-open:hidden">
-            How we measured this &mdash; for the methodologically curious
+            How we measured this, for the methodologically curious
           </span>
           <span className="hidden group-open:inline">
             How we measured this

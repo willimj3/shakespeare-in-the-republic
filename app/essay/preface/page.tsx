@@ -27,20 +27,20 @@ export default function PrefaceEssay() {
           sound like Shakespeare?
         </p>
         <p>
-          The kind of question almost no-one would actually try to
+          The kind of question almost no-one would try to
           answer, because we mostly think we already know. Yes, the
           Founders were classically educated and read Shakespeare;
           they must have absorbed some of it. Or: of course they
           did; everyone literate in the 18th century did. Or
-          conversely: they didn&rsquo;t really &mdash; their prose is
+          conversely: they didn&rsquo;t really. Their prose is
           Hume, Montesquieu, Locke; Shakespeare was for the
           drawing-room. Three different answers, all delivered
           confidently from the same general background of common
-          knowledge, none of them based on actually checking.
+          knowledge, none of them based on checking.
         </p>
         <p>
-          The Founders left an enormous amount of writing &mdash;
-          letters, diaries, drafts, debates, political essays,
+          The Founders left an enormous amount of writing: letters,
+          diaries, drafts, debates, political essays,
           speeches. The complete digitised corpus runs to roughly
           25 million words across six men, and it has been
           searchable for almost twenty years through the Founders
@@ -59,8 +59,8 @@ export default function PrefaceEssay() {
       </h2>
       <p>
         It&rsquo;s a study of how much of Shakespeare&rsquo;s English
-        survives in the writings of six American Founders &mdash;
-        Adams, Franklin, Hamilton, Jefferson, Madison, and Washington.
+        survives in the writings of six American Founders: Adams,
+        Franklin, Hamilton, Jefferson, Madison, and Washington.
         The methods are corpus linguistic. The substance is literary,
         political, and historical. The result is a set of findings
         about who absorbed what, in what way, and what they did with
@@ -68,19 +68,19 @@ export default function PrefaceEssay() {
       </p>
       <p>
         The headline finding will not surprise readers who know the
-        period: two of the six Founders &mdash; John Adams and
-        Benjamin Franklin &mdash; come out essentially tied at the
-        top of every ranking. What will surprise some readers is{" "}
+        period: two of the six Founders, John Adams and Benjamin
+        Franklin, come out tied at the top of every ranking. What
+        will surprise some readers is{" "}
         <em>how</em> they got there. Adams quotes Shakespeare
         directly, names him, returns to favourite lines across
         decades of correspondence. Franklin almost never names
-        Shakespeare and almost never quotes him &mdash; yet every
+        Shakespeare and almost never quotes him. And yet every
         sentence Franklin writes is half a step closer to
         Shakespeare&rsquo;s 17th-century English than any other
         Founder&rsquo;s prose. One Founder inherits a writer. The
         other inherits a way of writing. That&rsquo;s the project&rsquo;s
         central substantive claim, and it doesn&rsquo;t emerge from
-        any single statistical test &mdash; it emerges from the
+        any single statistical test. It emerges from the
         disagreement between methods, each of which captures one of
         the two modes.
       </p>
@@ -90,14 +90,13 @@ export default function PrefaceEssay() {
         (<em>honour</em>, <em>power</em>, <em>love</em>,{" "}
         <em>death</em>, <em>friend</em>), the surrounding words it
         keeps company with diverge so completely that the word is
-        effectively doing different conceptual work in each. The
+        doing different conceptual work in each. The
         Founders inherited Shakespeare&rsquo;s vocabulary and
         rebuilt the world it described. The second: two of the six
-        Founders &mdash; Hamilton and Madison &mdash; effectively
-        opt out of Shakespearean inheritance altogether. Their prose
-        belongs to a completely different intellectual lineage.
-        Their absence is what makes the Adams and Franklin
-        presences mean what they mean.
+        Founders, Hamilton and Madison, opt out of Shakespearean
+        inheritance altogether. Their prose belongs to a completely
+        different intellectual lineage. Their absence is what makes
+        the Adams and Franklin presences mean what they mean.
       </p>
 
       <hr />
@@ -107,22 +106,21 @@ export default function PrefaceEssay() {
       </h2>
       <p>
         The site is written for the general reader. Most chapters
-        spend more time on biographical scenes &mdash; Adams in his
+        spend more time on biographical scenes (Adams in his
         Braintree diary at twenty-two, Washington in his General
         Orders at Valley Forge, Franklin in his half-brother&rsquo;s
-        Boston print shop at sixteen &mdash; than on statistical
-        method. Where the methodology matters, I&rsquo;ve tried to
+        Boston print shop at sixteen) than on statistical method.
+        Where the methodology matters, I&rsquo;ve tried to
         explain it in plain English; where the technical detail
         would slow the read, I&rsquo;ve put it behind a foldable
         &ldquo;for the methodologically curious&rdquo; panel that
         opens on a click.
       </p>
       <p>
-        For readers who want the full statistical apparatus &mdash;
-        G log-likelihood, Bonferroni correction, sample-size-matched
+        For readers who want the full statistical apparatus (G
+        log-likelihood, Bonferroni correction, sample-size-matched
         lexical richness, Configural Frequency Analysis, the
-        Stefanowitsch framework that the methodology rests on
-        &mdash; the{" "}
+        Stefanowitsch framework that the methodology rests on), the{" "}
         <Link href="/papers">scholarly paper</Link> is downloadable
         from the site. It is the document the methodology lives in;
         the site condenses and translates it. Both are free under
@@ -152,7 +150,7 @@ export default function PrefaceEssay() {
           <strong>The essays</strong> are the commentary. Eight
           chapters of long-form prose. The introduction lays out
           the question. The methods chapter explains how the
-          project actually asked it, in plain English. Four
+          project asked it, in plain English. Four
           substantive-findings chapters describe what the data
           turned up. A bibliography chapter rounds it out.
         </li>
@@ -169,8 +167,8 @@ export default function PrefaceEssay() {
           theology.
         </li>
         <li>
-          <strong>The explorer</strong> is the interactive layer
-          &mdash; the catalogue of every traceable Shakespeare
+          <strong>The explorer</strong> is the interactive layer:
+          the catalogue of every traceable Shakespeare
           reference (filterable, searchable), and the Honour Test
           comparison view for any of fourteen common abstract
           nouns. These let the reader poke at the corpus directly
@@ -203,8 +201,8 @@ export default function PrefaceEssay() {
         This site is two projects at once. The visible one is the
         Shakespeare-and-Founders study described above. The
         invisible one is an experiment in directing an AI coding
-        agent &mdash; Anthropic&rsquo;s Claude Code &mdash; to
-        build a serious digital-humanities project end to end. The
+        agent (Anthropic&rsquo;s Claude Code) to build a serious
+        digital-humanities project end to end. The
         Python pipeline, the prose of the essays, the case studies,
         and the interactive components were substantially drafted
         by Claude under my editorial direction. The findings
@@ -216,7 +214,7 @@ export default function PrefaceEssay() {
           About this project
         </Link>
         , which I&rsquo;d recommend reading before the substantive
-        essays if the question of how the work was actually made
+        essays if the question of how the work was made
         matters to you.
       </p>
 
@@ -227,7 +225,7 @@ export default function PrefaceEssay() {
       </h2>
       <p>
         The Founders&rsquo; corpus is drawn from the Founders Online
-        archive maintained by the National Archives &mdash; an
+        archive maintained by the National Archives, an
         astonishing public resource that makes a project like this
         one possible at all. The Shakespeare corpus comes from
         Project Gutenberg. The methodological framework is taken

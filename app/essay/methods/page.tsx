@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title:
     "How We Asked the Question · Methods · Shakespeare in the Republic",
   description:
-    "What the project actually did, in plain English. Why we picked the corpus we did, what counts as 'Shakespearean influence', and how we kept ourselves honest.",
+    "What the project did, in plain English. Why we picked the corpus we did, what counts as 'Shakespearean influence', and how we kept ourselves honest.",
 };
 
 export default function MethodsEssay() {
@@ -16,7 +16,7 @@ export default function MethodsEssay() {
       totalChapters={8}
       sectionMarker="Essay · The setup"
       title="How We Asked the Question"
-      subtitle="What the project actually did, in plain English. Why we picked the corpus we did, what counts as &lsquo;Shakespearean influence&rsquo;, and how we kept ourselves honest."
+      subtitle="What the project did, in plain English. Why we picked the corpus we did, what counts as &lsquo;Shakespearean influence&rsquo;, and how we kept ourselves honest."
       prevHref="/essay"
       prevLabel="Essay index"
       nextHref="/essay/two-modes"
@@ -29,8 +29,8 @@ export default function MethodsEssay() {
           collecting the data. It&rsquo;s deciding what would even
           count as an answer. Does it count if Adams uses the word{" "}
           <em>methinks</em> a few times in his diary? Does it count if
-          Hamilton uses <em>multitudinous</em> &mdash; a word
-          Shakespeare popularised &mdash; in Federalist 75? Does it
+          Hamilton uses <em>multitudinous</em> (a word
+          Shakespeare popularised) in Federalist 75? Does it
           count if Washington signs a letter to a soldier as a member
           of a &ldquo;band of brothers&rdquo;, knowing or not knowing
           that the phrase is from Henry V? Does Franklin&rsquo;s habit
@@ -53,7 +53,7 @@ export default function MethodsEssay() {
       </h2>
       <p>
         The Founders&rsquo; corpus is six men&rsquo;s collected
-        writings &mdash; John Adams, Benjamin Franklin, Alexander
+        writings: John Adams, Benjamin Franklin, Alexander
         Hamilton, Thomas Jefferson, James Madison, and George
         Washington. Letters, diaries, drafts, debates, essays,
         political papers. Sourced primarily from the Founders Online
@@ -69,7 +69,7 @@ export default function MethodsEssay() {
         The Shakespeare side is the Project Gutenberg edition of his
         complete works: 36 plays plus the Sonnets and{" "}
         <em>A Lover&rsquo;s Complaint</em>. <strong>38 documents,
-        891,092 words</strong> &mdash; about one twenty-seventh the
+        891,092 words</strong>, about one twenty-seventh the
         size of the Founders&rsquo; corpus.
       </p>
       <p>
@@ -111,8 +111,8 @@ export default function MethodsEssay() {
         <strong>which features of Shakespeare&rsquo;s English persist
         in the Founders&rsquo; writing, and in whom?</strong>{" "}
         Shakespeare wrote in 1590-1614. The Founders wrote in
-        1750-1820. Influence can travel only forward in time
-        &mdash; from Shakespeare to the Founders, not the other way
+        1750-1820. Influence can travel only forward in time, from
+        Shakespeare to the Founders, not the other way
         around. The relevant question isn&rsquo;t how the corpora
         differ; it&rsquo;s what survives the journey.
       </p>
@@ -171,11 +171,11 @@ export default function MethodsEssay() {
         Neither kind of evidence is sufficient on its own. A pure
         passage-level scan would tell you Adams is overwhelmingly the
         most Shakespearean Founder and Franklin barely Shakespearean
-        at all &mdash; it would miss Franklin&rsquo;s entire absorbed
+        at all; it would miss Franklin&rsquo;s entire absorbed
         Shakespearean register. A pure pattern-level scan would
         clearly see Franklin&rsquo;s register and might dismiss
         Adams&rsquo;s specific quotations as too rare to be a real
-        signal &mdash; it would miss Adams&rsquo;s deliberate
+        signal; it would miss Adams&rsquo;s deliberate
         engagement. The project runs both kinds of analysis and
         compares what each finds.
       </p>
@@ -198,41 +198,41 @@ export default function MethodsEssay() {
       </p>
       <ol className="text-base text-ink-soft my-6 space-y-1 pl-6 list-decimal">
         <li>
-          <em>Vocabulary</em> &mdash; how many words distinctive of
+          <em>Vocabulary:</em> how many words distinctive of
           Shakespeare survive in the Founder&rsquo;s writing.
         </li>
         <li>
-          <em>Context patterns</em> &mdash; the specific neighbours
+          <em>Context patterns:</em> the specific neighbours
           Shakespeare&rsquo;s favourite abstract nouns travel with,
           and whether the Founder uses any of those neighbours too.
         </li>
         <li>
-          <em>Vocabulary richness</em> &mdash; how much lexical
+          <em>Vocabulary richness:</em> how much lexical
           variety the writer shows in a sample of equal size to
           Shakespeare&rsquo;s.
         </li>
         <li>
-          <em>Pronoun distribution</em> &mdash; the relative rates of{" "}
+          <em>Pronoun distribution:</em> the relative rates of{" "}
           <em>I, you, he, she, lord, sir, friend</em>, etc.
         </li>
         <li>
-          <em>Archaic forms</em> &mdash; the survival of old-fashioned
+          <em>Archaic forms:</em> the survival of old-fashioned
           English (<em>thou, thee, hath, doth, &lsquo;tis</em>) that
           was vanishing by 1750.
         </li>
         <li>
-          <em>Metaphor patterns</em> &mdash; what kinds of source-domain
+          <em>Metaphor patterns:</em> what kinds of source-domain
           metaphors (body, ship, fire, building, plant) each writer
           reaches for when describing political institutions.
         </li>
         <li>
-          <em>Statistical style</em> &mdash; sentence-level features
+          <em>Statistical style:</em> sentence-level features
           like sentence length, punctuation density, and emotional
           charge, and which features the Founder shares with
           Shakespeare.
         </li>
         <li>
-          <em>Use of popular Shakespeare-coined phrases</em> &mdash;
+          <em>Use of popular Shakespeare-coined phrases:</em>{" "}
           twenty-four phrases that compilations like Crystal&rsquo;s{" "}
           <em>Think on My Words</em> attribute to Shakespeare, and
           whether the Founder uses them.
@@ -240,7 +240,7 @@ export default function MethodsEssay() {
       </ol>
       <p>
         The first seven are pattern-level. The eighth is passage-level.
-        How they agree &mdash; and where they disagree &mdash; is the
+        How they agree, and where they disagree, is the
         substance of the{" "}
         <Link href="/essay/convergence">
           Eight Ways of Looking
@@ -253,13 +253,13 @@ export default function MethodsEssay() {
 
       {/* ── Composite score ────────────────────────────────────────── */}
       <h2 id="composite" className="font-display text-3xl text-ink mt-10 scroll-mt-24">
-        The composite score &mdash; what 0.79 actually means
+        The composite score: what 0.79 means
       </h2>
       <p>
         The single number that appears on every Founder&rsquo;s
-        profile and powers the ranking &mdash; Franklin 0.7857,
+        profile and powers the ranking (Franklin 0.7857,
         Adams 0.7619, Jefferson 0.5952, Washington 0.5238, Madison
-        0.4286, Hamilton 0.4048 &mdash; is not a probability, not
+        0.4286, Hamilton 0.4048) is not a probability, not
         a similarity coefficient, and not a raw count. It is the
         average of seven percentile ranks, each computed against
         the other Founders.
@@ -277,8 +277,8 @@ export default function MethodsEssay() {
         </li>
         <li>
           <strong>Weighted vocabulary.</strong> The same count, but
-          weighted by how often Shakespeare himself uses each word
-          &mdash; so picking up the words Shakespeare reaches for
+          weighted by how often Shakespeare himself uses each word,
+          so picking up the words Shakespeare reaches for
           most matters more than picking up his rare ones.
         </li>
         <li>
@@ -294,9 +294,9 @@ export default function MethodsEssay() {
         </li>
         <li>
           <strong>MSTTR closeness.</strong> How close this
-          Founder&rsquo;s mean segmental type-token ratio &mdash; a
-          sample-size-corrected measure of vocabulary diversity
-          &mdash; is to Shakespeare&rsquo;s.
+          Founder&rsquo;s mean segmental type-token ratio (a
+          sample-size-corrected measure of vocabulary diversity) is
+          to Shakespeare&rsquo;s.
         </li>
         <li>
           <strong>HTR closeness.</strong> How close his
@@ -305,8 +305,8 @@ export default function MethodsEssay() {
         </li>
         <li>
           <strong>Yule&rsquo;s K closeness.</strong> How close his
-          Yule&rsquo;s K statistic &mdash; another classic
-          vocabulary-richness measure &mdash; is to
+          Yule&rsquo;s K statistic (another classic
+          vocabulary-richness measure) is to
           Shakespeare&rsquo;s.
         </li>
       </ol>
@@ -322,7 +322,7 @@ export default function MethodsEssay() {
         <strong> the composite is relative</strong>. A Founder&rsquo;s
         score depends on the other five he&rsquo;s being compared
         to; it is not a fixed similarity to Shakespeare. If we
-        added a seventh Founder &mdash; or dropped one &mdash; the
+        added a seventh Founder, or dropped one, the
         numbers would shift. Second,{" "}
         <strong>the seven measures are equally weighted</strong>.
         Vocabulary breadth counts as much as Yule&rsquo;s K. There
@@ -330,13 +330,13 @@ export default function MethodsEssay() {
         we picked equal weighting as the most defensible default.
         Third, <strong>the composite is silent about the way of
         knowing</strong>. It does not measure conscious citation,
-        named reference, or specific play knowledge &mdash; those
+        named reference, or specific play knowledge; those
         live in the catalogue. It measures statistical absorption
         of Shakespearean vocabulary and style.
       </p>
       <p>
         The composite does not include the other measures the
-        project tracks &mdash; pronoun-distribution similarity,
+        project tracks: pronoun-distribution similarity,
         archaic-form survival, metaphor profile, the CFA
         statistical-style overlap, or use of the well-known
         Shakespeare-coined phrases. Those are reported as
@@ -396,14 +396,14 @@ export default function MethodsEssay() {
       </p>
       <p>
         The second is <strong>effect size over significance</strong>.
-        At the scale of this corpus &mdash; 25 million words &mdash;
-        almost any comparison between the Founders and Shakespeare
+        At the scale of this corpus (25 million words) almost any
+        comparison between the Founders and Shakespeare
         produces a statistically &ldquo;significant&rdquo; result.
         That doesn&rsquo;t mean the difference <em>matters</em>. The
         right question is: how big is the effect? When the project
         reports that &ldquo;Shakespeare&rsquo;s vocabulary is more
         diverse than the Founders&rsquo; under fair comparison&rdquo;,
-        the underlying effect size is very weak &mdash; statistically
+        the underlying effect size is very weak: statistically
         present but substantively trivial. The text says so when this
         happens. Statistical significance is reported but never
         treated as the headline.
@@ -424,8 +424,8 @@ export default function MethodsEssay() {
           <strong>The project cannot fully separate Shakespeare-
           distinctive language from general 18th-century English.</strong>{" "}
           To do that cleanly we&rsquo;d need a third reference corpus
-          &mdash; a representative sample of what ordinary educated
-          English looked like in the period &mdash; that we don&rsquo;t
+          (a representative sample of what ordinary educated
+          English looked like in the period) that we don&rsquo;t
           have. Some phrases popularly attributed to Shakespeare were
           already general English by the Founders&rsquo; day; the
           project flags this where it matters.
@@ -435,7 +435,7 @@ export default function MethodsEssay() {
           text may be quotation of someone <em>else</em> who quoted
           Shakespeare.</strong> Madison&rsquo;s only frequent
           Shakespearean trace is the word <em>ay</em>, and it surfaces
-          almost entirely in his transcripts of debates &mdash; other
+          almost entirely in his transcripts of debates: other
           people&rsquo;s speech, not his composition.
         </li>
         <li>
@@ -466,10 +466,10 @@ export default function MethodsEssay() {
       <div className="ornament" />
 
       <p className="text-sm text-ink-muted italic text-center">
-        For the full statistical methodology &mdash; G log-likelihood
+        For the full statistical methodology (G log-likelihood
         tests, Bonferroni correction, sample-size-matched lexical
         richness, Configural Frequency Analysis on stylometric
-        features &mdash; see the{" "}
+        features) see the{" "}
         <Link href="/papers" className="underline">
           scholarly paper
         </Link>{" "}

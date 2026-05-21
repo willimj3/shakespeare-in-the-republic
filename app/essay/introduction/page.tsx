@@ -17,7 +17,7 @@ export default function IntroductionEssay() {
       totalChapters={8}
       sectionMarker="Essay · Introduction"
       title="The Influence Question"
-      subtitle="What it means to ask carefully whether the Founders sounded like Shakespeare &mdash; and the setup for the rest of the site."
+      subtitle="What it means to ask carefully whether the Founders sounded like Shakespeare, and the setup for the rest of the site."
       prevHref="/essay/preface"
       prevLabel="Preface"
       nextHref="/essay/methods"
@@ -45,15 +45,15 @@ export default function IntroductionEssay() {
           same hat. Did the later writer <em>quote</em> Shakespeare?
           (A literary question, addressable by reading.) Did they{" "}
           <em>name</em> him? (A biographical question, addressable
-          by indexing.) Did they <em>echo</em> him &mdash; reach for
+          by indexing.) Did they <em>echo</em> him, reaching for
           phrases, allusions, characters, themes that an educated
           reader of the period would have recognised? (A harder
           literary question, more dependent on what the reader
           notices.) Did the later writer <em>sound</em> like
-          Shakespeare &mdash; share rhythm, register, sentence
+          Shakespeare, sharing rhythm, register, sentence
           structure, preferred vocabulary? (A different question
           again, one that doesn&rsquo;t lend itself to indexing at
-          all.) Did they <em>think</em> like Shakespeare &mdash; in
+          all.) Did they <em>think</em> like Shakespeare, in
           metaphors, in personifications, in dramatic ironies?
         </p>
 
@@ -71,14 +71,14 @@ export default function IntroductionEssay() {
       </h2>
       <p>
         For a project that wants to measure rather than guess, the
-        first job is to choose which question we&rsquo;re actually
+        first job is to choose which question we&rsquo;re
         asking. The project this site documents asks one specific
         version of it:
       </p>
       <blockquote className="my-6 italic text-ink-soft">
         <p className="font-display text-lg leading-relaxed">
           Which features of Shakespeare&rsquo;s English persist in
-          the writings of six American Founders &mdash; and in whom?
+          the writings of six American Founders, and in whom?
         </p>
       </blockquote>
       <p>
@@ -86,7 +86,7 @@ export default function IntroductionEssay() {
         wrote in 1590&ndash;1614; the Founders wrote in
         1750&ndash;1820. Cultural transmission is one-way through
         time. The question isn&rsquo;t how the two corpora{" "}
-        <em>differ</em> &mdash; that would be a symmetric comparison
+        <em>differ</em>. That would be a symmetric comparison
         and the differences are mostly trivial (drama vs
         correspondence; literary vs political; an ocean and two
         centuries apart). The question is what survived the journey
@@ -97,10 +97,10 @@ export default function IntroductionEssay() {
         That choice of framing shapes everything downstream. Each of
         the project&rsquo;s analyses first identifies what&rsquo;s
         distinctively Shakespearean about Shakespeare&rsquo;s
-        English &mdash; the words he uses heavily, the contexts he
+        English (the words he uses heavily, the contexts he
         places them in, the metaphors he reaches for, the older
-        forms (<em>thou, hath, &lsquo;tis</em>) he writes in &mdash;
-        and then measures how much of that distinctively Shakespearean
+        forms <em>thou, hath, &lsquo;tis</em> he writes in), then
+        measures how much of that distinctively Shakespearean
         material survives in each individual Founder&rsquo;s prose.
         The detailed setup is in the next chapter,{" "}
         <Link href="/essay/methods">How We Asked the Question</Link>.
@@ -129,7 +129,7 @@ export default function IntroductionEssay() {
         completely different ways. Adams quotes Shakespeare
         explicitly, names him by name forty-two times across his
         life, and returns to favourite Shakespearean lines over and
-        over &mdash; deploying Brutus&rsquo;s &ldquo;tide in the
+        over: deploying Brutus&rsquo;s &ldquo;tide in the
         affairs of men&rdquo; in correspondence in 1776, 1781,
         1809, 1812, and 1814; using the Shakespearean construction{" "}
         <em>methinks I hear</em> across thirty-two years in four
@@ -143,20 +143,20 @@ export default function IntroductionEssay() {
         But every sentence Franklin writes is half a step closer to
         Shakespeare&rsquo;s seventeenth-century English than any
         other Founder&rsquo;s prose. He uses the archaic contraction{" "}
-        <em>&lsquo;tis</em> at twice the rate of any other Founder
-        &mdash; and roughly ten times the rate of Adams, Washington,
+        <em>&lsquo;tis</em> at twice the rate of any other Founder,
+        and roughly ten times the rate of Adams, Washington,
         and Jefferson. He uses the old verb forms <em>hath, doth,
         art, hast</em>. He uses the second-person archaic{" "}
         <em>thou, thee, thy, thine</em> thirty times more often than
         Washington. He learned all of this at sixteen, in his
         half-brother&rsquo;s Boston print shop in 1722, and the
-        register never left him &mdash; <em>hath</em> survives into
+        register never left him. <em>Hath</em> survives into
         his 1778 diplomatic correspondence from Paris.
       </p>
       <p>
         Adams inherits a writer. Franklin inherits a way of writing.
         Neither mode is more &ldquo;influence&rdquo; than the
-        other &mdash; but the two modes are caught by different
+        other, but the two modes are caught by different
         methods, and a project that ran only one method would see
         only one of them. The full argument is in the{" "}
         <Link href="/essay/two-modes">Two Modes essay</Link>.
@@ -171,7 +171,7 @@ export default function IntroductionEssay() {
         uses it 726. So the word survived the journey. But{" "}
         <em>what the word means</em> didn&rsquo;t. In Shakespeare,
         honour is something a character can &ldquo;pawn&rdquo; like
-        money &mdash; staked as security for someone else&rsquo;s
+        money: staked as security for someone else&rsquo;s
         reliability. In the Founders&rsquo; correspondence, it&rsquo;s
         a politeness marker (&ldquo;I have the honour to be, Sir,
         your obedient servant&rdquo;). Two completely different
@@ -179,7 +179,7 @@ export default function IntroductionEssay() {
       </p>
       <p>
         That kind of pattern recurs across every politically loaded
-        abstract noun the project examined &mdash; <em>power</em>,{" "}
+        abstract noun the project examined: <em>power</em>,{" "}
         <em>love</em>, <em>death</em>, <em>friend</em>,{" "}
         <em>mind</em>, <em>people</em>, <em>virtue</em>. The
         Founders inherited Shakespeare&rsquo;s vocabulary and
@@ -193,15 +193,15 @@ export default function IntroductionEssay() {
         Third: two of the six Founders effectively opted out.
       </h3>
       <p>
-        Across Hamilton&rsquo;s entire corpus &mdash; 2.35 million
-        words, 7,059 documents &mdash; the project finds zero
+        Across Hamilton&rsquo;s entire corpus (2.35 million
+        words, 7,059 documents) the project finds zero
         verbatim Shakespeare quotations, zero by-name references to
         Shakespeare, and zero detectable Shakespearean stylistic
         features. Madison&rsquo;s record is identical in shape.
       </p>
       <p>
         This isn&rsquo;t a story about ignorance. Both men had read
-        Shakespeare &mdash; Hamilton drew heavily on Roman political
+        Shakespeare. Hamilton drew heavily on Roman political
         history that was transmitted through Plutarch and through
         Shakespeare&rsquo;s Roman plays. But Hamilton&rsquo;s
         intellectual models were Hume, Montesquieu, Blackstone, the
@@ -222,14 +222,13 @@ export default function IntroductionEssay() {
       </h2>
       <p>
         Taken alone, the Adams finding could be a literary scholar&rsquo;s
-        traditional argument &mdash; that a specific Founder was
+        traditional argument: that a specific Founder was
         well-read in Shakespeare and used him. Taken alone, the
         Franklin finding could be a corpus linguist&rsquo;s
-        traditional argument &mdash; that early register-formation
+        traditional argument: that early register-formation
         shaped a writer&rsquo;s lifelong prose. Taken alone, the
-        Hamilton finding could be a methodological complaint &mdash;
-        that the project&rsquo;s tools missed something Hamilton
-        actually was doing.
+        Hamilton finding could be a methodological complaint, that
+        the project&rsquo;s tools missed something Hamilton was doing.
       </p>
       <p>
         Taken together, the three findings make a different and
@@ -278,9 +277,9 @@ export default function IntroductionEssay() {
         sections.
       </p>
       <p>
-        If you want the specific stories &mdash; Adams quoting
+        If you want the specific stories (Adams quoting
         Shakespeare at twenty-two, Washington at Valley Forge,
-        Franklin at sixteen, Adams at eighty-six &mdash; read the{" "}
+        Franklin at sixteen, Adams at eighty-six) read the{" "}
         <Link href="/case-study">case studies</Link>.
       </p>
       <p>
