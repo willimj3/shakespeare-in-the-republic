@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Essays · Shakespeare in the Republic",
   description:
-    "The Commentary — eight long-form chapters on Shakespeare's influence on six American Founders, adapted from the scholarly paper.",
+    "The Commentary: eight long-form chapters on Shakespeare's influence on six American Founders, adapted from the scholarly paper.",
 };
 
 type ChapterEntry = {
@@ -61,7 +61,7 @@ const chapters: ChapterEntry[] = [
     slug: "convergence",
     title: "Eight Ways of Looking",
     summary:
-      "Why we believe the findings. Eight independent ways of measuring Shakespearean inheritance mostly agree on the per-Founder ranking — and the one place they disagree is the disagreement that produces the two-modes story.",
+      "Why we believe the findings. Eight independent ways of measuring Shakespearean inheritance mostly agree on the per-Founder ranking, and the one place they disagree is the disagreement that produces the two-modes story.",
     status: "live",
   },
   {
@@ -99,8 +99,8 @@ export default function EssaysLanding() {
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               The essays are the long-form companion to the research paper.
               Each chapter is adapted from a section of{" "}
-              <code className="text-folio">reports/paper.md</code> in the
-              research repository &mdash; restructured for the web, with
+              <code className="text-folio">reports/paper.md</code> in
+              the research repository, restructured for the web with
               inline charts and KWIC quotations from the data.
             </p>
           </div>
@@ -168,9 +168,9 @@ function ChapterMeta({
     <div className="flex items-baseline gap-3 text-xs text-ink-muted font-sans uppercase tracking-smallcap">
       <span>Chapter {num}</span>
       {status === "soon" ? (
-        <span className="text-bronze">— coming in the next build</span>
+        <span className="text-bronze">· coming in the next build</span>
       ) : (
-        <span className="text-folio">— live</span>
+        <span className="text-folio">· live</span>
       )}
     </div>
   );

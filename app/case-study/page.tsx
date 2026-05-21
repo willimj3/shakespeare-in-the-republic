@@ -25,7 +25,7 @@ const studies: CaseStudy[] = [
     slug: "tide-in-the-affairs",
     title: "There Is a Tide",
     hook:
-      "Adams quotes Brutus's tide speech five times across thirty-eight years — in five different moods.",
+      "Adams quotes Brutus's tide speech five times across thirty-eight years, in five different moods.",
     founder: "John Adams",
     date: "1776 – 1814",
     heroImage: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
@@ -36,7 +36,7 @@ const studies: CaseStudy[] = [
     slug: "methinks-i-hear-you",
     title: "Methinks I Hear You",
     hook:
-      "Adams uses the same small Shakespearean construction four times across thirty-two years — at twenty in his diary, in 1775 ventriloquising Lord North, in 1776 putting words in James Warren's mouth, and again at fifty-three.",
+      "Adams uses the same small Shakespearean construction four times across thirty-two years: at twenty in his diary, in 1775 ventriloquising Lord North, in 1776 putting words in James Warren's mouth, and again at fifty-three.",
     founder: "John Adams",
     date: "1756 – 1788",
     heroImage: asset("/images/historical/adams-diary-manuscript.jpg"),
@@ -58,7 +58,7 @@ const studies: CaseStudy[] = [
     slug: "tis-franklins-signature",
     title: "'Tis: Franklin's Signature Contraction",
     hook:
-      "Franklin uses 'tis at 342 per million words — twice the next Founder's rate — across six decades, beginning in his Silence Dogood essays in 1722. The absorbed-mode counterpart to Adams's tide.",
+      "Franklin uses 'tis at 342 per million words (twice the next Founder's rate) across six decades, beginning in his Silence Dogood essays in 1722. The absorbed-mode counterpart to Adams's tide.",
     founder: "Benjamin Franklin",
     date: "1722 – 1778",
     heroImage: asset("/images/historical/franklin-duplessis-1785.jpg"),
@@ -102,7 +102,7 @@ const studies: CaseStudy[] = [
     slug: "lady-macbeth-and-herod",
     title: "Lady Macbeth and Herod",
     hook:
-      "Adams reaches for the same Lady Macbeth speech four times across fifty-three years — pairing it with biblical Herod in 1782 to figure England's war and, in 1818, making it the figure of revolutionary consciousness itself.",
+      "Adams reaches for the same Lady Macbeth speech four times across fifty-three years, pairing it with biblical Herod in 1782 to figure England's war and, in 1818, making it the figure of revolutionary consciousness itself.",
     founder: "John Adams",
     date: "1765 – 1818",
     heroImage: asset("/images/historical/first-folio-macbeth-p738.jpg"),

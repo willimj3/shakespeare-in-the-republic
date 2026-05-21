@@ -23,7 +23,7 @@ const VIEWS: ExplorerView[] = [
     slug: "honour-test",
     title: "The Honour Test",
     blurb:
-      "Pick a common word — honour, power, love, friend — and see what neighbours it keeps in each corpus. The same English word lives in two completely different worlds in Shakespeare and in the Founders.",
+      "Pick a common word (honour, power, love, friend) and see what neighbours it keeps in each corpus. The same English word lives in two completely different worlds in Shakespeare and in the Founders.",
     status: "live",
     image: asset("/images/historical/first-folio-othello-p827.jpg"),
     imageAlt: "First Folio: Othello",
@@ -32,7 +32,7 @@ const VIEWS: ExplorerView[] = [
     slug: "catalogue",
     title: "Reference Catalogue",
     blurb:
-      "Search and filter every traceable Shakespeare reference across the six Founders — 140 verified instances. Filter by who, when, and what kind of reference. Search by word, name, or year.",
+      "Search and filter every traceable Shakespeare reference across the six Founders: 140 verified instances. Filter by who, when, and what kind of reference. Search by word, name, or year.",
     status: "live",
     image: asset("/images/historical/adams-diary-manuscript.jpg"),
     imageAlt: "Adams diary manuscript",
@@ -41,7 +41,7 @@ const VIEWS: ExplorerView[] = [
     slug: "timeline",
     title: "Quotation Timeline",
     blurb:
-      "Every dated Shakespeare reference in the Founders' writings plotted on a single timeline, from the 1750s through the early 1800s. See when each Founder reached for Shakespeare — and notice the empty rows.",
+      "Every dated Shakespeare reference in the Founders' writings plotted on a single timeline, from the 1750s through the early 1800s. See when each Founder reached for Shakespeare, and notice the empty rows.",
     status: "live",
     image: asset("/images/historical/trumbull-declaration-1819.jpg"),
     imageAlt: "Trumbull, Declaration of Independence",
@@ -50,7 +50,7 @@ const VIEWS: ExplorerView[] = [
     slug: "metaphor",
     title: "Metaphor Fingerprints",
     blurb:
-      "Six radar charts, one per Founder. Eight metaphor families per radar — edifice, body, ship, fire, plant, path, motion, container — with Shakespeare's silhouette overlaid for comparison. Each Founder has a distinctive shape, and Shakespeare's EDIFICE is zero.",
+      "Six radar charts, one per Founder. Eight metaphor families per radar (edifice, body, ship, fire, plant, path, motion, container), with Shakespeare's silhouette overlaid for comparison. Each Founder has a distinctive shape, and Shakespeare's EDIFICE is zero.",
     status: "live",
     image: asset("/images/historical/first-folio-julius-caesar-p728.jpg"),
     imageAlt: "First Folio: Julius Caesar",
@@ -68,7 +68,7 @@ const VIEWS: ExplorerView[] = [
     slug: "archaic",
     title: "The Archaic Threshold",
     blurb:
-      "Thirty-eight archaic Shakespearean forms — thou, hath, methinks, prithee, betwixt — tested against each Founder's corpus. Pick a Founder. See which words crossed from 1600 to 1800 and which didn't.",
+      "Thirty-eight archaic Shakespearean forms (thou, hath, methinks, prithee, betwixt) tested against each Founder's corpus. Pick a Founder. See which words crossed from 1600 to 1800 and which didn't.",
     status: "live",
     image: asset("/images/historical/shakespeare-first-folio-title-page-1623.jpg"),
     imageAlt: "First Folio title page (1623).",
@@ -77,7 +77,7 @@ const VIEWS: ExplorerView[] = [
     slug: "play-atlas",
     title: "The Play Atlas",
     blurb:
-      "Which Shakespeare plays the Founders' catalogue actually reaches for. Macbeth, The Tempest, Othello, Julius Caesar, Henry V — all of them traceable to John Adams. The empty columns are part of the finding.",
+      "Which Shakespeare plays the Founders' catalogue actually reaches for. Macbeth, The Tempest, Othello, Julius Caesar, Henry V: all of them traceable to John Adams. The empty columns are part of the finding.",
     status: "live",
     image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
     imageAlt: "First Folio: Julius Caesar.",
@@ -104,7 +104,7 @@ const VIEWS: ExplorerView[] = [
     slug: "function-words",
     title: "Function-Word Fingerprint",
     blurb:
-      "Per-million rates of 36 high-frequency function words across each author, with cosine similarity to Shakespeare. The classic Mosteller-Wallace stylometric signal — the small grammatical scaffolding that distinguishes any writer from any other.",
+      "Per-million rates of 36 high-frequency function words across each author, with cosine similarity to Shakespeare. The classic Mosteller-Wallace stylometric signal: the small grammatical scaffolding that distinguishes any writer from any other.",
     status: "live",
     image: asset("/images/historical/franklin-duplessis-1785.jpg"),
     imageAlt: "Franklin (Duplessis, c. 1785).",

@@ -72,7 +72,7 @@ const CASE_STUDIES: Record<FounderId, { slug: string; title: string }[]> = {
 // Per-Founder narrative — the synthesis paragraph below the stats
 const NARRATIVE: Record<FounderId, string> = {
   adams:
-    "Adams is the most Shakespearean of the six by every measure of conscious citation. His 1758 diary contains the densest single reading event in the corpus — sixteen verbatim Macbeth passages worked through in one document at age twenty-three — and the threads that flow forward from it (the Tomorrow soliloquy, the Lady Macbeth speech, the sleep-no-more passage) recur in his writing for sixty years. He is rank 2 overall in the composite ranking, behind Franklin only because Franklin's prose is more deeply absorbed-Shakespearean even though Franklin almost never names the source. The Two Modes essay is, in large part, an argument about how to read these two side by side.",
+    "Adams is the most Shakespearean of the six by every measure of conscious citation. His 1758 diary contains the densest single reading event in the corpus (sixteen verbatim Macbeth passages worked through in one document at age twenty-three), and the threads that flow forward from it (the Tomorrow soliloquy, the Lady Macbeth speech, the sleep-no-more passage) recur in his writing for sixty years. He is rank 2 overall in the composite ranking, behind Franklin only because Franklin's prose is more deeply absorbed-Shakespearean even though Franklin almost never names the source. The Two Modes essay is, in large part, an argument about how to read these two side by side.",
   franklin:
     "Franklin is the most Shakespearean of the six by every measure that doesn't require him to say so. His prose, measured against Shakespeare's, sits closer than any other Founder's on vocabulary, archaic-form survival, and statistical style. And yet his catalogue is nearly empty: he almost never quotes Shakespeare and almost never names him. The 'Tis case study traces this absorbed-mode signature back to his Silence Dogood essays at sixteen, where the older-English contraction is already a stylistic tell. Franklin's relationship to Shakespeare is the project's clearest case of inheritance without citation.",
   jefferson:
@@ -80,9 +80,9 @@ const NARRATIVE: Record<FounderId, string> = {
   washington:
     "Washington's profile is the steady plain-prose Founder. His composite ranks fourth, never the most Shakespearean and never the least. His one well-documented Shakespearean borrowing is the Henry V 'band of brothers' phrase, threaded through his General Orders at Valley Forge (1778) and again through his Farewell Address to the Army (1783) and three further letters. The Band of Brothers case study traces all five uses. Otherwise Washington's metaphors are the metaphors of a surveyor and a soldier: PATH and MOTION, sparingly used.",
   madison:
-    "Madison sits at the bottom of the composite ranking on most measures, but with a distinctive metaphor signature — he is the PLANT specialist of the six, at 33.6 occurrences per million, roughly three times any other Founder's rate. Otherwise his prose has shed most of Shakespeare's archaic vocabulary, almost never names a Shakespearean character or play, and produces zero high-confidence direct quotations in the catalogue. His intellectual lineage runs through the classical republicans and the European confederation debates, not the English literary tradition.",
+    "Madison sits at the bottom of the composite ranking on most measures, but with a distinctive metaphor signature: he is the PLANT specialist of the six, at 33.6 occurrences per million, roughly three times any other Founder's rate. Otherwise his prose has shed most of Shakespeare's archaic vocabulary, almost never names a Shakespearean character or play, and produces zero high-confidence direct quotations in the catalogue. His intellectual lineage runs through the classical republicans and the European confederation debates, not the English literary tradition.",
   hamilton:
-    "Hamilton is the bottom of the ranking on every measure that counts conscious citation, archaic-form survival, and statistical style. His 2.35 million words contain exactly one Shakespeare reference — a paraphrased Macbeth line used as a partisan slur against Jefferson in 1801 — and it doesn't meet the catalogue's confidence threshold. The Hamilton Silence essay walks through what the absence means for the wider argument. His Federalist Papers, his Treasury reports, and his political journalism are written in the Continental Enlightenment and British constitutional registers, not the English-literary register that produced Adams and Franklin.",
+    "Hamilton is the bottom of the ranking on every measure that counts conscious citation, archaic-form survival, and statistical style. His 2.35 million words contain exactly one Shakespeare reference (a paraphrased Macbeth line used as a partisan slur against Jefferson in 1801), and it doesn't meet the catalogue's confidence threshold. The Hamilton Silence essay walks through what the absence means for the wider argument. His Federalist Papers, his Treasury reports, and his political journalism are written in the Continental Enlightenment and British constitutional registers, not the English-literary register that produced Adams and Franklin.",
 };
 
 const RANK_COLORS = ["#7B1E1E", "#9C3535", "#B95B5B", "#B59E78", "#D6C2A6", "#EAE0D0"];
@@ -325,8 +325,8 @@ export default function FounderProfilePage({ params }: { params: { id: string } 
               <p className="text-base text-ink-soft leading-relaxed">
                 None at the catalogue&rsquo;s HIGH or MEDIUM
                 confidence threshold. {meta.name}&rsquo;s engagement
-                with Shakespeare, if any, lives below the catalogue
-                &mdash; in vocabulary, archaic-form survival, and
+                with Shakespeare, if any, lives below the catalogue:
+                in vocabulary, archaic-form survival, and
                 metaphor profile rather than in named or quoted
                 reference.
               </p>

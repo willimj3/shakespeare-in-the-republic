@@ -21,7 +21,7 @@ const PAPERS: Paper[] = [
     title: "The narrative companion",
     subtitle: "Story-driven retelling of the findings",
     audience:
-      "General readers. Seven biographical scenes — Adams in his 1758 diary, Franklin at sixteen in his half-brother's print shop, Washington at Valley Forge, Hamilton in the Treasury — with the data woven into the prose rather than crowding it.",
+      "General readers. Seven biographical scenes (Adams in his 1758 diary, Franklin at sixteen in his half-brother's print shop, Washington at Valley Forge, Hamilton in the Treasury) with the data woven into the prose rather than crowding it.",
     pages: "≈16 pages",
     href: "/papers/shakespeare-in-the-republic-narrative.docx",
     format: "Word (.docx)",
@@ -40,7 +40,7 @@ const PAPERS: Paper[] = [
     title: "Passage-level results summary",
     subtitle: "Catalogue of every verifiable Shakespeare reference",
     audience:
-      "Literary and historical readers who want the raw evidence. Lists all 53 verbatim quotations from Adams, the 70 by-name references across four Founders, and 8 medium-confidence findings — each with the date, the document, and a verifiable passage.",
+      "Literary and historical readers who want the raw evidence. Lists all 53 verbatim quotations from Adams, the 70 by-name references across four Founders, and 8 medium-confidence findings, each with the date, the document, and a verifiable passage.",
     pages: "≈30 pages",
     href: "/papers/shakespeare-in-the-republic-results-summary.docx",
     format: "Word (.docx)",
@@ -236,10 +236,9 @@ export default function PapersPage() {
           </p>
           <p className="text-base text-ink-soft mt-4 leading-relaxed">
             The site repository for{" "}
-            <em>Shakespeare in the Republic</em> &mdash; including the
-            page templates, the design tokens, and the data export
-            pipeline that produces the JSON this site reads &mdash; is
-            at{" "}
+            <em>Shakespeare in the Republic</em> (including the page
+            templates, the design tokens, and the data export
+            pipeline that produces the JSON this site reads) is at{" "}
             <a
               href="https://github.com/willimj3/shakespeare-in-the-republic"
               target="_blank"
