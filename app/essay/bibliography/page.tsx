@@ -334,12 +334,11 @@ export default function BibliographyEssay() {
 
       <p>
         The work is dedicated, in the way these things usually are,
-        to my students: the ones who took the question
-        &ldquo;did the Founders sound like Shakespeare&rdquo;
-        seriously enough at office hours to make me think it might
-        be worth answering, and patient enough to listen to me
-        explain how Configural Frequency Analysis works on a
-        Tuesday afternoon.
+        to my students: the ones who took the question of what of
+        Shakespeare survived into the Founders seriously enough at
+        office hours to make me think it might be worth answering,
+        and patient enough to listen to me explain how Configural
+        Frequency Analysis works on a Tuesday afternoon.
       </p>
 
       <div className="ornament" />

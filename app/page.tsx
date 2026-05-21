@@ -47,7 +47,8 @@ function Hero() {
               Republic
             </h1>
             <p className="font-display text-xl text-ink-soft italic mt-4">
-              Did the Founders write the way Shakespeare did? The corpus
+              How much of Shakespeare&rsquo;s English carried forward
+              into the writing of the American Founders? The corpus
               has a surprising answer.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
@@ -55,8 +56,8 @@ function Hero() {
               Washington left behind almost twenty-five million words.
               Shakespeare&rsquo;s complete works are just under a
               million. Two centuries after Shakespeare died and an
-              ocean away, did anything of his English survive into the
-              Founders&rsquo; writing? And if so, whose? And how?
+              ocean away, what of his English survived into the
+              Founders&rsquo; writing? In whom did it survive, and how?
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               This site lets you see the answer in their own words.

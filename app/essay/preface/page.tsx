@@ -23,32 +23,33 @@ export default function PrefaceEssay() {
     >
       <div className="has-dropcap">
         <p>
-          This site began with a casual question. Did the Founders
-          sound like Shakespeare?
+          This site began with a casual question. How much of
+          Shakespeare&rsquo;s English carried forward into the writing
+          of the American Founders, and in which of them?
         </p>
         <p>
-          The kind of question almost no-one would try to
-          answer, because we mostly think we already know. Yes, the
-          Founders were classically educated and read Shakespeare;
-          they must have absorbed some of it. Or: of course they
-          did; everyone literate in the 18th century did. Or
-          conversely: they didn&rsquo;t really. Their prose is
-          Hume, Montesquieu, Locke; Shakespeare was for the
-          drawing-room. Three different answers, all delivered
-          confidently from the same general background of common
-          knowledge, none of them based on checking.
+          The kind of question almost no-one would try to answer,
+          because we mostly think we already know. Yes, the Founders
+          were classically educated and read Shakespeare; they must
+          have absorbed some of it. Or: of course they did; everyone
+          literate in the 18th century did. Or conversely: they
+          didn&rsquo;t really. Their prose is Hume, Montesquieu,
+          Locke; Shakespeare was for the drawing-room. Three
+          different answers, all delivered confidently from the
+          same general background of common knowledge, none of them
+          based on checking.
         </p>
         <p>
           The Founders left an enormous amount of writing: letters,
-          diaries, drafts, debates, political essays,
-          speeches. The complete digitised corpus runs to roughly
-          25 million words across six men, and it has been
-          searchable for almost twenty years through the Founders
-          Online archive run by the National Archives.
-          Shakespeare&rsquo;s complete works are about 900,000 words.
-          With those two corpora in hand, the question stops being a
-          matter of feel and becomes a matter of arithmetic. Did
-          they sound like Shakespeare? You can count.
+          diaries, drafts, debates, political essays, speeches. The
+          complete digitised corpus runs to roughly 25 million
+          words across six men, and it has been searchable for
+          almost twenty years through the Founders Online archive
+          run by the National Archives. Shakespeare&rsquo;s
+          complete works are about 900,000 words. With those two
+          corpora in hand, the question stops being a matter of
+          feel and becomes a matter of arithmetic. What of
+          Shakespeare survived into the Founders? You can count.
         </p>
       </div>
 

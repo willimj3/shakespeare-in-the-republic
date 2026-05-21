@@ -29,7 +29,7 @@ const chapters: ChapterEntry[] = [
     slug: "introduction",
     title: "The Influence Question",
     summary:
-      "What it means to ask carefully whether the Founders sounded like Shakespeare. The three findings in summary; a reading guide to the rest.",
+      "What it means to ask carefully how much of Shakespeare's English carried forward into the Founders' writing. The three findings in summary; a reading guide to the rest.",
     status: "live",
   },
   {

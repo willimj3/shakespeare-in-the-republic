@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "The Influence Question · Introduction · Shakespeare in the Republic",
   description:
-    "What it means to ask carefully whether the Founders sounded like Shakespeare. The setup for the rest of the site.",
+    "What it means to ask carefully how much of Shakespeare's English survived into the Founders' writing. The setup for the rest of the site.",
 };
 
 export default function IntroductionEssay() {
@@ -17,7 +17,7 @@ export default function IntroductionEssay() {
       totalChapters={8}
       sectionMarker="Essay · Introduction"
       title="The Influence Question"
-      subtitle="What it means to ask carefully whether the Founders sounded like Shakespeare, and the setup for the rest of the site."
+      subtitle="What it means to ask carefully how much of Shakespeare&rsquo;s English survived into the Founders&rsquo; writing, and the setup for the rest of the site."
       prevHref="/essay/preface"
       prevLabel="Preface"
       nextHref="/essay/methods"
