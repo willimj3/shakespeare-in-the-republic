@@ -256,18 +256,19 @@ export default function Macbeth1758CaseStudy() {
 
       <p>
         The sixteen verbatim Macbeth quotations are also not the only
-        Shakespearean material in the diary entry. Below the
-        catalogue&rsquo;s seven-word strict threshold, the{" "}
+        Shakespearean material Adams was working through in 1758.
+        Below the catalogue&rsquo;s seven-word strict threshold, the{" "}
         <Link href="/explorer/candidate-echoes">
           candidate-echoes
         </Link>{" "}
-        scan recovers more from the same document:{" "}
-        <em>farewell the neighing steed</em> (from Othello&rsquo;s
-        farewell speech, which Adams transcribes immediately after the
-        Tomorrow soliloquy), <em>sleep the innocent sleep</em> (the
-        Macbeth 2.2 passage), and <em>full of sound and fury</em>{" "}
-        (Macbeth 5.5, again). The diary&rsquo;s Shakespearean density
-        is even higher than the catalogue alone shows.
+        scan recovers more from his 1758 documents:{" "}
+        <em>full of sound and fury</em> and{" "}
+        <em>sleep the innocent sleep</em> (both Macbeth, from this
+        same diary entry), plus <em>farewell the neighing steed</em>{" "}
+        (Othello, from the Cranch letter that frames the Othello
+        reading episode that year). The Shakespearean density of
+        Adams&rsquo;s 1758 reading is even higher than the catalogue
+        alone shows.
       </p>
 
       <div className="ornament" />
