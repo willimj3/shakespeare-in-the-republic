@@ -338,15 +338,6 @@ export default function BibliographyEssay() {
         public-domain image releases.
       </p>
 
-      <p>
-        The work is dedicated, in the way these things usually are,
-        to my students: the ones who took the question of what of
-        Shakespeare survived into the Founders seriously enough at
-        office hours to make me think it might be worth answering,
-        and patient enough to listen to me explain how Configural
-        Frequency Analysis works on a Tuesday afternoon.
-      </p>
-
       <div className="ornament" />
 
       <p className="text-sm text-ink-muted italic text-center">
