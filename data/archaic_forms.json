@@ -1,0 +1,1101 @@
+{
+ "generated": "from tables/cs5_archaic_form_survival.csv (archaic categories only)",
+ "forms": [
+  {
+   "form": "thou",
+   "category": "ARCHAIC_2P",
+   "shake_rate": 6303.949
+  },
+  {
+   "form": "thy",
+   "category": "ARCHAIC_2P",
+   "shake_rate": 4615.973
+  },
+  {
+   "form": "thee",
+   "category": "ARCHAIC_2P",
+   "shake_rate": 3651.243
+  },
+  {
+   "form": "hath",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 2243.39
+  },
+  {
+   "form": "tis",
+   "category": "CONTRACTIONS_OLD",
+   "shake_rate": 1584.137
+  },
+  {
+   "form": "doth",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 1087.887
+  },
+  {
+   "form": "art",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 1042.005
+  },
+  {
+   "form": "hast",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 668.912
+  },
+  {
+   "form": "thine",
+   "category": "ARCHAIC_2P",
+   "shake_rate": 519.191
+  },
+  {
+   "form": "dost",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 479.346
+  },
+  {
+   "form": "ere",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 408.109
+  },
+  {
+   "form": "wilt",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 357.397
+  },
+  {
+   "form": "ye",
+   "category": "ARCHAIC_2P",
+   "shake_rate": 340.493
+  },
+  {
+   "form": "shalt",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 338.078
+  },
+  {
+   "form": "prithee",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 245.107
+  },
+  {
+   "form": "didst",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 211.299
+  },
+  {
+   "form": "canst",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 193.187
+  },
+  {
+   "form": "twas",
+   "category": "CONTRACTIONS_OLD",
+   "shake_rate": 187.15
+  },
+  {
+   "form": "methinks",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 169.039
+  },
+  {
+   "form": "oft",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 158.172
+  },
+  {
+   "form": "wouldst",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 152.135
+  },
+  {
+   "form": "anon",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 150.928
+  },
+  {
+   "form": "twere",
+   "category": "CONTRACTIONS_OLD",
+   "shake_rate": 141.268
+  },
+  {
+   "form": "whilst",
+   "category": "ARCHAIC_PREP",
+   "shake_rate": 135.231
+  },
+  {
+   "form": "wert",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 113.498
+  },
+  {
+   "form": "wast",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 90.557
+  },
+  {
+   "form": "shouldst",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 80.897
+  },
+  {
+   "form": "mayst",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 80.897
+  },
+  {
+   "form": "betwixt",
+   "category": "ARCHAIC_PREP",
+   "shake_rate": 63.993
+  },
+  {
+   "form": "forsooth",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 56.749
+  },
+  {
+   "form": "perchance",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 50.712
+  },
+  {
+   "form": "methought",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 49.504
+  },
+  {
+   "form": "amongst",
+   "category": "ARCHAIC_PREP",
+   "shake_rate": 43.467
+  },
+  {
+   "form": "couldst",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 31.393
+  },
+  {
+   "form": "mightst",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 28.978
+  },
+  {
+   "form": "verily",
+   "category": "ARCHAIC_DISC",
+   "shake_rate": 15.696
+  },
+  {
+   "form": "saith",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 8.452
+  },
+  {
+   "form": "mightest",
+   "category": "ARCHAIC_VERB",
+   "shake_rate": 0.0
+  }
+ ],
+ "founder_rates": {
+  "washington": {
+   "thou": {
+    "rate": 1.912,
+    "survives": true
+   },
+   "thee": {
+    "rate": 0.869,
+    "survives": true
+   },
+   "thy": {
+    "rate": 1.565,
+    "survives": true
+   },
+   "thine": {
+    "rate": 0.695,
+    "survives": false
+   },
+   "ye": {
+    "rate": 5.215,
+    "survives": true
+   },
+   "hath": {
+    "rate": 40.854,
+    "survives": true
+   },
+   "doth": {
+    "rate": 15.472,
+    "survives": true
+   },
+   "saith": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "art": {
+    "rate": 30.597,
+    "survives": true
+   },
+   "wert": {
+    "rate": 0.174,
+    "survives": false
+   },
+   "wast": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "hast": {
+    "rate": 0.348,
+    "survives": false
+   },
+   "dost": {
+    "rate": 0.348,
+    "survives": false
+   },
+   "didst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "shalt": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "wilt": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "canst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "couldst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "shouldst": {
+    "rate": 0.174,
+    "survives": false
+   },
+   "wouldst": {
+    "rate": 0.174,
+    "survives": false
+   },
+   "mayst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "mightst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "methinks": {
+    "rate": 0.869,
+    "survives": true
+   },
+   "methought": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "prithee": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "forsooth": {
+    "rate": 0.522,
+    "survives": false
+   },
+   "perchance": {
+    "rate": 1.738,
+    "survives": true
+   },
+   "verily": {
+    "rate": 2.782,
+    "survives": true
+   },
+   "anon": {
+    "rate": 0.174,
+    "survives": false
+   },
+   "ere": {
+    "rate": 29.728,
+    "survives": true
+   },
+   "oft": {
+    "rate": 0.348,
+    "survives": false
+   },
+   "whilst": {
+    "rate": 102.57,
+    "survives": true
+   },
+   "amongst": {
+    "rate": 27.642,
+    "survives": true
+   },
+   "betwixt": {
+    "rate": 1.565,
+    "survives": true
+   },
+   "tis": {
+    "rate": 29.38,
+    "survives": true
+   },
+   "twas": {
+    "rate": 1.912,
+    "survives": true
+   },
+   "twere": {
+    "rate": 0.0,
+    "survives": false
+   }
+  },
+  "jefferson": {
+   "thou": {
+    "rate": 52.363,
+    "survives": true
+   },
+   "thee": {
+    "rate": 19.955,
+    "survives": true
+   },
+   "thy": {
+    "rate": 11.403,
+    "survives": true
+   },
+   "thine": {
+    "rate": 10.803,
+    "survives": true
+   },
+   "ye": {
+    "rate": 33.008,
+    "survives": true
+   },
+   "hath": {
+    "rate": 42.611,
+    "survives": true
+   },
+   "doth": {
+    "rate": 10.653,
+    "survives": true
+   },
+   "saith": {
+    "rate": 4.201,
+    "survives": true
+   },
+   "art": {
+    "rate": 83.121,
+    "survives": true
+   },
+   "wert": {
+    "rate": 0.3,
+    "survives": false
+   },
+   "wast": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "hast": {
+    "rate": 1.65,
+    "survives": true
+   },
+   "dost": {
+    "rate": 1.35,
+    "survives": true
+   },
+   "didst": {
+    "rate": 0.45,
+    "survives": false
+   },
+   "shalt": {
+    "rate": 0.9,
+    "survives": true
+   },
+   "wilt": {
+    "rate": 3.001,
+    "survives": true
+   },
+   "canst": {
+    "rate": 4.501,
+    "survives": true
+   },
+   "couldst": {
+    "rate": 0.6,
+    "survives": false
+   },
+   "shouldst": {
+    "rate": 0.75,
+    "survives": true
+   },
+   "wouldst": {
+    "rate": 0.45,
+    "survives": false
+   },
+   "mayst": {
+    "rate": 3.901,
+    "survives": true
+   },
+   "mightst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "mightest": {
+    "rate": 0.45,
+    "survives": false
+   },
+   "methinks": {
+    "rate": 1.2,
+    "survives": true
+   },
+   "methought": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "prithee": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "forsooth": {
+    "rate": 5.401,
+    "survives": true
+   },
+   "perchance": {
+    "rate": 3.151,
+    "survives": true
+   },
+   "verily": {
+    "rate": 14.404,
+    "survives": true
+   },
+   "anon": {
+    "rate": 0.75,
+    "survives": true
+   },
+   "ere": {
+    "rate": 27.007,
+    "survives": true
+   },
+   "oft": {
+    "rate": 10.503,
+    "survives": true
+   },
+   "whilst": {
+    "rate": 13.653,
+    "survives": true
+   },
+   "amongst": {
+    "rate": 3.301,
+    "survives": true
+   },
+   "betwixt": {
+    "rate": 2.701,
+    "survives": true
+   },
+   "tis": {
+    "rate": 25.506,
+    "survives": true
+   },
+   "twas": {
+    "rate": 3.301,
+    "survives": true
+   },
+   "twere": {
+    "rate": 5.101,
+    "survives": true
+   }
+  },
+  "adams": {
+   "thou": {
+    "rate": 31.129,
+    "survives": true
+   },
+   "thee": {
+    "rate": 15.565,
+    "survives": true
+   },
+   "thy": {
+    "rate": 24.806,
+    "survives": true
+   },
+   "thine": {
+    "rate": 3.648,
+    "survives": true
+   },
+   "ye": {
+    "rate": 20.428,
+    "survives": true
+   },
+   "hath": {
+    "rate": 67.365,
+    "survives": true
+   },
+   "doth": {
+    "rate": 11.43,
+    "survives": true
+   },
+   "saith": {
+    "rate": 6.566,
+    "survives": true
+   },
+   "art": {
+    "rate": 161.725,
+    "survives": true
+   },
+   "wert": {
+    "rate": 0.486,
+    "survives": false
+   },
+   "wast": {
+    "rate": 0.486,
+    "survives": false
+   },
+   "hast": {
+    "rate": 9.241,
+    "survives": true
+   },
+   "dost": {
+    "rate": 0.973,
+    "survives": false
+   },
+   "didst": {
+    "rate": 0.486,
+    "survives": false
+   },
+   "shalt": {
+    "rate": 3.405,
+    "survives": true
+   },
+   "wilt": {
+    "rate": 0.486,
+    "survives": false
+   },
+   "canst": {
+    "rate": 0.243,
+    "survives": false
+   },
+   "couldst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "shouldst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "wouldst": {
+    "rate": 0.973,
+    "survives": false
+   },
+   "mayst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "mightst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "methinks": {
+    "rate": 1.216,
+    "survives": true
+   },
+   "methought": {
+    "rate": 0.243,
+    "survives": false
+   },
+   "prithee": {
+    "rate": 0.243,
+    "survives": false
+   },
+   "forsooth": {
+    "rate": 2.432,
+    "survives": true
+   },
+   "perchance": {
+    "rate": 0.243,
+    "survives": false
+   },
+   "verily": {
+    "rate": 6.566,
+    "survives": true
+   },
+   "anon": {
+    "rate": 0.486,
+    "survives": false
+   },
+   "ere": {
+    "rate": 4.621,
+    "survives": true
+   },
+   "oft": {
+    "rate": 3.405,
+    "survives": true
+   },
+   "whilst": {
+    "rate": 4.134,
+    "survives": true
+   },
+   "amongst": {
+    "rate": 9.241,
+    "survives": true
+   },
+   "betwixt": {
+    "rate": 1.216,
+    "survives": true
+   },
+   "tis": {
+    "rate": 31.859,
+    "survives": true
+   },
+   "twas": {
+    "rate": 1.459,
+    "survives": true
+   },
+   "twere": {
+    "rate": 0.243,
+    "survives": false
+   }
+  },
+  "madison": {
+   "thou": {
+    "rate": 37.402,
+    "survives": true
+   },
+   "thee": {
+    "rate": 31.671,
+    "survives": true
+   },
+   "thy": {
+    "rate": 22.019,
+    "survives": true
+   },
+   "thine": {
+    "rate": 5.429,
+    "survives": true
+   },
+   "ye": {
+    "rate": 43.133,
+    "survives": true
+   },
+   "hath": {
+    "rate": 17.193,
+    "survives": true
+   },
+   "doth": {
+    "rate": 9.35,
+    "survives": true
+   },
+   "saith": {
+    "rate": 0.905,
+    "survives": false
+   },
+   "art": {
+    "rate": 104.363,
+    "survives": true
+   },
+   "wert": {
+    "rate": 0.603,
+    "survives": false
+   },
+   "wast": {
+    "rate": 0.603,
+    "survives": false
+   },
+   "hast": {
+    "rate": 2.715,
+    "survives": true
+   },
+   "dost": {
+    "rate": 0.603,
+    "survives": false
+   },
+   "didst": {
+    "rate": 0.603,
+    "survives": false
+   },
+   "shalt": {
+    "rate": 1.81,
+    "survives": true
+   },
+   "wilt": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "canst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "couldst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "shouldst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "wouldst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "mayst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "mightst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "methinks": {
+    "rate": 0.302,
+    "survives": false
+   },
+   "methought": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "prithee": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "forsooth": {
+    "rate": 0.302,
+    "survives": false
+   },
+   "perchance": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "verily": {
+    "rate": 0.905,
+    "survives": false
+   },
+   "anon": {
+    "rate": 17.796,
+    "survives": true
+   },
+   "ere": {
+    "rate": 8.144,
+    "survives": true
+   },
+   "oft": {
+    "rate": 0.302,
+    "survives": false
+   },
+   "whilst": {
+    "rate": 272.37,
+    "survives": true
+   },
+   "amongst": {
+    "rate": 3.318,
+    "survives": true
+   },
+   "betwixt": {
+    "rate": 1.508,
+    "survives": true
+   },
+   "tis": {
+    "rate": 15.685,
+    "survives": true
+   },
+   "twas": {
+    "rate": 4.524,
+    "survives": true
+   },
+   "twere": {
+    "rate": 0.0,
+    "survives": false
+   }
+  },
+  "hamilton": {
+   "thou": {
+    "rate": 11.06,
+    "survives": true
+   },
+   "thee": {
+    "rate": 6.636,
+    "survives": true
+   },
+   "thy": {
+    "rate": 18.138,
+    "survives": true
+   },
+   "thine": {
+    "rate": 1.77,
+    "survives": false
+   },
+   "ye": {
+    "rate": 36.276,
+    "survives": true
+   },
+   "hath": {
+    "rate": 11.502,
+    "survives": true
+   },
+   "doth": {
+    "rate": 2.654,
+    "survives": true
+   },
+   "saith": {
+    "rate": 0.885,
+    "survives": false
+   },
+   "art": {
+    "rate": 25.659,
+    "survives": true
+   },
+   "wert": {
+    "rate": 0.885,
+    "survives": false
+   },
+   "wast": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "hast": {
+    "rate": 1.77,
+    "survives": false
+   },
+   "dost": {
+    "rate": 1.77,
+    "survives": false
+   },
+   "didst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "shalt": {
+    "rate": 1.327,
+    "survives": false
+   },
+   "wilt": {
+    "rate": 0.885,
+    "survives": false
+   },
+   "canst": {
+    "rate": 1.327,
+    "survives": false
+   },
+   "couldst": {
+    "rate": 0.442,
+    "survives": false
+   },
+   "shouldst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "wouldst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "mayst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "mightst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "methinks": {
+    "rate": 0.885,
+    "survives": false
+   },
+   "methought": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "prithee": {
+    "rate": 0.442,
+    "survives": false
+   },
+   "forsooth": {
+    "rate": 0.442,
+    "survives": false
+   },
+   "perchance": {
+    "rate": 2.212,
+    "survives": true
+   },
+   "verily": {
+    "rate": 9.733,
+    "survives": true
+   },
+   "anon": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "ere": {
+    "rate": 24.331,
+    "survives": true
+   },
+   "oft": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "whilst": {
+    "rate": 11.502,
+    "survives": true
+   },
+   "amongst": {
+    "rate": 6.636,
+    "survives": true
+   },
+   "betwixt": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "tis": {
+    "rate": 144.661,
+    "survives": true
+   },
+   "twas": {
+    "rate": 3.539,
+    "survives": true
+   },
+   "twere": {
+    "rate": 1.77,
+    "survives": false
+   }
+  },
+  "franklin": {
+   "thou": {
+    "rate": 131.083,
+    "survives": true
+   },
+   "thee": {
+    "rate": 84.514,
+    "survives": true
+   },
+   "thy": {
+    "rate": 169.603,
+    "survives": true
+   },
+   "thine": {
+    "rate": 12.073,
+    "survives": true
+   },
+   "ye": {
+    "rate": 47.144,
+    "survives": true
+   },
+   "hath": {
+    "rate": 149.481,
+    "survives": true
+   },
+   "doth": {
+    "rate": 24.722,
+    "survives": true
+   },
+   "saith": {
+    "rate": 2.875,
+    "survives": true
+   },
+   "art": {
+    "rate": 153.506,
+    "survives": true
+   },
+   "wert": {
+    "rate": 2.875,
+    "survives": true
+   },
+   "wast": {
+    "rate": 0.575,
+    "survives": false
+   },
+   "hast": {
+    "rate": 17.248,
+    "survives": true
+   },
+   "dost": {
+    "rate": 8.049,
+    "survives": true
+   },
+   "didst": {
+    "rate": 0.575,
+    "survives": false
+   },
+   "shalt": {
+    "rate": 11.499,
+    "survives": true
+   },
+   "wilt": {
+    "rate": 7.474,
+    "survives": true
+   },
+   "canst": {
+    "rate": 4.024,
+    "survives": true
+   },
+   "couldst": {
+    "rate": 0.575,
+    "survives": false
+   },
+   "shouldst": {
+    "rate": 0.575,
+    "survives": false
+   },
+   "wouldst": {
+    "rate": 5.174,
+    "survives": true
+   },
+   "mayst": {
+    "rate": 1.725,
+    "survives": false
+   },
+   "mightst": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "methinks": {
+    "rate": 38.52,
+    "survives": true
+   },
+   "methought": {
+    "rate": 0.575,
+    "survives": false
+   },
+   "prithee": {
+    "rate": 1.15,
+    "survives": false
+   },
+   "forsooth": {
+    "rate": 4.599,
+    "survives": true
+   },
+   "perchance": {
+    "rate": 0.575,
+    "survives": false
+   },
+   "verily": {
+    "rate": 1.15,
+    "survives": false
+   },
+   "anon": {
+    "rate": 0.0,
+    "survives": false
+   },
+   "ere": {
+    "rate": 12.073,
+    "survives": true
+   },
+   "oft": {
+    "rate": 9.199,
+    "survives": true
+   },
+   "whilst": {
+    "rate": 9.199,
+    "survives": true
+   },
+   "amongst": {
+    "rate": 11.499,
+    "survives": true
+   },
+   "betwixt": {
+    "rate": 5.749,
+    "survives": true
+   },
+   "tis": {
+    "rate": 358.18,
+    "survives": true
+   },
+   "twas": {
+    "rate": 15.523,
+    "survives": true
+   },
+   "twere": {
+    "rate": 1.15,
+    "survives": false
+   }
+  }
+ }
+}

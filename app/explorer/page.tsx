@@ -64,6 +64,15 @@ const VIEWS: ExplorerView[] = [
     image: asset("/images/historical/first-folio-macbeth-p742.jpg"),
     imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",
   },
+  {
+    slug: "archaic",
+    title: "The Archaic Threshold",
+    blurb:
+      "Thirty-eight archaic Shakespearean forms — thou, hath, methinks, prithee, betwixt — tested against each Founder's corpus. Pick a Founder. See which words crossed from 1600 to 1800 and which didn't.",
+    status: "live",
+    image: asset("/images/historical/shakespeare-first-folio-title-page-1623.jpg"),
+    imageAlt: "First Folio title page (1623).",
+  },
 ];
 
 export default function ExplorerLanding() {
