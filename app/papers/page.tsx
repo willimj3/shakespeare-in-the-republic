@@ -104,6 +104,27 @@ const DATA_FILES: DataFile[] = [
       "Per-play aggregated citation counts from the catalogue, broken down by Founder. Powers the Play Atlas explorer.",
     size: "2 KB",
   },
+  {
+    file: "sentence_length.json",
+    title: "Sentence-length distributions",
+    description:
+      "5,000 random sentences per author, sentence-length histograms with mean/median/stdev. Powers the Sentence Length explorer.",
+    size: "3 KB",
+  },
+  {
+    file: "function_words.json",
+    title: "Function-word stylometric fingerprint",
+    description:
+      "Per-million rates of 36 high-frequency function words across each author's full corpus. The Mosteller-Wallace authorship signal. Powers the Function-Word Fingerprint explorer.",
+    size: "7 KB",
+  },
+  {
+    file: "modal_verbs.json",
+    title: "Modal-verb diachronic rates",
+    description:
+      "Per-million rates of ten English modal verbs binned by decade across each Founder's career, plus Shakespeare's fixed reference rates. Powers the Modal-Verb Shift explorer.",
+    size: "8 KB",
+  },
 ];
 
 export default function PapersPage() {

@@ -91,6 +91,33 @@ const VIEWS: ExplorerView[] = [
     image: asset("/images/historical/shakespeare-chandos-portrait.jpg"),
     imageAlt: "Shakespeare (Chandos portrait, c. 1610).",
   },
+  {
+    slug: "sentence-length",
+    title: "Sentence Length",
+    blurb:
+      "Histograms of sentence length across each Founder and Shakespeare. Shakespeare's median sentence is five words; the Founders' run 17 to 26. The most dramatic single divergence the project finds between the corpora.",
+    status: "live",
+    image: asset("/images/historical/first-folio-othello-p827.jpg"),
+    imageAlt: "First Folio: Othello, page 827.",
+  },
+  {
+    slug: "function-words",
+    title: "Function-Word Fingerprint",
+    blurb:
+      "Per-million rates of 36 high-frequency function words across each author, with cosine similarity to Shakespeare. The classic Mosteller-Wallace stylometric signal — the small grammatical scaffolding that distinguishes any writer from any other.",
+    status: "live",
+    image: asset("/images/historical/franklin-duplessis-1785.jpg"),
+    imageAlt: "Franklin (Duplessis, c. 1785).",
+  },
+  {
+    slug: "modal-verbs",
+    title: "The Modal-Verb Shift",
+    blurb:
+      "Watch shall give way to will and ought give way to should over the Founders' sixty-year writing window. The English modal system in transit from 1600 to 1820, with Shakespeare's rates as the fixed reference.",
+    status: "live",
+    image: asset("/images/historical/adams-trumbull-c1792.jpg"),
+    imageAlt: "John Adams (Trumbull, c. 1792).",
+  },
 ];
 
 export default function ExplorerLanding() {
