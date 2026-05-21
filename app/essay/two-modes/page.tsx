@@ -22,7 +22,7 @@ export default function TwoModesEssay() {
   return (
     <EssayLayout
       chapter={4}
-      totalChapters={8}
+      totalChapters={9}
       sectionMarker="Essay · The substantive findings"
       title="Two Modes of Shakespearean Influence"
       subtitle="Adams citational, Franklin absorbed, and why the corpus needs both methods to see them."

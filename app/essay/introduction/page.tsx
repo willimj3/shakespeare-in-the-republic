@@ -20,7 +20,7 @@ export default function IntroductionEssay() {
   return (
     <EssayLayout
       chapter={2}
-      totalChapters={8}
+      totalChapters={9}
       sectionMarker="Essay · Introduction"
       title="The Influence Question"
       subtitle="What it means to ask carefully how much of Shakespeare&rsquo;s English survived into the Founders&rsquo; writing, and the setup for the rest of the site."

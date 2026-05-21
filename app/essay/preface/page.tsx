@@ -18,7 +18,7 @@ export default function PrefaceEssay() {
   return (
     <EssayLayout
       chapter={1}
-      totalChapters={8}
+      totalChapters={9}
       sectionMarker="Essay · Preface"
       title="Preface"
       subtitle="Why this site exists, what it&rsquo;s for, and how to read it."

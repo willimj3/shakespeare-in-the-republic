@@ -19,7 +19,7 @@ export default function HonourTestEssay() {
   return (
     <EssayLayout
       chapter={5}
-      totalChapters={8}
+      totalChapters={9}
       sectionMarker="Essay · The substantive findings"
       title="The Honour Test"
       subtitle="Shared words, different worlds. The Founders inherited Shakespeare&rsquo;s vocabulary and rebuilt its conceptual content."

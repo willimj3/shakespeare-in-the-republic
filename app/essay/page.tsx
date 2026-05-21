@@ -59,11 +59,19 @@ const chapters: ChapterEntry[] = [
     slug: "roman-shakespeare",
     title: "The Roman Shakespeare",
     summary:
-      "The Founders' historical Shakespeare is Roman, not English. The English histories' apparent prominence in the candidate-echoes tier is a methodological mirage; Julius Caesar's character types do the political work, across five of the six Founders and forty-seven years.",
+      "The Founders' historical Shakespeare is one play. Five of the six use Brutus and Caesar as recognisable types across forty-seven years; the English histories barely show up. Hamilton, who never names Shakespeare in his life, can call Julius Caesar the greatest man who ever lived.",
     status: "live",
   },
   {
     num: 6,
+    slug: "reading-by-generation",
+    title: "Reading by Generation",
+    summary:
+      "Adams was born in 1735, Hamilton in 1757. The data shows their Shakespeare is a generation apart. The catalogue tracks when each Founder came of age more closely than it tracks who they were.",
+    status: "live",
+  },
+  {
+    num: 7,
     slug: "convergence",
     title: "Eight Ways of Looking",
     summary:
@@ -71,7 +79,7 @@ const chapters: ChapterEntry[] = [
     status: "live",
   },
   {
-    num: 7,
+    num: 8,
     slug: "hamilton-silence",
     title: "The Hamilton Silence",
     summary:
@@ -79,7 +87,7 @@ const chapters: ChapterEntry[] = [
     status: "live",
   },
   {
-    num: 8,
+    num: 9,
     slug: "bibliography",
     title: "References and Reproducibility",
     summary:

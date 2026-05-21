@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 export default function BibliographyEssay() {
   return (
     <EssayLayout
-      chapter={8}
-      totalChapters={8}
+      chapter={9}
+      totalChapters={9}
       sectionMarker="Essay · Bibliography"
       title="References and Reproducibility"
       subtitle="Where everything in this site came from, and how to verify it."

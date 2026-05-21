@@ -19,13 +19,13 @@ export const metadata: Metadata = {
 export default function ConvergenceEssay() {
   return (
     <EssayLayout
-      chapter={6}
-      totalChapters={8}
+      chapter={7}
+      totalChapters={9}
       sectionMarker="Essay · Why we believe the findings"
       title="Eight Ways of Looking"
       subtitle="The project doesn&rsquo;t rest on a single statistical test. Eight different ways of asking &lsquo;how Shakespearean is this Founder?&rsquo; mostly give the same answer. Where they disagree turns out to be the most important place."
-      prevHref="/essay/roman-shakespeare"
-      prevLabel="The Roman Shakespeare"
+      prevHref="/essay/reading-by-generation"
+      prevLabel="Reading by Generation"
       nextHref="/essay/hamilton-silence"
       nextLabel="The Hamilton Silence"
     >

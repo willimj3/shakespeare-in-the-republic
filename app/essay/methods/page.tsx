@@ -19,7 +19,7 @@ export default function MethodsEssay() {
   return (
     <EssayLayout
       chapter={3}
-      totalChapters={8}
+      totalChapters={9}
       sectionMarker="Essay · The setup"
       title="How We Asked the Question"
       subtitle="What the project did, in plain English. Why we picked the corpus we did, what counts as &lsquo;Shakespearean influence&rsquo;, and how we kept ourselves honest."
