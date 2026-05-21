@@ -143,6 +143,23 @@ export default function HamiltonSilenceCaseStudy() {
         writer&rsquo;s life. The role here is: weapon-of-last-resort.
       </p>
 
+      <p>
+        One earlier trace surfaces at a looser threshold. In an 11
+        September 1779 letter to John Laurens, Hamilton writes of
+        General Charles Lee that if he &ldquo;had not a little spice
+        of the Julius Caesar or Cromwell in him, he would be a very
+        clever fellow.&rdquo; The project&rsquo;s{" "}
+        <Link href="/explorer/thematic-allusions">
+          thematic-allusions
+        </Link>{" "}
+        scan flags it as Hamilton&rsquo;s single invocation of a
+        Shakespearean character as a type. It is tangential rather
+        than full-bodied: Julius Caesar shares the line with Cromwell,
+        and the phrasing reads as classical political type more than
+        Shakespearean reading. One allusion across 2.35 million
+        words doesn&rsquo;t change the shape of the finding.
+      </p>
+
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">

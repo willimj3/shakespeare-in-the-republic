@@ -186,6 +186,28 @@ export default function MethodsEssay() {
         compares what each finds.
       </p>
 
+      <p>
+        Between those two extremes sits a third, intermediate tier:
+        below the strict catalogue, above the pattern-level signal.
+        These are short verbatim matches (four or five consecutive
+        words containing at least one distinctively Shakespearean
+        content word) and thematic invocations of Shakespearean
+        characters as types. The strict catalogue would filter them
+        out; the pattern-level statistics smooth them away. Read on
+        their own they recover phrases like <em>a pound of flesh</em>{" "}
+        (Jefferson 1790), <em>full of sound and fury</em> (Adams 1758
+        and again in 1813), and <em>another Sir John Falstaff</em>{" "}
+        (Adams 1776). Most short matches between any two large
+        English corpora are coincidence, so the middle tier is
+        published with explicit caveats; the{" "}
+        <Link href="/explorer/candidate-echoes">candidate echoes</Link>{" "}
+        and{" "}
+        <Link href="/explorer/thematic-allusions">
+          thematic allusions
+        </Link>{" "}
+        explorers let you judge each case yourself.
+      </p>
+
       <hr />
 
       {/* ── Eight methods sketched ─────────────────────────────────── */}

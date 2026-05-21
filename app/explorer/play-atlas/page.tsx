@@ -127,6 +127,24 @@ export default function PlayAtlasPage() {
               <em> conscious citation</em>, only one of the six
               Founders puts much on the page.
             </p>
+            <p className="text-base text-ink-soft mt-4 leading-relaxed">
+              The shape of the atlas changes at a lower confidence
+              threshold. The{" "}
+              <Link href="/explorer/candidate-echoes">
+                candidate-echoes
+              </Link>{" "}
+              data, which keeps four- and five-word matches with at
+              least one distinctively Shakespearean content word,
+              recovers material from a much wider set of plays. The
+              history plays in particular surface prominently in the
+              lower tier: <em>All&rsquo;s Well That Ends Well</em>{" "}
+              (85 candidate echoes), <em>Henry V</em> (85),{" "}
+              <em>1 Henry IV</em> (81), <em>2 Henry IV</em> (74) and{" "}
+              <em>2 Henry VI</em> (73) all sit at or near the top.
+              The Macbeth/Tempest/Othello/Julius Caesar concentration
+              the strict catalogue shows is a feature of the threshold,
+              not the only Shakespeare the corpus contains.
+            </p>
 
             <div className="ornament" />
 

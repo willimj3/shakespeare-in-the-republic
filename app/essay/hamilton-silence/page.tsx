@@ -169,6 +169,20 @@ export default function HamiltonSilenceEssay() {
         English and arrived at the Founders without a visible Shakespeare
         marker on them.
       </p>
+      <p>
+        One additional trace, recovered at a looser threshold, sits in
+        an 11 September 1779 letter to John Laurens, where Hamilton
+        writes of General Charles Lee that &ldquo;if he had not a
+        little spice of the Julius Caesar or Cromwell in him, he
+        would be a very clever fellow.&rdquo; The project&rsquo;s{" "}
+        <Link href="/explorer/thematic-allusions">
+          thematic-allusions
+        </Link>{" "}
+        scan flags it as Hamilton&rsquo;s single invocation of a
+        Shakespearean type. One allusion across 2.35 million words
+        doesn&rsquo;t dent the silence finding; if anything, the rarity
+        is itself the point.
+      </p>
 
       <hr />
 

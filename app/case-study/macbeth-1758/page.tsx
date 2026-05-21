@@ -254,6 +254,22 @@ export default function Macbeth1758CaseStudy() {
         are continuations of a habit that the diary entry made.
       </p>
 
+      <p>
+        The sixteen verbatim Macbeth quotations are also not the only
+        Shakespearean material in the diary entry. Below the
+        catalogue&rsquo;s seven-word strict threshold, the{" "}
+        <Link href="/explorer/candidate-echoes">
+          candidate-echoes
+        </Link>{" "}
+        scan recovers more from the same document:{" "}
+        <em>farewell the neighing steed</em> (from Othello&rsquo;s
+        farewell speech, which Adams transcribes immediately after the
+        Tomorrow soliloquy), <em>sleep the innocent sleep</em> (the
+        Macbeth 2.2 passage), and <em>full of sound and fury</em>{" "}
+        (Macbeth 5.5, again). The diary&rsquo;s Shakespearean density
+        is even higher than the catalogue alone shows.
+      </p>
+
       <div className="ornament" />
 
       <p className="text-sm text-ink-muted italic text-center">

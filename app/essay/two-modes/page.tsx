@@ -324,6 +324,23 @@ export default function TwoModesEssay() {
         one is more &ldquo;influence&rdquo; than the other.
       </p>
 
+      <p>
+        The citational mode is consistent across all three of the
+        project&rsquo;s evidence tiers. The strict catalogue is heavily
+        Adams. The middle tier of{" "}
+        <Link href="/explorer/candidate-echoes">candidate echoes</Link>{" "}
+        is heavily Adams. The{" "}
+        <Link href="/explorer/thematic-allusions">
+          thematic-allusions
+        </Link>{" "}
+        scan, which looks for Founders invoking Shakespearean
+        characters as types, finds twenty-three cases across the
+        whole corpus; eighteen are Adams. Whichever threshold the
+        evidence is filtered at, the same Founder dominates. That
+        consistency is what makes &ldquo;citational&rdquo; the right
+        word for what he&rsquo;s doing.
+      </p>
+
       <details className="mt-10 group">
         <summary className="cursor-pointer text-base text-ink-soft font-display italic flex items-baseline gap-2 hover:text-folio transition-colors">
           <span className="text-folio">▸</span>

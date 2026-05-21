@@ -94,6 +94,23 @@ export default function CataloguePage() {
               and the{" "}
               <Link href="/explorer/honour-test">Honour Test explorer</Link>.
             </p>
+            <p className="text-base text-ink-soft mt-4 leading-relaxed">
+              For shorter matches that sit below this catalogue&rsquo;s
+              seven-word threshold (four- and five-word verbatim runs
+              with at least one distinctive Shakespeare content word)
+              see the{" "}
+              <Link href="/explorer/candidate-echoes">
+                Candidate Echoes
+              </Link>{" "}
+              explorer. For cases where a Founder invokes a
+              Shakespearean character as a moral or political type
+              rather than naming or quoting Shakespeare directly, see{" "}
+              <Link href="/explorer/thematic-allusions">
+                Thematic Allusions
+              </Link>
+              . Both sit a tier below the catalogue&rsquo;s confidence
+              threshold and are published with explicit caveats.
+            </p>
 
             <details className="mt-10 group">
               <summary className="cursor-pointer text-base text-ink-soft font-display italic flex items-baseline gap-2 hover:text-folio transition-colors">
