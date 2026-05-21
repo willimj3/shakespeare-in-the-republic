@@ -27,20 +27,20 @@ export default function ArchaicExplorerPage() {
               English changed dramatically between Shakespeare&rsquo;s
               First Folio (1623) and the American Revolution. The
               archaic-form analysis tests <strong>thirty-eight</strong>{" "}
-              specific Shakespearean forms &mdash; the second-person
-              pronouns (<em>thou, thee, thy, thine, ye</em>), the
-              old-style verb inflections (<em>hath, doth, art, saith,
-              hast, dost</em> and a dozen more), discourse markers
-              like <em>methinks</em> and <em>prithee</em>, archaic
-              prepositions like <em>whilst</em> and <em>betwixt</em>,
+              specific Shakespearean forms (the second-person
+              pronouns <em>thou, thee, thy, thine, ye</em>; the
+              old-style verb inflections <em>hath, doth, art, saith,
+              hast, dost</em> and a dozen more; discourse markers
+              like <em>methinks</em> and <em>prithee</em>; archaic
+              prepositions like <em>whilst</em> and <em>betwixt</em>;
               and the old contractions <em>&rsquo;tis</em> and{" "}
-              <em>&rsquo;twas</em> &mdash; against each Founder&rsquo;s
+              <em>&rsquo;twas</em>) against each Founder&rsquo;s
               full corpus.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               A form is counted as <em>surviving</em> in a Founder if
               he uses it at least once per million words across his
-              writing &mdash; a generous threshold. Below that rate,
+              writing: a generous threshold. Below that rate,
               the form has effectively died for him: he may have
               read it, but he doesn&rsquo;t write it. The survival
               ratios differ sharply across the six Founders. Pick a
@@ -65,8 +65,8 @@ export default function ArchaicExplorerPage() {
               Shakespeare&rsquo;s archaic dictionary. Franklin keeps{" "}
               <strong>68%</strong>. Adams <strong>57%</strong>.
               Madison and Washington hover near 45%. Hamilton, at
-              the bottom, retains only <strong>38%</strong> &mdash;
-              barely more than a third. The number tracks
+              the bottom, retains only <strong>38%</strong>: barely
+              more than a third. The number tracks
               intellectual provenance: Jefferson read enormously and
               widely in older English; Hamilton&rsquo;s prose pulls
               from Hume and the Roman historians, not from
@@ -75,7 +75,7 @@ export default function ArchaicExplorerPage() {
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The deaths are predictable in some places and
               surprising in others. <em>Thou, thee, thy</em> are still
-              alive in every Founder &mdash; not in everyday letters
+              alive in every Founder, not in everyday letters
               but in Biblical quotation and direct address to the
               Almighty in formal documents. <em>Methinks</em>{" "}
               survives only in Adams and Franklin, and it survives in
@@ -86,8 +86,8 @@ export default function ArchaicExplorerPage() {
               case study).
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              The Shakespearean verb-inflection set &mdash; <em>hath,
-              doth, saith, dost, wert</em> &mdash; is almost
+              The Shakespearean verb-inflection set (<em>hath,
+              doth, saith, dost, wert</em>) is almost
               completely dead by 1780 in everyone except the most
               formal contexts. <em>Hath</em> survives across all
               Founders, but at a rate orders of magnitude below
@@ -104,8 +104,8 @@ export default function ArchaicExplorerPage() {
               without naming the source. Jefferson&rsquo;s even
               higher rate matches his enormous private library and
               his lifetime reading. The two Founders whose composite
-              influence ranks at the bottom of the project &mdash;
-              Madison and Hamilton &mdash; are also the two who have
+              influence ranks at the bottom of the project (Madison
+              and Hamilton) are also the two who have
               shed the most of Shakespeare&rsquo;s archaic
               dictionary.
             </p>

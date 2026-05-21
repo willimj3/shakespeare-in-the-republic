@@ -83,8 +83,8 @@ export default function FunctionWordsPage() {
               In the classic Mosteller and Wallace analysis of the
               disputed Federalist Papers, the signal that
               distinguished a Hamilton paper from a Madison paper
-              wasn&rsquo;t topic or vocabulary or argument structure
-              &mdash; it was the per-million rates of the most
+              wasn&rsquo;t topic or vocabulary or argument structure.
+              It was the per-million rates of the most
               common function words. <em>The, of, and, to, in, a,
               that, is, was</em>. The tiny grammatical scaffolding
               of English that a writer reaches for unconsciously,
@@ -225,8 +225,8 @@ export default function FunctionWordsPage() {
               project would predict: Franklin in first position,
               followed by Adams, then the others, with Madison
               furthest from Shakespeare. The clustering is tight
-              &mdash; everyone is over 0.86, none is past 0.96
-              &mdash; because all six Founders are writing English
+              (everyone is over 0.86, none is past 0.96) because
+              all six Founders are writing English
               and Shakespeare is writing English. But within that
               tight cluster the ordering is informative, and it
               matches the composite ranking the project derives
@@ -240,16 +240,16 @@ export default function FunctionWordsPage() {
               84,300 is nearly three times Shakespeare&rsquo;s
               rate and noticeably higher than the other Founders.
               His Federalist prose is full of definite-noun phrases
-              &mdash; <em>the constitution</em>, <em>the
+              (<em>the constitution</em>, <em>the
               legislature</em>, <em>the executive</em>, <em>the
-              government</em> &mdash; that drive his <em>the</em>{" "}
+              government</em>) that drive his <em>the</em>{" "}
               rate up. That nominal density is part of why the
               cosine pushes him furthest from Shakespeare on the
               function-word fingerprint.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The other notable contrast is in the second-person
-              pronoun <em>you</em> &mdash; high in Shakespeare
+              pronoun <em>you</em>: high in Shakespeare
               (15,000+/M, the dramatic register addressing other
               characters) and much lower in the Founders (under
               3,000/M, the formal-letter register where the

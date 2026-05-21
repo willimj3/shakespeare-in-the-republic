@@ -33,7 +33,7 @@ export default function RankingExplorerPage() {
               metaphor families? Does this Founder reach for the
               same well-known Shakespeare-coined phrases?</em> The
               eight measures mostly agree on the per-Founder
-              ranking &mdash; and the one place they disagree is
+              ranking, and the one place they disagree is
               the substantive finding of the entire project.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
@@ -42,7 +42,7 @@ export default function RankingExplorerPage() {
               expanded below. Toggle{" "}
               <em>Highlight method disagreement</em> to circle the
               cells where a Founder&rsquo;s rank diverges sharply
-              from their median &mdash; the disagreement is where
+              from their median. The disagreement is where
               the two modes of Shakespearean inheritance show
               themselves.
             </p>
@@ -55,8 +55,8 @@ export default function RankingExplorerPage() {
               <div className="mt-4 space-y-3 text-sm text-ink-soft leading-relaxed">
                 <p>
                   Each Founder&rsquo;s composite is the average of{" "}
-                  <strong>seven percentile ranks</strong> &mdash;
-                  not a probability and not a fixed similarity to
+                  <strong>seven percentile ranks</strong>: not
+                  a probability and not a fixed similarity to
                   Shakespeare. Seven measures of Shakespearean
                   inheritance are computed against the full corpus
                   (vocabulary breadth, weighted vocabulary,
@@ -69,14 +69,14 @@ export default function RankingExplorerPage() {
                 </p>
                 <p>
                   Three properties to keep in mind. The composite
-                  is <strong>relative</strong> &mdash; it ranks
+                  is <strong>relative</strong>: it ranks
                   Founders against each other, not against an
                   absolute Shakespeare benchmark. The seven
                   measures are{" "}
-                  <strong>equally weighted</strong> &mdash; no
+                  <strong>equally weighted</strong>: no
                   a-priori reason favours one over another. And the
-                  composite is <strong>silent about citation</strong>{" "}
-                  &mdash; it measures statistical absorption of
+                  composite is <strong>silent about citation</strong>:
+                  it measures statistical absorption of
                   vocabulary and style, not whether the Founder ever
                   named Shakespeare or quoted him. Citation lives
                   in the catalogue.
@@ -96,7 +96,7 @@ export default function RankingExplorerPage() {
                   density, metaphor profile, statistical-style
                   overlap, use of Shakespeare-coined phrases) are
                   computed independently and are <em>not</em>{" "}
-                  included in the composite &mdash; they&rsquo;re
+                  included in the composite. They&rsquo;re
                   reported alongside it as a check.
                 </p>
               </div>
@@ -119,9 +119,9 @@ export default function RankingExplorerPage() {
               Toggle the disagreement view and look at Franklin&rsquo;s
               row. He&rsquo;s rank 1 on six of the eight methods. On
               the seventh, his score is in the middle of the pack. On
-              the eighth &mdash; the use of Shakespeare-coined phrases
-              (band of brothers, pound of flesh, flesh and blood,
-              etc.) &mdash; he&rsquo;s rank <em>6</em>. Dead last. The
+              the eighth (the use of Shakespeare-coined phrases:
+              band of brothers, pound of flesh, flesh and blood,
+              etc.) he&rsquo;s rank <em>6</em>. Dead last. The
               man whose English is statistically the closest to
               Shakespeare&rsquo;s of any of the six Founders is also
               the one who almost never reaches for a Shakespeare
@@ -130,7 +130,7 @@ export default function RankingExplorerPage() {
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               Adams&rsquo;s row is the inverse. He&rsquo;s rank 1 on
               one method: the use of Shakespeare-coined phrases. On
-              the other seven he&rsquo;s rank 2 or 3 &mdash; close to
+              the other seven he&rsquo;s rank 2 or 3, close to
               Franklin but never quite catching him. The two of them
               arrive at almost-identical composite scores by opposite
               routes.
@@ -165,7 +165,7 @@ export default function RankingExplorerPage() {
 
       <DataScope
         scope="full-corpus"
-        description="Each of the eight measures is computed independently across the full corpus — 24.6 million Founder words and 891K Shakespeare words. The composite ranking blends vocabulary breadth, weighted vocabulary, and collocational absorption (Influence-1/2/3). The other seven measures (pronoun similarity, archaic-form density, metaphor profile, statistical-style overlap, conscious-coinage usage, Influence-1, Influence-2) are reported as per-Founder ranks 1–6."
+        description="Each of the eight measures is computed independently across the full corpus: 24.6 million Founder words and 891K Shakespeare words. The composite ranking blends vocabulary breadth, weighted vocabulary, and collocational absorption (Influence-1/2/3). The other seven measures (pronoun similarity, archaic-form density, metaphor profile, statistical-style overlap, conscious-coinage usage, Influence-1, Influence-2) are reported as per-Founder ranks 1-6."
         sourceTable="tables/influence3_founder_distance.csv + per-method rank tables in cs4..cs8"
       />
     </div>

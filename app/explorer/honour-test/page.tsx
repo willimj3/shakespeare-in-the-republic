@@ -33,7 +33,7 @@ export default function HonourTestExplorerPage() {
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               But <em>what the word means</em> didn&rsquo;t. In Shakespeare,
               honour is something a character can{" "}
-              <strong>stake like money</strong> &mdash; characters
+              <strong>stake like money</strong>: characters
               repeatedly &ldquo;pawn their honour&rdquo; as security for
               someone else&rsquo;s reliability, the same way you might
               put up cash as collateral. In the Founders&rsquo; letters,
@@ -44,7 +44,7 @@ export default function HonourTestExplorerPage() {
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The same word; two totally different things. And it
-              isn&rsquo;t just <em>honour</em> &mdash; the same kind of
+              isn&rsquo;t just <em>honour</em>. The same kind of
               divergence shows up for thirteen other common words. Pick
               one below to see for yourself. The words that hang around
               the target in the Founders&rsquo; writing appear on the
@@ -69,9 +69,9 @@ export default function HonourTestExplorerPage() {
             <p className="text-base text-ink-soft leading-relaxed">
               The contrast you can see by clicking through the targets
               above is the project&rsquo;s central substantive finding.
-              The full argument &mdash; what it means that shared
-              vocabulary carries divergent collocational worlds &mdash;
-              is in the{" "}
+              The full argument (what it means that shared
+              vocabulary carries divergent collocational worlds) is
+              in the{" "}
               <Link href="/essay/honour-test">Honour Test essay</Link>.
               For the companion finding (Adams cites Shakespeare
               explicitly; Franklin sounds like Shakespeare without
@@ -87,7 +87,7 @@ export default function HonourTestExplorerPage() {
               <summary className="cursor-pointer text-base text-ink-soft font-display italic flex items-baseline gap-2 hover:text-folio transition-colors">
                 <span className="text-folio">▸</span>
                 <span className="group-open:hidden">
-                  How we picked these words &mdash; for the methodologically curious
+                  How we picked these words, for the methodologically curious
                 </span>
                 <span className="hidden group-open:inline">
                   How we picked these words
@@ -117,7 +117,7 @@ export default function HonourTestExplorerPage() {
                   The full per-target tables, including everything we
                   filter out here, are in{" "}
                   <code className="text-folio">tables/cs3_*.csv</code>{" "}
-                  in the research repository &mdash; or read the section
+                  in the research repository, or read the section
                   on differential collocate analysis in the{" "}
                   <Link href="/papers">full paper</Link>.
                 </p>

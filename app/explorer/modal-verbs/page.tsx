@@ -24,9 +24,9 @@ export default function ModalVerbsPage() {
               the long eighteenth century.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
-              English modal verbs &mdash; <em>shall, will, may,
-              might, must, ought, can, could, would, should</em>{" "}
-              &mdash; carry the load of expressing obligation,
+              English modal verbs (<em>shall, will, may,
+              might, must, ought, can, could, would, should</em>)
+              carry the load of expressing obligation,
               prediction, possibility, and politeness in any
               English sentence. The system shifted substantially
               between Shakespeare&rsquo;s English and modern
@@ -69,8 +69,8 @@ export default function ModalVerbsPage() {
               the English modal system.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              <em>Will</em> and <em>would</em> rise correspondingly
-              &mdash; not always sharply, but reliably. By the
+              <em>Will</em> and <em>would</em> rise correspondingly,
+              not always sharply, but reliably. By the
               1810s the Founders use <em>will</em> at roughly
               Shakespeare&rsquo;s rate or above. The future tense
               has moved from <em>shall</em> to <em>will</em>{" "}
@@ -78,7 +78,7 @@ export default function ModalVerbsPage() {
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The most striking gap is <em>ought</em>.
-              Shakespeare uses it at 22 per million words &mdash;
+              Shakespeare uses it at 22 per million words:
               effectively zero. Every Founder uses it at roughly
               twenty to fifty times Shakespeare&rsquo;s rate.{" "}
               <em>Ought</em> is the eighteenth-century&rsquo;s

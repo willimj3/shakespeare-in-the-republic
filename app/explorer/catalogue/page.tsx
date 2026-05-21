@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "The Reference Catalogue · Shakespeare in the Republic",
   description:
-    "Every traceable Shakespeare reference in the Founders' writing — 140 verified instances across all six Founders. Filter by Founder, date, type, and confidence; search by word, name, or year.",
+    "Every traceable Shakespeare reference in the Founders' writing: 140 verified instances across all six Founders. Filter by Founder, date, type, and confidence; search by word, name, or year.",
 };
 
 export default function CataloguePage() {
@@ -27,9 +27,9 @@ export default function CataloguePage() {
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               There are 140 of them. They split into two kinds: 62{" "}
-              <em>direct quotations</em> &mdash; passages where a
+              <em>direct quotations</em> (passages where a
               Founder uses five or more consecutive words from
-              Shakespeare &mdash; and 78 <em>named references</em>,
+              Shakespeare) and 78 <em>named references</em>,
               where a Founder mentions Shakespeare by name, names one
               of his plays, or invokes one of his characters in a way
               the surrounding context confirms is literary.
@@ -62,8 +62,8 @@ export default function CataloguePage() {
               Beyond the catalogue
             </h2>
             <p className="text-base text-ink-soft leading-relaxed">
-              The references above are the surface evidence &mdash;
-              what a literary scholar would find by reading through
+              The references above are the surface evidence: what
+              a literary scholar would find by reading through
               every Founder document with Shakespeare in mind. They
               cluster heavily in John Adams; every one of the 53
               high-confidence direct quotations is his. For the
@@ -76,12 +76,12 @@ export default function CataloguePage() {
               five uses of the phrase across twenty years.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              For the project&rsquo;s broader argument &mdash; that
+              For the project&rsquo;s broader argument (that
               passage-level evidence is only half the story, and that
-              the other half (the kind of Shakespearean inheritance
+              the other half, the kind of Shakespearean inheritance
               that doesn&rsquo;t produce quotations but does change a
-              writer&rsquo;s prose register) requires a different
-              kind of analysis &mdash; see the{" "}
+              writer&rsquo;s prose register, requires a different
+              kind of analysis) see the{" "}
               <Link href="/essay/two-modes">
                 Two Modes essay
               </Link>{" "}
@@ -93,7 +93,7 @@ export default function CataloguePage() {
               <summary className="cursor-pointer text-base text-ink-soft font-display italic flex items-baseline gap-2 hover:text-folio transition-colors">
                 <span className="text-folio">▸</span>
                 <span className="group-open:hidden">
-                  How references are detected and tiered &mdash; for the
+                  How references are detected and tiered, for the
                   methodologically curious
                 </span>
                 <span className="hidden group-open:inline">
@@ -135,7 +135,7 @@ export default function CataloguePage() {
                 <ul className="space-y-1">
                   <li>
                     Names preceded by an honorific (Mr Wolsey, Lt
-                    Lear) &mdash; almost always a contemporary
+                    Lear): almost always a contemporary
                     correspondent, not a Shakespeare character.
                   </li>
                   <li>
@@ -152,7 +152,7 @@ export default function CataloguePage() {
                   <li>
                     Biblical phrasings that also appear in
                     Shakespeare (&ldquo;under his own vine and
-                    figtree&rdquo;) &mdash; these aren&rsquo;t
+                    figtree&rdquo;): these aren&rsquo;t
                     attributable to Shakespeare specifically.
                   </li>
                 </ul>

@@ -7,7 +7,7 @@ import DataScope from "@/components/DataScope";
 export const metadata: Metadata = {
   title: "Metaphor Fingerprints · Shakespeare in the Republic",
   description:
-    "Eight conceptual-metaphor families (EDIFICE, BODY, SHIP, FIRE, PLANT, PATH, MOTION, CONTAINER) per Founder, with Shakespeare's silhouette overlaid for comparison. Each Founder has a distinctive shape — and Shakespeare's EDIFICE rate is exactly zero.",
+    "Eight conceptual-metaphor families (EDIFICE, BODY, SHIP, FIRE, PLANT, PATH, MOTION, CONTAINER) per Founder, with Shakespeare's silhouette overlaid for comparison. Each Founder has a distinctive shape, and Shakespeare's EDIFICE rate is exactly zero.",
 };
 
 const FOUNDER_ORDER = [
@@ -133,13 +133,13 @@ export default function MetaphorExplorerPage() {
             </h2>
             <p className="text-base text-ink-soft leading-relaxed">
               Look at the EDIFICE axis on every radar. Shakespeare
-              sits at the centre &mdash; rate{" "}
+              sits at the centre: rate{" "}
               <span className="text-folio font-semibold">0.0</span>{" "}
               per million words. Hamilton, Madison, and Adams all
               project outward on that axis. Constitutional rhetoric
-              &mdash; the language of <em>foundations</em>,{" "}
+              (the language of <em>foundations</em>,{" "}
               <em>pillars</em>, <em>cornerstones</em>,{" "}
-              <em>bulwarks</em>, <em>ruin</em> &mdash; is a metaphor
+              <em>bulwarks</em>, <em>ruin</em>) is a metaphor
               family the Founders had to invent because they had no
               prior model for what they were building. Shakespeare,
               whose political imagination is monarchical, has almost
@@ -155,8 +155,8 @@ export default function MetaphorExplorerPage() {
             </h3>
             <p className="text-base text-ink-soft leading-relaxed">
               Madison&rsquo;s radar shoots out on the PLANT axis at{" "}
-              <span className="text-folio font-semibold">33.6/M</span>{" "}
-              &mdash; roughly three times any other Founder&rsquo;s
+              <span className="text-folio font-semibold">33.6/M</span>:
+              roughly three times any other Founder&rsquo;s
               rate, and seven times Shakespeare&rsquo;s. The result
               is Madison the political botanist: liberty has{" "}
               <em>roots</em>; factions are <em>weeds</em>; the
@@ -191,8 +191,8 @@ export default function MetaphorExplorerPage() {
               <em>decline</em> in his prose in much the same
               proportions they do in Shakespeare&rsquo;s. Combined
               with his high FIRE rate, Franklin&rsquo;s metaphorical
-              signature is the most Shakespeare-shaped of the six
-              &mdash; another quiet piece of evidence for the
+              signature is the most Shakespeare-shaped of the six:
+              another quiet piece of evidence for the
               absorbed-mode argument the project makes about him.
             </p>
 
@@ -202,8 +202,8 @@ export default function MetaphorExplorerPage() {
             <p className="text-base text-ink-soft leading-relaxed">
               Adams&rsquo;s BODY rate (16.0/M) is the highest of the
               six and almost matches Shakespeare&rsquo;s (14.8/M).
-              His writing is full of bodies political and physical
-              &mdash; <em>limbs</em>, <em>head</em>,{" "}
+              His writing is full of bodies political and physical:
+              <em>limbs</em>, <em>head</em>,{" "}
               <em>lifeblood</em>, <em>nerves of the state</em>,{" "}
               <em>tender as the apple of the eye</em>. The metaphor
               is centuries old by the time Adams reaches for it, but
@@ -218,7 +218,7 @@ export default function MetaphorExplorerPage() {
               Washington&rsquo;s radar is the smallest of the six.
               His writing uses metaphor sparingly across every
               family. The two axes that reach any height are PATH
-              and MOTION &mdash; the vocabulary of marches,
+              and MOTION: the vocabulary of marches,
               advances, courses to be taken. The metaphors of a
               soldier and a surveyor. The figure is plain because
               the writer is plain.

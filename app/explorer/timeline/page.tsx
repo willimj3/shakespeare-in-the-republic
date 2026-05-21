@@ -25,8 +25,8 @@ export default function TimelinePage() {
               Click any dot.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
-              Each dot is a single Shakespeare reference &mdash; either
-              a direct quotation or a named mention &mdash; plotted at
+              Each dot is a single Shakespeare reference (either
+              a direct quotation or a named mention) plotted at
               the year it was written. Each Founder gets their own
               row. Click any dot to see the passage in the panel
               below the chart.
@@ -34,7 +34,7 @@ export default function TimelinePage() {
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The shape of the dot cloud is itself the project&rsquo;s
               substantive story. Adams&rsquo;s row is dense and runs
-              from 1757 to 1825 &mdash; sixty-eight years of
+              from 1757 to 1825: sixty-eight years of
               continuous engagement with Shakespeare, with a striking
               cluster in his 1758 diary and another late cluster
               between 1810 and 1822. Jefferson&rsquo;s row is mostly
@@ -60,7 +60,7 @@ export default function TimelinePage() {
               The dense bunch of red dots on Adams&rsquo;s row in 1758
               is the project&rsquo;s most striking single visual
               moment. Almost every dot in that cluster is from a
-              single December 1758 diary entry &mdash; the
+              single December 1758 diary entry: the
               twenty-two-year-old Adams in his father&rsquo;s house in
               Braintree, transcribing long passages of Macbeth and
               Othello, gloss in the margin, returning to the same
@@ -73,8 +73,8 @@ export default function TimelinePage() {
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The thin smattering on Franklin&rsquo;s row is the
               opposite of the same story. Franklin almost never
-              quotes Shakespeare and almost never names him &mdash;
-              he doesn&rsquo;t produce the kind of dots this view
+              quotes Shakespeare and almost never names him.
+              He doesn&rsquo;t produce the kind of dots this view
               counts. His Shakespeare lives elsewhere, in the
               texture of his English, and shows up only when you
               measure the right things. The{" "}
@@ -89,8 +89,8 @@ export default function TimelinePage() {
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               The empty Hamilton row is the third major finding of the
-              project at one glance. Two of the six Founders &mdash;
-              Hamilton and Madison &mdash; effectively opt out of
+              project at one glance. Two of the six Founders (Hamilton
+              and Madison) effectively opt out of
               Shakespearean inheritance. The full case is in{" "}
               <Link href="/essay/hamilton-silence">
                 The Hamilton Silence

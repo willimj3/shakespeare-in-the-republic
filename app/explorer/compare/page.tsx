@@ -23,9 +23,9 @@ export default function CompareExplorerPage() {
               Pick any two of the six. Compare them side by side.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
-              Each measure the project runs &mdash; composite
+              Each measure the project runs (composite
               ranking, eight-method breakdown, metaphor signature,
-              archaic-form survival, plays cited &mdash; can be set
+              archaic-form survival, plays cited) can be set
               up as a pairwise contrast. This view stacks all of
               them on one page so you can see where any two
               Founders are aligned and where they diverge.
@@ -34,7 +34,7 @@ export default function CompareExplorerPage() {
               The default pair is Adams and Franklin, the
               project&rsquo;s clearest case of the two-modes story:
               opposite routes to almost-identical composite scores.
-              Try the other obvious pairings &mdash; Madison vs
+              Try the other obvious pairings: Madison vs
               Hamilton, Jefferson vs Adams, Franklin vs Washington.
               The pair-by-pair comparisons are the texture
               underneath the headline ranking.

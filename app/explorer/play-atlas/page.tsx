@@ -20,8 +20,8 @@ export default function PlayAtlasPage() {
               The Play Atlas
             </h1>
             <p className="font-display text-lg text-ink-soft italic mt-4 leading-snug">
-              Which Shakespeare plays the Founders actually reached
-              for &mdash; and the visible imbalance of who reached.
+              Which Shakespeare plays the Founders reached
+              for, and the visible imbalance of who reached.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               Of the thirty-eight plays in Shakespeare&rsquo;s
@@ -73,7 +73,7 @@ export default function PlayAtlasPage() {
                 <em>Macbeth</em>
               </Link>
               {" "}leads the catalogue with twenty references,
-              every one of them Adams &mdash; his lifelong
+              every one of them Adams: his lifelong
               engagement with Lady Macbeth&rsquo;s &ldquo;given suck&rdquo;
               speech, his 1758 diary&rsquo;s long passages on
               ambition and witchcraft, his 1818 use of Lady Macbeth
@@ -82,7 +82,7 @@ export default function PlayAtlasPage() {
               fifteen references coming from Adams; the only
               non-Adams citation is from Madison.{" "}
               <em>Othello</em> at ten, <em>Julius Caesar</em> at
-              eight, <em>Henry V</em> at five &mdash; all of them
+              eight, <em>Henry V</em> at five: all of them
               Adams.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
@@ -91,7 +91,7 @@ export default function PlayAtlasPage() {
               he does on the{" "}
               <Link href="/explorer/timeline">Quotation Timeline</Link>
               . Washington and Franklin produce zero specific play
-              citations &mdash; Washington&rsquo;s Henry V borrowings
+              citations: Washington&rsquo;s Henry V borrowings
               at Valley Forge are paraphrased rather than quoted,
               and so don&rsquo;t register at the catalogue&rsquo;s
               strict confidence threshold (see the{" "}
@@ -99,9 +99,9 @@ export default function PlayAtlasPage() {
                 Band of Brothers
               </Link>{" "}
               case study). Franklin almost never names a source.
-              Jefferson appears in just two bars &mdash;{" "}
+              Jefferson appears in just two bars,{" "}
               <em>Comedy of Errors</em> and <em>Merchant of
-              Venice</em> &mdash; both as passing references in
+              Venice</em>, both as passing references in
               letters, not extended engagements with the plays.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">

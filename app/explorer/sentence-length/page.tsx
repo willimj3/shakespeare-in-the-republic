@@ -65,7 +65,7 @@ export default function SentenceLengthPage() {
               twenty-six words. Washington, alone among them, often
               writes sentences over forty words. This is the most
               dramatic single divergence the project finds between
-              the two corpora &mdash; and it&rsquo;s a divergence
+              the two corpora, and it&rsquo;s a divergence
               none of the seven other measures can see, because the
               units they count (words, collocates, metaphor families,
               archaic forms) don&rsquo;t look at sentence
@@ -183,7 +183,7 @@ export default function SentenceLengthPage() {
               on this dimension is Adams, whose mean sentence
               length of 25 words is still nearly three times
               Shakespeare&rsquo;s. The most distant is Washington at
-              38.3 &mdash; the prose of a soldier-statesman writing
+              38.3: the prose of a soldier-statesman writing
               with the cadence of military orders. Neither extreme
               is a literary failing; both are appropriate to the
               kind of writing being done. But it is worth recording
