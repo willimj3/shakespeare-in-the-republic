@@ -88,6 +88,17 @@ const studies: CaseStudy[] = [
     status: "live",
   },
   {
+    slug: "macbeth-1758",
+    title: "The 1758 Macbeth Study",
+    hook:
+      "One diary entry, sixteen verbatim Macbeth quotations, the 23-year-old Adams working through the play in real time. The densest single reading event in the entire six-Founder corpus.",
+    founder: "John Adams",
+    date: "October–December 1758",
+    heroImage: asset("/images/historical/adams-diary-manuscript.jpg"),
+    imageAlt: "A page of John Adams's diary, in his own hand.",
+    status: "live",
+  },
+  {
     slug: "lady-macbeth-and-herod",
     title: "Lady Macbeth and Herod",
     hook:
