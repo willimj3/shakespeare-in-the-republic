@@ -248,11 +248,13 @@ export default function PapersPage() {
             For researchers
           </h2>
           <p className="text-base text-ink-soft leading-relaxed">
-            The corpus itself, all eleven statistical case studies, and
-            the analysis scripts behind every figure are available in
-            the research repository. The repository contains the SQLite
-            database (rebuildable from the ingest scripts), the 85+ CSV
-            outputs, the eight figures, and the three reports.
+            The corpus itself, all eight statistical case studies
+            (CS1&ndash;CS8) and the three additional evidence-based
+            measures, and the analysis scripts behind every figure
+            are available in the research repository. The repository
+            contains the SQLite database (rebuildable from the ingest
+            scripts), the 85+ CSV outputs, the eight figures, and the
+            three reports.
           </p>
           <p className="text-base text-ink-soft mt-4 leading-relaxed">
             The site repository for{" "}

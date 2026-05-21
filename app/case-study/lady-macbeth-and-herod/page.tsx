@@ -107,6 +107,36 @@ export default function LadyMacbethAndHerodCaseStudy() {
         ariaLabel="Timeline showing John Adams's four uses of Lady Macbeth's 'I have given suck' speech, in 1765, 1782, 1799, and 1818."
       />
 
+      <div className="bg-parchment-dark border-l-4 border-bronze p-4 my-6 text-sm text-ink-soft">
+        <p>
+          <strong className="text-ink">Evidence types across the four passages.</strong>{" "}
+          The four uses are not the same kind of Shakespeare reference,
+          and the project labels them accordingly:
+        </p>
+        <ul className="mt-2 space-y-1 pl-5 list-disc leading-relaxed">
+          <li>
+            <strong>1765:</strong> a <em>named reference</em> in
+            Adams&rsquo;s <em>Dissertation</em> &mdash; he names the
+            character and discusses the image without quoting the line
+            verbatim.
+          </li>
+          <li>
+            <strong>1782 &amp; 1799:</strong> <em>direct quotation
+            and close paraphrase</em> &mdash; Adams reproduces the
+            &ldquo;dash the brains out&rdquo; phrasing accurately
+            enough that the strict catalogue marks both as
+            HIGH-confidence Macbeth matches.
+          </li>
+          <li>
+            <strong>1818:</strong> <em>thematic invocation</em>{" "}
+            &mdash; Adams calls England &ldquo;a cruel Beldam
+            willing, like Lady Macbeth, to dash their Brains
+            out,&rdquo; deploying the character as a political type
+            rather than as a literary citation.
+          </li>
+        </ul>
+      </div>
+
       <hr />
 
       <h2 className="font-display text-3xl text-ink mt-10">

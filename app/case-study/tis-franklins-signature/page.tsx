@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title:
     "'Tis: Franklin's Signature Contraction",
   description:
-    "Franklin uses the archaic contraction 'tis at 342 per million words across his life, twice the next Founder's rate and ten times most. He starts at age sixteen in Silence Dogood and never stops.",
+    "Franklin uses the archaic contraction 'tis at 358 per million words across his life, twice the next Founder's rate and ten times most. He starts at age sixteen in Silence Dogood and never stops.",
   openGraph: {
     title: "'Tis: Franklin's Signature Contraction · Shakespeare in the Republic",
   },
@@ -315,21 +315,24 @@ export default function TisFranklinsSignature() {
         than the surface.
       </p>
       <p>
-        The Founder with the <em>least</em> formal education writes the
-        <em> most</em> Shakespeare-soaked prose in the corpus. Franklin
-        never attended a university. He was apprenticed at twelve. The
-        other five Founders had Harvard, Princeton, or William and
-        Mary educations. Whatever Shakespearean material entered
-        Franklin&rsquo;s prose entered it through reading:
-        unmediated by classroom instruction, unmarked by literary
-        self-consciousness, and absorbed during the years when his
-        prose habits were being formed in his half-brother&rsquo;s
-        print shop in 1721 and 1722.
+        The Founder with the <em>least</em> formal education writes
+        the <em>most</em> archaic-form-saturated prose in the
+        corpus. Franklin never attended a university. He was
+        apprenticed at twelve. The other five Founders had Harvard,
+        Princeton, or William and Mary educations. Whatever older
+        English entered Franklin&rsquo;s prose entered it through
+        reading: unmediated by classroom instruction, unmarked by
+        literary self-consciousness, and absorbed during the years
+        when his prose habits were being formed in his
+        half-brother&rsquo;s print shop in 1721 and 1722. Shakespeare
+        is one source for that older English; Bunyan, Addison, the
+        King James Bible, and the late-Stuart pamphlet tradition are
+        others.
       </p>
 
       <div className="pull-quote">
-        He sounded like Shakespeare because Shakespeare is the English
-        he learned.
+        He sounded older because the English he learned in 1722 was
+        older.
       </div>
 
       <p>

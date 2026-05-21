@@ -237,13 +237,15 @@ export default function HonourTestCaseStudy() {
         The first is that <em>honour</em> at the level of frequency is
         a false friend. Both corpora use the word constantly; the
         word itself looks like proof of continuity. The collocates
-        are what reveal that continuity at the word-level is a
-        masquerade for a much deeper conceptual discontinuity. The
-        same noun has been retooled from a substantive (an object
-        of action: you can pawn it, swear by it, lose it, die for
-        it) into a discourse marker (a protocol register: you sign
-        with it). The vocabulary travelled across two centuries
-        intact. The concept did not.
+        show the continuity at the word level is doing different
+        work in each. The same noun appears as a substantive in
+        Shakespeare (an object of action: you can pawn it, swear by
+        it, lose it, die for it) and as a discourse marker in the
+        Founders (a protocol register: you sign with it). How much
+        of the difference is genuine conceptual divergence vs how
+        much is the genre contrast (drama vs epistolary prose) is
+        hard to separate cleanly from the data; the project records
+        the contrast as the contrast and lets the reader judge.
       </p>
 
       <p>
@@ -263,18 +265,18 @@ export default function HonourTestCaseStudy() {
       </p>
 
       <p>
-        The case study&rsquo;s working hypothesis (argued in
-        more detail in the{" "}
+        The case study&rsquo;s working hypothesis (argued in more
+        detail in the{" "}
         <Link href="/essay/honour-test">Honour Test essay</Link>) is
-        that the Founders inherited the lexical surface of
-        Shakespeare&rsquo;s English (the word <em>honour</em> itself,
-        the spelling, the broad semantic field) and rebuilt its
-        conceptual content from scratch. They didn&rsquo;t know they
-        were rebuilding. They didn&rsquo;t mean to. They just used
-        the same noun for the new thing the eighteenth century needed
-        it to mean (the protocol of civility) and the
-        new meaning has now become the default English meaning of
-        the word for everyone descended from them.
+        more cautious than the essay&rsquo;s earlier framing
+        suggested. The contrast shows a real difference between the
+        company <em>honour</em> keeps in Shakespeare&rsquo;s drama
+        and in the Founders&rsquo; epistolary prose. That genre
+        contrast (drama vs letter-writing) is itself doing a lot of
+        the work in the result, and the project does not want to
+        overclaim that the Founders rebuilt Shakespeare&rsquo;s
+        concept from scratch. What it can say is that the same noun
+        is doing different jobs in the two corpora.
       </p>
 
       <p>

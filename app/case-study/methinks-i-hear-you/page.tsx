@@ -72,13 +72,17 @@ export default function MethinksIHearYouCaseStudy() {
         title: "Two Modes of Shakespearean Influence",
       }}
     >
-      {/* ── The Shakespeare source ────────────────────────────────── */}
+      {/* ── The Shakespeare-adjacent source ───────────────────────── */}
       <div className="has-dropcap">
         <p>
-          The construction goes back to Shakespeare. He uses{" "}
-          <em>methinks I hear</em> and its sibling <em>methinks I
-          see</em> fifteen times across his plays. Hamlet, talking to
-          Horatio in Act 1 Scene 2:
+          The construction is early-modern dramatic register that
+          Shakespeare shares with his contemporaries rather than
+          something he invented. <em>Methinks</em> as a verb form was
+          standard English by 1600; <em>methinks I hear</em> and its
+          sibling <em>methinks I see</em> are common in the prose and
+          drama of the period. Shakespeare uses the locution fifteen
+          times across his plays. Hamlet, talking to Horatio in Act
+          1 Scene 2:
         </p>
       </div>
 

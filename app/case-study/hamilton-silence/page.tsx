@@ -144,20 +144,27 @@ export default function HamiltonSilenceCaseStudy() {
       </p>
 
       <p>
-        One earlier trace surfaces at a looser threshold. In an 11
-        September 1779 letter to John Laurens, Hamilton writes of
-        General Charles Lee that if he &ldquo;had not a little spice
-        of the Julius Caesar or Cromwell in him, he would be a very
-        clever fellow.&rdquo; The project&rsquo;s{" "}
-        <Link href="/explorer/thematic-allusions">
-          thematic-allusions
+        An earlier passage sometimes gets cited as Hamilton&rsquo;s
+        Shakespeare exception. In an 11 September 1779 letter to John
+        Laurens, Hamilton writes of General Charles Lee that if he
+        &ldquo;had not a little spice of the Julius Caesar or Cromwell
+        in him, he would be a very clever fellow.&rdquo; A previous
+        version of this project treated that line as the one
+        Shakespearean trace in Hamilton&rsquo;s prose. Under the
+        revised methodology it doesn&rsquo;t qualify. Caesar paired
+        with Cromwell is two historical strongmen, not a Shakespeare
+        character. The Founders had the Roman Caesar through Plutarch
+        and through eighteenth-century classical training as much as
+        through the play, and pairing him with Cromwell (who is not
+        in Shakespeare at all) makes the reference historical. The{" "}
+        <Link href="/essay/shakespeare-only-characters" className="underline">
+          Shakespeare-Only Characters essay
         </Link>{" "}
-        scan flags it as Hamilton&rsquo;s single invocation of a
-        Shakespearean character as a type. It is tangential rather
-        than full-bodied: Julius Caesar shares the line with Cromwell,
-        and the phrasing reads as classical political type more than
-        Shakespearean reading. One allusion across 2.35 million
-        words doesn&rsquo;t change the shape of the finding.
+        walks through why the project sets the Roman names aside
+        when the criterion is &ldquo;could only have come from a
+        Shakespeare play.&rdquo; The 1801 Macbeth slur is the only
+        Shakespeare-attributable trace the project keeps for
+        Hamilton.
       </p>
 
       <hr />

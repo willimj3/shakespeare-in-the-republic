@@ -121,20 +121,21 @@ export default function BandOfBrothersCaseStudy() {
         </footer>
       </blockquote>
       <p>
-        <em>Band of brothers</em> is interesting because by 1778 it
-        was no longer a phrase you&rsquo;d obviously identify as
-        Shakespearean. Almost two centuries of circulation meant
-        printers, schoolmasters, and clergy had all picked it up; by
-        the time the Continental Army assembled at Valley Forge it
-        was part of the common stock of English. So when a statistical
-        check asks &ldquo;is this phrase distinctively Shakespearean
-        versus general 18th-century English?&rdquo; the answer is no.
-        It had drifted out of the playwright&rsquo;s exclusive
-        possession. But the historical route is clear and undisputed.
-        The phrase travelled from <em>Henry V</em> (c. 1599) through
-        the eighteenth-century editions of Shakespeare on American
-        library shelves into the speech of every literate officer of
-        the Atlantic world.
+        <em>Band of brothers</em> is the kind of phrase the project
+        sets aside as common-stock English rather than counting as a
+        clean Shakespearean attribution. By 1778, almost two
+        centuries of circulation meant printers, schoolmasters, and
+        clergy had all picked it up; it was part of the working
+        vocabulary of military and civic prose by Washington&rsquo;s
+        day. Shakespeare popularised it, but the corpus can&rsquo;t
+        isolate the route by which it reached Washington in 1778
+        from the route by which the same phrase reached every other
+        literate officer of the Atlantic world. The statistical check
+        asks &ldquo;is this phrase distinctively Shakespearean versus
+        general 18th-century English?&rdquo; The answer is no. The
+        case study reads Washington&rsquo;s 1778 use as register, not
+        citation: he reached for what was at hand, and what was at
+        hand had a Shakespearean ancestor.
       </p>
 
       <hr />

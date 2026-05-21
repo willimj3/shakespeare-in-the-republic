@@ -134,20 +134,22 @@ export default function CryHavoc1822CaseStudy() {
       />
       <p>
         Three things to notice. First, Adams spells the word{" "}
-        <em>havock</em>, the way Shakespeare spells it in the First
-        Folio. He is not reaching for a famous phrase from memory; he
-        is quoting accurately, and his accuracy is itself a sign that
-        he has read the text. Second, he extends the metaphor:
-        Antony&rsquo;s &ldquo;dogs of war&rdquo; civil <em>and
-        Foreign</em>, and then a despot who will &ldquo;lay the dogs
-        prostrate with his language&rdquo;. The political prediction
-        is grim and specific. Third, the conclusion: that
-        constitutions will dissolve into &ldquo;thin Air&rdquo;,
-        an unmistakable echo of <em>The Tempest</em> 4.1
-        (&ldquo;melted into air, into thin air&rdquo;), Prospero&rsquo;s
-        speech about the impermanence of human works. Adams is
-        layering two Shakespearean passages onto the same
-        constitutional argument.
+        <em>havock</em>. That spelling matches the First Folio and
+        was also still in eighteenth-century circulation; it is
+        consistent with Adams having the play at hand or in memory,
+        though it doesn&rsquo;t by itself prove direct consultation.
+        Second, he extends the metaphor: Antony&rsquo;s &ldquo;dogs
+        of war&rdquo; civil <em>and Foreign</em>, and then a despot
+        who will &ldquo;lay the dogs prostrate with his
+        language&rdquo;. The political prediction is grim and
+        specific. Third, the conclusion: that constitutions will
+        dissolve into &ldquo;thin Air.&rdquo; The phrase is a
+        plausible echo of <em>The Tempest</em> 4.1 (&ldquo;melted into
+        air, into thin air&rdquo;), Prospero&rsquo;s speech about
+        the impermanence of human works. &ldquo;Thin air&rdquo; had
+        become common English by 1822, so the attribution is less
+        secure than the Antony quotation; the project reports it as
+        a likely Tempest echo rather than a verified one.
       </p>
 
       <hr />
