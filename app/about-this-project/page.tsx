@@ -29,26 +29,48 @@ export default function AboutThisProjectPage() {
         <div className="max-w-prose mx-auto essay-body">
           <div className="has-dropcap">
             <p>
-              This site is two projects at once. The visible one is a
-              corpus-linguistic study of Shakespeare&rsquo;s influence
-              on six American Founders. The invisible one is an
-              experiment in what happens when you direct an AI coding
-              agent &mdash; Anthropic&rsquo;s Claude Code &mdash; to
-              build a serious digital-humanities project, end to end,
-              over an extended series of sessions. The two projects
-              are inseparable. The site exists in this shape because
-              the experiment ran the way it did, and the experiment
-              ran the way it did because the research had to be
-              correct enough to be worth doing.
+              This site is two projects at once. The visible one is
+              a corpus-linguistic study of Shakespeare&rsquo;s
+              influence on six American Founders. The less visible
+              one is an experiment in what happens when you direct
+              an AI coding agent &mdash; Anthropic&rsquo;s Claude
+              Code &mdash; to build a serious digital-humanities
+              project end to end. I want to be candid about the
+              second project, because the temptation in work like
+              this is to present the polished output and quietly
+              omit how it was actually assembled.
             </p>
           </div>
 
+          <hr />
+
+          <h2 className="font-display text-3xl text-ink mt-10">
+            What I bring to this and what I don&rsquo;t
+          </h2>
           <p>
-            I want this note to be honest about the second project,
-            because the temptation in work like this is to present
-            the polished output and quietly omit how it was actually
-            assembled. The omission would, in this case, hide the
-            most interesting thing about the whole undertaking.
+            My background is academic legal. I teach at Vanderbilt
+            Law School, and before that I was a law librarian. I am
+            not a digital humanist, a corpus linguist, or a
+            computational researcher by training. I claim no
+            expertise in those disciplines. What I brought to this
+            project is the editorial habit of a lawyer-turned-librarian
+            &mdash; care about sources, attention to attribution,
+            and a long working familiarity with how research
+            literatures are constructed. The librarian background
+            in particular helped: a good portion of the work was
+            knowing what to ask for, how to verify it, and where to
+            look when something didn&rsquo;t hold up.
+          </p>
+          <p>
+            That said, this is a living project. It may contain
+            mistakes &mdash; mine, in framing or interpretation, or
+            the AI&rsquo;s, in the underlying analysis or in the
+            prose. The data, the analysis scripts, and the site
+            code are all open under permissive terms. I would much
+            rather have someone notice an error and tell me than
+            present the work as settled. The right way to read
+            this site is as a starting point for further
+            exploration and contribution, not as an endpoint.
           </p>
 
           <hr />
@@ -78,30 +100,32 @@ export default function AboutThisProjectPage() {
             Claude generated turned out to be wrong on a date, on a
             recipient, on the underlying statistical claim, or on
             the rhetorical register. I rejected pages of prose
-            because they felt wrong. I steered toward biographical
-            scenes when the writing got too abstract, and toward
-            statistical caution when it got too breezy.
+            because they felt wrong. At one point I asked Claude to
+            soften every page for a general reader and move the
+            statistical apparatus behind expandable panels; the
+            biographical-scenes-first orientation you see now came
+            out of that pass.
           </p>
           <p>
-            I also brought twenty-five years of teaching law and
-            legal writing to bear on the editorial standard for the
-            essays and case studies. The voice of the site &mdash;
-            careful but not stuffy, statistical but not arid, willing
-            to make a claim but careful about overclaiming &mdash;
-            is the standard I would apply to a long-form legal essay
-            of my own. I rejected and re-prompted whenever it
-            drifted.
-          </p>
-          <p>
-            And I read every page carefully. The site has many
-            specific historical claims in it &mdash; that Adams
-            wrote a particular letter to a particular recipient on a
+            I read every page carefully. The site has many specific
+            historical claims in it &mdash; that Adams wrote a
+            particular letter to a particular recipient on a
             particular date, that a particular Shakespearean passage
             comes from a particular act and scene, that a particular
             Founder used a particular word at a particular per-million
             rate. Each of those claims either traced to a row in a
-            CSV file or to a verifiable archival reference. The ones
-            that didn&rsquo;t hold up didn&rsquo;t stay on the site.
+            CSV file or to a verifiable archival reference. The
+            ones that didn&rsquo;t hold up didn&rsquo;t stay on the
+            site. I am sure some still slipped through. If you
+            spot one, please{" "}
+            <a
+              href="https://github.com/willimj3/shakespeare-in-the-republic/issues"
+              target="_blank"
+              rel="noreferrer"
+            >
+              open an issue on GitHub
+            </a>
+            .
           </p>
 
           <hr />
@@ -112,12 +136,12 @@ export default function AboutThisProjectPage() {
           <p>
             Most of the production work. The Python ingest pipeline
             that pulled the Founders Online and Project Gutenberg
-            corpora into the SQLite database. The 80+ analysis
-            scripts implementing the eight case studies, the three
+            corpora into the SQLite database. The analysis scripts
+            implementing the eight case studies, the three
             influence-ranking measures, and the catalogue and
             metaphor pipelines. The normalization layer that
-            harmonized Shakespeare&rsquo;s First Folio spelling with
-            the Founders&rsquo; eighteenth-century usage. The
+            harmonized Shakespeare&rsquo;s First Folio spelling
+            with the Founders&rsquo; eighteenth-century usage. The
             export step that produced the JSON files the site
             reads.
           </p>
@@ -128,22 +152,19 @@ export default function AboutThisProjectPage() {
             typography. Every interactive explorer &mdash; the
             Honour Test, the Catalogue, the Quotation Timeline, the
             Ranking matrix, the Metaphor Fingerprints, the Archaic
-            Threshold, the Play Atlas. The SVG charts. The
-            GitHub Pages deployment. The Founders Online and
-            Folger Shakespeare backlinks. The image-credits
-            attribution table.
+            Threshold, the Play Atlas, and the others. The SVG
+            charts. The GitHub Pages deployment. The Founders
+            Online and Folger Shakespeare backlinks. The
+            image-credits attribution table.
           </p>
           <p>
             And most of the prose. The essays in <em>The
             Commentary</em>, the case studies in their full
             narrative form, the methodology explanations in plain
-            English, the closing arguments. I prompted, redirected,
-            corrected, sometimes rewrote, sometimes accepted with
-            light edits. But the bulk of the words on this site
-            were drafted by Claude.
-          </p>
-          <p>
-            Which raises the question this note exists to address.
+            English, the closing arguments. I prompted,
+            redirected, corrected, sometimes rewrote, sometimes
+            accepted with light edits. But the bulk of the words on
+            this site were drafted by Claude.
           </p>
 
           <hr />
@@ -152,52 +173,50 @@ export default function AboutThisProjectPage() {
             What that means for how to read the work
           </h2>
           <p>
-            The findings are not less real because Claude wrote
-            them up. The Python pipeline counts what it counts.
-            Macbeth occurs in Adams&rsquo;s 1758 diary the number
-            of times it occurs there. Hamilton&rsquo;s 2.35
-            million words contain zero named Shakespeare
-            references at the catalogue&rsquo;s confidence
-            threshold whether a human or a machine reports the
-            count. The differential collocates of <em>honour</em>{" "}
-            in the two corpora are what they are. The eight-method
-            convergence matrix says what it says.
+            The findings exist independently of whoever wrote them
+            up. The Python pipeline counts what it counts. Macbeth
+            occurs in Adams&rsquo;s 1758 diary the number of times
+            it occurs there. Hamilton&rsquo;s 2.35 million words
+            contain zero named Shakespeare references at the
+            catalogue&rsquo;s confidence threshold whether a human
+            or a machine reports the count. The differential
+            collocates of <em>honour</em> in the two corpora are
+            what they are. The eight-method convergence matrix
+            says what it says.
           </p>
           <p>
             What the AI collaboration does change is the standard
             of attribution. This is not a piece of solo human
-            scholarship that happened to use spell-check. It is
-            a piece of work whose Python implementation, prose
+            scholarship that happened to use spell-check. It is a
+            piece of work whose Python implementation, prose
             drafting, and visual design were substantially the
-            product of a state-of-the-art AI coding agent
-            operating under a human editorial hand. Calling that
-            anything else would be dishonest. So I won&rsquo;t.
+            product of an AI coding agent operating under a human
+            editorial hand. I&rsquo;d rather acknowledge that up
+            front than have a reader infer it later.
           </p>
           <p>
-            If the experiment has a result, it is this: a person
-            with the right disciplinary literacy &mdash; enough
-            statistical training to know what a chi-square test
-            does and doesn&rsquo;t prove, enough writing training
-            to know when a paragraph is reaching, enough
-            historical training to catch a date that&rsquo;s
-            wrong &mdash; can now, with an AI agent on the other
-            side of the keyboard, produce a digital-humanities
-            artifact that would have taken a team of graduate
-            students a year of labour to assemble. That is a real
-            shift in what is possible for an individual scholar
-            working alone. It is also a real shift in what
-            counts as authorship, and I don&rsquo;t pretend the
-            second shift is settled.
+            One reason this matters: a reader looking at a clean
+            page of prose with statistics in it has reasonable
+            grounds to assume the author has personally verified
+            every number and every claim. In a conventional
+            scholarly setting, that assumption is roughly correct.
+            In this setting, the most I can honestly claim is that
+            I have verified every claim I noticed. Where my eye
+            failed, an error may remain. That&rsquo;s another
+            reason the project is presented as a starting point and
+            the underlying data is open.
           </p>
 
           <hr />
 
           <h2 className="font-display text-3xl text-ink mt-10">
-            What the workflow actually looked like
+            What the workflow looked like, roughly
           </h2>
           <p>
-            Across roughly two months of intermittent sessions, the
-            project went through the following rough phases:
+            The project moved through several rough phases. I
+            don&rsquo;t want to overclaim a tidy linear process
+            &mdash; in practice every phase overlapped with the
+            others and several got revisited multiple times.
           </p>
           <ol className="my-6 text-base text-ink-soft space-y-3 pl-6 list-decimal">
             <li>
@@ -215,28 +234,23 @@ export default function AboutThisProjectPage() {
               Claude proposed an eight-case-study structure that
               matched the textbook&rsquo;s typology. We iterated
               on which case studies to keep and which to fold
-              together. I cut several that struck me as
-              over-engineered for the size of the corpus.
+              together.
             </li>
             <li>
               <strong>Analysis runs.</strong> Claude wrote the
               per-case-study Python. I read the output tables,
               flagged surprising or implausible numbers, and we
               re-ran or re-specified analyses until I trusted the
-              results. The methodology reviewer pass surfaced
-              several issues &mdash; one of them an honest
-              normalization bug in CS4 that, when fixed, slightly
-              changed the per-Founder distances but not the
-              ranking.
+              results. A late methodology-review pass surfaced an
+              honest normalization bug in one case study that,
+              when fixed, slightly changed the per-Founder
+              distances but not the headline ranking.
             </li>
             <li>
               <strong>Paper drafting.</strong> Claude drafted the
-              scholarly paper in Stefanowitsch&rsquo;s mode.
-              I read it as I would read a graduate student&rsquo;s
-              first complete draft. Several sections were
-              rewritten. The methodology sections were lightly
-              edited; the substantive findings sections were heavily
-              edited; the discussion was nearly all my own.
+              scholarly paper in Stefanowitsch&rsquo;s mode. I
+              read it as I would read a graduate student&rsquo;s
+              first complete draft, and we revised iteratively.
             </li>
             <li>
               <strong>Site architecture.</strong> I sketched the
@@ -245,24 +259,25 @@ export default function AboutThisProjectPage() {
               Lincoln Mullen&rsquo;s <em>America&rsquo;s Public
               Bible</em>. Claude built the Next.js scaffolding,
               the design system, the page templates, and every
-              interactive component. We iterated on
-              colour, typography, and spacing.
+              interactive component. We iterated on colour,
+              typography, and spacing.
             </li>
             <li>
               <strong>Public-audience rewrite.</strong> The first
-              version of the site was too academic. I told Claude
-              to soften every page for the general reader, while
-              keeping the methodological detail accessible behind
-              expandable panels. We rewrote the case studies. We
-              renamed several explorers. The radical reframing
-              you see now &mdash; biographical scenes first,
-              statistics second &mdash; happened in this phase.
+              version of the site was too academic. I asked
+              Claude to soften every page for a general reader
+              while keeping the methodological detail accessible
+              behind expandable panels. The case studies got
+              rewritten; several explorers got renamed; the
+              biographical-scenes-first orientation emerged in
+              this phase.
             </li>
             <li>
-              <strong>Verification.</strong> I went back through
-              the catalogue and case studies looking for date
-              errors, misattributions, and misquotations.
-              Several. Each one corrected.
+              <strong>Verification (ongoing).</strong> I&rsquo;ve
+              gone through the catalogue and the case studies
+              looking for date errors, misattributions, and
+              misquotations. I&rsquo;ve found several and
+              corrected them. I assume more remain.
             </li>
           </ol>
 
@@ -272,58 +287,56 @@ export default function AboutThisProjectPage() {
             What I think the experiment shows
           </h2>
           <p>
-            Three things that I didn&rsquo;t know before I started,
-            and that I think are interesting enough to flag for
-            other people considering work of this kind.
+            I&rsquo;m not in a position to draw strong general
+            conclusions about AI-assisted scholarship from a single
+            project, and I won&rsquo;t pretend otherwise. But a
+            couple of things struck me as worth flagging for anyone
+            considering similar work.
           </p>
           <p>
-            <strong>The capability is real.</strong> A state-of-the-art
-            AI coding agent, given a clear research question, a
-            careful methodological frame, and a competent human
-            editorial hand, can produce a complete digital-humanities
-            project &mdash; corpus, pipeline, paper, site, and
-            interactive layer &mdash; that meets a real disciplinary
-            standard. This is not the case where the AI produced
-            slop and a human made it presentable. The pipeline
-            produces correct numbers. The interactive components
-            work and have a coherent design language. The prose, in
-            its current form, reads.
+            The capability is more substantial than I expected
+            going in. With a clear research question, a careful
+            methodological frame, and editorial attention, the
+            agent produced a complete digital-humanities project
+            &mdash; corpus, pipeline, paper, site, and interactive
+            layer &mdash; that meets at least my standard of
+            disciplinary care. I am sure a corpus linguist with
+            formal training would find things to push back on,
+            and I welcome that pushback. But the work is not slop
+            in a wrapper.
           </p>
           <p>
-            <strong>The judgment burden does not go away.</strong>{" "}
-            What collapses is the production cost. What does not
-            collapse is the cost of knowing what to ask for, what
-            to accept, and what to send back. Every page of this
-            site has at least one place where Claude proposed
-            something I rejected, or proposed something I had to
+            The judgment burden does not collapse. Production cost
+            falls dramatically, but the cost of knowing what to ask
+            for, what to accept, and what to send back does not.
+            Every page of this site has at least one place where
+            Claude proposed something I rejected or had to
             redirect substantially. The work that remains for the
             human editor is the work that has always been hardest:
             taste, attribution, restraint, knowing when a finding
             isn&rsquo;t actually a finding.
           </p>
           <p>
-            <strong>The category of &ldquo;author&rdquo; bends.</strong>{" "}
-            I cannot honestly say that I wrote this site in the way
+            The category of &ldquo;author&rdquo; bends. I cannot
+            honestly say that I wrote this site in the way
             I&rsquo;ve written previous things. I can also not
             honestly say that Claude wrote it without me. Most of
             the language is Claude&rsquo;s; almost none of the
-            decisions are. The substantive findings exist independent
-            of either of us; the framing is mine; the execution is
-            largely Claude&rsquo;s. The right word for the
-            relationship between us is one nobody has settled yet.
-            I&rsquo;ve been listed as the byline on every page
-            because I am responsible for what&rsquo;s here, but the
-            byline is doing work it hasn&rsquo;t had to do before.
+            decisions are. The substantive findings exist
+            independently of either of us; the framing is mine;
+            the execution is largely Claude&rsquo;s. The right
+            word for the relationship between us is one nobody has
+            settled yet. I&rsquo;m responsible for what&rsquo;s
+            here either way.
           </p>
 
           <hr />
 
           <h2 className="font-display text-3xl text-ink mt-10">
-            For other researchers
+            An invitation
           </h2>
           <p>
-            If this kind of work interests you and you&rsquo;d like
-            to try something similar: the site repository at{" "}
+            The site repository at{" "}
             <a
               href="https://github.com/willimj3/shakespeare-in-the-republic"
               target="_blank"
@@ -332,14 +345,29 @@ export default function AboutThisProjectPage() {
               github.com/willimj3/shakespeare-in-the-republic
             </a>{" "}
             is public. The research repository contains the corpus
-            pipeline and all 80+ analysis scripts; the{" "}
+            pipeline and the analysis scripts; the{" "}
             <Link href="/papers">papers page</Link> has the three
-            written deliverables. Both are under permissive terms.
-            I&rsquo;d encourage anyone using AI agents in scholarly
-            work to be similarly explicit about the division of
-            labour, not as confession but as documentation. The
-            field has not yet established the conventions, and the
-            best we can do for now is be specific.
+            written deliverables and direct downloads of all the
+            underlying JSON data. Everything is under permissive
+            terms.
+          </p>
+          <p>
+            If you find an error, a misattribution, a passage
+            that&rsquo;s been quoted wrong, a date that&rsquo;s off,
+            a statistical claim that doesn&rsquo;t hold up, or a
+            framing that overreaches the evidence &mdash; please{" "}
+            <a
+              href="https://github.com/willimj3/shakespeare-in-the-republic/issues"
+              target="_blank"
+              rel="noreferrer"
+            >
+              open an issue
+            </a>{" "}
+            or get in touch. If you want to extend the corpus, run a
+            different analysis, or build something on top of the
+            data, that is exactly the use the work is designed for.
+            The point of opening the data is to let other people
+            push the inquiry further than I could on my own.
           </p>
 
           <div className="ornament" />
