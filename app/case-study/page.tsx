@@ -104,17 +104,6 @@ const studies: CaseStudy[] = [
     imageAlt: "John Adams, painted by John Trumbull (c. 1792).",
     status: "live",
   },
-  {
-    slug: "caesar-comparisons",
-    title: "The Caesar Comparisons",
-    hook:
-      "Seventeen Julius Caesar character invocations across forty-seven years and five of the six Founders. Adams in 1771, Hamilton in 1779, Jefferson in 1800 on Napoleon, Hamilton at a dinner party calling Caesar 'the greatest man who ever lived,' Adams in 1818 recounting Patrick Henry. The companion to the Roman Shakespeare essay.",
-    founder: "Multiple Founders",
-    date: "1771 – 1818",
-    heroImage: asset("/images/historical/first-folio-julius-caesar-p728.jpg"),
-    imageAlt: "First Folio: The Tragedy of Julius Caesar.",
-    status: "live",
-  },
 ];
 
 export default function CaseStudiesLanding() {

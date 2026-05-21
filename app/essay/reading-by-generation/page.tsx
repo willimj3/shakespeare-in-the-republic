@@ -23,8 +23,8 @@ export default function ReadingByGenerationEssay() {
       sectionMarker="Essay · The substantive findings"
       title="Reading by Generation"
       subtitle="Adams was born in 1735. Hamilton was born in 1757. They are a generation apart, and their Shakespeare is a generation apart."
-      prevHref="/essay/roman-shakespeare"
-      prevLabel="The Roman Shakespeare"
+      prevHref="/essay/shakespeare-only-characters"
+      prevLabel="The Shakespeare-Only Characters"
       nextHref="/essay/convergence"
       nextLabel="Eleven Ways of Looking"
     >
@@ -208,15 +208,11 @@ export default function ReadingByGenerationEssay() {
       </p>
 
       <p>
-        The 1818 letter that invokes Patrick Henry&rsquo;s &ldquo;Caesar
-        had his Brutus&rdquo; speech, discussed in the{" "}
-        <Link href="/essay/roman-shakespeare" className="underline">
-          Roman Shakespeare
-        </Link>{" "}
-        essay, is one of those late-1810s references. Adams at
-        eighty-three is still using the same Shakespearean material
-        he used in his 1758 diary, repurposed for the political
-        questions of his retirement.
+        Adams&rsquo;s 1818 letter invoking Patrick Henry&rsquo;s
+        &ldquo;Caesar had his Brutus&rdquo; speech is one of those
+        late-1810s references. He is eighty-three years old and
+        still using the political-historical material he absorbed
+        in his Harvard reading sixty-three years earlier.
       </p>
 
       <p>
@@ -286,8 +282,8 @@ export default function ReadingByGenerationEssay() {
         place Hamilton does use Shakespeare: the Roman Julius Caesar
         figure, invoked twice in his correspondence to make political
         points about contemporary generals. As argued in{" "}
-        <Link href="/essay/roman-shakespeare" className="underline">
-          The Roman Shakespeare
+        <Link href="/essay/shakespeare-only-characters" className="underline">
+          The Shakespeare-Only Characters
         </Link>
         , the Caesar Hamilton invokes is the politicised cultural
         figure, by then so diffuse you could pick it up without ever
@@ -394,10 +390,10 @@ export default function ReadingByGenerationEssay() {
         <Link href="/founder" className="underline">
           Founder index
         </Link>
-        , and for the Roman play that survived the generational shift
-        anyway, see{" "}
-        <Link href="/essay/roman-shakespeare" className="underline">
-          The Roman Shakespeare
+        , and for Adams&rsquo;s character-as-type Shakespeare
+        invocations across decades, see{" "}
+        <Link href="/essay/shakespeare-only-characters" className="underline">
+          The Shakespeare-Only Characters
         </Link>
         . The decade-by-decade data underlying this essay is
         viewable through the{" "}

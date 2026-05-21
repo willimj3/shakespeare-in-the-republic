@@ -158,10 +158,9 @@ function Hero() {
               five combined. Franklin sounds more like him sentence
               for sentence without ever quoting. Hamilton and Madison
               wrote as if Locke and Hume had displaced the playwright
-              entirely. When the Founders did reach for Shakespeare
-              to do political work, they reached for{" "}
-              <em>Julius Caesar</em>: Brutus for republican principle,
-              Caesar for the ambition that could topple a republic.
+              entirely. The differences track when each Founder came
+              of age more closely than they track who each Founder
+              was.
             </p>
             <p className="text-sm text-ink-muted mt-4 leading-relaxed italic">
               An open experiment pairing corpus-linguistic methods
@@ -757,7 +756,7 @@ function ThreeTeasers() {
       title: "Essays",
       tagline: "The long-form commentary",
       blurb:
-        "Nine chapters adapted from the research paper. The influence question, the methods, the two modes of Shakespearean inheritance, the Roman Shakespeare, reading by generation, the Hamilton silence.",
+        "Nine chapters adapted from the research paper. The influence question, the methods, the two modes of Shakespearean inheritance, the Shakespeare-only characters, reading by generation, the Hamilton silence.",
       image: asset("/images/historical/adams-diary-manuscript.jpg"),
       imageAlt: "John Adams diary manuscript page",
     },

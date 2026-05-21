@@ -209,12 +209,12 @@ export default function IntroductionEssay() {
       <p>
         This isn&rsquo;t a story about ignorance. Both men had read
         Shakespeare. Hamilton drew heavily on Roman political
-        history that was transmitted through Plutarch and through
-        Shakespeare&rsquo;s Roman plays. But Hamilton&rsquo;s
-        intellectual models were Hume, Montesquieu, Blackstone, the
-        modern political philosophers. His prose belongs to a
-        completely different tradition. He chose other sources;
-        their absence isn&rsquo;t accidental. The discussion is in
+        history, but through Plutarch and the classical historians,
+        not through Shakespeare&rsquo;s Roman plays in any
+        identifiable way. His intellectual models were Hume,
+        Montesquieu, Blackstone, the modern political philosophers.
+        His prose belongs to a completely different tradition. He
+        chose other sources; their absence isn&rsquo;t accidental. The discussion is in
         the{" "}
         <Link href="/essay/hamilton-silence">
           Hamilton Silence essay

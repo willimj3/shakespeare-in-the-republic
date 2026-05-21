@@ -56,10 +56,10 @@ const chapters: ChapterEntry[] = [
   },
   {
     num: 5,
-    slug: "roman-shakespeare",
-    title: "The Roman Shakespeare",
+    slug: "shakespeare-only-characters",
+    title: "The Shakespeare-Only Characters",
     summary:
-      "The Founders' historical Shakespeare is one play. Five of the six use Brutus and Caesar as recognisable types across forty-seven years; the English histories barely show up. Hamilton, who never names Shakespeare in his life, can call Julius Caesar the greatest man who ever lived.",
+      "Six character-as-type invocations in the corpus that can only have come from Shakespeare's plays: Falstaff, Shylock, Hotspur, Lady Macbeth. All Adams, across forty-two years. A smaller finding than the data first seemed to support, recorded honestly.",
     status: "live",
   },
   {

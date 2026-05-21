@@ -92,13 +92,16 @@ export default function PrefaceEssay() {
         the two modes.
       </p>
       <p>
-        Two other findings come out alongside. The first: when the
-        Founders reach for Shakespeare to do political work, they
-        reach almost exclusively for <em>Julius Caesar</em>.
-        Seventeen of the project&rsquo;s twenty-three thematic
-        character-as-type invocations are from that one Roman play,
-        across five of the six Founders and forty-seven years. The
-        Roman Shakespeare essay walks through every one.
+        Two other findings come out alongside. The first: Adams
+        alone of the six Founders extends his Shakespeare engagement
+        from quotation into the realm of political character-type.
+        Six passages across the corpus invoke a character who can
+        only have come from Shakespeare (Falstaff, Shylock, Hotspur,
+        Lady Macbeth). All six are Adams. The other Founders, when
+        they reach for character-as-type political comparisons, reach
+        for Roman figures (Brutus, Caesar, Cassius) whose Shakespearean
+        credit cannot be cleanly distinguished from Plutarch or from
+        an eighteenth-century classical education.
       </p>
       <p>
         The second: the difference between the Founders who quote
@@ -114,13 +117,10 @@ export default function PrefaceEssay() {
       </p>
       <p>
         Hamilton and Madison are the project&rsquo;s two least
-        Shakespearean writers. They are not the same case. Madison
-        produced the most thorough Shakespeare absence in the corpus.
-        Hamilton produced one Roman exception, a 1779 letter calling
-        General Lee &ldquo;a little spice of the Julius Caesar or
-        Cromwell.&rdquo; The contrast Hamilton and Madison create
-        with Adams and Franklin at the top is what makes the rest
-        of the project&rsquo;s findings mean what they mean.
+        Shakespearean writers. Their record is the most thorough
+        Shakespeare absence in the corpus. The contrast they create
+        with Adams and Franklin at the top is what makes the rest of
+        the project&rsquo;s findings mean what they mean.
       </p>
 
       <hr />
@@ -176,7 +176,7 @@ export default function PrefaceEssay() {
           the question. The methods chapter explains how the
           project asked it, in plain English. Five
           substantive-findings chapters describe what the data
-          turned up (two modes of inheritance, the Roman Shakespeare,
+          turned up (two modes of inheritance, the Shakespeare-only characters,
           reading by generation, the convergence of measures, and
           the Hamilton silence). A bibliography chapter rounds it
           out.

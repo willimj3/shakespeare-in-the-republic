@@ -139,10 +139,9 @@ export default function HamiltonSilenceEssay() {
         generation. His <em>Federalist Papers</em> draw heavily on
         Roman political history: on the rise and fall of the
         Republic, the dangers of demagogues, the fragility of free
-        constitutions. The Roman material he draws on was, in
-        eighteenth-century America, transmitted largely through
-        Plutarch and through Shakespeare&rsquo;s Roman plays. He had
-        read both.
+        constitutions. The Roman material he draws on reached him
+        through Plutarch primarily, and through the wider classical
+        education of the eighteenth century.
       </p>
       <p>
         There&rsquo;s a single small Shakespearean trace in his
@@ -179,44 +178,38 @@ export default function HamiltonSilenceEssay() {
         without a visible Shakespeare marker on them.
       </p>
       <p>
-        Two further traces of Shakespeare sit in Hamilton&rsquo;s
-        writing once the project widens its threshold. The first is
-        an 11 September 1779 letter to John Laurens, where Hamilton
-        writes of General Charles Lee that &ldquo;if he had not a
-        little spice of the Julius Caesar or Cromwell in him, he
-        would be a very clever fellow.&rdquo; The project&rsquo;s{" "}
-        <Link href="/explorer/thematic-allusions">
-          thematic-allusions
+        Hamilton&rsquo;s 1779 letter to John Laurens, which calls
+        General Charles Lee &ldquo;a little spice of the Julius
+        Caesar or Cromwell,&rdquo; was treated in an earlier version
+        of this essay as a Shakespeare trace. On further inspection,
+        the project records it as ambiguous. Caesar paired with
+        Cromwell is two historical strongmen, not a Shakespeare
+        reference. The same applies to the dinner-party line
+        Jefferson recalls in 1811, where Hamilton names Caesar as
+        the greatest man who ever lived. By the late eighteenth
+        century, Brutus, Caesar, and Cassius reached the Founders
+        through multiple channels (Plutarch, classical education,
+        general political culture) as much as through the Roman
+        plays. The{" "}
+        <Link
+          href="/essay/shakespeare-only-characters"
+          className="underline"
+        >
+          Shakespeare-Only Characters
         </Link>{" "}
-        scan records it as Hamilton&rsquo;s single character-as-type
-        invocation of a Shakespearean figure.
+        essay explains why the project sets these passages aside
+        rather than counting them as Shakespearean inheritance.
       </p>
       <p>
-        The second comes second-hand. Jefferson, writing to Benjamin
-        Rush in January 1811, recalls a dinner-party conversation in
-        which he had named his trinity of greatest minds (Bacon,
-        Newton, Locke) and Hamilton had answered: &ldquo;the greatest
-        man that ever lived was Julius Caesar.&rdquo; Whether Hamilton
-        said it in exactly those words, or in the version Jefferson
-        sharpened over the decades, the line shows what Caesar meant
-        to him. The{" "}
-        <Link href="/essay/roman-shakespeare" className="underline">
-          Roman Shakespeare
-        </Link>{" "}
-        essay walks through the implication: the political Caesar of
-        the Roman play had become cultural shorthand by the late
-        eighteenth century, available to Hamilton even without
-        Shakespeare-as-literature on his desk.
-      </p>
-      <p>
-        Three small traces across a 2.35-million-word corpus do not
-        overturn the silence finding. They give it texture. Hamilton
-        had the Roman Shakespeare. He did not have Adams&rsquo;s
-        catalogue or Franklin&rsquo;s register. The other Founder
-        whose corpus the project finds nothing meaningful in is
-        Madison, whose absence is more thorough: zero thematic
-        allusions, no Federalist-scale Shakespeare trace, and no
-        recorded line about which historical figure he most admired.
+        Hamilton&rsquo;s silence is therefore close to thorough.
+        Madison&rsquo;s is the same. Neither produced an
+        unambiguously Shakespearean character-type invocation in his
+        surviving correspondence. Neither named the playwright. The
+        Federalist No. 75 &ldquo;multitudinous&rdquo; trace is the
+        only Shakespeare-attributable item the project finds in
+        Hamilton&rsquo;s prose, and it is exactly the kind of
+        culturally-diffused word that arrived at the eighteenth
+        century without a visible Shakespeare marker on it.
       </p>
 
       <hr />
@@ -304,16 +297,15 @@ export default function HamiltonSilenceEssay() {
         <Link href="/essay/two-modes" className="underline">
           in the Adams/Franklin essay
         </Link>{" "}
-        and the political-vocabulary finding{" "}
-        <Link href="/essay/roman-shakespeare" className="underline">
-          in the Roman Shakespeare essay
+        and the character-as-type finding{" "}
+        <Link href="/essay/shakespeare-only-characters" className="underline">
+          in the Shakespeare-Only Characters essay
         </Link>{" "}
-        describe what Adams, Franklin, Jefferson, and to a degree
-        Hamilton did with the Shakespearean material available to
-        them. The story this essay tells is the harder one. Adams
-        chose to engage Shakespeare densely. Madison chose not to
-        engage at all. Hamilton chose the smallest possible Roman
-        slice and built his prose from other materials. The choices
+        describe what Adams, and to a degree Franklin and Jefferson,
+        did with the Shakespearean material available to them. The
+        story this essay tells is the harder one. Adams chose to
+        engage Shakespeare densely. Hamilton and Madison chose not to
+        engage at all in any way the corpus can detect. The choices
         are visible in the data.
       </p>
       <p>
@@ -351,8 +343,8 @@ export default function HamiltonSilenceEssay() {
           Two Modes of Shakespearean Influence
         </Link>
         ,{" "}
-        <Link href="/essay/roman-shakespeare" className="underline">
-          The Roman Shakespeare
+        <Link href="/essay/shakespeare-only-characters" className="underline">
+          The Shakespeare-Only Characters
         </Link>
         , and{" "}
         <Link href="/essay/reading-by-generation" className="underline">
