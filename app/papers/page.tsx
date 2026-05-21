@@ -77,9 +77,9 @@ const DATA_FILES: DataFile[] = [
   },
   {
     file: "composite.json",
-    title: "Eight-method convergence and ranking",
+    title: "Eleven-method convergence and ranking",
     description:
-      "Per-founder composite scores and per-method ranks across all eight measures of Shakespearean influence. Powers the Ranking explorer.",
+      "Per-founder composite scores and per-method ranks across all eleven measures of Shakespearean influence. Powers the Ranking explorer.",
     size: "3 KB",
   },
   {
@@ -133,9 +133,9 @@ const DATA_FILES: DataFile[] = [
   },
   {
     file: "candidate_echoes.json",
-    title: "Candidate echoes (LOW-tier matches)",
+    title: "Candidate echoes (the relaxed tier)",
     description:
-      "Five thousand short verbatim matches (4-5 words) between the Founders' corpus and Shakespeare's complete works that don't pass the main catalogue's strict threshold. Each row includes the distinctive Shakespeare content words, KWIC context, and a quality ranking. Most are coincidental at this corpus size; some are real echoes.",
+      "Curated top 5,000 of 35,794 short verbatim matches (4-5 words) between the Founders' corpus and Shakespeare's complete works that don't clear the main catalogue's strict threshold. Each row carries the distinctive Shakespeare content words, KWIC context, a quality ranking, and a HIGH/MEDIUM/LOW confidence tier. The full 35,794-row set lives in the live Supabase backend; the bundled file is a static sample.",
     size: "4 MB",
   },
   {
@@ -248,7 +248,7 @@ export default function PapersPage() {
             For researchers
           </h2>
           <p className="text-base text-ink-soft leading-relaxed">
-            The corpus itself, all eight statistical case studies, and
+            The corpus itself, all eleven statistical case studies, and
             the analysis scripts behind every figure are available in
             the research repository. The repository contains the SQLite
             database (rebuildable from the ingest scripts), the 85+ CSV

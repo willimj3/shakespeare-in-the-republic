@@ -300,7 +300,7 @@ export default function RankingExplorer() {
             <div className="max-w-prose mx-auto text-center text-ink-muted italic py-8">
               <p className="font-display text-lg">
                 Click any Founder&rsquo;s name in the matrix to see their
-                rank profile across all eight methods.
+                rank profile across all eleven methods.
               </p>
               <p className="text-sm mt-2">
                 Or toggle &ldquo;highlight method disagreement&rdquo; above
@@ -347,7 +347,7 @@ function FounderProfile({
           {FOUNDER_NAMES[founder]}
         </h3>
         <p className="text-sm text-ink-soft mt-1">
-          Median rank across eight methods:{" "}
+          Median rank across eleven methods:{" "}
           <span className="text-folio font-semibold">{med.toFixed(1)}</span>
         </p>
       </header>
@@ -398,18 +398,18 @@ function FounderProfile({
 /* ────────────────────────────────────────────────────────────────── */
 function FounderNarrative({ founder }: { founder: FounderId }) {
   const text: Record<FounderId, string> = {
-    franklin:
-      "Franklin is rank 1 on six of the eight methods — vocabulary, archaic forms, pronouns, metaphor, statistical style, and overall composite. The single method he scores worst on is the use of Shakespeare-coined phrases (rank 6). That disagreement is the two-modes story: Franklin sounds Shakespearean without ever reaching for Shakespeare consciously.",
     adams:
-      "Adams's profile is the mirror of Franklin's. He's rank 1 only on the use of Shakespeare-coined phrases — the consciously-citational measure — and rank 2 on most others. He gets to the same composite height as Franklin by the opposite route.",
+      "Adams leads the project's composite ranking. He is rank 1 on six of the eleven methods: the use of Shakespeare-coined phrases, Shakespearean context patterns, and all three new citational measures (verified references, thematic invocations, and candidate-echo density per million words), plus the overall composite. On the seven statistical and stylistic measures he sits at rank 2 or 3. The shape is the citational mode: heavy on conscious reference, slightly behind Franklin on absorbed register.",
+    franklin:
+      "Franklin sits second on the composite, a step behind Adams. He is rank 1 on five methods, all statistical or stylistic: pronoun distribution, archaic forms, metaphor profile, statistical-style overlap, and Shakespearean vocabulary. He is rank 6 on the use of Shakespeare-coined phrases. The shape is the absorbed mode: Franklin sounds Shakespearean without ever reaching for the playwright consciously.",
     jefferson:
-      "Jefferson sits in the consistent third position across nearly every method. He uses Shakespeare-coined phrases more than most, has a moderate archaic vocabulary, and matches Shakespeare's metaphor profile reasonably. A balanced influence pattern with no extremes.",
+      "Jefferson sits at a consistent rank 3 across nine of the eleven methods. He is rank 2 on the verified-references and thematic-invocations columns, mostly through his 26 by-name references and his four Brutus and Caesar passages. A balanced influence pattern with no extremes.",
     washington:
-      "Washington's profile is steady mid-pack. He's consistently rank 4 or 5 — never the most Shakespearean, never the least. His one outlier is the use of coined phrases (rank 4), driven by deliberate Henry V borrowings during the War.",
-    madison:
-      "Madison is bottom or near-bottom on five methods, but rises to rank 4 on statistical style and rank 3 on coined phrases. The disagreement reveals what statistics alone don't: he uses some Shakespeare-attributed phrases despite a generally un-Shakespearean prose register.",
+      "Washington is steady mid-pack: rank 4 on seven methods, rank 5 on four. He stays just outside the top three on the statistical measures and falls further on the evidence-based ones. The single Shakespeare borrowing his name is attached to ('band of brothers') is a small piece of a generally non-literary corpus.",
     hamilton:
-      "Hamilton's profile is the closest to a flat low score. Bottom on overall composite, vocabulary, and statistical style. Only above Madison on coined phrases (and only because Madison's count is also near zero). The Hamilton Silence essay walks through what this absence means.",
+      "Hamilton sits fifth, edging Madison for the bottom slot by a small margin. He is rank 6 on the use of Shakespeare-coined phrases and on the verified-references column (zero on both). But he is rank 3 on the thematic-character-invocations column, because of his 1779 letter calling General Lee 'a little spice of the Julius Caesar or Cromwell.' That one Roman exception is the only thing keeping him above Madison.",
+    madison:
+      "Madison sits last on the composite, with the most thorough Shakespeare absence in the corpus: rank 6 on six of the eleven methods, including the new thematic-invocations column where his count is zero. His one quiet outlier is the use of Shakespeare-coined phrases (rank 3), where a small number of widely-shared phrases lift him momentarily out of last place.",
   };
   return (
     <p className="mt-6 pt-5 border-t border-parchment-deep text-sm text-ink-soft leading-relaxed">

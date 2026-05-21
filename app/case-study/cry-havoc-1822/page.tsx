@@ -250,8 +250,9 @@ export default function CryHavoc1822CaseStudy() {
       <p>
         This is one of the last verbatim Shakespeare quotations in
         John Adams&rsquo;s life. Across the project&rsquo;s
-        passage-level catalogue, he produces fifty-three high-confidence
-        direct Shakespeare quotations spread across sixty-four years
+        passage-level catalogue, he produces sixty-one direct
+        Shakespeare quotations (HIGH and MEDIUM confidence) spread
+        across sixty-four years
         of writing. The first cluster is the 1758 diary entry, in
         which the twenty-two-year-old transcribes long passages of{" "}
         <em>Macbeth</em>, <em>Othello</em>, and Macbeth again. The

@@ -26,7 +26,7 @@ export default function ReadingByGenerationEssay() {
       prevHref="/essay/roman-shakespeare"
       prevLabel="The Roman Shakespeare"
       nextHref="/essay/convergence"
-      nextLabel="Eight Ways of Looking"
+      nextLabel="Eleven Ways of Looking"
     >
       <div className="has-dropcap">
         <p>
@@ -248,10 +248,12 @@ export default function ReadingByGenerationEssay() {
       </h2>
 
       <p>
-        Madison and Hamilton are the project&rsquo;s two Shakespeare
-        silences. The Hamilton Silence essay treats their absence as
-        one of the substantive findings: two of the six write as if
-        Shakespeare did not exist.
+        Madison and Hamilton are the project&rsquo;s two quietest
+        Founders on Shakespeare. The Hamilton Silence essay treats
+        them as the project&rsquo;s third substantive finding:
+        dramatically less Shakespearean than the four Founders above
+        them, with Madison&rsquo;s silence the more thorough and
+        Hamilton&rsquo;s carrying one Roman exception.
       </p>
 
       <p>

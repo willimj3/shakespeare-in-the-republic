@@ -331,7 +331,7 @@ export default function FounderProfilePage({ params }: { params: { id: string } 
           <div className="max-w-prose mx-auto">
             <p className="section-marker">Eight measures</p>
             <h2 className="font-display text-2xl text-ink mt-1 mb-4">
-              How he ranks across the project&rsquo;s eight measures
+              How he ranks across the project&rsquo;s eleven measures
             </h2>
             <div className="space-y-2">
               {METHODS.map((m, i) => {

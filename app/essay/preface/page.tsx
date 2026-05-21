@@ -76,9 +76,9 @@ export default function PrefaceEssay() {
       <p>
         The headline finding will not surprise readers who know the
         period: two of the six Founders, John Adams and Benjamin
-        Franklin, come out tied at the top of every ranking. What
-        will surprise some readers is{" "}
-        <em>how</em> they got there. Adams quotes Shakespeare
+        Franklin, sit at the top of every ranking. Adams leads on
+        the composite; Franklin sits a step behind. What surprises
+        is <em>how</em> they got there. Adams quotes Shakespeare
         directly, names him, returns to favourite lines across
         decades of correspondence. Franklin almost never names
         Shakespeare and almost never quotes him. And yet every
@@ -93,17 +93,34 @@ export default function PrefaceEssay() {
       </p>
       <p>
         Two other findings come out alongside. The first: when the
-        same English word appears in both corpora at high rates
-        (<em>honour</em>, <em>power</em>, <em>love</em>,{" "}
-        <em>death</em>, <em>friend</em>), the surrounding words it
-        keeps company with diverge so completely that the word is
-        doing different conceptual work in each. The
-        Founders inherited Shakespeare&rsquo;s vocabulary and
-        rebuilt the world it described. The second: two of the six
-        Founders, Hamilton and Madison, opt out of Shakespearean
-        inheritance altogether. Their prose belongs to a completely
-        different intellectual lineage. Their absence is what makes
-        the Adams and Franklin presences mean what they mean.
+        Founders reach for Shakespeare to do political work, they
+        reach almost exclusively for <em>Julius Caesar</em>.
+        Seventeen of the project&rsquo;s twenty-three thematic
+        character-as-type invocations are from that one Roman play,
+        across five of the six Founders and forty-seven years. The
+        Roman Shakespeare essay walks through every one.
+      </p>
+      <p>
+        The second: the difference between the Founders who quote
+        Shakespeare and the ones who don&rsquo;t tracks closely with
+        when each came of age. Adams turned twenty in 1755, with a
+        Harvard education and Shakespeare on the desk. Hamilton
+        turned twenty in 1777, fighting a war that demanded the
+        political reading list of Hume, Locke, Vattel, and Polybius.
+        The Founders who finished their formative reading before the
+        1765 cut produced the great bulk of the project&rsquo;s
+        Shakespeare engagement. The ones who finished after produced
+        almost none.
+      </p>
+      <p>
+        Hamilton and Madison are the project&rsquo;s two least
+        Shakespearean writers. They are not the same case. Madison
+        produced the most thorough Shakespeare absence in the corpus.
+        Hamilton produced one Roman exception, a 1779 letter calling
+        General Lee &ldquo;a little spice of the Julius Caesar or
+        Cromwell.&rdquo; The contrast Hamilton and Madison create
+        with Adams and Franklin at the top is what makes the rest
+        of the project&rsquo;s findings mean what they mean.
       </p>
 
       <hr />
@@ -154,12 +171,15 @@ export default function PrefaceEssay() {
 
       <ul className="my-6 text-base text-ink-soft space-y-2 pl-6 list-disc">
         <li>
-          <strong>The essays</strong> are the commentary. Eight
+          <strong>The essays</strong> are the commentary. Nine
           chapters of long-form prose. The introduction lays out
           the question. The methods chapter explains how the
-          project asked it, in plain English. Four
+          project asked it, in plain English. Five
           substantive-findings chapters describe what the data
-          turned up. A bibliography chapter rounds it out.
+          turned up (two modes of inheritance, the Roman Shakespeare,
+          reading by generation, the convergence of measures, and
+          the Hamilton silence). A bibliography chapter rounds it
+          out.
         </li>
         <li>
           <strong>The case studies</strong> are the per-finding deep
@@ -192,7 +212,7 @@ export default function PrefaceEssay() {
         essays (the{" "}
         <Link href="/essay/two-modes">Two Modes</Link>,{" "}
         <Link href="/essay/honour-test">Honour Test</Link>,{" "}
-        <Link href="/essay/convergence">Eight Ways of Looking</Link>,
+        <Link href="/essay/convergence">Eleven Ways of Looking</Link>,
         and{" "}
         <Link href="/essay/hamilton-silence">Hamilton Silence</Link>{" "}
         essays) and get the project&rsquo;s argument in roughly

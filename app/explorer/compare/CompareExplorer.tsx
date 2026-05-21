@@ -227,7 +227,7 @@ export default function CompareExplorer() {
               Per-method ranks
             </h2>
             <p className="text-sm text-ink-soft mb-5 leading-relaxed">
-              The eight measures are ordered by how sharply the two
+              The eleven measures are ordered by how sharply the two
               Founders disagree on them &mdash; biggest gap at the
               top.
             </p>

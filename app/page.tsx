@@ -711,7 +711,7 @@ function ThreeTeasers() {
       title: "Essays",
       tagline: "The long-form commentary",
       blurb:
-        "Eight chapters adapted from the research paper. The influence question, the methods, the two modes of Shakespearean inheritance, the honour test, the Hamilton silence.",
+        "Nine chapters adapted from the research paper. The influence question, the methods, the two modes of Shakespearean inheritance, the Roman Shakespeare, reading by generation, the Hamilton silence.",
       image: asset("/images/historical/adams-diary-manuscript.jpg"),
       imageAlt: "John Adams diary manuscript page",
     },

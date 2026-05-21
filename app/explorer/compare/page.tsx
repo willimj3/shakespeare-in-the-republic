@@ -72,7 +72,7 @@ export default function CompareExplorerPage() {
 
       <DataScope
         scope="full-corpus"
-        description="Pairwise comparison view drawing on all the per-Founder measures the project computes: composite score, per-method ranks across all eight measures, metaphor-family rates, archaic-form survival, and play counts. Each contributing measure has its own DataScope context on its primary explorer page."
+        description="Pairwise comparison view drawing on all the per-Founder measures the project computes: composite score, per-method ranks across all eleven measures, metaphor-family rates, archaic-form survival, and play counts. Each contributing measure has its own DataScope context on its primary explorer page."
       />
     </div>
   );

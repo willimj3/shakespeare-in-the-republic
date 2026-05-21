@@ -245,11 +245,10 @@ export default function RomanShakespeareEssay() {
       <p>
         Hamilton has zero verbatim Shakespeare in the project&rsquo;s
         catalogue. He never names the playwright in any of his
-        surviving writing. The Hamilton Silence essay treats this as
-        one of the project&rsquo;s three findings: two of the six
-        Founders write as if Shakespeare did not exist. The
-        Roman-Shakespeare data complicates that, and the complication
-        is worth noticing.
+        surviving writing. The Hamilton Silence essay treats him and
+        Madison as the project&rsquo;s two least Shakespearean
+        writers by a substantial margin. The Roman-Shakespeare data
+        gives that silence some texture worth noticing.
       </p>
 
       <p>

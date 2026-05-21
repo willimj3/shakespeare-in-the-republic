@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "Why We Believe the Findings · The Convergence",
   description:
-    "Eight independent ways of measuring Shakespearean inheritance in the Founders' writing. They almost all agree on the ranking. The one place they disagree is the disagreement that makes the two-modes finding possible.",
+    "Eleven independent ways of measuring Shakespearean inheritance in the Founders' writing. They almost all agree on the ranking. The one place they disagree is the disagreement that makes the two-modes finding possible.",
   openGraph: {
     title: "Why We Believe the Findings · The Convergence · Shakespeare in the Republic",
   },
@@ -22,8 +22,8 @@ export default function ConvergenceEssay() {
       chapter={7}
       totalChapters={9}
       sectionMarker="Essay · Why we believe the findings"
-      title="Eight Ways of Looking"
-      subtitle="The project doesn&rsquo;t rest on a single statistical test. Eight different ways of asking &lsquo;how Shakespearean is this Founder?&rsquo; mostly give the same answer. Where they disagree turns out to be the most important place."
+      title="Eleven Ways of Looking"
+      subtitle="The project doesn&rsquo;t rest on a single statistical test. Eleven different ways of asking &lsquo;how Shakespearean is this Founder?&rsquo; mostly give the same answer. Where they disagree turns out to be the most important place."
       prevHref="/essay/reading-by-generation"
       prevLabel="Reading by Generation"
       nextHref="/essay/hamilton-silence"
@@ -43,8 +43,8 @@ export default function ConvergenceEssay() {
           count a borrowing.
         </p>
         <p>
-          The project&rsquo;s answer is to ask the question eight
-          different ways, on eight different aspects of the corpus,
+          The project&rsquo;s answer is to ask the question eleven
+          different ways, on eleven different aspects of the corpus,
           and see whether the answers agree. If they don&rsquo;t,
           something is wrong. If they do, that&rsquo;s the rare case
           where a single statistic isn&rsquo;t the whole story by
@@ -54,21 +54,26 @@ export default function ConvergenceEssay() {
 
       <hr />
 
-      {/* ── The eight measures ─────────────────────────────────────── */}
+      {/* ── The eleven measures ─────────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        Eight different questions
+        Eleven different questions
       </h2>
       <p>
         Each row in the matrix below corresponds to a different way of
         asking the basic question. Each method looks at a different
         aspect of each Founder&rsquo;s writing and ranks the six
-        Founders from most Shakespearean to least.
+        Founders from most Shakespearean to least. Seven of the
+        measures are statistical or stylistic: do the verb forms, the
+        sentence lengths, the metaphor patterns line up with
+        Shakespeare&rsquo;s? Three of the measures are evidence-based:
+        how many traceable Shakespeare references does the Founder
+        produce per million words, in each of three confidence tiers?
       </p>
 
       <ul className="text-base text-ink-soft my-6 space-y-2 pl-6 list-disc">
         <li>
-          <strong>Overall ranking:</strong> a combined score
-          built from seven of the measures below.
+          <strong>Overall ranking:</strong> the average rank position
+          across the ten base methods below.
         </li>
         <li>
           <strong>Pronoun-distribution similarity:</strong> how
@@ -111,11 +116,28 @@ export default function ConvergenceEssay() {
           <em>honour, power, love, death</em>), how much survives in
           the Founder&rsquo;s usage?
         </li>
+        <li>
+          <strong>Verified references per million words:</strong> 140
+          hand-verified Shakespeare references (62 direct quotations
+          + 78 by-name) divided by each Founder&rsquo;s corpus size.
+        </li>
+        <li>
+          <strong>Thematic character invocations per million words:</strong>{" "}
+          23 cases where a Founder names a Shakespearean character as
+          a recognisable type without quoting the play. Seventeen of
+          the twenty-three are <em>Julius Caesar</em>.
+        </li>
+        <li>
+          <strong>Candidate-echo density per million words:</strong>{" "}
+          MEDIUM-or-HIGH-confidence short verbatim matches (4&ndash;5
+          word strings with multiple distinctive Shakespeare content
+          words) per million words of corpus.
+        </li>
       </ul>
 
       <p>
-        Eight different questions. Eight different data sources. Each
-        one is a separate analysis run on the corpus, not a
+        Eleven different questions. Eleven different data sources.
+        Each one is a separate analysis run on the corpus, not a
         rescoring of the same data. They could in principle disagree.
         Mostly, they don&rsquo;t.
       </p>
@@ -130,11 +152,14 @@ export default function ConvergenceEssay() {
       <ConvergenceMatrix />
 
       <p>
-        The matrix reads like a confirmation. Six of the eight rows
-        put Franklin and Adams in the top two positions. Six of the
-        eight rows put Madison and Hamilton in the bottom two. The
-        middle two slots are usually Jefferson and Washington in
-        either order.
+        The matrix reads like a confirmation. Adams takes first place
+        on six of the eleven rows, Franklin takes first on five.
+        Together they occupy the top two positions on seven of the
+        rows. Jefferson is third on nine rows and never breaks out of
+        the third-to-fourth band. Washington sits fourth on seven
+        rows. Madison and Hamilton split the bottom two positions
+        between them across the matrix, with Madison hitting last
+        place more often than Hamilton.
       </p>
       <p>
         This kind of agreement across independent methods is the
@@ -147,10 +172,11 @@ export default function ConvergenceEssay() {
         Founders who happen to write more colloquially; the metaphor
         measure depends on which metaphors you decide to count; the
         statistical-style measure depends on which features you
-        pick. The fact that all eight methods, each with its own
-        plausible sources of error, point at the same six-Founder
-        ranking is what makes the ranking believable. None of the
-        methods individually is decisive; their convergence is.
+        pick. The fact that all eleven methods, each with its own
+        plausible sources of error, point at roughly the same
+        six-Founder ranking is what makes the ranking believable. None
+        of the methods individually is decisive; their convergence
+        is.
       </p>
 
       <hr />
@@ -175,38 +201,47 @@ export default function ConvergenceEssay() {
         </li>
       </ul>
       <p>
-        On every other row in the matrix, Franklin and Adams trade
-        first place. On <em>this</em> measure they sit at opposite
-        ends. The same person who is the <em>most</em> Shakespearean
-        Founder by seven measures is the <em>least</em> Shakespearean
-        Founder by the eighth.
+        On most other rows in the matrix, Franklin and Adams trade
+        first and second. On <em>this</em> row they sit at opposite
+        ends. The same Founder who is the <em>most</em> Shakespearean
+        on the statistical-style measures is the <em>least</em>{" "}
+        Shakespearean on conscious quotation.
       </p>
       <p>
-        This isn&rsquo;t noise. It&rsquo;s the most important finding
-        in the project, compressed into one row. The eighth measure
-        is the one that asks{" "}
-        <em>does the Founder reach for Shakespeare consciously</em>:
-        does he reach for the phrases people would
+        This isn&rsquo;t noise. It is the most important finding in
+        the project compressed into one row. The conscious-coinage
+        measure asks <em>does the Founder reach for Shakespeare
+        consciously</em>: does he reach for the phrases people would
         recognise as Shakespearean? Adams does, constantly. Franklin
         almost never does.
       </p>
       <p>
-        The other seven measures ask different questions. They
-        measure how Shakespearean the Founder&rsquo;s writing{" "}
-        <em>texture</em> is: the verbs he reaches for, the
-        pronouns he uses, the rhythm of his sentences, the kinds of
-        metaphors he constructs. On that, Franklin is the most
+        The three evidence-based measures added after the project
+        expanded its data layers (verified references, thematic
+        invocations, candidate-echo density per million words)
+        deepen the same pattern. Adams takes first on all three.
+        Franklin slips behind Adams and Jefferson on the verified
+        references column (he produced almost no quotation),
+        retains his strong second on candidate-echo density (the
+        absorbed-mode signal he is famous for), and disappears on
+        the thematic invocations column (he never named Brutus or
+        Caesar as a political type the way Adams or Jefferson did).
+      </p>
+      <p>
+        The other measures ask about register and rhythm: the verbs
+        Franklin reaches for, the pronouns he uses, the way his
+        sentences fall on the page. On those, Franklin is the most
         Shakespearean Founder. He sounds the part without ever
-        signalling that he&rsquo;s reaching for it. He had absorbed
+        signalling that he is reaching for it. He absorbed
         Shakespeare so thoroughly that the borrowing was beneath the
         level of citation.
       </p>
       <p>
         Adams collected. Franklin absorbed. Both are real kinds of
         influence. Neither is more &ldquo;influence&rdquo; than the
-        other, but it took eight different ways of looking,
-        and the careful comparison of where they agreed and
-        disagreed, to see both modes at once.
+        other, but it took eleven different ways of looking, and
+        the careful comparison of where they agreed and disagreed,
+        to see both modes at once.
       </p>
 
       <div className="pull-quote">
@@ -232,26 +267,25 @@ export default function ConvergenceEssay() {
         engagement with Shakespeare distinctive.
       </p>
       <p>
-        Running the eight methods independently and looking at the
+        Running the eleven methods independently and looking at the
         pattern of their agreement is what lets the project tell a
         story that doesn&rsquo;t depend on any one of them being
-        right. Where they all agree (Hamilton and Madison are the
-        least Shakespearean), the agreement carries weight no single
-        measure could. Where they disagree in a specific structured
-        way (Adams beats Franklin on conscious quotation; Franklin
-        beats Adams on absorbed register), that disagreement
-        identifies a real two-mode pattern rather than a measurement
-        artefact.
+        right. Where they all agree (Hamilton and Madison sit at
+        the bottom, with Madison&rsquo;s silence the more thorough),
+        the agreement carries weight no single measure could. Where
+        they disagree in a specific structured way (Adams beats
+        Franklin on conscious quotation; Franklin beats Adams on
+        absorbed register), that disagreement identifies a real
+        two-mode pattern rather than a measurement artefact.
       </p>
       <p>
-        That&rsquo;s the contribution this essay records.
-        Shakespearean inheritance in the Founders is not a single
-        thing. It splits cleanly into deliberate quotation and
-        absorbed register, and you can see both modes operating
-        independently in the data. The Adams Shakespeare and the
-        Franklin Shakespeare are not the same Shakespeare, and the
-        way the eight measures agree and disagree is the
-        evidence that they aren&rsquo;t.
+        That is the contribution this essay records. Shakespearean
+        inheritance in the Founders splits cleanly into deliberate
+        quotation and absorbed register, and you can see both modes
+        operating independently in the data. The Adams Shakespeare
+        and the Franklin Shakespeare are different Shakespeares,
+        and the way the eleven measures agree and disagree is the
+        evidence for that.
       </p>
 
       <div className="ornament" />
@@ -268,7 +302,7 @@ export default function ConvergenceEssay() {
           The Hamilton Silence
         </Link>
         . For the methodologically curious, the full description of
-        the eight methods is in the{" "}
+        the eleven methods is in the{" "}
         <Link href="/papers" className="underline">
           scholarly paper
         </Link>

@@ -217,7 +217,7 @@ export default function MethodsEssay() {
       <p>
         Pattern-level questions have many possible answers. To avoid
         getting fooled by any single statistical artefact, the
-        project runs eight independent analyses on eight different
+        project runs eleven independent analyses on eleven different
         aspects of the corpus. Each one ranks the six Founders from
         most Shakespearean to least.
       </p>
@@ -271,7 +271,7 @@ export default function MethodsEssay() {
         How they agree, and where they disagree, is the
         substance of the{" "}
         <Link href="/essay/convergence">
-          Eight Ways of Looking
+          Eleven Ways of Looking
         </Link>{" "}
         essay, which shouldn&rsquo;t be skipped if you want to see the
         joint reading they produce.
@@ -375,7 +375,7 @@ export default function MethodsEssay() {
         confirmed; where they disagree, the disagreement itself is
         the substantive story (see the{" "}
         <Link href="/essay/convergence">
-          Eight Ways of Looking
+          Eleven Ways of Looking
         </Link>{" "}
         essay).
       </p>

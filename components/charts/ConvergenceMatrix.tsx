@@ -13,13 +13,16 @@ import composite from "@/data/composite.json";
  * general-reader-friendly versions, in the same order the JSON uses.
  */
 
+// Column order follows the current composite ranking, most Shakespearean
+// to least. Reading left to right shows the convergence pattern: darker
+// cells on the left, lighter on the right.
 const FOUNDER_ORDER = [
-  "franklin",
   "adams",
+  "franklin",
   "jefferson",
   "washington",
-  "madison",
   "hamilton",
+  "madison",
 ] as const;
 
 const FOUNDER_NAMES: Record<(typeof FOUNDER_ORDER)[number], string> = {
@@ -31,8 +34,10 @@ const FOUNDER_NAMES: Record<(typeof FOUNDER_ORDER)[number], string> = {
   hamilton: "Hamilton",
 };
 
-// Plain-English labels for the eight methods (in the same array order
-// as `methods` in composite.json's six_method_convergence section).
+// Plain-English labels for the eleven measurements (in the same array
+// order as `methods` in composite.json's six_method_convergence section).
+// The original seven statistical and stylistic methods are kept; three
+// new evidence-based methods were added after the backend expansion.
 const METHOD_LABELS = [
   "Overall ranking",
   "Pronoun-distribution similarity",
@@ -42,6 +47,9 @@ const METHOD_LABELS = [
   "Use of Shakespeare-coined phrases",
   "Shakespearean vocabulary",
   "Shakespearean context patterns",
+  "Verified references per million words",
+  "Thematic character invocations per million words",
+  "Candidate-echo density per million words",
 ];
 
 // Rank-to-colour ramp: 1 = darkest folio red (most Shakespearean);
@@ -129,13 +137,14 @@ export default function ConvergenceMatrix() {
         </table>
       </div>
       <figcaption className="mt-3 text-sm text-ink-muted italic text-center leading-snug max-w-prose mx-auto">
-        Eight ways of measuring how Shakespearean each Founder&rsquo;s
+        Eleven ways of measuring how Shakespearean each Founder&rsquo;s
         writing is. The number in each cell is the Founder&rsquo;s
         rank on that measure (1 = most Shakespearean, 6 = least). Cell
         colour follows the rank: darker red = closer to the top.
-        Reading across a row shows how the Founders compare on one
-        method; reading down a column shows how one Founder fares
-        across the eight methods.
+        Columns are ordered by the current overall ranking; reading
+        across a row shows how the Founders compare on one method;
+        reading down a column shows how one Founder fares across all
+        the methods.
       </figcaption>
     </figure>
   );

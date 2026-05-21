@@ -24,9 +24,9 @@ export default function HamiltonSilenceEssay() {
       totalChapters={9}
       sectionMarker="Essay · The substantive findings"
       title="The Hamilton Silence"
-      subtitle="Two of the six Founders write as if Shakespeare did not exist. The absence is the third major finding of the project, and it&rsquo;s what makes the other two findings mean what they mean."
+      subtitle="Two of the six Founders are dramatically less Shakespearean than the other four. Hamilton&rsquo;s silence has a single Roman exception in it. Madison&rsquo;s does not. The contrast they create with Adams and Franklin is what makes the rest of the project&rsquo;s findings mean what they mean."
       prevHref="/essay/convergence"
-      prevLabel="Eight Ways of Looking"
+      prevLabel="Eleven Ways of Looking"
       nextHref="/essay"
       nextLabel="Back to the essay index"
     >
@@ -46,25 +46,33 @@ export default function HamiltonSilenceEssay() {
 
       <div className="has-dropcap">
         <p>
-          The two case studies you can read in this collection on Adams
-          and Franklin make Shakespearean inheritance feel inevitable.
-          Adams quotes Shakespeare four times across the same line in{" "}
+          The case studies elsewhere in this collection make
+          Shakespearean inheritance feel inevitable. Adams quotes
+          Shakespeare four times across the same line in{" "}
           <em>Julius Caesar</em>. Washington paraphrases the
           St. Crispin&rsquo;s Day speech at Valley Forge. Franklin
           writes in seventeenth-century English at the age of sixteen
-          and never stops. It would be easy to come away thinking the
-          Founders all just sounded like Shakespeare a little, in
-          differing degrees.
+          and never stops. A reader could come away thinking the
+          Founders all sounded like Shakespeare in differing degrees.
         </p>
 
         <p>
-          They didn&rsquo;t. Two of the six write as if Shakespeare did
-          not exist. The data finds nothing in their corpora that
-          either statistical analysis or close passage-reading would
-          mark as Shakespearean. Their prose belongs to a different
-          intellectual tradition entirely. And the contrast they
-          create is precisely what gives the Adams and Franklin
-          findings their meaning.
+          They did not. Two of the six are dramatically less
+          Shakespearean than the other four, by every measure the
+          project applies. Their prose belongs to a different
+          intellectual tradition. The contrast they create is
+          what gives the Adams and Franklin findings their meaning.
+        </p>
+
+        <p>
+          The two are not the same case. Hamilton has one thematic
+          allusion to <em>Julius Caesar</em>, plus a reported
+          dinner-party line that named Caesar the greatest man who
+          ever lived; his silence is real but specific, with a Roman
+          exception in it. Madison has no thematic allusions at all
+          and the single most thorough Shakespeare-absence in the
+          corpus. The new evidence layers show the bottom two
+          Founders are similar in rank but different in shape.
         </p>
       </div>
 
@@ -83,7 +91,7 @@ export default function HamiltonSilenceEssay() {
 
       <Stat
         value="0"
-        label="Times Hamilton names Shakespeare in any of his writings. Adams names him forty-two times, Jefferson twenty-three. Hamilton: not once."
+        label="Times Hamilton names Shakespeare in any of his writings. Adams names him twenty-five times across twenty-one documents. Jefferson names him eleven times across ten. Hamilton: not once."
       />
 
       <Stat
@@ -108,12 +116,15 @@ export default function HamiltonSilenceEssay() {
 
       <p>
         On the project&rsquo;s overall ranking of how Shakespearean
-        each Founder&rsquo;s writing is, Hamilton finishes last.
-        Madison finishes second-to-last. The gap between them and
-        the four other Founders is large. The worst-case
-        difference between Adams or Franklin at the top and Hamilton
-        at the bottom is bigger than the difference between Franklin
-        at the top and the corpus midpoint.
+        each Founder&rsquo;s writing is, Madison finishes last.
+        Hamilton finishes fifth, edging Madison by a small margin
+        on the new evidence layers (Hamilton&rsquo;s single Caesar
+        invocation; a marginally higher candidate-echo density per
+        million words). The gap between Hamilton and Madison at the
+        bottom is small. The gap between either of them and the
+        four Founders above is much larger. Adams at the top scores
+        roughly four times their composite; Franklin scores three
+        times.
       </p>
 
       <hr />
@@ -148,29 +159,28 @@ export default function HamiltonSilenceEssay() {
       />
       <p>
         The word <em>multitudinous</em> is one of Shakespeare&rsquo;s
-        most famous coined-or-popularised inventions, from Macbeth&rsquo;s
-        line about the &ldquo;multitudinous seas incarnadine&rdquo;
-        immediately after the murder of Duncan. Hamilton uses it in
-        a treaty-clause argument, two centuries later, on the floor of
-        what would become a national political debate. It is the one
-        Shakespearean inheritance the project&rsquo;s pipelines can
-        find in his writing.
+        most famous coined-or-popularised inventions, from
+        Macbeth&rsquo;s line about the &ldquo;multitudinous seas
+        incarnadine&rdquo; immediately after the murder of Duncan.
+        Hamilton uses it in a treaty-clause argument, two centuries
+        later, on the floor of what would become a national political
+        debate.
       </p>
       <p>
-        And even that one is invisible to the strict test. By
-        Hamilton&rsquo;s day, <em>multitudinous</em> had become common
-        enough in formal English that the project&rsquo;s statistical
-        analysis of phrases popularly attributed to Shakespeare would
-        not flag it as Shakespeare-distinctive against the
-        Founders&rsquo; ordinary vocabulary. Hamilton&rsquo;s one
-        small Shakespearean borrowing belongs to the same category as
-        Washington&rsquo;s <em>band of brothers</em>: phrases
-        that travelled from Shakespeare into general 18th-century
-        English and arrived at the Founders without a visible Shakespeare
-        marker on them.
+        By Hamilton&rsquo;s day, <em>multitudinous</em> had become
+        common enough in formal English that the project&rsquo;s
+        statistical analysis of phrases popularly attributed to
+        Shakespeare would not flag it as Shakespeare-distinctive
+        against the Founders&rsquo; ordinary vocabulary.
+        Hamilton&rsquo;s small Shakespearean borrowing belongs to
+        the same category as Washington&rsquo;s <em>band of
+        brothers</em>: phrases that travelled from Shakespeare into
+        general 18th-century English and arrived at the Founders
+        without a visible Shakespeare marker on them.
       </p>
       <p>
-        One additional trace, recovered at a looser threshold, sits in
+        Two further traces of Shakespeare sit in Hamilton&rsquo;s
+        writing once the project widens its threshold. The first is
         an 11 September 1779 letter to John Laurens, where Hamilton
         writes of General Charles Lee that &ldquo;if he had not a
         little spice of the Julius Caesar or Cromwell in him, he
@@ -178,10 +188,35 @@ export default function HamiltonSilenceEssay() {
         <Link href="/explorer/thematic-allusions">
           thematic-allusions
         </Link>{" "}
-        scan flags it as Hamilton&rsquo;s single invocation of a
-        Shakespearean type. One allusion across 2.35 million words
-        doesn&rsquo;t dent the silence finding; if anything, the rarity
-        is itself the point.
+        scan records it as Hamilton&rsquo;s single character-as-type
+        invocation of a Shakespearean figure.
+      </p>
+      <p>
+        The second comes second-hand. Jefferson, writing to Benjamin
+        Rush in January 1811, recalls a dinner-party conversation in
+        which he had named his trinity of greatest minds (Bacon,
+        Newton, Locke) and Hamilton had answered: &ldquo;the greatest
+        man that ever lived was Julius Caesar.&rdquo; Whether Hamilton
+        said it in exactly those words, or in the version Jefferson
+        sharpened over the decades, the line shows what Caesar meant
+        to him. The{" "}
+        <Link href="/essay/roman-shakespeare" className="underline">
+          Roman Shakespeare
+        </Link>{" "}
+        essay walks through the implication: the political Caesar of
+        the Roman play had become cultural shorthand by the late
+        eighteenth century, available to Hamilton even without
+        Shakespeare-as-literature on his desk.
+      </p>
+      <p>
+        Three small traces across a 2.35-million-word corpus do not
+        overturn the silence finding. They give it texture. Hamilton
+        had the Roman Shakespeare. He did not have Adams&rsquo;s
+        catalogue or Franklin&rsquo;s register. The other Founder
+        whose corpus the project finds nothing meaningful in is
+        Madison, whose absence is more thorough: zero thematic
+        allusions, no Federalist-scale Shakespeare trace, and no
+        recorded line about which historical figure he most admired.
       </p>
 
       <hr />
@@ -263,16 +298,23 @@ export default function HamiltonSilenceEssay() {
         different sources entirely.
       </p>
       <p>
-        That distribution (two heavy users, two moderate, two
-        essentially absent) is what the project&rsquo;s data
-        shows. The two-modes finding{" "}
-        <Link href="/essay/two-modes">in the Adams/Franklin essay</Link>{" "}
-        and the conceptual-inheritance finding{" "}
-        <Link href="/essay/honour-test">in the Honour Test essay</Link>{" "}
-        are both, in a sense, descriptions of what Adams and Franklin
-        did with the Shakespearean material available to them. The
-        Hamilton silence is the description of what Hamilton and
-        Madison did with the same material: nothing visible.
+        That distribution, two heavy users, two moderate, two
+        much smaller, is what the project&rsquo;s data shows. The
+        two-modes finding{" "}
+        <Link href="/essay/two-modes" className="underline">
+          in the Adams/Franklin essay
+        </Link>{" "}
+        and the political-vocabulary finding{" "}
+        <Link href="/essay/roman-shakespeare" className="underline">
+          in the Roman Shakespeare essay
+        </Link>{" "}
+        describe what Adams, Franklin, Jefferson, and to a degree
+        Hamilton did with the Shakespearean material available to
+        them. The story this essay tells is the harder one. Adams
+        chose to engage Shakespeare densely. Madison chose not to
+        engage at all. Hamilton chose the smallest possible Roman
+        slice and built his prose from other materials. The choices
+        are visible in the data.
       </p>
       <p>
         That makes their absence the third pillar of the project&rsquo;s
@@ -304,15 +346,20 @@ export default function HamiltonSilenceEssay() {
       <div className="ornament" />
 
       <p className="text-sm text-ink-muted italic text-center">
-        This is one of three substantive findings essays. See also{" "}
+        See also{" "}
         <Link href="/essay/two-modes" className="underline">
           Two Modes of Shakespearean Influence
-        </Link>{" "}
-        (Adams citational, Franklin absorbed) and{" "}
-        <Link href="/essay/honour-test" className="underline">
-          The Honour Test
-        </Link>{" "}
-        (shared vocabulary, divergent conceptual worlds).
+        </Link>
+        ,{" "}
+        <Link href="/essay/roman-shakespeare" className="underline">
+          The Roman Shakespeare
+        </Link>
+        , and{" "}
+        <Link href="/essay/reading-by-generation" className="underline">
+          Reading by Generation
+        </Link>
+        , which between them explain why Hamilton&rsquo;s formative
+        reading happened on the wrong side of the 1765 cut.
       </p>
     </EssayLayout>
   );

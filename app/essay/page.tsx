@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Essays",
   description:
-    "The Commentary: eight long-form chapters on Shakespeare's influence on six American Founders, adapted from the scholarly paper.",
+    "The Commentary: nine long-form chapters on Shakespeare's influence on six American Founders, adapted from the scholarly paper.",
   openGraph: {
     title: "Essays · Shakespeare in the Republic",
   },
@@ -73,9 +73,9 @@ const chapters: ChapterEntry[] = [
   {
     num: 7,
     slug: "convergence",
-    title: "Eight Ways of Looking",
+    title: "Eleven Ways of Looking",
     summary:
-      "Why we believe the findings. Eight independent ways of measuring Shakespearean inheritance mostly agree on the per-Founder ranking, and the one place they disagree is the disagreement that produces the two-modes story.",
+      "Why we believe the findings. Eleven independent ways of measuring Shakespearean inheritance mostly agree on the per-Founder ranking, and the place they disagree is the disagreement that produces the two-modes story.",
     status: "live",
   },
   {
@@ -107,7 +107,7 @@ export default function EssaysLanding() {
               The Commentary
             </h1>
             <p className="font-display text-lg text-ink-soft italic mt-4 leading-snug">
-              Eight chapters covering the influence question, the methods,
+              Nine chapters covering the influence question, the methods,
               and the substantive findings.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">

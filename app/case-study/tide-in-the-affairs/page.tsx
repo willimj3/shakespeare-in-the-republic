@@ -35,7 +35,7 @@ export default function TideInTheAffairs() {
       subtitle="John Adams quotes Brutus&rsquo;s &lsquo;tide in the affairs of men&rsquo; five times across thirty-eight years, in five different moods."
       anchorFinding={
         <>
-          Of the fifty-three verbatim Shakespeare quotations Adams
+          Of the sixty-one verbatim Shakespeare quotations Adams
           produces, this one line (from Brutus to Cassius in{" "}
           <em>Julius Caesar</em> 4.3) recurs more than any other.
           It appears in his Revolutionary correspondence of 1776, in his
@@ -283,7 +283,7 @@ export default function TideInTheAffairs() {
         <Link href="/explorer" className="underline">
           the explorer
         </Link>{" "}
-        to browse the full catalogue of Adams&rsquo;s fifty-three verbatim
+        to browse the full catalogue of Adams&rsquo;s sixty-one verbatim
         Shakespeare quotations.
       </p>
     </CaseStudyLayout>

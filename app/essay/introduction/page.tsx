@@ -130,10 +130,11 @@ export default function IntroductionEssay() {
         First: there are two distinct modes of inheritance, not one.
       </h3>
       <p>
-        Across the six Founders, Adams and Franklin tie at the top
-        of every comparison the project ran. But they got there in
-        completely different ways. Adams quotes Shakespeare
-        explicitly, names him by name forty-two times across his
+        Across the six Founders, Adams and Franklin sit at the top
+        of every comparison the project ran. Adams leads the
+        composite. Franklin sits within a hair behind. They got
+        there in completely different ways. Adams quotes Shakespeare
+        explicitly, names him by name twenty-five times across his
         life, and returns to favourite Shakespearean lines over and
         over: deploying Brutus&rsquo;s &ldquo;tide in the
         affairs of men&rdquo; in correspondence in 1776, 1781,
@@ -266,7 +267,7 @@ export default function IntroductionEssay() {
         four findings essays:{" "}
         <Link href="/essay/two-modes">Two Modes</Link>,{" "}
         <Link href="/essay/honour-test">The Honour Test</Link>,{" "}
-        <Link href="/essay/convergence">Eight Ways of Looking</Link>{" "}
+        <Link href="/essay/convergence">Eleven Ways of Looking</Link>{" "}
         (which is the &ldquo;why we believe the findings&rdquo;
         chapter), and{" "}
         <Link href="/essay/hamilton-silence">

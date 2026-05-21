@@ -42,7 +42,7 @@ export default function TwoModesEssay() {
           alt: "Benjamin Franklin, by Joseph Duplessis, c. 1785",
           caption: "Benjamin Franklin (Duplessis, c. 1785)",
         }}
-        caption="The two most-Shakespearean Founders, almost tied at the top of every comparison the project ran. They got there in fundamentally different ways."
+        caption="The two most-Shakespearean Founders. Adams leads the composite; Franklin sits a step behind. They got there in fundamentally different ways."
       />
 
       {/* ── Opening (with drop-cap on first ¶) ─────────────────────── */}
@@ -50,12 +50,12 @@ export default function TwoModesEssay() {
         <p>
           The natural question to ask of a project like this one is{" "}
           <em>who&rsquo;s most Shakespearean?</em>, and to expect
-          a single name. The data refuses. John Adams and Benjamin
-          Franklin tie at the top by every measure the project ran;
-          they sit within a hair of each other on six different
-          comparisons. The interesting finding isn&rsquo;t which of
-          them &ldquo;wins&rdquo;. It&rsquo;s that they got there in
-          completely different ways.
+          a single name. The data answers half the question. John
+          Adams leads the project&rsquo;s composite ranking, and
+          Benjamin Franklin sits a step behind. The two of them
+          dominate the top of every measure the project runs. The
+          interesting finding is that they got there in completely
+          different ways.
         </p>
 
         <p>
@@ -79,7 +79,7 @@ export default function TwoModesEssay() {
       </h2>
       <p>
         John Adams is the only Founder who refers to Shakespeare by name in
-        our corpus. He does so forty-two times across his life: in his diaries
+        our corpus. He does so twenty-five times across his life: in his diaries
         from 1757 onward, in literary-critical reflections of 1772, in
         correspondence about contemporaries he wants to characterise, in his
         retirement reading of 1803, and in his late-life letters of 1809 and
@@ -116,7 +116,7 @@ export default function TwoModesEssay() {
         Macbeth&rsquo;s account of Duncan&rsquo;s horses turning wild after
         the murder, with the night portents preceding Banquo&rsquo;s death,
         and with brief glosses on character. The 1758 cluster alone produces
-        eighteen of Adams&rsquo;s fifty-three verbatim Shakespeare quotations.
+        eighteen of Adams&rsquo;s sixty-one verbatim Shakespeare quotations.
       </p>
 
       <p>
@@ -251,11 +251,14 @@ export default function TwoModesEssay() {
       <CompositeRanking />
 
       <p>
-        First, Franklin and Adams essentially tie at the top, roughly
-        three percent apart. Second, Madison and Hamilton are
-        far behind both of them. Hamilton and Madison are the
-        project&rsquo;s two least Shakespearean writers across every
-        single measure.
+        First, Adams leads the composite, with Franklin a step
+        behind. The two of them dominate the top of every measure
+        the project runs. Second, Madison and Hamilton are
+        the project&rsquo;s two least Shakespearean writers, sitting
+        much further back than Franklin sits from Adams. Madison
+        edges Hamilton for last place once the thematic-allusion
+        layer is counted; Hamilton&rsquo;s one Roman Caesar
+        reference puts him a small margin above.
       </p>
 
       <p>

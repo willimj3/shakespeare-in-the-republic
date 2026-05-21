@@ -1,5 +1,5 @@
 {
-  "generated": "from FOUNDER_META + catalogue.json + composite.json via scripts/export_site_data.py",
+  "generated": "Composite scores recomputed across 10 base methods after the backend expansion: the original 7 statistical/stylistic measures + thematic-allusion density + catalogue density + MEDIUM+ candidate-echo density, all normalized per million words. See data/composite.json for the full matrix.",
   "founders": [
     {
       "id": "adams",
@@ -7,10 +7,10 @@
       "born": 1735,
       "died": 1826,
       "portrait": "/images/historical/adams-trumbull-c1792.jpg",
-      "tagline": "The most Shakespearean Founder by citation; 53 verbatim quotations across six decades.",
-      "composite": 0.7619,
-      "direct_high": 53,
-      "named_shakespeare": 42
+      "tagline": "The most Shakespearean Founder by every measure. 61 verbatim quotations and 48 by-name references across his life, 18 thematic Roman character invocations, more than twice the next Founder per million words.",
+      "composite": 0.88,
+      "direct_high": 61,
+      "named_shakespeare": 48
     },
     {
       "id": "franklin",
@@ -18,8 +18,8 @@
       "born": 1706,
       "died": 1790,
       "portrait": "/images/historical/franklin-duplessis-1785.jpg",
-      "tagline": "Shakespeare absorbed as a habit. Highest archaic-form density of any Founder.",
-      "composite": 0.7857,
+      "tagline": "Shakespeare absorbed as habit, not citation. Almost no quotation, but the highest archaic-form density of any Founder and per-million Shakespeare-overlap second only to Adams.",
+      "composite": 0.76,
       "direct_high": 0,
       "named_shakespeare": 2
     },
@@ -29,10 +29,10 @@
       "born": 1743,
       "died": 1826,
       "portrait": "/images/historical/jefferson-peale-1800.jpg",
-      "tagline": "Strategic Shakespearean \u2014 23 named references, deployed with care; one verbatim *Julius Caesar*.",
-      "composite": 0.5952,
+      "tagline": "The gentleman-reader's Shakespeare. 26 by-name references, zero direct quotations, four thematic Brutus and Caesar invocations across the Federal period.",
+      "composite": 0.68,
       "direct_high": 0,
-      "named_shakespeare": 23
+      "named_shakespeare": 26
     },
     {
       "id": "washington",
@@ -40,21 +40,10 @@
       "born": 1732,
       "died": 1799,
       "portrait": "/images/historical/washington-stuart-1796.jpg",
-      "tagline": "Less literary than the others, but the 1778 \"band of brothers\" passes through his pen.",
-      "composite": 0.5238,
+      "tagline": "Less literary than the others. The 1778 'band of brothers' passes through his pen at Valley Forge and elsewhere; otherwise the Shakespeare is absent.",
+      "composite": 0.28,
       "direct_high": 0,
       "named_shakespeare": 1
-    },
-    {
-      "id": "madison",
-      "name": "James Madison",
-      "born": 1751,
-      "died": 1836,
-      "portrait": "/images/historical/madison-stuart-1804.jpg",
-      "tagline": "Administratively careful prose. No verbatim Shakespeare and no named reference in 8,584 documents.",
-      "composite": 0.4286,
-      "direct_high": 0,
-      "named_shakespeare": 0
     },
     {
       "id": "hamilton",
@@ -62,8 +51,19 @@
       "born": 1755,
       "died": 1804,
       "portrait": "/images/historical/hamilton-trumbull-1806.jpg",
-      "tagline": "The Hamilton silence. Zero verbatim Shakespeare. Zero shared HIGH-bin stylistic types with Shakespeare under CFA.",
-      "composite": 0.4048,
+      "tagline": "Bottom of the rankings on every literary measure. The one exception is Roman: a 1779 letter calling General Lee 'a little spice of Julius Caesar or Cromwell', plus a reported dinner-party line naming Caesar the greatest man who ever lived.",
+      "composite": 0.22,
+      "direct_high": 0,
+      "named_shakespeare": 0
+    },
+    {
+      "id": "madison",
+      "name": "James Madison",
+      "born": 1751,
+      "died": 1836,
+      "portrait": "/images/historical/madison-stuart-1804.jpg",
+      "tagline": "The most thorough silence in the corpus. One medium-confidence direct quotation and one by-name reference across 3.4 million words, with no thematic allusions in the data at all.",
+      "composite": 0.18,
       "direct_high": 0,
       "named_shakespeare": 0
     }
