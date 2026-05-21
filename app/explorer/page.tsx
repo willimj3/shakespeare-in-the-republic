@@ -73,6 +73,15 @@ const VIEWS: ExplorerView[] = [
     image: asset("/images/historical/shakespeare-first-folio-title-page-1623.jpg"),
     imageAlt: "First Folio title page (1623).",
   },
+  {
+    slug: "play-atlas",
+    title: "The Play Atlas",
+    blurb:
+      "Which Shakespeare plays the Founders' catalogue actually reaches for. Macbeth, The Tempest, Othello, Julius Caesar, Henry V — all of them traceable to John Adams. The empty columns are part of the finding.",
+    status: "live",
+    image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
+    imageAlt: "First Folio: Julius Caesar.",
+  },
 ];
 
 export default function ExplorerLanding() {
