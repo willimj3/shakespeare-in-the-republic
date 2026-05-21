@@ -4,9 +4,15 @@ import EssayLayout from "@/components/EssayLayout";
 
 export const metadata: Metadata = {
   title:
-    "How We Asked the Question · Methods · Shakespeare in the Republic",
+    "How We Asked the Question · Methods",
   description:
     "What the project did, in plain English. Why we picked the corpus we did, what counts as 'Shakespearean influence', and how we kept ourselves honest.",
+  openGraph: {
+    title: "How We Asked the Question · Methods · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "How We Asked the Question · Methods · Shakespeare in the Republic",
+  },
 };
 
 export default function MethodsEssay() {

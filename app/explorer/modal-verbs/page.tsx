@@ -4,9 +4,15 @@ import ModalVerbsExplorer from "./ModalVerbsExplorer";
 import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
-  title: "Modal Verbs · Shakespeare in the Republic",
+  title: "Modal Verbs",
   description:
     "Diachronic shift in English modal-verb usage across each Founder's career, with Shakespeare's rates as a fixed reference. Watch shall give way to will and ought give way to should over the long eighteenth century.",
+  openGraph: {
+    title: "Modal Verbs · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Modal Verbs · Shakespeare in the Republic",
+  },
 };
 
 export default function ModalVerbsPage() {

@@ -4,9 +4,15 @@ import RankingExplorer from "./RankingExplorer";
 import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
-  title: "The Ranking · Shakespeare in the Republic",
+  title: "The Ranking",
   description:
     "An interactive ranking of how Shakespearean each Founder's writing is, broken down by eight different ways of measuring. Click a column to re-sort. Click a Founder to see their profile. Toggle the disagreement view to see what makes the project's substantive finding.",
+  openGraph: {
+    title: "The Ranking · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Ranking · Shakespeare in the Republic",
+  },
 };
 
 export default function RankingExplorerPage() {

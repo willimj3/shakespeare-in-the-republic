@@ -17,9 +17,15 @@ const TIDE_EVENTS: TimelineEvent[] = [
 
 export const metadata: Metadata = {
   title:
-    "There Is a Tide · Adams quotes Brutus for thirty-eight years · Shakespeare in the Republic",
+    "There Is a Tide · Adams quotes Brutus for thirty-eight years",
   description:
     "John Adams quoted Brutus's tide speech five times across 38 years. The same line carries five different uses.",
+  openGraph: {
+    title: "There Is a Tide · Adams quotes Brutus for thirty-eight years · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "There Is a Tide · Adams quotes Brutus for thirty-eight years · Shakespeare in the Republic",
+  },
 };
 
 export default function TideInTheAffairs() {

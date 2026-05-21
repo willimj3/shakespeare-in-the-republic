@@ -6,9 +6,15 @@ import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
-    "The 1758 Macbeth Study · Case Study · Shakespeare in the Republic",
+    "The 1758 Macbeth Study · Case Study",
   description:
     "In one diary entry late in 1758, the 23-year-old John Adams works his way through Macbeth, transcribing sixteen separate passages and writing his own commentary in the margins. The single densest Shakespeare-reading event in the entire corpus, captured live on the page.",
+  openGraph: {
+    title: "The 1758 Macbeth Study · Case Study · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The 1758 Macbeth Study · Case Study · Shakespeare in the Republic",
+  },
 };
 
 /**

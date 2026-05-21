@@ -9,9 +9,15 @@ import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
-    "Band of Brothers at Valley Forge · Washington paraphrases Henry V · Shakespeare in the Republic",
+    "Band of Brothers at Valley Forge · Washington paraphrases Henry V",
   description:
     "On 6 April 1778, in the worst winter of the Continental Army, Washington's General Orders paraphrase the St. Crispin's Day speech. The phrase recurs four more times across the next twenty years.",
+  openGraph: {
+    title: "Band of Brothers at Valley Forge · Washington paraphrases Henry V · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Band of Brothers at Valley Forge · Washington paraphrases Henry V · Shakespeare in the Republic",
+  },
 };
 
 const BAND_EVENTS: TimelineEvent[] = [

@@ -3,9 +3,15 @@ import Link from "next/link";
 import credits from "@/data/image-credits.json";
 
 export const metadata: Metadata = {
-  title: "Image credits · Shakespeare in the Republic",
+  title: "Image credits",
   description:
     "Attribution for the public-domain portraits, First Folio scans, and historical document images used on this site.",
+  openGraph: {
+    title: "Image credits · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Image credits · Shakespeare in the Republic",
+  },
 };
 
 type Credit = {

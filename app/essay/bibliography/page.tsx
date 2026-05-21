@@ -4,9 +4,15 @@ import EssayLayout from "@/components/EssayLayout";
 
 export const metadata: Metadata = {
   title:
-    "References and Reproducibility · Shakespeare in the Republic",
+    "References and Reproducibility",
   description:
     "The reading list, the data sources, and the path from the underlying database to every claim on this site. Closes the eight-chapter essay sequence.",
+  openGraph: {
+    title: "References and Reproducibility · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "References and Reproducibility · Shakespeare in the Republic",
+  },
 };
 
 export default function BibliographyEssay() {

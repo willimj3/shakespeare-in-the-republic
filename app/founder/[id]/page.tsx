@@ -113,9 +113,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const f = FOUNDER_MAP[params.id];
   if (!f) return {};
+  const pageTitle = `${f.name} · Shakespeare in the Republic`;
+  const desc = `Per-Founder profile for ${f.name}: composite influence ranking, metaphor signature, archaic-form survival, plays cited, and case studies featuring him.`;
   return {
-    title: `${f.name} · Shakespeare in the Republic`,
-    description: `Per-Founder profile for ${f.name}: composite influence ranking, metaphor signature, archaic-form survival, plays cited, and case studies featuring him.`,
+    title: f.name,
+    description: desc,
+    openGraph: { title: pageTitle, description: desc },
+    twitter: { title: pageTitle, description: desc },
   };
 }
 

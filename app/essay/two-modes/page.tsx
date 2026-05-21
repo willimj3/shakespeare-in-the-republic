@@ -7,9 +7,15 @@ import CompositeRanking from "@/components/charts/CompositeRanking";
 import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "Two Modes of Shakespearean Influence · Shakespeare in the Republic",
+  title: "Two Modes of Shakespearean Influence",
   description:
     "Adams citational, Franklin absorbed. Why the corpus needs both methods to see them.",
+  openGraph: {
+    title: "Two Modes of Shakespearean Influence · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Two Modes of Shakespearean Influence · Shakespeare in the Republic",
+  },
 };
 
 export default function TwoModesEssay() {

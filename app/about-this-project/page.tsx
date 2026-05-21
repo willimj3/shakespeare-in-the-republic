@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About this project · Shakespeare in the Republic",
+  title: "About this project",
   description:
     "A candid note on how this site was actually made. As much an experiment in working with Claude Code (Anthropic's coding agent) as a piece of research about Shakespeare and the Founders.",
+  openGraph: {
+    title: "About this project · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "About this project · Shakespeare in the Republic",
+  },
 };
 
 export default function AboutThisProjectPage() {

@@ -5,9 +5,15 @@ import metaphor from "@/data/metaphor.json";
 import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
-  title: "Metaphor Fingerprints · Shakespeare in the Republic",
+  title: "Metaphor Fingerprints",
   description:
     "Eight conceptual-metaphor families (EDIFICE, BODY, SHIP, FIRE, PLANT, PATH, MOTION, CONTAINER) per Founder, with Shakespeare's silhouette overlaid for comparison. Each Founder has a distinctive shape, and Shakespeare's EDIFICE rate is exactly zero.",
+  openGraph: {
+    title: "Metaphor Fingerprints · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Metaphor Fingerprints · Shakespeare in the Republic",
+  },
 };
 
 const FOUNDER_ORDER = [

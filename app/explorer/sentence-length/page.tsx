@@ -3,9 +3,15 @@ import DataScope from "@/components/DataScope";
 import data from "@/data/sentence_length.json";
 
 export const metadata: Metadata = {
-  title: "Sentence Length · Shakespeare in the Republic",
+  title: "Sentence Length",
   description:
     "Distribution of sentence lengths across each Founder's writing and Shakespeare's plays. The Founders' epistolary prose runs 2-4x longer than Shakespeare's dramatic verse on average. Washington is the most ponderous; Shakespeare's median sentence is five words.",
+  openGraph: {
+    title: "Sentence Length · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Sentence Length · Shakespeare in the Republic",
+  },
 };
 
 const FOUNDER_ORDER = [

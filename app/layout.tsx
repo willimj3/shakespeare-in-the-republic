@@ -23,13 +23,43 @@ const inter = Inter({
   display: "swap",
 });
 
+const SITE_URL =
+  "https://willimj3.github.io/shakespeare-in-the-republic";
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
+const SITE_TITLE = "Shakespeare in the Republic";
+const SITE_DESCRIPTION =
+  "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders: Adams, Jefferson, Franklin, Hamilton, Madison, Washington. 68,807 documents and 24.6 million words.";
+
 export const metadata: Metadata = {
-  title: "Shakespeare in the Republic",
-  description:
-    "A corpus-linguistic study of Shakespeare's linguistic influence on six American Founders: " +
-    "Adams, Jefferson, Franklin, Hamilton, Madison, Washington. " +
-    "68,807 documents and 24.6 million words.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: SITE_TITLE,
+    template: "%s · Shakespeare in the Republic",
+  },
+  description: SITE_DESCRIPTION,
   authors: [{ name: "Mark J. Williams" }],
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_TITLE,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Shakespeare in the Republic. A corpus-linguistic study of Shakespeare's influence on six American Founders. The site title alongside the engraved portrait from the 1623 First Folio.",
+      },
+    ],
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
+  },
 };
 
 export default function RootLayout({

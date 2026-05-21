@@ -6,9 +6,15 @@ import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
-    "Honour, from Pawn to Postscript · Case Study · Shakespeare in the Republic",
+    "Honour, from Pawn to Postscript · Case Study",
   description:
     "The same English word appears thousands of times on each side of the Atlantic, two centuries apart. Its neighbours have changed completely. Shakespeare's honour can be pawned; the Founders' honour closes a letter.",
+  openGraph: {
+    title: "Honour, from Pawn to Postscript · Case Study · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Honour, from Pawn to Postscript · Case Study · Shakespeare in the Republic",
+  },
 };
 
 export default function HonourTestCaseStudy() {

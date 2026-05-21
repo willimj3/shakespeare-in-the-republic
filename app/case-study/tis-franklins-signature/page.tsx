@@ -7,9 +7,15 @@ import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
-    "'Tis: Franklin's Signature Contraction · Shakespeare in the Republic",
+    "'Tis: Franklin's Signature Contraction",
   description:
     "Franklin uses the archaic contraction 'tis at 342 per million words across his life, twice the next Founder's rate and ten times most. He starts at age sixteen in Silence Dogood and never stops.",
+  openGraph: {
+    title: "'Tis: Franklin's Signature Contraction · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "'Tis: Franklin's Signature Contraction · Shakespeare in the Republic",
+  },
 };
 
 export default function TisFranklinsSignature() {

@@ -4,9 +4,15 @@ import ArchaicExplorer from "./ArchaicExplorer";
 import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
-  title: "The Archaic Threshold · Shakespeare in the Republic",
+  title: "The Archaic Threshold",
   description:
     "Thirty-eight archaic Shakespearean forms (thou, thee, hath, methinks, prithee, whilst…) tested against each Founder's corpus. Pick a Founder. See which forms still live and which have died by the eighteenth century.",
+  openGraph: {
+    title: "The Archaic Threshold · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Archaic Threshold · Shakespeare in the Republic",
+  },
 };
 
 export default function ArchaicExplorerPage() {

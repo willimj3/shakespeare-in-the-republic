@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Essays · Shakespeare in the Republic",
+  title: "Essays",
   description:
     "The Commentary: eight long-form chapters on Shakespeare's influence on six American Founders, adapted from the scholarly paper.",
+  openGraph: {
+    title: "Essays · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Essays · Shakespeare in the Republic",
+  },
 };
 
 type ChapterEntry = {

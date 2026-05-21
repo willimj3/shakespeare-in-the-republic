@@ -6,9 +6,15 @@ import { Stat } from "@/components/Kwic";
 import Kwic from "@/components/Kwic";
 
 export const metadata: Metadata = {
-  title: "The Hamilton Silence · Shakespeare in the Republic",
+  title: "The Hamilton Silence",
   description:
     "Of the six Founders, Alexander Hamilton has zero verbatim Shakespeare quotations, zero by-name references, and zero detectable Shakespearean stylistic features. James Madison's record is the same. The absence is the third major finding of the project.",
+  openGraph: {
+    title: "The Hamilton Silence · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Hamilton Silence · Shakespeare in the Republic",
+  },
 };
 
 export default function HamiltonSilenceEssay() {

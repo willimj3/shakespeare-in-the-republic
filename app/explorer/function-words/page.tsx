@@ -5,9 +5,15 @@ import data from "@/data/function_words.json";
 
 export const metadata: Metadata = {
   title:
-    "Function-Word Fingerprint · Shakespeare in the Republic",
+    "Function-Word Fingerprint",
   description:
     "Per-million rates of the 36 most common English function words across the six Founders and Shakespeare. Cosine similarity to Shakespeare for each Founder. The classic Mosteller-Wallace stylometric signal.",
+  openGraph: {
+    title: "Function-Word Fingerprint · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Function-Word Fingerprint · Shakespeare in the Republic",
+  },
 };
 
 const FOUNDER_ORDER = [

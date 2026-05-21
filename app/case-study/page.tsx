@@ -4,9 +4,15 @@ import Image from "next/image";
 import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "Case Studies · Shakespeare in the Republic",
+  title: "Case Studies",
   description:
     "Per-finding deep dives. Adams quoting Brutus across thirty-eight years. Washington paraphrasing Henry V at Valley Forge. Franklin's 'tis from age sixteen onward.",
+  openGraph: {
+    title: "Case Studies · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Case Studies · Shakespeare in the Republic",
+  },
 };
 
 type CaseStudy = {

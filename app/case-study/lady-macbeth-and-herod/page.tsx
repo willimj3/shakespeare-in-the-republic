@@ -7,9 +7,15 @@ import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
-    "Lady Macbeth and Herod · Case Study · Shakespeare in the Republic",
+    "Lady Macbeth and Herod · Case Study",
   description:
     "John Adams quotes Lady Macbeth's 'I have given suck' speech four times across fifty-three years, pairing it with biblical Herod in 1782, softening it into parental advice in 1799, and turning it into the figure of revolutionary consciousness in 1818.",
+  openGraph: {
+    title: "Lady Macbeth and Herod · Case Study · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Lady Macbeth and Herod · Case Study · Shakespeare in the Republic",
+  },
 };
 
 const events = [

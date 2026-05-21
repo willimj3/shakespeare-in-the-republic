@@ -5,9 +5,15 @@ import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title:
-    "The Reference Catalogue · Shakespeare in the Republic",
+    "The Reference Catalogue",
   description:
     "Every traceable Shakespeare reference in the Founders' writing: 140 verified instances across all six Founders. Filter by Founder, date, type, and confidence; search by word, name, or year.",
+  openGraph: {
+    title: "The Reference Catalogue · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Reference Catalogue · Shakespeare in the Republic",
+  },
 };
 
 export default function CataloguePage() {

@@ -9,9 +9,15 @@ import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
-    "Methinks I Hear You · Adams's Shakespearean ventriloquism · Shakespeare in the Republic",
+    "Methinks I Hear You · Adams's Shakespearean ventriloquism",
   description:
     "John Adams uses 'methinks' only five times in his entire writing, but four of those uses follow the same Shakespearean construction, 'methinks I hear', deployed across 32 years to put imagined words in his reader's mouth.",
+  openGraph: {
+    title: "Methinks I Hear You · Adams's Shakespearean ventriloquism · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Methinks I Hear You · Adams's Shakespearean ventriloquism · Shakespeare in the Republic",
+  },
 };
 
 const METHINKS_EVENTS: TimelineEvent[] = [

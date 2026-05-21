@@ -4,9 +4,15 @@ import Image from "next/image";
 import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "Explorer · Shakespeare in the Republic",
+  title: "Explorer",
   description:
     "Tools to explore the data yourself. See how a word lives in each corpus, browse every traceable Shakespeare reference, and compare the Founders against each other.",
+  openGraph: {
+    title: "Explorer · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Explorer · Shakespeare in the Republic",
+  },
 };
 
 type ExplorerView = {

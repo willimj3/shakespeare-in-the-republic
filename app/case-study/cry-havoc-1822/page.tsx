@@ -6,9 +6,15 @@ import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
-    "Cry Havoc, 1822 · Adams indicts Franklin from beyond the grave · Shakespeare in the Republic",
+    "Cry Havoc, 1822 · Adams indicts Franklin from beyond the grave",
   description:
     "In February 1822, four years before his death, John Adams reaches for Antony's line from Julius Caesar to indict the political theology of his long-dead friend Benjamin Franklin. The letter is to his grandson. It is one of the last Shakespearean quotations in his life.",
+  openGraph: {
+    title: "Cry Havoc, 1822 · Adams indicts Franklin from beyond the grave · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Cry Havoc, 1822 · Adams indicts Franklin from beyond the grave · Shakespeare in the Republic",
+  },
 };
 
 export default function CryHavoc1822CaseStudy() {

@@ -4,9 +4,15 @@ import EssayLayout from "@/components/EssayLayout";
 import { PortraitDuet } from "@/components/Portrait";
 
 export const metadata: Metadata = {
-  title: "The Honour Test · Shakespeare in the Republic",
+  title: "The Honour Test",
   description:
     "Shakespeare's honour can be pawned. The Founders' honour is what one has when corresponding with a Sir. The vocabulary travelled across the Atlantic; the conceptual content was rebuilt.",
+  openGraph: {
+    title: "The Honour Test · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Honour Test · Shakespeare in the Republic",
+  },
 };
 
 export default function HonourTestEssay() {

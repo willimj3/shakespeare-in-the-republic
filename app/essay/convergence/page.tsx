@@ -5,9 +5,15 @@ import ConvergenceMatrix from "@/components/charts/ConvergenceMatrix";
 
 export const metadata: Metadata = {
   title:
-    "Why We Believe the Findings · The Convergence · Shakespeare in the Republic",
+    "Why We Believe the Findings · The Convergence",
   description:
     "Eight independent ways of measuring Shakespearean inheritance in the Founders' writing. They almost all agree on the ranking. The one place they disagree is the disagreement that makes the two-modes finding possible.",
+  openGraph: {
+    title: "Why We Believe the Findings · The Convergence · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Why We Believe the Findings · The Convergence · Shakespeare in the Republic",
+  },
 };
 
 export default function ConvergenceEssay() {

@@ -2,9 +2,15 @@ import type { Metadata } from "next";
 import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
-  title: "Papers and downloads · Shakespeare in the Republic",
+  title: "Papers and downloads",
   description:
     "Downloadable versions of the scholarly paper, the narrative companion, and the passage-level results summary that this site is built on.",
+  openGraph: {
+    title: "Papers and downloads · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Papers and downloads · Shakespeare in the Republic",
+  },
 };
 
 type Paper = {

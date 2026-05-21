@@ -5,9 +5,15 @@ import { asset } from "@/lib/paths";
 import founders from "@/data/founders.json";
 
 export const metadata: Metadata = {
-  title: "The six Founders · Shakespeare in the Republic",
+  title: "The six Founders",
   description:
     "Per-Founder profile pages aggregating composite influence ranking, metaphor signature, archaic-form survival, plays cited, and case studies for each of the six American Founders.",
+  openGraph: {
+    title: "The six Founders · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The six Founders · Shakespeare in the Republic",
+  },
 };
 
 type FounderMeta = {

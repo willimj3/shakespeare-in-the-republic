@@ -3,9 +3,15 @@ import Link from "next/link";
 import EssayLayout from "@/components/EssayLayout";
 
 export const metadata: Metadata = {
-  title: "Preface · Shakespeare in the Republic",
+  title: "Preface",
   description:
     "Why this site exists, what it's for, and how to read it. A short preface to a corpus-linguistic study of Shakespeare's influence on six American Founders.",
+  openGraph: {
+    title: "Preface · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Preface · Shakespeare in the Republic",
+  },
 };
 
 export default function PrefaceEssay() {

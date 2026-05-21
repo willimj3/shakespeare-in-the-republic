@@ -5,9 +5,15 @@ import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title:
-    "Quotation Timeline · Shakespeare in the Republic",
+    "Quotation Timeline",
   description:
     "Every dated Shakespeare reference in the Founders' writing on a single timeline from 1755 to 1825. Click any dot to see the passage. The shape of the dot cloud is the substantive story.",
+  openGraph: {
+    title: "Quotation Timeline · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Quotation Timeline · Shakespeare in the Republic",
+  },
 };
 
 export default function TimelinePage() {

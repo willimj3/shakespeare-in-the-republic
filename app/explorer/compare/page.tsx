@@ -4,9 +4,15 @@ import CompareExplorer from "./CompareExplorer";
 import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
-  title: "Founder vs Founder · Shakespeare in the Republic",
+  title: "Founder vs Founder",
   description:
     "Pick any two Founders and compare their Shakespearean influence side by side: composite score, eight-method ranks, metaphor radars, archaic-form survival, and the plays each cites.",
+  openGraph: {
+    title: "Founder vs Founder · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "Founder vs Founder · Shakespeare in the Republic",
+  },
 };
 
 export default function CompareExplorerPage() {

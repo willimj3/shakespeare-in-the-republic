@@ -4,9 +4,15 @@ import PlayAtlas from "@/components/charts/PlayAtlas";
 import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
-  title: "The Play Atlas · Shakespeare in the Republic",
+  title: "The Play Atlas",
   description:
     "Which Shakespeare plays the Founders' catalogue actually reaches for. Bar chart of the seventeen plays cited in the project's reference catalogue, ranked by total references and stacked by Founder. The visible imbalance is itself the finding.",
+  openGraph: {
+    title: "The Play Atlas · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Play Atlas · Shakespeare in the Republic",
+  },
 };
 
 export default function PlayAtlasPage() {

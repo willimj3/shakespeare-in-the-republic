@@ -8,9 +8,15 @@ import { asset } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title:
-    "The Hamilton Silence · Case Study · Shakespeare in the Republic",
+    "The Hamilton Silence · Case Study",
   description:
     "Alexander Hamilton wrote 2.35 million words across 35 years and named Shakespeare zero times. The single exception is one paraphrased Macbeth reference, used as a political weapon against Jefferson in 1801. James Madison's record is the same.",
+  openGraph: {
+    title: "The Hamilton Silence · Case Study · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Hamilton Silence · Case Study · Shakespeare in the Republic",
+  },
 };
 
 export default function HamiltonSilenceCaseStudy() {

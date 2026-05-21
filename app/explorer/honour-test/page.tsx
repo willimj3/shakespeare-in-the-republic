@@ -4,9 +4,15 @@ import HonourTestInteractive from "./HonourTestInteractive";
 import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
-  title: "The Honour Test · Shakespeare in the Republic",
+  title: "The Honour Test",
   description:
     "Pick one of fourteen politically loaded abstract nouns and see its collocational world in the Founders' writing on one side and Shakespeare's on the other. The vocabulary travelled; the conceptual content was rebuilt.",
+  openGraph: {
+    title: "The Honour Test · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Honour Test · Shakespeare in the Republic",
+  },
 };
 
 export default function HonourTestExplorerPage() {

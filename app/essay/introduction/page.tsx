@@ -5,9 +5,15 @@ import { PortraitDuet } from "@/components/Portrait";
 
 export const metadata: Metadata = {
   title:
-    "The Influence Question · Introduction · Shakespeare in the Republic",
+    "The Influence Question · Introduction",
   description:
     "What it means to ask carefully how much of Shakespeare's English survived into the Founders' writing. The setup for the rest of the site.",
+  openGraph: {
+    title: "The Influence Question · Introduction · Shakespeare in the Republic",
+  },
+  twitter: {
+    title: "The Influence Question · Introduction · Shakespeare in the Republic",
+  },
 };
 
 export default function IntroductionEssay() {
