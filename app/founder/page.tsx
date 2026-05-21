@@ -47,8 +47,19 @@ const echoesSummary = candidateEchoesSummary as unknown as {
   >;
 };
 const allusionsData = thematicAllusions as unknown as {
-  allusions: { founder_id: string }[];
+  allusions: { founder_id: string; matched_character: string }[];
 };
+
+// Mirrors the strict Shakespeare-only standard used on the profile
+// pages and in the export pipeline. Characters with no plausible
+// non-Shakespeare source.
+const SHAKESPEARE_ONLY_CHARACTERS: ReadonlySet<string> = new Set([
+  "falstaff", "sir john falstaff", "pistol", "nym", "peto",
+  "fluellin", "shylock", "hotspur", "lady macbeth", "iago",
+  "desdemona", "malvolio", "polonius", "mercutio", "bardolph",
+  "banquo", "macduff", "cardinal wolsey", "caliban", "prospero",
+  "enobarbus",
+]);
 
 function liveCountsFor(founderId: string) {
   const direct = catData.direct_quotes.filter((q) => q.founder_id === founderId).length;
@@ -56,8 +67,12 @@ function liveCountsFor(founderId: string) {
   const echoSlice = echoesSummary.by_founder[founderId];
   const echoes = echoSlice?.total ?? 0;
   const echoesHighMed = (echoSlice?.high ?? 0) + (echoSlice?.medium ?? 0);
-  const thematic = allusionsData.allusions.filter(
-    (a) => a.founder_id === founderId,
+  const thematicStrict = allusionsData.allusions.filter(
+    (a) =>
+      a.founder_id === founderId &&
+      SHAKESPEARE_ONLY_CHARACTERS.has(
+        (a.matched_character ?? "").toLowerCase(),
+      ),
   ).length;
   return {
     direct,
@@ -65,7 +80,7 @@ function liveCountsFor(founderId: string) {
     catalogueTotal: direct + named,
     echoes,
     echoesHighMed,
-    thematic,
+    thematic: thematicStrict,
   };
 }
 
@@ -85,7 +100,7 @@ export default function FounderIndex() {
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               Each profile aggregates the data from across the
-              project: composite ranking, eight-method breakdown,
+              project: composite ranking, eleven-method breakdown,
               metaphor radar, archaic-form survival, plays cited,
               and a list of the case studies that focus on that
               Founder. Cards are ordered by composite score, highest
@@ -139,7 +154,7 @@ export default function FounderIndex() {
                         )}
                         {" "}&middot; {c.echoesHighMed.toLocaleString()} echo
                         {c.echoesHighMed === 1 ? "" : "es"} (MED+)
-                        {c.thematic > 0 && <> &middot; {c.thematic} thematic</>}
+                        {c.thematic > 0 && <> &middot; {c.thematic} Shakespeare-only</>}
                       </p>
                     );
                   })()}

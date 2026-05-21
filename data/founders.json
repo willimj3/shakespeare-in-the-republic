@@ -7,7 +7,7 @@
       "born": 1735,
       "died": 1826,
       "portrait": "/images/historical/adams-trumbull-c1792.jpg",
-      "tagline": "The most Shakespearean Founder by every measure. 61 verbatim quotations and 48 by-name references, 18 thematic Roman character invocations, more than twice the next Founder per million words.",
+      "tagline": "The most Shakespearean Founder by every measure. Sixty-one verbatim quotations, forty-eight by-name references, six Shakespeare-only character invocations under the strict standard \u2014 and twice the candidate-echo density of any other Founder.",
       "composite": 0.88,
       "direct_high": 61,
       "named_shakespeare": 48
@@ -18,7 +18,7 @@
       "born": 1706,
       "died": 1790,
       "portrait": "/images/historical/franklin-duplessis-1785.jpg",
-      "tagline": "Shakespeare absorbed as habit, not citation. Almost no quotation, but the highest archaic-form density of any Founder and per-million Shakespeare-overlap second only to Adams.",
+      "tagline": "Older-English register overlap, not direct Shakespeare absorption. Almost no quotation, but the highest archaic-form density of any Founder; the late-Stuart prose he learned in 1722 sits closer to Shakespeare's than any other Founder's.",
       "composite": 0.76,
       "direct_high": 0,
       "named_shakespeare": 2
@@ -29,7 +29,7 @@
       "born": 1743,
       "died": 1826,
       "portrait": "/images/historical/jefferson-peale-1800.jpg",
-      "tagline": "The gentleman-reader's Shakespeare. 26 by-name references, zero direct quotations, four thematic Brutus and Caesar invocations across the Federal period.",
+      "tagline": "The educated reader's Shakespeare. Twenty-six by-name references, zero direct quotations, and four Roman character invocations (Brutus, Caesar) that are ambiguous between Shakespeare and Plutarch and not scored under the strict standard.",
       "composite": 0.64,
       "direct_high": 0,
       "named_shakespeare": 26
@@ -40,7 +40,7 @@
       "born": 1732,
       "died": 1799,
       "portrait": "/images/historical/washington-stuart-1796.jpg",
-      "tagline": "Less literary than the others. The 1778 'band of brothers' passes through his pen at Valley Forge and elsewhere; otherwise the Shakespeare is absent.",
+      "tagline": "Sparse explicit Shakespeare. His one strict catalogue item is the Othello 'good name' passage, attributed to 'Shakespear' in an 1796 letter; the well-known 'band of brothers' phrasing sits in the reception/common-stock tier.",
       "composite": 0.32,
       "direct_high": 0,
       "named_shakespeare": 1
@@ -51,7 +51,7 @@
       "born": 1751,
       "died": 1836,
       "portrait": "/images/historical/madison-stuart-1804.jpg",
-      "tagline": "The most thorough silence in the corpus. One medium-confidence direct quotation and one by-name reference across 3.4 million words, with no thematic allusions in the data at all.",
+      "tagline": "Likely near-zero reliable Shakespeare. The two MEDIUM-tier items currently in the catalogue under his name look like false positives \u2014 corpus contamination in the 'I love thee' match, and a literal hurricane in the 'tempest' reference. Tied with Hamilton at the bottom of the composite.",
       "composite": 0.2,
       "direct_high": 1,
       "named_shakespeare": 1
@@ -62,7 +62,7 @@
       "born": 1755,
       "died": 1804,
       "portrait": "/images/historical/hamilton-trumbull-1806.jpg",
-      "tagline": "Bottom of the rankings on every literary measure. The one exception is Roman: a 1779 letter calling General Lee 'a little spice of Julius Caesar or Cromwell', plus a reported dinner-party line naming Caesar the greatest man who ever lived.",
+      "tagline": "Tied with Madison for the bottom of the composite at 0.20. Zero strict catalogue references and zero Shakespeare-only character invocations. The 1779 'spice of Julius Caesar or Cromwell' line was the v1 Roman exception; the strict Shakespeare-only standard sets it aside as classical, not Shakespearean.",
       "composite": 0.2,
       "direct_high": 0,
       "named_shakespeare": 0

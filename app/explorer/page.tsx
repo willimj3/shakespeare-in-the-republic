@@ -94,7 +94,7 @@ const VIEWS: ExplorerView[] = [
     slug: "compare",
     title: "Founder vs Founder",
     blurb:
-      "Pick any two of the six and see them compared side by side: composite score, eight-method rank breakdown, metaphor radars overlaid on each other, archaic-form survival, and the plays each cites. The pairwise view of the whole project.",
+      "Pick any two of the six and see them compared side by side: composite score, eleven-method rank breakdown, metaphor radars overlaid on each other, archaic-form survival, and the plays each cites. The pairwise view of the whole project.",
     status: "live",
     image: asset("/images/historical/shakespeare-chandos-portrait.jpg"),
     imageAlt: "Shakespeare (Chandos portrait, c. 1610).",

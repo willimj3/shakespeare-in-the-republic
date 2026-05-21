@@ -235,7 +235,7 @@ export default function BibliographyEssay() {
         files in <code className="text-folio">tables/cs3_*</code>.
         The Composite Ranking pulls from{" "}
         <code className="text-folio">influence3_composite.csv</code>.
-        The eight-method convergence matrix comes from{" "}
+        The eleven-method convergence matrix comes from{" "}
         <code className="text-folio">
           six_method_convergence.csv
         </code>{" "}

@@ -95,6 +95,33 @@ const RULES = [
     pattern: /\btied at the top\b/i,
     reason: "Same as 'tie at the top' — v1 framing.",
   },
+  // ── Stale Adams ranking / counts (founder profile drift) ───────
+  {
+    pattern: /\brank 2 overall\b/i,
+    reason:
+      "Adams now leads the composite at 0.88. 'Rank 2 overall... behind Franklin' was a v1-era claim.",
+  },
+  {
+    pattern: /\b18 thematic\b/i,
+    reason:
+      "Stale Adams count: under the strict Shakespeare-only standard Adams has 6 scored invocations, not 18. The 18 figure included Roman names that are now excluded.",
+  },
+  {
+    pattern: /\beighteen thematic\b/i,
+    reason:
+      "Stale Adams count: six Shakespeare-only invocations under v2, not eighteen.",
+  },
+  // ── Stale "eight-method" / "eight statistical" prose ───────────
+  {
+    pattern: /\beight-method\b/i,
+    reason:
+      "Method-count drift: use 'eleven-method' for the matrix under v2.",
+  },
+  {
+    pattern: /\beight statistical analyses\b/i,
+    reason:
+      "Method-count drift: eleven analyses are listed in composite.json under v2.",
+  },
 ];
 
 const ALLOWED_FILES = new Set([

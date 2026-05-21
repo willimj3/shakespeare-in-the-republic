@@ -6,7 +6,7 @@ import DataScope from "@/components/DataScope";
 export const metadata: Metadata = {
   title: "Founder vs Founder",
   description:
-    "Pick any two Founders and compare their Shakespearean influence side by side: composite score, eight-method ranks, metaphor radars, archaic-form survival, and the plays each cites.",
+    "Pick any two Founders and compare their Shakespearean influence side by side: composite score, eleven-method ranks, metaphor radars, archaic-form survival, and the plays each cites.",
   openGraph: {
     title: "Founder vs Founder · Shakespeare in the Republic",
   },
@@ -30,7 +30,7 @@ export default function CompareExplorerPage() {
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               Each measure the project runs (composite
-              ranking, eight-method breakdown, metaphor signature,
+              ranking, eleven-method breakdown, metaphor signature,
               archaic-form survival, plays cited) can be set
               up as a pairwise contrast. This view stacks all of
               them on one page so you can see where any two
@@ -60,7 +60,7 @@ export default function CompareExplorerPage() {
               <Link href="/founder" className="underline">
                 Founder profile pages
               </Link>
-              . For the full eight-method matrix see the{" "}
+              . For the full eleven-method matrix see the{" "}
               <Link href="/explorer/composite" className="underline">
                 Ranking explorer
               </Link>

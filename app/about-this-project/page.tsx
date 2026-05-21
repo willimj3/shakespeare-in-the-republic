@@ -185,7 +185,7 @@ export default function AboutThisProjectPage() {
             catalogue&rsquo;s confidence threshold whether a human
             or a machine reports the count. The differential
             collocates of <em>honour</em> in the two corpora are
-            what they are. The eight-method convergence matrix
+            what they are. The eleven-method convergence matrix
             says what it says.
           </p>
           <p>
