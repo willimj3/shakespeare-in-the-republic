@@ -25,13 +25,13 @@ export default function EventTimeline({
   yearMin = 1770,
   yearMax = 1820,
   caption,
-  height = 200,
+  height = 240,
   ariaLabel,
 }: EventTimelineProps) {
   const w = 720;
   const padX = 60;
-  const padY = 40;
-  const axisY = padY + 80;
+  const axisY = height / 2;
+  const COLLISION_PX = 110;
 
   // Decade tick marks falling inside [yearMin, yearMax]
   const decadeTicks: number[] = [];
@@ -42,6 +42,31 @@ export default function EventTimeline({
   function x(year: number): number {
     const t = (year - yearMin) / (yearMax - yearMin);
     return padX + t * (w - 2 * padX);
+  }
+
+  // Pre-compute each event's x position and side (above/below the axis).
+  // Side alternates whenever a successive event falls within
+  // COLLISION_PX of the previous one, so labels never overlap.
+  type Placed = {
+    e: TimelineEvent;
+    cx: number;
+    side: "below" | "above";
+  };
+  const placed: Placed[] = [];
+  let lastSide: "below" | "above" = "below";
+  let lastX = -Infinity;
+  for (const e of events) {
+    const cx = x(e.year);
+    let side: "below" | "above";
+    if (cx - lastX < COLLISION_PX) {
+      // close to previous — flip to the other side
+      side = lastSide === "below" ? "above" : "below";
+    } else {
+      side = "below";
+    }
+    placed.push({ e, cx, side });
+    lastSide = side;
+    lastX = cx;
   }
 
   return (
@@ -88,55 +113,63 @@ export default function EventTimeline({
               </text>
             </g>
           ))}
-          {/* events */}
-          {events.map((e, idx) => (
-            <g key={`${e.year}-${idx}`}>
-              <line
-                x1={x(e.year)}
-                y1={axisY}
-                x2={x(e.year)}
-                y2={axisY - 30}
-                stroke="#7B1E1E"
-                strokeWidth={1}
-              />
-              <circle
-                cx={x(e.year)}
-                cy={axisY - 30}
-                r={6}
-                fill="#7B1E1E"
-                stroke="#7B1E1E"
-              />
-              <text
-                x={x(e.year)}
-                y={axisY - 45}
-                textAnchor="middle"
-                fontSize="14"
-                fontWeight="600"
-                fill="#1F1A14"
-              >
-                {e.year}
-              </text>
-              <text
-                x={x(e.year)}
-                y={axisY + 42}
-                textAnchor="middle"
-                fontSize="12"
-                fontStyle="italic"
-                fill="#3A2F23"
-              >
-                {e.context}
-              </text>
-              <text
-                x={x(e.year)}
-                y={axisY + 58}
-                textAnchor="middle"
-                fontSize="11"
-                fill="#6B5C49"
-              >
-                {e.recipient}
-              </text>
-            </g>
-          ))}
+          {/* events — alternate above/below the axis to avoid label overlap */}
+          {placed.map(({ e, cx, side }, idx) => {
+            const dir = side === "above" ? -1 : 1;
+            const dotY = axisY + dir * 30;
+            const yearY = axisY + dir * 50;
+            const contextY = side === "above" ? axisY - 65 : axisY + 65;
+            const recipientY = side === "above" ? axisY - 80 : axisY + 80;
+            return (
+              <g key={`${e.year}-${idx}`}>
+                <line
+                  x1={cx}
+                  y1={axisY}
+                  x2={cx}
+                  y2={dotY}
+                  stroke="#7B1E1E"
+                  strokeWidth={1}
+                />
+                <circle
+                  cx={cx}
+                  cy={dotY}
+                  r={6}
+                  fill="#7B1E1E"
+                  stroke="#7B1E1E"
+                />
+                <text
+                  x={cx}
+                  y={yearY}
+                  textAnchor="middle"
+                  fontSize="14"
+                  fontWeight="600"
+                  fill="#1F1A14"
+                  dominantBaseline={side === "above" ? "auto" : "hanging"}
+                >
+                  {e.year}
+                </text>
+                <text
+                  x={cx}
+                  y={contextY}
+                  textAnchor="middle"
+                  fontSize="12"
+                  fontStyle="italic"
+                  fill="#3A2F23"
+                >
+                  {e.context}
+                </text>
+                <text
+                  x={cx}
+                  y={recipientY}
+                  textAnchor="middle"
+                  fontSize="11"
+                  fill="#6B5C49"
+                >
+                  {e.recipient}
+                </text>
+              </g>
+            );
+          })}
         </svg>
       </div>
       {caption ? (

@@ -383,12 +383,11 @@ export default function TimelineExplorer() {
                         )
                       }
                     >
-                      <title>
-                        {item.founder_name} · {item.date} ·{" "}
-                        {item.type === "direct_quote"
-                          ? `direct quotation: "${item.matched_text?.slice(0, 60)}…"`
-                          : `named reference: ${item.reference ?? ""}`}
-                      </title>
+                      <title>{`${item.founder_name} · ${item.date} · ${
+                        item.type === "direct_quote"
+                          ? `direct quotation: "${(item.matched_text ?? "").slice(0, 60)}…"`
+                          : `named reference: ${item.reference ?? ""}`
+                      }`}</title>
                     </circle>
                   </g>
                 );

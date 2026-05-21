@@ -153,7 +153,10 @@ export default function FunctionWordsPage() {
             <h2 className="font-display text-2xl text-ink mt-1 mb-5">
               Rates per million words, by author
             </h2>
-            <div className="overflow-x-auto">
+            <p className="md:hidden text-xs text-ink-muted italic mb-2 text-center">
+              ← scroll the heatmap to see all seven authors →
+            </p>
+            <div className="overflow-x-auto relative">
               <table className="w-full text-xs font-sans border-separate border-spacing-0 min-w-[700px]">
                 <thead>
                   <tr>
