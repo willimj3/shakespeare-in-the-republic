@@ -259,7 +259,9 @@ export default function TwoModesEssay() {
         project&rsquo;s strict Shakespeare-only standard (which
         sets aside Roman names like Brutus and Caesar that reach
         the Founders through Plutarch as much as through Shakespeare)
-        Hamilton and Madison tie at the bottom of the composite.
+        Madison sits alone at the bottom of the composite at 0.17 (after
+        a source-level audit dropped two false positives that had previously
+        tied him with Hamilton), and Hamilton ranks one step above him at 0.21.
       </p>
 
       <p>

@@ -122,6 +122,28 @@ const RULES = [
     reason:
       "Method-count drift: eleven analyses are listed in composite.json under v2.",
   },
+  // ── Tied-bottom framing (pre-audit Madison/Hamilton) ───────────
+  {
+    pattern: /\(both\s+0\.20\)/i,
+    reason:
+      "Stale composite scores: Hamilton and Madison no longer share 0.20. Post-audit, Hamilton is 0.21 and Madison alone is 0.17.",
+  },
+  {
+    pattern: /\bMadison\s+and\s+Hamilton\s+tie\b/i,
+    reason:
+      "Stale framing: after the source-level audit removed Madison's two false positives, Madison sits alone at the bottom (0.17) and Hamilton is one step above (0.21). They no longer tie.",
+  },
+  {
+    pattern: /\bHamilton\s+and\s+Madison\s+tie\b/i,
+    reason:
+      "Stale framing: same as above. They no longer tie.",
+  },
+  // ── Adams catalogue total drift (109 → 108 post-audit) ─────────
+  {
+    pattern: /\b109\s+(?:HIGH|high|references|catalogue|MEDIUM)/,
+    reason:
+      "Adams catalogue total drifted: 61 direct + 47 named = 108 HIGH+MEDIUM references after the Tempest false positive was reclassified as LOW. Was 109 pre-audit.",
+  },
 ];
 
 const ALLOWED_FILES = new Set([

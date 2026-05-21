@@ -169,12 +169,12 @@ export default function RankingExplorerPage() {
                 </thead>
                 <tbody className="text-ink-soft">
                   {[
-                    { id: "adams",      name: "Adams",      words: "4.2M", cat: 109, thematic: 18, echoes: 297, combined: 100.6 },
-                    { id: "franklin",   name: "Franklin",   words: "1.8M", cat: 2,   thematic: 0,  echoes: 81,  combined: 46.9 },
-                    { id: "jefferson",  name: "Jefferson",  words: "7.0M", cat: 26,  thematic: 4,  echoes: 130, combined: 23.0 },
-                    { id: "washington", name: "Washington", words: "5.9M", cat: 1,   thematic: 0,  echoes: 82,  combined: 14.1 },
-                    { id: "hamilton",   name: "Hamilton",   words: "2.3M", cat: 0,   thematic: 1,  echoes: 27,  combined: 11.9 },
-                    { id: "madison",    name: "Madison",    words: "3.4M", cat: 2,   thematic: 0,  echoes: 28,  combined: 8.8 },
+                    { id: "adams",      name: "Adams",      words: "4.2M", cat: 108, thematic: 6, echoes: 297, combined: 97.8 },
+                    { id: "franklin",   name: "Franklin",   words: "1.8M", cat: 2,   thematic: 0, echoes: 81,  combined: 46.9 },
+                    { id: "jefferson",  name: "Jefferson",  words: "7.0M", cat: 26,  thematic: 0, echoes: 130, combined: 22.4 },
+                    { id: "washington", name: "Washington", words: "5.9M", cat: 1,   thematic: 0, echoes: 82,  combined: 14.1 },
+                    { id: "hamilton",   name: "Hamilton",   words: "2.3M", cat: 0,   thematic: 0, echoes: 27,  combined: 11.5 },
+                    { id: "madison",    name: "Madison",    words: "3.4M", cat: 0,   thematic: 0, echoes: 28,  combined: 8.2 },
                   ].map((r) => (
                     <tr key={r.id} className="bg-parchment border-y border-parchment-deep">
                       <td className="font-display text-base text-ink py-2 pr-4 pl-3">

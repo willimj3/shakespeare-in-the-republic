@@ -1,6 +1,6 @@
 {
   "methodology_version": "2.0",
-  "generated_at": "2026-05-21T22:25:58.258888+00:00",
+  "generated_at": "2026-05-21T23:28:25.049778+00:00",
   "generator": "scripts/export_site_data.py",
   "founder_word_counts": {
     "adams": 4212978,
@@ -11,8 +11,8 @@
     "hamilton": 2347616
   },
   "source_file_hashes": {
-    "tables/catalogue_direct_quotes.csv": "f4200f1178793dbde0338793315fc1834778d67e7da02458b51c7e9266d66d5a",
-    "tables/catalogue_named_references.csv": "525e0ea4590d695e048c0ba2a6dd35b3f9ab4838327e7331c69e07023a5d18d7",
+    "tables/catalogue_direct_quotes.csv": "da133f12d3e83c40d521a03c7a2b136b4b9d4ff715df26c8a1e480444c2aef1e",
+    "tables/catalogue_named_references.csv": "f4d2e85692f1d1a302dd11be31086390052382c6974d7f6e7e247a8676061433",
     "data/thematic_allusions.json (site)": "b965c8ca6ff178ceef1226ee5600771d65dbf274e738d466ce5c4b55b4009a63",
     "data/candidate_echoes_summary.json (site)": "f7c7aea028f77ee95de9f8d9fc8b0bbbcff20c607d06e704f507076189cfdb15"
   }

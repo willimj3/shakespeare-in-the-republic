@@ -7,10 +7,10 @@
       "born": 1735,
       "died": 1826,
       "portrait": "/images/historical/adams-trumbull-c1792.jpg",
-      "tagline": "The most Shakespearean Founder by every measure. Sixty-one verbatim quotations, forty-eight by-name references, six Shakespeare-only character invocations under the strict standard \u2014 and twice the candidate-echo density of any other Founder.",
+      "tagline": "The most Shakespearean Founder by every measure. Sixty-one verbatim quotations, forty-seven by-name references, six Shakespeare-only character invocations under the strict standard \u2014 and twice the candidate-echo density of any other Founder.",
       "composite": 0.88,
       "direct_high": 61,
-      "named_shakespeare": 48
+      "named_shakespeare": 47
     },
     {
       "id": "franklin",
@@ -40,8 +40,8 @@
       "born": 1732,
       "died": 1799,
       "portrait": "/images/historical/washington-stuart-1796.jpg",
-      "tagline": "Sparse explicit Shakespeare. His one strict catalogue item is the Othello 'good name' passage, attributed to 'Shakespear' in an 1796 letter; the well-known 'band of brothers' phrasing sits in the reception/common-stock tier.",
-      "composite": 0.32,
+      "tagline": "Sparse explicit Shakespeare. He ranks fourth on the composite at 0.34. His one strict catalogue item is the Othello 'good name' passage, attributed to 'Shakespear' in an 1796 letter; the well-known 'band of brothers' phrasing sits in the reception/common-stock tier.",
+      "composite": 0.34,
       "direct_high": 0,
       "named_shakespeare": 1
     },
@@ -51,10 +51,10 @@
       "born": 1751,
       "died": 1836,
       "portrait": "/images/historical/madison-stuart-1804.jpg",
-      "tagline": "Likely near-zero reliable Shakespeare. The two MEDIUM-tier items currently in the catalogue under his name look like false positives \u2014 corpus contamination in the 'I love thee' match, and a literal hurricane in the 'tempest' reference. Tied with Hamilton at the bottom of the composite.",
-      "composite": 0.2,
-      "direct_high": 1,
-      "named_shakespeare": 1
+      "tagline": "Alone at the bottom of the composite at 0.17 after a source-level audit dropped his two MEDIUM-tier catalogue items as false positives \u2014 Talbot Mundy's adventure novel spliced into his Gutenberg supplement, and an 1780 'tempest' reference that described a real West Indies hurricane, not the play. Strict catalogue: zero.",
+      "composite": 0.17,
+      "direct_high": 0,
+      "named_shakespeare": 0
     },
     {
       "id": "hamilton",
@@ -62,8 +62,8 @@
       "born": 1755,
       "died": 1804,
       "portrait": "/images/historical/hamilton-trumbull-1806.jpg",
-      "tagline": "Tied with Madison for the bottom of the composite at 0.20. Zero strict catalogue references and zero Shakespeare-only character invocations. The 1779 'spice of Julius Caesar or Cromwell' line was the v1 Roman exception; the strict Shakespeare-only standard sets it aside as classical, not Shakespearean.",
-      "composite": 0.2,
+      "tagline": "Fifth on the composite at 0.21, one step above Madison after the false-positive audit. Zero strict catalogue references and zero Shakespeare-only character invocations. The 1779 'spice of Julius Caesar or Cromwell' line was the v1 Roman exception; the strict Shakespeare-only standard sets it aside as classical, not Shakespearean.",
+      "composite": 0.21,
       "direct_high": 0,
       "named_shakespeare": 0
     }

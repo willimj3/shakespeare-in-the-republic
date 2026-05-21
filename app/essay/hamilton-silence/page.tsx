@@ -24,7 +24,7 @@ export default function HamiltonSilenceEssay() {
       totalChapters={9}
       sectionMarker="Essay · The substantive findings"
       title="The Hamilton Silence"
-      subtitle="Two of the six Founders are dramatically less Shakespearean than the other four. Under the strict Shakespeare-only standard, Hamilton and Madison tie at the bottom of the composite ranking. The contrast they create with Adams and Franklin is what makes the rest of the project&rsquo;s findings mean what they mean."
+      subtitle="Two of the six Founders are dramatically less Shakespearean than the other four. Under the strict Shakespeare-only standard, after a source-level audit of two earlier false positives, Madison sits alone at the bottom of the composite ranking and Hamilton is one step above him. The contrast they create with Adams and Franklin is what makes the rest of the project&rsquo;s findings mean what they mean."
       prevHref="/essay/convergence"
       prevLabel="Eleven Ways of Looking"
       nextHref="/essay"
@@ -65,17 +65,26 @@ export default function HamiltonSilenceEssay() {
         </p>
 
         <p>
-          Hamilton and Madison are tied at the bottom of the
-          composite ranking under the project&rsquo;s strict
-          Shakespeare-only standard. An earlier draft of this essay
-          treated Hamilton&rsquo;s 1779 &ldquo;spice of Julius Caesar
-          or Cromwell&rdquo; line as the one Shakespearean trace in
-          his prose. The revised methodology sets that passage
-          aside: Caesar paired with Cromwell is two historical
-          strongmen,
-          and the project doesn&rsquo;t count Roman names as
-          Shakespeare evidence because they reach the Founders
-          through Plutarch and classical training too. The{" "}
+          Madison sits alone at the bottom of the composite ranking
+          under the project&rsquo;s strict Shakespeare-only standard
+          (composite 0.17), with Hamilton one step above him at 0.21.
+          Earlier in the project they tied at 0.20, but a source-level
+          audit of Madison&rsquo;s catalogue items dropped both as
+          false positives: one was a Project Gutenberg ingest error
+          (Talbot Mundy&rsquo;s 1916 adventure novel{" "}
+          <em>King of the Khyber Rifles</em> was spliced into
+          Madison&rsquo;s corpus and contributed the &ldquo;I love thee,
+          thou art&rdquo; five-gram), and the other was the 1780
+          &ldquo;tempest&rdquo; reference, which described actual
+          hurricane damage in the West Indies rather than the play.
+          An earlier draft of this essay also treated Hamilton&rsquo;s
+          1779 &ldquo;spice of Julius Caesar or Cromwell&rdquo; line as
+          the one Shakespearean trace in his prose. The revised
+          methodology sets that passage aside: Caesar paired with
+          Cromwell is two historical strongmen, and the project
+          doesn&rsquo;t count Roman names as Shakespeare evidence
+          because they reach the Founders through Plutarch and
+          classical training too. The{" "}
           <Link
             href="/essay/shakespeare-only-characters"
             className="underline"

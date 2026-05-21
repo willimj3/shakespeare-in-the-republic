@@ -107,9 +107,10 @@ export default function CompositeRanking({
         inverse of average rank across ten base methods (seven
         statistical and stylistic, plus three evidence-based per-million-word
         measures). Adams (0.88) leads, Franklin (0.76) a step behind;
-        Jefferson (0.64) and Washington (0.32) sit in the middle;
-        Hamilton and Madison (both 0.20) tie at the bottom under the
-        strict Shakespeare-only standard.
+        Jefferson (0.64) and Washington (0.34) sit in the middle;
+        Hamilton (0.21) and Madison (0.17) sit at the bottom under the
+        strict Shakespeare-only standard, after the source-level audit
+        that removed two false positives from Madison&rsquo;s catalogue.
       </figcaption>
     </figure>
   );
