@@ -68,7 +68,15 @@ function Hero() {
               technical form</Link>.
             </p>
             <p className="mt-6 text-sm text-ink-muted">
-              Mark J. Williams &middot; Vanderbilt Law School &middot; 2026
+              Mark J. Williams with Claude Code &middot; Vanderbilt Law
+              School &middot; 2026
+              <br />
+              <Link
+                href="/about-this-project"
+                className="text-folio text-xs"
+              >
+                About this project &mdash; how the site was made &rarr;
+              </Link>
             </p>
           </div>
           <div className="hidden lg:block">

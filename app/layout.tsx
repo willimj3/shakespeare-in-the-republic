@@ -65,7 +65,12 @@ function SiteFooter() {
           </h3>
           <p className="text-ink-muted leading-snug">
             A corpus-linguistic study of Shakespeare&apos;s influence on six
-            Founders. Mark J. Williams, Vanderbilt Law School.
+            Founders. Mark J. Williams with Claude Code, Vanderbilt Law School.
+          </p>
+          <p className="text-ink-muted leading-snug mt-2">
+            <Link href="/about-this-project" className="text-folio">
+              About this project &mdash; how the site was made &rarr;
+            </Link>
           </p>
         </div>
         <div>

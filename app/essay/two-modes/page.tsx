@@ -20,7 +20,7 @@ export default function TwoModesEssay() {
       sectionMarker="Essay · The substantive findings"
       title="Two Modes of Shakespearean Influence"
       subtitle="Adams citational, Franklin absorbed &mdash; and why the corpus needs both methods to see them."
-      byline="Mark J. Williams · Vanderbilt Law School · 2026"
+      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay"
       prevLabel="All essays"
       nextHref="/case-study/tide-in-the-affairs"

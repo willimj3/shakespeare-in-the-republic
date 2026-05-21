@@ -17,7 +17,7 @@ export default function HonourTestEssay() {
       sectionMarker="Essay · The substantive findings"
       title="The Honour Test"
       subtitle="Shared words, different worlds. The Founders inherited Shakespeare&rsquo;s vocabulary and rebuilt its conceptual content."
-      byline="Mark J. Williams · Vanderbilt Law School · 2026"
+      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay/two-modes"
       prevLabel="Two Modes of Shakespearean Influence"
       nextHref="/essay"

@@ -17,7 +17,7 @@ export default function BibliographyEssay() {
       sectionMarker="Essay · Bibliography"
       title="References and Reproducibility"
       subtitle="Where everything in this site came from, and how to verify it."
-      byline="Mark J. Williams · Vanderbilt Law School · 2026"
+      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay/hamilton-silence"
       prevLabel="The Hamilton Silence"
     >
@@ -311,8 +311,14 @@ export default function BibliographyEssay() {
       </h2>
 
       <p>
-        Several debts. To Lincoln Mullen, for the digital-humanities
-        model the site is built on. To Anatol Stefanowitsch, for an
+        Several debts. To Anthropic, for Claude Code, the AI coding
+        agent that drafted the Python pipeline, wrote the bulk of
+        the essays and case studies, and built the interactive
+        site you&rsquo;re reading. The terms of that collaboration
+        are described in detail at{" "}
+        <Link href="/about-this-project">About this project</Link>.
+        To Lincoln Mullen, for the digital-humanities model the
+        site is built on. To Anatol Stefanowitsch, for an
         open-access textbook so generous and so clear that an
         independent researcher with no formal corpus-linguistics
         training could read it and produce work this faithful to

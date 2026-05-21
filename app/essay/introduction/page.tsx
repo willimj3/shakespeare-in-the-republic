@@ -18,7 +18,7 @@ export default function IntroductionEssay() {
       sectionMarker="Essay · Introduction"
       title="The Influence Question"
       subtitle="What it means to ask carefully whether the Founders sounded like Shakespeare &mdash; and the setup for the rest of the site."
-      byline="Mark J. Williams · Vanderbilt Law School · 2026"
+      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay/preface"
       prevLabel="Preface"
       nextHref="/essay/methods"

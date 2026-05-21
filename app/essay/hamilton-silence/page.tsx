@@ -19,7 +19,7 @@ export default function HamiltonSilenceEssay() {
       sectionMarker="Essay · The substantive findings"
       title="The Hamilton Silence"
       subtitle="Two of the six Founders write as if Shakespeare did not exist. The absence is the third major finding of the project &mdash; and it&rsquo;s what makes the other two findings mean what they mean."
-      byline="Mark J. Williams · Vanderbilt Law School · 2026"
+      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay/honour-test"
       prevLabel="The Honour Test"
       nextHref="/essay"

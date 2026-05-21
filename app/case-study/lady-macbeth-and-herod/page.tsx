@@ -52,7 +52,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
       heroImage={asset("/images/historical/first-folio-macbeth-p738.jpg")}
       heroAlt="First Folio (1623): Macbeth."
       heroCaption="Macbeth in the First Folio (1623). The 'given suck' speech is in 1.7."
-      byline="Mark J. Williams · Vanderbilt Law School · 2026"
+      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       relatedEssay={{ href: "/essay/two-modes", title: "Two Modes of Shakespearean Influence" }}
     >
       <div className="has-dropcap">

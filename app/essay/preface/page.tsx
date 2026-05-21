@@ -16,7 +16,7 @@ export default function PrefaceEssay() {
       sectionMarker="Essay · Preface"
       title="Preface"
       subtitle="Why this site exists, what it&rsquo;s for, and how to read it."
-      byline="Mark J. Williams · Vanderbilt Law School · 2026"
+      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay"
       prevLabel="Essay index"
       nextHref="/essay/introduction"
@@ -193,6 +193,32 @@ export default function PrefaceEssay() {
         <Link href="/essay/hamilton-silence">Hamilton Silence</Link>{" "}
         essays) and get the project&rsquo;s argument in roughly
         forty-five minutes.
+      </p>
+
+      <hr />
+
+      <h2 className="font-display text-3xl text-ink mt-10">
+        A note before you read
+      </h2>
+      <p>
+        This site is two projects at once. The visible one is the
+        Shakespeare-and-Founders study described above. The
+        invisible one is an experiment in directing an AI coding
+        agent &mdash; Anthropic&rsquo;s Claude Code &mdash; to
+        build a serious digital-humanities project end to end. The
+        Python pipeline, the prose of the essays, the case studies,
+        and the interactive components were substantially drafted
+        by Claude under my editorial direction. The findings
+        themselves are statistical facts about the corpus that
+        exist independent of who wrote them up; the framing,
+        judgment, verification, and editorial work are mine. The
+        full disclosure is in{" "}
+        <Link href="/about-this-project">
+          About this project
+        </Link>
+        , which I&rsquo;d recommend reading before the substantive
+        essays if the question of how the work was actually made
+        matters to you.
       </p>
 
       <hr />
