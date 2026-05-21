@@ -151,6 +151,7 @@ export default function BandOfBrothersCaseStudy() {
         source="General Orders, Valley Forge"
         date="6 April 1778"
         shakespeareSource="Henry V 4.3"
+        docId="Washington/03-14-02-0389"
       />
       <p>
         The address is to the <em>officers</em>, not the rank-and-file
@@ -181,6 +182,7 @@ export default function BandOfBrothersCaseStudy() {
         source="Farewell Address to the Army"
         date="2 November 1783"
         shakespeareSource="Henry V 4.3"
+        docId="Washington/99-01-02-12012"
       />
       <p>
         The phrase has shifted register. In 1778 it was an instruction to
@@ -207,6 +209,7 @@ export default function BandOfBrothersCaseStudy() {
         source="Washington to Armand"
         date="7 October 1785"
         shakespeareSource="Henry V 4.3"
+        docId="Washington/04-03-02-0263"
       />
       <p>
         The phrase has moved further still &mdash; from the Continental
@@ -233,6 +236,7 @@ export default function BandOfBrothersCaseStudy() {
         source="Washington to Henry Knox"
         date="21 October 1798"
         shakespeareSource="Henry V 4.3"
+        docId="Washington/06-03-02-0087"
       />
       <p>
         Three days later, writing to William Richardson Davie about
@@ -246,6 +250,7 @@ export default function BandOfBrothersCaseStudy() {
         source="Washington to William Richardson Davie"
         date="24 October 1798"
         shakespeareSource="Henry V 4.3"
+        docId="Washington/06-03-02-0095"
       />
       <p>
         The 1798 uses re-tune the Shakespearean phrase one last time. In

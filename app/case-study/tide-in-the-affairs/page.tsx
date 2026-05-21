@@ -100,6 +100,7 @@ export default function TideInTheAffairs() {
         source="John Adams to William Heath"
         date="15 April 1776"
         shakespeareSource="Julius Caesar 4.3"
+        docId="Adams/06-04-02-0042"
       />
       <p>
         Adams uses the line as Brutus uses it &mdash; an exhortation to act
@@ -124,6 +125,7 @@ export default function TideInTheAffairs() {
         source="John Adams to C. W. F. Dumas"
         date="25 January 1781"
         shakespeareSource="Julius Caesar 4.3 (misquoted)"
+        docId="Adams/06-11-02-0055"
       />
       <p>
         Two things to notice. First, Adams now puts the line in quotation
@@ -154,6 +156,7 @@ export default function TideInTheAffairs() {
         source="From John Adams to Boston Patriot"
         date="22 September 1809"
         shakespeareSource="Julius Caesar 4.3 (misquoted — preserved from 1781)"
+        docId="Adams/99-02-02-5435"
       />
       <p>
         Adams is quoting <em>himself</em> as much as he is quoting
@@ -179,6 +182,7 @@ export default function TideInTheAffairs() {
         source="John Adams to William Stephens Smith"
         date="15 October 1812"
         shakespeareSource="Julius Caesar 4.3"
+        docId="Adams/99-03-02-2202"
       />
       <p>
         The 1781/1809 misquote is gone &mdash; he writes <em>flood</em>,
@@ -204,6 +208,7 @@ export default function TideInTheAffairs() {
         source="John Adams to Richard Rush"
         date="14 September 1814"
         shakespeareSource="Julius Caesar 4.3"
+        docId="Adams/99-02-02-6331"
       />
       <p>
         Adams now calls it &ldquo;a trite observation of Historians.&rdquo;

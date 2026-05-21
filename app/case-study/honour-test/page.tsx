@@ -153,6 +153,7 @@ export default function HonourTestCaseStudy() {
         match={["I have the honour to be"]}
         source="Benjamin Franklin to Sir Joseph Banks"
         date="27 July 1783"
+        docId="Franklin/01-40-02-0236"
       />
 
       <Kwic
@@ -160,6 +161,7 @@ export default function HonourTestCaseStudy() {
         match={["I have the honour to be"]}
         source="Benjamin Franklin to Thomas Jefferson"
         date="c. 1790"
+        docId="Jefferson/01-16-02-0192"
       />
 
       <p>

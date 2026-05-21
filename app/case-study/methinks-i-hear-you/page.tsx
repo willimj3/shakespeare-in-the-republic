@@ -139,6 +139,7 @@ export default function MethinksIHearYouCaseStudy() {
         source="John Adams diary"
         date="15 March 1756"
         shakespeareSource="cf. Hamlet 1.2 / Antony & Cleopatra 5.2"
+        docId="Adams/01-01-02-0002-0003-0015"
       />
       <p>
         The construction is doing its Shakespearean job exactly. There
@@ -166,6 +167,7 @@ export default function MethinksIHearYouCaseStudy() {
         source="To the Inhabitants of the Colony of Massachusetts-Bay"
         date="10 April 1775"
         shakespeareSource="cf. Hamlet 1.2"
+        docId="Adams/06-02-02-0072-0013"
       />
       <p>
         The word <em>soliloquy</em> tells you Adams knows exactly what
@@ -197,6 +199,7 @@ export default function MethinksIHearYouCaseStudy() {
         source="John Adams to James Warren"
         date="16 April 1776"
         shakespeareSource="cf. Hamlet 1.2"
+        docId="Adams/06-04-02-0043"
       />
       <p>
         The same construction is doing different rhetorical work
@@ -227,6 +230,7 @@ export default function MethinksIHearYouCaseStudy() {
         source="John Adams to William Stephens Smith"
         date="11 November 1788"
         shakespeareSource="cf. Hamlet 1.2"
+        docId="Adams/04-08-02-0153"
       />
       <p>
         Adams is fifty-three, the second-highest officer in a

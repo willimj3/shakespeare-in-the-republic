@@ -132,6 +132,7 @@ export default function TisFranklinsSignature() {
         match={["'tis"]}
         source="Silence Dogood, No. 5"
         date="28 May 1722"
+        docId="Franklin/01-01-02-0012"
       />
       <p>
         It would be unsurprising in a London essay of 1700. In a Boston
@@ -146,6 +147,7 @@ export default function TisFranklinsSignature() {
         match={["'tis"]}
         source="Silence Dogood, No. 7"
         date="25 June 1722"
+        docId="Franklin/01-01-02-0014"
       />
 
       <hr />
@@ -169,12 +171,14 @@ export default function TisFranklinsSignature() {
         match={["hath"]}
         source="A Dissertation on Liberty and Necessity"
         date="1725"
+        docId="Franklin/01-01-02-0028"
       />
       <Kwic
         text="To say it was His Will Things should be otherwise than they are, is to say Somewhat hath contradicted His Will, and broken His Measures, which is impossible..."
         match={["hath"]}
         source="A Dissertation on Liberty and Necessity"
         date="1725"
+        docId="Franklin/01-01-02-0028"
       />
       <p>
         Adams uses <em>hath</em> at 264 per million words across his
@@ -204,6 +208,7 @@ export default function TisFranklinsSignature() {
         match={["hath"]}
         source="Martha Careful and Caelia Shortface, in the Pennsylvania Gazette"
         date="28 January 1729"
+        docId="Franklin/01-01-02-0034"
       />
       <p>
         This is not the prose of a sixteen-year-old apprentice imitating
