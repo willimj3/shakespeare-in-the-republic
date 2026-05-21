@@ -618,7 +618,7 @@ function ThreeLayersOfEvidence() {
               source={thematic.implied_play}
               docId={thematic.doc_id}
               browseHref="/explorer/thematic-allusions"
-              browseLabel="Browse 23 thematic allusions"
+              browseLabel="Browse 19 thematic allusions"
               image="/images/historical/first-folio-julius-caesar-p728.jpg"
               imageAlt="First Folio: The Tragedy of Julius Caesar."
             />

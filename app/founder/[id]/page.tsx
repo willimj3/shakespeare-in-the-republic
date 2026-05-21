@@ -70,7 +70,7 @@ const CASE_STUDIES: Record<FounderId, { slug: string; title: string }[]> = {
 // Per-Founder narrative — the synthesis paragraph below the stats
 const NARRATIVE: Record<FounderId, string> = {
   adams:
-    "Adams is the most Shakespearean of the six by every measure of conscious citation. The catalogue traces 109 high or medium-confidence references to him; the candidate-echoes tier, now opened to all 35,794 short verbatim matches in the backend, adds another 11,326 under his name — with 297 of those in the MEDIUM-or-HIGH confidence band, more than twice the next Founder's count. The thematic-allusions tier adds 18 character-as-type invocations (the most of any Founder by far). His 1758 diary contains the densest single reading event in the corpus: sixteen verbatim Macbeth passages worked through in one document at age twenty-three, with threads that flow forward for sixty years (the Tomorrow soliloquy, the Lady Macbeth speech, the sleep-no-more passage). He is rank 2 overall in the composite ranking, behind Franklin only because Franklin's prose is more deeply absorbed-Shakespearean even though Franklin almost never names the source.",
+    "Adams is the most Shakespearean of the six by every measure of conscious citation. The catalogue traces 109 high or medium-confidence references to him; the candidate-echoes tier, now opened to all 35,794 short verbatim matches in the backend, adds another 11,326 under his name — with 297 of those in the MEDIUM-or-HIGH confidence band, more than twice the next Founder's count. The thematic-allusions tier adds 14 character-as-type invocations (the most of any Founder by far). His 1758 diary contains the densest single reading event in the corpus: sixteen verbatim Macbeth passages worked through in one document at age twenty-three, with threads that flow forward for sixty years (the Tomorrow soliloquy, the Lady Macbeth speech, the sleep-no-more passage). He leads the composite ranking under methodology v2, with Franklin a step behind.",
   franklin:
     "Franklin is the most Shakespearean of the six by every statistical measure that doesn't require him to say so. His prose sits closer to Shakespeare's than any other Founder's on vocabulary, archaic-form survival, and statistical style. And yet his strict catalogue is nearly empty: zero direct quotations and two by-name references in 3.5 million words. In the candidate-echoes tier his total across the full backend is 3,664; per million words that puts him second only to Adams, ahead of the much larger Jefferson and Washington corpora. The strict filter was missing him. The 'Tis case study, now living in the Stylistic Notes section, traces this absorbed-mode signature back to his Silence Dogood essays at sixteen, where the older-English contraction is already a stylistic tell.",
   jefferson:
@@ -329,7 +329,7 @@ export default function FounderProfilePage({ params }: { params: { id: string } 
       <section className="border-b border-parchment-deep">
         <div className="max-w-outer mx-auto px-6 py-12">
           <div className="max-w-prose mx-auto">
-            <p className="section-marker">Eight measures</p>
+            <p className="section-marker">Eleven measures</p>
             <h2 className="font-display text-2xl text-ink mt-1 mb-4">
               How he ranks across the project&rsquo;s eleven measures
             </h2>

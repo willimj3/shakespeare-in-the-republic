@@ -245,11 +245,11 @@ export default function ReadingByGenerationEssay() {
 
       <p>
         Madison and Hamilton are the project&rsquo;s two quietest
-        Founders on Shakespeare. The Hamilton Silence essay treats
-        them as the project&rsquo;s third substantive finding:
-        dramatically less Shakespearean than the four Founders above
-        them, with Madison&rsquo;s silence the more thorough and
-        Hamilton&rsquo;s carrying one Roman exception.
+        Founders on Shakespeare, tied at the bottom of the composite
+        ranking. The Hamilton Silence essay treats their parallel
+        absence as the project&rsquo;s third substantive finding:
+        both are dramatically less Shakespearean than the four
+        Founders above them under any measure the project applies.
       </p>
 
       <p>

@@ -123,9 +123,13 @@ export default function ConvergenceEssay() {
         </li>
         <li>
           <strong>Thematic character invocations per million words:</strong>{" "}
-          23 cases where a Founder names a Shakespearean character as
-          a recognisable type without quoting the play. Seventeen of
-          the twenty-three are <em>Julius Caesar</em>.
+          Cases where a Founder names a Shakespearean character as a
+          recognisable type without quoting the play. The project
+          distinguishes Shakespeare-only character types (Falstaff,
+          Shylock, Hotspur, Lady Macbeth) from Roman names (Brutus,
+          Caesar, Cassius) whose source is ambiguous between
+          Shakespeare and Plutarch; this measure counts the
+          Shakespeare-only invocations only.
         </li>
         <li>
           <strong>Candidate-echo density per million words:</strong>{" "}

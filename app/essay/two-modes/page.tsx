@@ -135,14 +135,14 @@ export default function TwoModesEssay() {
       <Kwic
         text="It is a trite observation of Historians, that there is a tide in the Affairs of Men. There seems to be, an irreversable decree against me, and every Being who has a drop of my blood in his or her Veins."
         match={["there is a tide in the Affairs of Men"]}
-        source="Adams to Caroline De Windt, 11 May 1812"
+        source="Adams to William Stephens Smith, 15 October 1812"
         shakespeareSource="Julius Caesar 4.3"
       />
 
       <Kwic
         text="Franklin's doctrine is equivalent to 'Cry havock!' and let Slip the dogs of War civil and Foreign, till a despot Shall come in to lash all into order."
         match={["Cry havock!", "let Slip the dogs of War"]}
-        source="Adams to John Trumbull, late 1822"
+        source="Adams to his grandson George Washington Adams, 22 February 1822"
         shakespeareSource="Julius Caesar 3.1"
       />
 
@@ -253,12 +253,13 @@ export default function TwoModesEssay() {
       <p>
         First, Adams leads the composite, with Franklin a step
         behind. The two of them dominate the top of every measure
-        the project runs. Second, Madison and Hamilton are
-        the project&rsquo;s two least Shakespearean writers, sitting
-        much further back than Franklin sits from Adams. Madison
-        edges Hamilton for last place once the thematic-allusion
-        layer is counted; Hamilton&rsquo;s one Roman Caesar
-        reference puts him a small margin above.
+        the project runs. Second, Madison and Hamilton are the
+        project&rsquo;s two least Shakespearean writers, sitting
+        much further back than Franklin sits from Adams. Under the
+        project&rsquo;s strict Shakespeare-only standard (which
+        sets aside Roman names like Brutus and Caesar that reach
+        the Founders through Plutarch as much as through Shakespeare)
+        Hamilton and Madison tie at the bottom of the composite.
       </p>
 
       <p>
@@ -289,8 +290,8 @@ export default function TwoModesEssay() {
         If you build a catalogue of every passage where a Founder
         quotes Shakespeare verbatim (the kind of catalogue
         you&rsquo;d expect to find in a literary monograph) you&rsquo;ll
-        find Adams 53 times and the other five Founders
-        zero times. The catalogue will tell you Adams is the
+        find Adams sixty-one times, Madison once, and the other four
+        Founders zero times. The catalogue will tell you Adams is the
         Shakespearean Founder. It will not see Franklin at all.
       </p>
       <p>
@@ -337,8 +338,9 @@ export default function TwoModesEssay() {
           thematic-allusions
         </Link>{" "}
         scan, which looks for Founders invoking Shakespearean
-        characters as types, finds twenty-three cases across the
-        whole corpus; eighteen are Adams. Whichever threshold the
+        characters as types, finds nineteen cases across the whole
+        corpus (after deduplicating within-document character
+        repeats); fourteen are Adams. Whichever threshold the
         evidence is filtered at, the same Founder dominates. That
         consistency is what makes &ldquo;citational&rdquo; the right
         word for what he&rsquo;s doing.

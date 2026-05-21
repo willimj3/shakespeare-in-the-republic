@@ -210,9 +210,9 @@ export default function MethodsEssay() {
 
       <hr />
 
-      {/* ── Eight methods sketched ─────────────────────────────────── */}
+      {/* ── Eleven methods sketched ────────────────────────────────── */}
       <h2 className="font-display text-3xl text-ink mt-10">
-        Eight independent ways of measuring it
+        Eleven independent ways of measuring it
       </h2>
       <p>
         Pattern-level questions have many possible answers. To avoid
@@ -412,22 +412,18 @@ export default function MethodsEssay() {
         essay walks through that pattern.
       </p>
       <p>
-        The exact formula lives in the research repository:{" "}
-        <code className="text-folio">
-          scripts/influence3_founder_distance.py
-        </code>
-        . The function is{" "}
-        <code className="text-folio">rank_pct</code> over each
-        measure, then a row-wise mean across the seven percentile
-        columns. The output table is{" "}
-        <code className="text-folio">
-          tables/influence3_founder_distance.csv
-        </code>
-        , which feeds{" "}
+        The composite generation lives in the research repository:{" "}
+        <code className="text-folio">scripts/export_site_data.py</code>{" "}
+        (function <code className="text-folio">export_composite</code>).
+        For each of the ten base methods it produces a per-Founder
+        rank with tied positions averaged; the composite is the
+        inverse of the resulting average rank, rescaled to a 0&ndash;1
+        range. The function writes{" "}
         <code className="text-folio">data/composite.json</code>{" "}
-        on the site (
-        <Link href="/papers">downloadable on the papers page</Link>
-        ).
+        directly on the site, alongside a{" "}
+        <code className="text-folio">data/manifest.json</code> that
+        records the methodology version, generation timestamp, and a
+        SHA-256 hash of each source CSV consumed.
       </p>
 
       <hr />

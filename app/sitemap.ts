@@ -21,7 +21,6 @@ const STATIC_ROUTES: Array<{
   { path: "/essay/introduction", changeFrequency: "monthly", priority: 0.8 },
   { path: "/essay/methods", changeFrequency: "monthly", priority: 0.8 },
   { path: "/essay/two-modes", changeFrequency: "monthly", priority: 0.9 },
-  { path: "/essay/honour-test", changeFrequency: "monthly", priority: 0.9 },
   { path: "/essay/convergence", changeFrequency: "monthly", priority: 0.8 },
   { path: "/essay/hamilton-silence", changeFrequency: "monthly", priority: 0.8 },
   { path: "/essay/bibliography", changeFrequency: "monthly", priority: 0.6 },

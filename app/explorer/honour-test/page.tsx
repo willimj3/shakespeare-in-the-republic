@@ -101,7 +101,7 @@ export default function HonourTestExplorerPage() {
               The full argument (what it means that shared
               vocabulary carries divergent collocational worlds) is
               in the{" "}
-              <Link href="/essay/honour-test">Honour Test essay</Link>.
+              <Link href="/case-study/honour-test">Honour Test essay</Link>.
               For the companion finding (Adams cites Shakespeare
               explicitly; Franklin sounds like Shakespeare without
               citing him), see{" "}

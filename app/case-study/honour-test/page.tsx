@@ -37,7 +37,7 @@ export default function HonourTestCaseStudy() {
       heroImage={asset("/images/historical/first-folio-othello-p827.jpg")}
       heroAlt="First Folio (1623): Othello, page 827."
       heroCaption="Othello in the First Folio (1623). Shakespeare's honour is the noun on which the play's tragedy turns."
-      relatedEssay={{ href: "/essay/honour-test", title: "The Honour Test" }}
+      relatedEssay={{ href: "/case-study/honour-test", title: "The Honour Test" }}
     >
       {/* ── Banner: relocated to /stylistic-notes ──────────────────── */}
       <div className="mb-8 p-4 border-l-4 border-bronze bg-parchment-dark">
@@ -267,7 +267,7 @@ export default function HonourTestCaseStudy() {
       <p>
         The case study&rsquo;s working hypothesis (argued in more
         detail in the{" "}
-        <Link href="/essay/honour-test">Honour Test essay</Link>) is
+        <Link href="/case-study/honour-test">Honour Test essay</Link>) is
         more cautious than the essay&rsquo;s earlier framing
         suggested. The contrast shows a real difference between the
         company <em>honour</em> keeps in Shakespeare&rsquo;s drama
@@ -297,7 +297,7 @@ export default function HonourTestCaseStudy() {
           Honour Test explorer
         </Link>
         , or read the framing argument in the{" "}
-        <Link href="/essay/honour-test" className="underline">
+        <Link href="/case-study/honour-test" className="underline">
           Honour Test essay
         </Link>
         .

@@ -24,7 +24,7 @@ export default function HamiltonSilenceEssay() {
       totalChapters={9}
       sectionMarker="Essay · The substantive findings"
       title="The Hamilton Silence"
-      subtitle="Two of the six Founders are dramatically less Shakespearean than the other four. Hamilton&rsquo;s silence has a single Roman exception in it. Madison&rsquo;s does not. The contrast they create with Adams and Franklin is what makes the rest of the project&rsquo;s findings mean what they mean."
+      subtitle="Two of the six Founders are dramatically less Shakespearean than the other four. Under the strict Shakespeare-only standard, Hamilton and Madison tie at the bottom of the composite ranking. The contrast they create with Adams and Franklin is what makes the rest of the project&rsquo;s findings mean what they mean."
       prevHref="/essay/convergence"
       prevLabel="Eleven Ways of Looking"
       nextHref="/essay"
@@ -65,14 +65,24 @@ export default function HamiltonSilenceEssay() {
         </p>
 
         <p>
-          The two are not the same case. Hamilton has one thematic
-          allusion to <em>Julius Caesar</em>, plus a reported
-          dinner-party line that named Caesar the greatest man who
-          ever lived; his silence is real but specific, with a Roman
-          exception in it. Madison has no thematic allusions at all
-          and the single most thorough Shakespeare-absence in the
-          corpus. The new evidence layers show the bottom two
-          Founders are similar in rank but different in shape.
+          Hamilton and Madison are tied at the bottom of the
+          composite ranking under the project&rsquo;s strict
+          Shakespeare-only standard. An earlier draft of this essay
+          treated Hamilton&rsquo;s 1779 &ldquo;spice of Julius Caesar
+          or Cromwell&rdquo; line as the one Shakespearean trace in
+          his prose. The revised methodology sets that passage
+          aside: Caesar paired with Cromwell is two historical
+          strongmen,
+          and the project doesn&rsquo;t count Roman names as
+          Shakespeare evidence because they reach the Founders
+          through Plutarch and classical training too. The{" "}
+          <Link
+            href="/essay/shakespeare-only-characters"
+            className="underline"
+          >
+            Shakespeare-Only Characters essay
+          </Link>{" "}
+          explains the criterion.
         </p>
       </div>
 

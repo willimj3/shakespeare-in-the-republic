@@ -75,21 +75,19 @@ export default function PrefaceEssay() {
       </p>
       <p>
         The headline finding will not surprise readers who know the
-        period: two of the six Founders, John Adams and Benjamin
-        Franklin, sit at the top of every ranking. Adams leads on
-        the composite; Franklin sits a step behind. What surprises
-        is <em>how</em> they got there. Adams quotes Shakespeare
+        period: John Adams leads every ranking the project ran;
+        Benjamin Franklin sits a step behind. What surprises is{" "}
+        <em>how</em> they got there. Adams quotes Shakespeare
         directly, names him, returns to favourite lines across
         decades of correspondence. Franklin almost never names
-        Shakespeare and almost never quotes him. And yet every
-        sentence Franklin writes is half a step closer to
-        Shakespeare&rsquo;s 17th-century English than any other
-        Founder&rsquo;s prose. One Founder inherits a writer. The
-        other inherits a way of writing. That&rsquo;s the project&rsquo;s
-        central substantive claim, and it doesn&rsquo;t emerge from
-        any single statistical test. It emerges from the
-        disagreement between methods, each of which captures one of
-        the two modes.
+        Shakespeare and almost never quotes him. His prose carries
+        an older English register, the late-Stuart and early-Hanoverian
+        idiom Franklin learned in his half-brother&rsquo;s print
+        shop in 1722. That register overlaps with Shakespeare&rsquo;s
+        more than the later Founders&rsquo; prose does, but the
+        overlap is older-English-in-general, not specifically
+        Shakespearean. Adams inherits a writer. Franklin inherits a
+        way of writing.
       </p>
       <p>
         Two other findings come out alongside. The first: Adams
@@ -211,7 +209,7 @@ export default function PrefaceEssay() {
         Readers in a hurry can read just the four substantive-findings
         essays (the{" "}
         <Link href="/essay/two-modes">Two Modes</Link>,{" "}
-        <Link href="/essay/honour-test">Honour Test</Link>,{" "}
+        <Link href="/case-study/honour-test">Honour Test</Link>,{" "}
         <Link href="/essay/convergence">Eleven Ways of Looking</Link>,
         and{" "}
         <Link href="/essay/hamilton-silence">Hamilton Silence</Link>{" "}

@@ -30,7 +30,7 @@
       "died": 1826,
       "portrait": "/images/historical/jefferson-peale-1800.jpg",
       "tagline": "The gentleman-reader's Shakespeare. 26 by-name references, zero direct quotations, four thematic Brutus and Caesar invocations across the Federal period.",
-      "composite": 0.68,
+      "composite": 0.64,
       "direct_high": 0,
       "named_shakespeare": 26
     },
@@ -41,7 +41,7 @@
       "died": 1799,
       "portrait": "/images/historical/washington-stuart-1796.jpg",
       "tagline": "Less literary than the others. The 1778 'band of brothers' passes through his pen at Valley Forge and elsewhere; otherwise the Shakespeare is absent.",
-      "composite": 0.28,
+      "composite": 0.32,
       "direct_high": 0,
       "named_shakespeare": 1
     },
@@ -52,7 +52,7 @@
       "died": 1836,
       "portrait": "/images/historical/madison-stuart-1804.jpg",
       "tagline": "The most thorough silence in the corpus. One medium-confidence direct quotation and one by-name reference across 3.4 million words, with no thematic allusions in the data at all.",
-      "composite": 0.18,
+      "composite": 0.2,
       "direct_high": 1,
       "named_shakespeare": 1
     },
@@ -63,7 +63,7 @@
       "died": 1804,
       "portrait": "/images/historical/hamilton-trumbull-1806.jpg",
       "tagline": "Bottom of the rankings on every literary measure. The one exception is Roman: a 1779 letter calling General Lee 'a little spice of Julius Caesar or Cromwell', plus a reported dinner-party line naming Caesar the greatest man who ever lived.",
-      "composite": 0.22,
+      "composite": 0.2,
       "direct_high": 0,
       "named_shakespeare": 0
     }

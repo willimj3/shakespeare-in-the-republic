@@ -147,18 +147,25 @@ export default function IntroductionEssay() {
       </p>
       <p>
         Franklin never quotes Shakespeare and barely mentions him.
-        But every sentence Franklin writes is half a step closer to
-        Shakespeare&rsquo;s seventeenth-century English than any
-        other Founder&rsquo;s prose. He uses the archaic contraction{" "}
-        <em>&lsquo;tis</em> at twice the rate of any other Founder,
-        and roughly ten times the rate of Adams, Washington,
-        and Jefferson. He uses the old verb forms <em>hath, doth,
-        art, hast</em>. He uses the second-person archaic{" "}
-        <em>thou, thee, thy, thine</em> thirty times more often than
-        Washington. He learned all of this at sixteen, in his
-        half-brother&rsquo;s Boston print shop in 1722, and the
-        register never left him. <em>Hath</em> survives into
-        his 1778 diplomatic correspondence from Paris.
+        But his prose carries an older English register that overlaps
+        Shakespeare&rsquo;s seventeenth-century idiom more than any
+        other Founder&rsquo;s. He uses the archaic contraction{" "}
+        <em>&lsquo;tis</em> at twice the rate of any other Founder
+        and roughly ten times the rate of Adams, Washington, and
+        Jefferson. He uses the old verb forms <em>hath, doth, art,
+        hast</em>. He uses the second-person archaic <em>thou, thee,
+        thy, thine</em> thirty times more often than Washington. He
+        learned all of this at sixteen, in his half-brother&rsquo;s
+        Boston print shop in 1722, where the late-Stuart prose
+        Bunyan, Addison, and the King James Bible all share with
+        Shakespeare was still part of working English. The register
+        never left him; <em>hath</em> survives into his 1778
+        diplomatic correspondence from Paris. The question of how
+        much of this overlap is specifically Shakespearean versus
+        older-English-in-general is hard for the project to settle
+        cleanly. Franklin sits second on the composite because his
+        prose touches Shakespeare more than the others&rsquo; does,
+        not because he was reading the plays.
       </p>
       <p>
         Adams inherits a writer. Franklin inherits a way of writing.
@@ -191,7 +198,7 @@ export default function IntroductionEssay() {
         <em>mind</em>, <em>people</em>, <em>virtue</em>. The
         Founders inherited Shakespeare&rsquo;s vocabulary and
         rebuilt the world it described. The argument is in the{" "}
-        <Link href="/essay/honour-test">Honour Test essay</Link>;
+        <Link href="/case-study/honour-test">Honour Test essay</Link>;
         you can browse the comparison directly in the{" "}
         <Link href="/explorer/honour-test">Honour Test explorer</Link>.
       </p>
@@ -266,7 +273,7 @@ export default function IntroductionEssay() {
         If you want the substantive findings, in order, read the
         four findings essays:{" "}
         <Link href="/essay/two-modes">Two Modes</Link>,{" "}
-        <Link href="/essay/honour-test">The Honour Test</Link>,{" "}
+        <Link href="/case-study/honour-test">The Honour Test</Link>,{" "}
         <Link href="/essay/convergence">Eleven Ways of Looking</Link>{" "}
         (which is the &ldquo;why we believe the findings&rdquo;
         chapter), and{" "}

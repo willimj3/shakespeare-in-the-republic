@@ -103,12 +103,13 @@ export default function CompositeRanking({
         </ResponsiveContainer>
       </div>
       <figcaption className="mt-3 text-sm text-ink-muted italic text-center leading-snug max-w-prose mx-auto">
-        Composite Shakespeare-likeness ranking. Average percentile rank across
-        seven independent components &mdash; vocabulary breadth, vocabulary
-        density, collocations absorbed, total collocation hits, and three
-        sample-size-corrected lexical-richness proximities. Franklin (0.786)
-        and Adams (0.762) are roughly 3% apart at the top; Madison (0.429) and
-        Hamilton (0.405) form a separated bottom cluster.
+        Composite Shakespeare-likeness ranking, methodology v2: the
+        inverse of average rank across ten base methods (seven
+        statistical and stylistic, plus three evidence-based per-million-word
+        measures). Adams (0.88) leads, Franklin (0.76) a step behind;
+        Jefferson (0.64) and Washington (0.32) sit in the middle;
+        Hamilton and Madison (both 0.20) tie at the bottom under the
+        strict Shakespeare-only standard.
       </figcaption>
     </figure>
   );
