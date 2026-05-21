@@ -15,6 +15,7 @@ type Credit = {
   year: string;
   holder: string;
   license: string;
+  modification?: string;
 };
 
 export default function CreditsPage() {
@@ -58,7 +59,14 @@ export default function CreditsPage() {
                 <td className="p-3 text-ink-muted font-mono text-xs">
                   {c.filename}
                 </td>
-                <td className="p-3 text-ink">{c.title}</td>
+                <td className="p-3 text-ink">
+                  {c.title}
+                  {c.modification && (
+                    <span className="block text-xs text-ink-muted italic mt-1">
+                      {c.modification}
+                    </span>
+                  )}
+                </td>
                 <td className="p-3 text-ink-soft">{c.creator}</td>
                 <td className="p-3 text-ink-soft whitespace-nowrap">
                   {c.year}

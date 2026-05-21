@@ -85,7 +85,8 @@
     "creator": "William Shakespeare; printed by Isaac Jaggard and Edward Blount",
     "year": "1623",
     "holder": "Bodleian First Folio (Bodleian Library, Oxford)",
-    "license": "Public domain"
+    "license": "Public domain",
+    "modification": "Cropped to remove book binding / cover edges; page content unmodified."
   },
   {
     "filename": "first-folio-macbeth-p742.jpg",
@@ -93,7 +94,8 @@
     "creator": "William Shakespeare; printed by Isaac Jaggard and Edward Blount",
     "year": "1623",
     "holder": "Bodleian First Folio (Bodleian Library, Oxford)",
-    "license": "Public domain"
+    "license": "Public domain",
+    "modification": "Cropped to remove book binding / cover edges; page content unmodified."
   },
   {
     "filename": "first-folio-othello-p827.jpg",
@@ -101,7 +103,8 @@
     "creator": "William Shakespeare; printed by Isaac Jaggard and Edward Blount",
     "year": "1623",
     "holder": "Bodleian First Folio (Bodleian Library, Oxford)",
-    "license": "Public domain"
+    "license": "Public domain",
+    "modification": "Cropped to remove book binding / cover edges; page content unmodified."
   },
   {
     "filename": "first-folio-julius-caesar-p728.jpg",
@@ -109,7 +112,8 @@
     "creator": "William Shakespeare; printed by Isaac Jaggard and Edward Blount",
     "year": "1623",
     "holder": "Bodleian First Folio (Bodleian Library, Oxford)",
-    "license": "Public domain"
+    "license": "Public domain",
+    "modification": "Cropped to remove book binding / cover edges; page content unmodified."
   },
   {
     "filename": "first-folio-julius-caesar-cropped.jpg",
@@ -125,7 +129,8 @@
     "creator": "John Adams",
     "year": "1735\u20131826",
     "holder": "Royall Tyler Collection",
-    "license": "Public domain"
+    "license": "Public domain",
+    "modification": "Cropped to remove book binding / cover edges; page content unmodified."
   },
   {
     "filename": "washington-orderly-book-001.gif",
