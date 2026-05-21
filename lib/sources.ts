@@ -41,61 +41,90 @@ function playSlug(rawTitle: string): string | null {
     .trim();
 
   const map: Record<string, string> = {
+    // Core tragedies
     "macbeth": "macbeth",
     "hamlet": "hamlet",
     "othello": "othello",
     "julius caesar": "julius-caesar",
+    "lear": "king-lear",
+    "king lear": "king-lear",
+    "romeo and juliet": "romeo-and-juliet",
+    "antony and cleopatra": "antony-and-cleopatra",
+    "coriolanus": "coriolanus",
+    "timon of athens": "timon-of-athens",
+    "titus andronicus": "titus-andronicus",
+    // Comedies
+    "alls well that ends well": "alls-well-that-ends-well",
+    "all's well that ends well": "alls-well-that-ends-well",
+    "as you like it": "as-you-like-it",
+    "comedy of errors": "the-comedy-of-errors",
+    "the comedy of errors": "the-comedy-of-errors",
+    "love's labour's lost": "loves-labors-lost",
+    "loves labors lost": "loves-labors-lost",
+    "measure for measure": "measure-for-measure",
+    "merchant of venice": "the-merchant-of-venice",
+    "the merchant of venice": "the-merchant-of-venice",
+    "merry wives of windsor": "the-merry-wives-of-windsor",
+    "the merry wives of windsor": "the-merry-wives-of-windsor",
+    "midsummer night's dream": "a-midsummer-nights-dream",
+    "a midsummer night's dream": "a-midsummer-nights-dream",
+    "much ado about nothing": "much-ado-about-nothing",
+    "taming of the shrew": "the-taming-of-the-shrew",
+    "the taming of the shrew": "the-taming-of-the-shrew",
+    "twelfth night": "twelfth-night",
+    "two gentlemen of verona": "the-two-gentlemen-of-verona",
+    "the two gentlemen of verona": "the-two-gentlemen-of-verona",
+    "two noble kinsmen": "two-noble-kinsmen",
+    // Romances / late plays
+    "cymbeline": "cymbeline",
+    "pericles": "pericles",
+    "tempest": "the-tempest",
+    "the tempest": "the-tempest",
+    "winter's tale": "the-winters-tale",
+    "winters tale": "the-winters-tale",
+    "the winter's tale": "the-winters-tale",
+    "troilus and cressida": "troilus-and-cressida",
+    // Poems (Folger has a sonnets reading page)
+    "sonnets": "shakespeares-sonnets",
+    "the sonnets": "shakespeares-sonnets",
+    // Histories (both Project-Gutenberg formal titles AND
+    // "Henry IV, Part 1" short-form labels used by the candidate atlas).
+    // CRITICAL: these short-form entries MUST exist for direct-lookup so
+    // the fuzzy-match below does not collapse "Henry VI, Part 2" onto
+    // "henry v" via substring.
     "henry the fifth": "henry-v",
     "henry v": "henry-v",
     "first part of henry the fourth": "henry-iv-part-1",
     "second part of henry the fourth": "henry-iv-part-2",
-    "henry iv": "henry-iv-part-1",
+    "henry iv, part 1": "henry-iv-part-1",
+    "henry iv, part 2": "henry-iv-part-2",
+    "1 henry iv": "henry-iv-part-1",
+    "2 henry iv": "henry-iv-part-2",
     "first part of henry the sixth": "henry-vi-part-1",
     "second part of henry the sixth": "henry-vi-part-2",
     "third part of henry the sixth": "henry-vi-part-3",
+    "henry vi, part 1": "henry-vi-part-1",
+    "henry vi, part 2": "henry-vi-part-2",
+    "henry vi, part 3": "henry-vi-part-3",
+    "1 henry vi": "henry-vi-part-1",
+    "2 henry vi": "henry-vi-part-2",
+    "3 henry vi": "henry-vi-part-3",
     "henry the eighth": "henry-viii",
     "henry viii": "henry-viii",
     "richard the second": "richard-ii",
     "richard ii": "richard-ii",
     "richard the third": "richard-iii",
     "richard iii": "richard-iii",
-    "lear": "king-lear",
-    "king lear": "king-lear",
-    "romeo and juliet": "romeo-and-juliet",
-    "alls well that ends well": "alls-well-that-ends-well",
-    "all's well that ends well": "alls-well-that-ends-well",
-    "antony and cleopatra": "antony-and-cleopatra",
-    "as you like it": "as-you-like-it",
-    "comedy of errors": "comedy-of-errors",
-    "coriolanus": "coriolanus",
-    "cymbeline": "cymbeline",
-    "love's labour's lost": "loves-labors-lost",
-    "loves labors lost": "loves-labors-lost",
-    "measure for measure": "measure-for-measure",
-    "merchant of venice": "merchant-of-venice",
-    "merry wives of windsor": "merry-wives-of-windsor",
-    "midsummer night's dream": "a-midsummer-nights-dream",
-    "a midsummer night's dream": "a-midsummer-nights-dream",
-    "much ado about nothing": "much-ado-about-nothing",
-    "pericles": "pericles",
-    "tempest": "the-tempest",
-    "the tempest": "the-tempest",
-    "timon of athens": "timon-of-athens",
-    "titus andronicus": "titus-andronicus",
-    "troilus and cressida": "troilus-and-cressida",
-    "twelfth night": "twelfth-night",
-    "two gentlemen of verona": "two-gentlemen-of-verona",
-    "two noble kinsmen": "two-noble-kinsmen",
-    "winter's tale": "the-winters-tale",
-    "winters tale": "the-winters-tale",
     "john": "king-john",
     "king john": "king-john",
   };
 
   if (map[stripped]) return map[stripped];
 
-  // Fuzzy match: any play key that appears as a substring of the
-  // input wins (longest match preferred).
+  // Fuzzy match: any play key that appears as a substring of the input
+  // wins (longest match preferred). The exact-match table above must
+  // include the Henry-with-parts entries so this fallback never sees
+  // "Henry VI, Part 2" and matches the short "henry v" key inside it.
   let bestSlug: string | null = null;
   let bestLen = 0;
   for (const [key, slug] of Object.entries(map)) {
