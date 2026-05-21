@@ -26,6 +26,7 @@ type PlayAtlasShape = {
 };
 type CandidateEchoesShape = {
   echoes: {
+    founder_id: string;
     founder_name: string;
     doc_id: string;
     date: number | null;
@@ -36,6 +37,7 @@ type CandidateEchoesShape = {
 };
 type ThematicAllusionsShape = {
   allusions: {
+    founder_id: string;
     founder_name: string;
     doc_id: string;
     date: number | null;
@@ -68,15 +70,25 @@ const FOUNDER_DISPLAY: Record<string, string> = {
   hamilton: "Alexander Hamilton",
 };
 
-// Per-Founder reference counts from the catalogue
+// Per-Founder reference counts across all three evidence tiers.
 function perFounderCounts() {
-  const counts: Record<string, { direct: number; named: number }> = {};
-  for (const id of FOUNDER_ORDER) counts[id] = { direct: 0, named: 0 };
+  const counts: Record<
+    string,
+    { direct: number; named: number; echoes: number; thematic: number }
+  > = {};
+  for (const id of FOUNDER_ORDER)
+    counts[id] = { direct: 0, named: 0, echoes: 0, thematic: 0 };
   for (const q of cat.direct_quotes) {
     if (counts[q.founder_id]) counts[q.founder_id].direct += 1;
   }
   for (const r of cat.named_references) {
     if (counts[r.founder_id]) counts[r.founder_id].named += 1;
+  }
+  for (const e of echoes.echoes) {
+    if (counts[e.founder_id]) counts[e.founder_id].echoes += 1;
+  }
+  for (const a of allusions.allusions) {
+    if (counts[a.founder_id]) counts[a.founder_id].thematic += 1;
   }
   return counts;
 }
@@ -155,13 +167,19 @@ function Hero() {
 /* ──────────────────────────────────────────────────────────────────── */
 function FounderCountsStrip() {
   const counts = perFounderCounts();
-  const totals = FOUNDER_ORDER.map((id) => ({
-    id,
-    total: counts[id].direct + counts[id].named,
-    direct: counts[id].direct,
-    named: counts[id].named,
-  })).sort((a, b) => b.total - a.total);
-  const maxTotal = totals[0]?.total ?? 1;
+  const totals = FOUNDER_ORDER.map((id) => {
+    const c = counts[id];
+    return {
+      id,
+      catalogueTotal: c.direct + c.named,
+      direct: c.direct,
+      named: c.named,
+      echoes: c.echoes,
+      thematic: c.thematic,
+      grandTotal: c.direct + c.named + c.echoes + c.thematic,
+    };
+  }).sort((a, b) => b.grandTotal - a.grandTotal);
+  const maxGrand = totals[0]?.grandTotal ?? 1;
 
   return (
     <section className="border-b border-parchment-deep bg-parchment-dark">
@@ -169,80 +187,106 @@ function FounderCountsStrip() {
         <div className="max-w-prose mx-auto text-center mb-8">
           <p className="section-marker">Who reached for Shakespeare?</p>
           <h2 className="font-display text-3xl text-ink mt-1">
-            Every traceable reference, by Founder
+            Every traceable reference, by Founder, across three
+            evidence tiers
           </h2>
           <p className="text-sm text-ink-soft mt-2 italic">
-            High and medium-confidence verbatim quotations and
-            by-name references the catalogue verifies.
+            Verified catalogue references, plus shorter candidate
+            echoes, plus thematic character invocations. The
+            stacked bar shows all three.
           </p>
         </div>
 
         <div className="max-w-wide mx-auto space-y-3">
-          {totals.map(({ id, total, direct, named }) => {
-            const widthPct = total > 0 ? (total / maxTotal) * 100 : 0;
-            return (
-              <Link
-                key={id}
-                href={`/founder/${id}`}
-                className="grid grid-cols-[140px_1fr_120px] sm:grid-cols-[180px_1fr_180px] gap-3 sm:gap-4 items-center group no-underline"
-              >
-                <span className="font-display text-base sm:text-lg text-ink group-hover:text-folio transition-colors truncate">
-                  {FOUNDER_DISPLAY[id]}
-                </span>
-                <div className="relative h-7 bg-parchment border border-parchment-deep rounded-sm overflow-hidden">
-                  {total === 0 ? (
-                    <span className="absolute inset-0 flex items-center justify-start pl-2 text-xs italic text-ink-muted">
-                      No traceable references
+          {totals.map(
+            ({
+              id,
+              catalogueTotal,
+              direct,
+              named,
+              echoes: ne,
+              thematic,
+              grandTotal,
+            }) => {
+              const widthPct =
+                grandTotal > 0 ? (grandTotal / maxGrand) * 100 : 0;
+              return (
+                <Link
+                  key={id}
+                  href={`/founder/${id}`}
+                  className="grid grid-cols-[110px_1fr_180px] sm:grid-cols-[150px_1fr_260px] gap-3 sm:gap-4 items-center group no-underline"
+                >
+                  <span className="font-display text-base sm:text-lg text-ink group-hover:text-folio transition-colors truncate">
+                    {FOUNDER_DISPLAY[id]}
+                  </span>
+                  <div className="relative h-7 bg-parchment border border-parchment-deep rounded-sm overflow-hidden">
+                    {grandTotal === 0 ? (
+                      <span className="absolute inset-0 flex items-center justify-start pl-2 text-xs italic text-ink-muted">
+                        No traceable references
+                      </span>
+                    ) : (
+                      <div
+                        className="absolute inset-y-0 left-0 flex"
+                        style={{ width: `${widthPct}%` }}
+                      >
+                        {direct > 0 && (
+                          <div
+                            style={{
+                              width: `${(direct / grandTotal) * 100}%`,
+                              background: "#7B1E1E",
+                            }}
+                            title={`${direct} direct catalogue quotation${direct === 1 ? "" : "s"}`}
+                          />
+                        )}
+                        {named > 0 && (
+                          <div
+                            style={{
+                              width: `${(named / grandTotal) * 100}%`,
+                              background: "#9C3535",
+                            }}
+                            title={`${named} catalogue by-name reference${named === 1 ? "" : "s"}`}
+                          />
+                        )}
+                        {ne > 0 && (
+                          <div
+                            style={{
+                              width: `${(ne / grandTotal) * 100}%`,
+                              background: "#9C7340",
+                            }}
+                            title={`${ne} candidate echo${ne === 1 ? "" : "es"}`}
+                          />
+                        )}
+                        {thematic > 0 && (
+                          <div
+                            style={{
+                              width: `${(thematic / grandTotal) * 100}%`,
+                              background: "#1F3A5F",
+                            }}
+                            title={`${thematic} thematic allusion${thematic === 1 ? "" : "s"}`}
+                          />
+                        )}
+                      </div>
+                    )}
+                  </div>
+                  <span className="text-xs sm:text-sm text-ink-soft text-right tabular-nums font-sans">
+                    <span className="font-display text-folio text-lg font-semibold">
+                      {grandTotal.toLocaleString()}
                     </span>
-                  ) : (
-                    <div
-                      className="absolute inset-y-0 left-0 flex"
-                      style={{ width: `${widthPct}%` }}
-                    >
-                      <div
-                        style={{
-                          width:
-                            total > 0
-                              ? `${(direct / total) * 100}%`
-                              : "0%",
-                          background: "#7B1E1E",
-                        }}
-                        title={`${direct} direct quotation${
-                          direct === 1 ? "" : "s"
-                        }`}
-                      />
-                      <div
-                        style={{
-                          width:
-                            total > 0
-                              ? `${(named / total) * 100}%`
-                              : "0%",
-                          background: "#1F3A5F",
-                        }}
-                        title={`${named} by-name reference${
-                          named === 1 ? "" : "s"
-                        }`}
-                      />
-                    </div>
-                  )}
-                </div>
-                <span className="text-sm text-ink-soft text-right tabular-nums font-sans">
-                  {total > 0 ? (
-                    <>
-                      <span className="font-display text-folio text-lg font-semibold">
-                        {total}
+                    <span className="block text-xs text-ink-muted mt-0.5 leading-tight">
+                      {catalogueTotal} catalogue
+                      <span className="hidden sm:inline">
+                        {" "}({direct}+{named})
                       </span>
-                      <span className="text-xs text-ink-muted ml-1.5">
-                        ({direct} direct, {named} named)
-                      </span>
-                    </>
-                  ) : (
-                    <span className="text-ink-muted text-xs italic">0</span>
-                  )}
-                </span>
-              </Link>
-            );
-          })}
+                      {" "}&middot; {ne.toLocaleString()} echoes
+                      {thematic > 0 && (
+                        <> &middot; {thematic} thematic</>
+                      )}
+                    </span>
+                  </span>
+                </Link>
+              );
+            },
+          )}
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-6 text-xs text-ink-muted font-sans">
@@ -251,17 +295,35 @@ function FounderCountsStrip() {
               className="inline-block w-3 h-3 rounded-sm"
               style={{ background: "#7B1E1E" }}
             />
-            Direct quotation
+            Catalogue: direct quotation
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span
+              className="inline-block w-3 h-3 rounded-sm"
+              style={{ background: "#9C3535" }}
+            />
+            Catalogue: by-name
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span
+              className="inline-block w-3 h-3 rounded-sm"
+              style={{ background: "#9C7340" }}
+            />
+            Candidate echo
           </span>
           <span className="flex items-center gap-1.5">
             <span
               className="inline-block w-3 h-3 rounded-sm"
               style={{ background: "#1F3A5F" }}
             />
-            By-name reference
+            Thematic allusion
           </span>
-          <span className="italic">Click any Founder for their profile.</span>
         </div>
+        <p className="text-xs text-ink-muted italic text-center mt-3">
+          The catalogue tier is the strict, verified evidence; the
+          two right-hand tiers are candidates the strict filter
+          missed. Click any Founder for their profile.
+        </p>
       </div>
     </section>
   );
@@ -271,8 +333,33 @@ function FounderCountsStrip() {
 /*                            TOP PLAYS                                 */
 /* ──────────────────────────────────────────────────────────────────── */
 function TopPlays() {
-  const top = atlas.plays.slice(0, 8);
-  const maxTotal = top[0]?.total ?? 1;
+  // Strict catalogue top plays (Macbeth-dominated)
+  const topCatalogue = atlas.plays.slice(0, 8);
+  const maxCatalogue = topCatalogue[0]?.total ?? 1;
+
+  // Candidate-echo top plays (histories dominate)
+  function shortPlayName(raw: string): string {
+    return raw
+      .replace(/^THE TRAGEDY OF /i, "")
+      .replace(/^THE LIFE OF /i, "")
+      .replace(/^THE COMEDY OF /i, "")
+      .replace(/^KING /i, "")
+      .replace(/^THE /i, "")
+      .replace(/, MOOR OF VENICE$/i, "")
+      .replace(/, PRINCE OF DENMARK$/i, "")
+      .toLowerCase()
+      .replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+  const echoPerPlay: Record<string, number> = {};
+  for (const e of echoes.echoes) {
+    const p = shortPlayName(e.shakespeare_source);
+    echoPerPlay[p] = (echoPerPlay[p] ?? 0) + 1;
+  }
+  const topEchoes = Object.entries(echoPerPlay)
+    .map(([play, count]) => ({ play, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 8);
+  const maxEchoes = topEchoes[0]?.count ?? 1;
 
   return (
     <section className="border-b border-parchment-deep">
@@ -282,57 +369,108 @@ function TopPlays() {
           <h2 className="font-display text-3xl text-ink mt-1">
             The plays the Founders reached for most
           </h2>
-          <p className="text-sm text-ink-soft mt-2 italic">
-            Top eight plays in the catalogue, ranked by total
-            references. Click any title to open the play at the
-            Folger Shakespeare.
+          <p className="text-sm text-ink-soft mt-3 leading-relaxed">
+            The strict catalogue and the relaxed candidate-echoes
+            data tell two complementary stories. The catalogue is
+            dominated by the tragedies Adams happened to copy out
+            verbatim. The candidate echoes, with their wider net,
+            surface the history plays the strict filter buried.
           </p>
         </div>
 
-        <div className="max-w-wide mx-auto space-y-2">
-          {top.map((row) => {
-            const widthPct = (row.total / maxTotal) * 100;
-            const fg = folgerUrl(row.play);
-            return (
-              <div
-                key={row.play}
-                className="grid grid-cols-[1fr_auto] sm:grid-cols-[200px_1fr_50px] gap-3 sm:gap-4 items-center"
-              >
-                <span className="font-display text-base text-ink">
-                  {fg ? (
-                    <a
-                      href={fg}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="hover:text-folio no-underline"
-                    >
-                      {row.play}
-                    </a>
-                  ) : (
-                    row.play
-                  )}
-                </span>
-                <div className="hidden sm:block relative h-6 bg-parchment-dark border border-parchment-deep rounded-sm overflow-hidden">
-                  <div
-                    className="absolute inset-y-0 left-0 bg-folio"
-                    style={{ width: `${widthPct}%`, minWidth: 3 }}
-                  />
-                </div>
-                <span className="font-display text-folio font-semibold text-right tabular-nums">
-                  {row.total}
-                </span>
-              </div>
-            );
-          })}
+        <div className="max-w-wide mx-auto grid md:grid-cols-2 gap-x-12 gap-y-10">
+          <PlayColumn
+            heading="Strict catalogue"
+            sub="Top eight by verified verbatim quotations + by-name references"
+            barColor="#7B1E1E"
+            items={topCatalogue.map((row) => ({
+              play: row.play,
+              count: row.total,
+            }))}
+            maxCount={maxCatalogue}
+          />
+          <PlayColumn
+            heading="Candidate echoes"
+            sub="Top eight by 4–5 word matches with distinctive Shakespeare words. Histories surface."
+            barColor="#9C7340"
+            items={topEchoes}
+            maxCount={maxEchoes}
+          />
         </div>
 
-        <p className="text-center mt-6 text-sm">
+        <p className="text-center mt-10 text-sm flex flex-wrap justify-center gap-x-4 gap-y-2">
           <Link href="/explorer/play-atlas" className="text-folio">
-            See all seventeen plays in the Play Atlas &rarr;
+            All seventeen plays in the Play Atlas &rarr;
+          </Link>
+          <Link href="/explorer/candidate-echoes" className="text-folio">
+            All candidate-echo plays &rarr;
           </Link>
         </p>
       </div>
     </section>
+  );
+}
+
+function PlayColumn({
+  heading,
+  sub,
+  barColor,
+  items,
+  maxCount,
+}: {
+  heading: string;
+  sub: string;
+  barColor: string;
+  items: { play: string; count: number }[];
+  maxCount: number;
+}) {
+  return (
+    <div>
+      <div className="mb-4">
+        <p className="font-display text-lg text-ink">{heading}</p>
+        <p className="text-xs text-ink-muted italic font-sans">{sub}</p>
+      </div>
+      <ul className="space-y-2">
+        {items.map((row) => {
+          const widthPct = (row.count / maxCount) * 100;
+          const fg = folgerUrl(row.play);
+          return (
+            <li
+              key={row.play}
+              className="grid grid-cols-[140px_1fr_50px] sm:grid-cols-[180px_1fr_50px] gap-3 items-center"
+            >
+              <span className="font-display text-sm text-ink truncate">
+                {fg ? (
+                  <a
+                    href={fg}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="hover:text-folio no-underline"
+                  >
+                    {row.play}
+                  </a>
+                ) : (
+                  row.play
+                )}
+              </span>
+              <div className="relative h-5 bg-parchment-dark border border-parchment-deep rounded-sm overflow-hidden">
+                <div
+                  className="absolute inset-y-0 left-0"
+                  style={{
+                    width: `${widthPct}%`,
+                    minWidth: 3,
+                    background: barColor,
+                  }}
+                />
+              </div>
+              <span className="font-display text-folio font-semibold text-right tabular-nums text-sm">
+                {row.count}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 

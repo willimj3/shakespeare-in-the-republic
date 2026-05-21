@@ -60,6 +60,19 @@ export default function CandidateEchoesPage() {
             </p>
 
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
+              Each candidate also carries a confidence tier:{" "}
+              <strong>HIGH</strong> for 5-word matches with three or
+              more unique distinctive Shakespeare words (very
+              likely a real echo),{" "}
+              <strong>MEDIUM</strong> for 5-word matches with two
+              unique distinctive words or 4-word matches with three
+              or more, and <strong>LOW</strong> for the rest. The
+              tiers are computed from match length plus the
+              number of distinctive content words, deduplicated.
+              Filter by tier below.
+            </p>
+
+            <p className="text-base text-ink-soft mt-4 leading-relaxed">
               Some genuinely Shakespearean phrases recovered here
               that don&rsquo;t appear in the main catalogue:{" "}
               <em>full of sound and fury</em> (Macbeth, Adams 1758

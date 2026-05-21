@@ -21,6 +21,30 @@ type Echo = {
 type Shape = { echoes: Echo[] };
 const data = echoesData as unknown as Shape;
 
+// Confidence tier for each echo. Built from match length + number of
+// UNIQUE distinctive content words (deduping duplicates like Adams's
+// "farewell farewell" double).
+type ConfidenceTier = "HIGH" | "MEDIUM" | "LOW";
+function confidenceTier(echo: Echo): ConfidenceTier {
+  const uniqDistinctive = new Set(
+    echo.distinctive_content_words.map((w) => w.toLowerCase()),
+  ).size;
+  if (echo.match_length >= 5 && uniqDistinctive >= 3) return "HIGH";
+  if (echo.match_length >= 5 && uniqDistinctive >= 2) return "MEDIUM";
+  if (echo.match_length >= 4 && uniqDistinctive >= 3) return "MEDIUM";
+  return "LOW";
+}
+const TIER_COLOR: Record<ConfidenceTier, string> = {
+  HIGH: "#7B1E1E",
+  MEDIUM: "#9C7340",
+  LOW: "#6B5C49",
+};
+const TIER_LABEL: Record<ConfidenceTier, string> = {
+  HIGH: "Higher confidence",
+  MEDIUM: "Medium confidence",
+  LOW: "Lower confidence",
+};
+
 const FOUNDER_ORDER = [
   "adams",
   "franklin",
@@ -53,13 +77,24 @@ function shortPlay(raw: string): string {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-// Build founder + play tallies for the chip labels
+// Build founder + play + confidence tallies for the chip labels
 const FOUNDER_COUNTS: Record<string, number> = {};
 const PLAY_COUNTS: Record<string, number> = {};
-for (const e of data.echoes) {
+const TIER_COUNTS: Record<ConfidenceTier, number> = {
+  HIGH: 0,
+  MEDIUM: 0,
+  LOW: 0,
+};
+// Annotate each echo with its tier once, at module load
+const ECHOES: (Echo & { tier: ConfidenceTier })[] = data.echoes.map((e) => {
+  const tier = confidenceTier(e);
+  return { ...e, tier };
+});
+for (const e of ECHOES) {
   FOUNDER_COUNTS[e.founder_id] = (FOUNDER_COUNTS[e.founder_id] ?? 0) + 1;
   const p = shortPlay(e.shakespeare_source);
   PLAY_COUNTS[p] = (PLAY_COUNTS[p] ?? 0) + 1;
+  TIER_COUNTS[e.tier] += 1;
 }
 const TOP_PLAYS = Object.entries(PLAY_COUNTS)
   .sort((a, b) => b[1] - a[1])
@@ -69,21 +104,23 @@ const TOP_PLAYS = Object.entries(PLAY_COUNTS)
 export default function CandidateEchoesBrowser() {
   const [founderFilter, setFounderFilter] = useState<string>("all");
   const [playFilter, setPlayFilter] = useState<string>("all");
+  const [tierFilter, setTierFilter] = useState<string>("all");
   const [search, setSearch] = useState<string>("");
   const [visibleCount, setVisibleCount] = useState<number>(50);
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    return data.echoes.filter((e) => {
+    return ECHOES.filter((e) => {
       if (founderFilter !== "all" && e.founder_id !== founderFilter) return false;
       if (playFilter !== "all" && shortPlay(e.shakespeare_source) !== playFilter) return false;
+      if (tierFilter !== "all" && e.tier !== tierFilter) return false;
       if (q) {
         const blob = `${e.matched_text} ${e.doc_title ?? ""} ${e.kwic}`.toLowerCase();
         if (!blob.includes(q)) return false;
       }
       return true;
     });
-  }, [founderFilter, playFilter, search]);
+  }, [founderFilter, playFilter, tierFilter, search]);
 
   const visible = filtered.slice(0, visibleCount);
 
@@ -131,6 +168,34 @@ export default function CandidateEchoesBrowser() {
                     }}
                     label={FOUNDER_NAMES[id]}
                     count={FOUNDER_COUNTS[id] ?? 0}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Confidence chips */}
+            <div className="mb-4">
+              <p className="section-marker mb-2">Confidence</p>
+              <div className="flex flex-wrap gap-2">
+                <Chip
+                  active={tierFilter === "all"}
+                  onClick={() => {
+                    setTierFilter("all");
+                    setVisibleCount(50);
+                  }}
+                  label="All confidence levels"
+                />
+                {(["HIGH", "MEDIUM", "LOW"] as ConfidenceTier[]).map((t) => (
+                  <Chip
+                    key={t}
+                    active={tierFilter === t}
+                    onClick={() => {
+                      setTierFilter(t);
+                      setVisibleCount(50);
+                    }}
+                    label={TIER_LABEL[t]}
+                    count={TIER_COUNTS[t]}
+                    accent={TIER_COLOR[t]}
                   />
                 ))}
               </div>
@@ -189,7 +254,7 @@ export default function CandidateEchoesBrowser() {
               <ul className="space-y-4">
                 {visible.map((e, i) => (
                   <li key={i}>
-                    <EchoCard echo={e} query={search} />
+                    <EchoCard echo={e} query={search} tier={e.tier} />
                   </li>
                 ))}
               </ul>
@@ -219,11 +284,13 @@ function Chip({
   onClick,
   label,
   count,
+  accent,
 }: {
   active: boolean;
   onClick: () => void;
   label: string;
   count?: number;
+  accent?: string;
 }) {
   return (
     <button
@@ -231,18 +298,25 @@ function Chip({
       onClick={onClick}
       aria-pressed={active}
       className={[
-        "px-3 py-1.5 text-sm rounded-sm border font-sans transition-colors",
+        "px-3 py-1.5 text-sm rounded-sm border font-sans transition-colors flex items-center gap-2",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-folio focus-visible:ring-offset-2 focus-visible:ring-offset-parchment-dark",
         active
           ? "bg-folio text-parchment border-folio"
           : "bg-parchment text-ink border-parchment-deep hover:border-folio hover:text-folio",
       ].join(" ")}
     >
-      {label}
+      {accent && (
+        <span
+          className="inline-block w-2.5 h-2.5 rounded-sm"
+          style={{ background: accent }}
+          aria-hidden
+        />
+      )}
+      <span>{label}</span>
       {count !== undefined && (
         <span
           className={[
-            "ml-1.5 text-xs",
+            "text-xs",
             active ? "text-parchment/80" : "text-ink-muted",
           ].join(" ")}
         >
@@ -254,7 +328,15 @@ function Chip({
 }
 
 /* ──────────────────────────────────────────────────────────────────── */
-function EchoCard({ echo, query }: { echo: Echo; query: string }) {
+function EchoCard({
+  echo,
+  query,
+  tier,
+}: {
+  echo: Echo;
+  query: string;
+  tier: ConfidenceTier;
+}) {
   const fo = foundersOnlineUrl(echo.doc_id);
   const fg = folgerUrl(echo.shakespeare_source);
   return (
@@ -267,7 +349,17 @@ function EchoCard({ echo, query }: { echo: Echo; query: string }) {
         <span className="text-ink-soft">{echo.date ?? "n.d."}</span>
         <span className="text-ink-muted">·</span>
         <span className="text-xs uppercase tracking-smallcap font-sans text-ink-muted">
-          Candidate echo · {echo.match_length} words
+          {echo.match_length} words
+        </span>
+        <span
+          className="ml-auto inline-flex items-center gap-1.5 text-xs uppercase tracking-smallcap font-sans font-semibold px-2 py-0.5 rounded-sm"
+          style={{
+            background: TIER_COLOR[tier],
+            color: "#F0E9D5",
+          }}
+          title={`${TIER_LABEL[tier]}: tier computed from match length + number of unique distinctive Shakespeare words.`}
+        >
+          {tier}
         </span>
       </header>
 
