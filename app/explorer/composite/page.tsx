@@ -108,6 +108,113 @@ export default function RankingExplorerPage() {
         </div>
       </header>
 
+      {/* ── Evidence summary table ─────────────────────────────── */}
+      <section className="border-b border-parchment-deep bg-parchment-dark">
+        <div className="max-w-outer mx-auto px-6 py-12">
+          <div className="max-w-wide mx-auto">
+            <div className="max-w-prose mx-auto mb-6">
+              <p className="section-marker">Evidence summary</p>
+              <h2 className="font-display text-2xl text-ink mt-1 mb-3">
+                Per-Founder evidence across every layer
+              </h2>
+              <p className="text-sm text-ink-soft leading-relaxed">
+                The raw counts behind the composite. Catalogue is
+                HIGH/MEDIUM verified Shakespeare references (direct
+                quotations + by-name); thematic is character-as-type
+                invocations from the thematic-allusions tier; MED+
+                echoes are the medium-or-high-confidence candidate
+                echoes (the meaningful signal in the 35,794-row
+                relaxed tier). The combined-per-million column adds
+                all three layers and divides by each Founder&rsquo;s
+                corpus size in millions of words. Adams sits at
+                roughly twice Franklin and more than ten times
+                Madison.
+              </p>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm font-sans border-separate border-spacing-y-1 max-w-wide mx-auto">
+                <thead>
+                  <tr className="text-ink-muted">
+                    <th className="text-left font-display font-normal pb-2 pr-4">
+                      <span className="block text-xs uppercase tracking-smallcap">
+                        Founder
+                      </span>
+                    </th>
+                    <th className="text-right font-display font-normal pb-2 px-2">
+                      <span className="block text-xs uppercase tracking-smallcap">
+                        Words
+                      </span>
+                    </th>
+                    <th className="text-right font-display font-normal pb-2 px-2">
+                      <span className="block text-xs uppercase tracking-smallcap">
+                        Catalogue
+                      </span>
+                    </th>
+                    <th className="text-right font-display font-normal pb-2 px-2">
+                      <span className="block text-xs uppercase tracking-smallcap">
+                        Thematic
+                      </span>
+                    </th>
+                    <th className="text-right font-display font-normal pb-2 px-2">
+                      <span className="block text-xs uppercase tracking-smallcap">
+                        MED+ echoes
+                      </span>
+                    </th>
+                    <th className="text-right font-display font-normal pb-2 pl-2">
+                      <span className="block text-xs uppercase tracking-smallcap">
+                        Combined / M
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-ink-soft">
+                  {[
+                    { id: "adams",      name: "Adams",      words: "4.2M", cat: 109, thematic: 18, echoes: 297, combined: 100.6 },
+                    { id: "franklin",   name: "Franklin",   words: "1.8M", cat: 2,   thematic: 0,  echoes: 81,  combined: 46.9 },
+                    { id: "jefferson",  name: "Jefferson",  words: "7.0M", cat: 26,  thematic: 4,  echoes: 130, combined: 23.0 },
+                    { id: "washington", name: "Washington", words: "5.9M", cat: 1,   thematic: 0,  echoes: 82,  combined: 14.1 },
+                    { id: "hamilton",   name: "Hamilton",   words: "2.3M", cat: 0,   thematic: 1,  echoes: 27,  combined: 11.9 },
+                    { id: "madison",    name: "Madison",    words: "3.4M", cat: 2,   thematic: 0,  echoes: 28,  combined: 8.8 },
+                  ].map((r) => (
+                    <tr key={r.id} className="bg-parchment border-y border-parchment-deep">
+                      <td className="font-display text-base text-ink py-2 pr-4 pl-3">
+                        <Link
+                          href={`/founder/${r.id}`}
+                          className="hover:text-folio no-underline"
+                        >
+                          {r.name}
+                        </Link>
+                      </td>
+                      <td className="text-right tabular-nums py-2 px-2 text-ink-muted">
+                        {r.words}
+                      </td>
+                      <td className="text-right tabular-nums py-2 px-2">
+                        {r.cat}
+                      </td>
+                      <td className="text-right tabular-nums py-2 px-2">
+                        {r.thematic}
+                      </td>
+                      <td className="text-right tabular-nums py-2 px-2">
+                        {r.echoes}
+                      </td>
+                      <td className="text-right tabular-nums py-2 pl-2 pr-3 font-display text-folio font-semibold">
+                        {r.combined.toFixed(1)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-ink-muted italic text-center mt-4 max-w-prose mx-auto leading-snug">
+              The combined-per-million column is the headline measure
+              of total Shakespeare evidence per Founder, normalized
+              for corpus size. The composite score below adds
+              statistical and stylistic measures alongside.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <RankingExplorer />
 
       <section>
