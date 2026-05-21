@@ -25,8 +25,8 @@ export default function HamiltonSilenceEssay() {
       sectionMarker="Essay · The substantive findings"
       title="The Hamilton Silence"
       subtitle="Two of the six Founders write as if Shakespeare did not exist. The absence is the third major finding of the project, and it&rsquo;s what makes the other two findings mean what they mean."
-      prevHref="/essay/honour-test"
-      prevLabel="The Honour Test"
+      prevHref="/essay/convergence"
+      prevLabel="Eight Ways of Looking"
       nextHref="/essay"
       nextLabel="Back to the essay index"
     >

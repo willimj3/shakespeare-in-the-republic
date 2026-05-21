@@ -24,8 +24,8 @@ export default function ConvergenceEssay() {
       sectionMarker="Essay · Why we believe the findings"
       title="Eight Ways of Looking"
       subtitle="The project doesn&rsquo;t rest on a single statistical test. Eight different ways of asking &lsquo;how Shakespearean is this Founder?&rsquo; mostly give the same answer. Where they disagree turns out to be the most important place."
-      prevHref="/essay/honour-test"
-      prevLabel="The Honour Test"
+      prevHref="/essay/roman-shakespeare"
+      prevLabel="The Roman Shakespeare"
       nextHref="/essay/hamilton-silence"
       nextLabel="The Hamilton Silence"
     >

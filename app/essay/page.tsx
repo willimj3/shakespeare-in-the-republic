@@ -56,10 +56,10 @@ const chapters: ChapterEntry[] = [
   },
   {
     num: 5,
-    slug: "honour-test",
-    title: "The Honour Test",
+    slug: "roman-shakespeare",
+    title: "The Roman Shakespeare",
     summary:
-      "When the same vocabulary item appears in both corpora, do its collocational neighbours coincide? The answer is consistently no. The Founders inherited Shakespeare's vocabulary and rebuilt its conceptual content.",
+      "The Founders' historical Shakespeare is Roman, not English. The English histories' apparent prominence in the candidate-echoes tier is a methodological mirage; Julius Caesar's character types do the political work, across five of the six Founders and forty-seven years.",
     status: "live",
   },
   {
