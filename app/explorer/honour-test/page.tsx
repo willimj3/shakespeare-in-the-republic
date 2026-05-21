@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HonourTestInteractive from "./HonourTestInteractive";
+import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title: "The Honour Test · Shakespeare in the Republic",
@@ -125,6 +126,12 @@ export default function HonourTestExplorerPage() {
           </div>
         </div>
       </section>
+
+      <DataScope
+        scope="full-corpus"
+        description="Differential collocate analysis computed across the full 24.6 million words of the six Founders and the full 891,034 words of Shakespeare. Top collocates are ranked by Stefanowitsch's G log-likelihood measure, with effect-size phi reported in the underlying tables."
+        sourceTable="tables/cs3_<noun>.csv (per-target collocate ranking)"
+      />
     </div>
   );
 }

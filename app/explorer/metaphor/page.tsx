@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import MetaphorRadar from "@/components/charts/MetaphorRadar";
 import metaphor from "@/data/metaphor.json";
+import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title: "Metaphor Fingerprints · Shakespeare in the Republic",
@@ -240,6 +241,12 @@ export default function MetaphorExplorerPage() {
           </div>
         </div>
       </section>
+
+      <DataScope
+        scope="full-corpus"
+        description="Per-Founder metaphor-family rates per million words, computed across each Founder's full corpus and against Shakespeare's full corpus. Pattern matching follows Stefanowitsch's target-domain approach (Ch. 11) over eight conceptual families: EDIFICE, BODY, SHIP, FIRE, PLANT, PATH, MOTION, CONTAINER."
+        sourceTable="tables/cs6_metaphor_pattern_counts.csv"
+      />
     </div>
   );
 }

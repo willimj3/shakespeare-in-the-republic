@@ -47,6 +47,65 @@ const PAPERS: Paper[] = [
   },
 ];
 
+type DataFile = {
+  file: string;
+  title: string;
+  description: string;
+  size: string;
+};
+
+const DATA_FILES: DataFile[] = [
+  {
+    file: "catalogue.json",
+    title: "Reference catalogue",
+    description:
+      "All 62 HIGH/MEDIUM-confidence direct Shakespeare quotations and 78 by-name references, each with founder, date, source play, KWIC context, and Founders Online doc_id.",
+    size: "103 KB",
+  },
+  {
+    file: "collocates.json",
+    title: "Differential collocates (14 abstract nouns)",
+    description:
+      "Top 20 distinctive collocates of honour, power, love, friend, virtue, fortune, death, mind, government, law, people, nature, truth, liberty in each corpus. Powers the Honour Test explorer.",
+    size: "39 KB",
+  },
+  {
+    file: "composite.json",
+    title: "Eight-method convergence and ranking",
+    description:
+      "Per-founder composite scores and per-method ranks across all eight measures of Shakespearean influence. Powers the Ranking explorer.",
+    size: "3 KB",
+  },
+  {
+    file: "metaphor.json",
+    title: "Metaphor-family rates",
+    description:
+      "Per-million rates for eight conceptual-metaphor families (EDIFICE, BODY, SHIP, FIRE, PLANT, PATH, MOTION, CONTAINER) across each Founder and Shakespeare. Powers the Metaphor Fingerprints explorer.",
+    size: "2 KB",
+  },
+  {
+    file: "archaic_forms.json",
+    title: "Archaic-form survival (per form)",
+    description:
+      "Per-million rates for 38 archaic Shakespearean forms (thou, hath, methinks, prithee, betwixt, etc.) in each Founder's corpus alongside Shakespeare's. Powers the Archaic Threshold explorer.",
+    size: "17 KB",
+  },
+  {
+    file: "archaic.json",
+    title: "Archaic-form survival summary",
+    description:
+      "Per-Founder summary of archaic-form survival ratio and overall archaic token rate.",
+    size: "1 KB",
+  },
+  {
+    file: "play_atlas.json",
+    title: "Play-level citation counts",
+    description:
+      "Per-play aggregated citation counts from the catalogue, broken down by Founder. Powers the Play Atlas explorer.",
+    size: "2 KB",
+  },
+];
+
 export default function PapersPage() {
   return (
     <div className="bg-parchment">
@@ -101,6 +160,45 @@ export default function PapersPage() {
               </a>
             </article>
           ))}
+        </div>
+
+        <div className="max-w-wide mx-auto mt-20">
+          <div className="ornament" />
+          <h2 className="font-display text-3xl text-ink mt-4 mb-3 text-center">
+            Data and downloads
+          </h2>
+          <p className="text-base text-ink-soft text-center max-w-prose mx-auto mb-8 leading-relaxed">
+            Every interactive view on this site reads from one of
+            seven JSON files. They are all downloadable directly,
+            under permissive terms. Each file&rsquo;s schema is
+            documented in the site repository.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {DATA_FILES.map((d) => (
+              <a
+                key={d.file}
+                href={asset(`/data/${d.file}`)}
+                download
+                className="group flex items-start gap-4 p-5 bg-parchment-dark border border-parchment-deep rounded-sm no-underline hover:border-folio transition-colors"
+              >
+                <div className="flex-1">
+                  <p className="font-display text-lg text-ink group-hover:text-folio">
+                    {d.title}
+                  </p>
+                  <p className="text-sm text-ink-soft mt-1 leading-snug">
+                    {d.description}
+                  </p>
+                  <p className="text-xs text-ink-muted mt-2 font-sans">
+                    <code className="text-folio">{d.file}</code>{" "}
+                    &middot; {d.size}
+                  </p>
+                </div>
+                <span className="text-folio font-sans text-xs whitespace-nowrap mt-1">
+                  Download &darr;
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
 
         <div className="max-w-prose mx-auto mt-16">

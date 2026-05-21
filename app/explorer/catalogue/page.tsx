@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CatalogueBrowser from "./CatalogueBrowser";
+import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title:
@@ -174,6 +175,12 @@ export default function CataloguePage() {
           </div>
         </div>
       </section>
+
+      <DataScope
+        scope="catalogue-subset"
+        description="A filterable list of every HIGH or MEDIUM confidence Shakespeare reference the project's pipeline could trace to a specific document, with year, recipient, and KWIC context for each. 62 direct verbatim quotations plus 78 by-name references."
+        sourceTable="tables/catalogue_direct_quotes.csv + catalogue_named_references.csv"
+      />
     </div>
   );
 }

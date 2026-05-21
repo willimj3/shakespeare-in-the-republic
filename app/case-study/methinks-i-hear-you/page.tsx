@@ -61,7 +61,6 @@ export default function MethinksIHearYouCaseStudy() {
       heroImage={asset("/images/historical/adams-diary-manuscript.jpg")}
       heroAlt="A page of John Adams's diary, in his own hand."
       heroCaption="A page from John Adams's diary (Royall Tyler Collection)."
-      byline="From the research project Shakespeare in the Republic"
       relatedEssay={{
         href: "/essay/two-modes",
         title: "Two Modes of Shakespearean Influence",

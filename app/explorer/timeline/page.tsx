@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TimelineExplorer from "./TimelineExplorer";
+import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title:
@@ -115,6 +116,12 @@ export default function TimelinePage() {
           </div>
         </div>
       </section>
+
+      <DataScope
+        scope="derived-from-catalogue"
+        description="Each dot is one HIGH or MEDIUM confidence reference plotted at the year it was written. Dot density on a Founder's row reflects how many traceable Shakespeare references survive in their writing under the catalogue's strict confidence threshold."
+        sourceTable="tables/catalogue_direct_quotes.csv + catalogue_named_references.csv"
+      />
     </div>
   );
 }

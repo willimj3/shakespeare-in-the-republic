@@ -63,7 +63,6 @@ export default function BandOfBrothersCaseStudy() {
       heroImage={asset("/images/historical/washington-orderly-book-001.gif")}
       heroAlt="Washington's General Orders, Varick Transcript page 1 (Library of Congress)"
       heroCaption="Washington's Orderly Book (Varick Transcript). Library of Congress, Washington Papers Series 3G."
-      byline="From the research project Shakespeare in the Republic"
       relatedEssay={{
         href: "/essay/two-modes",
         title: "Two Modes of Shakespearean Influence",

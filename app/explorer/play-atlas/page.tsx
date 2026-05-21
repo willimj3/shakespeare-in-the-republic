@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PlayAtlas from "@/components/charts/PlayAtlas";
+import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title: "The Play Atlas · Shakespeare in the Republic",
@@ -137,6 +138,12 @@ export default function PlayAtlasPage() {
           </div>
         </div>
       </section>
+
+      <DataScope
+        scope="derived-from-catalogue"
+        description="Per-play citation counts aggregated from the catalogue. Each direct quotation contributes to one play's count (the play it quotes); each by-name reference contributes when the named character or play title is unambiguous. References below the catalogue's HIGH/MEDIUM confidence threshold (and named references that mention only 'Shakespeare') are not counted here."
+        sourceTable="data/play_atlas.json (aggregated from catalogue_direct_quotes.csv + catalogue_named_references.csv)"
+      />
     </div>
   );
 }

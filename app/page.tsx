@@ -67,13 +67,10 @@ function Hero() {
               <Link href="/papers">download in plain English and in
               technical form</Link>.
             </p>
-            <p className="mt-6 text-sm text-ink-muted">
-              Mark J. Williams with Claude Code &middot; Vanderbilt Law
-              School &middot; 2026
-              <br />
+            <p className="mt-6 text-sm">
               <Link
                 href="/about-this-project"
-                className="text-folio text-xs"
+                className="text-folio"
               >
                 About this project &mdash; how the site was made &rarr;
               </Link>

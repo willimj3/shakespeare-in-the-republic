@@ -78,7 +78,6 @@ export default function Macbeth1758CaseStudy() {
       heroImage={asset("/images/historical/first-folio-macbeth-p738.jpg")}
       heroAlt="First Folio (1623): Macbeth."
       heroCaption="Macbeth in the First Folio (1623). The play Adams worked through in his late-1758 diary."
-      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       relatedEssay={{ href: "/essay/two-modes", title: "Two Modes of Shakespearean Influence" }}
     >
       <div className="has-dropcap">

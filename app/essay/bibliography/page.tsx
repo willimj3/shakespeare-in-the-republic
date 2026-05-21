@@ -17,7 +17,6 @@ export default function BibliographyEssay() {
       sectionMarker="Essay · Bibliography"
       title="References and Reproducibility"
       subtitle="Where everything in this site came from, and how to verify it."
-      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay/hamilton-silence"
       prevLabel="The Hamilton Silence"
     >

@@ -1,0 +1,94 @@
+{
+  "generated": "from tables/cs6_metaphor_pattern_counts.csv via scripts/export_site_data.py",
+  "metaphor_types": [
+    "EDIFICE",
+    "BODY",
+    "SHIP",
+    "FIRE",
+    "PLANT",
+    "PATH",
+    "MOTION",
+    "CONTAINER"
+  ],
+  "rates_per_million": {
+    "washington": {
+      "EDIFICE": 1.504,
+      "BODY": 4.012,
+      "SHIP": 4.179,
+      "FIRE": 0.501,
+      "PLANT": 1.003,
+      "PATH": 4.179,
+      "MOTION": 8.525,
+      "CONTAINER": 1.839
+    },
+    "jefferson": {
+      "EDIFICE": 2.288,
+      "BODY": 6.578,
+      "SHIP": 14.442,
+      "FIRE": 0.572,
+      "PLANT": 11.01,
+      "PATH": 12.869,
+      "MOTION": 11.868,
+      "CONTAINER": 1.716
+    },
+    "adams": {
+      "EDIFICE": 5.425,
+      "BODY": 16.04,
+      "SHIP": 8.02,
+      "FIRE": 3.302,
+      "PLANT": 10.143,
+      "PATH": 11.322,
+      "MOTION": 9.907,
+      "CONTAINER": 1.415
+    },
+    "madison": {
+      "EDIFICE": 8.472,
+      "BODY": 9.056,
+      "SHIP": 6.135,
+      "FIRE": 1.168,
+      "PLANT": 33.594,
+      "PATH": 5.842,
+      "MOTION": 7.303,
+      "CONTAINER": 2.337
+    },
+    "hamilton": {
+      "EDIFICE": 10.575,
+      "BODY": 8.46,
+      "SHIP": 20.728,
+      "FIRE": 0.423,
+      "PLANT": 13.113,
+      "PATH": 21.151,
+      "MOTION": 10.575,
+      "CONTAINER": 3.384
+    },
+    "franklin": {
+      "EDIFICE": 2.223,
+      "BODY": 5.557,
+      "SHIP": 7.224,
+      "FIRE": 8.891,
+      "PLANT": 3.89,
+      "PATH": 8.891,
+      "MOTION": 15.559,
+      "CONTAINER": 1.111
+    },
+    "shakespeare": {
+      "EDIFICE": 0.0,
+      "BODY": 14.845,
+      "SHIP": 12.561,
+      "FIRE": 9.135,
+      "PLANT": 4.568,
+      "PATH": 17.129,
+      "MOTION": 17.129,
+      "CONTAINER": 9.135
+    }
+  },
+  "label_order": [
+    "adams",
+    "franklin",
+    "jefferson",
+    "washington",
+    "madison",
+    "hamilton",
+    "shakespeare"
+  ]
+}

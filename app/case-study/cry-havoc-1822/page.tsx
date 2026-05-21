@@ -36,7 +36,6 @@ export default function CryHavoc1822CaseStudy() {
       heroImage={asset("/images/historical/adams-trumbull-c1792.jpg")}
       heroAlt="John Adams, painted by John Trumbull (c. 1792)."
       heroCaption="John Adams (Trumbull, c. 1792). White House Historical Association."
-      byline="From the research project Shakespeare in the Republic"
       relatedEssay={{
         href: "/essay/two-modes",
         title: "Two Modes of Shakespearean Influence",

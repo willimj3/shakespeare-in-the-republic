@@ -1,0 +1,151 @@
+{
+  "generated": "from tables/influence3_founder_distance.csv via scripts/export_site_data.py",
+  "founders": [
+    {
+      "founder_id": "franklin",
+      "founder_name": "Benjamin Franklin",
+      "composite": 0.7857,
+      "vocab_breadth": 95,
+      "vocab_weighted": 41570054.9,
+      "collocations": 73,
+      "colloc_hits": 214,
+      "msttr_distance": 0.02157,
+      "htr_distance": 0.0026,
+      "yulesk_distance": 27.213
+    },
+    {
+      "founder_id": "adams",
+      "founder_name": "John Adams",
+      "composite": 0.7619,
+      "vocab_breadth": 145,
+      "vocab_weighted": 36928143.1,
+      "collocations": 82,
+      "colloc_hits": 256,
+      "msttr_distance": 0.02337,
+      "htr_distance": 0.00524,
+      "yulesk_distance": 38.889
+    },
+    {
+      "founder_id": "jefferson",
+      "founder_name": "Thomas Jefferson",
+      "composite": 0.5952,
+      "vocab_breadth": 128,
+      "vocab_weighted": 33588501.6,
+      "collocations": 68,
+      "colloc_hits": 195,
+      "msttr_distance": 0.02678,
+      "htr_distance": 0.00263,
+      "yulesk_distance": 46.398
+    },
+    {
+      "founder_id": "washington",
+      "founder_name": "George Washington",
+      "composite": 0.5238,
+      "vocab_breadth": 115,
+      "vocab_weighted": 28431344.9,
+      "collocations": 58,
+      "colloc_hits": 159,
+      "msttr_distance": 0.02788,
+      "htr_distance": 0.00073,
+      "yulesk_distance": 49.109
+    },
+    {
+      "founder_id": "madison",
+      "founder_name": "James Madison",
+      "composite": 0.4286,
+      "vocab_breadth": 77,
+      "vocab_weighted": 20926055.7,
+      "collocations": 51,
+      "colloc_hits": 129,
+      "msttr_distance": 0.02171,
+      "htr_distance": 8e-05,
+      "yulesk_distance": 76.497
+    },
+    {
+      "founder_id": "hamilton",
+      "founder_name": "Alexander Hamilton",
+      "composite": 0.4048,
+      "vocab_breadth": 61,
+      "vocab_weighted": 21392055.7,
+      "collocations": 49,
+      "colloc_hits": 130,
+      "msttr_distance": 0.00268,
+      "htr_distance": 0.00202,
+      "yulesk_distance": 77.795
+    }
+  ],
+  "six_method_convergence": {
+    "methods": [
+      "Influence-3 composite",
+      "CS4 pronoun-profile distance",
+      "CS5 diachronic archaic-form density",
+      "CS6 metaphor-profile distance",
+      "CS7 CFA stylistic-type sharing",
+      "CS8 conscious-coinage usage",
+      "Influence-1 weighted vocab absorption",
+      "Influence-2 collocational absorption"
+    ],
+    "ranks": {
+      "franklin": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        6,
+        1,
+        2
+      ],
+      "adams": [
+        2,
+        2,
+        3,
+        2,
+        2,
+        1,
+        2,
+        1
+      ],
+      "jefferson": [
+        3,
+        3,
+        2,
+        3,
+        3,
+        2,
+        3,
+        3
+      ],
+      "washington": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        4,
+        4,
+        4
+      ],
+      "madison": [
+        5,
+        6,
+        6,
+        6,
+        4,
+        3,
+        6,
+        5
+      ],
+      "hamilton": [
+        6,
+        5,
+        4,
+        4,
+        6,
+        5,
+        5,
+        6
+      ]
+    }
+  }
+}

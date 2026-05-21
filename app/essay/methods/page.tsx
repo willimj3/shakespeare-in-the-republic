@@ -17,7 +17,6 @@ export default function MethodsEssay() {
       sectionMarker="Essay · The setup"
       title="How We Asked the Question"
       subtitle="What the project actually did, in plain English. Why we picked the corpus we did, what counts as &lsquo;Shakespearean influence&rsquo;, and how we kept ourselves honest."
-      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay"
       prevLabel="Essay index"
       nextHref="/essay/two-modes"

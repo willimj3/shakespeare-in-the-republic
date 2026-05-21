@@ -1,0 +1,53 @@
+{
+  "generated": "from tables/cs5_per_founder_summary.csv via scripts/export_site_data.py",
+  "per_founder": [
+    {
+      "founder_id": "franklin",
+      "founder_name": "Benjamin Franklin",
+      "forms_tested": 45,
+      "surviving": 31,
+      "survival_rate": 0.6889,
+      "archaic_tokens_per_m": 9435.7
+    },
+    {
+      "founder_id": "jefferson",
+      "founder_name": "Thomas Jefferson",
+      "forms_tested": 43,
+      "surviving": 32,
+      "survival_rate": 0.7442,
+      "archaic_tokens_per_m": 5127.84
+    },
+    {
+      "founder_id": "adams",
+      "founder_name": "John Adams",
+      "forms_tested": 43,
+      "surviving": 25,
+      "survival_rate": 0.5814,
+      "archaic_tokens_per_m": 4425.67
+    },
+    {
+      "founder_id": "hamilton",
+      "founder_name": "Alexander Hamilton",
+      "forms_tested": 44,
+      "surviving": 19,
+      "survival_rate": 0.4318,
+      "archaic_tokens_per_m": 4212.86
+    },
+    {
+      "founder_id": "washington",
+      "founder_name": "George Washington",
+      "forms_tested": 43,
+      "surviving": 21,
+      "survival_rate": 0.4884,
+      "archaic_tokens_per_m": 4161.38
+    },
+    {
+      "founder_id": "madison",
+      "founder_name": "James Madison",
+      "forms_tested": 44,
+      "surviving": 21,
+      "survival_rate": 0.4773,
+      "archaic_tokens_per_m": 3285.94
+    }
+  ]
+}

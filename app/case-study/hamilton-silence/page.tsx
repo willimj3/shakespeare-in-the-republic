@@ -35,7 +35,6 @@ export default function HamiltonSilenceCaseStudy() {
       heroImage={asset("/images/historical/hamilton-trumbull-1806.jpg")}
       heroAlt="Alexander Hamilton, by John Trumbull (1806)."
       heroCaption="Alexander Hamilton (Trumbull, 1806). The portrait was painted after his death."
-      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       relatedEssay={{ href: "/essay/hamilton-silence", title: "The Hamilton Silence" }}
     >
       <div className="has-dropcap">

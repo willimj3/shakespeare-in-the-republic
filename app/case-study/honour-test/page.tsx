@@ -31,7 +31,6 @@ export default function HonourTestCaseStudy() {
       heroImage={asset("/images/historical/first-folio-othello-p827.jpg")}
       heroAlt="First Folio (1623): Othello, page 827."
       heroCaption="Othello in the First Folio (1623). Shakespeare's honour is the noun on which the play's tragedy turns."
-      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       relatedEssay={{ href: "/essay/honour-test", title: "The Honour Test" }}
     >
       <div className="has-dropcap">

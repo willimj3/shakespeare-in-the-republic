@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ArchaicExplorer from "./ArchaicExplorer";
+import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title: "The Archaic Threshold · Shakespeare in the Republic",
@@ -126,6 +127,12 @@ export default function ArchaicExplorerPage() {
           </div>
         </div>
       </section>
+
+      <DataScope
+        scope="full-corpus"
+        description="Per-million rates for 38 archaic Shakespearean forms (second-person pronouns, archaic verb inflections, discourse markers, archaic prepositions, old contractions) counted across each Founder's full corpus and Shakespeare's full corpus. A form is marked 'surviving' in a Founder if its rate in his writing is at least 1 per million words."
+        sourceTable="tables/cs5_archaic_form_survival.csv"
+      />
     </div>
   );
 }

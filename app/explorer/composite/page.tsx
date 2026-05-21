@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import RankingExplorer from "./RankingExplorer";
+import DataScope from "@/components/DataScope";
 
 export const metadata: Metadata = {
   title: "The Ranking · Shakespeare in the Republic",
@@ -106,6 +107,12 @@ export default function RankingExplorerPage() {
           </div>
         </div>
       </section>
+
+      <DataScope
+        scope="full-corpus"
+        description="Each of the eight measures is computed independently across the full corpus — 24.6 million Founder words and 891K Shakespeare words. The composite ranking blends vocabulary breadth, weighted vocabulary, and collocational absorption (Influence-1/2/3). The other seven measures (pronoun similarity, archaic-form density, metaphor profile, statistical-style overlap, conscious-coinage usage, Influence-1, Influence-2) are reported as per-Founder ranks 1–6."
+        sourceTable="tables/influence3_founder_distance.csv + per-method rank tables in cs4..cs8"
+      />
     </div>
   );
 }

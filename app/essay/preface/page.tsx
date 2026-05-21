@@ -16,7 +16,6 @@ export default function PrefaceEssay() {
       sectionMarker="Essay · Preface"
       title="Preface"
       subtitle="Why this site exists, what it&rsquo;s for, and how to read it."
-      byline="Mark J. Williams with Claude Code · Vanderbilt Law School · 2026"
       prevHref="/essay"
       prevLabel="Essay index"
       nextHref="/essay/introduction"

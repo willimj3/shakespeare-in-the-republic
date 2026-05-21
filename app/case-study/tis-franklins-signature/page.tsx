@@ -36,7 +36,6 @@ export default function TisFranklinsSignature() {
       heroImage={asset("/images/historical/franklin-duplessis-1785.jpg")}
       heroAlt="Benjamin Franklin, by Joseph Siffred Duplessis, c. 1785"
       heroCaption="Benjamin Franklin (Duplessis, c. 1785). National Portrait Gallery, Smithsonian."
-      byline="From the research project Shakespeare in the Republic"
       relatedEssay={{
         href: "/essay/two-modes",
         title: "Two Modes of Shakespearean Influence",

@@ -42,7 +42,6 @@ export default function TideInTheAffairs() {
       heroImage={asset("/images/historical/first-folio-julius-caesar-cropped.jpg")}
       heroAlt="First Folio: The Tragedy of Julius Caesar (Bodleian First Folio, 1623)"
       heroCaption="The Tragedy of Julius Caesar, First Folio (1623). Bodleian Library, Oxford."
-      byline="From the research project Shakespeare in the Republic"
       relatedEssay={{
         href: "/essay/two-modes",
         title: "Two Modes of Shakespearean Influence",
