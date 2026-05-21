@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import catalogue from "@/data/catalogue.json";
 import playAtlas from "@/data/play_atlas.json";
+import candidateEchoes from "@/data/candidate_echoes.json";
+import thematicAllusions from "@/data/thematic_allusions.json";
 import { asset } from "@/lib/paths";
 import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
 
@@ -22,9 +24,31 @@ type CatalogueShape = typeof catalogue;
 type PlayAtlasShape = {
   plays: { play: string; total: number; counts: Record<string, number> }[];
 };
+type CandidateEchoesShape = {
+  echoes: {
+    founder_name: string;
+    doc_id: string;
+    date: number | null;
+    matched_text: string;
+    shakespeare_source: string;
+    kwic: string;
+  }[];
+};
+type ThematicAllusionsShape = {
+  allusions: {
+    founder_name: string;
+    doc_id: string;
+    date: number | null;
+    matched_character: string;
+    implied_play: string;
+    kwic: string;
+  }[];
+};
 
 const cat = catalogue as unknown as CatalogueShape;
 const atlas = playAtlas as unknown as PlayAtlasShape;
+const echoes = candidateEchoes as unknown as CandidateEchoesShape;
+const allusions = thematicAllusions as unknown as ThematicAllusionsShape;
 
 const FOUNDER_ORDER = [
   "adams",
@@ -62,8 +86,8 @@ export default function Home() {
     <div className="bg-parchment text-ink">
       <Hero />
       <FounderCountsStrip />
+      <ThreeLayersOfEvidence />
       <TopPlays />
-      <FeaturedPassages />
       <ThreeTeasers />
       <ProjectAbout />
     </div>
@@ -313,97 +337,181 @@ function TopPlays() {
 }
 
 /* ──────────────────────────────────────────────────────────────────── */
-/*                       FEATURED PASSAGES                              */
+/*                    THREE LAYERS OF EVIDENCE                          */
 /* ──────────────────────────────────────────────────────────────────── */
-function FeaturedPassages() {
-  // Pick three high-impact passages from the catalogue
-  const passages = [
-    cat.direct_quotes.find(
-      (q) =>
-        q.matched_text.toLowerCase().includes("walking shadow") ||
-        q.matched_text.toLowerCase().includes("brief candle"),
-    ),
-    cat.direct_quotes.find((q) =>
-      q.matched_text.toLowerCase().includes("given suck"),
-    ),
-    cat.direct_quotes.find(
-      (q) =>
-        q.matched_text.toLowerCase().includes("cry havoc") ||
-        q.matched_text.toLowerCase().includes("dogs of war") ||
-        q.matched_text.toLowerCase().includes("let slip"),
-    ),
-  ].filter((p): p is NonNullable<typeof p> => p != null);
+function ThreeLayersOfEvidence() {
+  // Pick one passage from each layer
+  const verbatim = cat.direct_quotes.find(
+    (q) =>
+      q.matched_text.toLowerCase().includes("given suck") ||
+      q.matched_text.toLowerCase().includes("walking shadow"),
+  );
 
-  if (passages.length === 0) return null;
+  const candidateEcho = echoes.echoes.find((e) =>
+    e.matched_text.toLowerCase().includes("pound of flesh"),
+  );
+
+  const thematic = allusions.allusions.find((a) =>
+    a.kwic.toLowerCase().includes("falstaff"),
+  );
 
   return (
     <section className="border-b border-parchment-deep bg-parchment-dark">
       <div className="max-w-outer mx-auto px-6 py-14">
         <div className="max-w-prose mx-auto text-center mb-8">
-          <p className="section-marker">A handful of passages</p>
+          <p className="section-marker">Three layers of evidence</p>
           <h2 className="font-display text-3xl text-ink mt-1">
-            Three from the catalogue
+            From verbatim quotation to thematic invocation
           </h2>
-          <p className="text-sm text-ink-soft mt-2 italic">
-            Click any to see it in context, with the original
-            document and the Shakespearean source.
+          <p className="text-sm text-ink-soft mt-3 leading-relaxed">
+            The project tracks Shakespearean inheritance at three
+            tiers of evidence. The strict catalogue at the top.
+            Shorter candidate echoes in the middle. Thematic
+            character invocations at the bottom. Each tier
+            illuminates a different kind of borrowing &mdash; and
+            the histories surface more clearly in the lower tiers
+            than the strict catalogue alone would suggest.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-5 max-w-wide mx-auto">
-          {passages.map((p, i) => {
-            const fo = foundersOnlineUrl(p.doc_id);
-            return (
-              <article
-                key={i}
-                className="bg-parchment border border-parchment-deep rounded-sm p-5 flex flex-col"
-              >
-                <p className="text-xs text-ink-muted font-sans">
-                  {p.founder_name} &middot; {p.date}
-                </p>
-                <p className="font-display text-base text-ink mt-2 leading-snug italic">
-                  &ldquo;
-                  {p.kwic.length > 220
-                    ? p.kwic.slice(0, 220).replace(/\s\S*$/, "") + "…"
-                    : p.kwic}
-                  &rdquo;
-                </p>
-                <p className="text-xs text-ink-soft mt-3 font-sans italic">
-                  Echoing{" "}
-                  <span className="text-folio">
-                    {p.shakespeare_short}
-                  </span>
-                </p>
-                <div className="mt-3 flex flex-wrap gap-3 text-xs font-sans">
-                  <Link
-                    href="/explorer/catalogue"
-                    className="text-folio"
-                  >
-                    Browse the catalogue &rarr;
-                  </Link>
-                  {fo && (
-                    <a
-                      href={fo}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-folio"
-                    >
-                      Founders Online &rarr;
-                    </a>
-                  )}
-                </div>
-              </article>
-            );
-          })}
+          {/* Layer 1: Catalogue verbatim */}
+          {verbatim && (
+            <LayerCard
+              tier="Catalogue"
+              tierColor="#7B1E1E"
+              tierBlurb="Verbatim 5+ word quotation, content-word rich."
+              founder={verbatim.founder_name}
+              date={verbatim.date ?? ""}
+              passage={verbatim.kwic}
+              source={verbatim.shakespeare_short}
+              docId={verbatim.doc_id}
+              browseHref="/explorer/catalogue"
+              browseLabel="Browse 140 verified references"
+            />
+          )}
+
+          {/* Layer 2: Candidate echo */}
+          {candidateEcho && (
+            <LayerCard
+              tier="Candidate echo"
+              tierColor="#9C7340"
+              tierBlurb="4–5 word match with at least one distinctive Shakespeare word."
+              founder={candidateEcho.founder_name}
+              date={candidateEcho.date ?? ""}
+              passage={candidateEcho.kwic}
+              source={candidateEcho.shakespeare_source
+                .replace(/^THE (TRAGEDY|LIFE|COMEDY) OF /i, "")
+                .replace(/^KING /i, "")
+                .toLowerCase()
+                .replace(/\b\w/g, (c) => c.toUpperCase())}
+              docId={candidateEcho.doc_id}
+              browseHref="/explorer/candidate-echoes"
+              browseLabel="Browse 2,000 candidate echoes"
+            />
+          )}
+
+          {/* Layer 3: Thematic allusion */}
+          {thematic && (
+            <LayerCard
+              tier="Thematic allusion"
+              tierColor="#1F3A5F"
+              tierBlurb="Founder invokes a Shakespearean character as a type."
+              founder={thematic.founder_name}
+              date={thematic.date ?? ""}
+              passage={thematic.kwic}
+              source={thematic.implied_play}
+              docId={thematic.doc_id}
+              browseHref="/explorer/thematic-allusions"
+              browseLabel="Browse 23 thematic allusions"
+            />
+          )}
         </div>
 
-        <p className="text-center mt-6 text-sm">
-          <Link href="/explorer/catalogue" className="text-folio">
-            Search all 140 references in the catalogue &rarr;
-          </Link>
-        </p>
+        <div className="text-center mt-8 text-sm">
+          <p className="text-ink-muted italic max-w-prose mx-auto">
+            The lower-tier evidence carries weaker claims and
+            comes with explicit caveats. Most short matches between
+            any two large English corpora are coincidence. Read
+            both lower tiers with judgment.
+          </p>
+        </div>
       </div>
     </section>
+  );
+}
+
+function LayerCard({
+  tier,
+  tierColor,
+  tierBlurb,
+  founder,
+  date,
+  passage,
+  source,
+  docId,
+  browseHref,
+  browseLabel,
+}: {
+  tier: string;
+  tierColor: string;
+  tierBlurb: string;
+  founder: string;
+  date: number | string;
+  passage: string;
+  source: string;
+  docId: string;
+  browseHref: string;
+  browseLabel: string;
+}) {
+  const fo = foundersOnlineUrl(docId);
+  return (
+    <article className="bg-parchment border border-parchment-deep rounded-sm p-5 flex flex-col">
+      <div className="flex items-center gap-2 mb-3">
+        <span
+          className="inline-block w-2.5 h-2.5 rounded-sm"
+          style={{ background: tierColor }}
+          aria-hidden
+        />
+        <span
+          className="text-xs uppercase tracking-smallcap font-sans font-semibold"
+          style={{ color: tierColor }}
+        >
+          {tier}
+        </span>
+      </div>
+      <p className="text-xs text-ink-muted italic font-sans mb-3">
+        {tierBlurb}
+      </p>
+      <p className="text-xs text-ink-soft font-sans">
+        {founder} &middot; {date}
+      </p>
+      <p className="font-display text-base text-ink mt-2 leading-snug italic flex-1">
+        &ldquo;
+        {passage.length > 200
+          ? passage.slice(0, 200).replace(/\s\S*$/, "") + "…"
+          : passage}
+        &rdquo;
+      </p>
+      <p className="text-xs text-ink-soft mt-3 font-sans italic">
+        Echoing <span className="text-folio">{source}</span>
+      </p>
+      <div className="mt-3 flex flex-wrap gap-3 text-xs font-sans">
+        <Link href={browseHref} className="text-folio">
+          {browseLabel} &rarr;
+        </Link>
+        {fo && (
+          <a
+            href={fo}
+            target="_blank"
+            rel="noreferrer"
+            className="text-folio"
+          >
+            Founders Online &rarr;
+          </a>
+        )}
+      </div>
+    </article>
   );
 }
 
