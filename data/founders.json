@@ -1,5 +1,5 @@
 {
-  "generated": "Composite scores recomputed across 10 base methods after the backend expansion: the original 7 statistical/stylistic measures + thematic-allusion density + catalogue density + MEDIUM+ candidate-echo density, all normalized per million words. See data/composite.json for the full matrix.",
+  "generated": "methodology v2.0: FOUNDER_META + catalogue.json + composite.json via scripts/export_site_data.py",
   "founders": [
     {
       "id": "adams",
@@ -7,7 +7,7 @@
       "born": 1735,
       "died": 1826,
       "portrait": "/images/historical/adams-trumbull-c1792.jpg",
-      "tagline": "The most Shakespearean Founder by every measure. 61 verbatim quotations and 48 by-name references across his life, 18 thematic Roman character invocations, more than twice the next Founder per million words.",
+      "tagline": "The most Shakespearean Founder by every measure. 61 verbatim quotations and 48 by-name references, 18 thematic Roman character invocations, more than twice the next Founder per million words.",
       "composite": 0.88,
       "direct_high": 61,
       "named_shakespeare": 48
@@ -46,17 +46,6 @@
       "named_shakespeare": 1
     },
     {
-      "id": "hamilton",
-      "name": "Alexander Hamilton",
-      "born": 1755,
-      "died": 1804,
-      "portrait": "/images/historical/hamilton-trumbull-1806.jpg",
-      "tagline": "Bottom of the rankings on every literary measure. The one exception is Roman: a 1779 letter calling General Lee 'a little spice of Julius Caesar or Cromwell', plus a reported dinner-party line naming Caesar the greatest man who ever lived.",
-      "composite": 0.22,
-      "direct_high": 0,
-      "named_shakespeare": 0
-    },
-    {
       "id": "madison",
       "name": "James Madison",
       "born": 1751,
@@ -64,6 +53,17 @@
       "portrait": "/images/historical/madison-stuart-1804.jpg",
       "tagline": "The most thorough silence in the corpus. One medium-confidence direct quotation and one by-name reference across 3.4 million words, with no thematic allusions in the data at all.",
       "composite": 0.18,
+      "direct_high": 1,
+      "named_shakespeare": 1
+    },
+    {
+      "id": "hamilton",
+      "name": "Alexander Hamilton",
+      "born": 1755,
+      "died": 1804,
+      "portrait": "/images/historical/hamilton-trumbull-1806.jpg",
+      "tagline": "Bottom of the rankings on every literary measure. The one exception is Roman: a 1779 letter calling General Lee 'a little spice of Julius Caesar or Cromwell', plus a reported dinner-party line naming Caesar the greatest man who ever lived.",
+      "composite": 0.22,
       "direct_high": 0,
       "named_shakespeare": 0
     }

@@ -1,0 +1,19 @@
+{
+  "methodology_version": "2.0",
+  "generated_at": "2026-05-21T21:46:41.291225+00:00",
+  "generator": "scripts/export_site_data.py",
+  "founder_word_counts": {
+    "adams": 4212978,
+    "franklin": 1770415,
+    "jefferson": 6957928,
+    "washington": 5884759,
+    "madison": 3420115,
+    "hamilton": 2347616
+  },
+  "source_file_hashes": {
+    "tables/catalogue_direct_quotes.csv": "f4200f1178793dbde0338793315fc1834778d67e7da02458b51c7e9266d66d5a",
+    "tables/catalogue_named_references.csv": "525e0ea4590d695e048c0ba2a6dd35b3f9ab4838327e7331c69e07023a5d18d7",
+    "data/thematic_allusions.json (site)": "b965c8ca6ff178ceef1226ee5600771d65dbf274e738d466ce5c4b55b4009a63",
+    "data/candidate_echoes_summary.json (site)": "f7c7aea028f77ee95de9f8d9fc8b0bbbcff20c607d06e704f507076189cfdb15"
+  }
+}

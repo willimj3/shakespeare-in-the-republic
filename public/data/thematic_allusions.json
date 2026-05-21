@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-21T16:22:43.051606+00:00",
+  "generated": "2026-05-21T21:42:47.665989+00:00",
   "method": "Scan every Founder document for distinctively Shakespearean character names (history-play + tragedy + comedy + romance set; see CHARACTER_TO_PLAY in scripts/thematic_allusions.py). For each hit build a \u00b1200 char window. Classify by cue: LITERARY (explicit Shakespeare framing \u2014 play, scene, the bard, etc.); HISTORICAL (Roman/classical setting \u2014 senate, Plutarch, Ides of March); THEMATIC (the Founder is invoking the character as a moral/political type \u2014 'like a modern', 'would-be', 'a kind of', 'second Brutus', 'our own', 'reminds me of'). Keep only THEMATIC hits.",
   "caveat": "These are interpretive. The 'thematic' classification depends on a small set of context-word cues and will have both false positives (e.g. routine adjectives that coincide with a character name nearby) and false negatives. Use with judgment \u2014 each row carries the cue strings that triggered the classification.",
   "allusions": [
@@ -222,67 +222,11 @@
       "doc_id": "Adams/99-02-02-6395",
       "doc_title": "From John Adams to John Taylor, 16 January 1815",
       "date": 1815,
-      "matched_character": "Brutus",
-      "implied_play": "Julius Caesar",
-      "kwic": "ation only transfers the Aristocracy from one hand to another. The Aristocracy remains the Same. If Brutus transfer to Cassius, a Villa, or a Principality purchased by the unrighteous profits of Usury, Cassius becomes as influential an Aristocrat as Brutus was before. If John Randolph should manumit, one of his Negroes and alienate to him, his Plantation, that Negro would become as great an Aristocrat as John Randolph. And The Negro, John Randolph, Brutus and Cassius, were and are, and would be Aristo",
-      "classification_cues": [
-        "as great an"
-      ]
-    },
-    {
-      "founder_id": "adams",
-      "founder_name": "John Adams",
-      "doc_id": "Adams/99-02-02-6395",
-      "doc_title": "From John Adams to John Taylor, 16 January 1815",
-      "date": 1815,
-      "matched_character": "Brutus",
-      "implied_play": "Julius Caesar",
-      "kwic": "assius becomes as influential an Aristocrat as Brutus was before. If John Randolph should manumit, one of his Negroes and alienate to him, his Plantation, that Negro would become as great an Aristocrat as John Randolph. And The Negro, John Randolph, Brutus and Cassius, were and are, and would be Aristocrats of a scarlet colour and a crimson die, if they could. Alienation therefore is no Remedy, against an Aristocracy founded on landed Wealth. You Say, Sir, that \u00e2\u0080\u009cInhibitions upon Monopoly, and Incorp",
-      "classification_cues": [
-        "would be",
-        "as great an",
-        "no "
-      ]
-    },
-    {
-      "founder_id": "adams",
-      "founder_name": "John Adams",
-      "doc_id": "Adams/99-02-02-6395",
-      "doc_title": "From John Adams to John Taylor, 16 January 1815",
-      "date": 1815,
       "matched_character": "Cassius",
       "implied_play": "Julius Caesar",
       "kwic": "if you think it worth while. \u00e2\u0080\u009cAlienation\u00e2\u0080\u009d you Say, \u00e2\u0080\u009cis the Remedy for an Aristocracy, founded on landed Wealth.\u00e2\u0080\u009d But Alienation only transfers the Aristocracy from one hand to another. The Aristocracy remains the Same. If Brutus transfer to Cassius, a Villa, or a Principality purchased by the unrighteous profits of Usury, Cassius becomes as influential an Aristocrat as Brutus was before. If John Randolph should manumit, one of his Negroes and alienate to him, his Plantation, that Negro would b",
       "classification_cues": [
         "another"
-      ]
-    },
-    {
-      "founder_id": "adams",
-      "founder_name": "John Adams",
-      "doc_id": "Adams/99-02-02-6395",
-      "doc_title": "From John Adams to John Taylor, 16 January 1815",
-      "date": 1815,
-      "matched_character": "Cassius",
-      "implied_play": "Julius Caesar",
-      "kwic": "stocracy, founded on landed Wealth.\u00e2\u0080\u009d But Alienation only transfers the Aristocracy from one hand to another. The Aristocracy remains the Same. If Brutus transfer to Cassius, a Villa, or a Principality purchased by the unrighteous profits of Usury, Cassius becomes as influential an Aristocrat as Brutus was before. If John Randolph should manumit, one of his Negroes and alienate to him, his Plantation, that Negro would become as great an Aristocrat as John Randolph. And The Negro, John Randolph, Brutus",
-      "classification_cues": [
-        "another"
-      ]
-    },
-    {
-      "founder_id": "adams",
-      "founder_name": "John Adams",
-      "doc_id": "Adams/99-02-02-6395",
-      "doc_title": "From John Adams to John Taylor, 16 January 1815",
-      "date": 1815,
-      "matched_character": "Cassius",
-      "implied_play": "Julius Caesar",
-      "kwic": "mes as influential an Aristocrat as Brutus was before. If John Randolph should manumit, one of his Negroes and alienate to him, his Plantation, that Negro would become as great an Aristocrat as John Randolph. And The Negro, John Randolph, Brutus and Cassius, were and are, and would be Aristocrats of a scarlet colour and a crimson die, if they could. Alienation therefore is no Remedy, against an Aristocracy founded on landed Wealth. You Say, Sir, that \u00e2\u0080\u009cInhibitions upon Monopoly, and Incorporation, are",
-      "classification_cues": [
-        "would be",
-        "as great an",
-        "no "
       ]
     },
     {

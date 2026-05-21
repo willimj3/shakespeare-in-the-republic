@@ -1,46 +1,46 @@
 {
-  "generated": "Composite scores and ten-method convergence matrix recomputed after the backend expansion. Original seven statistical and stylistic methods retained; three new evidence-based methods added (catalogue density, thematic-allusion density, candidate-echo density), each normalized per million words. The composite is the average rank across the ten base methods.",
+  "generated": "methodology v2.0, export_site_data.py at 2026-05-21T21:46:41.219714+00:00",
   "founders": [
     {
       "founder_id": "adams",
       "founder_name": "John Adams",
       "composite": 0.88,
-      "avg_rank": 1.60,
-      "evidence_per_million": 100.6
+      "avg_rank": 1.6,
+      "evidence_per_million": 99.5
     },
     {
       "founder_id": "franklin",
       "founder_name": "Benjamin Franklin",
       "composite": 0.76,
-      "avg_rank": 2.20,
+      "avg_rank": 2.2,
       "evidence_per_million": 46.9
     },
     {
       "founder_id": "jefferson",
       "founder_name": "Thomas Jefferson",
       "composite": 0.68,
-      "avg_rank": 2.60,
+      "avg_rank": 2.6,
       "evidence_per_million": 23.0
     },
     {
       "founder_id": "washington",
       "founder_name": "George Washington",
       "composite": 0.28,
-      "avg_rank": 4.60,
+      "avg_rank": 4.6,
       "evidence_per_million": 14.1
     },
     {
       "founder_id": "hamilton",
       "founder_name": "Alexander Hamilton",
       "composite": 0.22,
-      "avg_rank": 4.90,
+      "avg_rank": 4.9,
       "evidence_per_million": 11.9
     },
     {
       "founder_id": "madison",
       "founder_name": "James Madison",
       "composite": 0.18,
-      "avg_rank": 5.10,
+      "avg_rank": 5.1,
       "evidence_per_million": 8.8
     }
   ],
@@ -59,12 +59,84 @@
       "Candidate-echo density per million words"
     ],
     "ranks": {
-      "adams":      [1, 2, 3, 2, 2, 1, 2, 1, 1, 1, 1],
-      "franklin":   [2, 1, 1, 1, 1, 6, 1, 2, 3, 4, 2],
-      "jefferson":  [3, 3, 2, 3, 3, 2, 3, 3, 2, 2, 3],
-      "washington": [4, 4, 5, 5, 5, 4, 4, 4, 5, 6, 4],
-      "hamilton":   [5, 5, 4, 4, 6, 5, 5, 6, 6, 3, 5],
-      "madison":    [6, 6, 6, 6, 4, 3, 6, 5, 4, 5, 6]
+      "adams": [
+        1,
+        2,
+        3,
+        2,
+        2,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "franklin": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        6,
+        1,
+        2,
+        3,
+        4,
+        2
+      ],
+      "jefferson": [
+        3,
+        3,
+        2,
+        3,
+        3,
+        2,
+        3,
+        3,
+        2,
+        2,
+        3
+      ],
+      "washington": [
+        4,
+        4,
+        5,
+        5,
+        5,
+        4,
+        4,
+        4,
+        5,
+        6,
+        4
+      ],
+      "madison": [
+        6,
+        6,
+        6,
+        6,
+        4,
+        3,
+        6,
+        5,
+        4,
+        5,
+        6
+      ],
+      "hamilton": [
+        5,
+        5,
+        4,
+        4,
+        6,
+        5,
+        5,
+        6,
+        6,
+        3,
+        5
+      ]
     }
   }
 }

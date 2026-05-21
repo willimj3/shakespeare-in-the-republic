@@ -22,7 +22,7 @@ const data = allusionsData as unknown as Shape;
 export const metadata: Metadata = {
   title: "Thematic allusions",
   description:
-    "Cases where a Founder invokes a recognizable character as a type rather than quoting Shakespeare. Twenty-three rows resolve to eighteen distinct passages, split by whether the character can only have come from Shakespeare or could equally have come from Plutarch and classical training.",
+    "Cases where a Founder invokes a recognizable character as a type rather than quoting Shakespeare. Each row is a unique (Founder, document, character) combination, split by whether the character can only have come from Shakespeare or could equally have come from Plutarch and classical training.",
   openGraph: {
     title: "Thematic allusions · Shakespeare in the Republic",
   },
@@ -156,13 +156,15 @@ export default function ThematicAllusionsPage() {
                 walks through the criterion.
               </p>
               <p className="text-sm text-ink-soft leading-relaxed mt-3">
-                <strong className="text-ink">Counting caveat.</strong>{" "}
-                The scan produced twenty-three rows but eighteen
-                distinct passages. A single Adams letter from 1815
-                accounts for six rows (three Brutus mentions, three
-                Cassius) because the script tags each character
-                appearance separately. Read the per-Founder list
-                below with that clustering in mind.
+                <strong className="text-ink">Counting unit.</strong>{" "}
+                Each row is a unique (Founder, document, character)
+                combination. The 1815 Adams letter to John Taylor
+                that invokes both Brutus and Cassius as figures of
+                aristocratic persistence counts as two rows
+                (one each), not the six it originally produced
+                before within-document deduplication. The total
+                count of distinct rows after dedup is in the
+                per-Founder list below.
               </p>
             </div>
 
