@@ -11,6 +11,9 @@ import composite from "@/data/composite.json";
 import metaphor from "@/data/metaphor.json";
 import archaic from "@/data/archaic.json";
 import playAtlas from "@/data/play_atlas.json";
+import catalogue from "@/data/catalogue.json";
+import candidateEchoes from "@/data/candidate_echoes.json";
+import thematicAllusions from "@/data/thematic_allusions.json";
 
 const FOUNDER_IDS = ["adams", "franklin", "jefferson", "washington", "madison", "hamilton"] as const;
 type FounderId = (typeof FOUNDER_IDS)[number];
@@ -67,17 +70,17 @@ const CASE_STUDIES: Record<FounderId, { slug: string; title: string }[]> = {
 // Per-Founder narrative — the synthesis paragraph below the stats
 const NARRATIVE: Record<FounderId, string> = {
   adams:
-    "Adams is the most Shakespearean of the six by every measure of conscious citation. His 1758 diary contains the densest single reading event in the corpus (sixteen verbatim Macbeth passages worked through in one document at age twenty-three), and the threads that flow forward from it (the Tomorrow soliloquy, the Lady Macbeth speech, the sleep-no-more passage) recur in his writing for sixty years. He is rank 2 overall in the composite ranking, behind Franklin only because Franklin's prose is more deeply absorbed-Shakespearean even though Franklin almost never names the source. The Two Modes essay is, in large part, an argument about how to read these two side by side.",
+    "Adams is the most Shakespearean of the six by every measure of conscious citation. The catalogue traces 109 high or medium-confidence references to him; the candidate-echoes tier adds another 1,659 short matches; the thematic-allusions tier adds 18 character-as-type invocations (the most of any Founder by far). His 1758 diary contains the densest single reading event in the corpus: sixteen verbatim Macbeth passages worked through in one document at age twenty-three, with threads that flow forward for sixty years (the Tomorrow soliloquy, the Lady Macbeth speech, the sleep-no-more passage). He is rank 2 overall in the composite ranking, behind Franklin only because Franklin's prose is more deeply absorbed-Shakespearean even though Franklin almost never names the source.",
   franklin:
-    "Franklin is the most Shakespearean of the six by every measure that doesn't require him to say so. His prose, measured against Shakespeare's, sits closer than any other Founder's on vocabulary, archaic-form survival, and statistical style. And yet his catalogue is nearly empty: he almost never quotes Shakespeare and almost never names him. The 'Tis case study traces this absorbed-mode signature back to his Silence Dogood essays at sixteen, where the older-English contraction is already a stylistic tell. Franklin's relationship to Shakespeare is the project's clearest case of inheritance without citation.",
+    "Franklin is the most Shakespearean of the six by every statistical measure that doesn't require him to say so. His prose sits closer to Shakespeare's than any other Founder's on vocabulary, archaic-form survival, and statistical style. And yet his strict catalogue is nearly empty: zero direct quotations and two by-name references in 3.5 million words. In the candidate-echoes tier his count jumps to 833, second only to Adams; the strict filter was missing him. The 'Tis case study, now living in the Stylistic Notes section, traces this absorbed-mode signature back to his Silence Dogood essays at sixteen, where the older-English contraction is already a stylistic tell.",
   jefferson:
-    "Jefferson occupies the consistent third position across nearly every measure. His Shakespeare is the Shakespeare of the educated eighteenth-century reading list: 23 named references in his correspondence, almost no direct quotation, an above-average archaic-form survival rate. He cites Lear once, Comedy of Errors once, and references Shylock; otherwise his Shakespearean engagement is general rather than play-specific. The Honour Test essay uses his pattern of usage to illustrate how the period-standard Shakespeare lived in the gentleman's letter-closing protocol.",
+    "Jefferson occupies the consistent third position across nearly every measure. His Shakespeare is the Shakespeare of the educated eighteenth-century reading list: 26 by-name catalogue references, zero direct verbatim quotations in the strict tier, and an above-average archaic-form survival rate. In the relaxed candidate-echoes tier he has 991 matches; the thematic-allusions tier adds four character-as-type invocations (Brutus, Caesar, Shylock). His Shakespearean engagement is general rather than play-specific. The Honour Test material, now in the Stylistic Notes section, uses his pattern of usage to illustrate how the period-standard Shakespeare lived in the gentleman's letter-closing protocol.",
   washington:
-    "Washington's profile is the steady plain-prose Founder. His composite ranks fourth, never the most Shakespearean and never the least. His one well-documented Shakespearean borrowing is the Henry V 'band of brothers' phrase, threaded through his General Orders at Valley Forge (1778) and again through his Farewell Address to the Army (1783) and three further letters. The Band of Brothers case study traces all five uses. Otherwise Washington's metaphors are the metaphors of a surveyor and a soldier: PATH and MOTION, sparingly used.",
+    "Washington's profile is the steady plain-prose Founder. His composite ranks fourth: never the most Shakespearean and never the least. The strict catalogue holds just one reference for him; the relaxed candidate-echoes tier surfaces 978, mostly from the day-to-day phrasing of his General Orders and military correspondence. His one well-documented borrowing in the strict tier is the Henry V 'band of brothers' phrase, threaded through his General Orders at Valley Forge (1778), his Farewell Address to the Army (1783), and three further letters. The Band of Brothers case study traces all five uses. Otherwise Washington's metaphors are the metaphors of a surveyor and a soldier: PATH and MOTION, sparingly used.",
   madison:
-    "Madison sits at the bottom of the composite ranking on most measures, but with a distinctive metaphor signature: he is the PLANT specialist of the six, at 33.6 occurrences per million, roughly three times any other Founder's rate. Otherwise his prose has shed most of Shakespeare's archaic vocabulary, almost never names a Shakespearean character or play, and produces zero high-confidence direct quotations in the catalogue. His intellectual lineage runs through the classical republicans and the European confederation debates, not the English literary tradition.",
+    "Madison sits at the bottom of the composite ranking on most measures, but with a distinctive metaphor signature: he is the PLANT specialist of the six, at 33.6 occurrences per million, roughly three times any other Founder's rate. His strict catalogue is essentially empty (one medium-tier direct quotation, one by-name reference); his candidate-echoes count of 215 is the lowest of the six by a wide margin, suggesting genuinely low overlap with Shakespeare's word stock. His intellectual lineage runs through the classical republicans, the European confederation debates, and the Cato / Polybius pseudonym tradition, not the English literary tradition.",
   hamilton:
-    "Hamilton is the bottom of the ranking on every measure that counts conscious citation, archaic-form survival, and statistical style. His 2.35 million words contain exactly one Shakespeare reference (a paraphrased Macbeth line used as a partisan slur against Jefferson in 1801), and it doesn't meet the catalogue's confidence threshold. The Hamilton Silence essay walks through what the absence means for the wider argument. His Federalist Papers, his Treasury reports, and his political journalism are written in the Continental Enlightenment and British constitutional registers, not the English-literary register that produced Adams and Franklin.",
+    "Hamilton is the bottom of the ranking on every measure that counts conscious citation, archaic-form survival, and statistical style. His 2.35 million words contain zero strict-tier catalogue references. The relaxed candidate-echoes tier surfaces 324 short matches; the thematic-allusions tier finds one case (an 1779 Laurens letter comparing General Lee to 'the spice of Julius Caesar or Cromwell'). The other notable single reference is a paraphrased Macbeth line used as a partisan slur against Jefferson in 1801, which sits below the catalogue's confidence threshold. The Hamilton Silence essay walks through what the absence means for the wider argument. His Federalist Papers, his Treasury reports, and his political journalism are written in the Continental Enlightenment and British constitutional registers, not the English-literary register that produced Adams and Franklin.",
 };
 
 const RANK_COLORS = ["#7B1E1E", "#9C3535", "#B95B5B", "#B59E78", "#D6C2A6", "#EAE0D0"];
@@ -95,6 +98,50 @@ const metaphorData = metaphor as unknown as {
 const playData = playAtlas as unknown as {
   plays: { play: string; total: number; counts: Record<string, number> }[];
 };
+const catData = catalogue as unknown as {
+  direct_quotes: { founder_id: string; confidence: string }[];
+  named_references: { founder_id: string; confidence: string }[];
+};
+const echoesData = candidateEchoes as unknown as {
+  echoes: { founder_id: string }[];
+};
+const allusionsData = thematicAllusions as unknown as {
+  allusions: { founder_id: string }[];
+};
+
+// Live counts computed at build time from the source data files,
+// so the displayed stats always match what the catalogue and the
+// candidate-echoes / thematic-allusions explorers actually show.
+function liveCountsFor(founderId: string) {
+  const direct = catData.direct_quotes.filter(
+    (q) => q.founder_id === founderId,
+  ).length;
+  const named = catData.named_references.filter(
+    (r) => r.founder_id === founderId,
+  ).length;
+  const directHigh = catData.direct_quotes.filter(
+    (q) => q.founder_id === founderId && q.confidence === "HIGH",
+  ).length;
+  const namedHigh = catData.named_references.filter(
+    (r) => r.founder_id === founderId && r.confidence === "HIGH",
+  ).length;
+  const echoes = echoesData.echoes.filter(
+    (e) => e.founder_id === founderId,
+  ).length;
+  const thematic = allusionsData.allusions.filter(
+    (a) => a.founder_id === founderId,
+  ).length;
+  return {
+    direct,
+    named,
+    catalogueTotal: direct + named,
+    directHigh,
+    namedHigh,
+    catalogueHigh: directHigh + namedHigh,
+    echoes,
+    thematic,
+  };
+}
 
 // Generate one route per Founder id at build time.
 export async function generateStaticParams() {
@@ -140,6 +187,7 @@ export default function FounderProfilePage({ params }: { params: { id: string } 
 
   const founderCaseStudies = CASE_STUDIES[founderId] ?? [];
   const narrative = NARRATIVE[founderId];
+  const counts = liveCountsFor(founderId);
 
   return (
     <div className="bg-parchment">
@@ -171,8 +219,8 @@ export default function FounderProfilePage({ params }: { params: { id: string } 
                 {meta.tagline}
               </p>
 
-              {/* Stats row */}
-              <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {/* Stats row — live counts from source data files */}
+              <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
                 <Stat
                   value={meta.composite.toFixed(2)}
                   label={
@@ -190,12 +238,23 @@ export default function FounderProfilePage({ params }: { params: { id: string } 
                   rank={composite_rank ? `rank ${composite_rank} of 6` : undefined}
                 />
                 <Stat
-                  value={`${meta.direct_high}`}
-                  label="Direct quotations (HIGH)"
+                  value={`${counts.catalogueTotal}`}
+                  label={
+                    <>
+                      Catalogue references
+                      <span className="block text-xs text-ink-muted/80 mt-0.5">
+                        ({counts.direct} direct + {counts.named} by-name)
+                      </span>
+                    </>
+                  }
                 />
                 <Stat
-                  value={`${meta.named_shakespeare}`}
-                  label="Named references"
+                  value={counts.echoes.toLocaleString()}
+                  label="Candidate echoes"
+                />
+                <Stat
+                  value={`${counts.thematic}`}
+                  label="Thematic allusions"
                 />
                 <Stat
                   value={

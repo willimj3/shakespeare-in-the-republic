@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { asset } from "@/lib/paths";
 import founders from "@/data/founders.json";
+import catalogue from "@/data/catalogue.json";
+import candidateEchoes from "@/data/candidate_echoes.json";
+import thematicAllusions from "@/data/thematic_allusions.json";
 
 export const metadata: Metadata = {
   title: "The six Founders",
@@ -31,6 +34,26 @@ type FounderMeta = {
 const founderList = (founders as unknown as { founders: FounderMeta[] }).founders;
 // Show in composite-rank order (highest first)
 const ordered = [...founderList].sort((a, b) => b.composite - a.composite);
+
+// Live per-Founder counts from source-of-truth data files
+const catData = catalogue as unknown as {
+  direct_quotes: { founder_id: string }[];
+  named_references: { founder_id: string }[];
+};
+const echoesData = candidateEchoes as unknown as { echoes: { founder_id: string }[] };
+const allusionsData = thematicAllusions as unknown as {
+  allusions: { founder_id: string }[];
+};
+
+function liveCountsFor(founderId: string) {
+  const direct = catData.direct_quotes.filter((q) => q.founder_id === founderId).length;
+  const named = catData.named_references.filter((r) => r.founder_id === founderId).length;
+  const echoes = echoesData.echoes.filter((e) => e.founder_id === founderId).length;
+  const thematic = allusionsData.allusions.filter(
+    (a) => a.founder_id === founderId,
+  ).length;
+  return { direct, named, catalogueTotal: direct + named, echoes, thematic };
+}
 
 export default function FounderIndex() {
   return (
@@ -85,13 +108,27 @@ export default function FounderIndex() {
                 <p className="text-sm text-ink-soft mt-2 leading-snug flex-1 italic">
                   {f.tagline}
                 </p>
-                <p className="text-sm text-folio mt-4 font-sans">
-                  Composite{" "}
-                  <span className="font-display text-base">
-                    {f.composite.toFixed(2)}
-                  </span>{" "}
-                  &middot; {f.direct_high} direct &middot; {f.named_shakespeare} named
-                </p>
+                <div className="mt-4 text-sm font-sans space-y-1">
+                  <p className="text-folio">
+                    Composite{" "}
+                    <span className="font-display text-base">
+                      {f.composite.toFixed(2)}
+                    </span>
+                  </p>
+                  {(() => {
+                    const c = liveCountsFor(f.id);
+                    return (
+                      <p className="text-xs text-ink-muted">
+                        {c.catalogueTotal} catalogue
+                        {c.catalogueTotal > 0 && (
+                          <> ({c.direct}+{c.named})</>
+                        )}
+                        {" "}&middot; {c.echoes.toLocaleString()} echoes
+                        {c.thematic > 0 && <> &middot; {c.thematic} thematic</>}
+                      </p>
+                    );
+                  })()}
+                </div>
                 <p className="text-sm text-folio mt-3 font-sans">
                   Open profile &rarr;
                 </p>
