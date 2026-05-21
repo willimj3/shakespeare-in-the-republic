@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import catalogue from "@/data/catalogue.json";
-import composite from "@/data/composite.json";
-import founders from "@/data/founders.json";
+import playAtlas from "@/data/play_atlas.json";
 import { asset } from "@/lib/paths";
+import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
 
 export const metadata: Metadata = {
   title: "Shakespeare in the Republic",
@@ -19,20 +19,52 @@ export const metadata: Metadata = {
 };
 
 type CatalogueShape = typeof catalogue;
-type CompositeShape = typeof composite;
-type FoundersShape = typeof founders;
+type PlayAtlasShape = {
+  plays: { play: string; total: number; counts: Record<string, number> }[];
+};
 
 const cat = catalogue as unknown as CatalogueShape;
-const comp = composite as unknown as CompositeShape;
-const founderList = founders as unknown as FoundersShape;
+const atlas = playAtlas as unknown as PlayAtlasShape;
+
+const FOUNDER_ORDER = [
+  "adams",
+  "jefferson",
+  "madison",
+  "franklin",
+  "washington",
+  "hamilton",
+] as const;
+
+const FOUNDER_DISPLAY: Record<string, string> = {
+  adams: "John Adams",
+  franklin: "Benjamin Franklin",
+  jefferson: "Thomas Jefferson",
+  washington: "George Washington",
+  madison: "James Madison",
+  hamilton: "Alexander Hamilton",
+};
+
+// Per-Founder reference counts from the catalogue
+function perFounderCounts() {
+  const counts: Record<string, { direct: number; named: number }> = {};
+  for (const id of FOUNDER_ORDER) counts[id] = { direct: 0, named: 0 };
+  for (const q of cat.direct_quotes) {
+    if (counts[q.founder_id]) counts[q.founder_id].direct += 1;
+  }
+  for (const r of cat.named_references) {
+    if (counts[r.founder_id]) counts[r.founder_id].named += 1;
+  }
+  return counts;
+}
 
 export default function Home() {
   return (
     <div className="bg-parchment text-ink">
       <Hero />
+      <FounderCountsStrip />
+      <TopPlays />
+      <FeaturedPassages />
       <ThreeTeasers />
-      <HeadlineFindings />
-      <FounderRoster />
       <ProjectAbout />
     </div>
   );
@@ -44,8 +76,8 @@ export default function Home() {
 function Hero() {
   return (
     <section className="relative border-b border-parchment-deep">
-      <div className="max-w-outer mx-auto px-6 pt-16 pb-20">
-        <div className="grid lg:grid-cols-[1fr_360px] gap-12 items-center">
+      <div className="max-w-outer mx-auto px-6 pt-14 pb-12">
+        <div className="grid lg:grid-cols-[1fr_300px] gap-10 items-center">
           <div className="max-w-prose">
             <p className="section-marker">A corpus-linguistic commentary</p>
             <h1 className="font-display text-5xl sm:text-6xl text-ink leading-tight mt-2">
@@ -54,33 +86,22 @@ function Hero() {
             </h1>
             <p className="font-display text-xl text-ink-soft italic mt-4">
               How much of Shakespeare&rsquo;s English carried forward
-              into the writing of the American Founders? The corpus
-              has a surprising answer.
+              into the writing of the American Founders?
             </p>
-            <p className="text-base text-ink-soft mt-6 leading-relaxed">
+            <p className="text-base text-ink-soft mt-5 leading-relaxed">
               Adams, Franklin, Hamilton, Jefferson, Madison, and
-              Washington left behind almost twenty-five million words.
+              Washington left behind 24.6 million words.
               Shakespeare&rsquo;s complete works are just under a
-              million. Two centuries after Shakespeare died and an
-              ocean away, what of his English survived into the
-              Founders&rsquo; writing? In whom did it survive, and how?
+              million. With those two corpora in hand, the question
+              stops being a matter of feel and becomes a matter of
+              arithmetic. The data is below; jump in.
             </p>
-            <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              This site lets you see the answer in their own words.
-              Read the nine case studies the data reconstructs,
-              browse a catalogue of every traceable Shakespeare
-              reference, or compare how a given English word lives
-              in the two corpora.
-              The full scholarly paper is available to{" "}
-              <Link href="/papers">download in plain English and in
-              technical form</Link>.
-            </p>
-            <p className="mt-6 text-sm">
+            <p className="mt-5 text-sm">
               <Link
                 href="/about-this-project"
                 className="text-folio"
               >
-                About this project: how the site was made &rarr;
+                About this project &mdash; how the site was made &rarr;
               </Link>
             </p>
           </div>
@@ -89,18 +110,298 @@ function Hero() {
               <Image
                 src={asset("/images/historical/shakespeare-first-folio-title-page-1623.jpg")}
                 alt="Title page of Shakespeare's First Folio (1623)"
-                width={360}
-                height={480}
+                width={300}
+                height={400}
                 className="w-full h-auto rounded-sm shadow-md border border-bronze-light/40"
                 priority
               />
               <figcaption className="text-xs text-ink-muted mt-2 text-center italic">
-                Title page of the First Folio (1623). Engraving by Martin
-                Droeshout.
+                First Folio (1623). Engraving by Martin Droeshout.
               </figcaption>
             </figure>
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/*                       PER-FOUNDER COUNTS STRIP                       */
+/* ──────────────────────────────────────────────────────────────────── */
+function FounderCountsStrip() {
+  const counts = perFounderCounts();
+  const totals = FOUNDER_ORDER.map((id) => ({
+    id,
+    total: counts[id].direct + counts[id].named,
+    direct: counts[id].direct,
+    named: counts[id].named,
+  })).sort((a, b) => b.total - a.total);
+  const maxTotal = totals[0]?.total ?? 1;
+
+  return (
+    <section className="border-b border-parchment-deep bg-parchment-dark">
+      <div className="max-w-outer mx-auto px-6 py-14">
+        <div className="max-w-prose mx-auto text-center mb-8">
+          <p className="section-marker">Who reached for Shakespeare?</p>
+          <h2 className="font-display text-3xl text-ink mt-1">
+            Every traceable reference, by Founder
+          </h2>
+          <p className="text-sm text-ink-soft mt-2 italic">
+            High and medium-confidence verbatim quotations and
+            by-name references the catalogue verifies.
+          </p>
+        </div>
+
+        <div className="max-w-wide mx-auto space-y-3">
+          {totals.map(({ id, total, direct, named }) => {
+            const widthPct = total > 0 ? (total / maxTotal) * 100 : 0;
+            return (
+              <Link
+                key={id}
+                href={`/founder/${id}`}
+                className="grid grid-cols-[140px_1fr_120px] sm:grid-cols-[180px_1fr_180px] gap-3 sm:gap-4 items-center group no-underline"
+              >
+                <span className="font-display text-base sm:text-lg text-ink group-hover:text-folio transition-colors truncate">
+                  {FOUNDER_DISPLAY[id]}
+                </span>
+                <div className="relative h-7 bg-parchment border border-parchment-deep rounded-sm overflow-hidden">
+                  {total === 0 ? (
+                    <span className="absolute inset-0 flex items-center justify-start pl-2 text-xs italic text-ink-muted">
+                      No traceable references
+                    </span>
+                  ) : (
+                    <div
+                      className="absolute inset-y-0 left-0 flex"
+                      style={{ width: `${widthPct}%` }}
+                    >
+                      <div
+                        style={{
+                          width:
+                            total > 0
+                              ? `${(direct / total) * 100}%`
+                              : "0%",
+                          background: "#7B1E1E",
+                        }}
+                        title={`${direct} direct quotation${
+                          direct === 1 ? "" : "s"
+                        }`}
+                      />
+                      <div
+                        style={{
+                          width:
+                            total > 0
+                              ? `${(named / total) * 100}%`
+                              : "0%",
+                          background: "#1F3A5F",
+                        }}
+                        title={`${named} by-name reference${
+                          named === 1 ? "" : "s"
+                        }`}
+                      />
+                    </div>
+                  )}
+                </div>
+                <span className="text-sm text-ink-soft text-right tabular-nums font-sans">
+                  {total > 0 ? (
+                    <>
+                      <span className="font-display text-folio text-lg font-semibold">
+                        {total}
+                      </span>
+                      <span className="text-xs text-ink-muted ml-1.5">
+                        ({direct} direct, {named} named)
+                      </span>
+                    </>
+                  ) : (
+                    <span className="text-ink-muted text-xs italic">0</span>
+                  )}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mt-6 text-xs text-ink-muted font-sans">
+          <span className="flex items-center gap-1.5">
+            <span
+              className="inline-block w-3 h-3 rounded-sm"
+              style={{ background: "#7B1E1E" }}
+            />
+            Direct quotation
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span
+              className="inline-block w-3 h-3 rounded-sm"
+              style={{ background: "#1F3A5F" }}
+            />
+            By-name reference
+          </span>
+          <span className="italic">Click any Founder for their profile.</span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/*                            TOP PLAYS                                 */
+/* ──────────────────────────────────────────────────────────────────── */
+function TopPlays() {
+  const top = atlas.plays.slice(0, 8);
+  const maxTotal = top[0]?.total ?? 1;
+
+  return (
+    <section className="border-b border-parchment-deep">
+      <div className="max-w-outer mx-auto px-6 py-14">
+        <div className="max-w-prose mx-auto text-center mb-8">
+          <p className="section-marker">Which plays?</p>
+          <h2 className="font-display text-3xl text-ink mt-1">
+            The plays the Founders reached for most
+          </h2>
+          <p className="text-sm text-ink-soft mt-2 italic">
+            Top eight plays in the catalogue, ranked by total
+            references. Click any title to open the play at the
+            Folger Shakespeare.
+          </p>
+        </div>
+
+        <div className="max-w-wide mx-auto space-y-2">
+          {top.map((row) => {
+            const widthPct = (row.total / maxTotal) * 100;
+            const fg = folgerUrl(row.play);
+            return (
+              <div
+                key={row.play}
+                className="grid grid-cols-[1fr_auto] sm:grid-cols-[200px_1fr_50px] gap-3 sm:gap-4 items-center"
+              >
+                <span className="font-display text-base text-ink">
+                  {fg ? (
+                    <a
+                      href={fg}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-folio no-underline"
+                    >
+                      {row.play}
+                    </a>
+                  ) : (
+                    row.play
+                  )}
+                </span>
+                <div className="hidden sm:block relative h-6 bg-parchment-dark border border-parchment-deep rounded-sm overflow-hidden">
+                  <div
+                    className="absolute inset-y-0 left-0 bg-folio"
+                    style={{ width: `${widthPct}%`, minWidth: 3 }}
+                  />
+                </div>
+                <span className="font-display text-folio font-semibold text-right tabular-nums">
+                  {row.total}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        <p className="text-center mt-6 text-sm">
+          <Link href="/explorer/play-atlas" className="text-folio">
+            See all seventeen plays in the Play Atlas &rarr;
+          </Link>
+        </p>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/*                       FEATURED PASSAGES                              */
+/* ──────────────────────────────────────────────────────────────────── */
+function FeaturedPassages() {
+  // Pick three high-impact passages from the catalogue
+  const passages = [
+    cat.direct_quotes.find(
+      (q) =>
+        q.matched_text.toLowerCase().includes("walking shadow") ||
+        q.matched_text.toLowerCase().includes("brief candle"),
+    ),
+    cat.direct_quotes.find((q) =>
+      q.matched_text.toLowerCase().includes("given suck"),
+    ),
+    cat.direct_quotes.find(
+      (q) =>
+        q.matched_text.toLowerCase().includes("cry havoc") ||
+        q.matched_text.toLowerCase().includes("dogs of war") ||
+        q.matched_text.toLowerCase().includes("let slip"),
+    ),
+  ].filter((p): p is NonNullable<typeof p> => p != null);
+
+  if (passages.length === 0) return null;
+
+  return (
+    <section className="border-b border-parchment-deep bg-parchment-dark">
+      <div className="max-w-outer mx-auto px-6 py-14">
+        <div className="max-w-prose mx-auto text-center mb-8">
+          <p className="section-marker">A handful of passages</p>
+          <h2 className="font-display text-3xl text-ink mt-1">
+            Three from the catalogue
+          </h2>
+          <p className="text-sm text-ink-soft mt-2 italic">
+            Click any to see it in context, with the original
+            document and the Shakespearean source.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-5 max-w-wide mx-auto">
+          {passages.map((p, i) => {
+            const fo = foundersOnlineUrl(p.doc_id);
+            return (
+              <article
+                key={i}
+                className="bg-parchment border border-parchment-deep rounded-sm p-5 flex flex-col"
+              >
+                <p className="text-xs text-ink-muted font-sans">
+                  {p.founder_name} &middot; {p.date}
+                </p>
+                <p className="font-display text-base text-ink mt-2 leading-snug italic">
+                  &ldquo;
+                  {p.kwic.length > 220
+                    ? p.kwic.slice(0, 220).replace(/\s\S*$/, "") + "…"
+                    : p.kwic}
+                  &rdquo;
+                </p>
+                <p className="text-xs text-ink-soft mt-3 font-sans italic">
+                  Echoing{" "}
+                  <span className="text-folio">
+                    {p.shakespeare_short}
+                  </span>
+                </p>
+                <div className="mt-3 flex flex-wrap gap-3 text-xs font-sans">
+                  <Link
+                    href="/explorer/catalogue"
+                    className="text-folio"
+                  >
+                    Browse the catalogue &rarr;
+                  </Link>
+                  {fo && (
+                    <a
+                      href={fo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-folio"
+                    >
+                      Founders Online &rarr;
+                    </a>
+                  )}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+
+        <p className="text-center mt-6 text-sm">
+          <Link href="/explorer/catalogue" className="text-folio">
+            Search all 140 references in the catalogue &rarr;
+          </Link>
+        </p>
       </div>
     </section>
   );
@@ -112,29 +413,29 @@ function Hero() {
 function ThreeTeasers() {
   const teasers = [
     {
-      href: "/essay",
-      title: "Essays",
-      tagline: "The commentary",
-      blurb:
-        "Long-form prose adapted from the research paper. The influence question, the methods, the two modes of Shakespearean influence, the honour test, and the Hamilton silence.",
-      image: asset("/images/historical/adams-diary-manuscript.jpg"),
-      imageAlt: "John Adams diary manuscript page",
-    },
-    {
       href: "/case-study",
       title: "Case Studies",
       tagline: "Per-finding deep dives",
       blurb:
-        "One striking finding per page. Adams quoting Macbeth in 1758. Washington paraphrasing Henry V at Valley Forge. The single line from Julius Caesar that Adams returned to across forty years.",
+        "Adams quoting Macbeth in 1758. Washington paraphrasing Henry V at Valley Forge. The single line from Julius Caesar that Adams returned to across forty years. Nine focused stories from the data.",
       image: asset("/images/historical/first-folio-julius-caesar-cropped.jpg"),
       imageAlt: "First Folio: Tragedy of Julius Caesar",
     },
     {
+      href: "/essay",
+      title: "Essays",
+      tagline: "The long-form commentary",
+      blurb:
+        "Eight chapters adapted from the research paper. The influence question, the methods, the two modes of Shakespearean inheritance, the honour test, the Hamilton silence.",
+      image: asset("/images/historical/adams-diary-manuscript.jpg"),
+      imageAlt: "John Adams diary manuscript page",
+    },
+    {
       href: "/explorer",
       title: "Explorer",
-      tagline: "The interactive layer",
+      tagline: "All the interactive views",
       blurb:
-        "Search the catalogue. Compare the collocational worlds of any politically loaded abstract noun across the two corpora. Browse the six-method convergence.",
+        "Eleven explorers in addition to the catalogue and play atlas above. Compare any two Founders, see the metaphor fingerprint of each, browse the archaic-word survival ratio, watch the modal-verb shift.",
       image: asset("/images/historical/first-folio-macbeth-p742.jpg"),
       imageAlt: "First Folio: Macbeth, near the Tomorrow soliloquy",
     },
@@ -142,10 +443,10 @@ function ThreeTeasers() {
 
   return (
     <section className="border-b border-parchment-deep">
-      <div className="max-w-outer mx-auto px-6 py-20">
-        <p className="section-marker text-center">Three ways in</p>
-        <h2 className="font-display text-3xl text-center text-ink mb-12">
-          Begin where the question is sharpest
+      <div className="max-w-outer mx-auto px-6 py-16">
+        <p className="section-marker text-center">Go deeper</p>
+        <h2 className="font-display text-3xl text-center text-ink mb-10">
+          Stories, arguments, and the rest of the data
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {teasers.map((t) => (
@@ -186,159 +487,15 @@ function ThreeTeasers() {
 }
 
 /* ──────────────────────────────────────────────────────────────────── */
-/*                       HEADLINE FINDINGS                              */
-/* ──────────────────────────────────────────────────────────────────── */
-function HeadlineFindings() {
-  const totals = cat.summary.totals as {
-    direct_high: number;
-    direct_medium: number;
-    named_high: number;
-    named_medium: number;
-  };
-
-  const topPlay = cat.summary.by_play[0];
-
-  return (
-    <section className="border-b border-parchment-deep bg-parchment-dark">
-      <div className="max-w-outer mx-auto px-6 py-20">
-        <p className="section-marker text-center">Headline findings</p>
-        <h2 className="font-display text-3xl text-center text-ink mb-12">
-          What the corpus shows
-        </h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-wide mx-auto">
-          <StatTile
-            value={totals.direct_high.toString()}
-            label="Verbatim quotations of Shakespeare"
-            sublabel={`Every one of them ${comp.founders[1].founder_name === "John Adams" ? "John Adams's" : "Adams's"} — the other five Founders quote zero Shakespeare lines verbatim`}
-          />
-          <StatTile
-            value={totals.named_high.toString()}
-            label="Times a Founder names Shakespeare"
-            sublabel="Adams 42, Jefferson 23, Franklin 2, Washington 1. Hamilton and Madison: 0."
-          />
-          <StatTile
-            value="2"
-            label="Modes of inheritance"
-            sublabel={`Adams's mode (citing the text) and ${comp.founders[0].founder_name === "Benjamin Franklin" ? "Franklin's mode" : "Franklin's"} (sounding the part), each invisible to the other's methods`}
-          />
-          <StatTile
-            value={topPlay.n.toString()}
-            label={`Quotations from ${topPlay.play.replace("Tragedy Of ", "").replace("The History Of ", "")}`}
-            sublabel="The single most-quoted Shakespeare play in the Founders' writing — almost all of it Adams reading the play in the 1758 diary"
-          />
-        </div>
-
-        <div className="max-w-prose mx-auto mt-16">
-          <div className="pull-quote">
-            Shakespeare&rsquo;s English persists in the Founders. Adams
-            absorbed it as a text. Franklin absorbed it as a habit.
-          </div>
-          <p className="text-center text-ink-muted text-sm italic mt-4">
-            From the{" "}
-            <Link href="/essay/two-modes" className="underline">
-              Two Modes of Influence
-            </Link>{" "}
-            essay.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function StatTile({
-  value,
-  label,
-  sublabel,
-}: {
-  value: string;
-  label: string;
-  sublabel: string;
-}) {
-  return (
-    <div className="text-center px-4">
-      <div className="font-display text-5xl text-folio leading-none">
-        {value}
-      </div>
-      <div className="mt-3 text-base text-ink font-semibold leading-tight">
-        {label}
-      </div>
-      <div className="mt-2 text-sm text-ink-muted leading-snug">{sublabel}</div>
-    </div>
-  );
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
-/*                       FOUNDER ROSTER                                 */
-/* ──────────────────────────────────────────────────────────────────── */
-function FounderRoster() {
-  return (
-    <section className="border-b border-parchment-deep">
-      <div className="max-w-outer mx-auto px-6 py-20">
-        <p className="section-marker text-center">The six Founders</p>
-        <h2 className="font-display text-3xl text-center text-ink mb-3">
-          One signature, six writers
-        </h2>
-        <p className="text-center text-ink-soft max-w-prose mx-auto mb-12">
-          Each Founder absorbed Shakespeare differently. In two cases
-          they didn&rsquo;t absorb him at all. The composite ranking
-          lines up with the verbatim-quotation count and with the
-          by-name references: Adams and Franklin at the top in two
-          distinct modes, Hamilton and Madison at the bottom with
-          effectively no surface contact with Shakespeare.
-        </p>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-wide mx-auto">
-          {founderList.founders.map((f) => (
-            <article
-              key={f.id}
-              className="bg-parchment-dark border border-parchment-deep rounded-sm overflow-hidden flex"
-            >
-              <div className="relative w-32 flex-shrink-0 bg-parchment-deep">
-                <Image
-                  src={asset(f.portrait)}
-                  alt={`Portrait of ${f.name} (${f.born}–${f.died}).`}
-                  fill
-                  className="object-cover object-top"
-                  sizes="128px"
-                />
-              </div>
-              <div className="flex-1 p-4">
-                <h3 className="font-display text-xl text-ink">{f.name}</h3>
-                <p className="text-xs text-ink-muted">
-                  {f.born}&ndash;{f.died}
-                </p>
-                <p className="text-sm text-ink-soft mt-2 leading-snug">
-                  {f.tagline}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-muted font-sans">
-                  <span>
-                    composite{" "}
-                    <span className="text-folio font-semibold">
-                      {f.composite.toFixed(3)}
-                    </span>
-                  </span>
-                  <span>{f.direct_high} direct</span>
-                  <span>{f.named_shakespeare} named</span>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ──────────────────────────────────────────────────────────────────── */
 /*                       PROJECT ABOUT                                  */
 /* ──────────────────────────────────────────────────────────────────── */
 function ProjectAbout() {
   return (
     <section>
-      <div className="max-w-outer mx-auto px-6 py-20">
+      <div className="max-w-outer mx-auto px-6 py-16">
         <div className="max-w-prose mx-auto">
           <p className="section-marker">About this project</p>
-          <h2 className="font-display text-3xl text-ink mb-6">
+          <h2 className="font-display text-2xl text-ink mb-4">
             How to read this site
           </h2>
           <p className="text-base text-ink-soft leading-relaxed">
@@ -350,26 +507,27 @@ function ProjectAbout() {
             >
               America&rsquo;s Public Bible
             </a>{" "}
-            (Lincoln Mullen, Stanford University Press). The{" "}
-            <Link href="/essay">Essays</Link> are the long-form
-            commentary: the question, the methods, the findings. The{" "}
-            <Link href="/case-study">Case Studies</Link> are deeper
-            dives on individual findings, each anchored in a specific
-            passage and its source. The{" "}
-            <Link href="/explorer">Explorer</Link> is the interactive
-            layer, where the underlying data is browsable and
-            searchable.
+            (Lincoln Mullen, Stanford University Press). The data and
+            the interactive views are up top. The case studies tell
+            the stories behind individual passages. The essays make
+            the broader argument. The papers page has the full
+            scholarly write-up and downloadable JSON for the data.
           </p>
           <p className="text-base text-ink-soft leading-relaxed mt-4">
-            All findings are reproducible. The research repository contains
-            the corpus, the analysis scripts, and the statistical methodology.
-            Every claim on this site traces to a CSV row and a Python script.
+            All findings are reproducible. The research repository
+            contains the corpus, the analysis scripts, and the
+            statistical methodology. Every claim on this site traces
+            to a CSV row and a Python script.
           </p>
           <div className="ornament" />
           <p className="text-sm text-ink-muted text-center italic">
-            The site reads its data from JSON files exported from the research
-            pipeline. Image credits and licensing on the{" "}
-            <Link href="/credits">credits page</Link>.
+            <Link href="/about-this-project">
+              About this project &mdash; how the site was made
+            </Link>{" "}
+            &middot;{" "}
+            <Link href="/credits">Image credits</Link>{" "}
+            &middot;{" "}
+            <Link href="/papers">Papers &amp; data downloads</Link>
           </p>
         </div>
       </div>
