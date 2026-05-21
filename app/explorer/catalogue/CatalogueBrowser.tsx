@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import catalogue from "@/data/catalogue.json";
+import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
 
 type DirectQuote = {
   founder_id: string;
@@ -450,6 +451,47 @@ function ReferenceCard({
           {item.doc_title}
         </p>
       )}
+
+      <SourceLinks
+        docId={item.doc_id}
+        shakespeareSource={item.shakespeare_source}
+      />
     </article>
+  );
+}
+
+function SourceLinks({
+  docId,
+  shakespeareSource,
+}: {
+  docId: string;
+  shakespeareSource?: string;
+}) {
+  const fo = foundersOnlineUrl(docId);
+  const fg = folgerUrl(shakespeareSource);
+  if (!fo && !fg) return null;
+  return (
+    <div className="mt-3 pt-3 border-t border-parchment-deep flex flex-wrap gap-x-4 gap-y-1 text-xs font-sans text-ink-muted">
+      {fo && (
+        <a
+          href={fo}
+          target="_blank"
+          rel="noreferrer"
+          className="text-folio hover:underline no-underline"
+        >
+          View on Founders Online &rarr;
+        </a>
+      )}
+      {fg && (
+        <a
+          href={fg}
+          target="_blank"
+          rel="noreferrer"
+          className="text-folio hover:underline no-underline"
+        >
+          View at the Folger Shakespeare &rarr;
+        </a>
+      )}
+    </div>
   );
 }

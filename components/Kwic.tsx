@@ -1,8 +1,14 @@
+import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
+
 /**
  * KWIC (Key-Word-In-Context) quotation card. Renders a raw context window
  * with the matched substring(s) marked in folio-red. The `match` prop is
  * one or more substrings to highlight (case-insensitive, whole-word matching
  * is approximate — relies on the catalogue's KWIC text being clean).
+ *
+ * Optional `docId` (Founder Online id, like "Adams/06-13-02-0091") and
+ * `shakespeareSource` are used to render small "View on Founders Online"
+ * and "View at the Folger" links below the caption.
  */
 export type KwicProps = {
   text: string;
@@ -10,6 +16,7 @@ export type KwicProps = {
   source?: string;            // e.g. "Adams to William Stephens Smith, 14 Aug 1788"
   date?: number | string;
   shakespeareSource?: string; // e.g. "Hamlet 1.2"
+  docId?: string;             // Founders Online doc_id, e.g. "Adams/06-13-02-0091"
 };
 
 function escapeRegex(s: string): string {
@@ -44,7 +51,10 @@ export default function Kwic({
   source,
   date,
   shakespeareSource,
+  docId,
 }: KwicProps) {
+  const foUrl = foundersOnlineUrl(docId);
+  const fgUrl = folgerUrl(shakespeareSource);
   return (
     <figure className="kwic my-6">
       <div>&hellip;{renderHighlighted(text, match)}&hellip;</div>
@@ -65,6 +75,30 @@ export default function Kwic({
             </span>
           ) : null}
         </figcaption>
+      )}
+      {(foUrl || fgUrl) && (
+        <div className="mt-2 text-xs font-sans flex flex-wrap gap-x-4 gap-y-1 text-ink-muted">
+          {foUrl && (
+            <a
+              href={foUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-folio hover:underline no-underline"
+            >
+              View on Founders Online &rarr;
+            </a>
+          )}
+          {fgUrl && (
+            <a
+              href={fgUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="text-folio hover:underline no-underline"
+            >
+              View at the Folger Shakespeare &rarr;
+            </a>
+          )}
+        </div>
       )}
     </figure>
   );

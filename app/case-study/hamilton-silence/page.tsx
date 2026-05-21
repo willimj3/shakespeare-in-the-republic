@@ -104,6 +104,7 @@ export default function HamiltonSilenceCaseStudy() {
         source="Alexander Hamilton (as 'Lucius Crassus'), The Examination Number IV"
         date="26 December 1801"
         shakespeareSource="Macbeth 5.8 (paraphrased)"
+        docId="Hamilton/01-25-02-0269"
       />
 
       <p>

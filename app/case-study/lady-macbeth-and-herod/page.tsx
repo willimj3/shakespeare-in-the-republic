@@ -131,6 +131,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
         source="A Dissertation on the Canon and the Feudal Law, No. 4"
         date="21 October 1765"
         shakespeareSource="Macbeth 1.7"
+        docId="Adams/06-01-02-0052-0007"
       />
 
       <p>
@@ -176,6 +177,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
         source="John Adams to Philip Mazzei"
         date="3 July 1782"
         shakespeareSource="Macbeth 1.7"
+        docId="Adams/06-13-02-0091"
       />
 
       <p>
@@ -234,6 +236,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
         source="John Adams to Thomas Boylston Adams"
         date="17 October 1799"
         shakespeareSource="Macbeth 1.7 (paraphrased)"
+        docId="Adams/04-14-02-0014"
       />
 
       <p>
@@ -288,6 +291,7 @@ export default function LadyMacbethAndHerodCaseStudy() {
         source="John Adams to Hezekiah Niles"
         date="13 February 1818"
         shakespeareSource="Macbeth 1.7"
+        docId="Adams/99-02-02-6854"
       />
 
       <p>

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import catalogue from "@/data/catalogue.json";
+import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
 
 type DirectQuote = {
   founder_id: string;
@@ -34,6 +35,7 @@ type TimelineItem = {
   type: "direct_quote" | "named_reference";
   founder_id: string;
   founder_name: string;
+  doc_id: string;
   date: number;
   confidence: "HIGH" | "MEDIUM";
   kwic: string;
@@ -62,6 +64,7 @@ const ALL_ITEMS: TimelineItem[] = [
         type: "direct_quote",
         founder_id: q.founder_id,
         founder_name: q.founder_name,
+        doc_id: q.doc_id,
         date: q.date as number,
         confidence: q.confidence,
         kwic: q.kwic,
@@ -79,6 +82,7 @@ const ALL_ITEMS: TimelineItem[] = [
         type: "named_reference",
         founder_id: r.founder_id,
         founder_name: r.founder_name,
+        doc_id: r.doc_id,
         date: r.date as number,
         confidence: r.confidence,
         kwic: r.kwic,
@@ -558,6 +562,47 @@ function SelectedPanel({
       {item.doc_title && (
         <p className="text-xs text-ink-muted mt-3 font-sans">{item.doc_title}</p>
       )}
+
+      <PanelSourceLinks
+        docId={item.doc_id}
+        shakespeareSource={item.shakespeare_source}
+      />
     </article>
+  );
+}
+
+function PanelSourceLinks({
+  docId,
+  shakespeareSource,
+}: {
+  docId: string;
+  shakespeareSource?: string;
+}) {
+  const fo = foundersOnlineUrl(docId);
+  const fg = folgerUrl(shakespeareSource);
+  if (!fo && !fg) return null;
+  return (
+    <div className="mt-4 pt-3 border-t border-parchment-deep flex flex-wrap gap-x-4 gap-y-1 text-xs font-sans text-ink-muted">
+      {fo && (
+        <a
+          href={fo}
+          target="_blank"
+          rel="noreferrer"
+          className="text-folio hover:underline no-underline"
+        >
+          View on Founders Online &rarr;
+        </a>
+      )}
+      {fg && (
+        <a
+          href={fg}
+          target="_blank"
+          rel="noreferrer"
+          className="text-folio hover:underline no-underline"
+        >
+          View at the Folger Shakespeare &rarr;
+        </a>
+      )}
+    </div>
   );
 }
