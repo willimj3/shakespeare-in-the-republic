@@ -126,6 +126,7 @@ export default function Home() {
   return (
     <div className="bg-parchment text-ink">
       <Hero />
+      <ExecutiveSummary />
       <FounderCountsStrip />
       <ThreeLayersOfEvidence />
       <TopPlays />
@@ -184,6 +185,85 @@ function Hero() {
                 First Folio (1623). Engraving by Martin Droeshout.
               </figcaption>
             </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+/*                         EXECUTIVE SUMMARY                            */
+/* ──────────────────────────────────────────────────────────────────── */
+function ExecutiveSummary() {
+  return (
+    <section className="border-b border-parchment-deep">
+      <div className="max-w-outer mx-auto px-6 py-14">
+        <div className="max-w-prose mx-auto">
+          <p className="section-marker">What the project found</p>
+          <h2 className="font-display text-3xl text-ink mt-2 leading-tight">
+            Shakespeare carried forward into the Founders unevenly, in
+            ways the data makes legible.
+          </h2>
+
+          <p className="text-base text-ink-soft mt-6 leading-relaxed">
+            John Adams quoted Shakespeare more than the other five
+            Founders combined. He was reading the plays at twenty-three
+            and was still returning to favourite lines at eighty-six.
+            Benjamin Franklin almost never named Shakespeare or quoted
+            him, but his prose sounds more like Shakespeare&rsquo;s
+            sentence for sentence than any other Founder&rsquo;s. Thomas
+            Jefferson kept Shakespeare on his shelf and named him often
+            without copying a passage. George Washington picked up a
+            few phrases through the army officers around him. Alexander
+            Hamilton and James Madison, who came of age during the
+            Revolutionary crisis, write as if the playwright had been
+            displaced by Locke and Hume.
+          </p>
+
+          <p className="text-base text-ink-soft mt-5 leading-relaxed">
+            One play does most of the political work. Across
+            forty-seven years and five of the six Founders, the
+            Shakespeare that showed up in their political
+            correspondence was <em>Julius Caesar</em>. Brutus stood for
+            republican principle. Caesar stood for the kind of ambition
+            that could topple a republic. Hamilton, the Founder who
+            never named Shakespeare in his life, reportedly told
+            Jefferson at a dinner party that Caesar was the greatest
+            man who ever lived. The English history plays barely
+            register in the data.
+          </p>
+
+          <p className="text-base text-ink-soft mt-5 leading-relaxed">
+            The other findings cluster around timing. The Founders who
+            finished their formal education before the 1765 Stamp Act
+            crisis (Adams, Franklin, Washington) carry the great bulk
+            of the project&rsquo;s Shakespeare engagement. The ones
+            still in school or younger when it happened (Jefferson,
+            Madison, Hamilton) inherited a different reading list,
+            heavier on Hume, Locke, and the Roman historians. Their
+            Shakespeare is correspondingly thinner.
+          </p>
+
+          <div className="mt-8 p-5 bg-parchment-dark border-l-4 border-bronze rounded-sm">
+            <p className="text-sm text-ink-soft leading-relaxed">
+              <strong className="text-ink">This is an open experiment.</strong>{" "}
+              The site pairs corpus-linguistic methods with AI
+              assistance to surface patterns in 24.6 million words of
+              Founder writing against Shakespeare&rsquo;s 891,000.
+              Every claim on the site traces to a row in a downloadable
+              data file. The project does not claim expertise in
+              Shakespeare or in early American history. It is meant as
+              a starting point for further exploration and contribution,
+              not as a finished argument.{" "}
+              <Link
+                href="/about-this-project"
+                className="text-folio font-sans underline"
+              >
+                Read the full note on how the site was made
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </div>
