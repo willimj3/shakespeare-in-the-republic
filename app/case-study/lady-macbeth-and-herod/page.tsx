@@ -102,7 +102,6 @@ export default function LadyMacbethAndHerodCaseStudy() {
         events={events}
         yearMin={1760}
         yearMax={1825}
-        height={210}
         caption="Four uses of the 'I have given suck' speech across fifty-three years of Adams's writing. Each is in a completely different rhetorical register."
         ariaLabel="Timeline showing John Adams's four uses of Lady Macbeth's 'I have given suck' speech, in 1765, 1782, 1799, and 1818."
       />

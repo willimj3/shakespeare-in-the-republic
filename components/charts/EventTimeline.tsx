@@ -1,9 +1,24 @@
 /**
- * Compact, SVG-rendered horizontal timeline of one phrase's recurring
- * uses across a Founder's life. Server-rendered (no Recharts), tiny.
- * Reused by case studies: tide-in-the-affairs (Adams 1776–1814),
- * band-of-brothers-valley-forge (Washington 1778–1798), and any future
- * "one line, multiple decades" finding.
+ * Compact timeline of one phrase's recurring uses across a Founder's
+ * life. Two-part layout, no Recharts:
+ *
+ *   1. A slim SVG axis at the top — decade ticks, plus a labeled dot
+ *      for every event. The SVG only ever has to hold year numbers
+ *      (≤4 characters), so it stays readable regardless of how many
+ *      events cluster together. The earlier version put long
+ *      context/recipient strings inside the SVG and bunched up when
+ *      events fell within ~110px of each other.
+ *
+ *   2. A responsive card grid below the axis, one card per event,
+ *      in chronological order. Cards carry the long descriptive text
+ *      (context + recipient) at full readability and reflow with the
+ *      viewport — 1 column on phones, up to as-many-as-fit on wide
+ *      screens.
+ *
+ * Server-rendered. Reused by case studies: tide-in-the-affairs
+ * (Adams 1776–1814), band-of-brothers-valley-forge (Washington
+ * 1778–1798), lady-macbeth-and-herod, methinks-i-hear-you, and any
+ * future "one line, multiple decades" finding.
  */
 export type TimelineEvent = {
   year: number;
@@ -16,50 +31,51 @@ export type EventTimelineProps = {
   yearMin?: number;
   yearMax?: number;
   caption?: string;
-  height?: number;
   ariaLabel?: string;
 };
 
 export default function EventTimeline({
   events,
-  yearMin = 1770,
-  yearMax = 1820,
+  yearMin,
+  yearMax,
   caption,
-  height = 240,
   ariaLabel,
 }: EventTimelineProps) {
-  const w = 720;
-  const padX = 60;
-  const axisY = height / 2;
-  const COLLISION_PX = 110;
+  // Default the axis to fit the data with a small lead/tail pad so
+  // dots never sit on top of the boundary line. Callers can still
+  // override yearMin/yearMax explicitly.
+  const dataMin = events.length ? Math.min(...events.map((e) => e.year)) : 1770;
+  const dataMax = events.length ? Math.max(...events.map((e) => e.year)) : 1820;
+  const lo = yearMin ?? dataMin - 2;
+  const hi = yearMax ?? dataMax + 2;
 
-  // Decade tick marks falling inside [yearMin, yearMax]
+  const w = 720;
+  const h = 80;
+  const padX = 40;
+  const axisY = h / 2;
+
+  // Decade tick marks falling inside [lo, hi]
   const decadeTicks: number[] = [];
-  for (let y = Math.ceil(yearMin / 10) * 10; y <= yearMax; y += 10) {
+  for (let y = Math.ceil(lo / 10) * 10; y <= hi; y += 10) {
     decadeTicks.push(y);
   }
 
   function x(year: number): number {
-    const t = (year - yearMin) / (yearMax - yearMin);
+    const t = (year - lo) / (hi - lo);
     return padX + t * (w - 2 * padX);
   }
 
-  // Pre-compute each event's x position and side (above/below the axis).
-  // Side alternates whenever a successive event falls within
-  // COLLISION_PX of the previous one, so labels never overlap.
-  type Placed = {
-    e: TimelineEvent;
-    cx: number;
-    side: "below" | "above";
-  };
+  // Year labels alternate above/below the axis if two events are
+  // within 60px so the digits never overlap.
+  const COLLISION_PX = 60;
+  type Placed = { e: TimelineEvent; cx: number; side: "above" | "below" };
   const placed: Placed[] = [];
-  let lastSide: "below" | "above" = "below";
+  let lastSide: "above" | "below" = "below";
   let lastX = -Infinity;
-  for (const e of events) {
+  for (const e of [...events].sort((a, b) => a.year - b.year)) {
     const cx = x(e.year);
-    let side: "below" | "above";
+    let side: "above" | "below";
     if (cx - lastX < COLLISION_PX) {
-      // close to previous — flip to the other side
       side = lastSide === "below" ? "above" : "below";
     } else {
       side = "below";
@@ -69,11 +85,14 @@ export default function EventTimeline({
     lastX = cx;
   }
 
+  // Card order matches axis order (chronological).
+  const orderedEvents = placed.map((p) => p.e);
+
   return (
     <figure className="my-10 max-w-wide mx-auto">
       <div className="bg-parchment-dark border border-parchment-deep rounded-sm p-6">
         <svg
-          viewBox={`0 0 ${w} ${height}`}
+          viewBox={`0 0 ${w} ${h}`}
           xmlns="http://www.w3.org/2000/svg"
           role="img"
           aria-label={
@@ -82,7 +101,7 @@ export default function EventTimeline({
           className="w-full h-auto"
           style={{ fontFamily: "var(--font-garamond), serif" }}
         >
-          {/* axis */}
+          {/* axis line */}
           <line
             x1={padX}
             y1={axisY}
@@ -96,81 +115,78 @@ export default function EventTimeline({
             <g key={y}>
               <line
                 x1={x(y)}
-                y1={axisY - 5}
+                y1={axisY - 4}
                 x2={x(y)}
-                y2={axisY + 5}
+                y2={axisY + 4}
                 stroke="#8E7B5A"
                 strokeWidth={1}
               />
               <text
                 x={x(y)}
-                y={axisY + 22}
+                y={axisY + 18}
                 textAnchor="middle"
-                fontSize="13"
-                fill="#6B5C49"
+                fontSize="11"
+                fill="#8E7B5A"
               >
                 {y}
               </text>
             </g>
           ))}
-          {/* events — alternate above/below the axis to avoid label overlap */}
+          {/* event dots + year labels (above or below the axis) */}
           {placed.map(({ e, cx, side }, idx) => {
-            const dir = side === "above" ? -1 : 1;
-            const dotY = axisY + dir * 30;
-            const yearY = axisY + dir * 50;
-            const contextY = side === "above" ? axisY - 65 : axisY + 65;
-            const recipientY = side === "above" ? axisY - 80 : axisY + 80;
+            const labelY = side === "above" ? axisY - 12 : axisY + 18;
+            const baseline = side === "above" ? "auto" : "hanging";
             return (
               <g key={`${e.year}-${idx}`}>
-                <line
-                  x1={cx}
-                  y1={axisY}
-                  x2={cx}
-                  y2={dotY}
-                  stroke="#7B1E1E"
-                  strokeWidth={1}
-                />
                 <circle
                   cx={cx}
-                  cy={dotY}
-                  r={6}
+                  cy={axisY}
+                  r={5}
                   fill="#7B1E1E"
                   stroke="#7B1E1E"
                 />
                 <text
                   x={cx}
-                  y={yearY}
+                  y={labelY}
                   textAnchor="middle"
-                  fontSize="14"
+                  fontSize="13"
                   fontWeight="600"
                   fill="#1F1A14"
-                  dominantBaseline={side === "above" ? "auto" : "hanging"}
+                  dominantBaseline={baseline}
                 >
                   {e.year}
-                </text>
-                <text
-                  x={cx}
-                  y={contextY}
-                  textAnchor="middle"
-                  fontSize="12"
-                  fontStyle="italic"
-                  fill="#3A2F23"
-                >
-                  {e.context}
-                </text>
-                <text
-                  x={cx}
-                  y={recipientY}
-                  textAnchor="middle"
-                  fontSize="11"
-                  fill="#6B5C49"
-                >
-                  {e.recipient}
                 </text>
               </g>
             );
           })}
         </svg>
+
+        {/* Labeled cards beneath the axis, in chronological order.
+            The grid auto-fits enough columns to hold every card on
+            wide screens; collapses to one column on phones. */}
+        <ol
+          className="mt-6 grid gap-3"
+          style={{
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+          }}
+        >
+          {orderedEvents.map((e, idx) => (
+            <li
+              key={`${e.year}-${idx}`}
+              className="bg-parchment border border-parchment-deep rounded-sm p-3"
+            >
+              <p className="font-display text-lg text-folio leading-none">
+                {e.year}
+              </p>
+              <p className="text-sm text-ink mt-1.5 italic leading-snug">
+                {e.context}
+              </p>
+              <p className="text-xs text-ink-muted mt-1 font-sans leading-snug">
+                {e.recipient}
+              </p>
+            </li>
+          ))}
+        </ol>
       </div>
       {caption ? (
         <figcaption className="mt-3 text-sm text-ink-muted italic text-center leading-snug max-w-prose mx-auto">
