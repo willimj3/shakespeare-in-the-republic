@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getSupabase, isSupabaseConfigured, AUTHORS } from "@/lib/supabase";
 import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
+import { asset } from "@/lib/paths";
 
 type Row = {
   doc_id: string;
@@ -357,7 +358,7 @@ export default function KwicConcordancer() {
                         {r.date_sort ?? r.date_written ?? ""}
                       </span>
                       <a
-                        href={`/document/?id=${encodeURIComponent(r.doc_id)}`}
+                        href={asset(`/document/?id=${encodeURIComponent(r.doc_id)}`)}
                         className="block text-folio text-[10px] no-underline hover:underline mt-0.5"
                         title={r.title ?? r.doc_id}
                       >

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { getSupabase, isSupabaseConfigured, AUTHORS } from "@/lib/supabase";
 import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
+import { asset } from "@/lib/paths";
 import { sanitizeSnippet } from "@/lib/sanitize-snippet";
 import {
   buildSearchHref,
@@ -767,7 +768,7 @@ export default function SearchInterface() {
                   />
                   <p className="text-xs mt-3 flex flex-wrap gap-x-4 gap-y-1 font-sans">
                     <a
-                      href={`/document/?id=${encodeURIComponent(r.doc_id)}`}
+                      href={asset(`/document/?id=${encodeURIComponent(r.doc_id)}`)}
                       className="text-folio underline"
                     >
                       Open full document &rarr;

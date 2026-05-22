@@ -77,13 +77,7 @@ export default function SearchPage() {
                 results alongside the substantive prose. Treat the
                 snippets as pointers to the source on Founders Online
                 or the Folger, not as the final word on what a
-                document contains. Click &ldquo;View occurrences in
-                context&rdquo; on any result to read every hit of
-                your query in concordance form in{" "}
-                <Link href="/explorer/kwic" className="underline">
-                  KWIC
-                </Link>
-                .
+                document contains.
               </p>
             </div>
           </div>
