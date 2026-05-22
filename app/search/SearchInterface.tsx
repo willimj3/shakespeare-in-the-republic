@@ -8,7 +8,6 @@ import { sanitizeSnippet } from "@/lib/sanitize-snippet";
 import {
   buildSearchHref,
   isSortBy,
-  kwicUrl,
   SORT_OPTIONS,
   type SortBy,
 } from "@/lib/search-helpers";
@@ -678,9 +677,9 @@ export default function SearchInterface() {
             <code>OR</code> between terms (<code>honour OR honor</code>),
             or <code>-</code> to exclude (<code>honour -honourable</code>).
             Each result is a <em>document</em> (a letter, essay, play, or
-            speech) that contains the query at least once; click
-            &ldquo;View occurrences&rdquo; on any result to see each hit
-            in concordance context.
+            speech) that contains the query at least once; the occurrence
+            count on each row is how many times the term appears in that
+            document.
           </p>
         </form>
       </div>
@@ -708,17 +707,6 @@ export default function SearchInterface() {
               {totalCount > 0 && (
                 <>
                   {" · "}page {page + 1} of {totalPages}
-                </>
-              )}
-              {hasSearched && submittedQuery && (
-                <>
-                  {" · "}
-                  <a
-                    href={kwicUrl({ q: submittedQuery, authors })}
-                    className="text-folio underline"
-                  >
-                    View every occurrence in KWIC &rarr;
-                  </a>
                 </>
               )}
             </p>
@@ -778,17 +766,6 @@ export default function SearchInterface() {
                     }}
                   />
                   <p className="text-xs mt-3 flex flex-wrap gap-x-4 gap-y-1 font-sans">
-                    <a
-                      href={kwicUrl({
-                        q: submittedQuery,
-                        authors,
-                        authorOverride: r.author_id,
-                      })}
-                      className="text-folio underline"
-                      title={`Open every occurrence of "${submittedQuery}" by ${authorLabel} in the KWIC concordancer`}
-                    >
-                      View occurrences in context &rarr;
-                    </a>
                     <a
                       href={`/document/?id=${encodeURIComponent(r.doc_id)}`}
                       className="text-folio underline"
