@@ -50,9 +50,9 @@ export default function EventTimeline({
   const hi = yearMax ?? dataMax + 2;
 
   const w = 720;
-  const h = 80;
+  const h = 64;
   const padX = 40;
-  const axisY = h / 2;
+  const axisY = 24;
 
   // Decade tick marks falling inside [lo, hi]
   const decadeTicks: number[] = [];
@@ -65,31 +65,15 @@ export default function EventTimeline({
     return padX + t * (w - 2 * padX);
   }
 
-  // Year labels alternate above/below the axis if two events are
-  // within 60px so the digits never overlap.
-  const COLLISION_PX = 60;
-  type Placed = { e: TimelineEvent; cx: number; side: "above" | "below" };
-  const placed: Placed[] = [];
-  let lastSide: "above" | "below" = "below";
-  let lastX = -Infinity;
-  for (const e of [...events].sort((a, b) => a.year - b.year)) {
-    const cx = x(e.year);
-    let side: "above" | "below";
-    if (cx - lastX < COLLISION_PX) {
-      side = lastSide === "below" ? "above" : "below";
-    } else {
-      side = "below";
-    }
-    placed.push({ e, cx, side });
-    lastSide = side;
-    lastX = cx;
-  }
-
-  // Card order matches axis order (chronological).
-  const orderedEvents = placed.map((p) => p.e);
+  // Chronological card order matches axis-dot order.
+  const orderedEvents = [...events].sort((a, b) => a.year - b.year);
 
   return (
-    <figure className="my-10 max-w-wide mx-auto">
+    // Break out of the parent's max-w-prose using viewport-relative
+    // positioning: anchor at 50% from the left, translate back by
+    // half our own width, capping at max-w-wide. Lets the figure use
+    // the full page width while the surrounding prose stays tight.
+    <figure className="my-10 relative left-1/2 -translate-x-1/2 w-[calc(100vw-3rem)] max-w-wide">
       <div className="bg-parchment-dark border border-parchment-deep rounded-sm p-6">
         <svg
           viewBox={`0 0 ${w} ${h}`}
@@ -110,7 +94,8 @@ export default function EventTimeline({
             stroke="#8E7B5A"
             strokeWidth={1}
           />
-          {/* decade ticks */}
+          {/* decade ticks + their labels (fixed positions, won't
+              cluster). */}
           {decadeTicks.map((y) => (
             <g key={y}>
               <line
@@ -132,33 +117,21 @@ export default function EventTimeline({
               </text>
             </g>
           ))}
-          {/* event dots + year labels (above or below the axis) */}
-          {placed.map(({ e, cx, side }, idx) => {
-            const labelY = side === "above" ? axisY - 12 : axisY + 18;
-            const baseline = side === "above" ? "auto" : "hanging";
-            return (
-              <g key={`${e.year}-${idx}`}>
-                <circle
-                  cx={cx}
-                  cy={axisY}
-                  r={5}
-                  fill="#7B1E1E"
-                  stroke="#7B1E1E"
-                />
-                <text
-                  x={cx}
-                  y={labelY}
-                  textAnchor="middle"
-                  fontSize="13"
-                  fontWeight="600"
-                  fill="#1F1A14"
-                  dominantBaseline={baseline}
-                >
-                  {e.year}
-                </text>
-              </g>
-            );
-          })}
+          {/* event dots — no per-event year labels inline. The card
+              grid beneath carries the year prominently. This means
+              the axis never bunches no matter how clustered the
+              data, and the cards become the readable surface for
+              everything but rough chronological distribution. */}
+          {orderedEvents.map((e, idx) => (
+            <circle
+              key={`${e.year}-${idx}`}
+              cx={x(e.year)}
+              cy={axisY}
+              r={5}
+              fill="#7B1E1E"
+              stroke="#7B1E1E"
+            />
+          ))}
         </svg>
 
         {/* Labeled cards beneath the axis, in chronological order.
