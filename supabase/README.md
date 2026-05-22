@@ -8,8 +8,11 @@ the repo.
 
 ## Migrations
 
-- `migrations/0001_search_functions.sql` — `search_documents()` and
-  `search_doc_types()` powering `/search`.
+- `migrations/20260522115333_search_functions.sql` —
+  `search_documents()` (with `sort_by` + `hit_count`),
+  `search_doc_types()`, `search_facets()` (with year histogram), and
+  the helpers `extract_search_terms()` /
+  `count_search_term_occurrences()` powering `/search`.
 
 (Additional migration files will document the `kwic_search()`,
 `candidate_echoes_facets_filtered()`, `get_document_with_annotations()`,

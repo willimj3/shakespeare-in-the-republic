@@ -15,8 +15,8 @@
 -- │ configuration. The `documents` table is the corpus index:       │
 -- │ 82,107 rows = 38 Shakespeare works + every Founders Online      │
 -- │ document the project ingested. `documents.full_text` is the     │
--- │ cleaned body text; `documents.tsv` is the precomputed tsvector  │
--- │ used for ranking and snippeting.                                │
+-- │ cleaned body text; `documents.full_text_tsv` is the precomputed │
+-- │ tsvector used for ranking and snippeting.                       │
 -- └─────────────────────────────────────────────────────────────────┘
 
 
@@ -25,24 +25,27 @@
 -- ─────────────────────────────────────────────────────────────────────
 --
 -- documents (
---   doc_id        text primary key,
---   author_id     text references authors,
---   title         text,
---   date_written  text,
---   date_sort     integer,
---   doc_type      text,
---   full_text     text,
---   word_count    integer,
---   tsv           tsvector generated always as (
---                   setweight(to_tsvector('english', coalesce(title, '')), 'A')
---                   ||
---                   setweight(to_tsvector('english', coalesce(full_text, '')), 'B')
---                 ) stored
+--   doc_id          text primary key,
+--   author_id       text,
+--   title           text,
+--   date_written    text,
+--   date_sort       integer,
+--   doc_type        text,
+--   full_text       text,
+--   word_count      integer,
+--   full_text_tsv   tsvector generated always as (
+--                     to_tsvector('english'::regconfig,
+--                                 coalesce(full_text, ''::text))
+--                   ) stored
 -- );
--- create index documents_tsv_idx on documents using gin (tsv);
--- create index documents_author_idx  on documents (author_id);
--- create index documents_date_idx    on documents (date_sort);
--- create index documents_doctype_idx on documents (doc_type);
+-- create unique index documents_pkey         on documents (doc_id);
+-- create        index documents_author_idx   on documents (author_id);
+-- create        index documents_date_sort_idx on documents (date_sort);
+-- create        index documents_fts_idx       on documents using gin (full_text_tsv);
+--
+-- Note: the tsvector indexes only full_text, not title — title hits
+-- therefore do not get extra ranking weight in the current schema.
+-- Adding setweighted A/B columns is a future schema change.
 
 
 -- ─────────────────────────────────────────────────────────────────────
@@ -165,9 +168,10 @@ comment on function count_search_term_occurrences(text, text[]) is
 -- to non-quoted terms. Phrases inside quotes are matched verbatim
 -- (no stemming).
 --
--- Ranking is ts_rank_cd over the precomputed tsv, scaled so that
--- title hits weigh more heavily than body hits (the 'A' / 'B' weights
--- assigned at column-generation time).
+-- Ranking is ts_rank_cd over the precomputed full_text_tsv. The
+-- current schema indexes full_text only (no setweighted title), so
+-- the rank reflects body-text relevance alone; title-weighting is
+-- a future schema change.
 --
 -- The returned `headline` column is the standard
 -- ts_headline output: a 250-char snippet centred on the best match,
@@ -239,13 +243,13 @@ as $$
         || 'StartSel=<mark>, StopSel=</mark>, '
         || 'FragmentDelimiter= … '
       ) as headline,
-      ts_rank_cd(d.tsv, p.tsq, 32) as rank,
+      ts_rank_cd(d.full_text_tsv, p.tsq, 32) as rank,
       count_search_term_occurrences(coalesce(d.full_text, ''), p.raw_terms)
         as hit_count
     from documents d
     cross join parsed p
     where
-      d.tsv @@ p.tsq
+      d.full_text_tsv @@ p.tsq
       and (author_ids is null or d.author_id = any(author_ids))
       and (year_min   is null or d.date_sort >= year_min)
       and (year_max   is null or d.date_sort <= year_max)
@@ -364,7 +368,7 @@ as $$
     from documents d
     cross join parsed p
     where
-      d.tsv @@ p.tsq
+      d.full_text_tsv @@ p.tsq
       and (year_min is null or d.date_sort >= year_min)
       and (year_max is null or d.date_sort <= year_max)
   ),
