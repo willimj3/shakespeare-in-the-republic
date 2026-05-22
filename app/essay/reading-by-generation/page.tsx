@@ -43,7 +43,7 @@ export default function ReadingByGenerationEssay() {
         </p>
 
         <p>
-          The data picks up the difference. Of the 140 catalogued
+          The data picks up the difference. Of the 137 catalogued
           Shakespeare references across all six Founders, 32 are
           Adams writing in the 1750s. He is in his early twenties,
           newly graduated from Harvard, copying Shakespeare into his

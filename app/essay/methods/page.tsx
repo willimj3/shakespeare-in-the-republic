@@ -357,9 +357,9 @@ export default function MethodsEssay() {
       <ol start={8} className="my-6 text-base text-ink-soft space-y-2 pl-6 list-decimal">
         <li>
           <strong>Verified Shakespeare references per million words.</strong>{" "}
-          The 140 hand-verified catalogue references (62 direct
-          quotations + 78 by-name) divided by each Founder&rsquo;s
-          corpus size.
+          The 137 hand-verified catalogue references (61 direct
+          quotations + 76 by-name, after the source-level audit)
+          divided by each Founder&rsquo;s corpus size.
         </li>
         <li>
           <strong>Thematic character invocations per million words.</strong>{" "}

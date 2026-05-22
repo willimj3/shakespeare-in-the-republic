@@ -5,6 +5,7 @@ import catalogue from "@/data/catalogue.json";
 import playAtlas from "@/data/play_atlas.json";
 import candidateEchoes from "@/data/candidate_echoes.json";
 import candidateEchoesSummary from "@/data/candidate_echoes_summary.json";
+import playAtlasCandidates from "@/data/play_atlas_candidates.json";
 import thematicAllusions from "@/data/thematic_allusions.json";
 import { asset } from "@/lib/paths";
 import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
@@ -226,8 +227,7 @@ function FounderCountsStrip() {
         <div className="max-w-prose mx-auto text-center mb-8">
           <p className="section-marker">Who reached for Shakespeare?</p>
           <h2 className="font-display text-3xl text-ink mt-1">
-            Every traceable reference, by Founder, across three
-            evidence tiers
+            Signals by Founder, across three evidence tiers
           </h2>
           <p className="text-sm text-ink-soft mt-2 italic">
             Verified catalogue references, plus MEDIUM-or-HIGH-confidence
@@ -385,28 +385,23 @@ function TopPlays() {
   const topCatalogue = atlas.plays.slice(0, 8);
   const maxCatalogue = topCatalogue[0]?.total ?? 1;
 
-  // Candidate-echo top plays computed from the FULL 35,794 backend set
-  // (precomputed in data/candidate_echoes_summary.json), not from the
-  // bundled 5K sample. History plays surface in the full distribution.
-  function shortPlayName(raw: string): string {
-    return raw
-      .replace(/^THE TRAGEDY OF /i, "")
-      .replace(/^THE LIFE OF /i, "")
-      .replace(/^THE COMEDY OF /i, "")
-      .replace(/^KING /i, "")
-      .replace(/^THE /i, "")
-      .replace(/, MOOR OF VENICE$/i, "")
-      .replace(/, PRINCE OF DENMARK$/i, "")
-      .toLowerCase()
-      .replace(/\b\w/g, (c) => c.toUpperCase());
-  }
-  const summary = candidateEchoesSummary as unknown as {
-    top_plays_15: { source: string; n: number }[];
+  // Candidate-echo top plays come from data/play_atlas_candidates.json —
+  // the MEDIUM-OR-HIGH-tier subset of the 35,794-row backend (645 matches
+  // across 37 plays), the same source the Play Atlas toggle uses. The
+  // previous version pulled from candidate_echoes_summary.top_plays_15,
+  // which mixed in the LOW tier and produced four-digit play totals that
+  // overstated the evidence. LOW-tier matches are mostly statistically
+  // expected coincidences between any two large English corpora; the
+  // homepage should not present them as findings.
+  const candidates = playAtlasCandidates as unknown as {
+    plays: { play: string; total: number }[];
   };
-  const topEchoes = summary.top_plays_15
+  const topEchoes = candidates.plays
     .slice(0, 8)
-    .map(({ source, n }) => ({ play: shortPlayName(source), count: n }));
+    .map((p) => ({ play: p.play, count: p.total }));
   const maxEchoes = topEchoes[0]?.count ?? 1;
+  const candidatesTotal = candidates.plays.reduce((a, p) => a + p.total, 0);
+  const candidatesPlays = candidates.plays.length;
 
   return (
     <section className="border-b border-parchment-deep">
@@ -437,8 +432,8 @@ function TopPlays() {
             maxCount={maxCatalogue}
           />
           <PlayColumn
-            heading="Candidate echoes"
-            sub="Top eight by 4–5 word matches with distinctive Shakespeare words. Histories surface."
+            heading="MEDIUM+ candidate echoes"
+            sub={`Top eight of ${candidatesTotal} four- and five-word matches across ${candidatesPlays} plays; LOW-tier matches excluded.`}
             barColor="#9C7340"
             items={topEchoes}
             maxCount={maxEchoes}
@@ -552,8 +547,9 @@ function ThreeLayersOfEvidence() {
             The project tracks Shakespearean inheritance at three
             tiers of evidence, from strictest to loosest.
             The <strong className="text-ink">strict catalogue</strong>{" "}
-            is the top: 140 verbatim quotations and by-name references
-            that survived hand verification. The middle tier is
+            is the top: 137 verbatim quotations and by-name references
+            that survived hand verification (61 direct quotations plus
+            76 by-name references, after the source-level audit). The middle tier is
             shorter <strong className="text-ink">candidate echoes</strong>{" "}
             (the word &ldquo;candidate&rdquo; is deliberate: these are
             short matches that pattern like Shakespeare references but
@@ -578,7 +574,7 @@ function ThreeLayersOfEvidence() {
               source={verbatim.shakespeare_short}
               docId={verbatim.doc_id}
               browseHref="/explorer/catalogue"
-              browseLabel="Browse 140 verified references"
+              browseLabel="Browse 137 verified references"
               image="/images/historical/first-folio-macbeth-p742.jpg"
               imageAlt="First Folio: Macbeth, Tomorrow soliloquy page."
             />

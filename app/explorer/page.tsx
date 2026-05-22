@@ -58,7 +58,7 @@ const VIEWS: ExplorerView[] = [
     slug: "catalogue",
     title: "Reference Catalogue",
     blurb:
-      "Search and filter every traceable Shakespeare reference across the six Founders: 108 verified HIGH/MEDIUM instances after the source-level audit (61 verbatim quotations + 47 by-name references, all Adams except Franklin 2, Jefferson 26, Washington 1, Madison 0, Hamilton 0). Filter by who, when, and what kind of reference.",
+      "Search and filter every traceable Shakespeare reference across the six Founders: 137 verified HIGH/MEDIUM instances after the source-level audit (61 verbatim quotations + 76 by-name references, distributed Adams 108, Jefferson 26, Franklin 2, Washington 1, Madison 0, Hamilton 0). Filter by who, when, and what kind of reference.",
     status: "live",
     image: asset("/images/historical/adams-diary-manuscript.jpg"),
     imageAlt: "Adams diary manuscript",

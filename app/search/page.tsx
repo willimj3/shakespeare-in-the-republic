@@ -32,7 +32,7 @@ export default function SearchPage() {
 
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               This is the deepest layer of the project. The catalogue
-              shows 108 verified HIGH/MEDIUM Shakespeare references.
+              shows 137 verified HIGH/MEDIUM Shakespeare references.
               Candidate echoes show 35,794 short verbatim matches.
               Below that sits the corpus itself: every letter, essay,
               play, and speech the project ingested, indexed for

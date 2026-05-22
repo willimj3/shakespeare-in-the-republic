@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title:
     "The Reference Catalogue",
   description:
-    "Every traceable Shakespeare reference in the Founders' writing: 140 verified instances across all six Founders. Filter by Founder, date, type, and confidence; search by word, name, or year.",
+    "Every traceable Shakespeare reference in the Founders' writing: 137 verified HIGH or MEDIUM-confidence instances across all six Founders after the source-level audit. Filter by Founder, date, type, and confidence; search by word, name, or year.",
   openGraph: {
     title: "The Reference Catalogue · Shakespeare in the Republic",
   },
@@ -32,13 +32,14 @@ export default function CataloguePage() {
               place.
             </p>
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
-              There are 140 of them. They split into two kinds: 62{" "}
-              <em>direct quotations</em> (passages where a
-              Founder uses five or more consecutive words from
-              Shakespeare) and 78 <em>named references</em>,
-              where a Founder mentions Shakespeare by name, names one
-              of his plays, or invokes one of his characters in a way
-              the surrounding context confirms is literary.
+              There are 137 of them after the source-level audit
+              that removed two confirmed false positives. They split
+              into two kinds: 61 <em>direct quotations</em> (passages
+              where a Founder uses five or more consecutive words
+              from Shakespeare) and 76 <em>named references</em>,
+              where a Founder mentions Shakespeare by name, names
+              one of his plays, or invokes one of his characters in
+              a way the surrounding context confirms is literary.
             </p>
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
               Each reference is verified against the original document
