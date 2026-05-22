@@ -1,8 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { getSupabase, isSupabaseConfigured, AUTHORS } from "@/lib/supabase";
 import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
+import { sanitizeSnippet } from "@/lib/sanitize-snippet";
 
 type Row = {
   doc_id: string;
@@ -138,17 +140,76 @@ function corpusFromAuthors(authors: string[]): CorpusPreset["id"] {
   return "both"; // a custom selection — show "Both" as un-selected default
 }
 
+/**
+ * Build a URL query string for a KWIC search that matches the current
+ * search context. KWIC's own initializer reads ?q= and ?author= from
+ * the URL on mount, so this is how we hand off a query intact.
+ */
+function kwicUrl(args: {
+  q: string;
+  authors: string[];
+  authorOverride?: string;
+}): string {
+  const params = new URLSearchParams();
+  params.set("q", args.q);
+  const effectiveAuthors = args.authorOverride
+    ? [args.authorOverride]
+    : args.authors;
+  if (effectiveAuthors.length > 0) {
+    params.set("author", effectiveAuthors.join(","));
+  }
+  return `/explorer/kwic?${params.toString()}`;
+}
+
+/**
+ * Build the search-page URL for the current state so users can copy a
+ * link, share it, or return to it via back-button.
+ */
+function buildSearchHref(args: {
+  q: string;
+  authors: string[];
+  yearMin: string;
+  yearMax: string;
+  docType: string;
+  page: number;
+}): string {
+  const params = new URLSearchParams();
+  if (args.q) params.set("q", args.q);
+  if (args.authors.length > 0) params.set("authors", args.authors.join(","));
+  if (args.yearMin) params.set("from", args.yearMin);
+  if (args.yearMax) params.set("to", args.yearMax);
+  if (args.docType) params.set("type", args.docType);
+  if (args.page > 0) params.set("p", String(args.page + 1));
+  const qs = params.toString();
+  return qs ? `/search?${qs}` : "/search";
+}
+
 export default function SearchInterface() {
   const supabase = useMemo(() => getSupabase(), []);
   const configured = useMemo(() => isSupabaseConfigured(), []);
+  const urlParams = useSearchParams();
 
-  const [query, setQuery] = useState("");
-  const [submittedQuery, setSubmittedQuery] = useState("");
-  const [authors, setAuthors] = useState<string[]>([]);
-  const [yearMin, setYearMin] = useState<string>("");
-  const [yearMax, setYearMax] = useState<string>("");
-  const [docType, setDocType] = useState<string>("");
-  const [page, setPage] = useState(0);
+  // ── Initial state read from the URL so searches are shareable ───
+  const initialQ = (urlParams?.get("q") ?? "").trim();
+  const initialAuthorsParam = urlParams?.get("authors") ?? "";
+  const initialAuthors = initialAuthorsParam
+    ? initialAuthorsParam.split(",").filter((a) => ALL_AUTHORS.includes(a))
+    : [];
+  const initialYearMin = urlParams?.get("from") ?? "";
+  const initialYearMax = urlParams?.get("to") ?? "";
+  const initialDocType = urlParams?.get("type") ?? "";
+  const initialPage = (() => {
+    const raw = parseInt(urlParams?.get("p") ?? "1", 10);
+    return Number.isFinite(raw) && raw > 0 ? raw - 1 : 0;
+  })();
+
+  const [query, setQuery] = useState(initialQ);
+  const [submittedQuery, setSubmittedQuery] = useState(initialQ);
+  const [authors, setAuthors] = useState<string[]>(initialAuthors);
+  const [yearMin, setYearMin] = useState<string>(initialYearMin);
+  const [yearMax, setYearMax] = useState<string>(initialYearMax);
+  const [docType, setDocType] = useState<string>(initialDocType);
+  const [page, setPage] = useState(initialPage);
 
   const [rows, setRows] = useState<Row[]>([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -157,15 +218,39 @@ export default function SearchInterface() {
   const [error, setError] = useState<string | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
 
+  // ── Doc-type facet ──────────────────────────────────────────────
+  // The previous implementation pulled the first 2,000 documents and
+  // collected distinct doc_type values from them. Rare types could be
+  // missing. Postgres can't return SELECT DISTINCT through the
+  // PostgREST .select() pathway, but raising the sample window from
+  // 2,000 to 20,000 and ordering by doc_type covers every rare
+  // category the corpus actually contains. The real fix lives at the
+  // backend level: see supabase/migrations/0001_search_functions.sql
+  // for the reference search_doc_types() function.
   useEffect(() => {
     if (!supabase) return;
     let cancelled = false;
     (async () => {
+      // Prefer the dedicated RPC if it exists; fall back to the older
+      // documents-table scan so the page keeps working even if the
+      // backend hasn't been migrated yet.
+      const viaRpc = await supabase
+        .rpc("search_doc_types")
+        .returns<{ doc_type: string }[]>();
+      if (!cancelled && !viaRpc.error && Array.isArray(viaRpc.data)) {
+        const set = new Set<string>();
+        for (const r of viaRpc.data) {
+          if (r.doc_type) set.add(r.doc_type);
+        }
+        setDocTypes(Array.from(set).sort());
+        return;
+      }
       const { data, error: e } = await supabase
         .from("documents")
         .select("doc_type")
         .not("doc_type", "is", null)
-        .limit(2000);
+        .order("doc_type", { ascending: true })
+        .limit(20000);
       if (cancelled || e || !data) return;
       const set = new Set<string>();
       for (const r of data as { doc_type: string | null }[]) {
@@ -178,6 +263,7 @@ export default function SearchInterface() {
     };
   }, [supabase]);
 
+  // ── Search runner ───────────────────────────────────────────────
   const runSearch = useCallback(
     async (q: string, pageNum: number) => {
       if (!supabase) return;
@@ -213,6 +299,78 @@ export default function SearchInterface() {
     [supabase, authors, yearMin, yearMax, docType],
   );
 
+  // ── URL syncing: push current state into the address bar ────────
+  // Uses replaceState to avoid filling browser history with a new
+  // entry per keystroke; full pushState happens only on explicit
+  // submit (handled below via direct calls).
+  const pushUrlState = useCallback(
+    (kind: "replace" | "push") => {
+      if (typeof window === "undefined") return;
+      const href = buildSearchHref({
+        q: submittedQuery,
+        authors,
+        yearMin,
+        yearMax,
+        docType,
+        page,
+      });
+      if (kind === "push") window.history.pushState(null, "", href);
+      else window.history.replaceState(null, "", href);
+    },
+    [submittedQuery, authors, yearMin, yearMax, docType, page],
+  );
+
+  // ── On mount: if URL carried ?q=, run the initial search ────────
+  // useEffect with an empty dep list runs once; the readers above
+  // already populated state from the URL.
+  const didInitialRunRef = useRef(false);
+  useEffect(() => {
+    if (didInitialRunRef.current) return;
+    didInitialRunRef.current = true;
+    if (initialQ) {
+      setHasSearched(true);
+      void runSearch(initialQ, initialPage);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // ── Stale-filter rerun ──────────────────────────────────────────
+  // Once a user has searched, changes to the filters silently changed
+  // the displayed results' relevance. Auto-rerun after a short debounce
+  // so the visible result set always matches the visible filters.
+  // The submittedQuery (not the typed-but-unsubmitted query) is what
+  // triggers the rerun, so typing in the input doesn't fire on every
+  // keystroke.
+  const filtersSignature = useMemo(
+    () => `${authors.join(",")}|${yearMin}|${yearMax}|${docType}`,
+    [authors, yearMin, yearMax, docType],
+  );
+  const lastFiltersRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!hasSearched) {
+      lastFiltersRef.current = filtersSignature;
+      return;
+    }
+    if (lastFiltersRef.current === null) {
+      lastFiltersRef.current = filtersSignature;
+      return;
+    }
+    if (lastFiltersRef.current === filtersSignature) return;
+    lastFiltersRef.current = filtersSignature;
+    setPage(0);
+    const t = setTimeout(() => {
+      void runSearch(submittedQuery, 0);
+      pushUrlState("replace");
+    }, 300);
+    return () => clearTimeout(t);
+  }, [filtersSignature, hasSearched, submittedQuery, runSearch, pushUrlState]);
+
+  // Keep the URL in sync with the visible state after pagination.
+  useEffect(() => {
+    if (hasSearched) pushUrlState("replace");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
+
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const q = query.trim();
@@ -220,9 +378,20 @@ export default function SearchInterface() {
     setPage(0);
     setHasSearched(true);
     void runSearch(q, 0);
+    // Push to history so back-button works.
+    if (typeof window !== "undefined") {
+      const href = buildSearchHref({
+        q,
+        authors,
+        yearMin,
+        yearMax,
+        docType,
+        page: 0,
+      });
+      window.history.pushState(null, "", href);
+    }
   };
 
-  // Run a one-click query from a suggestion or theme chip.
   const runQueryNow = useCallback(
     (q: string) => {
       setQuery(q);
@@ -231,10 +400,19 @@ export default function SearchInterface() {
       setHasSearched(true);
       void runSearch(q, 0);
       if (typeof window !== "undefined") {
+        const href = buildSearchHref({
+          q,
+          authors,
+          yearMin,
+          yearMax,
+          docType,
+          page: 0,
+        });
+        window.history.pushState(null, "", href);
         window.scrollTo({ top: 200, behavior: "smooth" });
       }
     },
-    [runSearch],
+    [runSearch, authors, yearMin, yearMax, docType],
   );
 
   const corpus = corpusFromAuthors(authors);
@@ -438,6 +616,10 @@ export default function SearchInterface() {
             <code>&ldquo;body politic&rdquo;</code>. Use{" "}
             <code>OR</code> between terms (<code>honour OR honor</code>),
             or <code>-</code> to exclude (<code>honour -honourable</code>).
+            Each result is a <em>document</em> (a letter, essay, play, or
+            speech) that contains the query at least once; click
+            &ldquo;View occurrences&rdquo; on any result to see each hit
+            in concordance context.
           </p>
         </form>
       </div>
@@ -456,14 +638,25 @@ export default function SearchInterface() {
 
           {!loading && hasSearched && !error && (
             <p className="text-sm text-ink-muted mb-3 font-sans">
-              {totalCount.toLocaleString()} match
-              {totalCount === 1 ? "" : "es"} for{" "}
+              {totalCount.toLocaleString()} matching document
+              {totalCount === 1 ? "" : "s"} for{" "}
               <span className="text-ink">
                 &ldquo;{submittedQuery}&rdquo;
               </span>
               {totalCount > 0 && (
                 <>
                   {" · "}page {page + 1} of {totalPages}
+                </>
+              )}
+              {hasSearched && submittedQuery && (
+                <>
+                  {" · "}
+                  <a
+                    href={kwicUrl({ q: submittedQuery, authors })}
+                    className="text-folio underline"
+                  >
+                    View every occurrence in KWIC &rarr;
+                  </a>
                 </>
               )}
             </p>
@@ -509,9 +702,22 @@ export default function SearchInterface() {
                   </p>
                   <p
                     className="text-sm text-ink-soft mt-2 leading-relaxed kwic-text"
-                    dangerouslySetInnerHTML={{ __html: r.headline }}
+                    dangerouslySetInnerHTML={{
+                      __html: sanitizeSnippet(r.headline),
+                    }}
                   />
                   <p className="text-xs mt-3 flex flex-wrap gap-x-4 gap-y-1 font-sans">
+                    <a
+                      href={kwicUrl({
+                        q: submittedQuery,
+                        authors,
+                        authorOverride: r.author_id,
+                      })}
+                      className="text-folio underline"
+                      title={`Open every occurrence of "${submittedQuery}" by ${authorLabel} in the KWIC concordancer`}
+                    >
+                      View occurrences in context &rarr;
+                    </a>
                     <a
                       href={`/document/?id=${encodeURIComponent(r.doc_id)}`}
                       className="text-folio underline"
@@ -536,8 +742,8 @@ export default function SearchInterface() {
 
           {hasSearched && !loading && rows.length === 0 && !error && (
             <p className="text-sm text-ink-muted italic">
-              No matches. Try a broader phrase, drop a filter, or check
-              spelling.
+              No matching documents. Try a broader phrase, drop a
+              filter, or check spelling.
             </p>
           )}
 

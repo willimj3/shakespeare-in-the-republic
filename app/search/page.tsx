@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import SearchInterface from "./SearchInterface";
 import DataScope from "@/components/DataScope";
@@ -31,37 +32,73 @@ export default function SearchPage() {
 
             <p className="text-base text-ink-soft mt-6 leading-relaxed">
               This is the deepest layer of the project. The catalogue
-              shows 140 verified Shakespeare references. Candidate
-              echoes show 35,794 short verbatim matches. Below that
-              sits the corpus itself: every letter, essay, play, and
-              speech in the dataset, indexed for full-text search.
+              shows 108 verified HIGH/MEDIUM Shakespeare references.
+              Candidate echoes show 35,794 short verbatim matches.
+              Below that sits the corpus itself: every letter, essay,
+              play, and speech the project ingested, indexed for
+              full-text search.
             </p>
 
             <p className="text-base text-ink-soft mt-4 leading-relaxed">
-              82,107 documents total: 9,648 from Adams, 4,425 from
-              Franklin, 7,194 from Hamilton, 20,518 from Jefferson,
-              8,618 from Madison, 31,666 from Washington, and the 38
-              works of Shakespeare. Search any word or phrase. Filter
-              by who, when, and what kind of document.
+              82,107 documents are indexed for search: 9,648 from
+              Adams, 4,425 from Franklin, 7,194 from Hamilton, 20,518
+              from Jefferson, 8,618 from Madison, 31,666 from
+              Washington, and Shakespeare&rsquo;s 38 works. Search any
+              word or phrase. Filter by who, when, and what kind of
+              document.
             </p>
 
             <div className="bg-parchment-dark border-l-4 border-bronze p-4 my-6">
               <p className="text-sm text-ink-soft leading-relaxed">
+                <strong className="text-ink">
+                  Indexed corpus vs analysis corpus.
+                </strong>{" "}
+                The 82,107 figure counts <em>indexed backend rows</em>{" "}
+                &mdash; everything the project ingested, including
+                editorial headnotes and documents whose body text was
+                empty (Founders Online editorial entries make up about
+                15% of Adams&rsquo;s rows and ~75% of Franklin&rsquo;s).
+                The <em>analysis corpus</em> used in the essays and
+                statistical case studies is the subset with non-empty
+                body text: 68,807 documents, 24.6 million Founder words
+                plus 891,000 Shakespeare words. Per-author analysis
+                corpus sizes (docs with text): Washington 20,154,
+                Jefferson 20,391, Adams 9,101, Madison 8,584, Hamilton
+                7,059, Franklin 3,480, Shakespeare 38. The search
+                index here is the broader of the two so a casual
+                lookup never misses a document, but cite the analysis
+                corpus when quoting per-million rates.
+              </p>
+              <p className="text-sm text-ink-soft leading-relaxed mt-3">
                 <strong className="text-ink">A note on coverage.</strong>{" "}
                 Search runs over the raw text after light cleaning, so
                 you&rsquo;ll see editorial headnotes, signature
                 blocks, and occasional Folio stage directions in the
                 results alongside the substantive prose. Treat the
                 snippets as pointers to the source on Founders Online
-                or Folger, not as the final word on what a document
-                contains.
+                or the Folger, not as the final word on what a
+                document contains. Click &ldquo;View occurrences in
+                context&rdquo; on any result to read every hit of
+                your query in concordance form in{" "}
+                <Link href="/explorer/kwic" className="underline">
+                  KWIC
+                </Link>
+                .
               </p>
             </div>
           </div>
         </div>
       </header>
 
-      <SearchInterface />
+      <Suspense
+        fallback={
+          <section className="max-w-outer mx-auto px-6 py-10">
+            <p className="text-sm text-ink-muted italic">Loading search…</p>
+          </section>
+        }
+      >
+        <SearchInterface />
+      </Suspense>
 
       <section>
         <div className="max-w-outer mx-auto px-6 py-12">
