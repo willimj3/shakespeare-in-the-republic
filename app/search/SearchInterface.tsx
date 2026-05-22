@@ -161,6 +161,19 @@ function kwicUrl(args: {
   return `/explorer/kwic?${params.toString()}`;
 }
 
+type SortBy = "relevance" | "date_asc" | "date_desc" | "author" | "title";
+const SORT_OPTIONS: { id: SortBy; label: string }[] = [
+  { id: "relevance", label: "Relevance" },
+  { id: "date_asc", label: "Date (oldest first)" },
+  { id: "date_desc", label: "Date (newest first)" },
+  { id: "author", label: "Author A→Z" },
+  { id: "title", label: "Title A→Z" },
+];
+const SORT_IDS = new Set<SortBy>(SORT_OPTIONS.map((s) => s.id));
+
+type FacetAuthor = { author_id: string; n: number };
+type FacetDocType = { doc_type: string; n: number };
+
 /**
  * Build the search-page URL for the current state so users can copy a
  * link, share it, or return to it via back-button.
@@ -171,6 +184,7 @@ function buildSearchHref(args: {
   yearMin: string;
   yearMax: string;
   docType: string;
+  sort: SortBy;
   page: number;
 }): string {
   const params = new URLSearchParams();
@@ -179,6 +193,7 @@ function buildSearchHref(args: {
   if (args.yearMin) params.set("from", args.yearMin);
   if (args.yearMax) params.set("to", args.yearMax);
   if (args.docType) params.set("type", args.docType);
+  if (args.sort !== "relevance") params.set("sort", args.sort);
   if (args.page > 0) params.set("p", String(args.page + 1));
   const qs = params.toString();
   return qs ? `/search?${qs}` : "/search";
@@ -198,6 +213,10 @@ export default function SearchInterface() {
   const initialYearMin = urlParams?.get("from") ?? "";
   const initialYearMax = urlParams?.get("to") ?? "";
   const initialDocType = urlParams?.get("type") ?? "";
+  const initialSort: SortBy = (() => {
+    const raw = (urlParams?.get("sort") ?? "relevance") as SortBy;
+    return SORT_IDS.has(raw) ? raw : "relevance";
+  })();
   const initialPage = (() => {
     const raw = parseInt(urlParams?.get("p") ?? "1", 10);
     return Number.isFinite(raw) && raw > 0 ? raw - 1 : 0;
@@ -209,11 +228,15 @@ export default function SearchInterface() {
   const [yearMin, setYearMin] = useState<string>(initialYearMin);
   const [yearMax, setYearMax] = useState<string>(initialYearMax);
   const [docType, setDocType] = useState<string>(initialDocType);
+  const [sort, setSort] = useState<SortBy>(initialSort);
   const [page, setPage] = useState(initialPage);
 
   const [rows, setRows] = useState<Row[]>([]);
   const [totalCount, setTotalCount] = useState(0);
   const [docTypes, setDocTypes] = useState<DocType[]>([]);
+  const [facetAuthors, setFacetAuthors] = useState<FacetAuthor[]>([]);
+  const [facetDocTypes, setFacetDocTypes] = useState<FacetDocType[]>([]);
+  const [copiedDocId, setCopiedDocId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [hasSearched, setHasSearched] = useState(false);
@@ -282,6 +305,7 @@ export default function SearchInterface() {
         year_min: Number.isFinite(minN) ? minN : null,
         year_max: Number.isFinite(maxN) ? maxN : null,
         doc_types: docType ? [docType] : null,
+        sort_by: sort,
         result_limit: PAGE_SIZE,
         result_offset: pageNum * PAGE_SIZE,
       });
@@ -295,8 +319,33 @@ export default function SearchInterface() {
       const list = (data ?? []) as Row[];
       setRows(list);
       setTotalCount(list[0]?.total_count ?? 0);
+      // Fire-and-forget facet fetch — non-blocking; failures are silent
+      // because the facet sidebar is supplementary.
+      void (async () => {
+        const { data: fdata, error: ferror } = await supabase.rpc(
+          "search_facets",
+          {
+            q,
+            year_min: Number.isFinite(minN) ? minN : null,
+            year_max: Number.isFinite(maxN) ? maxN : null,
+          },
+        );
+        if (ferror || !Array.isArray(fdata) || fdata.length === 0) {
+          setFacetAuthors([]);
+          setFacetDocTypes([]);
+          return;
+        }
+        const row = fdata[0] as {
+          authors_json: FacetAuthor[] | null;
+          doc_types_json: FacetDocType[] | null;
+        };
+        setFacetAuthors(Array.isArray(row.authors_json) ? row.authors_json : []);
+        setFacetDocTypes(
+          Array.isArray(row.doc_types_json) ? row.doc_types_json : [],
+        );
+      })();
     },
-    [supabase, authors, yearMin, yearMax, docType],
+    [supabase, authors, yearMin, yearMax, docType, sort],
   );
 
   // ── URL syncing: push current state into the address bar ────────
@@ -312,12 +361,13 @@ export default function SearchInterface() {
         yearMin,
         yearMax,
         docType,
+        sort,
         page,
       });
       if (kind === "push") window.history.pushState(null, "", href);
       else window.history.replaceState(null, "", href);
     },
-    [submittedQuery, authors, yearMin, yearMax, docType, page],
+    [submittedQuery, authors, yearMin, yearMax, docType, sort, page],
   );
 
   // ── On mount: if URL carried ?q=, run the initial search ────────
@@ -342,8 +392,8 @@ export default function SearchInterface() {
   // triggers the rerun, so typing in the input doesn't fire on every
   // keystroke.
   const filtersSignature = useMemo(
-    () => `${authors.join(",")}|${yearMin}|${yearMax}|${docType}`,
-    [authors, yearMin, yearMax, docType],
+    () => `${authors.join(",")}|${yearMin}|${yearMax}|${docType}|${sort}`,
+    [authors, yearMin, yearMax, docType, sort],
   );
   const lastFiltersRef = useRef<string | null>(null);
   useEffect(() => {
@@ -386,6 +436,7 @@ export default function SearchInterface() {
         yearMin,
         yearMax,
         docType,
+        sort,
         page: 0,
       });
       window.history.pushState(null, "", href);
@@ -406,13 +457,14 @@ export default function SearchInterface() {
           yearMin,
           yearMax,
           docType,
+          sort,
           page: 0,
         });
         window.history.pushState(null, "", href);
         window.scrollTo({ top: 200, behavior: "smooth" });
       }
     },
-    [runSearch, authors, yearMin, yearMax, docType],
+    [runSearch, authors, yearMin, yearMax, docType, sort],
   );
 
   const corpus = corpusFromAuthors(authors);
@@ -609,6 +661,22 @@ export default function SearchInterface() {
                 </option>
               ))}
             </select>
+
+            <span className="text-xs uppercase tracking-smallcap text-ink-muted ml-2">
+              Sort:
+            </span>
+            <select
+              value={sort}
+              onChange={(e) => setSort(e.target.value as SortBy)}
+              className="px-2 py-1 bg-parchment border border-parchment-deep rounded-sm text-sm font-sans"
+              aria-label="Sort order"
+            >
+              {SORT_OPTIONS.map((opt) => (
+                <option key={opt.id} value={opt.id}>
+                  {opt.label}
+                </option>
+              ))}
+            </select>
           </div>
 
           <p className="text-xs text-ink-muted leading-relaxed">
@@ -625,7 +693,8 @@ export default function SearchInterface() {
       </div>
 
       <div className="max-w-outer mx-auto px-6 pb-12">
-        <div className="max-w-wide mx-auto">
+        <div className="max-w-wide mx-auto grid grid-cols-1 lg:grid-cols-[1fr_15rem] gap-8">
+        <div>
           {error && (
             <p className="text-sm text-cordovan border-l-4 border-cordovan bg-parchment-dark p-3 mb-4">
               {error}
@@ -734,6 +803,36 @@ export default function SearchInterface() {
                         {isShakespeare ? "Folger →" : "Founders Online →"}
                       </a>
                     )}
+                    {!(authors.length === 1 && authors[0] === r.author_id) && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setAuthors([r.author_id]);
+                          setPage(0);
+                        }}
+                        className="text-ink-muted hover:text-folio underline"
+                        title={`Narrow this search to documents by ${authorLabel}`}
+                      >
+                        Restrict to {authorLabel.split(" ").slice(-1)[0]}
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      onClick={async () => {
+                        if (typeof navigator === "undefined") return;
+                        try {
+                          await navigator.clipboard.writeText(r.doc_id);
+                          setCopiedDocId(r.doc_id);
+                          setTimeout(() => setCopiedDocId(null), 1500);
+                        } catch {
+                          /* clipboard write can fail under file:// — silent */
+                        }
+                      }}
+                      className="text-ink-muted hover:text-folio underline"
+                      title={`Copy document id: ${r.doc_id}`}
+                    >
+                      {copiedDocId === r.doc_id ? "Copied ✓" : "Copy doc id"}
+                    </button>
                   </p>
                 </li>
               );
@@ -773,7 +872,156 @@ export default function SearchInterface() {
             </nav>
           )}
         </div>
+
+        {/* ── Facet sidebar ────────────────────────────────────────── */}
+        {hasSearched && !error && (facetAuthors.length > 0 || facetDocTypes.length > 0) && (
+          <aside className="lg:sticky lg:top-20 self-start">
+            <FacetSidebar
+              authors={facetAuthors}
+              docTypes={facetDocTypes}
+              activeAuthors={authors}
+              activeDocType={docType}
+              onSelectAuthor={(id) => {
+                setAuthors([id]);
+                setPage(0);
+              }}
+              onClearAuthors={() => {
+                setAuthors([]);
+                setPage(0);
+              }}
+              onSelectDocType={(t) => {
+                setDocType(t);
+                setPage(0);
+              }}
+              onClearDocType={() => {
+                setDocType("");
+                setPage(0);
+              }}
+            />
+          </aside>
+        )}
+        </div>
       </div>
     </section>
+  );
+}
+
+/* ──────────────────────────────────────────────────────────────────── */
+function FacetSidebar(props: {
+  authors: FacetAuthor[];
+  docTypes: FacetDocType[];
+  activeAuthors: string[];
+  activeDocType: string;
+  onSelectAuthor: (id: string) => void;
+  onClearAuthors: () => void;
+  onSelectDocType: (t: string) => void;
+  onClearDocType: () => void;
+}) {
+  const {
+    authors,
+    docTypes,
+    activeAuthors,
+    activeDocType,
+    onSelectAuthor,
+    onClearAuthors,
+    onSelectDocType,
+    onClearDocType,
+  } = props;
+  const topAuthors = authors.slice(0, 7);
+  const topDocTypes = docTypes.slice(0, 8);
+  return (
+    <div className="bg-parchment-dark border border-parchment-deep rounded-sm p-4 text-sm font-sans space-y-5">
+      {topAuthors.length > 0 && (
+        <div>
+          <div className="flex items-baseline justify-between mb-2">
+            <p className="text-xs uppercase tracking-smallcap text-ink-muted">
+              By author
+            </p>
+            {activeAuthors.length > 0 && (
+              <button
+                type="button"
+                onClick={onClearAuthors}
+                className="text-xs text-ink-muted underline hover:text-folio"
+              >
+                clear
+              </button>
+            )}
+          </div>
+          <ul className="space-y-1">
+            {topAuthors.map((row) => {
+              const active = activeAuthors.length === 1 && activeAuthors[0] === row.author_id;
+              return (
+                <li key={row.author_id}>
+                  <button
+                    type="button"
+                    onClick={() => onSelectAuthor(row.author_id)}
+                    className={`w-full flex justify-between items-baseline gap-2 text-left px-1.5 py-1 rounded-sm transition-colors ${
+                      active
+                        ? "bg-folio text-parchment"
+                        : "hover:bg-parchment text-ink-soft"
+                    }`}
+                  >
+                    <span className="truncate">
+                      {AUTHORS[row.author_id] ?? row.author_id}
+                    </span>
+                    <span className="text-xs tabular-nums opacity-80">
+                      {row.n.toLocaleString()}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+
+      {topDocTypes.length > 0 && (
+        <div>
+          <div className="flex items-baseline justify-between mb-2">
+            <p className="text-xs uppercase tracking-smallcap text-ink-muted">
+              By document type
+            </p>
+            {activeDocType && (
+              <button
+                type="button"
+                onClick={onClearDocType}
+                className="text-xs text-ink-muted underline hover:text-folio"
+              >
+                clear
+              </button>
+            )}
+          </div>
+          <ul className="space-y-1">
+            {topDocTypes.map((row) => {
+              const active = activeDocType === row.doc_type;
+              return (
+                <li key={row.doc_type}>
+                  <button
+                    type="button"
+                    onClick={() => onSelectDocType(row.doc_type)}
+                    className={`w-full flex justify-between items-baseline gap-2 text-left px-1.5 py-1 rounded-sm transition-colors ${
+                      active
+                        ? "bg-folio text-parchment"
+                        : "hover:bg-parchment text-ink-soft"
+                    }`}
+                  >
+                    <span className="truncate italic">{row.doc_type}</span>
+                    <span className="text-xs tabular-nums opacity-80">
+                      {row.n.toLocaleString()}
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+
+      <p className="text-xs text-ink-muted leading-relaxed pt-2 border-t border-parchment-deep">
+        Facet counts respect the query and year range but show the full
+        per-author / per-type distribution, not the already-filtered
+        view. Clicking a row narrows the result set.
+      </p>
+    </div>
   );
 }
