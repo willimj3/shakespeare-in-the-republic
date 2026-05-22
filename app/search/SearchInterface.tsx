@@ -5,6 +5,13 @@ import { useSearchParams } from "next/navigation";
 import { getSupabase, isSupabaseConfigured, AUTHORS } from "@/lib/supabase";
 import { foundersOnlineUrl, folgerUrl } from "@/lib/sources";
 import { sanitizeSnippet } from "@/lib/sanitize-snippet";
+import {
+  buildSearchHref,
+  isSortBy,
+  kwicUrl,
+  SORT_OPTIONS,
+  type SortBy,
+} from "@/lib/search-helpers";
 
 type Row = {
   doc_id: string;
@@ -16,6 +23,7 @@ type Row = {
   word_count: number | null;
   headline: string;
   rank: number;
+  hit_count: number | null;
   total_count: number;
 };
 
@@ -140,64 +148,9 @@ function corpusFromAuthors(authors: string[]): CorpusPreset["id"] {
   return "both"; // a custom selection — show "Both" as un-selected default
 }
 
-/**
- * Build a URL query string for a KWIC search that matches the current
- * search context. KWIC's own initializer reads ?q= and ?author= from
- * the URL on mount, so this is how we hand off a query intact.
- */
-function kwicUrl(args: {
-  q: string;
-  authors: string[];
-  authorOverride?: string;
-}): string {
-  const params = new URLSearchParams();
-  params.set("q", args.q);
-  const effectiveAuthors = args.authorOverride
-    ? [args.authorOverride]
-    : args.authors;
-  if (effectiveAuthors.length > 0) {
-    params.set("author", effectiveAuthors.join(","));
-  }
-  return `/explorer/kwic?${params.toString()}`;
-}
-
-type SortBy = "relevance" | "date_asc" | "date_desc" | "author" | "title";
-const SORT_OPTIONS: { id: SortBy; label: string }[] = [
-  { id: "relevance", label: "Relevance" },
-  { id: "date_asc", label: "Date (oldest first)" },
-  { id: "date_desc", label: "Date (newest first)" },
-  { id: "author", label: "Author A→Z" },
-  { id: "title", label: "Title A→Z" },
-];
-const SORT_IDS = new Set<SortBy>(SORT_OPTIONS.map((s) => s.id));
-
 type FacetAuthor = { author_id: string; n: number };
 type FacetDocType = { doc_type: string; n: number };
-
-/**
- * Build the search-page URL for the current state so users can copy a
- * link, share it, or return to it via back-button.
- */
-function buildSearchHref(args: {
-  q: string;
-  authors: string[];
-  yearMin: string;
-  yearMax: string;
-  docType: string;
-  sort: SortBy;
-  page: number;
-}): string {
-  const params = new URLSearchParams();
-  if (args.q) params.set("q", args.q);
-  if (args.authors.length > 0) params.set("authors", args.authors.join(","));
-  if (args.yearMin) params.set("from", args.yearMin);
-  if (args.yearMax) params.set("to", args.yearMax);
-  if (args.docType) params.set("type", args.docType);
-  if (args.sort !== "relevance") params.set("sort", args.sort);
-  if (args.page > 0) params.set("p", String(args.page + 1));
-  const qs = params.toString();
-  return qs ? `/search?${qs}` : "/search";
-}
+type FacetYear = { decade: number; n: number };
 
 export default function SearchInterface() {
   const supabase = useMemo(() => getSupabase(), []);
@@ -214,8 +167,8 @@ export default function SearchInterface() {
   const initialYearMax = urlParams?.get("to") ?? "";
   const initialDocType = urlParams?.get("type") ?? "";
   const initialSort: SortBy = (() => {
-    const raw = (urlParams?.get("sort") ?? "relevance") as SortBy;
-    return SORT_IDS.has(raw) ? raw : "relevance";
+    const raw = urlParams?.get("sort") ?? "relevance";
+    return isSortBy(raw) ? raw : "relevance";
   })();
   const initialPage = (() => {
     const raw = parseInt(urlParams?.get("p") ?? "1", 10);
@@ -236,6 +189,7 @@ export default function SearchInterface() {
   const [docTypes, setDocTypes] = useState<DocType[]>([]);
   const [facetAuthors, setFacetAuthors] = useState<FacetAuthor[]>([]);
   const [facetDocTypes, setFacetDocTypes] = useState<FacetDocType[]>([]);
+  const [facetYears, setFacetYears] = useState<FacetYear[]>([]);
   const [copiedDocId, setCopiedDocId] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -333,16 +287,19 @@ export default function SearchInterface() {
         if (ferror || !Array.isArray(fdata) || fdata.length === 0) {
           setFacetAuthors([]);
           setFacetDocTypes([]);
+          setFacetYears([]);
           return;
         }
         const row = fdata[0] as {
           authors_json: FacetAuthor[] | null;
           doc_types_json: FacetDocType[] | null;
+          years_json: FacetYear[] | null;
         };
         setFacetAuthors(Array.isArray(row.authors_json) ? row.authors_json : []);
         setFacetDocTypes(
           Array.isArray(row.doc_types_json) ? row.doc_types_json : [],
         );
+        setFacetYears(Array.isArray(row.years_json) ? row.years_json : []);
       })();
     },
     [supabase, authors, yearMin, yearMax, docType, sort],
@@ -765,6 +722,15 @@ export default function SearchInterface() {
                         {r.word_count.toLocaleString()} words
                       </span>
                     )}
+                    {typeof r.hit_count === "number" && r.hit_count > 0 && (
+                      <span
+                        className="text-xs font-sans bg-folio/10 text-folio px-1.5 py-0.5 rounded-sm"
+                        title={`Word-bounded, case-insensitive occurrence count for ${submittedQuery} in this document`}
+                      >
+                        {r.hit_count.toLocaleString()} occurrence
+                        {r.hit_count === 1 ? "" : "s"}
+                      </span>
+                    )}
                   </div>
                   <p className="font-display text-lg text-ink mt-1">
                     {r.title ?? r.doc_id}
@@ -874,13 +840,16 @@ export default function SearchInterface() {
         </div>
 
         {/* ── Facet sidebar ────────────────────────────────────────── */}
-        {hasSearched && !error && (facetAuthors.length > 0 || facetDocTypes.length > 0) && (
+        {hasSearched && !error && (facetAuthors.length > 0 || facetDocTypes.length > 0 || facetYears.length > 0) && (
           <aside className="lg:sticky lg:top-20 self-start">
             <FacetSidebar
               authors={facetAuthors}
               docTypes={facetDocTypes}
+              years={facetYears}
               activeAuthors={authors}
               activeDocType={docType}
+              activeYearMin={yearMin}
+              activeYearMax={yearMax}
               onSelectAuthor={(id) => {
                 setAuthors([id]);
                 setPage(0);
@@ -897,6 +866,16 @@ export default function SearchInterface() {
                 setDocType("");
                 setPage(0);
               }}
+              onSelectDecade={(decade) => {
+                setYearMin(String(decade));
+                setYearMax(String(decade + 9));
+                setPage(0);
+              }}
+              onClearYearRange={() => {
+                setYearMin("");
+                setYearMax("");
+                setPage(0);
+              }}
             />
           </aside>
         )}
@@ -910,25 +889,41 @@ export default function SearchInterface() {
 function FacetSidebar(props: {
   authors: FacetAuthor[];
   docTypes: FacetDocType[];
+  years: FacetYear[];
   activeAuthors: string[];
   activeDocType: string;
+  activeYearMin: string;
+  activeYearMax: string;
   onSelectAuthor: (id: string) => void;
   onClearAuthors: () => void;
   onSelectDocType: (t: string) => void;
   onClearDocType: () => void;
+  onSelectDecade: (decade: number) => void;
+  onClearYearRange: () => void;
 }) {
   const {
     authors,
     docTypes,
+    years,
     activeAuthors,
     activeDocType,
+    activeYearMin,
+    activeYearMax,
     onSelectAuthor,
     onClearAuthors,
     onSelectDocType,
     onClearDocType,
+    onSelectDecade,
+    onClearYearRange,
   } = props;
   const topAuthors = authors.slice(0, 7);
   const topDocTypes = docTypes.slice(0, 8);
+  // Histogram bars are scaled to the busiest decade; below the bar
+  // we show the count and the decade label.
+  const maxYearN = years.reduce((m, r) => Math.max(m, r.n), 0);
+  const yearMinN = activeYearMin ? parseInt(activeYearMin, 10) : null;
+  const yearMaxN = activeYearMax ? parseInt(activeYearMax, 10) : null;
+  const yearFilterActive = yearMinN !== null || yearMaxN !== null;
   return (
     <div className="bg-parchment-dark border border-parchment-deep rounded-sm p-4 text-sm font-sans space-y-5">
       {topAuthors.length > 0 && (
@@ -1017,10 +1012,67 @@ function FacetSidebar(props: {
         </div>
       )}
 
+      {years.length > 0 && (
+        <div>
+          <div className="flex items-baseline justify-between mb-2">
+            <p className="text-xs uppercase tracking-smallcap text-ink-muted">
+              By decade
+            </p>
+            {yearFilterActive && (
+              <button
+                type="button"
+                onClick={onClearYearRange}
+                className="text-xs text-ink-muted underline hover:text-folio"
+              >
+                clear
+              </button>
+            )}
+          </div>
+          <div className="space-y-1">
+            {years.map((row) => {
+              const inActiveRange =
+                yearMinN !== null &&
+                yearMaxN !== null &&
+                row.decade >= yearMinN &&
+                row.decade <= yearMaxN;
+              const widthPct = maxYearN === 0 ? 0 : (row.n / maxYearN) * 100;
+              return (
+                <button
+                  type="button"
+                  key={row.decade}
+                  onClick={() => onSelectDecade(row.decade)}
+                  className={`w-full grid grid-cols-[3.25rem_1fr_3rem] items-center gap-2 text-left text-xs px-1.5 py-0.5 rounded-sm transition-colors ${
+                    inActiveRange
+                      ? "bg-folio text-parchment"
+                      : "hover:bg-parchment text-ink-soft"
+                  }`}
+                  title={`Restrict to ${row.decade}–${row.decade + 9}`}
+                >
+                  <span className="font-sans tabular-nums">
+                    {row.decade}s
+                  </span>
+                  <span
+                    className="block h-2 rounded-sm bg-bronze/40"
+                    style={{
+                      width: `${Math.max(widthPct, 4)}%`,
+                      background: inActiveRange ? "rgba(255,255,255,0.5)" : undefined,
+                    }}
+                  />
+                  <span className="text-xs tabular-nums opacity-80 text-right">
+                    {row.n.toLocaleString()}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
       <p className="text-xs text-ink-muted leading-relaxed pt-2 border-t border-parchment-deep">
-        Facet counts respect the query and year range but show the full
-        per-author / per-type distribution, not the already-filtered
-        view. Clicking a row narrows the result set.
+        Facet counts respect the query (and the year range, for the
+        author and type lists). The decade histogram zooms in when you
+        narrow the year filter; clicking any row narrows the result
+        set.
       </p>
     </div>
   );

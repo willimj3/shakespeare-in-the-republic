@@ -46,6 +46,111 @@
 
 
 -- ─────────────────────────────────────────────────────────────────────
+-- extract_search_terms / count_search_term_occurrences
+-- ─────────────────────────────────────────────────────────────────────
+-- Helpers for the per-document occurrence count that search_documents
+-- returns alongside each match.
+--
+-- extract_search_terms parses the raw user query string the same way
+-- the websearch_to_tsquery() input grammar does, but keeps the
+-- literal forms rather than reducing them to lexemes. Returns an
+-- array of strings, each one a literal phrase or word we should
+-- regex-match in the document body:
+--
+--   '"body politic"'              → ['body politic']
+--   'honour OR honor'             → ['honour', 'honor']
+--   'honour -honourable'          → ['honour']        (the - excludes)
+--   '"tide in the affairs"  brutus' → ['tide in the affairs', 'brutus']
+--
+-- The 'OR' / 'or' keyword is dropped (it's a separator, not a term);
+-- bare '-prefix' tokens are also dropped because the document already
+-- matched the parent tsquery — exclusion has done its work upstream.
+create or replace function extract_search_terms(q text)
+returns text[]
+language plpgsql
+immutable
+set search_path = public, pg_catalog
+as $$
+declare
+  result text[] := '{}';
+  remainder text := coalesce(q, '');
+  open_pos integer;
+  close_pos integer;
+  phrase text;
+  word text;
+begin
+  -- Step 1: pull out every "quoted phrase" first and drop them from
+  -- the remainder so step 2 doesn't double-match the same characters.
+  loop
+    open_pos := strpos(remainder, '"');
+    exit when open_pos = 0;
+    close_pos := strpos(substr(remainder, open_pos + 1), '"');
+    exit when close_pos = 0;
+    phrase := substr(remainder, open_pos + 1, close_pos - 1);
+    phrase := trim(phrase);
+    if phrase <> '' then
+      result := array_append(result, phrase);
+    end if;
+    remainder := substr(remainder, 1, open_pos - 1)
+              || ' '
+              || substr(remainder, open_pos + close_pos + 1);
+  end loop;
+  -- Step 2: tokenize what's left, dropping OR-separators and
+  -- -excluded terms.
+  foreach word in array regexp_split_to_array(trim(remainder), '\s+')
+  loop
+    if word is null or word = '' then continue; end if;
+    if word in ('OR','or','AND','and') then continue; end if;
+    if word like '-%' then continue; end if;
+    result := array_append(result, word);
+  end loop;
+  return result;
+end $$;
+
+comment on function extract_search_terms(text) is
+  'Parse a websearch_to_tsquery-style user query into the literal '
+  'phrases and words it asks for, for use in per-document occurrence '
+  'counting. Drops OR/AND separators and -excluded terms.';
+
+
+create or replace function count_search_term_occurrences(
+  haystack text,
+  terms    text[]
+)
+returns integer
+language plpgsql
+immutable
+set search_path = public, pg_catalog
+as $$
+declare
+  total integer := 0;
+  t text;
+  escaped text;
+begin
+  if haystack is null or terms is null or array_length(terms, 1) is null then
+    return 0;
+  end if;
+  foreach t in array terms loop
+    if t is null or t = '' then continue; end if;
+    -- Escape regex metacharacters so an accidentally-included '*' or
+    -- '(' in the user's query string doesn't break the regex. Word
+    -- boundaries (\m, \M) keep the match honest: 'honour' matches
+    -- 'honour' but not 'honourable'.
+    escaped := regexp_replace(t, '([\.\+\*\?\^\$\(\)\[\]\{\}\|\\])', '\\\1', 'g');
+    total := total + (
+      select count(*)::integer
+      from regexp_matches(haystack, '\m' || escaped || '\M', 'gi') m
+    );
+  end loop;
+  return total;
+end $$;
+
+comment on function count_search_term_occurrences(text, text[]) is
+  'Count word-bounded, case-insensitive occurrences of each term in '
+  'haystack, summed. Used to populate hit_count in search_documents.';
+
+
+-- ─────────────────────────────────────────────────────────────────────
 -- search_documents
 -- ─────────────────────────────────────────────────────────────────────
 -- The document-level search behind /search.
@@ -104,6 +209,7 @@ returns table (
   word_count    integer,
   headline      text,
   rank          real,
+  hit_count     integer,
   total_count   bigint
 )
 language sql
@@ -112,7 +218,9 @@ security invoker
 set search_path = public, pg_catalog
 as $$
   with parsed as (
-    select websearch_to_tsquery('english', coalesce(q, '')) as tsq
+    select
+      websearch_to_tsquery('english', coalesce(q, '')) as tsq,
+      extract_search_terms(coalesce(q, '')) as raw_terms
   ),
   matched as (
     select
@@ -131,7 +239,9 @@ as $$
         || 'StartSel=<mark>, StopSel=</mark>, '
         || 'FragmentDelimiter= … '
       ) as headline,
-      ts_rank_cd(d.tsv, p.tsq, 32) as rank
+      ts_rank_cd(d.tsv, p.tsq, 32) as rank,
+      count_search_term_occurrences(coalesce(d.full_text, ''), p.raw_terms)
+        as hit_count
     from documents d
     cross join parsed p
     where
@@ -151,6 +261,7 @@ as $$
     m.word_count,
     m.headline,
     m.rank,
+    m.hit_count,
     count(*) over () as total_count
   from matched m
   order by
@@ -169,12 +280,14 @@ as $$
   offset greatest(result_offset, 0);
 $$;
 
-comment on function search_documents(text, text[], integer, integer, text[], integer, integer) is
+comment on function search_documents(text, text[], integer, integer, text[], text, integer, integer) is
   'Document-level full-text search. Each row is one matching document; the '
-  '`total_count` column carries the unfiltered total for paginator UIs. The '
+  '`hit_count` column carries the per-document occurrence count (word-bounded, '
+  'case-insensitive regex count of every term/phrase the user asked for); '
+  '`total_count` carries the unfiltered document count for paginator UIs. The '
   '`headline` column is ts_headline output with the matched terms wrapped in '
-  '<mark> tags. Snippets are not occurrence-level — use kwic_search() if you '
-  'need every occurrence in its concordance context.';
+  '<mark> tags. Snippets are still not occurrence-level — use kwic_search() if '
+  'you want every occurrence rendered in its concordance context.';
 
 
 -- ─────────────────────────────────────────────────────────────────────
@@ -210,16 +323,24 @@ comment on function search_doc_types() is
 -- matching documents exist for each author / type without paging
 -- through the result set.
 --
--- The function returns a single row of two JSON arrays:
---   authors    = [{ author_id, n }, ...]
+-- The function returns a single row of three JSON arrays:
+--   authors    = [{ author_id,  n }, ...]
 --   doc_types  = [{ doc_type,   n }, ...]
+--   years      = [{ decade,     n }, ...]   -- decade is the integer
+--                                              start year (1700, 1710,
+--                                              1720, …); documents with
+--                                              null date_sort are
+--                                              omitted.
 --
 -- Counts respect the q filter and the year_min/year_max filters
 -- but DO NOT respect the author_ids or doc_types filters — the
 -- sidebar shows the full per-facet distribution so the user can
 -- see what's available, then narrow by clicking. (This matches
 -- the convention used by every faceted search interface — Solr,
--- Elasticsearch, Algolia all do it this way.)
+-- Elasticsearch, Algolia all do it this way.) The year facet
+-- intentionally does respect the year-range filter because the
+-- histogram zooms in when the user narrows the range, which is the
+-- behavior users expect.
 create or replace function search_facets(
   q          text,
   year_min   integer default null,
@@ -227,7 +348,8 @@ create or replace function search_facets(
 )
 returns table (
   authors_json    jsonb,
-  doc_types_json  jsonb
+  doc_types_json  jsonb,
+  years_json      jsonb
 )
 language sql
 stable
@@ -238,7 +360,7 @@ as $$
     select websearch_to_tsquery('english', coalesce(q, '')) as tsq
   ),
   matched as (
-    select d.author_id, d.doc_type
+    select d.author_id, d.doc_type, d.date_sort
     from documents d
     cross join parsed p
     where
@@ -259,6 +381,15 @@ as $$
     where doc_type is not null
     group by doc_type
     order by n desc, doc_type asc
+  ),
+  by_decade as (
+    -- Floor each year to its decade start: 1758 → 1750, 1812 → 1810.
+    -- Date_sort is the year as integer; nulls excluded.
+    select (date_sort / 10) * 10 as decade, count(*)::bigint as n
+    from matched
+    where date_sort is not null
+    group by (date_sort / 10) * 10
+    order by decade asc
   )
   select
     coalesce(
@@ -268,13 +399,19 @@ as $$
     coalesce(
       (select jsonb_agg(jsonb_build_object('doc_type', doc_type, 'n', n)) from by_type),
       '[]'::jsonb
-    ) as doc_types_json;
+    ) as doc_types_json,
+    coalesce(
+      (select jsonb_agg(jsonb_build_object('decade', decade, 'n', n)) from by_decade),
+      '[]'::jsonb
+    ) as years_json;
 $$;
 
 comment on function search_facets(text, integer, integer) is
-  'Per-author and per-doc-type counts for the current query. Year filters '
-  'apply; author/doc-type filters do not (the sidebar shows the full '
-  'distribution so users can see what is available before narrowing).';
+  'Per-author, per-doc-type, and per-decade counts for the current query. '
+  'Year filters apply (so the decade histogram zooms in when the user '
+  'narrows the range); author and doc-type filters do not (the sidebar '
+  'shows the full distribution so users can see what is available before '
+  'narrowing).';
 
 
 -- ─────────────────────────────────────────────────────────────────────
@@ -286,3 +423,5 @@ comment on function search_facets(text, integer, integer) is
 grant execute on function search_documents(text, text[], integer, integer, text[], text, integer, integer) to anon, authenticated;
 grant execute on function search_doc_types()                                                              to anon, authenticated;
 grant execute on function search_facets(text, integer, integer)                                            to anon, authenticated;
+grant execute on function extract_search_terms(text)                                                       to anon, authenticated;
+grant execute on function count_search_term_occurrences(text, text[])                                      to anon, authenticated;
