@@ -148,6 +148,29 @@ function corpusFromAuthors(authors: string[]): CorpusPreset["id"] {
   return "both"; // a custom selection — show "Both" as un-selected default
 }
 
+/**
+ * Detects the PostgREST "function not found" failure mode that occurs
+ * when an RPC call sends a parameter the backend function does not
+ * declare. PostgREST identifies function overloads by parameter set,
+ * so adding a new arg to a function in the codebase but not in the
+ * live database produces this error.
+ *
+ * The frontend uses this to detect that the live project is running
+ * the pre-migration RPC signatures and retry with the legacy args.
+ */
+function isMissingFunctionError(err: {
+  code?: string;
+  message?: string;
+}): boolean {
+  if (!err) return false;
+  if (err.code === "PGRST202") return true;
+  const msg = (err.message ?? "").toLowerCase();
+  return (
+    msg.includes("could not find the function") ||
+    msg.includes("no function matches the given name")
+  );
+}
+
 type FacetAuthor = { author_id: string; n: number };
 type FacetDocType = { doc_type: string; n: number };
 type FacetYear = { decade: number; n: number };
@@ -253,24 +276,37 @@ export default function SearchInterface() {
       setError(null);
       const minN = yearMin.trim() ? parseInt(yearMin, 10) : null;
       const maxN = yearMax.trim() ? parseInt(yearMax, 10) : null;
-      const { data, error: e } = await supabase.rpc("search_documents", {
+      // Try the v2 signature first (with sort_by). If the live
+      // Supabase project hasn't applied supabase/migrations/0001 yet,
+      // PostgREST will return a "could not find function" error
+      // because parameter sets identify overloads — fall back to the
+      // pre-migration v1 signature so existing search keeps working.
+      const baseArgs = {
         q,
         author_ids: authors.length > 0 ? authors : null,
         year_min: Number.isFinite(minN) ? minN : null,
         year_max: Number.isFinite(maxN) ? maxN : null,
         doc_types: docType ? [docType] : null,
-        sort_by: sort,
         result_limit: PAGE_SIZE,
         result_offset: pageNum * PAGE_SIZE,
+      };
+      let resp = await supabase.rpc("search_documents", {
+        ...baseArgs,
+        sort_by: sort,
       });
+      if (resp.error && isMissingFunctionError(resp.error)) {
+        // Retry with the legacy signature; relevance sort is then the
+        // only one available because the backend hasn't been migrated.
+        resp = await supabase.rpc("search_documents", baseArgs);
+      }
       setLoading(false);
-      if (e) {
-        setError(e.message || "Search failed.");
+      if (resp.error) {
+        setError(resp.error.message || "Search failed.");
         setRows([]);
         setTotalCount(0);
         return;
       }
-      const list = (data ?? []) as Row[];
+      const list = (resp.data ?? []) as Row[];
       setRows(list);
       setTotalCount(list[0]?.total_count ?? 0);
       // Fire-and-forget facet fetch — non-blocking; failures are silent
